@@ -7,8 +7,10 @@
     nixosConfigurations.virtualbox =
       let pkgsGnu = import nixpkgs { system = "x86_64-linux"; };
       in nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs pkgsGnu;};
         modules = [./nixos/configuration.nix];
       };
   };
 }
+let
+    inherit (self) outputs;

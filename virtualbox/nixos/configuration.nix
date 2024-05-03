@@ -46,7 +46,6 @@
   #              ];
               };
   # speed up
-  # boot.kernelPackages = pkgsGnu.linuxPackages;
   # services.qemuGuest.enable = lib.mkForce false;
   # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgsGnu; };
   ## fixes
@@ -56,7 +55,7 @@
   #    installPhase = "mkdir $out";
   # };
   # services.nscd.enableNsncd = false;
-
+  boot.kernelPackages = pkgsGnu.linuxPackages_latest.kernel.version 
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

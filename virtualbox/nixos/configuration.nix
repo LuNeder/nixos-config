@@ -13,7 +13,7 @@
 
 # TODO: FIX - URGENT # Use Musl
  nixpkgs = {
-              hostPlatform = { config = "x86_64-linux"; };
+              hostPlatform = { system = "x86_64-linux"; };
 #              # hostPlatform = { config = "x86_64-unknown-linux-musl"; };
 #              config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
 #              overlays = [

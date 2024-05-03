@@ -1,171 +1,127 @@
 warning: Git tree '/home/luana/nixos-config' is dirty
+building the system configuration...
+warning: Git tree '/home/luana/nixos-config' is dirty
 error:
-       … while calling the 'derivationStrict' builtin
+       … while calling anonymous lambda
 
-         at /builtin/derivation.nix:9:12: (source not available)
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/attrsets.nix:1571:24:
 
-       … while evaluating derivation 'nixos-rebuild'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
-
-       … while evaluating attribute 'nativeBuildInputs' of derivation 'nixos-rebuild'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
-
-          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
-          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
-             |       ^
-          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
-
-       … while evaluating derivation 'install-shell-files'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
-
-       … while evaluating attribute 'stdenv' of derivation 'install-shell-files'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:360:14:
-
-          359|       args = attrs.args or ["-e" (attrs.builder or ./default-builder.sh)];
-          360|       inherit stdenv;
-             |              ^
-          361|
-
-       … while evaluating derivation 'stdenv-linux'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/default.nix:93:14
-
-       … while evaluating attribute 'allowedRequisites' of derivation 'stdenv-linux'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/default.nix:84:7:
-
-           83|     lib.optionalAttrs (allowedRequisites != null) {
-           84|       allowedRequisites = allowedRequisites
-             |       ^
-           85|         ++ defaultNativeBuildInputs ++ defaultBuildInputs;
-
-       … while evaluating derivation 'uutils-coreutils-0.0.25'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
-
-       … while evaluating attribute 'cargoDeps' of derivation 'uutils-coreutils-0.0.25'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/tools/misc/uutils-coreutils/default.nix:24:3:
-
-           23|
-           24|   cargoDeps = rustPlatform.fetchCargoTarball {
-             |   ^
-           25|     inherit src;
-
-       … while evaluating derivation 'uutils-coreutils-0.0.25-vendor.tar.gz'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
-
-       … while evaluating attribute 'buildPhase' of derivation 'uutils-coreutils-0.0.25-vendor.tar.gz'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/rust/fetch-cargo-tarball/default.nix:42:3:
-
-           41|
-           42|   buildPhase = ''
-             |   ^
-           43|     runHook preBuild
-
-       … while evaluating derivation 'nss-cacert-3.98'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
-
-       … while evaluating attribute 'nativeBuildInputs' of derivation 'nss-cacert-3.98'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
-
-          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
-          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
-             |       ^
-          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
-
-       … while evaluating derivation 'python3.11-buildcatrust-0.3.0'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
-
-       … while evaluating attribute 'nativeBuildInputs' of derivation 'python3.11-buildcatrust-0.3.0'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
-
-          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
-          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
-             |       ^
-          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
-
-       … while evaluating derivation 'python3-3.11.9'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
-
-       … while evaluating attribute 'CPPFLAGS' of derivation 'python3-3.11.9'
-
-         at «none»:0: (source not available)
+         1570|     let f = attrPath:
+         1571|       zipAttrsWith (n: values:
+             |                        ^
+         1572|         let here = attrPath ++ [n]; in
 
        … while calling anonymous lambda
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:573:11:
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/attrsets.nix:1205:18:
 
-          572|     mapAttrs
-          573|       (n: v: assert assertMsg (isString v || isBool v || isInt v || isDerivation v)
-             |           ^
-          574|         "The ‘env’ attribute set can only contain derivation, string, boolean or integer attributes. The ‘${n}’ attribute is of type ${builtins.typeOf v}."; v)
+         1204|         mapAttrs
+         1205|           (name: value:
+             |                  ^
+         1206|             if isAttrs value && cond value
 
        … from call site
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:573:21:
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/attrsets.nix:1208:18:
 
-          572|     mapAttrs
-          573|       (n: v: assert assertMsg (isString v || isBool v || isInt v || isDerivation v)
-             |                     ^
-          574|         "The ‘env’ attribute set can only contain derivation, string, boolean or integer attributes. The ‘${n}’ attribute is of type ${builtins.typeOf v}."; v)
-
-       … while calling 'assertMsg'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/asserts.nix:41:5:
-
-           40|     pred:
-           41|     msg:
-             |     ^
-           42|     pred || builtins.throw msg;
+         1207|             then recurse (path ++ [ name ]) value
+         1208|             else f (path ++ [ name ]) value);
+             |                  ^
+         1209|     in
 
        … while calling anonymous lambda
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/development/interpreters/python/cpython/default.nix:376:43:
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:242:72:
 
-          375|   env = {
-          376|     CPPFLAGS = concatStringsSep " " (map (p: "-I${getDev p}/include") buildInputs);
-             |                                           ^
-          377|     LDFLAGS = concatStringsSep " " (map (p: "-L${getLib p}/lib") buildInputs);
+          241|           # For definitions that have an associated option
+          242|           declaredConfig = mapAttrsRecursiveCond (v: ! isOption v) (_: v: v.value) options;
+             |                                                                        ^
+          243|
 
-       … while evaluating derivation 'libffi-3.4.6'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+       … while evaluating the option `system.build.toplevel':
 
-       … while evaluating attribute 'nativeBuildInputs' of derivation 'libffi-3.4.6'
+       … while calling anonymous lambda
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:824:28:
 
-          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
-          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
-             |       ^
-          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
+          823|         # Process mkMerge and mkIf properties.
+          824|         defs' = concatMap (m:
+             |                            ^
+          825|           map (value: { inherit (m) file; inherit value; }) (builtins.addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
 
-       … while evaluating derivation 'dejagnu-1.6.3'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+       … while evaluating definitions from `/nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/nixos/modules/system/activation/top-level.nix':
 
-       … while evaluating attribute 'buildInputs' of derivation 'dejagnu-1.6.3'
+       … from call site
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:378:7:
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:825:137:
 
-          377|       depsHostHost                = elemAt (elemAt dependencies 1) 0;
-          378|       buildInputs                 = elemAt (elemAt dependencies 1) 1;
-             |       ^
-          379|       depsTargetTarget            = elemAt (elemAt dependencies 2) 0;
+          824|         defs' = concatMap (m:
+          825|           map (value: { inherit (m) file; inherit value; }) (builtins.addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+             |                                                                                                                                         ^
+          826|         ) defs;
 
-       … while evaluating derivation 'expect-5.45.4'
-         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+       … while calling 'dischargeProperties'
 
-       … while evaluating attribute 'patches' of derivation 'expect-5.45.4'
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:896:25:
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:395:14:
+          895|   */
+          896|   dischargeProperties = def:
+             |                         ^
+          897|     if def._type or "" == "merge" then
 
-          394|
-          395|       inherit patches;
+       … from call site
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/nixos/modules/system/activation/top-level.nix:71:12:
+
+           70|   # Replace runtime dependencies
+           71|   system = foldr ({ oldDependency, newDependency }: drv:
+             |            ^
+           72|       pkgs.replaceDependency { inherit oldDependency newDependency drv; }
+
+       … while calling 'foldr'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:121:20:
+
+          120|   */
+          121|   foldr = op: nul: list:
+             |                    ^
+          122|     let
+
+       … from call site
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:128:8:
+
+          127|         else op (elemAt list n) (fold' (n + 1));
+          128|     in fold' 0;
+             |        ^
+          129|
+
+       … while calling 'fold''
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:124:15:
+
+          123|       len = length list;
+          124|       fold' = n:
+             |               ^
+          125|         if n == len
+
+       … from call site
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:127:14:
+
+          126|         then nul
+          127|         else op (elemAt list n) (fold' (n + 1));
              |              ^
-          396|
+          128|     in fold' 0;
+
+       … while calling anonymous lambda
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/nixos/modules/system/activation/top-level.nix:71:53:
+
+           70|   # Replace runtime dependencies
+           71|   system = foldr ({ oldDependency, newDependency }: drv:
+             |                                                     ^
+           72|       pkgs.replaceDependency { inherit oldDependency newDependency drv; }
 
        … from call site
 
@@ -178,18 +134,18 @@ error:
 
        … while calling anonymous lambda
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/fetchpatch/default.nix:9:1:
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/replace-dependency.nix:20:1:
 
-            8|
-            9| { relative ? null
+           19| # (and all of its dependencies) without rebuilding further.
+           20| { drv, oldDependency, newDependency, verbose ? true }:
              | ^
-           10| , stripLen ? 0
+           21|
 
-       error: function 'anonymous lambda' called with unexpected argument 'postFetch'
+       error: assertion '((stringLength (drvName (toString oldDependency))) == (stringLength (drvName (toString newDependency))))' failed
 
-       at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/fetchurl/boot.nix:5:1:
+       at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/replace-dependency.nix:93:4:
 
-            4|
-            5| { url ? builtins.head urls
-             | ^
-            6| , urls ? []
+           92|   drvHash = discard (toString drv);
+           93| in assert (stringLength (drvName (toString oldDependency)) == stringLength (drvName (toString newDependency)));
+             |    ^
+           94| rewriteMemo.${drvHash} or (warn "replace-dependency.nix: Derivation ${drvHash} does not depend on ${discard (toString oldDependency)}" drv)

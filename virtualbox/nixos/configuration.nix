@@ -12,8 +12,16 @@
 
   # No GNU on this house! Use Uutils instead of GNU coreutils
   nixpkgs.overlays = [(final: prev: {
-    coreutils = final.uutils-coreutils-noprefix;
+    cutuutils = final.uutils-coreutils-noprefix.overrideAttrs (old: {
+      name = "cutuutils";
+      version = "versao com o mesmo tamanho";
+    });
   })];
+  system.replaceRuntimeDependencies = [
+    { original = pkgs.coreutils; replacement = pkgs.cutuutils; }
+    { original = pkgs.pkgsMusl.coreutils; replacement = pkgs.pkgsMusl.cutuutils; }
+    { original = pkgsGnu.coreutils; replacement = pkgsGnu.cutuutils; }
+  ];
 
 
 

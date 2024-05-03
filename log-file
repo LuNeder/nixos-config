@@ -1,0 +1,195 @@
+warning: Git tree '/home/luana/nixos-config' is dirty
+error:
+       … while calling the 'derivationStrict' builtin
+
+         at /builtin/derivation.nix:9:12: (source not available)
+
+       … while evaluating derivation 'nixos-rebuild'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'nativeBuildInputs' of derivation 'nixos-rebuild'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
+
+          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
+          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
+             |       ^
+          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
+
+       … while evaluating derivation 'install-shell-files'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'stdenv' of derivation 'install-shell-files'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:360:14:
+
+          359|       args = attrs.args or ["-e" (attrs.builder or ./default-builder.sh)];
+          360|       inherit stdenv;
+             |              ^
+          361|
+
+       … while evaluating derivation 'stdenv-linux'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/default.nix:93:14
+
+       … while evaluating attribute 'allowedRequisites' of derivation 'stdenv-linux'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/default.nix:84:7:
+
+           83|     lib.optionalAttrs (allowedRequisites != null) {
+           84|       allowedRequisites = allowedRequisites
+             |       ^
+           85|         ++ defaultNativeBuildInputs ++ defaultBuildInputs;
+
+       … while evaluating derivation 'uutils-coreutils-0.0.25'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'cargoDeps' of derivation 'uutils-coreutils-0.0.25'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/tools/misc/uutils-coreutils/default.nix:24:3:
+
+           23|
+           24|   cargoDeps = rustPlatform.fetchCargoTarball {
+             |   ^
+           25|     inherit src;
+
+       … while evaluating derivation 'uutils-coreutils-0.0.25-vendor.tar.gz'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'buildPhase' of derivation 'uutils-coreutils-0.0.25-vendor.tar.gz'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/rust/fetch-cargo-tarball/default.nix:42:3:
+
+           41|
+           42|   buildPhase = ''
+             |   ^
+           43|     runHook preBuild
+
+       … while evaluating derivation 'nss-cacert-3.98'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'nativeBuildInputs' of derivation 'nss-cacert-3.98'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
+
+          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
+          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
+             |       ^
+          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
+
+       … while evaluating derivation 'python3.11-buildcatrust-0.3.0'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'nativeBuildInputs' of derivation 'python3.11-buildcatrust-0.3.0'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
+
+          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
+          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
+             |       ^
+          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
+
+       … while evaluating derivation 'python3-3.11.9'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'CPPFLAGS' of derivation 'python3-3.11.9'
+
+         at «none»:0: (source not available)
+
+       … while calling anonymous lambda
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:573:11:
+
+          572|     mapAttrs
+          573|       (n: v: assert assertMsg (isString v || isBool v || isInt v || isDerivation v)
+             |           ^
+          574|         "The ‘env’ attribute set can only contain derivation, string, boolean or integer attributes. The ‘${n}’ attribute is of type ${builtins.typeOf v}."; v)
+
+       … from call site
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:573:21:
+
+          572|     mapAttrs
+          573|       (n: v: assert assertMsg (isString v || isBool v || isInt v || isDerivation v)
+             |                     ^
+          574|         "The ‘env’ attribute set can only contain derivation, string, boolean or integer attributes. The ‘${n}’ attribute is of type ${builtins.typeOf v}."; v)
+
+       … while calling 'assertMsg'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/asserts.nix:41:5:
+
+           40|     pred:
+           41|     msg:
+             |     ^
+           42|     pred || builtins.throw msg;
+
+       … while calling anonymous lambda
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/development/interpreters/python/cpython/default.nix:376:43:
+
+          375|   env = {
+          376|     CPPFLAGS = concatStringsSep " " (map (p: "-I${getDev p}/include") buildInputs);
+             |                                           ^
+          377|     LDFLAGS = concatStringsSep " " (map (p: "-L${getLib p}/lib") buildInputs);
+
+       … while evaluating derivation 'libffi-3.4.6'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'nativeBuildInputs' of derivation 'libffi-3.4.6'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:375:7:
+
+          374|       depsBuildBuild              = elemAt (elemAt dependencies 0) 0;
+          375|       nativeBuildInputs           = elemAt (elemAt dependencies 0) 1;
+             |       ^
+          376|       depsBuildTarget             = elemAt (elemAt dependencies 0) 2;
+
+       … while evaluating derivation 'dejagnu-1.6.3'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'buildInputs' of derivation 'dejagnu-1.6.3'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:378:7:
+
+          377|       depsHostHost                = elemAt (elemAt dependencies 1) 0;
+          378|       buildInputs                 = elemAt (elemAt dependencies 1) 1;
+             |       ^
+          379|       depsTargetTarget            = elemAt (elemAt dependencies 2) 0;
+
+       … while evaluating derivation 'expect-5.45.4'
+         whose name attribute is located at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:331:7
+
+       … while evaluating attribute 'patches' of derivation 'expect-5.45.4'
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/stdenv/generic/make-derivation.nix:395:14:
+
+          394|
+          395|       inherit patches;
+             |              ^
+          396|
+
+       … from call site
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/trivial.nix:895:7:
+
+          894|     { # TODO: Should we add call-time "type" checking like built in?
+          895|       __functor = self: f;
+             |       ^
+          896|       __functionArgs = args;
+
+       … while calling anonymous lambda
+
+         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/fetchpatch/default.nix:9:1:
+
+            8|
+            9| { relative ? null
+             | ^
+           10| , stripLen ? 0
+
+       error: function 'anonymous lambda' called with unexpected argument 'postFetch'
+
+       at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/fetchurl/boot.nix:5:1:
+
+            4|
+            5| { url ? builtins.head urls
+             | ^
+            6| , urls ? []

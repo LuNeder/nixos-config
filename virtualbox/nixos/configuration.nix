@@ -29,14 +29,14 @@
                         echo "  sudo mkdir -m0770 '$CCACHE_DIR'"
                         echo "  sudo chown root:nixbld '$CCACHE_DIR'"
                         echo "====="
-                        exit 1
+                     #   exit 1
                       fi
                       if [ ! -w "$CCACHE_DIR" ]; then
                         echo "====="
                         echo "Directory '$CCACHE_DIR' is not accessible for user $(whoami)"
                         echo "Please verify its access permissions"
                         echo "====="
-                        exit 1
+                    #    exit 1
                       fi
                     '';
                   };
@@ -46,8 +46,8 @@
             };
 # speed up
  boot.kernelPackages = pkgsGnu.linuxPackages;
- services.qemuGuest.enable = lib.mkForce false;
- virtualisation.vmVariant = { virtualisation.host.pkgs = pkgsGnu; };
+# services.qemuGuest.enable = lib.mkForce false;
+ # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgsGnu; };
 # fixes
  i18n.glibcLocales = pkgs.stdenv.mkDerivation {
     name = "empty";

@@ -6,10 +6,11 @@
  in {
     nixosConfigurations.virtualbox =
       let pkgsMusl = import nixpkgs { system = "86_64-unknown-linux-musl"; };
-#      let pkgsGnu = import nixpkgs { system = "x86_64-linux"; };
+      pkgsGnu = import nixpkgs { system = "x86_64-linux"; };
       in nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs pkgsMusl;};
         modules = [./nixos/configuration.nix];
       };
   };
 }
+s

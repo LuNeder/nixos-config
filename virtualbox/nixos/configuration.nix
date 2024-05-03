@@ -55,7 +55,7 @@
   #    installPhase = "mkdir $out";
   # };
   # services.nscd.enableNsncd = false;
-  boot.kernelPackages = pkgsGnu.linuxPackages_latest.kernel.version 
+  boot.kernelPackages = pkgsGnu.linuxPackages_latest.kernel.version;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

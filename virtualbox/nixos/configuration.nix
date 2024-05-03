@@ -10,6 +10,12 @@
       ./hardware-configuration.nix
     ];
 
+  # No GNU on this house! Use Uutils instead of GNU coreutils
+  nixpkgs.overlays = [(final: prev: {
+    coreutils = final.uutils-coreutils-noprefix;
+  })];
+
+
 
   # TODO: FIX - URGENT # Use Musl
    nixpkgs = {

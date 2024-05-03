@@ -57,7 +57,7 @@
   # services.nscd.enableNsncd = false;
 
   # Latest kernel
-  boot.kernelPackages = pkgsGnu.linuxPackages_latest.kernel.version;
+  boot.kernelPackages = pkgsGnu.linuxPackages_latest;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

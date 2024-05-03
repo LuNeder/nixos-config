@@ -16,11 +16,11 @@
       name = "cutuutils";
     });
   })];
-  system.replaceRuntimeDependencies = [
-    { original = pkgs.coreutils; replacement = pkgs.cutuutils; }
-    { original = pkgs.pkgsMusl.coreutils; replacement = pkgs.pkgsMusl.cutuutils; }
-    { original = pkgsGnu.coreutils; replacement = pkgsGnu.cutuutils; }
-  ];
+ # system.replaceRuntimeDependencies = [
+    #{ original = pkgs.coreutils; replacement = pkgs.cutuutils; }
+    #{ original = pkgs.pkgsMusl.coreutils; replacement = pkgs.pkgsMusl.cutuutils; }
+    #{ original = pkgsGnu.coreutils; replacement = pkgsGnu.cutuutils; }
+  #];
 
 
 
@@ -173,6 +173,7 @@
    # pkgs.authy
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.thunderbird
+    pkgs.cutuutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

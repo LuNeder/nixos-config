@@ -1,8 +1,13 @@
 {
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; };
 
-  outputs = { self, nixpkgs, lib, ... } {
+  outputs = { self, nixpkgs, ... } @ inputs: let
+    inherit (self) outputs;
+ in {
     nixosConfigurations = {
-virtualbox = lib.nixosSystem { modules = [./virtualbox]; };
+virtualbox ={
+        specialArgs = {inherit inputs outputs;};
+        modules = [./virtualbox];
+      };
   };
 }

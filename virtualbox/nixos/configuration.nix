@@ -14,7 +14,6 @@
   nixpkgs.overlays = [(final: prev: {
     cutuutils = final.uutils-coreutils-noprefix.overrideAttrs (old: {
       name = "cutuutils";
-      version = "versao com o mesmo tamanho";
     });
   })];
   system.replaceRuntimeDependencies = [

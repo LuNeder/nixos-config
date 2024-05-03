@@ -6,7 +6,7 @@
     nixosConfigurations = {
       virtualbox = (
         let 
-         pkgsMusl = import nixpkgs { system = "86_64-unknown-linux-musl"; };
+         pkgsMusl = import nixpkgs { config = "86_64-unknown-linux-musl"; };
          pkgsGnu = import nixpkgs { system = "x86_64-linux"; };
         in nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs outputs pkgsMusl;};

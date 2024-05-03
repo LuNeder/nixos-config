@@ -55,6 +55,8 @@
   #    installPhase = "mkdir $out";
   # };
   # services.nscd.enableNsncd = false;
+
+  # Latest kernel
   boot.kernelPackages = pkgsGnu.linuxPackages_latest.kernel.version;
 
   # Bootloader.
@@ -157,7 +159,7 @@
     pkgsGnu.git
    # pkgsGnu.authy
     inputs.compiz.packages.${pkgs.system}.default
-    pkgsGnu.gi
+    pkgsGnu.thunderbird
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

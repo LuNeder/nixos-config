@@ -5,9 +5,10 @@
     inherit (self) outputs;
  in {
     nixosConfigurations.virtualbox =
+      let pkgsMusl = import nixpkgs { system = "86_64-unknown-linux-musl"; };
       let pkgsGnu = import nixpkgs { system = "x86_64-linux"; };
       in nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs pkgsGnu;};
+        specialArgs = {inherit inputs outputs pkgsGnu pkgsMusl;};
         modules = [./nixos/configuration.nix];
       };
   };

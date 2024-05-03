@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgsGnu, lib, ... }:
+{ config, pkgs, pkgsGnu, pkgsMusl, lib, ... }:
 
 {
   imports =
@@ -11,9 +11,10 @@
     ];
 
 
-# Use Musl
+# TODO: FIX - URGENT # Use Musl
  nixpkgs = {
-              hostPlatform = { config = "x86_64-unknown-linux-musl"; };
+              hostPlatform = { config = "x86_64-linux"; }
+              # hostPlatform = { config = "x86_64-unknown-linux-musl"; };
               config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
               overlays = [
                 (final: prev: {

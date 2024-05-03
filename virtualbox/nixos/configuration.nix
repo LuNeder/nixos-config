@@ -13,49 +13,49 @@
 
 # TODO: FIX - URGENT # Use Musl
  nixpkgs = {
-              hostPlatform = { config = "x86_64-linux"; }
-              # hostPlatform = { config = "x86_64-unknown-linux-musl"; };
-              config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
-              overlays = [
-                (final: prev: {
-                  ccacheWrapper = prev.ccacheWrapper.override {
-                    extraConfig = ''
-                      export CCACHE_COMPRESS=1
-                      export CCACHE_DIR="/var/cache/ccache"
-                      export CCACHE_UMASK=007
-                      if [ ! -d "$CCACHE_DIR" ]; then
-                        echo "====="
-                        echo "Directory '$CCACHE_DIR' does not exist"
-                        echo "Please create it with:"
-                        echo "  sudo mkdir -m0770 '$CCACHE_DIR'"
-                        echo "  sudo chown root:nixbld '$CCACHE_DIR'"
-                        echo "====="
-                     #   exit 1
-                      fi
-                      if [ ! -w "$CCACHE_DIR" ]; then
-                        echo "====="
-                        echo "Directory '$CCACHE_DIR' is not accessible for user $(whoami)"
-                        echo "Please verify its access permissions"
-                        echo "====="
-                    #    exit 1
-                      fi
-                    '';
-                  };
-                  bind = prev.bind.overrideAttrs (old: { doCheck = false; });
-                })
-              ];
+              hostPlatform = { config = "x86_64-linux"; };
+#              # hostPlatform = { config = "x86_64-unknown-linux-musl"; };
+#              config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
+#              overlays = [
+#                (final: prev: {
+#                  ccacheWrapper = prev.ccacheWrapper.override {
+#                    extraConfig = ''
+#                      export CCACHE_COMPRESS=1
+#                      export CCACHE_DIR="/var/cache/ccache"
+#                      export CCACHE_UMASK=007
+#                      if [ ! -d "$CCACHE_DIR" ]; then
+#                        echo "====="
+#                        echo "Directory '$CCACHE_DIR' does not exist"
+#                        echo "Please create it with:"
+#                        echo "  sudo mkdir -m0770 '$CCACHE_DIR'"
+#                        echo "  sudo chown root:nixbld '$CCACHE_DIR'"
+#                        echo "====="
+#                     #   exit 1
+#                      fi
+#                      if [ ! -w "$CCACHE_DIR" ]; then
+#                        echo "====="
+#                        echo "Directory '$CCACHE_DIR' is not accessible for user $(whoami)"
+#                        echo "Please verify its access permissions"
+#                        echo "====="
+#                    #    exit 1
+#                      fi
+#                    '';
+#                  };
+#                  bind = prev.bind.overrideAttrs (old: { doCheck = false; });
+#                })
+#              ];
             };
 # speed up
- boot.kernelPackages = pkgsGnu.linuxPackages;
+# boot.kernelPackages = pkgsGnu.linuxPackages;
 # services.qemuGuest.enable = lib.mkForce false;
  # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgsGnu; };
-# fixes
- i18n.glibcLocales = pkgs.stdenv.mkDerivation {
-    name = "empty";
-    dontUnpack = true;
-    installPhase = "mkdir $out";
- };
- services.nscd.enableNsncd = false;
+## fixes
+# i18n.glibcLocales = pkgs.stdenv.mkDerivation {
+#    name = "empty";
+#    dontUnpack = true;
+#    installPhase = "mkdir $out";
+# };
+# services.nscd.enableNsncd = false;
 
 
   # Bootloader.

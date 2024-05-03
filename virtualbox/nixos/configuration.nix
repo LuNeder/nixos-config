@@ -149,17 +149,17 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true; 
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    pkgsGnu.curl
-    pkgsGnu.git
-   # pkgsGnu.authy
+    pkgs.curl
+    pkgs.git
+   # pkgs.authy
     inputs.compiz.packages.${pkgs.system}.default
-    pkgsGnu.thunderbird
+    pkgs.thunderbird
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

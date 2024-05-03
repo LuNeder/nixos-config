@@ -97,7 +97,7 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   # Compiz
-  services.xserver.windowManager.compiz.enable = true;
+  #services.xserver.windowManager.compiz.enable = true; # COMPIZ IS NOT AVAILABLE ON NIXOS FUCK YOU NIXOS YOU SUCK I HOPE NO ONE EVER USES NIX AGAIN
 
   # Configure keymap in X11
   services.xserver = {

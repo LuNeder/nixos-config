@@ -1,5 +1,8 @@
 {
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; };
+  inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
+    compiz.url = "github:misterio77/compiz-nix";
+    compiz.inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   outputs = { self, nixpkgs, ... } @ inputs: 
     let 

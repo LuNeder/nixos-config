@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "compiz": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1714764627,
+        "narHash": "sha256-NH9d3dzEGR1fCDWvmxomX1HaySuYyADsoCQQA7FC/nE=",
+        "owner": "misterio77",
+        "repo": "compiz-nix",
+        "rev": "66246bdba9b09dc29cc1db8de78a901469c203e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "misterio77",
+        "repo": "compiz-nix",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1714635257,
@@ -18,7 +39,23 @@
     },
     "root": {
       "inputs": {
+        "compiz": "compiz",
         "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
       }
     }
   },

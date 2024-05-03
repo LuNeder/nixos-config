@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgsGnu, pkgsMusl, lib, ... }:
+{ inputs, config, pkgs, pkgsGnu, pkgsMusl, lib, ... }:
 
 {
   imports =
@@ -157,6 +157,8 @@
     pkgsGnu.curl
     pkgsGnu.git
    # pkgsGnu.authy
+    inputs.compiz.packages.${pkgs.system}.default
+    pkgsGnu.gi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

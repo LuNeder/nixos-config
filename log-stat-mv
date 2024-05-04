@@ -1,11 +1,11 @@
-stat and ls bin-tmp n   File: '/run/wrappers/bin-tmp' -> '/run/wrappers/wrappers.Qc5iDM6OYx'
+stat and ls bin-tmp n   File: '/run/wrappers/bin-tmp' -> '/run/wrappers/wrappers.HX7BtiPZIc'
   Size: 33        	Blocks: 0          IO Block: 4096   symbolic link
-Device: 19h/25d	Inode: 210         Links: 1
+Device: 19h/25d	Inode: 248         Links: 1
 Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
-Access: 2024-05-04 18:25:06.779358585 -0300
-Modify: 2024-05-04 18:25:06.779358585 -0300
-Change: 2024-05-04 18:25:06.779358585 -0300
- Birth: 2024-05-04 18:25:06.779358585 -0300
+Access: 2024-05-04 18:37:06.047463611 -0300
+Modify: 2024-05-04 18:37:06.047463611 -0300
+Change: 2024-05-04 18:37:06.047463611 -0300
+ Birth: 2024-05-04 18:37:06.047463611 -0300
 chsh
 dbus-daemon-launch-helper
 fusermount
@@ -24,14 +24,14 @@ sudoedit
 umount
 unix_chkpwd
 
-stat and ls bin n   File: '/run/wrappers/bin' -> '/run/wrappers/wrappers.nJTJZznqKN'
+stat and ls bin n   File: '/run/wrappers/bin' -> '/run/wrappers/wrappers.ZtbxBlMdk6'
   Size: 33        	Blocks: 0          IO Block: 4096   symbolic link
-Device: 19h/25d	Inode: 96          Links: 1
+Device: 19h/25d	Inode: 229         Links: 1
 Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
-Access: 2024-05-04 17:45:21.928629760 -0300
-Modify: 2024-05-04 17:45:21.880632883 -0300
-Change: 2024-05-04 17:45:21.881632818 -0300
- Birth: 2024-05-04 17:45:21.880632883 -0300
+Access: 2024-05-04 18:28:39.398791180 -0300
+Modify: 2024-05-04 18:28:39.383791227 -0300
+Change: 2024-05-04 18:28:39.393791196 -0300
+ Birth: 2024-05-04 18:28:39.383791227 -0300
 chsh
 dbus-daemon-launch-helper
 fusermount

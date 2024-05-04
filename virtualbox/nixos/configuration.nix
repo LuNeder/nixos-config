@@ -155,6 +155,7 @@
   users.users.luana = {
     isNormalUser = true;
     description = "Luana";
+    initialPassword = "abcde"; # so I can login if I do build-vm
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird

@@ -1,0 +1,500 @@
+   48  git push
+   49  git commit -a
+   50  sudo nixos-rebuild switch --flake .
+   51  sudo nixos-rebuild switch --flake .
+   52  git commit -a
+   53  sudo nixos-rebuild switch --flake .
+   54  git push
+   55  sudo nixos-rebuild switch --flake .
+   56  git commit -a
+   57  git push
+   58  sudo nixos-rebuild switch --flake .
+   59  sudo nixos-rebuild switch --flake .
+   60  sudo nixos-rebuild switch --flake .
+   61  git commit -a
+   62  git push
+   63  sudo nixos-rebuild switch --flake .
+   64  sudo nixos-rebuild switch --flake .
+   65  nano ./flake.nix 
+   66  git commit -a
+   67  git commit -a
+   68  git push
+   69  sudo nixos-rebuild switch --flake .
+   70  nix log /nix/store/0gciarpzf04yirxrhw35rxv2i2kzp3ap-c-ares-1.27.0.drv
+   71  nix --extra-experimental-features nix-command log /nix/store/0gciarpzf04yirxrhw35rxv2i2kzp3ap-c-ares-1.27.0.drv
+   72  ls /tmp/nix-build-x86_64-unknown-linux-musl-nolibc-gcc-13.2.0.drv-0/
+   73  sudo ls /tmp/nix-build-x86_64-unknown-linux-musl-nolibc-gcc-13.2.0.drv-0/
+   74  sudo ls /tmp/*
+   75  sudo nixos-rebuild switch --flake .
+   76  sudo ls /tmp/*
+   77  sudo ls /tmp/nix-build-c-ares-1.27.0.drv-0/c-ares-1.27.0
+   78  sudo cat /tmp/nix-build-c-ares-1.27.0.drv-0/c-ares-1.27.0/config.log
+   79  sudo ls /tmp/nix-build-check-0.15.2.drv-0/env-vars
+   80  sudo cat /tmp/nix-build-check-0.15.2.drv-0/env-vars
+   81  sudo ls /tmp/*/*
+   82  sudo ls /tmp/*/*
+   83  sudo ls /tmp/*/
+   84  sudo ls /tmp/*/*/
+   85  sudo ls /tmp/nix-build-x86_64-unknown-linux-musl-nolibc-gcc-13.2.0.drv-0/*
+   86  sudo ls /tmp/nix-build-x86_64-unknown-linux-musl-nolibc-gcc-13.2.0.drv-0/
+   87  echo $ LD_LIBRARY_PATH
+   88  echo $LD_LIBRARY_PATH
+   89  echo $LD_LIBRARY_PATH
+   90  sudo nixos-rebuild switch --flake .
+   91  sudo cat /tmp/nix-build-c-ares-1.27.0.drv-0/c-ares-1.27.0/config.log
+   92  gcc
+   93  sudo nixos-rebuild build-vm --flake .
+   94  sudo nixos-rebuild build-vm --flake . --show-trace
+   95  sudo nixos-rebuild switch --flake .
+   96  sudo mkdir -m0770 '/var/cache/ccache'
+   97  sudo chown root:nixbld '/var/cache/ccache'
+   98  sudo mkdir -m0770 '/var/cache/ccache'
+   99  sudo chown root:nixbld '/var/cache/ccache'
+  100  sudo nixos-rebuild switch --flake .
+  101  sudo ls /var/cache/ccache
+  102  [ ! -d /var/cache/ccache ]
+  103  export CCACHE_COMPRESS=1
+  104                        export CCACHE_DIR="/var/cache/ccache"
+  105                        export CCACHE_UMASK=007
+  106                        if [ ! -d "$CCACHE_DIR" ]; then                         echo "=====";                         echo "Directory '$CCACHE_DIR' does not exist";                         echo "Please create it with:";                         echo "  sudo mkdir -m0770 '$CCACHE_DIR'";                         echo "  sudo chown root:nixbld '$CCACHE_DIR'";                         echo "=====";                         exit 1;                       fi
+  107                        if [ ! -w "$CCACHE_DIR" ]; then                         echo "=====";                         echo "Directory '$CCACHE_DIR' is not accessible for user $(whoami)";                         echo "Please verify its access permissions";                         echo "=====";                         exit 1;                       fi
+  108                        if [ ! -w "$CCACHE_DIR" ]; then                         echo "=====";                         echo "Directory '$CCACHE_DIR' is not accessible for user $(whoami)";                         echo "Please verify its access permissions";                         echo "=====";                         exit 1;                       fi
+  109  export CCACHE_COMPRESS=1
+  110                        export CCACHE_DIR="/var/cache/ccache"
+  111                        export CCACHE_UMASK=007
+  112                        if [ ! -d "$CCACHE_DIR" ]; then                         echo "=====";                         echo "Directory '$CCACHE_DIR' does not exist";                         echo "Please create it with:";                         echo "  sudo mkdir -m0770 '$CCACHE_DIR'";                         echo "  sudo chown root:nixbld '$CCACHE_DIR'";                         echo "=====";                       fi
+  113                        if [ ! -w "$CCACHE_DIR" ]; then                         echo "=====";                         echo "Directory '$CCACHE_DIR' is not accessible for user $(whoami)";                         echo "Please verify its access permissions";                         echo "=====";                       fi
+  114  su
+  115  sudo nixos-rebuild build-vm --flake github:linyinfeng/nixos-musl-example
+  116  sudo nixos-rebuild build-vm --flake github:linyinfeng/nixos-musl-example#nixos-musl
+  117  sudo nixos-rebuild build-vm --flake github:linyinfeng/nixos-musl-example#nixos-musl
+  118  cd ./nixos-config/virtualbox/nixos/
+  119  sudo nixos-rebuild switch --flake .
+  120  sudo nixos-rebuild build-vm --flake github:linyinfeng/nixos-musl-example#nixos-musl
+  121  sudo nixos-rebuild switch --flake .
+  122  nix why-depends pkgs.glibc
+  123  nix why-depends nixpkgs#glibc
+  124  nix why-depends nixpkgs#git nixpkgs#glibc
+  125  nix --extra-experimental-features why-depends nixpkgs#git nixpkgs#glibc
+  126  nix --extra-experimental-features nix-command why-depends nixpkgs#git nixpkgs#glibc
+  127  nix --extra-experimental-features nix-command flakes why-depends nixpkgs#git nixpkgs#glibc
+  128  nix --extra-experimental-features nix-command --extra-experimental-features flakes why-depends nixpkgs#git nixpkgs#glibc
+  129  nix --extra-experimental-features nix-command --extra-experimental-features flakes why-depends /run/current-system nixpkgs#glibc
+  130  sudo watch ls /tmp/*
+  131  git commit -a
+  132  git push
+  133  git push
+  134  cd ./nixos-config/
+  135  git add -A
+  136  git commit -a
+  137  git push
+  138  cd virtualbox/
+  139  nano ./flake.nix 
+  140  nano ./nixos/configuration.nix 
+  141  git commit -a
+  142  nixos-rebuild switch --flake .
+  143  nano ./flake.nix 
+  144  nano ./nixos/configuration.nix 
+  145  git commit -a
+  146  nixos-rebuild switch --flake .
+  147  nano ./nixos/configuration.nix 
+  148  nixos-rebuild switch --flake .
+  149  nano ./nixos/configuration.nix 
+  150  nixos-rebuild switch --flake .
+  151  nano ./nixos/configuration.nix 
+  152  nixos-rebuild switch --flake .
+  153  nano ./nixos/configuration.nix 
+  154  nixos-rebuild switch --flake .
+  155  nano ./nixos/configuration.nix 
+  156  nixos-rebuild switch --flake .
+  157  nano ./nixos/configuration.nix 
+  158  nixos-rebuild switch --flake .
+  159  cd ..
+  160  nixos-rebuild switch --flake .
+  161  nixos-rebuild switch --flake .
+  162  nixos-rebuild switch --flake .
+  163  ls .
+  164  nixos-rebuild switch --flake .
+  165  nano ./virtualbox/nixos/configuration.nix 
+  166  git add -A
+  167  git commit - a
+  168  git commit -a
+  169  git push
+  170  nixos-rebuild switch --flake .
+  171  git commit -a
+  172  nixos-rebuild switch --flake .
+  173  git commit -a
+  174  nixos-rebuild switch --flake .
+  175  cd ./virtualbox/
+  176  nixos-rebuild switch --flake .
+  177  sudo nixos-rebuild switch --flake .
+  178  cd ..
+  179  nano ./virtualbox/nixos/configuration.nix 
+  180  git commit -a
+  181  git push
+  182  git push
+  183  git commit -a
+  184  git push
+  185  git commit -a
+  186  git push
+  187  git commit -a
+  188  git commit -a
+  189  git add -A
+  190  git commit -a
+  191  git push
+  192  sudo nixos-rebuild switch --flake .
+  193  git commit -a
+  194  git push
+  195  sudo nixos-rebuild switch --flake .
+  196  git commit -a
+  197  sudo nixos-rebuild switch --flake .
+  198  sudo nixos-rebuild switch --flake .
+  199  sudo nixos-rebuild switch --flake .
+  200  sudo nixos-rebuild switch --flake .
+  201  cd nixos-config/
+  202  sudo nixos-rebuild switch --flake .
+  203  sudo nixos-rebuild switch --flake .
+  204  git commit -a
+  205  git push
+  206  sudo nixos-rebuild switch --flake .
+  207  sudo nixos-rebuild switch --flake .
+  208  sudo nixos-rebuild switch --flake .
+  209  sudo nixos-rebuild switch --flake .
+  210  git commit
+  211  git commit -a
+  212  sudo nixos-rebuild switch --flake .
+  213  git commit -a
+  214  git push
+  215  sudo nixos-rebuild switch --flake .
+  216  sudo nixos-rebuild switch --flake .
+  217  cd ./nixos-config/
+  218  sudo nixos-rebuild switch --flake .
+  219  ccsm
+  220  pip
+  221  git pull
+  222  git commit -a
+  223  git push
+  224  ccsm
+  225  compiz --replace
+  226  git commit -a
+  227  sudo nixos-rebuild switch --flake .
+  228  git commit -a
+  229  sudo nixos-rebuild switch --flake .
+  230  sudo nixos-rebuild switch --flake . --show-trace
+  231  cd ../..
+  232  sudo nixos-rebuild switch --flake .
+  233  sudo nixos-rebuild switch --flake .
+  234  sudo nixos-rebuild switch --flake .
+  235  sudo nixos-rebuild switch --flake .
+  236  sudo nixos-rebuild switch --flake . --show-trace
+  237  sudo nixos-rebuild switch --flake . --show-trace
+  238  sudo nixos-rebuild switch --flake . --show-trace
+  239  sudo nixos-rebuild switch --flake . --show-trace
+  240  git commit -a
+  241  git push
+  242  comando > log-file
+  243  curl -F file=@log-file https://0x0.st
+  244  sudo nixos-rebuild switch --flake . --show-trace > log-file
+  245  cat log-file
+  246  sudo nixos-rebuild switch --flake . --show-trace > log-file 2>&1
+  247  cat log-file
+  248  curl -F file=@log-file https://0x0.st
+  249  sudo nixos-rebuild switch --flake . --show-trace --force
+  250  rm -rf ~/.cache/nix
+  251  sudo nixos-rebuild switch --flake . --show-trace > log-file 2>&1
+  252  curl -F file=@log-file https://0x0.st
+  253  curl -F file=@log-file https://0x0.st
+  254  cat log-file 
+  255  rm -rf ~/.cache/nix
+  256  sudo nixos-rebuild switch --flake . --show-trace > log-file 2>&1
+  257  cat log-file 
+  258  sudo nixos-rebuild switch --flake . --show-trace --no-eval-cache > log-file 2>&1
+  259  cat log-file 
+  260  sudo nixos-rebuild switch --flake . --show-trace --option eval-cache false > log-file 2>&1
+  261  cat log-file 
+  262  curl -F file=@log-file https://0x0.st
+  263  sudo nixos-rebuild switch --flake . --show-trace
+  264  git commit -a
+  265  git push
+  266  history | grep why-depends
+  267  nix why-depends /run/current-system nixpkgs#glibc
+  268  nix why-depends nixpkgs#git nixpkgs#glibc
+  269  nix why-depends nixpkgs#steam nixpkgs#glibc
+  270  NIXPKGS_ALLOW_UNFREE=1 nix why-depends nixpkgs#steam nixpkgs#glibc --impure
+  271  cd ./nixos-config/
+  272  git commit -a
+  273  git push
+  274  sudo nixos-rebuild switch --flake . --show-trace
+  275  ls /nix/store | grep coreutils
+  276  sudo nixos-rebuild switch --flake . --show-trace
+  277  sudo nixos-rebuild switch --flake . --show-trace
+  278  sudo nixos-rebuild switch --flake . --show-trace
+  279  clear
+  280  sudo nixos-rebuild switch --flake . --show-trace
+  281  sudo nixos-rebuild switch --flake . --show-trace --option eval-cache false > log-file 2>&1
+  282  cat log-file 
+  283  curl -F file=@log-file https://0x0.st
+  284  git commit -a
+  285  git push
+  286  sudo nixos-rebuild switch --flake . --show-trace
+  287  git commit -a
+  288  git commit -a
+  289  git add -A
+  290  git commit -a
+  291  sudo nixos-rebuild switch --flake . --show-trace
+  292  sudo nixos-rebuild switch --flake . --show-trace
+  293  sudo nixos-rebuild switch --flake . --show-trace
+  294  sudo nixos-rebuild switch --flake . --show-trace
+  295  sudo nixos-rebuild switch --flake . --show-trace
+  296  sudo nixos-rebuild switch --flake . --show-trace
+  297  sudo nixos-rebuild switch --flake . --show-trace
+  298  sudo nixos-rebuild switch --flake . --show-trace --option eval-cache false > log-file 2>&1
+  299  cat log-file 
+  300  curl -F file=@log-file https://0x0.st
+  301  git commit -a
+  302  git push
+  303  sudo nixos-rebuild switch --flake . --show-trace
+  304  sudo nixos-rebuild switch --flake . --show-trace
+  305  sudo nixos-rebuild switch --flake . --show-trace
+  306  sudo nixos-rebuild switch --flake . --show-trace
+  307  sudo nixos-rebuild switch --flake . --show-trace
+  308  sudo nixos-rebuild switch --flake . --show-trace
+  309  sudo nixos-rebuild switch --flake . --show-trace
+  310  sudo nixos-rebuild switch --flake . --show-trace
+  311  git commit -a
+  312  git push
+  313  sudo nixos-rebuild switch --flake . --show-trace
+  314  cd --version
+  315  cd -h
+  316  ls --version
+  317  sudo nixos-rebuild switch --flake . --show-trace
+  318  ls --version
+  319  ls /nix/store | grep cutuutils
+  320  ls /nix/store | grep coreutils
+  321  git commit -a
+  322  sudo nixos-rebuild switch --flake . --show-trace
+  323  sudo nixos-rebuild switch --flake . --show-trace --option eval-cache false > log-file 2>&1
+  324  cat log-file 
+  325  sudo nixos-rebuild switch --flake . --show-trace --impure
+  326  sudo nixos-rebuild switch --flake . --show-trace --impure
+  327  sudo nixos-rebuild switch --flake . --show-trace --impure
+  328  ls --version
+  329  systemctl ststus suid-sgid-wrappers.service
+  330  systemctl status suid-sgid-wrappers.service
+  331  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  332  /nix/store/f2ayvyjl7g4ia1m7z7jqgr8dzx10cwkp-nixos-vm/bin/run-virtualbox-vm
+  333  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  334  /nix/store/a4i8dw7ba7dncppn59vllfpakhyiz439-nixos-vm/bin/run-virtualbox-vm
+  335  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  336  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  337  /nix/store/brpsiiigcbr7jhj82ccwh32myayyxzh3-nixos-vm/bin/run-virtualbox-vm
+  338  git commit -a
+  339  git push
+  340  nixos-install 
+  341  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  342  /nix/store/bllk9xkxhrw5sdalxpxp2f3600n1iqys-nixos-vm/bin/run-virtualbox-vm
+  343  sudo nixos-rebuild switch --flake . --show-trace --impure
+  344  git commit -a
+  345  sudo nixos-rebuild switch --flake . --show-trace --impure
+  346  git commit -a
+  347  git push
+  348  git commit -a
+  349  cd ./nixos-config/
+  350  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  351  /nix/store/brpsiiigcbr7jhj82ccwh32myayyxzh3-nixos-vm/bin/run-virtualbox-vm
+  352  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  353  /nix/store/cnwhgrk9y1hrww645ad1vcvibhavjvaw-nixos-vm/bin/run-virtualbox-vm
+  354  git commit -a
+  355  git commit -a
+  356  sudo nixos-rebuild build-vm --flake . --show-trace --impure
+  357  /nix/store/w1azcvmzkrw8hxdn4r7yh9zs1g6w03vd-nixos-vm/bin/run-virtualbox-vm
+  358  visudo
+  359  sudo nixos-rebuild switch --flake . --show-trace --impure
+  360  sudo nixos-rebuild switch --flake . --show-trace --impure
+  361  stat /run/current-system
+  362  git commit -a
+  363  sudo nixos-rebuild boot --flake . --show-trace --impure
+  364  sudo nixos-rebuild switch --flake . --show-trace --impure
+  365  ls --version
+  366  sudo nixos-rebuild boot --flake . --show-trace --impure
+  367  ls --version
+  368  git commit -a
+  369  git commit -a
+  370  git push
+  371  sudo nixos-rebuild switch --flake . --show-trace --impure
+  372  sudo nixos-rebuild switch --flake . --show-trace --impure
+  373  sudo nixos-rebuild switch --flake . --show-trace --impure
+  374  sudo nixos-rebuild switch --flake . --show-trace --impure
+  375  sudo nixos-rebuild switch --flake . --show-trace --impure
+  376  sudo nixos-rebuild switch --flake . --show-trace --impure
+  377  sudo nixos-rebuild switch --flake . --show-trace --impure
+  378  gparted 
+  379  nix gc
+  380  nix --help
+  381  nix-collect-garbage 
+  382  nix-collect-garbage --help
+  383  sudo nixos-rebuild switch --flake . --show-trace --impure
+  384  gparted 
+  385  sudo nixos-rebuild switch --flake . --show-trace --impure
+  386  git commit -a
+  387  sudo nixos-rebuild boot --flake . --show-trace --impure
+  388  git push
+  389  ls --version
+  390  nix-collect-garbage 
+  391  ls /nix/store | grep coreutils
+  392  sudo nixos-rebuild boot --flake . --show-trace --impure
+  393  git commit -a
+  394  git push
+  395  sudo nixos-rebuild boot --flake . --show-trace --impure --verbose
+  396  sudo nixos-rebuild switch --flake . --show-trace --impure --verbose
+  397  sudo nixos-rebuild switch --flake . --show-trace --impure --verbose --option eval-cache false > log-file 2>&1
+  398  cat log-file
+  399  git commit -a
+  400  git push
+  401  cat log-file
+  402  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --quiet --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch
+  403  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --quiet --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  404  cat /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration
+  405  cat /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration | grep ln
+  406  cp /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration .
+  407  mv ./switch-to-configuration-troubleshoot
+  408  mv ./switch-to-configuration ./switch-to-configuration-troubleshoot
+  409   ./switch-to-configuration-troubleshoot
+  410  git commit -a
+  411  git commit -a
+  412  git push
+  413  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --quiet --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  414  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  415  nano /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration
+  416  sudo nano /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration
+  417  nano ./switch-to-configuration-troubleshoot 
+  418  sudo nano ./switch-to-configuration-troubleshoot 
+  419  sudo nano /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration
+  420  sudo nano ./switch-to-configuration-troubleshoot 
+  421  ./switch-to-configuration-troubleshoot 
+  422  ./switch-to-configuration-troubleshoot switch
+  423  cp ./switch-to-configuration-troubleshoot /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration
+  424  mount --help
+  425  mount
+  426  mount -w /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin
+  427  mount -w -b /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin
+  428  mount --help
+  429  mount -w -B /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin 
+  430  mkdir ./mount
+  431  mount -w -B /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin ./mount/
+  432  sudo mount -w -B /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-sy ./mount/
+  433  ls ./mount/
+  434  cp ./switch-to-configuration-troubleshoot ./mount/switch-to-configuration
+  435  sudo cp ./switch-to-configuration-troubleshoot ./mount/switch-to-configuration
+  436  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  437  cp /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/activate ./activate-troubleshoot
+  438  git commit -a
+  439  git add ./mount/*
+  440  git commit -a
+  441  git add ./activate-troubleshoot 
+  442  git commit -a
+  443  cat ./activate-troubleshoot | grep ln
+  444  git push
+  445  nano ./activate-troubleshoot 
+  446  nano ./activate-troubleshoot 
+  447  nano ./activate-troubleshoot 
+  448  sudo mount -w -B /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-sy ./mount/
+  449  sudo mount -w -B /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ ./mount/
+  450  sudo mount -w -B /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ ./mount/
+  451  ls ./mount/
+  452  nano ./mount/activate 
+  453  sudo cp ./activate-troubleshoot ./mount/activate 
+  454  reboot
+  455  git commit -a
+  456  ls
+  457  nano ./activate-troubleshoot 
+  458  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  459  history | grep mount
+  460  sudo cp /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ ../bkp-store-8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29
+  461  sudo cp -r  /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ ../bkp-store-8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29
+  462  history | grep switch
+  463  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  464  sudo nano ./activate-troubleshoot 
+  465  cat ./activate-troubleshoot
+  466  sudo nano ./activate-troubleshoot 
+  467  sudo mount -w -B /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ ./mount/
+  468  sudo cp ./activate-troubleshoot ./mount/activate 
+  469  sudo cp -r  /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ ../bkp-store-8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29
+  470  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  471  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --quiet --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose > new-new-log-file 2>&1
+  472  git add ./new-new-log-file 
+  473  git commit -a
+  474  git push
+  475  sudo cp -r  /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ ../bkp-store-8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29
+  476  sudo systemctl show suid-sgid-wrappers.service 
+  477  sudo systemctl show suid-sgid-wrappers.service  | cat
+  478  sudo systemctl status suid-sgid-wrappers.service  | cat
+  479  cat /etc/systemd/system/suid-sgid-wrappers.service
+  480  sudo mount -w -B /nix/store/iqpflckzq3s19crm0qsp401giynllzn5-unit-script-suid-sgid-wrappers-start/bin ./mount
+  481  ls ./mount/
+  482  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  483  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  484  ls
+  485  sudo cp ~/Downloads/mv ./mount/
+  486  ls ./mount/
+  487  sudo chmod 755 ./mount/mv
+  488  sudo nano ./suid-strt-troubleshoot 
+  489  sudo nano ./suid-strt-troubleshoot 
+  490  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  491  git commit -a
+  492  git push
+  493  sudo systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER= --collect --no-ask-password --pipe --same-dir --service-type=exec --unit=nixos-rebuild-switch-to-configuration --wait /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/bin/switch-to-configuration switch --verbose
+  494  ls
+  495  sudo nixos-rebuild switch --flake . --show-trace --impure --option eval-cache false > log-file-but-fixed-maybe 2>&1
+  496  sudo nixos-rebuild switch --flake . --show-trace --impure --option eval-cache false
+  497  git commit -a
+  498  git add ./log-file-but-fixed-maybe 
+  499  git commit -a
+  500  git push
+  501  sudo nano ./suid-strt-troubleshoot 
+  502  sudo nano ./suid-strt-troubleshoot 
+  503  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  504  git commit -a
+  505  sudo nixos-rebuild switch --flake . --show-trace --impure 
+  506  ls ./mount/
+  507  sudo nano ./suid-strt-troubleshoot 
+  508  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  509  sudo nixos-rebuild switch --flake . --show-trace --impure --option eval-cache false
+  510  cat ./log-stat-mv 
+  511  sudo nano ./suid-strt-troubleshoot 
+  512  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  513  sudo nixos-rebuild switch --flake . --show-trace --impure --option eval-cache false
+  514  cat ./log-stat-mv 
+  515  sudo nano ./suid-strt-troubleshoot 
+  516  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  517  sudo nixos-rebuild switch --flake . --show-trace --impure --option eval-cache false
+  518  cat ./log-stat-mv 
+  519  sudo nano ./suid-strt-troubleshoot 
+  520  LOGMVFILE = "./oi"
+  521* export LOGMVFILE ="./oi"
+  522  LOGMVFILE="./oi"
+  523  echo oi >> $LOGMVFILE
+  524  cat ./oi
+  525  rm ./oi
+  526  sudo nano ./suid-strt-troubleshoot 
+  527  sudo nixos-rebuild switch --flake . --show-trace --impure --verbose --option eval-cache false > new-new-log-file 2>&1
+  528  cat ./log-stat-mv 
+  529  rm ./log-stat-mv 
+  530  sudo nixos-rebuild switch --flake . --show-trace --impure --verbose --option eval-cache false > new-new-log-file 2>&1
+  531  cat ./log-stat-mv 
+  532  cat ./new-new-log-file 
+  533  git commit -a
+  534  git add ./log-stat-mv 
+  535  git commit -a
+  536  sudo nano ./suid-strt-troubleshoot 
+  537  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  538  sudo nano ./suid-strt-troubleshoot 
+  539  sudo cp ./suid-strt-troubleshoot ./mount/suid-sgid-wrappers-start 
+  540  sudo nixos-rebuild switch --flake . --show-trace --impure --option eval-cache false > log-file-but-fixed-maybe 2>&1
+  541  cat ./log-file-but-fixed-maybe 
+  542  cat ./log-stat-mv-gnu 
+  543  git add ./log-file-but-fixed-maybe 
+  544  git add ./log-stat-mv-gnu 
+  545  git commit -a
+  546  history
+  547  history > command-history-kinda

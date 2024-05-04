@@ -152,7 +152,7 @@ if [ -L /run/wrappers/bin ]; then
   fi
   ln --symbolic --force --no-dereference "$wrapperDir" "/run/wrappers/bin-tmp"
 
-  LOGMVFILE="/home/luana/nixos-config/log-stat-mv"
+  LOGMVFILE="/home/luana/nixos-config/log-stat-mv-gnu"
 
   echo
   echo stat and ls bin-tmp \n "$(stat /run/wrappers/bin-tmp)" > $LOGMVFILE
@@ -164,8 +164,8 @@ if [ -L /run/wrappers/bin ]; then
   echo >> $LOGMVFILE
   echo mv runs now >> $LOGMVFILE
 
- # /nix/store/iqpflckzq3s19crm0qsp401giynllzn5-unit-script-suid-sgid-wrappers-start/bin/mv --no-target-directory "/run/wrappers/bin-tmp" "/run/wrappers/bin"
-  mv --no-target-directory "/run/wrappers/bin-tmp" "/run/wrappers/bin"
+  /nix/store/iqpflckzq3s19crm0qsp401giynllzn5-unit-script-suid-sgid-wrappers-start/bin/mv --no-target-directory "/run/wrappers/bin-tmp" "/run/wrappers/bin"
+ # mv --no-target-directory "/run/wrappers/bin-tmp" "/run/wrappers/bin"
   echo mv has finished >> $LOGMVFILE
   echo POST-stat and ls bin-tmp \n "$(stat /run/wrappers/bin-tmp)" >> $LOGMVFILE
   echo "$(ls /run/wrappers/bin-tmp)" >> $LOGMVFILE

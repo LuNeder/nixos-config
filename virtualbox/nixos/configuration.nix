@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
     ];
 
-# TODO: FIX - SUPER URGENT # Broken due to uutils issue #6350 (?) # No GNU on this house! Use Uutils instead of GNU coreutils
+# Broken due to uutils issue #6351 # TODO: FIX - SUPER URGENT # No GNU on this house! Use Uutils instead of GNU coreutils
   system.replaceRuntimeDependencies = [{
      original = pkgs.coreutils;
       replacement = pkgs.uutils-coreutils-noprefix.overrideAttrs (old: {

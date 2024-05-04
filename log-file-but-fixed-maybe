@@ -1,8 +1,8 @@
 warning: Git tree '/home/luana/nixos-config' is dirty
 building the system configuration...
 warning: Git tree '/home/luana/nixos-config' is dirty
-trace: warning: The option `services.xserver.xkbVariant' defined in `/nix/store/b17f7nxgzzamc4sf7yfr27y94962j681-source/virtualbox/nixos/configuration.nix' has been renamed to `services.xserver.xkb.variant'.
-trace: warning: The option `services.xserver.layout' defined in `/nix/store/b17f7nxgzzamc4sf7yfr27y94962j681-source/virtualbox/nixos/configuration.nix' has been renamed to `services.xserver.xkb.layout'.
+trace: warning: The option `services.xserver.xkbVariant' defined in `/nix/store/9j6r19d2x565rcqb0lgjp4xs2z6lssm4-source/virtualbox/nixos/configuration.nix' has been renamed to `services.xserver.xkb.variant'.
+trace: warning: The option `services.xserver.layout' defined in `/nix/store/9j6r19d2x565rcqb0lgjp4xs2z6lssm4-source/virtualbox/nixos/configuration.nix' has been renamed to `services.xserver.xkb.layout'.
 trace: replace-dependency.nix: Derivation /nix/store/f1g7j9gp6qzpb16n9bf6b5gq4jld7g8j-nixos-system-virtualbox-24.05.20240502.63c3a29 does not depend on /nix/store/pl6hbm0sbkfd2ma0671x543zklb2pc97-coreutils-9.5
 activating the configuration...
 /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/activate, /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29   
@@ -21,12 +21,12 @@ Change: 2024-05-04 15:37:19.211103476 -0300
 
 stat /run/current-system: n   File: '/run/current-system' -> '/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29'
   Size: 90        	Blocks: 0          IO Block: 4096   symbolic link
-Device: 17h/23d	Inode: 1973        Links: 1
+Device: 17h/23d	Inode: 2037        Links: 1
 Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
-Access: 2024-05-04 18:28:38.728790682 -0300
-Modify: 2024-05-04 18:25:05.946349350 -0300
-Change: 2024-05-04 18:25:05.946349350 -0300
- Birth: 2024-05-04 18:25:05.946349350 -0300
+Access: 2024-05-04 19:54:58.941630163 -0300
+Modify: 2024-05-04 18:37:05.162462516 -0300
+Change: 2024-05-04 18:37:05.162462516 -0300
+ Birth: 2024-05-04 18:37:05.162462516 -0300
 
 ln (GNU coreutils) 8.30
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -37,12 +37,12 @@ There is NO WARRANTY, to the extent permitted by law.
 Written by Mike Parker and David MacKenzie.
 stat /run/current-system, post error: n   File: '/run/current-system' -> '/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29'
   Size: 90        	Blocks: 0          IO Block: 4096   symbolic link
-Device: 17h/23d	Inode: 2005        Links: 1
+Device: 17h/23d	Inode: 2080        Links: 1
 Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
-Access: 2024-05-04 18:28:38.744790781 -0300
-Modify: 2024-05-04 18:28:38.744790781 -0300
-Change: 2024-05-04 18:28:38.744790781 -0300
- Birth: 2024-05-04 18:28:38.744790781 -0300
+Access: 2024-05-04 19:54:58.959630212 -0300
+Modify: 2024-05-04 19:54:58.959630212 -0300
+Change: 2024-05-04 19:54:58.959630212 -0300
+ Birth: 2024-05-04 19:54:58.959630212 -0300
 
 reloading user units for luana...
 restarting sysinit-reactivation.target

@@ -11,22 +11,22 @@
     ];
 
   # No GNU on this house! Use Uutils instead of GNU coreutils
-  system.replaceRuntimeDependencies = [{
-    original = pkgs.coreutils;
-    replacement = pkgs.uutils-coreutils-noprefix.overrideAttrs (old: {
-      name = pkgs.coreutils.name;
-    });
-  }{
-    original = pkgs.pkgsMusl.coreutils;
-    replacement = pkgs.pkgsMusl.uutils-coreutils-noprefix.overrideAttrs (old: {
-      name = pkgs.pkgsMusl.coreutils.name;
-    });
-  }{
-    original = pkgsGnu.coreutils;
-    replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
-      name = pkgsGnu.coreutils.name;
-    });
-  }];
+ # system.replaceRuntimeDependencies = [{
+ #   original = pkgs.coreutils;
+  #  replacement = pkgs.uutils-coreutils-noprefix.overrideAttrs (old: {
+ #     name = pkgs.coreutils.name;
+  #  });
+ # }{
+   # original = pkgs.pkgsMusl.coreutils;
+   # replacement = pkgs.pkgsMusl.uutils-coreutils-noprefix.overrideAttrs (old: {
+    #  name = pkgs.pkgsMusl.coreutils.name;
+  #  });
+ # }{
+ #   original = pkgsGnu.coreutils;
+  #  replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
+   #   name = pkgsGnu.coreutils.name;
+   # });
+  #}];
 
 
 

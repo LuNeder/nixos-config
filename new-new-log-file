@@ -1,0 +1,57 @@
+activating the configuration...
+/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/activate, /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29   
+setting up /etc...
+
+/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29
+
+stat readlink: n   File: /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29
+  Size: 428       	Blocks: 0          IO Block: 4096   directory
+Device: 1eh/30d	Inode: 3321696     Links: 1
+Access: (0555/dr-xr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-05-04 15:43:45.368210552 -0300
+Modify: 2024-05-04 15:37:19.211103476 -0300
+Change: 2024-05-04 15:37:19.211103476 -0300
+ Birth: 2024-05-04 13:10:18.337634342 -0300
+
+stat /run/current-system: n   File: '/run/current-system' -> '/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29'
+  Size: 90        	Blocks: 0          IO Block: 4096   symbolic link
+Device: 17h/23d	Inode: 1738        Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-05-04 16:15:53.778397271 -0300
+Modify: 2024-05-04 16:13:59.998513373 -0300
+Change: 2024-05-04 16:13:59.998513373 -0300
+ Birth: 2024-05-04 16:13:59.998513373 -0300
+
+ln (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Mike Parker and David MacKenzie.
+stat /run/current-system, post error: n   File: '/run/current-system' -> '/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29'
+  Size: 90        	Blocks: 0          IO Block: 4096   symbolic link
+Device: 17h/23d	Inode: 1768        Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-05-04 16:15:53.795397257 -0300
+Modify: 2024-05-04 16:15:53.795397257 -0300
+Change: 2024-05-04 16:15:53.795397257 -0300
+ Birth: 2024-05-04 16:15:53.795397257 -0300
+
+reloading user units for luana...
+restarting sysinit-reactivation.target
+warning: the following units failed: suid-sgid-wrappers.service
+
+× suid-sgid-wrappers.service - Create SUID/SGID Wrappers
+     Loaded: loaded (/etc/systemd/system/suid-sgid-wrappers.service; enabled; preset: enabled)
+     Active: failed (Result: exit-code) since Sat 2024-05-04 16:15:54 -03; 45ms ago
+    Process: 2431 ExecStart=/nix/store/iqpflckzq3s19crm0qsp401giynllzn5-unit-script-suid-sgid-wrappers-start/bin/suid-sgid-wrappers-start (code=exited, status=1/FAILURE)
+   Main PID: 2431 (code=exited, status=1/FAILURE)
+         IP: 0B in, 0B out
+        CPU: 119ms
+
+mai 04 16:15:54 virtualbox systemd[1]: Starting Create SUID/SGID Wrappers...
+mai 04 16:15:54 virtualbox suid-sgid-wrappers-start[2508]: mv: cannot move '/run/wrappers/bin-tmp' to '/run/wrappers/bin': Directory not empty
+mai 04 16:15:54 virtualbox systemd[1]: suid-sgid-wrappers.service: Main process exited, code=exited, status=1/FAILURE
+mai 04 16:15:54 virtualbox systemd[1]: suid-sgid-wrappers.service: Failed with result 'exit-code'.
+mai 04 16:15:54 virtualbox systemd[1]: Failed to start Create SUID/SGID Wrappers.

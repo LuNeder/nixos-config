@@ -898,7 +898,10 @@ close($list_active_users) || die("Unable to close the file handle to loginctl");
 # that services ordered BEFORE sysinit.target get re-started in the correct
 # order. Ordering between these services is respected.
 print STDERR "restarting sysinit-reactivation.target\n";
+
+
 system("$new_systemd/bin/systemctl", "restart", "sysinit-reactivation.target") == 0 or $res = 4;
+print STDERR "post-newsystemdrestartsysinit\n"; # we pass here before errors happen
 
 # Before reloading we need to ensure that the units are still active. They may have been
 # deactivated because one of their requirements got stopped. If they are inactive
@@ -949,10 +952,11 @@ unlink($start_list_file);
 
 
 # Print failed and new units.
-my (@failed, @new);
+my (@failed, @new); # @FAILED APPEARS HAPPENS HERE
 my $active_new = get_active_units();
 while (my ($unit, $state) = each(%{$active_new})) {
     if ($state->{state} eq "failed") {
+        print STDERR "{state} eq failed"; # PRINTING DOES HAPPENS HERE
         push(@failed, $unit);
         next;
     }
@@ -963,9 +967,11 @@ while (my ($unit, $state) = each(%{$active_new})) {
         my $main_status = do { local $/ = undef; <$main_status_fd> };
         close($main_status_fd) || die("Unable to close 'systemctl show' fd");
         chomp($main_status);
+        print STDERR "AUTO-RESTART"; # nothing here
 
         if ($main_status ne "0") {
-            push(@failed, $unit);
+            push(@failed, $unit); 
+            print STDERR "AUTO-RESTART main_status ne 0"; # nothing here
             next;
         }
     }
@@ -983,7 +989,7 @@ if (scalar(@new) > 0) {
 }
 
 if (scalar(@failed) > 0) {
-    my @failed_sorted = sort(@failed);
+    my @failed_sorted = sort(@failed); # THE PRINTING OF THE ERROR HAPPENS HERE
     print STDERR "warning: the following units failed: ", join(", ", @failed_sorted), "\n\n";
     system("$new_systemd/bin/systemctl status --no-pager --full '" . join("' '", @failed_sorted) . "' >&2");
     $res = 4;

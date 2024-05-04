@@ -1,0 +1,161 @@
+#!/nix/store/dy2z01kpnxn7dn2kgfdxs4fm8xy9mb89-bash-5.2p26/bin/bash
+set -e
+chmod 755 "/run/wrappers"
+
+# We want to place the tmpdirs for the wrappers to the parent dir.
+wrapperDir=$(mktemp --directory --tmpdir="/run/wrappers" wrappers.XXXXXXXXXX)
+chmod a+rx "$wrapperDir"
+
+cp /nix/store/9vqfs7kf56lc2936qj76sbia77js421h-security-wrapper-chsh-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/chsh"
+
+# Prevent races
+chmod 0000 "$wrapperDir/chsh"
+chown root:root "$wrapperDir/chsh"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/chsh"
+
+cp /nix/store/y4rhpay5h1alcm6kd3yq5jw6px9dfdgz-security-wrapper-dbus-daemon-launch-helper-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/dbus-daemon-launch-helper"
+
+# Prevent races
+chmod 0000 "$wrapperDir/dbus-daemon-launch-helper"
+chown root:messagebus "$wrapperDir/dbus-daemon-launch-helper"
+
+chmod "u+s,g-s,u+rx,g+rx,o-rx" "$wrapperDir/dbus-daemon-launch-helper"
+
+cp /nix/store/l0s3r2528s05m5bbf4fy6pih1dih4yh1-security-wrapper-fusermount-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/fusermount"
+
+# Prevent races
+chmod 0000 "$wrapperDir/fusermount"
+chown root:root "$wrapperDir/fusermount"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/fusermount"
+
+cp /nix/store/k6jvp47ny5md5avc8avzknp86j92yi1q-security-wrapper-fusermount3-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/fusermount3"
+
+# Prevent races
+chmod 0000 "$wrapperDir/fusermount3"
+chown root:root "$wrapperDir/fusermount3"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/fusermount3"
+
+cp /nix/store/g7g0ifh68if7klxg3amw6iq3xsqq131a-security-wrapper-mount-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/mount"
+
+# Prevent races
+chmod 0000 "$wrapperDir/mount"
+chown root:root "$wrapperDir/mount"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/mount"
+
+cp /nix/store/mhc2216ay5jhrbhdk63hascfwhv9i3x8-security-wrapper-newgidmap-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/newgidmap"
+
+# Prevent races
+chmod 0000 "$wrapperDir/newgidmap"
+chown root:root "$wrapperDir/newgidmap"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/newgidmap"
+
+cp /nix/store/x274l3zp7rjyai3309z4mniphiqcqjqn-security-wrapper-newgrp-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/newgrp"
+
+# Prevent races
+chmod 0000 "$wrapperDir/newgrp"
+chown root:root "$wrapperDir/newgrp"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/newgrp"
+
+cp /nix/store/h7bzlf4222x3xv18dr02bqr0qg1s9cnq-security-wrapper-newuidmap-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/newuidmap"
+
+# Prevent races
+chmod 0000 "$wrapperDir/newuidmap"
+chown root:root "$wrapperDir/newuidmap"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/newuidmap"
+
+cp /nix/store/xpmx0ysbx8b1r7nwpxym1qi9hgys31sj-security-wrapper-passwd-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/passwd"
+
+# Prevent races
+chmod 0000 "$wrapperDir/passwd"
+chown root:root "$wrapperDir/passwd"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/passwd"
+
+cp /nix/store/z5hkqlqp2ylbxc9i271l04xzfwijjg44-security-wrapper-pkexec-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/pkexec"
+
+# Prevent races
+chmod 0000 "$wrapperDir/pkexec"
+chown root:root "$wrapperDir/pkexec"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/pkexec"
+
+cp /nix/store/4viz9a1jkdvqx6zgalxfr11nxywjrvsv-security-wrapper-polkit-agent-helper-1-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/polkit-agent-helper-1"
+
+# Prevent races
+chmod 0000 "$wrapperDir/polkit-agent-helper-1"
+chown root:root "$wrapperDir/polkit-agent-helper-1"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/polkit-agent-helper-1"
+
+cp /nix/store/nv2brc0cvryka108gcaf7xvxrlriyjwc-security-wrapper-sg-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/sg"
+
+# Prevent races
+chmod 0000 "$wrapperDir/sg"
+chown root:root "$wrapperDir/sg"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/sg"
+
+cp /nix/store/a88v721sxfwc77r80dcjjwzy1p61b70n-security-wrapper-su-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/su"
+
+# Prevent races
+chmod 0000 "$wrapperDir/su"
+chown root:root "$wrapperDir/su"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/su"
+
+cp /nix/store/djfncq383j7pdq2z7djqk9lkpaa04vib-security-wrapper-sudo-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/sudo"
+
+# Prevent races
+chmod 0000 "$wrapperDir/sudo"
+chown root:root "$wrapperDir/sudo"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/sudo"
+
+cp /nix/store/lwlnjm6awg3isqnmcl5s0f70xhvaw3lj-security-wrapper-sudoedit-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/sudoedit"
+
+# Prevent races
+chmod 0000 "$wrapperDir/sudoedit"
+chown root:root "$wrapperDir/sudoedit"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/sudoedit"
+
+cp /nix/store/bfk90lh6clpg3x0zczbs16vni9rvv9z9-security-wrapper-umount-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/umount"
+
+# Prevent races
+chmod 0000 "$wrapperDir/umount"
+chown root:root "$wrapperDir/umount"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/umount"
+
+cp /nix/store/pm9ybyfgw5ygjkqc8mh2jm2if60j0jqv-security-wrapper-unix_chkpwd-x86_64-unknown-linux-musl/bin/security-wrapper "$wrapperDir/unix_chkpwd"
+
+# Prevent races
+chmod 0000 "$wrapperDir/unix_chkpwd"
+chown root:root "$wrapperDir/unix_chkpwd"
+
+chmod "u+s,g-s,u+rx,g+x,o+x" "$wrapperDir/unix_chkpwd"
+
+
+if [ -L /run/wrappers/bin ]; then
+  # Atomically replace the symlink
+  # See https://axialcorps.com/2013/07/03/atomically-replacing-files-and-directories/
+  old=$(readlink -f /run/wrappers/bin)
+  if [ -e "/run/wrappers/bin-tmp" ]; then
+    rm --force --recursive "/run/wrappers/bin-tmp"
+  fi
+  ln --symbolic --force --no-dereference "$wrapperDir" "/run/wrappers/bin-tmp"
+  mv --no-target-directory "/run/wrappers/bin-tmp" "/run/wrappers/bin"
+  rm --force --recursive "$old"
+else
+  # For initial setup
+  ln --symbolic "$wrapperDir" "/run/wrappers/bin"
+fi
+
+

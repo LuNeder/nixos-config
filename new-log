@@ -1,0 +1,34 @@
+Running as unit: nixos-rebuild-switch-to-configuration.service; invocation ID: dd5fa852f54a4995af66ce58a9348a2c
+activating the configuration...
+/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/activate, /nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29   
+setting up /etc...
+/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29
+ln 0.0.25
+ln: Could not update '/run/current-system': Not a directory (os error 20)
+reloading user units for luana...
+restarting sysinit-reactivation.target
+warning: the following units failed: suid-sgid-wrappers.service
+
+× suid-sgid-wrappers.service - Create SUID/SGID Wrappers
+     Loaded: loaded (/etc/systemd/system/suid-sgid-wrappers.service; enabled; preset: enabled)
+     Active: failed (Result: exit-code) since Sat 2024-05-04 14:56:37 -03; 43ms ago
+    Process: 2334 ExecStart=/nix/store/iqpflckzq3s19crm0qsp401giynllzn5-unit-script-suid-sgid-wrappers-start/bin/suid-sgid-wrappers-start (code=exited, status=1/FAILURE)
+   Main PID: 2334 (code=exited, status=1/FAILURE)
+         IP: 0B in, 0B out
+        CPU: 117ms
+
+mai 04 14:56:37 virtualbox systemd[1]: Starting Create SUID/SGID Wrappers...
+mai 04 14:56:37 virtualbox suid-sgid-wrappers-start[2411]: mv: cannot move '/run/wrappers/bin-tmp' to '/run/wrappers/bin': Directory not empty
+mai 04 14:56:37 virtualbox systemd[1]: suid-sgid-wrappers.service: Main process exited, code=exited, status=1/FAILURE
+mai 04 14:56:37 virtualbox systemd[1]: suid-sgid-wrappers.service: Failed with result 'exit-code'.
+mai 04 14:56:37 virtualbox systemd[1]: Failed to start Create SUID/SGID Wrappers.
+Finished with result: exit-code
+Main processes terminated with: code=exited/status=4
+Service runtime: 1.528s
+CPU time consumed: 843ms
+Memory peak: 138.9M
+Memory swap peak: 0B
+IP traffic received: 0B
+IP traffic sent: 0B
+IO bytes read: 0B
+IO bytes written: 0B

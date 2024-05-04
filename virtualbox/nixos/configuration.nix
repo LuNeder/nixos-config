@@ -11,16 +11,22 @@
     ];
 
   # No GNU on this house! Use Uutils instead of GNU coreutils
-  nixpkgs.overlays = [(final: prev: {
-    cutuutils = final.uutils-coreutils-noprefix.overrideAttrs (old: {
-      name = "cutuutils";
+  system.replaceRuntimeDependencies = [{
+    original = pkgs.coreutils;
+    replacement = pkgs.uutils-coreutils-noprefix.overrideAttrs (old: {
+      name = pkgs.coreutils.name;
     });
-  })];
- # system.replaceRuntimeDependencies = [
-    #{ original = pkgs.coreutils; replacement = pkgs.cutuutils; }
-    #{ original = pkgs.pkgsMusl.coreutils; replacement = pkgs.pkgsMusl.cutuutils; }
-    #{ original = pkgsGnu.coreutils; replacement = pkgsGnu.cutuutils; }
-  #];
+  }{
+    original = pkgs.pkgsMusl.coreutils;
+    replacement = pkgs.pkgsMusl.uutils-coreutils-noprefix.overrideAttrs (old: {
+      name = pkgs.pkgsMusl.coreutils.name;
+    });
+  }{
+    original = pkgsGnu.coreutils;
+    replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
+      name = pkgsGnu.coreutils.name;
+    });
+  }];
 
 
 
@@ -173,7 +179,7 @@
    # pkgs.authy
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.thunderbird
-    pkgs.cutuutils
+   # pkgs.cutuutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

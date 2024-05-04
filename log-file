@@ -1,151 +1,27 @@
 warning: Git tree '/home/luana/nixos-config' is dirty
 building the system configuration...
 warning: Git tree '/home/luana/nixos-config' is dirty
-error:
-       … while calling anonymous lambda
+trace: warning: The option `services.xserver.xkbVariant' defined in `/nix/store/9yyd1d9axal6zqdfj9nwksdpbmqqlmzy-source/virtualbox/nixos/configuration.nix' has been renamed to `services.xserver.xkb.variant'.
+trace: warning: The option `services.xserver.layout' defined in `/nix/store/9yyd1d9axal6zqdfj9nwksdpbmqqlmzy-source/virtualbox/nixos/configuration.nix' has been renamed to `services.xserver.xkb.layout'.
+trace: replace-dependency.nix: Derivation /nix/store/abb7gzpiykp928pr1k3bkrk60wckjn70-nixos-system-virtualbox-24.05.20240502.63c3a29 does not depend on /nix/store/pl6hbm0sbkfd2ma0671x543zklb2pc97-coreutils-9.5
+activating the configuration...
+setting up /etc...
+ln: Could not update '/run/current-system': Not a directory (os error 20)
+reloading user units for luana...
+restarting sysinit-reactivation.target
+warning: the following units failed: suid-sgid-wrappers.service
 
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/attrsets.nix:1571:24:
+× suid-sgid-wrappers.service - Create SUID/SGID Wrappers
+     Loaded: loaded (/etc/systemd/system/suid-sgid-wrappers.service; enabled; preset: enabled)
+     Active: failed (Result: exit-code) since Fri 2024-05-03 21:23:42 -03; 46ms ago
+    Process: 1973 ExecStart=/nix/store/iqpflckzq3s19crm0qsp401giynllzn5-unit-script-suid-sgid-wrappers-start/bin/suid-sgid-wrappers-start (code=exited, status=1/FAILURE)
+   Main PID: 1973 (code=exited, status=1/FAILURE)
+         IP: 0B in, 0B out
+        CPU: 121ms
 
-         1570|     let f = attrPath:
-         1571|       zipAttrsWith (n: values:
-             |                        ^
-         1572|         let here = attrPath ++ [n]; in
-
-       … while calling anonymous lambda
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/attrsets.nix:1205:18:
-
-         1204|         mapAttrs
-         1205|           (name: value:
-             |                  ^
-         1206|             if isAttrs value && cond value
-
-       … from call site
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/attrsets.nix:1208:18:
-
-         1207|             then recurse (path ++ [ name ]) value
-         1208|             else f (path ++ [ name ]) value);
-             |                  ^
-         1209|     in
-
-       … while calling anonymous lambda
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:242:72:
-
-          241|           # For definitions that have an associated option
-          242|           declaredConfig = mapAttrsRecursiveCond (v: ! isOption v) (_: v: v.value) options;
-             |                                                                        ^
-          243|
-
-       … while evaluating the option `system.build.toplevel':
-
-       … while calling anonymous lambda
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:824:28:
-
-          823|         # Process mkMerge and mkIf properties.
-          824|         defs' = concatMap (m:
-             |                            ^
-          825|           map (value: { inherit (m) file; inherit value; }) (builtins.addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
-
-       … while evaluating definitions from `/nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/nixos/modules/system/activation/top-level.nix':
-
-       … from call site
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:825:137:
-
-          824|         defs' = concatMap (m:
-          825|           map (value: { inherit (m) file; inherit value; }) (builtins.addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
-             |                                                                                                                                         ^
-          826|         ) defs;
-
-       … while calling 'dischargeProperties'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/modules.nix:896:25:
-
-          895|   */
-          896|   dischargeProperties = def:
-             |                         ^
-          897|     if def._type or "" == "merge" then
-
-       … from call site
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/nixos/modules/system/activation/top-level.nix:71:12:
-
-           70|   # Replace runtime dependencies
-           71|   system = foldr ({ oldDependency, newDependency }: drv:
-             |            ^
-           72|       pkgs.replaceDependency { inherit oldDependency newDependency drv; }
-
-       … while calling 'foldr'
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:121:20:
-
-          120|   */
-          121|   foldr = op: nul: list:
-             |                    ^
-          122|     let
-
-       … from call site
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:128:8:
-
-          127|         else op (elemAt list n) (fold' (n + 1));
-          128|     in fold' 0;
-             |        ^
-          129|
-
-       … while calling 'fold''
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:124:15:
-
-          123|       len = length list;
-          124|       fold' = n:
-             |               ^
-          125|         if n == len
-
-       … from call site
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/lists.nix:127:14:
-
-          126|         then nul
-          127|         else op (elemAt list n) (fold' (n + 1));
-             |              ^
-          128|     in fold' 0;
-
-       … while calling anonymous lambda
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/nixos/modules/system/activation/top-level.nix:71:53:
-
-           70|   # Replace runtime dependencies
-           71|   system = foldr ({ oldDependency, newDependency }: drv:
-             |                                                     ^
-           72|       pkgs.replaceDependency { inherit oldDependency newDependency drv; }
-
-       … from call site
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/lib/trivial.nix:895:7:
-
-          894|     { # TODO: Should we add call-time "type" checking like built in?
-          895|       __functor = self: f;
-             |       ^
-          896|       __functionArgs = args;
-
-       … while calling anonymous lambda
-
-         at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/replace-dependency.nix:20:1:
-
-           19| # (and all of its dependencies) without rebuilding further.
-           20| { drv, oldDependency, newDependency, verbose ? true }:
-             | ^
-           21|
-
-       error: assertion '((stringLength (drvName (toString oldDependency))) == (stringLength (drvName (toString newDependency))))' failed
-
-       at /nix/store/p69bcs7ma6ijj8v9xsrg3nq3nn8ryn95-source/pkgs/build-support/replace-dependency.nix:93:4:
-
-           92|   drvHash = discard (toString drv);
-           93| in assert (stringLength (drvName (toString oldDependency)) == stringLength (drvName (toString newDependency)));
-             |    ^
-           94| rewriteMemo.${drvHash} or (warn "replace-dependency.nix: Derivation ${drvHash} does not depend on ${discard (toString oldDependency)}" drv)
+mai 03 21:23:42 virtualbox systemd[1]: Starting Create SUID/SGID Wrappers...
+mai 03 21:23:42 virtualbox suid-sgid-wrappers-start[2049]: mv: cannot move '/run/wrappers/bin-tmp' to '/run/wrappers/bin': Directory not empty
+mai 03 21:23:42 virtualbox systemd[1]: suid-sgid-wrappers.service: Main process exited, code=exited, status=1/FAILURE
+mai 03 21:23:42 virtualbox systemd[1]: suid-sgid-wrappers.service: Failed with result 'exit-code'.
+mai 03 21:23:42 virtualbox systemd[1]: Failed to start Create SUID/SGID Wrappers.
+warning: error(s) occurred while switching to the new configuration

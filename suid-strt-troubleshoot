@@ -152,17 +152,26 @@ if [ -L /run/wrappers/bin ]; then
   fi
   ln --symbolic --force --no-dereference "$wrapperDir" "/run/wrappers/bin-tmp"
 
+  LOGMVFILE="/home/luana/nixos-config/log-stat-mv"
+
   echo
-  echo stat and ls bin-tmp \n "$(stat /run/wrappers/bin-tmp)" "$(ls /run/wrappers/bin-tmp)"
-  echo
-  echo stat and ls bin \n "$(stat /run/wrappers/bin)" "$(ls /run/wrappers/bin)"
+  echo stat and ls bin-tmp \n "$(stat /run/wrappers/bin-tmp)" > $LOGMVFILE
+  echo "$(ls /run/wrappers/bin-tmp)" >> $LOGMVFILE
+  echo >> $LOGMVFILE
+  echo stat and ls bin \n "$(stat /run/wrappers/bin)" >> $LOGMVFILE
+  echo "$(ls /run/wrappers/bin)" >> $LOGMVFILE
   echo error-pre
+  echo >> $LOGMVFILE
+  echo mv runs now >> $LOGMVFILE
 
  # /nix/store/iqpflckzq3s19crm0qsp401giynllzn5-unit-script-suid-sgid-wrappers-start/bin/mv --no-target-directory "/run/wrappers/bin-tmp" "/run/wrappers/bin"
   mv --no-target-directory "/run/wrappers/bin-tmp" "/run/wrappers/bin"
-  echo
-  echo POST-stat and ls bin-tmp \n "$(stat /run/wrappers/bin-tmp)" "$(ls /run/wrappers/bin-tmp)"
-  echo POST-stat and ls bin \n "$(stat /run/wrappers/bin)" "$(ls /run/wrappers/bin)"
+  echo mv has finished >> $LOGMVFILE
+  echo POST-stat and ls bin-tmp \n "$(stat /run/wrappers/bin-tmp)" >> $LOGMVFILE
+  echo "$(ls /run/wrappers/bin-tmp)" >> $LOGMVFILE
+  echo >> $LOGMVFILE
+  echo POST-stat and ls bin \n "$(stat /run/wrappers/bin)" >> $LOGMVFILE
+  echo "$(ls /run/wrappers/bin)" >> $LOGMVFILE
 
   echo error-post
  rm --force --recursive "$old"

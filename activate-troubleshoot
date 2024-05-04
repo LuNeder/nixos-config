@@ -175,7 +175,7 @@ echo
 echo stat /run/current-system: \n "$(stat /run/current-system)"
 echo
 echo "$(ln --version)"
-ln -sfn "$(readlink -f "$systemConfig")" /run/current-system
+/nix/store/8nqc99f0iyddyyxqm6hlii9r5yslij4p-nixos-system-virtualbox-24.05.20240502.63c3a29/ln -sfn "$(readlink -f "$systemConfig")" /run/current-system
 echo stat /run/current-system, post error: \n "$(stat /run/current-system)"
 echo
 exit $_status

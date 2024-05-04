@@ -167,6 +167,8 @@ fi
 # The readlink is there to ensure that when $systemConfig = /system
 # (which is a symlink to the store), /run/current-system is still
 # used as a garbage collection root.
+echo "$(readlink -f "$systemConfig")"
+echo "$(ln --version)"
 ln -sfn "$(readlink -f "$systemConfig")" /run/current-system
 
 exit $_status

@@ -110,7 +110,7 @@
    # pkgs.authy
     inputs.compiz.packages.${pkgs.system}.default # Compiz
     pkgs.thunderbird
-    pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
+    # pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
     # pkgs.nvtop
   ];
 

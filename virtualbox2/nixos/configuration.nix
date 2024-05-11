@@ -10,23 +10,23 @@
       ./hardware-configuration.nix
     ];
 
-# Broken due to uutils issue #6351 # TODO: FIX - SUPER URGENT # No GNU on this house! Use Uutils instead of GNU coreutils
-  system.replaceRuntimeDependencies = [{
-     original = pkgs.coreutils;
-      replacement = pkgs.uutils-coreutils-noprefix.overrideAttrs (old: {
-       name = pkgs.coreutils.name;
-     });
-   }{
-     original = pkgs.pkgsMusl.coreutils;
-     replacement = pkgs.pkgsMusl.uutils-coreutils-noprefix.overrideAttrs (old: {
-       name = pkgs.pkgsMusl.coreutils.name;
-     });
-   }{
-     original = pkgsGnu.coreutils;
-     replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
-       name = pkgsGnu.coreutils.name;
-     });
-   }];
+# Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
+#  system.replaceRuntimeDependencies = [{
+#     original = pkgs.coreutils;
+#      replacement = pkgs.uutils-coreutils-noprefix.overrideAttrs (old: {
+#       name = pkgs.coreutils.name;
+#     });
+#   }{
+#     original = pkgs.pkgsMusl.coreutils;
+#     replacement = pkgs.pkgsMusl.uutils-coreutils-noprefix.overrideAttrs (old: {
+#       name = pkgs.pkgsMusl.coreutils.name;
+#     });
+#   }{
+#     original = pkgsGnu.coreutils;
+#     replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
+#       name = pkgsGnu.coreutils.name;
+#     });
+#   }];
 
 
 

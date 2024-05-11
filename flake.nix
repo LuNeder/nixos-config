@@ -1,7 +1,7 @@
 {
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
-    compiz.url = "github:misterio77/compiz-nix";
-    compiz.inputs.nixpkgs.follows = "nixpkgs";
+    compiz-reloaded.url = "github:LuNeder/compiz-reloaded-nix";
+    compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, ... } @ inputs: 
@@ -14,6 +14,10 @@
         virtualbox = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs pkgsGnu pkgsMusl;};
             modules = [./virtualbox/nixos/configuration.nix];
+        });
+        virtualbox2 = ( nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs outputs pkgsGnu pkgsMusl;};
+            modules = [./virtualbox2/nixos/configuration.nix];
         });
         #Luana-X670E = (
 

@@ -108,7 +108,7 @@
     pkgs.curl
     pkgs.git
    # pkgs.authy
-    inputs.compiz.packages.${pkgs.system}.default # Compiz
+    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     pkgs.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
    # pkgs.nvtopPackages.full
@@ -154,12 +154,12 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "br";
-    xkbVariant = "";
+    layout = "us";
+    xkbVariant = "altgr-intl";
   };
 
   # Configure console keymap
-  console.keyMap = "br-abnt2";
+ #  console.keyMap = "br-abnt2";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

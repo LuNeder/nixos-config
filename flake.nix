@@ -1,7 +1,9 @@
 {
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
-    compiz-reloaded.url = "github:LuNeder/compiz-reloaded-nix";
-    compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
+    # compiz-reloaded.url = "github:LuNeder/compiz-reloaded-nix";
+    # compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
+    compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";
+    compiz.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, ... } @ inputs: 

@@ -108,7 +108,9 @@
     pkgs.curl
     pkgs.git
    # pkgs.authy
-    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
+#    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
+    inputs.compiz.packages.${pkgs.system}.default
+    pkgs.python3Packages.pygobject3
     pkgs.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
    # pkgs.nvtopPackages.full

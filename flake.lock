@@ -10,24 +10,25 @@
       "locked": {
         "lastModified": 1714764627,
         "narHash": "sha256-NH9d3dzEGR1fCDWvmxomX1HaySuYyADsoCQQA7FC/nE=",
-        "owner": "misterio77",
-        "repo": "compiz-nix",
+        "owner": "LuNeder",
+        "repo": "compiz-reloaded-nix",
         "rev": "66246bdba9b09dc29cc1db8de78a901469c203e8",
         "type": "github"
       },
       "original": {
-        "owner": "misterio77",
-        "repo": "compiz-nix",
+        "owner": "LuNeder",
+        "ref": "compiz09",
+        "repo": "compiz-reloaded-nix",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1714635257,
-        "narHash": "sha256-4cPymbty65RvF1DWQfc+Bc8B233A1BWxJnNULJKQ1EY=",
+        "lastModified": 1715534503,
+        "narHash": "sha256-5ZSVkFadZbFP1THataCaSf0JH2cAH3S29hU9rrxTEqk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "63c3a29ca82437c87573e4c6919b09a24ea61b0f",
+        "rev": "2057814051972fa1453ddfb0d98badbea9b83c06",
         "type": "github"
       },
       "original": {

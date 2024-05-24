@@ -21,9 +21,10 @@
             specialArgs = {inherit inputs outputs pkgsGnu pkgsMusl;};
             modules = [./virtualbox2/nixos/configuration.nix];
         });
-        #Luana-X670E = (
-
-        #);
+        Luana-X670E = ( nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs outputs pkgsGnu pkgsMusl;};
+            modules = [./Luana-X670E/nixos/configuration.nix];
+        });
         #Luana-Legion-5 = (
 
         #);

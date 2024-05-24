@@ -82,7 +82,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "virtualbox2"; # Define your hostname.
+  networking.hostName = "Luana-X670E"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -157,11 +157,11 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
-    xkbVariant = "altgr-intl";
+    xkbVariant = "altgr-intl"; # or intl?
   };
 
   # Configure console keymap
- #  console.keyMap = "br-abnt2";
+  console.keyMap = "us-acentos";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

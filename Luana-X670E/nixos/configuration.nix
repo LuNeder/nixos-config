@@ -107,8 +107,8 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     pkgs.curl
     pkgs.git
-   # pkgs.authy
-    pkgs.bitwarden-desktop
+    # pkgs.authy
+    # pkgs.bitwarden-desktop
 #    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3
@@ -135,8 +135,17 @@
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    # gamescopeSession.enable = true; # TODO: make gamepadui on displaymanager later
+    gamescopeSession.enable = true; # TODO: make gamepadui on displaymanager later
   };
+  
+  # Flatpaks
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
+  services.flatpak.packages = [
+    # "com.obsproject.Studio"
+    "com.bitwarden.desktop"
+  ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

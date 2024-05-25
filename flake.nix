@@ -5,9 +5,10 @@
     # compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
     compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";
     compiz.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, systems, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, ... } @ inputs: 
     let 
       inherit (self) outputs;
       lib = nixpkgs.lib ;# // home-manager.lib;
@@ -34,7 +35,8 @@
         Luana-X670E = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs pkgsGnu pkgsMusl;};
             pkgs = pkgsFor.x86_64-linux;
-            modules = [./Luana-X670E/nixos/configuration.nix];
+            modules = [ nix-flatpak.nixosModules.nix-flatpak
+              ./Luana-X670E/nixos/configuration.nix];
         });
         #Luana-Legion-5 = (
 

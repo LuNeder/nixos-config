@@ -1,0 +1,6 @@
+[submodule "Luana-X670E/Luana-X670E/Dotfiles"]
+	path = Luana-X670E/Luana-X670E/Dotfiles
+	url = https://github.com/LuNeder/Dotfiles
+[submodule "Luana-X670E/Dotfiles"]
+	path = Luana-X670E/Dotfiles
+	url = https://github.com/LuNeder/Dotfiles

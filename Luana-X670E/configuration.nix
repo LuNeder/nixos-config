@@ -79,8 +79,19 @@
   boot.kernelPackages = pkgsGnu.linuxPackages_latest;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = { canTouchEfiVariables = true; };
+    grub = { enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+      extraEntries = ''
+        menuentry "UEFI Firmware Settings" {
+          fwsetup
+        }
+      '';};
+  };
+  
 
   networking.hostName = "Luana-X670E"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

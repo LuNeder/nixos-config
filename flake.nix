@@ -1,5 +1,6 @@
 {
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
+    systems.url = "github:nix-systems/default-linux";
     # compiz-reloaded.url = "github:LuNeder/compiz-reloaded-nix";
     # compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
     compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";

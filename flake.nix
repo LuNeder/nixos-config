@@ -18,8 +18,8 @@
           inherit system;
           config.allowUnfree = true;
         });
-      pkgsMusl = import nixpkgs { config = "86_64-unknown-linux-musl"; }; # prob needs unfree fix
-      pkgsGnu = import nixpkgs { system = "x86_64-linux"; }; # prob needs unfree fix
+      pkgsMusl = import nixpkgs { system = "x86_64-unknown-linux-musl"; config.allowUnfree = true; }; 
+      pkgsGnu = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; }; 
      # pkgs = pkgsFor.x86_64-linux; # PROBABLY CHANGE FOR MUSL
     in {
       nixosConfigurations = {

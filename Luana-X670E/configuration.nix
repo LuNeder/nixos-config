@@ -115,13 +115,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     pkgs.curl
     pkgs.git
     # pkgs.authy
-    # pkgs.bitwarden-desktop
-#    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
-    inputs.compiz.packages.${pkgs.system}.default
+    pkgs.bitwarden-desktop
+    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
+   # inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3
     pkgs.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
@@ -155,7 +154,7 @@
   services.flatpak.enable = true; # for when i move from xfce: https://nixos.wiki/wiki/Flatpak
   services.flatpak.packages = [
     # "com.obsproject.Studio"
-    "com.bitwarden.desktop"
+    # "com.bitwarden.desktop"
   ];
 
   # Enable the X11 windowing system.

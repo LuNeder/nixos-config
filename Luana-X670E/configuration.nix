@@ -141,7 +141,7 @@
   # Flatpaks
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   xdg.portal.enable = true;
-  services.flatpak.enable = true;
+  services.flatpak.enable = true; # for when i move from xfce: https://nixos.wiki/wiki/Flatpak
   services.flatpak.packages = [
     # "com.obsproject.Studio"
     "com.bitwarden.desktop"

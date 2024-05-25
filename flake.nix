@@ -36,7 +36,7 @@
             specialArgs = {inherit inputs outputs pkgsGnu pkgsMusl;};
             pkgs = pkgsFor.x86_64-linux;
             modules = [ nix-flatpak.nixosModules.nix-flatpak
-              ./Luana-X670E/nixos/configuration.nix];
+              ./Luana-X670E/configuration.nix];
         });
         #Luana-Legion-5 = (
 

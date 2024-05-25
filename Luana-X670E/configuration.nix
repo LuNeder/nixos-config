@@ -187,7 +187,7 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
-    xkbVariant = "altgr-intl"; # or intl?
+    xkbVariant = "intl"; # or intl?
   };
 
   # Configure console keymap

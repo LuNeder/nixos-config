@@ -108,14 +108,35 @@
     pkgs.curl
     pkgs.git
    # pkgs.authy
+    pkgs.bitwarden-desktop
 #    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3
     pkgs.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
-   # pkgs.nvtopPackages.full
+    pkgs.nvtopPackages.full
     pkgs.gparted
+    pkgs.mate.engrampa
+    pkgs.vscodium
+    pkgs.goverlay
+    pkgs.mangohud
+    pkgs.p7zip # why is this not installed by default, nixos is fucking dumb
+    pkgs.xz
+    pkgs.ulauncher # TODO: autostart ulauncher --hide-window
+    pkgs.polybarFull
+    pkgs.plank # TODO: autostart
+    pkgs.ifuse
+    pkgs.syncthing
+    
+    
   ];
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    # gamescopeSession.enable = true; # TODO: make gamepadui on displaymanager later
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

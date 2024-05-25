@@ -20,7 +20,7 @@
         });
       pkgsMusl = import nixpkgs { system = "x86_64-unknown-linux-musl"; config.allowUnfree = true; }; 
       pkgsGnu = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; }; 
-     # pkgs = pkgsFor.x86_64-linux; # PROBABLY CHANGE FOR MUSL
+     # pkgs = pkgsFor.x86_64-linux; # TODO: PROBABLY CHANGE FOR MUSL
     in {
       nixosConfigurations = {
         virtualbox = ( nixpkgs.lib.nixosSystem {

@@ -99,7 +99,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true; 
+   nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

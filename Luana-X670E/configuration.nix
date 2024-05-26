@@ -161,6 +161,7 @@
     pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
+    pkgs.menulibre
   ];
 
   # Steam
@@ -189,6 +190,7 @@
   programs.xfconf.enable = true;
 
   # Desktop Configuration
+  services.bamf.enable = true; # needed for Plank bc nix dumb
   home-manager.users.luana = {
     home.stateVersion = "23.11";
 
@@ -222,12 +224,12 @@
         Comment=
         RunHook=0'';
 
-      # Autostart planck
-      "autostart/planck.desktop".text = ''
+      # Autostart plank
+      "autostart/plank.desktop".text = ''
         [Desktop Entry]
         Type=Application
-        Name=Planck
-        Exec=planck
+        Name=Plank
+        Exec=plank
         Comment=
         RunHook=0'';
 

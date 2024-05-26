@@ -125,7 +125,7 @@
 
   # Keyring for bitwarden
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.lightdm.enableGnomeKeyring = true;
+  security.pam.services.lightdm.enableGnomeKeyring = true; # TODO: Not Working, annoying af
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -135,7 +135,6 @@
     # pkgs.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
-
    # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3

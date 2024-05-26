@@ -191,17 +191,45 @@
       xfce4-session."sessions/Failsafe/Client0_Command" = [ "compiz" ];
     };
 
-    # Autostart Steam with -silent
+    
     xdg.configFile = {
+
+      "polybar/config.ini" = { 
+        force = true;
+        source = ./Dotfiles/Polybar/config.ini;  };
+     # "polybar/.restpolymain" = { 
+     #   force = true;
+     #    source = ./Dotfiles/Polybar/.restpolymain;  };
+
+      # Autostart Steam with -silent
       "autostart/steam.desktop" = { 
         force = true;
         source = ./extra-files/steam.desktop;  };
-
+      
+      # Autostart ulauncher
       "autostart/ulauncher.desktop".text = ''
         [Desktop Entry]
         Type=Application
-         Name=teste
+        Name=Ulauncher
         Exec=ulauncher --hide-window
+        Comment=
+        RunHook=0'';
+
+      # Autostart planck
+      "autostart/planck.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Planck
+        Exec=planck
+        Comment=
+        RunHook=0'';
+
+      # Autostart polybar
+      "autostart/polybar.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Polybar
+        Exec=polybar main
         Comment=
         RunHook=0'';
     };

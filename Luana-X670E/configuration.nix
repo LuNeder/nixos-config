@@ -102,6 +102,14 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
+  hardware.bluetooth.settings = {
+	  General = {
+	  	Experimental = true;
+  	};
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -110,7 +118,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Home Manager
-  programs.home-manager.enable = true;
+  # programs.home-manager.enable = true;
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes
@@ -171,12 +179,12 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
-  home-manager.users.luana = {
-    xfconf.settings = {
-      xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
-      xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
-    };
-  };
+#  home-manager.users.luana = {
+#    xfconf.settings = {
+#      xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
+#      xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
+#    };
+#  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {

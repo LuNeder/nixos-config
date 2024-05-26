@@ -157,6 +157,8 @@
     pkgs.ifuse
     pkgs.syncthing  # TODO: this and tailscale
     pkgs.fastfetch
+    pkgs.font-manager
+    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar
   ];
 
   # Steam
@@ -200,7 +202,7 @@
       "polybar/config.ini" = { 
         force = true;
         source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/config.ini;  };
-      "polybar/.restpolymain" = { 
+      "../.restpolymain" = { 
         force = true;
          source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/.restpolymain;  };
 

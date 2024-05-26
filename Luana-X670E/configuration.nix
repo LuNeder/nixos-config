@@ -76,7 +76,7 @@
   # services.nscd.enableNsncd = false;
 
   # Latest kernel
-  boot.kernelPackages = pkgsGnu.linuxPackages_latest;
+  boot.kernelPackages = pkgsGnu.linuxPackages_latest; 
 
   # Bootloader.
   boot.loader = {
@@ -108,6 +108,9 @@
 
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Home Manager
+  programs.home-manager.enable = true;
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes

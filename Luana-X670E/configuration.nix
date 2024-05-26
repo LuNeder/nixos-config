@@ -199,10 +199,10 @@
 
       "polybar/config.ini" = { 
         force = true;
-        source = ./Dotfiles/Polybar/config.ini;  };
-     # "polybar/.restpolymain" = { 
-     #   force = true;
-     #    source = ./Dotfiles/Polybar/.restpolymain;  };
+        source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/config.ini;  };
+      "polybar/.restpolymain" = { 
+        force = true;
+         source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/.restpolymain;  };
 
       # Autostart Steam with -silent
       "autostart/steam.desktop" = { 

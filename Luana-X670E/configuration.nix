@@ -151,12 +151,13 @@
     pkgs.mangohud
     pkgs.p7zip # why is this not installed by default, nixos is fucking dumb
     pkgs.xz
-    pkgs.ulauncher # TODO: autostart ulauncher --hide-window
-    pkgs.polybarFull
-    pkgs.plank # TODO: autostart
+    pkgs.ulauncher 
+    pkgs.polybarFull # TODO: Fix xfce4-session-logout
+    pkgs.plank 
     pkgs.ifuse
     pkgs.syncthing  # TODO: this and tailscale
     pkgs.fastfetch
+    pkgs.lolcat
     pkgs.font-manager
     pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar
     pkgs.xfce.xfce4-panel-profiles # ...
@@ -190,7 +191,7 @@
   programs.xfconf.enable = true;
 
   # Desktop Configuration
-  services.bamf.enable = true; # needed for Plank bc nix dumb
+  services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873
   home-manager.users.luana = {
     home.stateVersion = "23.11";
 

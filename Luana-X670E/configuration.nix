@@ -79,6 +79,9 @@
   # Latest kernel
   boot.kernelPackages = pkgsGnu.linuxPackages_latest; 
 
+  # Enable sysrq keys that for some dumb reason come disabled by default
+  boot.kernel.sysctl."kernel.sysrq" = 1;
+
   # Bootloader.
   boot.loader = {
     efi = { canTouchEfiVariables = true; };

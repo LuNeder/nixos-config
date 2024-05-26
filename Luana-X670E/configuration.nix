@@ -112,6 +112,10 @@
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes
 
+  # Keyring for bitwarden
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.lightdm.enableGnomeKeyring = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
@@ -119,6 +123,8 @@
     pkgs.git
     # pkgs.authy
     pkgs.bitwarden-desktop
+    pkgs.libsecret
+
     inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
    # inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3

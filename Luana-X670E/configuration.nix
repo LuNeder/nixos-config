@@ -118,7 +118,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Home Manager
-  # programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes
@@ -136,8 +136,8 @@
     pkgs.bitwarden-desktop
     pkgs.libsecret
 
-    inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
-   # inputs.compiz.packages.${pkgs.system}.default
+   # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
+    inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3
     pkgs.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
@@ -179,12 +179,12 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
-#  home-manager.users.luana = {
-#    xfconf.settings = {
-#      xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
-#      xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
-#    };
-#  };
+  home-manager.users.luana = {
+    xfconf.settings = {
+      xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
+      xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {

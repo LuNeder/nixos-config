@@ -179,6 +179,7 @@
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
 
+  # Autostart Compiz
   home-manager.users.luana = {
     home.stateVersion = "23.11";
     xfconf.settings = {
@@ -186,6 +187,8 @@
       xfce4-session."sessions/Failsafe/Client0_Command" = [ "compiz" ];
     };
   };
+
+  xdg.configFile."autostart/steam.desktop".source = ./extra-files/steam.desktop;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {

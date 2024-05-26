@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      inputs.home-manager.nixosModules.home-manager
+      inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
     ];
 
@@ -118,8 +118,7 @@
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Home Manager
-  programs.home-manager.enable = true;
+
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes
@@ -181,12 +180,13 @@
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
 
- # home-manager.users.luana = {
- #   xfconf.settings = {
- #     xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
- #     xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
- #   };
- # };
+  home-manager.users.luana = {
+    home.stateVersion = "23.11";
+    xfconf.settings = {
+      xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
+      xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {

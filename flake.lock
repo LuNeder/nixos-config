@@ -30,11 +30,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1716502713,
-        "narHash": "sha256-/YUAzC6rMrnmY7uYOPla+95OACWq2zL0HkavTeO4l7c=",
+        "lastModified": 1716680021,
+        "narHash": "sha256-uDnuJL9cgTPCjqduKSHjCTBuGzhwsddd2beyUuXmnHc=",
         "owner": "LuNeder",
         "repo": "compiz-reloaded-nix",
-        "rev": "89f447eb7aab42da4a871616448beb1a57ee4f0f",
+        "rev": "cf2b5df67529412247782b73462c9d58afcaf194",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1716679503,
-        "narHash": "sha256-aX8AEWHLwuiYX8OCpTnHGrQeei1Gb+AGbk1hq+RIClg=",
+        "lastModified": 1716711219,
+        "narHash": "sha256-TnZETiQPXbyT5mdCHMOyrJnx2+BwroMBRrguciz1vEo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e4611630c3cc8ed618b48d92f6291f65be9f7913",
+        "rev": "05e6ba83eb3585ce0aff7b41e4bd0e317d05ad4a",
         "type": "github"
       },
       "original": {

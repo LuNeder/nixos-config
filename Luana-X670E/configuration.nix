@@ -167,7 +167,7 @@
     xdg.configFile = {
       "autostart/steam.desktop" = { 
         force = true;
-        source = ./extra-files/steam.desktop;  };
+        source = ./extra-files/steam.desktop;  }; # Autostart with -silent
     };
   };
 
@@ -198,16 +198,15 @@
       xfce4-session."sessions/Failsafe/Client1_Command" = [ "xfsettingsd" ];
       xfce4-session."sessions/Failsafe/Client0_Command" = [ "compiz" ];
     };
-  #  xdg.configFile = {
-  #    "autostart/ulauncher.desktop".text = ''
-  #      [Desktop Entry]
-  #      Type=Application
-  #      Name=teste
-  #      Exec=ulauncher --hide-window
-  #      Comment=
-   #     RunHook=0'';
-#
- #   };
+    xdg.configFile = {
+      "autostart/ulauncher.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+         Name=teste
+        Exec=ulauncher --hide-window
+        Comment=
+        RunHook=0'';
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

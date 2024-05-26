@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, pkgsGnu, pkgsMusl, lib, ... }:
+{ inputs, config, pkgs, pkgsGnu, pkgsMusl, lib, home-manager, ... }:
 
 {
   imports =
@@ -142,9 +142,7 @@
     pkgs.polybarFull
     pkgs.plank # TODO: autostart
     pkgs.ifuse
-    pkgs.syncthing
-    
-    
+    pkgs.syncthing  
   ];
 
   programs.steam = {
@@ -169,6 +167,13 @@
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
+
+  home-manager.users.luana = {
+    xfconf.settings = {
+      xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
+      xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {

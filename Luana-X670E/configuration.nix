@@ -163,14 +163,6 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     gamescopeSession.enable = true; # TODO: make gamepadui on displaymanager later
   };
-  home-manager.users.luana = {
-    xdg.configFile = {
-      "autostart/steam.desktop" = { 
-        force = true;
-        source = ./extra-files/steam.desktop;  }; # Autostart with -silent
-    };
-  };
-
   
   # Flatpaks
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
@@ -198,7 +190,13 @@
       xfce4-session."sessions/Failsafe/Client1_Command" = [ "xfsettingsd" ];
       xfce4-session."sessions/Failsafe/Client0_Command" = [ "compiz" ];
     };
+
+    # Autostart Steam with -silent
     xdg.configFile = {
+      "autostart/steam.desktop" = { 
+        force = true;
+        source = ./extra-files/steam.desktop;  };
+
       "autostart/ulauncher.desktop".text = ''
         [Desktop Entry]
         Type=Application

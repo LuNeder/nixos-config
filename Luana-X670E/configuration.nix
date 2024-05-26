@@ -159,6 +159,8 @@
     pkgs.fastfetch
     pkgs.font-manager
     pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar
+    pkgs.xfce.xfce4-panel-profiles # ...
+    pkgs.xfce.xfce4-pulseaudio-plugin
   ];
 
   # Steam

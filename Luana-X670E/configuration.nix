@@ -183,8 +183,8 @@
   home-manager.users.luana = {
     home.stateVersion = "23.11";
     xfconf.settings = {
-      xfce4-session."/sessions/Failsafe/Client1_Command" = "xfsettingsd";
-      xfce4-session."/sessions/Failsafe/Client0_Command" = "compiz cpp";
+      xfce4-session."sessions/Failsafe/Client1_Command" = [ "xfsettingsd" ];
+      xfce4-session."sessions/Failsafe/Client0_Command" = [ "compiz" ];
     };
   };
 

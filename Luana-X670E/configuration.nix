@@ -152,15 +152,25 @@
     pkgs.polybarFull
     pkgs.plank # TODO: autostart
     pkgs.ifuse
-    pkgs.syncthing  
+    pkgs.syncthing  # TODO: this and tailscale
+    pkgs.fastfetch
   ];
 
+  # Steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     gamescopeSession.enable = true; # TODO: make gamepadui on displaymanager later
   };
+  home-manager.users.luana = {
+    xdg.configFile = {
+      "autostart/steam.desktop" = { 
+        force = true;
+        source = ./extra-files/steam.desktop;  };
+    };
+  };
+
   
   # Flatpaks
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
@@ -179,16 +189,26 @@
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
 
-  # Autostart Compiz
+  # Desktop Configuration
   home-manager.users.luana = {
     home.stateVersion = "23.11";
+
+    # Autostart Compiz
     xfconf.settings = {
       xfce4-session."sessions/Failsafe/Client1_Command" = [ "xfsettingsd" ];
       xfce4-session."sessions/Failsafe/Client0_Command" = [ "compiz" ];
     };
+  #  xdg.configFile = {
+  #    "autostart/ulauncher.desktop".text = ''
+  #      [Desktop Entry]
+  #      Type=Application
+  #      Name=teste
+  #      Exec=ulauncher --hide-window
+  #      Comment=
+   #     RunHook=0'';
+#
+ #   };
   };
-
-  xdg.configFile."autostart/steam.desktop".source = ./extra-files/steam.desktop;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {

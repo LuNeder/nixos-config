@@ -119,6 +119,8 @@
   	};
   };
 
+  
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -171,6 +173,12 @@
     pkgs.bibata-cursors # My favourite cursors! (at least for now hehe :3)
     # pkgs.bibata-extra-cursors # broken
     pkgs.papirus-icon-theme
+    (pkgs.wrapOBS { # OBS
+      plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+    ];})
   ];
 
   # Extra Fonts
@@ -316,6 +324,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.avahi = {
+  enable = true;
+  nssmdns = true;
+  openFirewall = true;
+};
 
   # Enable sound with pipewire.
   sound.enable = true;

@@ -163,6 +163,13 @@
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
     pkgs.menulibre
+
+  ];
+
+  # Extra Fonts
+  fonts.packages = [
+    pkgs.powerline-fonts # zsh agnoster theme needs this
+    pkgs.emojione
   ];
 
   # Steam
@@ -242,6 +249,20 @@
         Exec=polybar main
         Comment=
         RunHook=0'';
+    };
+  };
+
+
+  programs.zsh = {
+     enable = true;
+     enableCompletion = true;
+     autosuggestions.enable = true;
+     syntaxHighlighting.enable = true;
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ]; # "zsh-autosuggestions" "zsh-syntax-highlighting" ];
+      theme = "agnoster";
     };
   };
 

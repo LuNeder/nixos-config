@@ -98,7 +98,9 @@
   
 
   networking.hostName = "Luana-X670E"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant. (seems to be working even without this lol)
+  networking.interfaces.enp77s0.wakeOnLan.enable = true;
+
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

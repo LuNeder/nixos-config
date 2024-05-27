@@ -157,6 +157,7 @@
     pkgs.ifuse
     pkgs.syncthing  # TODO: this and tailscale
     pkgs.fastfetch
+    pkgs.neofetch
     pkgs.lolcat
     pkgs.font-manager
     pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar
@@ -165,6 +166,7 @@
     pkgs.menulibre
     pkgs.bibata-cursors # My favourite cursors! (at least for now hehe :3)
     # pkgs.bibata-extra-cursors # broken
+    pkgs.papirus-icon-theme
   ];
 
   # Extra Fonts

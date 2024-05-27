@@ -163,7 +163,8 @@
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
     pkgs.menulibre
-
+    pkgs.bibata-cursors # My favourite cursors! (at least for now hehe :3)
+    # pkgs.bibata-extra-cursors # broken
   ];
 
   # Extra Fonts
@@ -252,7 +253,9 @@
     };
   };
 
-
+  # Zsh
+  environment.shells = [ pkgs.zsh ];
+  users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
      enable = true;
      enableCompletion = true;

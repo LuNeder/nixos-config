@@ -101,7 +101,7 @@
         }
       '';};
   };
-  
+
 
   networking.hostName = "Luana-X670E"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant. (seems to be working even without this lol)

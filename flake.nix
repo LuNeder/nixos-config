@@ -15,7 +15,7 @@
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
       pkgsMusl = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-musl";}; 
-      pkgsGnu = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; }; 
+      pkgsGnu = import nixpkgs {  config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-musl"; }; 
       pkgs = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-musl";}; # TODO: CHANGE FOR MUSL
     in {
       nixosConfigurations = {

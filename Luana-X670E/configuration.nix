@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
     ];
@@ -33,10 +33,10 @@
 
   # TODO: FIX - URGENT ###### Use Musl
    nixpkgs = {
-                hostPlatform = { system = "x86_64-linux"; };
-  #              # hostPlatform = { config = "x86_64-unknown-linux-musl"; };
-  #              config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
-  #              overlays = [
+                hostPlatform = { #system = "x86_64-linux";
+                  config = "x86_64-unknown-linux-musl"; };
+  #             config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
+  #             overlays = [
   #                (final: prev: {
   #                  ccacheWrapper = prev.ccacheWrapper.override {
   #                    extraConfig = ''
@@ -81,6 +81,12 @@
 
   # Enable sysrq keys that for some dumb reason come disabled by default
   boot.kernel.sysctl."kernel.sysrq" = 1;
+
+  # Kernel Modules
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  security.polkit.enable = true;
 
   # Bootloader.
   boot.loader = {
@@ -349,6 +355,9 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  # OpenRGB
+  # services.hardware.openrgb.enable = true;
 
 
   # Some programs need SUID wrappers, can be configured further or are

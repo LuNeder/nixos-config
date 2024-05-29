@@ -185,6 +185,7 @@
       obs-backgroundremoval
       obs-pipewire-audio-capture
     ];})
+    pkgs.sg3_utils
   ];
 
   # Extra Fonts
@@ -422,7 +423,13 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-
+  
+  # Udev Rules
+  services.udev.extraRules = ''
+    # Apple SuperDrive initialization rule
+    # See: https://gist.github.com/yookoala/818c1ff057e3d965980b7fd3bf8f77a6
+    ACTION=="add", ATTRS{idProduct}=="1500", ATTRS{idVendor}=="05ac", DRIVERS=="usb", RUN+="${pkgs.sg3_utils}/bin/sg_raw %r/sr%n EA 00 00 00 00 00 01"
+  '';
 
   ####    ####
   # This value determines the NixOS release from which the default

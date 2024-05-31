@@ -142,6 +142,9 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true; # TODO: Not Working, annoying af
 
+  # TeamViewer
+  services.teamviewer.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
@@ -156,12 +159,14 @@
     pkgs.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
     pkgs.nvtopPackages.full
+    pkgs.htop
     pkgs.gparted
     pkgs.mate.engrampa
     pkgs.vscodium
     pkgs.goverlay
     pkgs.mangohud
     pkgs.p7zip # why is this not installed by default, nixos is fucking dumb
+    pkgs.rar
     pkgs.xz
     pkgs.ulauncher 
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
@@ -175,6 +180,7 @@
     pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
+    pkgs.xfce.xfce4-clipman-plugin
     pkgs.menulibre
     pkgs.bibata-cursors # My favourite cursors! (at least for now hehe :3)
     # pkgs.bibata-extra-cursors # broken
@@ -186,6 +192,12 @@
       obs-pipewire-audio-capture
     ];})
     pkgs.sg3_utils
+    pkgs.protontricks
+    pkgs.bottles
+    pkgs.weylus
+    pkgs.krita
+    pkgs.xournalpp
+    pkgs.rnote
   ];
 
   # Extra Fonts
@@ -430,6 +442,22 @@
     # See: https://gist.github.com/yookoala/818c1ff057e3d965980b7fd3bf8f77a6
     ACTION=="add", ATTRS{idProduct}=="1500", ATTRS{idVendor}=="05ac", DRIVERS=="usb", RUN+="${pkgs.sg3_utils}/bin/sg_raw %r/sr%n EA 00 00 00 00 00 01"
   '';
+
+  # Tailscale
+  services.tailscale.enable = true;
+
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    user = "luana";
+    dataDir = "/home/luana/Documents";    # Default folder for new synced folders
+    configDir = "/home/luana/.config/syncthing";   # Folder for Syncthing's settings and keys
+  };
+
+  # VirtualBox # broken
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "luana" ];
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   ####    ####
   # This value determines the NixOS release from which the default

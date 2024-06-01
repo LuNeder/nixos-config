@@ -100,8 +100,8 @@
           fwsetup
         }
       '';
-      # theme = "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe";
-      theme = "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse";
+      theme = "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe";
+      # theme = "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse";
     };
   };
   
@@ -174,6 +174,7 @@
     pkgs.htop
     pkgs.gparted
     pkgs.mate.engrampa
+    pkgs.baobab
     pkgs.vscodium
     pkgs.goverlay
     pkgs.mangohud
@@ -439,7 +440,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
+    open = false; # TODO: this will become the default for newer GPUs (such as mine) soon, check how good this is
 
     # Enable the Nvidia settings menu,
 	# accessible via `nvidia-settings`.

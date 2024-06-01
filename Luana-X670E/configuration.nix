@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, lib, ... }:
+{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, lib, stdenv, ... }:
 
 {
   imports =
@@ -99,8 +99,11 @@
         menuentry "UEFI Firmware Settings" {
           fwsetup
         }
-      '';};
+      '';
+      theme = "${pkgs.stdenv.mkDerivation{name = "virtuaverse"; src = builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git"; sparseCheckout = ["grub/themes"];};}}/virtuaverse";
+    };
   };
+  
 
   # Plymouth
   boot.plymouth = {

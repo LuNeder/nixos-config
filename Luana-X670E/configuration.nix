@@ -102,6 +102,14 @@
       '';};
   };
 
+  # Plymouth
+  boot.plymouth = {
+    enable = true;
+    themePackages = with pkgs; [ (adi1090x-plymouth-themes.override {selected_themes = [ "black_hud" ]; }) ];
+    theme = "black_hud";
+  };
+  
+
 
   networking.hostName = "Luana-X670E"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant. (seems to be working even without this lol)
@@ -198,6 +206,7 @@
     pkgs.krita
     pkgs.xournalpp
     pkgs.rnote
+    pkgs.github-desktop
   ];
 
   # Extra Fonts

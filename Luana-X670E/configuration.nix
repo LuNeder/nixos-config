@@ -100,7 +100,7 @@
           fwsetup
         }
       '';
-      theme = "${pkgs.stdenv.mkDerivation{name = "virtuaverse"; src = builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git"; sparseCheckout = ["grub/themes"];};}}/virtuaverse";
+      theme = "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe";
     };
   };
   

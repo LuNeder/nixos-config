@@ -107,6 +107,7 @@
   
 
   # Plymouth
+  boot.initrd.systemd.enable = true;
   boot.plymouth = {
     enable = true;
     themePackages = with pkgs; [ (adi1090x-plymouth-themes.override {selected_themes = [ "black_hud" ]; }) ];

@@ -158,11 +158,15 @@
   # TeamViewer
   services.teamviewer.enable = true;
 
+  # KDE Connect
+  programs.kdeconnect.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
     pkgs.curl
     pkgs.git
+    pkgs.jdk22
     # pkgs.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
@@ -210,9 +214,15 @@
     pkgs.bottles
     pkgs.weylus
     pkgs.krita
+    pkgs.inkscape
     pkgs.xournalpp
     pkgs.rnote
     pkgs.github-desktop
+    #pkgs.python3.withPackages([pkgs.python3Packages.pyusb pkgs.python311Packages.usb-devices])
+    pkgs.python3Packages.pyusb
+    pkgs.python311Packages.usb-devices
+    pkgs.sidequest
+    pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
   ];
 
   # Extra Fonts
@@ -226,8 +236,26 @@
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    gamescopeSession.enable = true; # TODO: make gamepadui on displaymanager later
+    gamescopeSession.enable = true; # TODO: does not work, freezes. make gamepadui on displaymanager manually later
   };
+
+  # VR
+  services.monado = {
+    enable = true;
+    defaultRuntime = false; # Register as default OpenXR runtime
+  };
+  systemd.user.services.monado.environment = {
+    STEAMVR_LH_ENABLE = "1";
+    XRT_COMPOSITOR_COMPUTE = "1";
+    WMR_HANDTRACKING = "0";
+  };
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [
+    pkgs.libva # fuck alvr, they removed the appimages
+    pkgs.ocamlPackages.alsa
+    pkgs.alsa-lib
+  ];
   
   # Flatpaks
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];

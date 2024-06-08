@@ -212,6 +212,7 @@
     pkgs.sg3_utils
     pkgs.protontricks
     pkgs.bottles
+    pkgs.prusa-slicer
     pkgs.weylus
     pkgs.krita
     pkgs.inkscape

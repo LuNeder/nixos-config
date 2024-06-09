@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, lib, stdenv, ... }:
+{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, lib, stdenv, ... }:
 
 {
   imports =
@@ -27,7 +27,7 @@
 #     replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
 #       name = pkgsGnu.coreutils.name;
 #     });
-#   }];
+#   }]; # TODO: PkgsNoCu
 
 
 
@@ -205,10 +205,10 @@
     # pkgs.bibata-extra-cursors # broken
     pkgs.papirus-icon-theme
     ((pkgs.wrapOBS { # OBS
-      plugins = with pkgs.obs-studio-plugins; [
-      (wlrobs.overrideAttrs (oldAttrs: rec { cudaSupport = false;}))
-     # (obs-backgroundremoval.overrideAttrs (oldAttrs: rec { cudaSupport = false;})) # Broken with CUDA support enabled (and overrideattrs seems ignored)
-      (obs-pipewire-audio-capture.overrideAttrs (oldAttrs: rec { cudaSupport = false;}))
+      plugins = [
+      pkgs.obs-studio-plugins.wlrobs
+      pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
+      pkgs.obs-studio-plugins.obs-pipewire-audio-capture
     ];}))
     pkgs.sg3_utils
     pkgs.protontricks
@@ -247,15 +247,16 @@
   };
 
   # VR
-  #services.monado = { # Broken with CUDA support enabled
-  #  enable = true;
-  #  defaultRuntime = false; # Register as default OpenXR runtime
-  #};
-  #systemd.user.services.monado.environment = {
-  #  STEAMVR_LH_ENABLE = "1";
-  #  XRT_COMPOSITOR_COMPUTE = "1";
-  #  WMR_HANDTRACKING = "0";
-  #};
+  services.monado = {
+    package = (pkgsNoCu.monado.overrideAttrs (oldAttrs: rec { cudaSupport = false;}));
+    enable = true;
+    defaultRuntime = false; # Register as default OpenXR runtime
+  };
+  systemd.user.services.monado.environment = {
+    STEAMVR_LH_ENABLE = "1";
+    XRT_COMPOSITOR_COMPUTE = "1";
+    WMR_HANDTRACKING = "0";
+  };
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [

@@ -76,6 +76,7 @@
   # };
   # services.nscd.enableNsncd = false;
 
+
   # Latest kernel
   boot.kernelPackages = pkgsGnu.linuxPackages_latest; 
 
@@ -226,6 +227,7 @@
     pkgs.sidequest
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
+    pkgs.cudaPackages.cudnn
   ];
 
   # Extra Fonts
@@ -243,15 +245,15 @@
   };
 
   # VR
-  services.monado = {
-    enable = true;
-    defaultRuntime = false; # Register as default OpenXR runtime
-  };
-  systemd.user.services.monado.environment = {
-    STEAMVR_LH_ENABLE = "1";
-    XRT_COMPOSITOR_COMPUTE = "1";
-    WMR_HANDTRACKING = "0";
-  };
+  #services.monado = {
+  #  enable = true;
+  #  defaultRuntime = false; # Register as default OpenXR runtime
+  #};
+  #systemd.user.services.monado.environment = {
+  #  STEAMVR_LH_ENABLE = "1";
+  #  XRT_COMPOSITOR_COMPUTE = "1";
+  #  WMR_HANDTRACKING = "0";
+  #};
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [
@@ -489,7 +491,9 @@
   };
   environment.sessionVariables = rec {
     CUDA_PATH = "${pkgs.cudatoolkit}";
+    CUDA_TOOLKIT_ROOT_DIR = "${pkgs.cudatoolkit}";
     EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
+    LD_LIBRARY_PATH = lib.mkForce "${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib:${config.services.pipewire.package.jack}/lib";
     EXTRA_CCFLAGS = "-I/usr/include";
   };
   

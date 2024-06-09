@@ -204,12 +204,12 @@
     pkgs.bibata-cursors # My favourite cursors! (at least for now hehe :3)
     # pkgs.bibata-extra-cursors # broken
     pkgs.papirus-icon-theme
-    (pkgs.wrapOBS { # OBS
+    ((pkgs.wrapOBS { # OBS
       plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-    ];})
+      (wlrobs.overrideAttrs (oldAttrs: rec { cudaSupport = false;}))
+     # (obs-backgroundremoval.overrideAttrs (oldAttrs: rec { cudaSupport = false;})) # Broken with CUDA support enabled (and overrideattrs seems ignored)
+      (obs-pipewire-audio-capture.overrideAttrs (oldAttrs: rec { cudaSupport = false;}))
+    ];}))
     pkgs.sg3_utils
     pkgs.protontricks
     pkgs.bottles
@@ -222,6 +222,8 @@
     pkgs.github-desktop
     pkgs.discord
     #pkgs.python3.withPackages([pkgs.python3Packages.pyusb pkgs.python311Packages.usb-devices])
+    (pkgs.python3)#.overrideAttrs (oldAttrs: rec { cudaSupport = true; cudaVersion = "12"; }))
+    #(pkgs.python3Packages.torch.overrideAttrs (oldAttrs: rec { cudaSupport = true; cudaVersion = "12"; }))
     pkgs.python3Packages.pyusb
     pkgs.python311Packages.usb-devices
     pkgs.sidequest
@@ -245,7 +247,7 @@
   };
 
   # VR
-  #services.monado = {
+  #services.monado = { # Broken with CUDA support enabled
   #  enable = true;
   #  defaultRuntime = false; # Register as default OpenXR runtime
   #};

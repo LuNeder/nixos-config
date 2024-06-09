@@ -22,9 +22,9 @@
     let 
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
-      pkgsMusl = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+      pkgsMusl = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
       pkgsGnu = import nixpkgs {  config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgs = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: CHANGE FOR MUSL
+      pkgs = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: CHANGE FOR MUSL + nix seems to ignore when i ask it to use musl
     in {
       nixosConfigurations = {
         virtualbox = ( nixpkgs.lib.nixosSystem {

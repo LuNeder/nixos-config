@@ -190,7 +190,7 @@
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
     pkgs.plank 
     pkgs.ifuse
-    pkgs.syncthing  # TODO: this and tailscale
+    pkgs.syncthing  # TODO: this 
     pkgs.fastfetch
     pkgs.neofetch
     pkgs.lolcat
@@ -219,11 +219,13 @@
     pkgs.xournalpp
     pkgs.rnote
     pkgs.github-desktop
+    pkgs.discord
     #pkgs.python3.withPackages([pkgs.python3Packages.pyusb pkgs.python311Packages.usb-devices])
     pkgs.python3Packages.pyusb
     pkgs.python311Packages.usb-devices
     pkgs.sidequest
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
+    pkgs.cudatoolkit # CUDA
   ];
 
   # Extra Fonts
@@ -478,6 +480,17 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  # CUDA
+  systemd.services.nvidia-control-devices = {
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11.bin}/bin/nvidia-smi";
+  };
+  environment.sessionVariables = rec {
+    CUDA_PATH = "${pkgs.cudatoolkit}";
+    EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
+    EXTRA_CCFLAGS = "-I/usr/include";
   };
   
   # Udev Rules

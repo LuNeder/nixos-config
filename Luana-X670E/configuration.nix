@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, lib, stdenv, ... }:
+{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -248,7 +248,14 @@
 
   # VR
   services.monado = {
-    package = (pkgsNoCu.monado.overrideAttrs (oldAttrs: rec { cudaSupport = false;}));
+    package = (pkgsNoCu.monado#.overrideAttrs (oldAttrs: rec { 
+     # src = pkgs.fetchFromGitHub {
+      #owner = "shinyquagsire23"; # Monado for Oculus Quest
+     # repo = "monado";
+     # rev = "41abf1e75d443e40c01e3a844d2cdb198d84ded7";
+     # hash = "sha256-d5MrRuzQAuA8l7VSQN9A4go6v85fkUT6wmCQEXLnia4=";
+     # };})
+    );
     enable = true;
     defaultRuntime = false; # Register as default OpenXR runtime
   };
@@ -438,8 +445,8 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+   networking.firewall.allowedTCPPorts = [ 7860 1701 9001 ];
+   networking.firewall.allowedUDPPorts = [ 7860 1701 9001 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

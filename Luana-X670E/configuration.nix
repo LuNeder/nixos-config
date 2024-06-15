@@ -2,11 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, lib, stdenv, fetchFromGitHub, ... }:
+{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
     [
+      "${inputs.pkgs-wivrn}/nixos/modules/services/video/wivrn.nix"
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
     ];
@@ -168,7 +169,7 @@
     pkgs.curl
     pkgs.git
     pkgs.jdk22
-    # pkgs.authy
+    # pkgsOld.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
    # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
@@ -230,6 +231,8 @@
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
+    pkgs.xfce.catfish
+    pkgs.transmission_4-qt
   ];
 
   # Extra Fonts
@@ -264,7 +267,11 @@
     XRT_COMPOSITOR_COMPUTE = "1";
     WMR_HANDTRACKING = "0";
   };
-
+  services.wivrn.enable = true;
+  services.wivrn.openFirewall = true;
+  services.wivrn.package = pkgsWivrn.wivrn;
+  services.wivrn.defaultRuntime = true;
+ 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [
     pkgs.libva # fuck alvr, they removed the appimages
@@ -445,8 +452,8 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-   networking.firewall.allowedTCPPorts = [ 7860 1701 9001 ];
-   networking.firewall.allowedUDPPorts = [ 7860 1701 9001 ];
+   networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 ];
+   networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -524,6 +531,8 @@
     dataDir = "/home/luana/Documents";    # Default folder for new synced folders
     configDir = "/home/luana/.config/syncthing";   # Folder for Syncthing's settings and keys
   };
+
+  # services.transmission.enable = true;
 
   # VirtualBox # broken
   # virtualisation.virtualbox.host.enable = true;

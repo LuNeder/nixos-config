@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, lib, stdenv, fetchFromGitHub, ... }:
+{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -231,8 +231,12 @@
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
+    pkgsNoCu.opencomposite
+    pkgsNoCu.opencomposite-helper
+    pkgs.openxr-loader
     pkgs.xfce.catfish
     pkgs.transmission_4-qt
+    pkgs.lldb
   ];
 
   # Extra Fonts
@@ -298,6 +302,7 @@
 
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873
+  # home-manager.backupFileExtension = "backup";
   home-manager.users.luana = {
     home.stateVersion = "23.11";
 
@@ -348,6 +353,28 @@
         Exec=polybar main
         Comment=
         RunHook=0'';
+
+      # OpenVR - opencomposite
+        # Steam launch args: env PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn_comp_ipc %command%
+      "openvr/openvrpaths.vrpath".text = ''
+          {
+           "config" :
+          [
+          "~/.local/share/Steam/config"
+          ],
+          "external_drivers" : null,
+          "jsonid" : "vrpathreg",
+          "log" :
+          [
+            "~/.local/share/Steam/logs"
+          ],
+          "runtime" :
+          [
+            "${pkgsNoCu.opencomposite}/lib/opencomposite"
+          ],
+          "version" : 1
+        }
+      '';
     };
   };
 
@@ -452,8 +479,8 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-   networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 ];
-   networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 ];
+   networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 ];
+   networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

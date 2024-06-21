@@ -29,7 +29,7 @@
       pkgs = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: CHANGE FOR MUSL + nix seems to ignore when i ask it to use musl
       pkgsNoCu = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";};
       pkgsOld = import pkgs-old { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";}; 
-      pkgsWivrn = import pkgs-wivrn { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";}; 
+      pkgsWivrn = import pkgs-wivrn { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
     in {
       nixosConfigurations = {
         virtualbox = ( nixpkgs.lib.nixosSystem {

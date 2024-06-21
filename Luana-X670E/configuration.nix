@@ -489,7 +489,7 @@
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
-    driSupport = true;
+    # driSupport = true; The option definition `hardware.opengl.driSupport' no longer has any effect; please remove it.
     driSupport32Bit = true;
   };
 

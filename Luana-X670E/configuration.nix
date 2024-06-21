@@ -387,7 +387,7 @@
      autosuggestions.enable = true;
      syntaxHighlighting.enable = true;
 
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
       plugins = [ "git" ]; # "zsh-autosuggestions" "zsh-syntax-highlighting" ];
       theme = "agnoster";
@@ -426,8 +426,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "intl"; # or intl?
+    xkb.layout = "us";
+    xkb.variant = "intl";
   };
 
   # Configure console keymap
@@ -437,7 +437,7 @@
   services.printing.enable = true;
   services.avahi = {
   enable = true;
-  nssmdns = true;
+  nssmdns4 = true;
   openFirewall = true;
 };
 
@@ -487,10 +487,10 @@
 
   #### NVIDIA DRIVERS ####
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    # driSupport = true; The option definition `hardware.opengl.driSupport' no longer has any effect; please remove it.
-    driSupport32Bit = true;
+    #driSupport = true; #The option definition `hardware.opengl.driSupport' no longer has any effect; please remove it.
+    enable32Bit = true;
   };
 
   # Load nvidia driver for Xorg and Wayland

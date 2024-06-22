@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, lib, stdenv, fetchFromGitHub, ... }:
+{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, pkgsmndvlknlyrs, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -496,6 +496,7 @@
     enable = true;
     #driSupport = true; #The option definition `hardware.opengl.driSupport' no longer has any effect; please remove it.
     enable32Bit = true;
+    extraPackages = [ pkgsmndvlknlyrs.monado-vulkan-layers ];
   };
 
   # Load nvidia driver for Xorg and Wayland

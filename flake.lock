@@ -94,6 +94,22 @@
         "type": "github"
       }
     },
+    "pkgs-mndvlknlyrs": {
+      "locked": {
+        "lastModified": 1716732827,
+        "narHash": "sha256-OLKLZ6M//SyzchP4A/K4XG/8GIAANZbAFpkHZzIkgLs=",
+        "owner": "Scrumplex",
+        "repo": "nixpkgs",
+        "rev": "9f12b15fa0152cb42c29f018a84b5541fb83ba6d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Scrumplex",
+        "ref": "nixos/monado/vulkan-layers",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "pkgs-old": {
       "locked": {
         "lastModified": 1718811006,
@@ -133,6 +149,7 @@
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
+        "pkgs-mndvlknlyrs": "pkgs-mndvlknlyrs",
         "pkgs-old": "pkgs-old",
         "pkgs-wivrn": "pkgs-wivrn",
         "systems": "systems_3"

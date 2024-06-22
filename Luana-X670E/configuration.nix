@@ -237,6 +237,11 @@
     pkgs.xfce.catfish
     pkgs.transmission_4-qt
     pkgs.lldb
+    pkgs.fluidsynth
+    pkgs.lmms
+    pkgs.muse
+    pkgs.qsynth
+    pkgs.pavucontrol
   ];
 
   # Extra Fonts

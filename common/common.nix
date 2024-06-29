@@ -45,7 +45,7 @@
 
     ohMyZsh = {
       enable = true;
-      plugins = [ "git" ]; # "zsh-autosuggestions" "zsh-syntax-highlighting" ];
+      plugins = [ "git" ];
       theme = "agnoster";
     };
   };

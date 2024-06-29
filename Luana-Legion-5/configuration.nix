@@ -104,6 +104,13 @@
   pkgs.git
   ];
 
+  # Syncthing (enabled in common.nix)
+  services.syncthing = {
+    user = "luana";
+    dataDir = "/home/luana/Documents";    # Default folder for new synced folders
+    configDir = "/home/luana/.config/syncthing";   # Folder for Syncthing's settings and keys
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

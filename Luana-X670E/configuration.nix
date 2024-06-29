@@ -172,7 +172,6 @@
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
     pkgs.plank 
     pkgs.ifuse
-    pkgs.syncthing  # TODO: this 
     pkgs.fastfetch
     pkgs.neofetch
     pkgs.lolcat

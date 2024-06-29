@@ -6,7 +6,8 @@
 
 {
   imports =
-    [
+    [ 
+      ../common/common.nix
       "${inputs.pkgs-wivrn}/nixos/modules/services/video/wivrn.nix"
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
@@ -81,8 +82,6 @@
   # Latest kernel
   boot.kernelPackages = pkgsGnu.linuxPackages_latest; 
 
-  # Enable sysrq keys that for some dumb reason come disabled by default
-  boot.kernel.sysctl."kernel.sysrq" = 1;
 
   # Kernel Modules
   boot.extraModulePackages = with config.boot.kernelPackages; [
@@ -141,27 +140,8 @@
   };
 
   
-
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-
-
-  # Allow unfree packages
-  # nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes
-
-  # Keyring for bitwarden
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.lightdm.enableGnomeKeyring = true; # TODO: Not Working, annoying af
-
-  # TeamViewer
-  services.teamviewer.enable = true;
-
-  # KDE Connect
-  programs.kdeconnect.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -223,8 +203,7 @@
     pkgs.github-desktop
     pkgs.discord
     #pkgs.python3.withPackages([pkgs.python3Packages.pyusb pkgs.python311Packages.usb-devices])
-    (pkgs.python3)#.overrideAttrs (oldAttrs: rec { cudaSupport = true; cudaVersion = "12"; }))
-    #(pkgs.python3Packages.torch.overrideAttrs (oldAttrs: rec { cudaSupport = true; cudaVersion = "12"; }))
+    pkgs.python3
     pkgs.python3Packages.pyusb
     pkgs.python311Packages.usb-devices
     pkgs.sidequest
@@ -250,12 +229,6 @@
     pkgs.libreoffice-fresh
   ];
 
-  # Extra Fonts
-  fonts.packages = [
-    pkgs.powerline-fonts # zsh agnoster theme needs this
-    pkgs.emojione
-    pkgs.minecraftia
-  ];
 
   # Steam
   programs.steam = {
@@ -287,7 +260,8 @@
   services.wivrn.openFirewall = true;
   services.wivrn.package = pkgsWivrn.wivrn;
   services.wivrn.defaultRuntime = true;
- 
+  
+  # Run normal binaries
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [
     pkgs.libva # fuck alvr, they removed the appimages
@@ -295,10 +269,7 @@
     pkgs.alsa-lib
   ];
   
-  # Flatpaks
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  xdg.portal.enable = true;
-  services.flatpak.enable = true; # for when i move from xfce: https://nixos.wiki/wiki/Flatpak
+  # Flatpaks (enabled in common.nix)
   services.flatpak.packages = [
     # "com.obsproject.Studio"
     # "com.bitwarden.desktop"
@@ -396,21 +367,6 @@
     };
   };
 
-  # Zsh
-  environment.shells = [ pkgs.zsh ];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh = {
-     enable = true;
-     enableCompletion = true;
-     autosuggestions.enable = true;
-     syntaxHighlighting.enable = true;
-
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ]; # "zsh-autosuggestions" "zsh-syntax-highlighting" ];
-      theme = "agnoster";
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {
@@ -493,8 +449,6 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
    networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 ];
@@ -503,11 +457,10 @@
   # networking.firewall.enable = false;
 
 
-  #### NVIDIA DRIVERS ####
+  # NVidia Drivers
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
-    #driSupport = true; #The option definition `hardware.opengl.driSupport' no longer has any effect; please remove it.
     enable32Bit = true;
     extraPackages = [ pkgsmndvlknlyrs.monado-vulkan-layers ];
   };
@@ -570,9 +523,8 @@
   # Tailscale
   services.tailscale.enable = true;
 
-  # Syncthing
+  # Syncthing (enabled in common.nix)
   services.syncthing = {
-    enable = true;
     user = "luana";
     dataDir = "/home/luana/Documents";    # Default folder for new synced folders
     configDir = "/home/luana/.config/syncthing";   # Folder for Syncthing's settings and keys
@@ -585,7 +537,6 @@
   # users.extraGroups.vboxusers.members = [ "luana" ];
   # virtualisation.virtualbox.host.enableExtensionPack = true;
 
-  ####    ####
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

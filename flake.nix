@@ -47,9 +47,12 @@
             modules = [ nix-flatpak.nixosModules.nix-flatpak
               ./Luana-X670E/configuration.nix];
         });
-        #Luana-Legion-5 = (
+        Luana-Legion-5 = ( nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs;};
+            modules = [ nix-flatpak.nixosModules.nix-flatpak
+              ./Luana-Legion-5/configuration.nix];
 
-        #);
+      });
       };
     };
 }

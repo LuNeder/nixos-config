@@ -237,17 +237,24 @@
     pkgs.xfce.catfish
     pkgs.transmission_4-qt
     pkgs.lldb
+    pkgs.alsa-utils
     pkgs.fluidsynth
     pkgs.lmms
     pkgs.muse
     pkgs.qsynth
     pkgs.pavucontrol
+    # pkgs.epiphany
+    pkgs.netsurf.browser
+    # pkgs.minecraft broken
+    pkgs.prismlauncher
+    pkgs.libreoffice-fresh
   ];
 
   # Extra Fonts
   fonts.packages = [
     pkgs.powerline-fonts # zsh agnoster theme needs this
     pkgs.emojione
+    pkgs.minecraftia
   ];
 
   # Steam
@@ -295,6 +302,7 @@
   services.flatpak.packages = [
     # "com.obsproject.Studio"
     # "com.bitwarden.desktop"
+    "org.gnome.Epiphany"
   ];
 
   # Enable the X11 windowing system.
@@ -380,6 +388,11 @@
           "version" : 1
         }
       '';
+    };
+
+    services.fluidsynth = {
+      enable = true;
+      soundService = "pipewire-pulse";
     };
   };
 

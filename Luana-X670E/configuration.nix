@@ -226,6 +226,9 @@
     # pkgs.minecraft broken
     pkgs.prismlauncher
     pkgs.libreoffice-fresh
+    pkgs.wlx-overlay-s
+    pkgs.alvr
+    pkgs.qpwgraph
   ];
 
 
@@ -259,14 +262,86 @@
   services.wivrn.openFirewall = true;
   services.wivrn.package = pkgsWivrn.wivrn;
   services.wivrn.defaultRuntime = true;
+  services.wivrn.config = {
+    enable = true;
+    json = {
+      scale = 1.0;
+     # bitrate = 100000000;
+      encoders = [
+        {
+          encoder = "nvenc";
+          codec = "h265";
+     #     width = 1.0;
+       #   height = 1.0;
+        #  offset_x = 0.0;
+         # offset_y = 0.0;
+        }
+      ];
+      application = [ pkgs.wlx-overlay-s ];
+      #tcp_only = false;
+    };
+  };
   
   # Run normal binaries
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = [
-    pkgs.libva # fuck alvr, they removed the appimages
-    pkgs.ocamlPackages.alsa
-    pkgs.alsa-lib
-  ];
+  programs.nix-ld.libraries = [config.boot.kernelPackages.nvidiaPackages.stable] ++ (with pkgs; [
+    libva # fuck alvr, they removed the appimages
+    ocamlPackages.alsa
+    alsa-lib
+    xfce.libxfce4windowing
+    xfce.xfwm4
+    alsa-lib
+    at-spi2-atk
+    at-spi2-core
+    atk
+    cairo
+    cudatoolkit
+    cups
+    curl
+    dbus
+    expat
+    fontconfig
+    freetype
+    fuse3
+    gdk-pixbuf
+    glib
+    gtk3
+    icu
+    libGL
+    libappindicator-gtk3
+    libdrm
+    libglvnd
+    libnotify
+    libpulseaudio
+    libunwind
+    libusb1
+    libuuid
+    libxkbcommon
+    libxml2
+    mesa
+    nspr
+    nss
+    openssl
+    pango
+    pipewire
+    systemd
+    vulkan-loader
+    xorg.libX11
+    xorg.libXScrnSaver
+    xorg.libXcomposite
+    xorg.libXcursor
+    xorg.libXdamage
+    xorg.libXext
+    xorg.libXfixes
+    xorg.libXi
+    xorg.libXrandr
+    xorg.libXrender
+    xorg.libXtst
+    xorg.libxcb
+    xorg.libxkbfile
+    xorg.libxshmfence
+    zlib
+  ]);
   
   # Flatpaks (enabled in common.nix)
   services.flatpak.packages = [
@@ -337,27 +412,27 @@
         Comment=
         RunHook=0'';
 
-      # OpenVR - opencomposite
+      # OpenVR - opencomposite # Comment when using ALVR/SteamVR
         # Steam launch args: env PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn_comp_ipc %command%
-      "openvr/openvrpaths.vrpath".text = ''
-          {
-           "config" :
-          [
-          "~/.local/share/Steam/config"
-          ],
-          "external_drivers" : null,
-          "jsonid" : "vrpathreg",
-          "log" :
-          [
-            "~/.local/share/Steam/logs"
-          ],
-          "runtime" :
-          [
-            "${pkgsNoCu.opencomposite}/lib/opencomposite"
-          ],
-          "version" : 1
-        }
-      '';
+#      "openvr/openvrpaths.vrpath".text = ''
+#          {
+#           "config" :
+#          [
+#          "~/.local/share/Steam/config"
+#          ],
+#          "external_drivers" : null,
+#          "jsonid" : "vrpathreg",
+#          "log" :
+#          [
+#            "~/.local/share/Steam/logs"
+#          ],
+#          "runtime" :
+#          [
+#            "${pkgsNoCu.opencomposite}/lib/opencomposite"
+#          ],
+#          "version" : 1
+#        }
+#      '';
     };
 
     services.fluidsynth = {

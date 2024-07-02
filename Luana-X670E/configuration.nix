@@ -360,7 +360,7 @@
 
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873
-  # home-manager.backupFileExtension = "backup";
+  home-manager.backupFileExtension = "hm.bkp";
   home-manager.users.luana = {
     home.stateVersion = "23.11";
 
@@ -412,32 +412,41 @@
         Comment=
         RunHook=0'';
 
-      # OpenVR - opencomposite # Comment when using ALVR/SteamVR
+      # OpenVR - opencomposite # Use the alvr specialisation when using ALVR/SteamVR
         # Steam launch args: env PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn_comp_ipc %command%
-#      "openvr/openvrpaths.vrpath".text = ''
-#          {
-#           "config" :
-#          [
-#          "~/.local/share/Steam/config"
-#          ],
-#          "external_drivers" : null,
-#          "jsonid" : "vrpathreg",
-#          "log" :
-#          [
-#            "~/.local/share/Steam/logs"
-#          ],
-#          "runtime" :
-#          [
-#            "${pkgsNoCu.opencomposite}/lib/opencomposite"
-#          ],
-#          "version" : 1
-#        }
-#      '';
+      "openvr/openvrpaths.vrpath".text = ''
+          {
+           "config" :
+          [
+          "~/.local/share/Steam/config"
+          ],
+          "external_drivers" : null,
+          "jsonid" : "vrpathreg",
+          "log" :
+          [
+            "~/.local/share/Steam/logs"
+          ],
+          "runtime" :
+          [
+            "${pkgsNoCu.opencomposite}/lib/opencomposite"
+          ],
+          "version" : 1
+        }
+      '';
     };
 
     services.fluidsynth = {
       enable = true;
       soundService = "pipewire-pulse";
+    };
+  };
+
+  # When using SteamVR, this file cannot exist
+  specialisation.alvr.configuration = {
+    home-manager.users.luana.xdg.configFile."openvr/openvrpaths.vrpath".enable = false; 
+    systemd.services.remove-openvr-bkp-file = {
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig.ExecStart = pkgs.writeShellScript "rmovrbkp" "rm -v -f /home/luana/.config/openvr/openvrpaths.vrpath.hm.bkp";
     };
   };
 

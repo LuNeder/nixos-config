@@ -443,12 +443,15 @@
 
   # When using SteamVR, this file cannot exist
   specialisation.alvr.configuration = {
+    environment.sessionVariables.CURR_SPECIALISATION = lib.mkForce "alvr";
     home-manager.users.luana.xdg.configFile."openvr/openvrpaths.vrpath".enable = false; 
     systemd.services.remove-openvr-bkp-file = {
       wantedBy = [ "multi-user.target" ];
       serviceConfig.ExecStart = pkgs.writeShellScript "rmovrbkp" "rm -v -f /home/luana/.config/openvr/openvrpaths.vrpath.hm.bkp";
     };
   };
+
+  environment.sessionVariables.CURR_SPECIALISATION = "base"; # TODO: problem - this only updates on reboot
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

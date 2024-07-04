@@ -229,6 +229,7 @@
     pkgs.wlx-overlay-s
     pkgs.alvr
     pkgs.qpwgraph
+    pkgs.pulseaudioFull # Needed for ALVR audio
   ];
 
 

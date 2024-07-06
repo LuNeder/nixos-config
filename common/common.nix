@@ -24,6 +24,9 @@
     pkgs.powerline-fonts # zsh agnoster theme needs this
     pkgs.emojione
     pkgs.minecraftia
+    pkgs.comic-relief
+    pkgs.comic-mono
+    pkgs.fira
   ];
 
   # Flatpaks

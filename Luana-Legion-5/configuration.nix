@@ -102,6 +102,11 @@
   # $ nix search wget
   environment.systemPackages = [
   pkgs.git
+  pkgs.krita
+  pkgs.weylus
+  pkgs.ulauncher
+  pkgs.vscodium
+  pkgs.font-manager
   ];
 
   # Syncthing (enabled in common.nix)
@@ -125,8 +130,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 ];
+  networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

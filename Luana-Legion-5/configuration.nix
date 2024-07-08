@@ -11,6 +11,25 @@
       ./hardware-configuration.nix
     ];
 
+  # Install firefox.
+  programs.firefox.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = [
+  pkgs.git
+  pkgs.krita
+  pkgs.weylus
+  pkgs.ulauncher
+  pkgs.vscodium
+  pkgs.font-manager
+  pkgs.lshw
+  pkgs.xfce.xfce4-whiskermenu-plugin
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -91,24 +110,6 @@
     #  thunderbird
     ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = [
-  pkgs.git
-  pkgs.krita
-  pkgs.weylus
-  pkgs.ulauncher
-  pkgs.vscodium
-  pkgs.font-manager
-  pkgs.lshw
-  ];
 
   # Syncthing (enabled in common.nix)
   services.syncthing = {

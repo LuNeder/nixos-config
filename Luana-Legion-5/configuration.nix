@@ -183,7 +183,7 @@
     EXTRA_CCFLAGS = "-I/usr/include";
   };
   hardware.nvidia.prime = {
-    sync.enable = true;
+    #sync.enable = true;
     
     # Make sure to use the correct Bus ID values for your system!
     nvidiaBusId = "PCI:1:0:0";

@@ -31,8 +31,20 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = { enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+      extraEntries = ''
+        menuentry "UEFI Firmware Settings" { fwsetup }
+      '';
+      # theme = "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe";
+      # theme = "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse";
+      theme = "${builtins.fetchGit{url = "https://github.com/nobreDaniel/dotfile.git";}}/Arcade";
+    };
+  };
 
   networking.hostName = "Luana-Legion-5"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

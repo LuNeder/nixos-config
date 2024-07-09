@@ -28,6 +28,7 @@
   pkgs.font-manager
   pkgs.lshw
   pkgs.xfce.xfce4-whiskermenu-plugin
+  pkgs.remmina
   ];
 
   # Bootloader.

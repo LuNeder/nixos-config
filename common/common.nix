@@ -16,6 +16,11 @@
   # TeamViewer
   services.teamviewer.enable = true;
 
+  # RDP
+  services.xrdp.enable = true;
+  services.xrdp.openFirewall = true;
+
+
   # KDE Connect
   programs.kdeconnect.enable = true;
 

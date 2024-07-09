@@ -31,6 +31,14 @@
   pkgs.remmina
   ];
 
+  # Flatpaks (enabled in common.nix)
+  services.flatpak.packages = [
+    # "com.obsproject.Studio"
+    # "com.bitwarden.desktop"
+    "org.gnome.Epiphany"
+    "com.valvesoftware.SteamLink"
+  ];
+
   # Bootloader.
   boot.loader = {
     efi.canTouchEfiVariables = true;

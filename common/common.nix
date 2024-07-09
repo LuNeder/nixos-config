@@ -41,6 +41,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  programs.ssh.forwardX11 = true;
+  programs.ssh.setXAuthLocation = true;
+
 
   # Zsh
   environment.shells = [ pkgs.zsh ];

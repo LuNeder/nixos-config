@@ -49,6 +49,7 @@
     { name = "webkit"; location = "https://software.igalia.com/flatpak-refs/webkit-sdk.flatpakrepo"; }
   ];
   services.flatpak.packages = [
+    "org.gnome.Epiphany"
     { appId = "org.gnome.Epiphany.Devel"; origin = "epiphany-preview"; }
     { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
    "com.valvesoftware.SteamLink"

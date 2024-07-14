@@ -354,6 +354,7 @@
   services.flatpak.packages = [
     # "com.obsproject.Studio"
     # "com.bitwarden.desktop"
+    "org.gnome.Epiphany"
     { appId = "org.gnome.Epiphany.Devel"; origin = "epiphany-preview"; }
     { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
   ];

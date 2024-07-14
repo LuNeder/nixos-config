@@ -38,14 +38,20 @@
   pkgs.xfce.xfce4-panel-profiles
   pkgs.xfce.xfce4-pulseaudio-plugin
   pkgs.xfce.xfce4-clipman-plugin
+  pkgs.menulibre
   ];
 
   # Flatpaks (enabled in common.nix)
+  services.flatpak.update.onActivation = true;
+  services.flatpak.remotes = [
+    { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
+    { name = "epiphany-preview"; location = "https://nightly.gnome.org/gnome-nightly.flatpakrepo"; }
+    { name = "webkit"; location = "https://software.igalia.com/flatpak-refs/webkit-sdk.flatpakrepo"; }
+  ];
   services.flatpak.packages = [
-    # "com.obsproject.Studio"
-    # "com.bitwarden.desktop"
-    "org.gnome.Epiphany"
-    "com.valvesoftware.SteamLink"
+    { appId = "org.gnome.Epiphany.Devel"; origin = "epiphany-preview"; }
+    { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
+   "com.valvesoftware.SteamLink"
   ];
 
   # Kernel Modules

@@ -345,10 +345,17 @@
   ]);
   
   # Flatpaks (enabled in common.nix)
+  services.flatpak.update.onActivation = true;
+  services.flatpak.remotes = [
+    { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
+    { name = "epiphany-preview"; location = "https://nightly.gnome.org/gnome-nightly.flatpakrepo"; }
+    { name = "webkit"; location = "https://software.igalia.com/flatpak-refs/webkit-sdk.flatpakrepo"; }
+  ];
   services.flatpak.packages = [
     # "com.obsproject.Studio"
     # "com.bitwarden.desktop"
-    "org.gnome.Epiphany"
+    { appId = "org.gnome.Epiphany.Devel"; origin = "epiphany-preview"; }
+    { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
   ];
 
   # Enable the X11 windowing system.

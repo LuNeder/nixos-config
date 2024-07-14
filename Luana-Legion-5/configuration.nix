@@ -12,7 +12,7 @@
     ];
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true; # I use Epiphany now (on my laptop)
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -29,6 +29,15 @@
   pkgs.lshw
   pkgs.xfce.xfce4-whiskermenu-plugin
   pkgs.remmina
+  ((pkgs.wrapOBS { # OBS
+      plugins = [
+      pkgs.obs-studio-plugins.wlrobs
+      pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
+      pkgs.obs-studio-plugins.obs-pipewire-audio-capture
+  ];}))
+  pkgs.xfce.xfce4-panel-profiles
+  pkgs.xfce.xfce4-pulseaudio-plugin
+  pkgs.xfce.xfce4-clipman-plugin
   ];
 
   # Flatpaks (enabled in common.nix)
@@ -38,6 +47,12 @@
     "org.gnome.Epiphany"
     "com.valvesoftware.SteamLink"
   ];
+
+  # Kernel Modules
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  security.polkit.enable = true;
 
   # Bootloader.
   boot.loader = {

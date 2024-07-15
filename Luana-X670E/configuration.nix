@@ -186,12 +186,12 @@
     pkgs.graphite-cursors
     pkgs.phinger-cursors
     pkgs.papirus-icon-theme
-    ((pkgs.wrapOBS { # OBS
+    (pkgs.wrapOBS { # OBS
       plugins = [
       pkgs.obs-studio-plugins.wlrobs
       pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
       pkgs.obs-studio-plugins.obs-pipewire-audio-capture
-    ];}))
+    ];})
     pkgs.sg3_utils
     pkgs.protontricks
     pkgs.bottles

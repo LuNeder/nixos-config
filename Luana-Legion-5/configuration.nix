@@ -39,6 +39,8 @@
   pkgs.xfce.xfce4-pulseaudio-plugin
   pkgs.xfce.xfce4-clipman-plugin
   pkgs.menulibre
+  pkgs.papirus-icon-theme
+  pkgs.bibata-cursors
   ];
 
   # Flatpaks (enabled in common.nix)

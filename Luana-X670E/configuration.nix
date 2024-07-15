@@ -183,6 +183,8 @@
     pkgs.menulibre
     pkgs.bibata-cursors # My favourite cursors! (at least for now hehe :3)
     # pkgs.bibata-extra-cursors # broken
+    pkgs.graphite-cursors
+    pkgs.phinger-cursors
     pkgs.papirus-icon-theme
     ((pkgs.wrapOBS { # OBS
       plugins = [

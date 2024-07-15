@@ -27,7 +27,7 @@
   # Extra Fonts
   fonts.packages = [
     pkgs.powerline-fonts # zsh agnoster theme needs this
-    pkgs.emojione
+    # pkgs.emojione # NixOS/nixpkgs#326959
     pkgs.minecraftia
     pkgs.comic-relief
     pkgs.comic-mono

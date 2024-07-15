@@ -152,7 +152,7 @@
     # pkgsOld.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
-   # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
+    # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3
     pkgs.thunderbird
@@ -209,8 +209,8 @@
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
-    pkgsNoCu.opencomposite
-    pkgsNoCu.opencomposite-helper
+    # pkgsNoCu.opencomposite # TODO: enable this again NixOS/nixpkgs#327411
+    # pkgsNoCu.opencomposite-helper # TODO: enable this again -broken
     pkgs.openxr-loader
     pkgs.xfce.catfish
     pkgs.transmission_4-qt
@@ -423,25 +423,26 @@
 
       # OpenVR - opencomposite # Use the alvr specialisation when using ALVR/SteamVR
         # Steam launch args: env PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn_comp_ipc %command%
-      "openvr/openvrpaths.vrpath".text = ''
-          {
-           "config" :
-          [
-          "~/.local/share/Steam/config"
-          ],
-          "external_drivers" : null,
-          "jsonid" : "vrpathreg",
-          "log" :
-          [
-            "~/.local/share/Steam/logs"
-          ],
-          "runtime" :
-          [
-            "${pkgsNoCu.opencomposite}/lib/opencomposite"
-          ],
-          "version" : 1
-        }
-      '';
+      # TODO: enable this again
+      #"openvr/openvrpaths.vrpath".text = ''
+      #    {
+      #     "config" :
+      #    [
+      #    "~/.local/share/Steam/config"
+      #    ],
+      #    "external_drivers" : null,
+      #    "jsonid" : "vrpathreg",
+      #    "log" :
+      #    [
+      #      "~/.local/share/Steam/logs"
+      #    ],
+      #    "runtime" :
+      #    [
+      #      "${pkgsNoCu.opencomposite}/lib/opencomposite"
+      #    ],
+      #    "version" : 1
+      #  }
+      #'';
     };
 
     services.fluidsynth = {
@@ -511,7 +512,8 @@
 };
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true; The option definition `sound' no longer has any effect; please remove it.
+
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

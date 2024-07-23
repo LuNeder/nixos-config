@@ -12,7 +12,7 @@
     ];
 
   # Install firefox.
-  # programs.firefox.enable = true; # I use Epiphany now (on my laptop)
+   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -41,6 +41,11 @@
   pkgs.menulibre
   pkgs.papirus-icon-theme
   pkgs.bibata-cursors
+  pkgs.pkgs.bitwarden-desktop
+  pkgs.mate.engrampa
+  pkgs.p7zip
+  pkgs.rar
+  pkgs.xz
   ];
 
   # Flatpaks (enabled in common.nix)
@@ -127,7 +132,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

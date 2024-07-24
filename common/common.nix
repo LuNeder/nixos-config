@@ -59,7 +59,14 @@
       plugins = [ "git" ];
       theme = "agnoster";
     };
+
+    shellAliases = {
+      cargo = "cargo mommy";
+    };
   };
+
+  environment.sessionVariables.CARGO_MOMMYS_ROLES = "big sis";
+
   
   # Tailscale
   services.tailscale.enable = true;

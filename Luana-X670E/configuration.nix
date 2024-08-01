@@ -176,7 +176,8 @@
     pkgs.neofetch
     pkgs.lolcat
     pkgs.font-manager
-    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar
+    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar,
+    pkgs.direnv
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
     pkgs.xfce.xfce4-clipman-plugin
@@ -232,6 +233,7 @@
     pkgs.alvr
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio
+    pkgs.godot_4
   ];
 
 

@@ -21,6 +21,7 @@
   # $ nix search wget
   environment.systemPackages = [
   pkgs.git
+  pkgs.direnv
   pkgs.krita
   pkgs.weylus
   pkgs.ulauncher
@@ -43,10 +44,21 @@
   pkgs.bibata-cursors
   pkgs.pkgs.bitwarden-desktop
   pkgs.mate.engrampa
+  pkgs.baobab
   pkgs.p7zip
   pkgs.rar
   pkgs.xz
+  pkgs.github-desktop
+  pkgs.godot_4
   ];
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    gamescopeSession.enable = true; # TODO: does not work, freezes. make gamepadui on displaymanager manually later
+  };
 
   # Flatpaks (enabled in common.nix)
   services.flatpak.update.onActivation = true;

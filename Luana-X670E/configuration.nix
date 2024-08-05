@@ -212,8 +212,8 @@
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
-    # pkgsNoCu.opencomposite # TODO: enable this again NixOS/nixpkgs#327411
-    # pkgsNoCu.opencomposite-helper # TODO: enable this again -broken
+    pkgsNoCu.opencomposite
+    pkgsNoCu.opencomposite-helper
     pkgs.openxr-loader
     pkgs.xfce.catfish
     pkgs.transmission_4-qt
@@ -229,7 +229,7 @@
     # pkgs.minecraft broken
     pkgs.prismlauncher
     pkgs.libreoffice-fresh
-    pkgs.wlx-overlay-s
+    # pkgs.wlx-overlay-s # TODO: reenable - broken
     pkgs.alvr
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio
@@ -282,7 +282,7 @@
          # offset_y = 0.0;
         }
       ];
-      application = [ pkgs.wlx-overlay-s ];
+      # application = [ pkgs.wlx-overlay-s ]; # TODO: reenable - broken
       #tcp_only = false;
     };
   };
@@ -427,26 +427,25 @@
 
       # OpenVR - opencomposite # Use the alvr specialisation when using ALVR/SteamVR
         # Steam launch args: env PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn_comp_ipc %command%
-      # TODO: enable this again
-      #"openvr/openvrpaths.vrpath".text = ''
-      #    {
-      #     "config" :
-      #    [
-      #    "~/.local/share/Steam/config"
-      #    ],
-      #    "external_drivers" : null,
-      #    "jsonid" : "vrpathreg",
-      #    "log" :
-      #    [
-      #      "~/.local/share/Steam/logs"
-      #    ],
-      #    "runtime" :
-      #    [
-      #      "${pkgsNoCu.opencomposite}/lib/opencomposite"
-      #    ],
-      #    "version" : 1
-      #  }
-      #'';
+      "openvr/openvrpaths.vrpath".text = ''
+          {
+           "config" :
+          [
+          "~/.local/share/Steam/config"
+          ],
+          "external_drivers" : null,
+          "jsonid" : "vrpathreg",
+          "log" :
+          [
+            "~/.local/share/Steam/logs"
+          ],
+          "runtime" :
+          [
+            "${pkgsNoCu.opencomposite}/lib/opencomposite"
+          ],
+          "version" : 1
+        }
+      '';
     };
 
     services.fluidsynth = {

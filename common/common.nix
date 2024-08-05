@@ -3,6 +3,15 @@
   # Enable sysrq keys that for some dumb reason come disabled by default
   boot.kernel.sysctl."kernel.sysrq" = 1;
 
+  # Garbage Collector
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "-d --delete-older-than 30d";
+  };
+
+
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

@@ -220,8 +220,8 @@
     # supported GPUs is at: 
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false; # TODO: this will become the default for newer GPUs (such as mine) soon, check how good this is
+    # The open kernel module is recommended by NVidia for compatible GPUs, so true is the recommended setting.
+    open = true; 
 
     # Enable the Nvidia settings menu,
 	# accessible via `nvidia-settings`.

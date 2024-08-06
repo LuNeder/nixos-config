@@ -632,10 +632,10 @@
 
   # services.transmission.enable = true;
 
-  # VirtualBox # broken
-  # virtualisation.virtualbox.host.enable = true;
-  # users.extraGroups.vboxusers.members = [ "luana" ];
-  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # VirtualBox
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "luana" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

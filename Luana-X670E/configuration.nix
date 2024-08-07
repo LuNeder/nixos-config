@@ -11,6 +11,7 @@
       "${inputs.pkgs-wivrn}/nixos/modules/services/video/wivrn.nix"
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
+      ./gpu-passthrough.nix
     ];
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
@@ -624,6 +625,7 @@
     LD_LIBRARY_PATH = lib.mkForce "${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib:${config.services.pipewire.package.jack}/lib";
     EXTRA_CCFLAGS = "-I/usr/include";
   };
+
   
   # Udev Rules
   services.udev.extraRules = ''

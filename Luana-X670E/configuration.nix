@@ -230,7 +230,8 @@
     pkgs.prismlauncher
     pkgs.libreoffice-fresh
     # pkgs.wlx-overlay-s # TODO: reenable - broken
-    pkgsAlvr.alvr
+    pkgs.alvr
+    pkgs.x264
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio
     pkgs.godot_4
@@ -303,6 +304,7 @@
     at-spi2-atk
     at-spi2-core
     atk
+    brotli
     cairo
     cudatoolkit
     cups
@@ -312,6 +314,7 @@
     fontconfig
     freetype
     fuse3
+    ffmpeg
     gdk-pixbuf
     glib
     gtk3
@@ -327,14 +330,18 @@
     libuuid
     libxkbcommon
     libxml2
+    libvdpau
     mesa
     nspr
     nss
     openssl
     pango
     pipewire
+    pulseaudio
     systemd
     vulkan-loader
+    wayland
+    x264
     xorg.libX11
     xorg.libXScrnSaver
     xorg.libXcomposite
@@ -556,8 +563,8 @@
 
 
   # Open ports in the firewall.
-   networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 ];
-   networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 ];
+  networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944];
+  networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

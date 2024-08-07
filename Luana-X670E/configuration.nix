@@ -230,7 +230,7 @@
     pkgs.prismlauncher
     pkgs.libreoffice-fresh
     # pkgs.wlx-overlay-s # TODO: reenable - broken
-    pkgs.alvr
+    pkgsAlvr.alvr
     pkgs.x264
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio

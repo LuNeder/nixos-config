@@ -94,6 +94,22 @@
         "type": "github"
       }
     },
+    "pkgs-alvr": {
+      "locked": {
+        "lastModified": 1722889178,
+        "narHash": "sha256-VkFD6uz/i7TuAecyOiC6ZED8Z3GVyUfcwBte8TiRkw0=",
+        "owner": "jopejoe1",
+        "repo": "nixpkgs",
+        "rev": "d23aef5b8d724e3df276ec6ea37a50cc7013dff8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jopejoe1",
+        "ref": "alvr-src",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "pkgs-mndvlknlyrs": {
       "locked": {
         "lastModified": 1719775014,
@@ -149,6 +165,7 @@
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
+        "pkgs-alvr": "pkgs-alvr",
         "pkgs-mndvlknlyrs": "pkgs-mndvlknlyrs",
         "pkgs-old": "pkgs-old",
         "pkgs-wivrn": "pkgs-wivrn",

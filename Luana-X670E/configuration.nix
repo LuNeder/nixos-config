@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, pkgsmndvlknlyrs, lib, stdenv, fetchFromGitHub, ... }:
+{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, pkgsmndvlknlyrs, pkgsAlvr, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -230,7 +230,7 @@
     pkgs.prismlauncher
     pkgs.libreoffice-fresh
     # pkgs.wlx-overlay-s # TODO: reenable - broken
-    pkgs.alvr
+    pkgsAlvr.alvr
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio
     pkgs.godot_4
@@ -429,9 +429,10 @@
         Comment=
         RunHook=0'';
 
-      # OpenVR - opencomposite # Use the alvr specialisation when using ALVR/SteamVR
+      # OpenVR - opencomposite # Use the wivrn specialisation when using wivrn
         # Steam launch args: env PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn_comp_ipc %command%
-      "openvr/openvrpaths.vrpath".text = ''
+      "openvr/openvrpaths.vrpath" = { enable = false;
+        text = ''
           {
            "config" :
           [
@@ -449,7 +450,7 @@
           ],
           "version" : 1
         }
-      '';
+      '';};
     };
 
     services.fluidsynth = {
@@ -459,16 +460,16 @@
   };
 
   # When using SteamVR, this file cannot exist
-  specialisation.alvr.configuration = {
-    environment.sessionVariables.CURR_SPECIALISATION = lib.mkForce "alvr";
-    home-manager.users.luana.xdg.configFile."openvr/openvrpaths.vrpath".enable = false; 
-    systemd.services.remove-openvr-bkp-file = {
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig.ExecStart = pkgs.writeShellScript "rmovrbkp" "rm -v -f /home/luana/.config/openvr/openvrpaths.vrpath.hm.bkp";
-    };
+  specialisation.wivrn.configuration = {
+    environment.sessionVariables.CURR_SPECIALISATION = lib.mkForce "wivrn";
+    home-manager.users.luana.xdg.configFile."openvr/openvrpaths.vrpath".enable = lib.mkForce true; 
   };
 
   environment.sessionVariables.CURR_SPECIALISATION = "base"; # TODO: problem - this only updates on reboot
+  systemd.services.remove-openvr-bkp-file = {
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig.ExecStart = pkgs.writeShellScript "rmovrbkp" "rm -v -f /home/luana/.config/openvr/openvrpaths.vrpath.hm.bkp";
+  };
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

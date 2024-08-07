@@ -11,6 +11,7 @@
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-wivrn.url = "github:PassiveLemon/nixpkgs/wivrn-init"; # TODO: remove when merged
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged
+    pkgs-alvr.url = "github:jopejoe1/nixpkgs/alvr-src"; # TODO: remove when merged
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default-linux";
@@ -21,7 +22,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, pkgs-old, pkgs-wivrn, pkgs-mndvlknlyrs, systems, nix-flatpak, home-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, pkgs-old, pkgs-wivrn, pkgs-mndvlknlyrs, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
     let 
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
@@ -32,23 +33,24 @@
       pkgsOld = import pkgs-old { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";}; 
       pkgsWivrn = import pkgs-wivrn { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
       pkgsmndvlknlyrs = import pkgs-mndvlknlyrs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";};
+      pkgsAlvr = import pkgs-alvr { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
     in {
       nixosConfigurations = {
         virtualbox = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs;};
+            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
             modules = [./virtualbox/nixos/configuration.nix];
         });
         virtualbox2 = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs;};
+            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
             modules = [./virtualbox2/nixos/configuration.nix];
         });
         Luana-X670E = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs;};
+            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
             modules = [ nix-flatpak.nixosModules.nix-flatpak
               ./Luana-X670E/configuration.nix];
         });
         Luana-Legion-5 = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs;};
+            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
             modules = [ nix-flatpak.nixosModules.nix-flatpak
               ./Luana-Legion-5/configuration.nix];
 

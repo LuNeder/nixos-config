@@ -234,6 +234,10 @@
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio
     pkgs.godot_4
+    pkgs.qemu_kvm
+    pkgs.cdrkit
+    pkgs.quickemu
+    pkgs.quickgui
   ];
 
 
@@ -636,6 +640,11 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "luana" ];
   virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.host.enableKvm = true; ##
+  virtualisation.virtualbox.host.enableHardening = false;
+  # virtualisation.virtualbox.host.addNetworkInterface = false;
+
+  programs.virt-manager.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

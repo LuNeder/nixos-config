@@ -382,7 +382,7 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
-
+  
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873
   home-manager.backupFileExtension = "hm.bkp";

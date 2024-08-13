@@ -240,6 +240,7 @@
     pkgs.cdrkit
     pkgs.quickemu
     pkgs.quickgui
+    pkgs.yt-dlp
   ];
 
 

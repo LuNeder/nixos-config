@@ -401,15 +401,33 @@
       xfce4-session."sessions/Failsafe/Client0_Command" = [ "compiz" ];
     };
 
-    
+    home.file = {
+      # StardustXR (needs to be compiled at ~/Documentos/GitHub/StartustXR/*, see zsh aliases on common.nix)
+      ".hexagon-launcher" = { 
+        executable = true;
+        text = ''#!/usr/bin/env zsh
+        source /etc/zshrc
+        flatland &
+        gravity -- 0 0.0 -0.5 hexagon-launcher &
+        '';  };
+      ".stardustxr-startup" = { 
+        executable = true;
+        text = ''#!/usr/bin/env zsh
+        source /etc/zshrc
+        stardustxr-server -o 1 -e "$HOME/.hexagon-launcher" "$@"
+        '';  };
+
+    };
+
     xdg.configFile = {
 
+      # Polybar
       "polybar/config.ini" = { 
         force = true;
         source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/config.ini;  };
       "../.restpolymain" = { 
         force = true;
-         source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/.restpolymain;  };
+        source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/.restpolymain;  };
 
       # Autostart Steam with -silent
       "autostart/steam.desktop" = { 

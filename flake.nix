@@ -19,7 +19,7 @@
     compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
     compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";
     compiz.inputs.nixpkgs.follows = "nixpkgs";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; 
   };
 
   outputs = { self, nixpkgs, pkgs-old, pkgs-wivrn, pkgs-mndvlknlyrs, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 

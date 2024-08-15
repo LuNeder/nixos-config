@@ -71,6 +71,12 @@
 
     shellAliases = {
       cargo = "cargo mommy";
+      stardustxr-server = "~/Documentos/GitHub/StardustXR/server/target/debug/stardust-xr-server";
+      stardustxr-startup = "~/.stardustxr-startup";
+      gravity = "~/Documentos/GitHub/StardustXR/gravity/target/debug/gravity";
+      flatland = "~/Documentos/GitHub/StardustXR/flatland/target/debug/flatland";
+      hexagon-launcher = "~/Documentos/GitHub/StardustXR/protostar/target/debug/hexagon_launcher";
+      comet = "~/Documentos/GitHub/StardustXR/comet/target/debug/comet";
     };
   };
 

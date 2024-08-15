@@ -232,6 +232,8 @@
     pkgs.libreoffice-fresh
     # pkgs.wlx-overlay-s # TODO: reenable - broken
     pkgsAlvr.alvr
+    # When using SteamVR, this file cannot exist
+    (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && wivrn-server";})
     pkgs.x264
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio
@@ -241,6 +243,9 @@
     pkgs.quickemu
     pkgs.quickgui
     pkgs.yt-dlp
+    pkgs.handbrake
+    pkgs.niri
+    pkgs.xwayland
   ];
 
 
@@ -438,10 +443,9 @@
         Comment=
         RunHook=0'';
 
-      # OpenVR - opencomposite # Use the wivrn specialisation when using wivrn
+      # OpenVR - opencomposite # Use the wivrn-startup script when using wivrn
         # Steam launch args: env PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn_comp_ipc %command%
-      "openvr/openvrpaths.vrpath" = { enable = false;
-        text = ''
+      "openvr/wivrn-openvrpaths.vrpath".text = ''
           {
            "config" :
           [
@@ -459,7 +463,7 @@
           ],
           "version" : 1
         }
-      '';};
+      '';
     };
 
     services.fluidsynth = {
@@ -468,11 +472,6 @@
     };
   };
 
-  # When using SteamVR, this file cannot exist
-  specialisation.wivrn.configuration = {
-    environment.sessionVariables.CURR_SPECIALISATION = lib.mkForce "wivrn";
-    home-manager.users.luana.xdg.configFile."openvr/openvrpaths.vrpath".enable = lib.mkForce true; 
-  };
 
   environment.sessionVariables.CURR_SPECIALISATION = "base"; # TODO: problem - this only updates on reboot
   systemd.services.remove-openvr-bkp-file = {

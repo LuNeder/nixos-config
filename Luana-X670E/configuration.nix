@@ -246,7 +246,10 @@
     pkgs.handbrake
     pkgs.niri
     pkgs.xwayland
+    pkgs.jitsi-meet-electron
   ];
+
+  programs.criu.enable = true;
 
 
   # Steam

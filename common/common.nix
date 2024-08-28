@@ -102,6 +102,10 @@
         command = "${pkgs.systemd}/bin/poweroff";
         options = [ "NOPASSWD" ];
       }
+      {
+        command = "/run/current-system/sw/bin/poweroff";
+        options = [ "NOPASSWD" ];
+      }
     ];
     groups = [ "wheel" ];
   }];

@@ -50,6 +50,9 @@
   pkgs.xz
   pkgs.github-desktop
   pkgs.godot_4
+  inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
+  inputs.nixos-conf-editor.packages.${pkgs.system}.nixos-conf-editor
+  inputs.snow.packages.${pkgs.system}.snow
   ];
 
   # Steam

@@ -247,10 +247,16 @@
     pkgs.niri
     pkgs.xwayland
     pkgs.jitsi-meet-electron
+    pkgs.libimobiledevice
     pkgs.idevicerestore
   ];
 
   programs.criu.enable = true;
+
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
 
 
   # Steam

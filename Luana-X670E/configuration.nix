@@ -11,7 +11,7 @@
       "${inputs.pkgs-wivrn}/nixos/modules/services/video/wivrn.nix"
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
-      ./gpu-passthrough.nix
+      # ./gpu-passthrough.nix
     ];
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
@@ -247,6 +247,7 @@
     pkgs.niri
     pkgs.xwayland
     pkgs.jitsi-meet-electron
+    pkgs.idevicerestore
   ];
 
   programs.criu.enable = true;

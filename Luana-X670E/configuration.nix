@@ -230,7 +230,7 @@
     # pkgs.minecraft broken
     pkgs.prismlauncher
     pkgs.libreoffice-fresh
-    # pkgs.wlx-overlay-s # TODO: reenable - broken
+    pkgs.wlx-overlay-s
     pkgsAlvr.alvr
     # When using SteamVR, this file cannot exist
     (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && wivrn-server";})
@@ -241,7 +241,7 @@
     pkgs.qemu_kvm
     pkgs.cdrkit
     pkgs.quickemu
-    pkgs.quickgui
+    # pkgs.quickgui # broken
     pkgs.yt-dlp
     pkgs.handbrake
     pkgs.niri

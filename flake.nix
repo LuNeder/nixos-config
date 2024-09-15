@@ -35,7 +35,7 @@
       pkgsNoCu = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";};
       pkgsOld = import pkgs-old { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";}; 
       pkgsWivrn = import pkgs-wivrn { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgsmndvlknlyrs = import pkgs-mndvlknlyrs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";};
+      pkgsmndvlknlyrs = import pkgs-mndvlknlyrs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = false;}; # TODO: broken due to opencv, add cuda
       pkgsAlvr = import pkgs-alvr { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
     in {
       nixosConfigurations = {

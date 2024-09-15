@@ -188,18 +188,18 @@
     pkgs.graphite-cursors
     pkgs.phinger-cursors
     pkgs.papirus-icon-theme
-    (pkgs.wrapOBS { # OBS
+    (pkgsNoCu.wrapOBS { # OBS # TODO: broken due to opencv, change to not NoCu
       plugins = [
-      pkgs.obs-studio-plugins.wlrobs
-      pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
-      pkgs.obs-studio-plugins.obs-pipewire-audio-capture
+      pkgsNoCu.obs-studio-plugins.wlrobs
+      pkgsNoCu.obs-studio-plugins.obs-backgroundremoval 
+      pkgsNoCu.obs-studio-plugins.obs-pipewire-audio-capture
     ];})
     pkgs.sg3_utils
     pkgs.protontricks
     pkgs.bottles
     pkgs.prusa-slicer
     pkgs.weylus
-    pkgs.krita
+    pkgsNoCu.krita
     pkgs.inkscape
     pkgs.xournalpp
     pkgs.rnote
@@ -213,8 +213,8 @@
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
-    pkgsNoCu.opencomposite
-    pkgsNoCu.opencomposite-helper
+    pkgsNoCu.opencomposite # OBS # TODO: broken due to opencv, change to not NoCu
+    # pkgsNoCu.opencomposite-helper # broken
     pkgs.openxr-loader
     pkgs.xfce.catfish
     pkgs.transmission_4-qt
@@ -243,7 +243,7 @@
     pkgs.quickemu
     # pkgs.quickgui # broken
     pkgs.yt-dlp
-    pkgs.handbrake
+    pkgsNoCu.handbrake # OBS # TODO: broken due to opencv, change to not NoCu
     pkgs.niri
     pkgs.xwayland
     pkgs.jitsi-meet-electron

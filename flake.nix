@@ -11,7 +11,7 @@
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-wivrn.url = "github:PassiveLemon/nixpkgs/wivrn-init"; # TODO: remove when merged
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged
-    pkgs-alvr.url = "github:jopejoe1/nixpkgs/alvr-src"; # TODO: remove when merged
+    pkgs-alvr.url = "github:jopejoe1/nixpkgs/f980f41dec6830b8153bef3fe052faae6fe00892"; # TODO: remove when merged # TODO: back to branch when fixed
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default-linux";

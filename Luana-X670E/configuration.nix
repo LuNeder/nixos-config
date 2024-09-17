@@ -36,8 +36,8 @@
 
   # TODO: FIX - URGENT ###### Use Musl
    nixpkgs = {
-                #hostPlatform = { system = "x86_64-linux";
-                  #config = "x86_64-unknown-linux-musl"; };
+                hostPlatform = { system = "x86_64-linux";
+                  config = "x86_64-unknown-linux-musl"; };
   #             config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
   #             overlays = [
   #                (final: prev: {
@@ -237,7 +237,7 @@
     pkgs.x264
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Needed for ALVR audio
-    pkgs.godot_4
+    (pkgs.godot_4.override{ withPrecision = "double"; })
     pkgs.qemu_kvm
     pkgs.cdrkit
     pkgs.quickemu

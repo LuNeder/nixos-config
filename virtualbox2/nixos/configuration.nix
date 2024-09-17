@@ -32,8 +32,8 @@
 
   # TODO: FIX - URGENT # Use Musl
    nixpkgs = {
-                hostPlatform = { system = "x86_64-linux"; };
-  #              # hostPlatform = { config = "x86_64-unknown-linux-musl"; };
+                hostPlatform = { system = "x86_64-linux"; 
+                config = "x86_64-unknown-linux-musl"; }; # ignored
   #              config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
   #              overlays = [
   #                (final: prev: {

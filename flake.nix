@@ -25,18 +25,33 @@
     snow.url = "github:snowfallorg/snow";
   };
 
+  
+
   outputs = { self, nixpkgs, pkgs-old, pkgs-wivrn, pkgs-mndvlknlyrs, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
-    let 
+    #let 
+    #sysconfigvars = {lib, ...}: let
+    #inherit (lib) types mkOption;
+    #in {
+    #  options.sys = mkOption {
+    #    type = types.string;
+    #    default = lib.systems.examples.x86_64-linux;
+    #    description = ''
+    #      System (x86_64-linux, etc)
+    #    '';
+    #  };
+    #};
+    #in
+    let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
-      pkgsMusl = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgsGnu = import nixpkgs {  config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgs = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: CHANGE FOR MUSL + nix seems to ignore when i ask it to use musl
-      pkgsNoCu = import nixpkgs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";};
-      pkgsOld = import pkgs-old { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu";}; 
-      pkgsWivrn = import pkgs-wivrn { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgsmndvlknlyrs = import pkgs-mndvlknlyrs { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = false;}; # TODO: broken due to opencv, add cuda
-      pkgsAlvr = import pkgs-alvr { config.allowUnfree = true; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+      pkgsMusl = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
+      pkgsGnu = import nixpkgs {  config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+      pkgs = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: CHANGE FOR MUSL + nix seems to ignore when i ask it to use musl
+      pkgsNoCu = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; };
+      pkgsOld = import pkgs-old { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; }; 
+      pkgsWivrn = import pkgs-wivrn { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+      pkgsmndvlknlyrs = import pkgs-mndvlknlyrs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = false;}; # TODO: broken due to opencv, add cuda
+      pkgsAlvr = import pkgs-alvr { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; 
     in {
       nixosConfigurations = {
         virtualbox = ( nixpkgs.lib.nixosSystem {

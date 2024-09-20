@@ -14,9 +14,10 @@
 
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.extraOptions = "experimental-features = nix-command flakes";
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes
+  nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes on the cursed way I'm using
 
   # Keyring for bitwarden
   services.gnome.gnome-keyring.enable = true;

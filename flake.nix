@@ -11,7 +11,7 @@
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-wivrn.url = "github:PassiveLemon/nixpkgs/wivrn-init"; # TODO: remove when merged
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged
-    pkgs-alvr.url = "github:jopejoe1/nixpkgs/f980f41dec6830b8153bef3fe052faae6fe00892"; # TODO: remove when merged # TODO: back to branch when fixed
+    pkgs-alvr.url = "github:jopejoe1/nixpkgs/alvr-src"; # TODO: remove when merged
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default-linux";
@@ -44,6 +44,7 @@
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
+      # Apparently this is a cursed way of doing this, and it causes some problems, but the right way is way uglier and disorganized. Still, TODO: fix this.
       pkgsMusl = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
       pkgsGnu = import nixpkgs {  config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
       pkgs = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: CHANGE FOR MUSL + nix seems to ignore when i ask it to use musl

@@ -221,11 +221,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726357542,
-        "narHash": "sha256-p4OrJL2weh0TRtaeu1fmNYP6+TOp/W2qdaIJxxQay4c=",
+        "lastModified": 1726985855,
+        "narHash": "sha256-NJPGK030Y3qETpWBhj9oobDQRbXdXOPxtu+YgGvZ84o=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e524c57b1fa55d6ca9d8354c6ce1e538d2a1f47f",
+        "rev": "04213d1ce4221f5d9b40bcee30706ce9a91d148d",
         "type": "github"
       },
       "original": {
@@ -371,11 +371,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1726243404,
-        "narHash": "sha256-sjiGsMh+1cWXb53Tecsm4skyFNag33GPbVgCdfj3n9I=",
+        "lastModified": 1726755586,
+        "narHash": "sha256-PmUr/2GQGvFTIJ6/Tvsins7Q43KTMvMFhvG6oaYK+Wk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+        "rev": "c04d5652cfa9742b1d519688f65d1bbccea9eb7e",
         "type": "github"
       },
       "original": {
@@ -451,11 +451,11 @@
     },
     "pkgs-wivrn": {
       "locked": {
-        "lastModified": 1726201347,
-        "narHash": "sha256-Mw6KPZVzEbBOCPTjHAIkmndjkD6c6PgULCyKYWvgW4c=",
+        "lastModified": 1726774471,
+        "narHash": "sha256-uEVy5+p57Pb6/U4qMRrP9pY7tA8snI4v6GfpcO6YKFc=",
         "owner": "PassiveLemon",
         "repo": "nixpkgs",
-        "rev": "f373a02bc1742ce73842afbde49c2fed99a4a501",
+        "rev": "6e9e75f7f22174291aeea4d465ed5a89f5619ec1",
         "type": "github"
       },
       "original": {

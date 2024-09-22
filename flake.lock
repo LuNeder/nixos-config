@@ -403,17 +403,17 @@
     },
     "pkgs-alvr": {
       "locked": {
-        "lastModified": 1726171287,
-        "narHash": "sha256-FHDrW+kJdywDw/CYFDFPxm4iVoG9Elr7627xhQrxNZg=",
+        "lastModified": 1727023213,
+        "narHash": "sha256-KPghRPcTbqCMktw9ahrtiq7a/seajAyLkEI2GS1x+sg=",
         "owner": "jopejoe1",
         "repo": "nixpkgs",
-        "rev": "f980f41dec6830b8153bef3fe052faae6fe00892",
+        "rev": "7c2572e5cf4329ad9fa50d33015aa7be394b4026",
         "type": "github"
       },
       "original": {
         "owner": "jopejoe1",
+        "ref": "alvr-src",
         "repo": "nixpkgs",
-        "rev": "f980f41dec6830b8153bef3fe052faae6fe00892",
         "type": "github"
       }
     },

@@ -226,7 +226,6 @@
     pkgs.qsynth
     pkgs.pavucontrol
     # pkgs.epiphany
-    pkgs.netsurf.browser
     # pkgs.minecraft broken
     pkgs.prismlauncher 
     pkgs.libreoffice-fresh

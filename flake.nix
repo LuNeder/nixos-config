@@ -28,48 +28,26 @@
   
 
   outputs = { self, nixpkgs, pkgs-old, pkgs-wivrn, pkgs-mndvlknlyrs, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
-    #let 
-    #sysconfigvars = {lib, ...}: let
-    #inherit (lib) types mkOption;
-    #in {
-    #  options.sys = mkOption {
-    #    type = types.string;
-    #    default = lib.systems.examples.x86_64-linux;
-    #    description = ''
-    #      System (x86_64-linux, etc)
-    #    '';
-    #  };
-    #};
-    #in
     let
       inherit (self) outputs;
-      lib = nixpkgs.lib // home-manager.lib;
-      # Apparently this is a cursed way of doing this, and it causes some problems, but the right way is way uglier and disorganized. Still, TODO: fix this.
-      pkgsMusl = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgsGnu = import nixpkgs {  config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgs = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: CHANGE FOR MUSL + nix seems to ignore when i ask it to use musl
-      pkgsNoCu = import nixpkgs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; };
-      pkgsOld = import pkgs-old { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; }; 
-      pkgsWivrn = import pkgs-wivrn { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgsmndvlknlyrs = import pkgs-mndvlknlyrs { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = false;}; # TODO: broken due to opencv, add cuda
-      pkgsAlvr = import pkgs-alvr { config.allowUnfree = true; localSystem.system = "x86_64-linux"; hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+      lib = nixpkgs.lib // home-manager.lib; 
     in {
       nixosConfigurations = {
         virtualbox = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
+            specialArgs = {inherit inputs outputs;};
             modules = [./virtualbox/nixos/configuration.nix];
         });
         virtualbox2 = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
+            specialArgs = {inherit inputs outputs;};
             modules = [./virtualbox2/nixos/configuration.nix];
         });
         Luana-X670E = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
+            specialArgs = {inherit inputs outputs;};
             modules = [ nix-flatpak.nixosModules.nix-flatpak
               ./Luana-X670E/configuration.nix];
         });
         Luana-Legion-5 = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs pkgs pkgsGnu pkgsMusl pkgsNoCu pkgsOld pkgsWivrn pkgsmndvlknlyrs pkgsAlvr;};
+            specialArgs = {inherit inputs outputs;};
             modules = [ nix-flatpak.nixosModules.nix-flatpak
               ./Luana-Legion-5/configuration.nix];
 

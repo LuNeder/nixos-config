@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, pkgsmndvlknlyrs, lib, stdenv, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -33,7 +33,7 @@
   ((pkgs.wrapOBS { # OBS
       plugins = [
       pkgs.obs-studio-plugins.wlrobs
-      pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
+      pkgs.pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
       pkgs.obs-studio-plugins.obs-pipewire-audio-capture
   ];}))
   pkgs.xfce.xfce4-panel-profiles
@@ -197,7 +197,7 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = [ pkgsmndvlknlyrs.monado-vulkan-layers ];
+    # extraPackages = [ pkgs.pkgsmndvlknlyrs.monado-vulkan-layers ];
   };
 
   # Load nvidia driver for Xorg and Wayland

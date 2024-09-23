@@ -1,4 +1,19 @@
-{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, pkgsmndvlknlyrs, lib, stdenv, fetchFromGitHub, ... }: {
+{ pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }: {
+
+  # Packagesets
+  nixpkgs.config.allowUnfree = true; # Allow unfree packages
+  nixpkgs.config.cudaSupport = true; # Enable CUDA
+  nixpkgs.overlays = [(final: prev: {
+    # TODO: localSystem.system = final.stdenv.hostPlatform; fails for some reason, cannot coerce set to string or something
+      # due to this, the error: attribute 'currentSystem' missing impurity is back
+    # pkgsMusl = import inputs.nixpkgs { config.allowUnfree = true;  hostPlatform.config = "x86_64-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
+    pkgsGnu = import inputs.nixpkgs {  config.allowUnfree = true;  hostPlatform.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+    pkgsNoCu = import inputs.nixpkgs { config.allowUnfree = true;  hostPlatform.config = "x86_64-unknown-linux-musl"; }; # TODO: Nix ignores when I change this to musl...
+    # pkgsOld = import inputs.pkgs-old { config.allowUnfree = true;  hostPlatform.config = "x86_64-unknown-linux-musl"; }; 
+    pkgsWivrn = import inputs.pkgs-wivrn { config.allowUnfree = true;  hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+    pkgsmndvlknlyrs = import inputs.pkgs-mndvlknlyrs { config.allowUnfree = true;  hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = false;}; # TODO: broken due to opencv, add cuda
+    pkgsAlvr = import inputs.pkgs-alvr { config.allowUnfree = true;  hostPlatform.config = "x86_64-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";};
+  })];
 
   # Enable sysrq keys that for some dumb reason come disabled by default
   boot.kernel.sysctl."kernel.sysrq" = 1;
@@ -15,9 +30,6 @@
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.extraOptions = "experimental-features = nix-command flakes";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true; # done at flake.nix bc nix is dumb af and ignores this when using flakes on the cursed way I'm using
 
   # Keyring for bitwarden
   services.gnome.gnome-keyring.enable = true;

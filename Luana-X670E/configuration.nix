@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, outputs, config, home-manager,pkgs, pkgsGnu, pkgsMusl, pkgsNoCu, pkgsOld, pkgsWivrn, pkgsmndvlknlyrs, pkgsAlvr, lib, stdenv, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -21,23 +21,23 @@
 #       name = pkgs.coreutils.name;
 #     });
 #   }{
-#     original = pkgs.pkgsMusl.coreutils;
-#     replacement = pkgs.pkgsMusl.uutils-coreutils-noprefix.overrideAttrs (old: {
-#       name = pkgs.pkgsMusl.coreutils.name;
+#     original = pkgs.pkgs.pkgsMusl.coreutils;
+#     replacement = pkgs.pkgs.pkgsMusl.uutils-coreutils-noprefix.overrideAttrs (old: {
+#       name = pkgs.pkgs.pkgsMusl.coreutils.name;
 #     });
 #   }{
-#     original = pkgsGnu.coreutils;
-#     replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
-#       name = pkgsGnu.coreutils.name;
+#     original = pkgs.pkgsGnu.coreutils;
+#     replacement = pkgs.pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
+#       name = pkgs.pkgsGnu.coreutils.name;
 #     });
-#   }]; # TODO: PkgsNoCu
+#   }]; # TODO: pkgs.pkgsNoCu
 
 
 
   # TODO: FIX - URGENT ###### Use Musl
    nixpkgs = {
                 hostPlatform = { system = "x86_64-linux";
-                  config = "x86_64-unknown-linux-musl"; };
+                };#  config = "x86_64-unknown-linux-musl"; };
   #             config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
   #             overlays = [
   #                (final: prev: {
@@ -70,7 +70,7 @@
               };
   # speed up
   # services.qemuGuest.enable = lib.mkForce false;
-  # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgsGnu; };
+  # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgs.pkgsGnu; };
   ## fixes
   # i18n.glibcLocales = pkgs.stdenv.mkDerivation {
   #    name = "empty";
@@ -81,7 +81,7 @@
 
 
   # Latest kernel
-  boot.kernelPackages = pkgsGnu.linuxPackages_latest; 
+  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest; 
 
 
   # Kernel Modules
@@ -150,7 +150,7 @@
     pkgs.curl
     pkgs.git
     pkgs.jdk22
-    # pkgsOld.authy
+    # pkgs.pkgsOld.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
     # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
@@ -188,18 +188,18 @@
     pkgs.graphite-cursors
     pkgs.phinger-cursors
     pkgs.papirus-icon-theme
-    (pkgsNoCu.wrapOBS { # OBS # TODO: broken due to opencv, change to not NoCu
+    (pkgs.pkgsNoCu.wrapOBS { # OBS # TODO: broken due to opencv, change to not NoCu
       plugins = [
-      pkgsNoCu.obs-studio-plugins.wlrobs
-      pkgsNoCu.obs-studio-plugins.obs-backgroundremoval 
-      pkgsNoCu.obs-studio-plugins.obs-pipewire-audio-capture
+      pkgs.pkgsNoCu.obs-studio-plugins.wlrobs
+      pkgs.pkgsNoCu.obs-studio-plugins.obs-backgroundremoval 
+      pkgs.pkgsNoCu.obs-studio-plugins.obs-pipewire-audio-capture
     ];})
     pkgs.sg3_utils
     pkgs.protontricks
     pkgs.bottles
     pkgs.prusa-slicer
     pkgs.weylus
-    pkgsNoCu.krita
+    pkgs.pkgsNoCu.krita
     pkgs.inkscape
     pkgs.xournalpp
     pkgs.rnote
@@ -213,8 +213,8 @@
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
-    pkgsNoCu.opencomposite # OBS # TODO: broken due to opencv, change to not NoCu
-    # pkgsNoCu.opencomposite-helper # broken
+    pkgs.pkgsNoCu.opencomposite # OBS # TODO: broken due to opencv, change to not NoCu
+    # pkgs.pkgsNoCu.opencomposite-helper # broken
     pkgs.openxr-loader
     pkgs.xfce.catfish
     pkgs.transmission_4-qt
@@ -230,7 +230,7 @@
     pkgs.prismlauncher 
     pkgs.libreoffice-fresh
     pkgs.wlx-overlay-s
-    pkgsAlvr.alvr
+    pkgs.pkgsAlvr.alvr
     # When using SteamVR, this file cannot exist as readonly
     (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && wivrn-server";})
     pkgs.x264
@@ -242,7 +242,7 @@
     pkgs.quickemu
     # pkgs.quickgui # broken
     pkgs.yt-dlp
-    pkgsNoCu.handbrake # OBS # TODO: broken due to opencv, change to not NoCu
+    pkgs.pkgsNoCu.handbrake # OBS # TODO: broken due to opencv, change to not NoCu
     pkgs.niri
     pkgs.xwayland
     pkgs.jitsi-meet-electron
@@ -268,7 +268,7 @@
 
   # VR
   services.monado = {
-    package = (pkgsNoCu.monado#.overrideAttrs (oldAttrs: rec { 
+    package = (pkgs.pkgsNoCu.monado#.overrideAttrs (oldAttrs: rec { 
      # src = pkgs.fetchFromGitHub {
       #owner = "shinyquagsire23"; # Monado for Oculus Quest
      # repo = "monado";
@@ -286,7 +286,7 @@
   };
   services.wivrn.enable = true;
   services.wivrn.openFirewall = true;
-  services.wivrn.package = pkgsWivrn.wivrn;
+  services.wivrn.package = pkgs.pkgsWivrn.wivrn;
   services.wivrn.defaultRuntime = true;
   services.wivrn.config = {
     enable = true;
@@ -487,7 +487,7 @@
           ],
           "runtime" :
           [
-            "${pkgsNoCu.opencomposite}/lib/opencomposite"
+            "${pkgs.pkgsNoCu.opencomposite}/lib/opencomposite"
           ],
           "version" : 1
         }
@@ -603,7 +603,7 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = [ pkgsmndvlknlyrs.monado-vulkan-layers ];
+    extraPackages = [ pkgs.pkgsmndvlknlyrs.monado-vulkan-layers ];
   };
 
   # Load nvidia driver for Xorg and Wayland

@@ -228,15 +228,15 @@
     # pkgs.epiphany
     pkgs.netsurf.browser
     # pkgs.minecraft broken
-    pkgs.prismlauncher
+    pkgs.prismlauncher 
     pkgs.libreoffice-fresh
     pkgs.wlx-overlay-s
     pkgsAlvr.alvr
-    # When using SteamVR, this file cannot exist
+    # When using SteamVR, this file cannot exist as readonly
     (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && wivrn-server";})
     pkgs.x264
     pkgs.qpwgraph
-    pkgs.pulseaudioFull # Needed for ALVR audio
+    pkgs.pulseaudioFull # Previously needed for ALVR audio TODO: remove, perhaps?
     (pkgs.godot_4.override{ withPrecision = "double"; })
     pkgs.qemu_kvm
     pkgs.cdrkit

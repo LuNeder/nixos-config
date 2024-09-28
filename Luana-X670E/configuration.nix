@@ -158,7 +158,7 @@
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3
     pkgs.thunderbird
-    pkgs.pkgsMusl.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
+    pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
     pkgs.nvtopPackages.full
     pkgs.htop
     pkgs.gparted

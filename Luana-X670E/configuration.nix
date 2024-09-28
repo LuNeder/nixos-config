@@ -71,13 +71,14 @@
   # speed up
   # services.qemuGuest.enable = lib.mkForce false;
   # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgs.pkgsGnu; };
-  ## fixes
-  # i18n.glibcLocales = pkgs.stdenv.mkDerivation {
-  #    name = "empty";
-  #    dontUnpack = true;
-  #    installPhase = "mkdir $out";
-  # };
-  # services.nscd.enableNsncd = false;
+  # fixes
+   #i18n.glibcLocales = pkgs.stdenv.mkDerivation {
+   #   name = "empty";
+   #   version = "0.0";
+   #   dontUnpack = true;
+   #   installPhase = "mkdir $out";
+   #};
+   #services.nscd.enableNsncd = false;
 
 
   # Latest kernel
@@ -157,7 +158,7 @@
     inputs.compiz.packages.${pkgs.system}.default
     pkgs.python3Packages.pygobject3
     pkgs.thunderbird
-    pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
+    pkgs.pkgsMusl.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
     pkgs.nvtopPackages.full
     pkgs.htop
     pkgs.gparted

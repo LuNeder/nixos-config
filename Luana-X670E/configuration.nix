@@ -249,6 +249,8 @@
     pkgs.jitsi-meet-electron
     pkgs.libimobiledevice
     pkgs.idevicerestore
+    pkgs.pmbootstrap
+    pkgs.ueviewer
   ];
 
   programs.criu.enable = true;

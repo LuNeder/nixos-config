@@ -82,7 +82,8 @@
 
 
   # Latest kernel
-  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest; 
+  # TODO: Revert to latest when bluez gets fixed (https://github.com/bluez/bluez/issues/988)
+  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_6_10; 
 
 
   # Kernel Modules
@@ -140,6 +141,23 @@
 	  	Experimental = true;
   	};
   };
+  # TODO: Remove when bluez gets fixed (https://github.com/bluez/bluez/issues/988)
+    # Based on reverting the diff in https://github.com/NixOS/nixpkgs/pull/341994
+      # Attention: PR https://github.com/NixOS/nixpkgs/pull/343808 said "5.76 has issues with kernels >= 6.10.10". Is it less broken than using 5.77/.78?
+  #hardware.bluetooth.package = pkgs.bluez.overrideAttrs (oldAttrs: rec { 
+  #  src = pkgs.fetchurl {
+  #    url = "mirror://kernel/linux/bluetooth/bluez-5.76.tar.xz";
+  #    hash = "sha256-VeLGRZCa2C2DPELOhewgQ04O8AcJQbHqtz+s3SQLvWM=";
+  #  };
+  #  version = "5.76";
+  #  patches = [
+  #    # hog-lib: Fix passing wrong parameters to bt_uhid_get_report_reply
+  #    (pkgs.fetchpatch {
+  #      url = "https://github.com/bluez/bluez/commit/5ebaeab4164f80539904b9a520d9b7a8307e06e2.patch";
+  #      hash = "sha256-f1A8DmRPfm+zid4XMj1zsfcLZ0WTEax3YPbydKZF9RE=";
+  #    })
+  #  ];
+  #});
 
   
   # Install firefox.

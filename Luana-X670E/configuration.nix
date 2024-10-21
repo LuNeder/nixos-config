@@ -251,6 +251,7 @@
     pkgs.idevicerestore
     pkgs.pmbootstrap
     pkgs.ueviewer
+    pkgs.pciutils
   ];
 
   programs.criu.enable = true;

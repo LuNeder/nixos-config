@@ -16,6 +16,11 @@
       pkgsKernel = import inputs.pkgs-kernel {  config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
       }
     )
+
+    (final: prev: {
+      linux-firmware = final.pkgsKernel.linux-firmware; # 20240909 instead of 20241017
+      }
+    )
   ];
 
   # Enable sysrq keys that for some dumb reason come disabled by default

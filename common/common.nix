@@ -13,6 +13,7 @@
       pkgsWivrn = import inputs.pkgs-wivrn { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; # TODO: Merged, remove 
       pkgsmndvlknlyrs = import inputs.pkgs-mndvlknlyrs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";};
       pkgsAlvr = import inputs.pkgs-alvr { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";};
+      pkgsKernel = import inputs.pkgs-kernel {  config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
       }
     )
   ];

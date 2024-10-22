@@ -417,6 +417,22 @@
         "type": "github"
       }
     },
+    "pkgs-kernel": {
+      "locked": {
+        "lastModified": 1729181262,
+        "narHash": "sha256-ivXsw8NNHlsHsNjjlfWn9T+XCdcDutR4Zf3wr1pKPTc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3029741718f4c765fbc5ebf76bea3d6c8ff15fe5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3029741718f4c765fbc5ebf76bea3d6c8ff15fe5",
+        "type": "github"
+      }
+    },
     "pkgs-mndvlknlyrs": {
       "locked": {
         "lastModified": 1725632157,
@@ -475,6 +491,7 @@
         "nixos-conf-editor": "nixos-conf-editor",
         "nixpkgs": "nixpkgs_3",
         "pkgs-alvr": "pkgs-alvr",
+        "pkgs-kernel": "pkgs-kernel",
         "pkgs-mndvlknlyrs": "pkgs-mndvlknlyrs",
         "pkgs-old": "pkgs-old",
         "pkgs-wivrn": "pkgs-wivrn",

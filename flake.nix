@@ -9,7 +9,7 @@
   };
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
-    pkgs-wivrn.url = "github:PassiveLemon/nixpkgs/wivrn-init"; # TODO: remove when merged
+    pkgs-wivrn.url = "github:PassiveLemon/nixpkgs/wivrn-init"; # TODO: merged, remove
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged
     pkgs-alvr.url = "github:jopejoe1/nixpkgs/alvr-src"; # TODO: remove when merged
     home-manager.url = "github:nix-community/home-manager";
@@ -23,7 +23,7 @@
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     snow.url = "github:snowfallorg/snow";
-    pkgs-kernel.url = "github:nixos/nixpkgs/3029741718f4c765fbc5ebf76bea3d6c8ff15fe5";
+    pkgs-kernel.url = "github:nixos/nixpkgs/3029741718f4c765fbc5ebf76bea3d6c8ff15fe5"; # TODO: remove when bluez/bluez#988 is fixed
   };
 
   

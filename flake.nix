@@ -23,7 +23,7 @@
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     snow.url = "github:snowfallorg/snow";
-    pkgs-kernel.url = "github:nixos/nixpkgs/3029741718f4c765fbc5ebf76bea3d6c8ff15fe5";
+    pkgs-kernel.url = "github:nixos/nixpkgs/d2bd9a39dec88eddd5c192abee69939e67f43d12";
   };
 
   

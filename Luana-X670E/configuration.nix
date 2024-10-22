@@ -83,7 +83,7 @@
 
   # Latest kernel
   # TODO: Revert to latest when bluez gets fixed (https://github.com/bluez/bluez/issues/988)
-  boot.kernelPackages = pkgs.pkgsKernel.linuxPackages_latest; #6.11.3
+  boot.kernelPackages = pkgs.pkgsKernel.linuxPackages_latest; #6.11.4
 
 
   # Kernel Modules

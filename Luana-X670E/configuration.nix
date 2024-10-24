@@ -252,6 +252,7 @@
     pkgs.pmbootstrap
     pkgs.ueviewer
     pkgs.pciutils
+   # pkgs.scidavis # TODO: Maybe package this some day?
   ];
 
   programs.criu.enable = true;
@@ -378,6 +379,8 @@
     xorg.libxshmfence
     zlib
     libplist
+    libsForQt5.qwt
+    libsForQt5.qwt6_1
   ]);
   
   # Flatpaks (enabled in common.nix)
@@ -393,6 +396,7 @@
     "org.gnome.Epiphany"
     { appId = "org.gnome.Epiphany.Devel"; origin = "epiphany-preview"; }
     { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
+    "net.sourceforge.scidavis"
   ];
 
   # Enable the X11 windowing system.

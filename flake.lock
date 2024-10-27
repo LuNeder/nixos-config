@@ -371,17 +371,17 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1728385217,
-        "narHash": "sha256-SQxX/tW1qxIScTGSx6dKbBlcwXYurC3UCarjaq/7/Tc=",
+        "lastModified": 1729880355,
+        "narHash": "sha256-RP+OQ6koQQLX5nw0NmcDrzvGL8HDLnyXt/jHhL1jwjM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7014f869474850e8e8a43db61aa8566215f9a1a6",
+        "rev": "18536bf04cd71abd345f9579158841376fdd0c5a",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
-        "rev": "7014f869474850e8e8a43db61aa8566215f9a1a6",
         "type": "github"
       }
     },
@@ -465,22 +465,6 @@
         "type": "github"
       }
     },
-    "pkgs-wivrn": {
-      "locked": {
-        "lastModified": 1726774471,
-        "narHash": "sha256-uEVy5+p57Pb6/U4qMRrP9pY7tA8snI4v6GfpcO6YKFc=",
-        "owner": "PassiveLemon",
-        "repo": "nixpkgs",
-        "rev": "6e9e75f7f22174291aeea4d465ed5a89f5619ec1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "PassiveLemon",
-        "ref": "wivrn-init",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "compiz": "compiz",
@@ -494,7 +478,6 @@
         "pkgs-kernel": "pkgs-kernel",
         "pkgs-mndvlknlyrs": "pkgs-mndvlknlyrs",
         "pkgs-old": "pkgs-old",
-        "pkgs-wivrn": "pkgs-wivrn",
         "snow": "snow",
         "systems": "systems_7"
       }

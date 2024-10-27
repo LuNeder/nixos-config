@@ -9,7 +9,6 @@
   };
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
-    pkgs-wivrn.url = "github:PassiveLemon/nixpkgs/wivrn-init"; # TODO: merged, remove
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged
     pkgs-alvr.url = "github:jopejoe1/nixpkgs/alvr-src"; # TODO: remove when merged
     home-manager.url = "github:nix-community/home-manager";
@@ -28,7 +27,7 @@
 
   
 
-  outputs = { self, nixpkgs, pkgs-old, pkgs-wivrn, pkgs-mndvlknlyrs, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, pkgs-old, pkgs-mndvlknlyrs, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 

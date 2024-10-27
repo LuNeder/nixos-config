@@ -8,7 +8,6 @@
   imports =
     [ 
       ../common/common.nix
-      "${inputs.pkgs-wivrn}/nixos/modules/services/video/wivrn.nix"
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
       # ./gpu-passthrough.nix
@@ -291,7 +290,7 @@
   };
   services.wivrn.enable = true;
   services.wivrn.openFirewall = true;
-  services.wivrn.package = pkgs.pkgsWivrn.wivrn;
+  services.wivrn.package = pkgs.wivrn;
   services.wivrn.defaultRuntime = true;
   services.wivrn.config = {
     enable = true;

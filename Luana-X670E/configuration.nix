@@ -240,7 +240,7 @@
     (pkgs.godot_4.override{ withPrecision = "double"; })
     pkgs.qemu_kvm
     pkgs.cdrkit
-    pkgs.quickemu
+    #pkgs.quickemu #TODO: reenable
     # pkgs.quickgui # broken
     pkgs.yt-dlp
     pkgs.handbrake
@@ -690,7 +690,7 @@
   virtualisation.virtualbox.host.enableHardening = false;
   # virtualisation.virtualbox.host.addNetworkInterface = false;
 
-  programs.virt-manager.enable = true;
+  #programs.virt-manager.enable = true; TODO: reenable 
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

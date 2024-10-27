@@ -7,7 +7,7 @@
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs/ad8a0f9e2abf3d884d7e4c08522e3ab98fcf3285"; # TODO: Revert to unstable when steamvr is fixed
+  inputs = { nixpkgs.url = "github:nixos/nixpkgs/b33aedbb4d91d60437ed08606d47c610b813664d"; # TODO: Revert to unstable when steamvr is fixed
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-wivrn.url = "github:PassiveLemon/nixpkgs/wivrn-init"; # TODO: merged, remove
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged

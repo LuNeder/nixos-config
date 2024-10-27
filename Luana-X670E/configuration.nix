@@ -152,7 +152,7 @@
     pkgs.git
     pkgs.jdk22
     # pkgs.pkgsOld.authy
-    #pkgs.bitwarden-desktop # TODO: enable when updated
+    pkgs.bitwarden-desktop
     pkgs.libsecret
     # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     inputs.compiz.packages.${pkgs.system}.default
@@ -240,7 +240,7 @@
     (pkgs.godot_4.override{ withPrecision = "double"; })
     pkgs.qemu_kvm
     pkgs.cdrkit
-    #pkgs.quickemu #TODO: reenable
+    pkgs.quickemu
     # pkgs.quickgui # broken
     pkgs.yt-dlp
     pkgs.handbrake
@@ -690,7 +690,7 @@
   virtualisation.virtualbox.host.enableHardening = false;
   # virtualisation.virtualbox.host.addNetworkInterface = false;
 
-  #programs.virt-manager.enable = true; TODO: reenable 
+  programs.virt-manager.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

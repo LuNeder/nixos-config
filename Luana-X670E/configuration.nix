@@ -152,7 +152,7 @@
     pkgs.git
     pkgs.jdk22
     # pkgs.pkgsOld.authy
-    pkgs.bitwarden-desktop
+    #pkgs.bitwarden-desktop # TODO: enable when updated
     pkgs.libsecret
     # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     inputs.compiz.packages.${pkgs.system}.default

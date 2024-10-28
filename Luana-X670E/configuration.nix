@@ -238,7 +238,7 @@
     (pkgs.godot_4.override{ withPrecision = "double"; })
     pkgs.qemu_kvm
     pkgs.cdrkit
-    pkgs.quickemu
+    # pkgs.quickemu
     # pkgs.quickgui # broken
     pkgs.yt-dlp
     pkgs.handbrake

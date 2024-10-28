@@ -14,34 +14,6 @@
       pkgsAlvr = import inputs.pkgs-alvr { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";};
     }
     )
-    (final: prev: {
-      librsvg = prev.librsvg.overrideAttrs (oldAttrs: rec { 
-        version = "2.58.2";
-          src = pkgs.fetchurl {
-            url = "mirror://gnome/sources/librsvg/2.58/librsvg-2.58.2.tar.xz";
-            hash = "sha256-GOnXDAjPJfUNYQ1tWvVxVh1nz0F5+WLgQmZHXfbi4iQ=";
-          };
-          cargoDeps = pkgs.rustPlatform.fetchCargoTarball {
-            name = "librsvg-deps-2.58.2";
-            hash = "sha256-E0bXSxWI0MkJmNvl8gxklXHgy4zlkiee59+s0h4Gw5s=";
-            dontConfigure = true;
-          };
-      });
-      libavif = prev.libavif.overrideAttrs (oldAttrs: rec { 
-        version = "1.1.0";
-          src = pkgs.fetchFromGitHub {
-            owner = "AOMediaCodec";
-            repo = "libavif";
-            rev = "1.1.0";
-            hash = "sha256-yNJiMTWgOKR1c2pxTkLY/uPWGIY4xgH+Ee0r15oroDU=";
-          };
-      });
-      ffmpeg = prev.ffmpeg_6;
-      ffmpeg-headless = prev.ffmpeg_6-headless;
-      ffmpeg-full = prev.ffmpeg_6-full;
-    }
-    )
-  
   ];
 
   # Enable sysrq keys that for some dumb reason come disabled by default

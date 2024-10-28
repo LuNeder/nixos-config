@@ -251,6 +251,7 @@
     pkgs.ueviewer
     pkgs.pciutils
    # pkgs.scidavis # TODO: Maybe package this some day?
+    pkgs.nexusmods-app-unfree
   ];
 
   programs.criu.enable = true;

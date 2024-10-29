@@ -148,7 +148,7 @@
   environment.systemPackages = [
     pkgs.curl
     pkgs.git
-    pkgs.jdk22
+    pkgs.jdk23
     # pkgs.pkgsOld.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
@@ -241,7 +241,7 @@
     pkgs.quickemu
     # pkgs.quickgui # broken
     pkgs.yt-dlp
-    pkgs.handbrake
+    # pkgs.handbrake  # TODO: reenable, broken on staging-next
     pkgs.niri
     pkgs.xwayland
     pkgs.jitsi-meet-electron
@@ -682,11 +682,11 @@
   # services.transmission.enable = true;
 
   # VirtualBox
-  virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "luana" ];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  #virtualisation.virtualbox.host.enableExtensionPack = true;
   # virtualisation.virtualbox.host.enableKvm = true; ##
-  virtualisation.virtualbox.host.enableHardening = false;
+  #virtualisation.virtualbox.host.enableHardening = false;
   # virtualisation.virtualbox.host.addNetworkInterface = false;
 
   programs.virt-manager.enable = true;

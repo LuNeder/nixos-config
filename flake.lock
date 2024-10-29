@@ -371,16 +371,16 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1730238231,
-        "narHash": "sha256-ncysOhusiUCiFE8x3KS6hfG675Q/PfCiVgRX6Vm/6Fc=",
-        "owner": "LuNeder",
+        "lastModified": 1730224311,
+        "narHash": "sha256-1nhG6ngLWBufMUWUPjHjFnf8xmIwACiGxnNeAg10Egg=",
+        "owner": "K900",
         "repo": "nixpkgs",
-        "rev": "b62e58dc262464cd2689d790a4796c0958075249",
+        "rev": "cd796cf4a4042d68022f20687892bb4c72427e30",
         "type": "github"
       },
       "original": {
-        "owner": "LuNeder",
-        "ref": "nixos-unstable",
+        "owner": "K900",
+        "ref": "awful-steamage",
         "repo": "nixpkgs",
         "type": "github"
       }

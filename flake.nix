@@ -7,7 +7,7 @@
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs = { nixpkgs.url = "github:Atemu/nixpkgs/steemus-yoinkus";
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged
     pkgs-alvr.url = "github:jopejoe1/nixpkgs/alvr-src"; # TODO: remove when merged

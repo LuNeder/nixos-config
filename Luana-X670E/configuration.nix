@@ -148,9 +148,9 @@
   environment.systemPackages = [
     pkgs.curl
     pkgs.git
-    pkgs.jdk23
+    pkgs.jdk22
     # pkgs.pkgsOld.authy
-    pkgs.bitwarden-desktop
+    # pkgs.bitwarden-desktop # TODO: reenable when on newer commit
     pkgs.libsecret
     # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
     inputs.compiz.packages.${pkgs.system}.default
@@ -288,29 +288,30 @@
     XRT_COMPOSITOR_COMPUTE = "1";
     WMR_HANDTRACKING = "0";
   };
-  services.wivrn.enable = true;
-  services.wivrn.openFirewall = true;
-  services.wivrn.package = pkgs.wivrn;
-  services.wivrn.defaultRuntime = true;
-  services.wivrn.config = {
-    enable = true;
-    json = {
-      scale = 1.0;
-     # bitrate = 100000000;
-      encoders = [
-        {
-          encoder = "nvenc";
-          codec = "h265";
-     #     width = 1.0;
-       #   height = 1.0;
-        #  offset_x = 0.0;
-         # offset_y = 0.0;
-        }
-      ];
-      # application = [ pkgs.wlx-overlay-s ]; # TODO: reenable - broken
-      #tcp_only = false;
-    };
-  };
+  # TODO: Reenable when back to newer commit
+  #services.wivrn.enable = true;
+  #services.wivrn.openFirewall = true;
+  #services.wivrn.package = pkgs.wivrn;
+  #services.wivrn.defaultRuntime = true;
+  #services.wivrn.config = {
+  #  enable = true;
+  #  json = {
+  #    scale = 1.0;
+  #   # bitrate = 100000000;
+  #    encoders = [
+  #      {
+  #        encoder = "nvenc";
+  #        codec = "h265";
+  #   #     width = 1.0;
+  #     #   height = 1.0;
+  #      #  offset_x = 0.0;
+  #       # offset_y = 0.0;
+  #      }
+  #    ];
+  #    # application = [ pkgs.wlx-overlay-s ]; # TODO: reenable - broken
+  #    #tcp_only = false;
+  #  };
+  #};
   
   # Run normal binaries
   programs.nix-ld.enable = true;

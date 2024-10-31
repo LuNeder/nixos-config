@@ -231,7 +231,7 @@
     pkgs.wlx-overlay-s
     pkgs.pkgsAlvr.alvr
     # When using SteamVR, this file cannot exist as readonly
-    (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && wivrn-server";})
+    (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && rm -f '/home/luana/.config/openxr/1/active_runtime.json' && ln -s ${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json '/home/luana/.config/openxr/1/active_runtime.json' && wivrn-server";})
     pkgs.x264
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Previously needed for ALVR audio TODO: remove, perhaps?

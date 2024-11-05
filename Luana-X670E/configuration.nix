@@ -396,6 +396,7 @@
     { appId = "org.gnome.Epiphany.Devel"; origin = "epiphany-preview"; }
     { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
     "net.sourceforge.scidavis"
+    "com.ultimaker.cura"
   ];
 
   # Enable the X11 windowing system.

@@ -229,7 +229,7 @@
     pkgs.prismlauncher 
     pkgs.libreoffice-fresh
     pkgs.wlx-overlay-s
-    pkgs.pkgsAlvr.alvr
+    pkgs.alvr
     # When using SteamVR, this file cannot exist as readonly
     (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && rm -f '/home/luana/.config/openxr/1/active_runtime.json' && ln -s ${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json '/home/luana/.config/openxr/1/active_runtime.json' && wivrn-server";})
     pkgs.x264

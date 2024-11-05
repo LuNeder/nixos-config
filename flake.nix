@@ -7,10 +7,10 @@
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
-  inputs = { nixpkgs.url = "github:K900/nixpkgs/awful-steamage"; # TODO: go back to unstable when SteamVR/ALVR fixed (NixOS/nixpkgs#352304)
+  inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: go back to unstable when SteamVR/ALVR fixed (NixOS/nixpkgs#352304)
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
-    pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: remove when merged
-    pkgs-alvr.url = "github:jopejoe1/nixpkgs/alvr-src"; # TODO: remove when merged
+    pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: merged, remove
+    pkgs-alvr.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: remove when merged
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default-linux";

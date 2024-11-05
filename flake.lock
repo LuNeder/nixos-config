@@ -371,16 +371,16 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1730224311,
-        "narHash": "sha256-1nhG6ngLWBufMUWUPjHjFnf8xmIwACiGxnNeAg10Egg=",
-        "owner": "K900",
+        "lastModified": 1730467801,
+        "narHash": "sha256-bJK/X636ah0cwimjHQBzUqdHmLrpY+q03YZLiMBbiQE=",
+        "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "cd796cf4a4042d68022f20687892bb4c72427e30",
+        "rev": "73780aa9a00d7f84c0bf3e2d2df76b0ce8ea6b6e",
         "type": "github"
       },
       "original": {
-        "owner": "K900",
-        "ref": "awful-steamage",
+        "owner": "LuNeder",
+        "ref": "alvrplusk900",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -403,16 +403,16 @@
     },
     "pkgs-alvr": {
       "locked": {
-        "lastModified": 1727023213,
-        "narHash": "sha256-KPghRPcTbqCMktw9ahrtiq7a/seajAyLkEI2GS1x+sg=",
-        "owner": "jopejoe1",
+        "lastModified": 1730467801,
+        "narHash": "sha256-bJK/X636ah0cwimjHQBzUqdHmLrpY+q03YZLiMBbiQE=",
+        "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "7c2572e5cf4329ad9fa50d33015aa7be394b4026",
+        "rev": "73780aa9a00d7f84c0bf3e2d2df76b0ce8ea6b6e",
         "type": "github"
       },
       "original": {
-        "owner": "jopejoe1",
-        "ref": "alvr-src",
+        "owner": "LuNeder",
+        "ref": "alvrplusk900",
         "repo": "nixpkgs",
         "type": "github"
       }

@@ -611,7 +611,7 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = [ pkgs.pkgsmndvlknlyrs.monado-vulkan-layers ];
+    extraPackages = [ pkgs.monado-vulkan-layers ];
   };
 
   # Load nvidia driver for Xorg and Wayland

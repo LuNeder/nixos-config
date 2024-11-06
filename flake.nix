@@ -7,7 +7,7 @@
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
-  inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: go back to unstable when SteamVR/ALVR fixed (NixOS/nixpkgs#352304)
+  inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/nixos-unstable"; # TODO: go back to unstable when SteamVR/ALVR fixed (NixOS/nixpkgs#352304)
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: merged, remove
     pkgs-alvr.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: remove when merged

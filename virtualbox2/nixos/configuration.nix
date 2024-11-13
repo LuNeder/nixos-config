@@ -2,13 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, pkgsGnu, pkgsMusl, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../common/common.nix
     ];
+
+  services.porn-vault = {
+    enable = true;
+    autoStart = true;
+    config.enable = true;
+    openFirewall = true;
+  };
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
 #  system.replaceRuntimeDependencies = [{
@@ -22,9 +30,9 @@
 #       name = pkgs.pkgsMusl.coreutils.name;
 #     });
 #   }{
-#     original = pkgsGnu.coreutils;
-#     replacement = pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
-#       name = pkgsGnu.coreutils.name;
+#     original = pkgs.pkgsGnu.coreutils;
+#     replacement = pkgs.pkgsGnu.uutils-coreutils-noprefix.overrideAttrs (old: {
+#       name = pkgs.pkgsGnu.coreutils.name;
 #     });
 #   }];
 
@@ -33,7 +41,7 @@
   # TODO: FIX - URGENT # Use Musl
    nixpkgs = {
                 hostPlatform = { system = "x86_64-linux"; 
-                config = "x86_64-unknown-linux-musl"; }; # ignored
+                config = "x86_64-unknown-linux-gnu"; }; # ignored
   #              config = { replaceStdenv = { pkgs }: pkgs.ccacheStdenv; };
   #              overlays = [
   #                (final: prev: {
@@ -66,7 +74,7 @@
               };
   # speed up
   # services.qemuGuest.enable = lib.mkForce false;
-  # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgsGnu; };
+  # virtualisation.vmVariant = { virtualisation.host.pkgs = pkgs.pkgsGnu; };
   ## fixes
   # i18n.glibcLocales = pkgs.stdenv.mkDerivation {
   #    name = "empty";
@@ -76,7 +84,7 @@
   # services.nscd.enableNsncd = false;
 
   # Latest kernel
-  boot.kernelPackages = pkgsGnu.linuxPackages_latest;
+  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -122,7 +130,7 @@
 
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {

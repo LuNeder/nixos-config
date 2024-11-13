@@ -252,6 +252,7 @@
     pkgs.pciutils
    # pkgs.scidavis # TODO: Maybe package this some day?
     pkgs.nexusmods-app-unfree
+    pkgs.heroic
   ];
 
   programs.criu.enable = true;
@@ -313,7 +314,7 @@
   };
   
   # Run normal binaries
-  programs.nix-ld.enable = true;
+  programs.nix-ld.enable = false;
   programs.nix-ld.libraries = [config.boot.kernelPackages.nvidiaPackages.stable] ++ (with pkgs; [
     libva # fuck alvr, they removed the appimages
     ocamlPackages.alsa

@@ -449,21 +449,6 @@
         "type": "github"
       }
     },
-    "porn-vault": {
-      "locked": {
-        "lastModified": 1731690689,
-        "narHash": "sha256-UoZeekVwCu3hxdylIw3McR5eLSjFnufgQytrCZk+6ic=",
-        "ref": "refs/heads/porn-vault",
-        "rev": "0f8d55f15daaeec135026258753c900202a80c0a",
-        "revCount": 707075,
-        "type": "git",
-        "url": "file:///home/luana/Documentos/GitHub/nixpkgs"
-      },
-      "original": {
-        "type": "git",
-        "url": "file:///home/luana/Documentos/GitHub/nixpkgs"
-      }
-    },
     "root": {
       "inputs": {
         "compiz": "compiz",
@@ -476,7 +461,6 @@
         "pkgs-alvr": "pkgs-alvr",
         "pkgs-mndvlknlyrs": "pkgs-mndvlknlyrs",
         "pkgs-old": "pkgs-old",
-        "porn-vault": "porn-vault",
         "snow": "snow",
         "systems": "systems_7"
       }

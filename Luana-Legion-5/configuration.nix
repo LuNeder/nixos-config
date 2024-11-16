@@ -8,7 +8,7 @@
   imports =
     [ ../common/common.nix
       # Include the results of the hardware scan.
-      ../Luana-X670E/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   # Install firefox.
@@ -247,13 +247,13 @@
     LD_LIBRARY_PATH = lib.mkForce "${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib:${config.services.pipewire.package.jack}/lib";
     EXTRA_CCFLAGS = "-I/usr/include";
   };
-  #hardware.nvidia.prime = {
-  #  #sync.enable = true;
-  #  
-  #  # Make sure to use the correct Bus ID values for your system!
-  #  nvidiaBusId = "PCI:1:0:0";
-  #  amdgpuBusId = "PC5I:5:0:0";
-  #};
+  hardware.nvidia.prime = {
+    #sync.enable = true;
+    
+    # Make sure to use the correct Bus ID values for your system!
+    nvidiaBusId = "PCI:1:0:0";
+    amdgpuBusId = "PC5I:5:0:0";
+  };
 
 
   # List services that you want to enable:

@@ -82,7 +82,7 @@
 
 
   # Latest kernel
-  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest;
+  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_6_6;
 
 
   # Kernel Modules

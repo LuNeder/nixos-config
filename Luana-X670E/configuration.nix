@@ -82,7 +82,8 @@
 
 
   # Latest kernel
-  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_6_6;
+    # TODO: Revert to latest when ALVR gets fixed (https://github.com/alvr-org/ALVR/issues/2476)
+  boot.kernelPackages = pkgs.pkgsKernel.linuxPackages_6_10; #6.10.14;
 
 
   # Kernel Modules

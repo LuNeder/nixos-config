@@ -8,6 +8,7 @@
     ];
   };
   inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/nixos-unstable"; # TODO: go back to unstable when SteamVR/ALVR fixed (NixOS/nixpkgs#352304)
+    porn-vault.url = "/home/luana/Documentos/GitHub/nixpkgs/";  
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: merged, remove
     pkgs-alvr.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: remove when merged

@@ -11,6 +11,7 @@
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
       # ./gpu-passthrough.nix
+      "${inputs.porn-vault}/nixos/modules/services/web-apps/porn-vault/default.nix"
     ];
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
@@ -254,6 +255,14 @@
     pkgs.nexusmods-app-unfree
     pkgs.heroic
   ];
+
+  services.porn-vault = {
+    enable = true;
+    package = inputs.porn-vault.legacyPackages.${pkgs.system}.porn-vault;
+    autoStart = true;
+    settings.enable = true;
+    openFirewall = true;
+  };
 
   programs.criu.enable = true;
 

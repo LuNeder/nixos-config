@@ -8,7 +8,7 @@
   imports =
     [ ../common/common.nix
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ../Luana-X670E/hardware-configuration.nix
     ];
 
   # Install firefox.
@@ -198,7 +198,6 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    # extraPackages = [ pkgs.pkgsmndvlknlyrs.monado-vulkan-layers ];
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -248,13 +247,13 @@
     LD_LIBRARY_PATH = lib.mkForce "${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib:${config.services.pipewire.package.jack}/lib";
     EXTRA_CCFLAGS = "-I/usr/include";
   };
-  hardware.nvidia.prime = {
-    #sync.enable = true;
-    
-    # Make sure to use the correct Bus ID values for your system!
-    nvidiaBusId = "PCI:1:0:0";
-    amdgpuBusId = "PC5I:5:0:0";
-  };
+  #hardware.nvidia.prime = {
+  #  #sync.enable = true;
+  #  
+  #  # Make sure to use the correct Bus ID values for your system!
+  #  nvidiaBusId = "PCI:1:0:0";
+  #  amdgpuBusId = "PC5I:5:0:0";
+  #};
 
 
   # List services that you want to enable:
@@ -263,8 +262,8 @@
    services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 ];
-  networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 ];
+  networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944];
+  networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

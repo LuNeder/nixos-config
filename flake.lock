@@ -371,11 +371,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1730928445,
-        "narHash": "sha256-Ae+g7OpcYTeHB/omzuEOShXsc7dmGJ5Qt+d/ppjQgnw=",
+        "lastModified": 1731779042,
+        "narHash": "sha256-9DbqSsb4XOxh9E8MHjUkIFwYsjPcW7JjbXFC2YjiZyk=",
         "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "0840fb24df1b78ae05d2ff135e9752eed271d901",
+        "rev": "f64e2d05cab06d16e5bceb82bc57015fc136178b",
         "type": "github"
       },
       "original": {
@@ -414,22 +414,6 @@
         "owner": "LuNeder",
         "ref": "alvrplusk900",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "pkgs-kernel": {
-      "locked": {
-        "lastModified": 1729181262,
-        "narHash": "sha256-ivXsw8NNHlsHsNjjlfWn9T+XCdcDutR4Zf3wr1pKPTc=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "3029741718f4c765fbc5ebf76bea3d6c8ff15fe5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "3029741718f4c765fbc5ebf76bea3d6c8ff15fe5",
         "type": "github"
       }
     },
@@ -490,7 +474,6 @@
         "nixos-conf-editor": "nixos-conf-editor",
         "nixpkgs": "nixpkgs_3",
         "pkgs-alvr": "pkgs-alvr",
-        "pkgs-kernel": "pkgs-kernel",
         "pkgs-mndvlknlyrs": "pkgs-mndvlknlyrs",
         "pkgs-old": "pkgs-old",
         "porn-vault": "porn-vault",

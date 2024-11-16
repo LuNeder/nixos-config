@@ -11,7 +11,7 @@
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
       # ./gpu-passthrough.nix
-      "${inputs.porn-vault}/nixos/modules/services/web-apps/porn-vault/default.nix"
+      inputs.nixos-cosmic.nixosModules.default
     ];
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
@@ -256,14 +256,6 @@
     pkgs.heroic
   ];
 
-  services.porn-vault = {
-    enable = true;
-    package = inputs.porn-vault.legacyPackages.${pkgs.system}.porn-vault;
-    autoStart = true;
-    settings.enable = true;
-    openFirewall = true;
-  };
-
   programs.criu.enable = true;
 
   services.usbmuxd = {
@@ -325,7 +317,7 @@
   # Run normal binaries
   programs.nix-ld.enable = false;
   programs.nix-ld.libraries = [config.boot.kernelPackages.nvidiaPackages.stable] ++ (with pkgs; [
-    libva # fuck alvr, they removed the appimages
+    libva
     ocamlPackages.alsa
     alsa-lib
     xfce.libxfce4windowing
@@ -416,6 +408,10 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
+
+  # Enable the COSMIC Desktop Environment.
+  services.desktopManager.cosmic.enable = true;
+
   
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873

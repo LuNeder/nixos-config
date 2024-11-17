@@ -7,7 +7,7 @@
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
-  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";  
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager";

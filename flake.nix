@@ -9,7 +9,6 @@
   };
   inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";  
-    pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default-linux";

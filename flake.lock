@@ -470,22 +470,6 @@
         "type": "github"
       }
     },
-    "pkgs-old": {
-      "locked": {
-        "lastModified": 1720535198,
-        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -519,7 +503,6 @@
         "nixos-conf-editor": "nixos-conf-editor",
         "nixos-cosmic": "nixos-cosmic",
         "nixpkgs": "nixpkgs_4",
-        "pkgs-old": "pkgs-old",
         "plasma-manager": "plasma-manager",
         "snow": "snow",
         "systems": "systems_7"

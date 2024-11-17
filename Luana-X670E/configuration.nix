@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, plasma-manager, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -171,13 +171,14 @@
     pkgs.xz
     pkgs.ulauncher 
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
+    pkgs.lm_sensors
     pkgs.plank 
     pkgs.ifuse
     pkgs.fastfetch
     pkgs.neofetch
     pkgs.lolcat
     pkgs.font-manager
-    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar,
+    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default
     pkgs.direnv
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
@@ -405,14 +406,25 @@
   services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.displayManager.lightdm.enable = true; # TODO: TeamViewer BROKEN!!
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
 
   # Enable the COSMIC Desktop Environment.
-  services.desktopManager.cosmic.enable = true;
+  # services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = false;
+  services.desktopManager.plasma6.enable = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+  home-manager.users.luana.programs.plasma = import ./kde.nix;
   
+
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873
   home-manager.backupFileExtension = "hm.bkp";
@@ -441,6 +453,32 @@
         stardustxr-server -o 1 -e "$HOME/.hexagon-launcher" "$@"
         '';  };
 
+        # Polybar
+        ".restpolymain" = {
+        executable = true;
+        force = true;
+        source = ./KDE/Polybar/.restpolymain;  };
+        ".restpolytop" = {
+        executable = true; 
+        force = true;
+        source = ./KDE/Polybar/.restpolytop;  };
+
+        ".local/share/applications/Steam.desktop" = { 
+        force = true;
+        source = ./extra-files/steam.desktop;  };
+    };
+
+    xdg.desktopEntries = {
+      settings = {
+        name = "Configurações do sistema";
+        exec = "systemsettings";
+        icon = "settings-configure-symbolic";
+      };
+      ulauncher-toggle = {
+        name = "Busca";
+        exec = "ulauncher -toggle";
+        icon = "search";
+      };
     };
 
     xdg.configFile = {
@@ -448,10 +486,7 @@
       # Polybar
       "polybar/config.ini" = { 
         force = true;
-        source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/config.ini;  };
-      "../.restpolymain" = { 
-        force = true;
-        source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/.restpolymain;  };
+        source = ./KDE/Polybar/config.ini;  };
 
       # Autostart Steam with -silent
       "autostart/steam.desktop" = { 
@@ -481,7 +516,21 @@
         [Desktop Entry]
         Type=Application
         Name=Polybar
-        Exec=polybar main
+        Exec=polybar kdetop
+        Comment=
+        RunHook=0'';
+      "autostart/polybartrick.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Polybar Trick KDE
+        Exec=polybar trickkde
+        Comment=
+        RunHook=0'';
+        "autostart/polybartricktop.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Polybar Trick KDE top
+        Exec=polybar trickkdetop
         Comment=
         RunHook=0'';
 
@@ -653,6 +702,8 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 
   # CUDA
   systemd.services.nvidia-control-devices = {

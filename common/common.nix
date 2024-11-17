@@ -62,7 +62,7 @@
   ];
 
   # Flatpaks
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
   xdg.portal.enable = true;
   services.flatpak.enable = true; # for when i move from xfce: https://nixos.wiki/wiki/Flatpak
 

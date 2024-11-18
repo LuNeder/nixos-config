@@ -269,7 +269,7 @@
   # Run normal binaries
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [config.boot.kernelPackages.nvidiaPackages.stable] ++ (with pkgs; [
-    libva # fuck alvr, they removed the appimages
+    libva
     ocamlPackages.alsa
     alsa-lib
     xfce.libxfce4windowing

@@ -26,8 +26,14 @@
     compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";
     compiz.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; 
+    
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nix-software-center.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -40,7 +46,7 @@
 
   
 
-  outputs = { self, nixpkgs, systems, nix-flatpak, home-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, home-manager, plasma-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 

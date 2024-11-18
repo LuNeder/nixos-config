@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, plasma-manager, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -11,20 +11,8 @@
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
       # ./gpu-passthrough.nix
-      "${inputs.porn-vault}/nixos/modules/services/web-apps/porn-vault/default.nix"
       inputs.nixos-cosmic.nixosModules.default
     ];
-
-  # ALVR Troubleshooting
-    # does COSMIC enable anything that is now needed by alvr as of my lats flake update?
-  services.libinput.enable = true;
-  xdg.mime.enable = true;
-  xdg.icons.enable = true;
-  services.gvfs.enable = lib.mkDefault true;
-  programs.dconf.enable = lib.mkDefault true;
-  services.accounts-daemon.enable = true;
-  services.upower.enable = true;
- # services.greetd.enable = true;
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
 #  system.replaceRuntimeDependencies = [{
@@ -183,13 +171,14 @@
     pkgs.xz
     pkgs.ulauncher 
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
+    pkgs.lm_sensors
     pkgs.plank 
     pkgs.ifuse
     pkgs.fastfetch
     pkgs.neofetch
     pkgs.lolcat
     pkgs.font-manager
-    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default # needed for polybar,
+    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default
     pkgs.direnv
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
@@ -266,21 +255,7 @@
    # pkgs.scidavis # TODO: Maybe package this some day?
     pkgs.nexusmods-app-unfree
     pkgs.heroic
-    pkgs.umockdev
-    pkgs.fd
-    pkgs.jemalloc
-    pkgs.libcerf
-    pkgs.libqalculate
-    pkgs.playerctl
   ];
-
-  services.porn-vault = {
-    enable = true;
-    package = inputs.porn-vault.legacyPackages.${pkgs.system}.porn-vault;
-    autoStart = true;
-    settings.enable = true;
-    openFirewall = true;
-  };
 
   programs.criu.enable = true;
 
@@ -343,7 +318,7 @@
   # Run normal binaries
   programs.nix-ld.enable = false;
   programs.nix-ld.libraries = [config.boot.kernelPackages.nvidiaPackages.stable] ++ (with pkgs; [
-    libva # fuck alvr, they removed the appimages
+    libva
     ocamlPackages.alsa
     alsa-lib
     xfce.libxfce4windowing
@@ -431,13 +406,25 @@
   services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
 
   # Enable the COSMIC Desktop Environment.
   #services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = false;
+  services.desktopManager.plasma6.enable = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+  home-manager.users.luana.programs.plasma = import ./kde.nix;
   
+
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873
   home-manager.backupFileExtension = "hm.bkp";
@@ -466,6 +453,32 @@
         stardustxr-server -o 1 -e "$HOME/.hexagon-launcher" "$@"
         '';  };
 
+        # Polybar
+        ".restpolymain" = {
+        executable = true;
+        force = true;
+        source = ./KDE/Polybar/.restpolymain;  };
+        ".restpolytop" = {
+        executable = true; 
+        force = true;
+        source = ./KDE/Polybar/.restpolytop;  };
+
+        ".local/share/applications/Steam.desktop" = { 
+        force = true;
+        source = ./extra-files/steam.desktop;  };
+    };
+
+    xdg.desktopEntries = {
+      settings = {
+        name = "Configurações do sistema";
+        exec = "systemsettings";
+        icon = "settings-configure-symbolic";
+      };
+      ulauncher-toggle = {
+        name = "Busca";
+        exec = "ulauncher -toggle";
+        icon = "search";
+      };
     };
 
     xdg.configFile = {
@@ -473,10 +486,7 @@
       # Polybar
       "polybar/config.ini" = { 
         force = true;
-        source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/config.ini;  };
-      "../.restpolymain" = { 
-        force = true;
-        source = /home/luana/Documentos/GitHub/Dotfiles/Polybar/.restpolymain;  };
+        source = ./KDE/Polybar/config.ini;  };
 
       # Autostart Steam with -silent
       "autostart/steam.desktop" = { 
@@ -506,7 +516,21 @@
         [Desktop Entry]
         Type=Application
         Name=Polybar
-        Exec=polybar main
+        Exec=polybar kdetop
+        Comment=
+        RunHook=0'';
+      "autostart/polybartrick.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Polybar Trick KDE
+        Exec=polybar trickkde
+        Comment=
+        RunHook=0'';
+        "autostart/polybartricktop.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Polybar Trick KDE top
+        Exec=polybar trickkdetop
         Comment=
         RunHook=0'';
 
@@ -678,6 +702,8 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 
   # CUDA
   systemd.services.nvidia-control-devices = {

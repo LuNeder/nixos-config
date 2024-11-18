@@ -15,6 +15,17 @@
       inputs.nixos-cosmic.nixosModules.default
     ];
 
+  # ALVR Troubleshooting
+    # does COSMIC enable anything that is now needed by alvr as of my lats flake update?
+  services.libinput.enable = true;
+  xdg.mime.enable = true;
+  xdg.icons.enable = true;
+  services.gvfs.enable = lib.mkDefault true;
+  programs.dconf.enable = lib.mkDefault true;
+  services.accounts-daemon.enable = true;
+  services.upower.enable = true;
+ # services.greetd.enable = true;
+
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
 #  system.replaceRuntimeDependencies = [{
 #     original = pkgs.coreutils;
@@ -255,6 +266,12 @@
    # pkgs.scidavis # TODO: Maybe package this some day?
     pkgs.nexusmods-app-unfree
     pkgs.heroic
+    pkgs.umockdev
+    pkgs.fd
+    pkgs.jemalloc
+    pkgs.libcerf
+    pkgs.libqalculate
+    pkgs.playerctl
   ];
 
   services.porn-vault = {

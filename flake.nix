@@ -27,7 +27,6 @@
     compiz.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    nix-flatpak.inputs.nixpkgs.follows = "nixpkgs"; 
 
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nix-software-center.inputs.nixpkgs.follows = "nixpkgs";

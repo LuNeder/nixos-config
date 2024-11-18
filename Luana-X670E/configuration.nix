@@ -411,7 +411,7 @@
   programs.xfconf.enable = true;
 
   # Enable the COSMIC Desktop Environment.
-  # services.desktopManager.cosmic.enable = true;
+  services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

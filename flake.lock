@@ -221,11 +221,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729414726,
-        "narHash": "sha256-Dtmm1OU8Ymiy9hVWn/a2B8DhRYo9Eoyx9veERdOBR4o=",
+        "lastModified": 1731887066,
+        "narHash": "sha256-uw7K/RsYioJicV79Nl39yjtfhdfTDU2aRxnBgvFhkZ8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fe56302339bb28e3471632379d733547caec8103",
+        "rev": "f3a2ff69586f3a54b461526e5702b1a2f81e740a",
         "type": "github"
       },
       "original": {
@@ -258,11 +258,11 @@
     },
     "nix-flatpak": {
       "locked": {
-        "lastModified": 1729451871,
-        "narHash": "sha256-uYbDN6JikC19WfD3zg0kpOpJVZFvBhHXYo3YJo28vOs=",
+        "lastModified": 1731698554,
+        "narHash": "sha256-5kTDLWpsMaKSEnekip2rUBfzuHNS9Fafp5Y7n4Y7hr8=",
         "owner": "gmodena",
         "repo": "nix-flatpak",
-        "rev": "d9a4d2024daba59348eaacbe7595d881f3e4b1b4",
+        "rev": "8db1648a95446d41e97ace7caf54e172669810ff",
         "type": "github"
       },
       "original": {
@@ -278,11 +278,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1714856183,
-        "narHash": "sha256-Ue7xV+rZqImux4DDj3VMla4LIH2g8VeXbTJwgvX7wOo=",
+        "lastModified": 1730517716,
+        "narHash": "sha256-hq3jlW5lyT2RkWhJ2/Oo+dt9FXtJ47zDDBBk8A8abMo=",
         "owner": "snowfallorg",
         "repo": "nix-software-center",
-        "rev": "b9e0f53536e1e94e7d8c3cda3c6866b3f9d01386",
+        "rev": "216eb549f1ec222c2877d2194f2987527954f2c4",
         "type": "github"
       },
       "original": {
@@ -371,15 +371,15 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1731779042,
-        "narHash": "sha256-9DbqSsb4XOxh9E8MHjUkIFwYsjPcW7JjbXFC2YjiZyk=",
-        "owner": "LuNeder",
+        "lastModified": 1731676054,
+        "narHash": "sha256-OZiZ3m8SCMfh3B6bfGC/Bm4x3qc1m2SVEAlkV6iY7Yg=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f64e2d05cab06d16e5bceb82bc57015fc136178b",
+        "rev": "5e4fbfb6b3de1aa2872b76d49fafc942626e2add",
         "type": "github"
       },
       "original": {
-        "owner": "LuNeder",
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -403,32 +403,16 @@
     },
     "pkgs-alvr": {
       "locked": {
-        "lastModified": 1730467801,
-        "narHash": "sha256-bJK/X636ah0cwimjHQBzUqdHmLrpY+q03YZLiMBbiQE=",
+        "lastModified": 1730820066,
+        "narHash": "sha256-Ij+1o4N7Wns6Vm1yazu8GylJr1/wBLX9u10xUuXkFg4=",
         "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "73780aa9a00d7f84c0bf3e2d2df76b0ce8ea6b6e",
+        "rev": "49667fe7a4490ece592a70f2ef9b3e2fbf7269d0",
         "type": "github"
       },
       "original": {
         "owner": "LuNeder",
         "ref": "alvrplusk900",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "pkgs-mndvlknlyrs": {
-      "locked": {
-        "lastModified": 1725632157,
-        "narHash": "sha256-jIB86eDb6Uzh9XGrg5Lhsc5SKOl3WLAaySSJwymJq74=",
-        "owner": "Scrumplex",
-        "repo": "nixpkgs",
-        "rev": "45feaff766cb56f038c0656353863a8d153e5e3e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Scrumplex",
-        "ref": "nixos/monado/vulkan-layers",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -451,10 +435,10 @@
     },
     "porn-vault": {
       "locked": {
-        "lastModified": 1731726094,
-        "narHash": "sha256-BKK9jsk2HoKZ5nrgFb9bpaM0CVQKqYrYLwXj5boR14Y=",
+        "lastModified": 1731948315,
+        "narHash": "sha256-tLx0qxc2aaMjDMO1b8/6HKIwMW5uVZ0wAgHk8UEfgP8=",
         "ref": "refs/heads/porn-vault",
-        "rev": "c612dd007c8b7e068a4c79aea2f5b899cc4a5148",
+        "rev": "85bc1cc39877f74800e2ff175c2a050ed6e20d06",
         "revCount": 707075,
         "type": "git",
         "url": "file:///home/luana/Documentos/GitHub/nixpkgs"
@@ -474,7 +458,6 @@
         "nixos-conf-editor": "nixos-conf-editor",
         "nixpkgs": "nixpkgs_3",
         "pkgs-alvr": "pkgs-alvr",
-        "pkgs-mndvlknlyrs": "pkgs-mndvlknlyrs",
         "pkgs-old": "pkgs-old",
         "porn-vault": "porn-vault",
         "snow": "snow",

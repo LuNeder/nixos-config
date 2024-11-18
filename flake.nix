@@ -7,10 +7,9 @@
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
-  inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/nixos-unstable"; # TODO: go back to unstable when SteamVR/ALVR fixed (NixOS/nixpkgs#352304)
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     porn-vault.url = "/home/luana/Documentos/GitHub/nixpkgs/";  
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
-    pkgs-mndvlknlyrs.url = "github:Scrumplex/nixpkgs/nixos/monado/vulkan-layers"; # TODO: merged, remove
     pkgs-alvr.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: remove when merged
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +26,7 @@
 
   
 
-  outputs = { self, nixpkgs, pkgs-old, pkgs-mndvlknlyrs, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, pkgs-old, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 

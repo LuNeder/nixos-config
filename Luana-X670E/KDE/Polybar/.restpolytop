@@ -1,3 +1,0 @@
-killall polybar .polybar-wrappe
-sleep 1
-polybar kdetop & polybar trickkde & polybar trickkdetop

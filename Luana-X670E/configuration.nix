@@ -406,7 +406,7 @@
   services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
-  #services.xserver.displayManager.lightdm.enable = true; # TODO: TeamViewer BROKEN!!
+  services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
 
@@ -416,13 +416,13 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.enable = true;
   # services.displayManager.sddm.wayland.enable = false;
-  services.desktopManager.plasma6.enable = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
-  home-manager.users.luana.programs.plasma = import ./kde.nix;
+  #services.desktopManager.plasma6.enable = true;
+  #home-manager.useGlobalPkgs = true;
+  #home-manager.useUserPackages = true;
+  #home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+  #home-manager.users.luana.programs.plasma = import ./kde.nix;
   
 
   # Desktop Configuration

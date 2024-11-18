@@ -411,9 +411,9 @@
   programs.xfconf.enable = true;
 
   # Enable the COSMIC Desktop Environment.
-  services.desktopManager.cosmic.enable = true;
+  #services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable the KDE Plasma Desktop Environment.
   #services.displayManager.sddm.enable = true;
@@ -703,7 +703,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
+  # boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 
   # CUDA
   systemd.services.nvidia-control-devices = {

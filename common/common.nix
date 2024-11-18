@@ -10,10 +10,8 @@
       pkgsGnu = import inputs.nixpkgs {  config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
       pkgsNoCu = import inputs.nixpkgs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; }; # TODO: Nix ignores when I change this to musl...
       # pkgsOld = import inputs.pkgs-old { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-musl"; }; 
-    }
-    )
-    (final: prev: {
-      opencv = final.pkgsNoCu.opencv; # Speed up, doesn't seem to be on cuda-maintainers cache and takes hours to compile on my 32 threads cpu
+      pkgsmndvlknlyrs = import inputs.pkgs-mndvlknlyrs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";};
+      pkgsAlvr = import inputs.pkgs-alvr { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";};
     }
     )
   ];

@@ -419,7 +419,7 @@
   programs.xfconf.enable = true;
 
   # Enable the COSMIC Desktop Environment.
-  services.desktopManager.cosmic.enable = true;
+  #services.desktopManager.cosmic.enable = true;
   
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873

@@ -8,26 +8,40 @@
     ];
   };
   inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-cosmic.inputs.nixpkgs-stable.follows = "nixpkgs";
+
     porn-vault.url = "/home/luana/Documentos/GitHub/nixpkgs/";  
-    pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
-    pkgs-alvr.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: remove when merged
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     systems.url = "github:nix-systems/default-linux";
+
     compiz-reloaded.url = "github:LuNeder/compiz-reloaded-nix";
     compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
+
     compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";
     compiz.inputs.nixpkgs.follows = "nixpkgs";
-    nix-flatpak.url = "github:gmodena/nix-flatpak"; 
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-flatpak.inputs.nixpkgs.follows = "nixpkgs"; 
+
     nix-software-center.url = "github:snowfallorg/nix-software-center";
+    nix-software-center.inputs.nixpkgs.follows = "nixpkgs";
+
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+    nixos-conf-editor.inputs.nixpkgs.follows = "nixpkgs";
+
     snow.url = "github:snowfallorg/snow";
+    snow.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   
 
-  outputs = { self, nixpkgs, pkgs-old, pkgs-alvr, systems, nix-flatpak, home-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, home-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 

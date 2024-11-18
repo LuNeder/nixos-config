@@ -11,6 +11,10 @@
       pkgsNoCu = import inputs.nixpkgs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; }; # TODO: Nix ignores when I change this to musl...
     }
     )
+    (final: prev: {
+      opencv = final.pkgsNoCu.opencv; # Speed up, doesn't seem to be on cuda-maintainers cache and takes hours to compile on my 32 threads cpu
+    }
+    )
   ];
 
   # Enable sysrq keys that for some dumb reason come disabled by default
@@ -57,7 +61,7 @@
   ];
 
   # Flatpaks
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
   xdg.portal.enable = true;
   services.flatpak.enable = true; # for when i move from xfce: https://nixos.wiki/wiki/Flatpak
 

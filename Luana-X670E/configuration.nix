@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, plasma-manager, lib, stdenv, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -11,7 +11,7 @@
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
       # ./gpu-passthrough.nix
-      #inputs.nixos-cosmic.nixosModules.default
+      inputs.nixos-cosmic.nixosModules.default
     ];
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
@@ -171,7 +171,7 @@
     pkgs.xz
     pkgs.ulauncher 
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
-    # pkgs.lm_sensors
+    pkgs.lm_sensors
     pkgs.plank 
     pkgs.ifuse
     pkgs.fastfetch
@@ -406,23 +406,23 @@
   services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.displayManager.lightdm.enable = true; # TODO: TeamViewer BROKEN!!
   services.xserver.desktopManager.xfce.enable = true;
   programs.xfconf.enable = true;
 
   # Enable the COSMIC Desktop Environment.
   # services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
-  # environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   # services.displayManager.sddm.wayland.enable = false;
-  #services.desktopManager.plasma6.enable = true;
-  #home-manager.useGlobalPkgs = true;
-  #home-manager.useUserPackages = true;
-  #home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
-  #home-manager.users.luana.programs.plasma = import ./kde.nix;
+  services.desktopManager.plasma6.enable = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+  home-manager.users.luana.programs.plasma = import ./kde.nix;
   
 
   # Desktop Configuration
@@ -463,23 +463,23 @@
         force = true;
         source = ./KDE/Polybar/.restpolytop;  };
 
-        #".local/share/applications/Steam.desktop" = { 
-        #force = true;
-        #source = ./extra-files/steam.desktop;  };
+        ".local/share/applications/Steam.desktop" = { 
+        force = true;
+        source = ./extra-files/steam.desktop;  };
     };
 
-    #xdg.desktopEntries = {
-    #  settings = {
-    #    name = "Configurações do sistema";
-    #    exec = "systemsettings";
-    #    icon = "settings-configure-symbolic";
-    #  };
-    #  ulauncher-toggle = {
-    #    name = "Busca";
-    #    exec = "ulauncher -toggle";
-    #    icon = "search";
-    #  };
-    #};
+    xdg.desktopEntries = {
+      settings = {
+        name = "Configurações do sistema";
+        exec = "systemsettings";
+        icon = "settings-configure-symbolic";
+      };
+      ulauncher-toggle = {
+        name = "Busca";
+        exec = "ulauncher -toggle";
+        icon = "search";
+      };
+    };
 
     xdg.configFile = {
 
@@ -703,7 +703,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # boot.kernelParams = [ "nvidia_drm.fbdev=1" ]; # (edit: nope this was not the issue) Breaks Steam Link with steam -pipewire and entirely breaks SteamVR
+  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
+
   # CUDA
   systemd.services.nvidia-control-devices = {
     wantedBy = [ "multi-user.target" ];

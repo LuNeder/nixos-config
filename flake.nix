@@ -8,7 +8,7 @@
     ];
   };
   inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    #nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";  
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";  
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default-linux";
@@ -16,11 +16,11 @@
     compiz-reloaded.inputs.nixpkgs.follows = "nixpkgs";
     compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";
     compiz.inputs.nixpkgs.follows = "nixpkgs";
-    #plasma-manager = {
-    #  url = "github:nix-community/plasma-manager";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #  inputs.home-manager.follows = "home-manager";
-    #};
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak"; 
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
@@ -29,7 +29,7 @@
 
   
 
-  outputs = { self, nixpkgs, systems, nix-flatpak, home-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, home-manager, plasma-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 

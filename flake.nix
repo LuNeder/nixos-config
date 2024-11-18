@@ -8,6 +8,7 @@
     ];
   };
   inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     porn-vault.url = "/home/luana/Documentos/GitHub/nixpkgs/";  
     pkgs-old.url = "github:nixos/nixpkgs/nixos-23.11";
     pkgs-alvr.url = "github:LuNeder/nixpkgs/alvrplusk900"; # TODO: remove when merged

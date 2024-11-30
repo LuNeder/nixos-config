@@ -13,8 +13,6 @@
     nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
     nixos-cosmic.inputs.nixpkgs-stable.follows = "nixpkgs";
 
-    porn-vault.url = "/home/luana/Documentos/GitHub/nixpkgs/";  
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 

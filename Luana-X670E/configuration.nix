@@ -80,9 +80,13 @@
    #};
    #services.nscd.enableNsncd = false;
 
+  services.porn-vault = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # Latest kernel
-  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest; 
+  #boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest;  # NVidia drivers are broken... Idk, maybe it'd be goot to not let something as big as that leave staging/reach unstable if ypou know it's broken???
 
 
   # Kernel Modules
@@ -400,6 +404,7 @@
     { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
     "net.sourceforge.scidavis"
     "com.ultimaker.cura"
+    "com.github.tchx84.Flatseal"
   ];
 
   # Enable the X11 windowing system.

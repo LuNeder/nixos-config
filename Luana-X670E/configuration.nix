@@ -86,9 +86,8 @@
   };
 
   # Latest kernel
-  #boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest;  # NVidia drivers are broken... Idk, maybe it'd be goot to not let something as big as that leave staging/reach unstable if ypou know it's broken???
-
-
+  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest; 
+  
   # Kernel Modules
   boot.extraModulePackages = with config.boot.kernelPackages; [
     v4l2loopback

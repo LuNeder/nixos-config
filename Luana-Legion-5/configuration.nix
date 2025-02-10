@@ -59,6 +59,7 @@
   pkgs.gparted
   pkgs.alvr
   pkgs.prismlauncher 
+  pkgs.makehuman
   ];
 
   # Steam

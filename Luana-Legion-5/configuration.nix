@@ -17,6 +17,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Latest kernel
+  boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
@@ -55,6 +58,7 @@
   inputs.snow.packages.${pkgs.system}.snow
   pkgs.gparted
   pkgs.alvr
+  pkgs.prismlauncher 
   ];
 
   # Steam

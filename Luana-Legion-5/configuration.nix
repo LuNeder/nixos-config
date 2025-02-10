@@ -53,8 +53,8 @@
   pkgs.xz
   pkgs.github-desktop
   (pkgs.godot_4.override{ withPrecision = "double"; })
-  inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
-  inputs.nixos-conf-editor.packages.${pkgs.system}.nixos-conf-editor
+  # inputs.nix-software-center.packages.${pkgs.system}.nix-software-center # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
+  # inputs.nixos-conf-editor.packages.${pkgs.system}.nixos-conf-editor # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
   inputs.snow.packages.${pkgs.system}.snow
   pkgs.gparted
   pkgs.alvr
@@ -154,7 +154,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

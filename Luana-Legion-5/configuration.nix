@@ -23,6 +23,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+  inputs.zen-browser.packages.${pkgs.system}.default
   pkgs.git
   pkgs.direnv
   pkgs.krita

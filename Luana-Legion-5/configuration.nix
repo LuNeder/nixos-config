@@ -26,6 +26,7 @@
   pkgs.git
   pkgs.direnv
   pkgs.krita
+  pkgs.appimage-run
   pkgs.weylus
   pkgs.ulauncher
   pkgs.vscodium

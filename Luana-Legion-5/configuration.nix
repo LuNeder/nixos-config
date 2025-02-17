@@ -62,6 +62,7 @@
   pkgs.alvr
   pkgs.prismlauncher 
   pkgs.makehuman
+  pkgs.discord
   ];
 
   # Steam
@@ -333,6 +334,15 @@
     xorg.libxshmfence
     zlib
   ]);
+
+
+  # VirtualBox
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "luana" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.host.enableKvm = true; ##
+  virtualisation.virtualbox.host.enableHardening = false;
+  virtualisation.virtualbox.host.addNetworkInterface = false;
 
 
   # This value determines the NixOS release from which the default

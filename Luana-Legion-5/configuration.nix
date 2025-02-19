@@ -63,6 +63,11 @@
   pkgs.prismlauncher 
   pkgs.makehuman
   pkgs.discord
+  pkgs.transmission_4-qt
+  pkgs.distrobox
+  pkgs.ifuse
+  pkgs.libimobiledevice # Needed to connect iPhone
+  pkgs.idevicerestore
   ];
 
   # Steam
@@ -343,6 +348,15 @@
   # virtualisation.virtualbox.host.enableKvm = true; ##
   virtualisation.virtualbox.host.enableHardening = false;
   virtualisation.virtualbox.host.addNetworkInterface = false;
+
+  # Docker
+  virtualisation.docker.enable = true;
+
+  # Needed to connect iPhone
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
 
 
   # This value determines the NixOS release from which the default

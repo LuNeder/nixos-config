@@ -627,7 +627,7 @@
   # Enable sound with pipewire.
   # sound.enable = true; The option definition `sound' no longer has any effect; please remove it.
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

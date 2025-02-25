@@ -152,7 +152,6 @@
   environment.systemPackages = [
     inputs.zen-browser.packages.${pkgs.system}.default
     pkgs.curl
-    pkgs.git
     pkgs.jdk23
     # pkgs.pkgsOld.authy
     pkgs.bitwarden-desktop

@@ -95,6 +95,10 @@
 
   environment.sessionVariables.CARGO_MOMMYS_ROLES = "big sis";
 
+  # Git
+  programs.git.enable = true;
+  programs.git.lfs.enable = true;
+
   
   # Tailscale
   services.tailscale.enable = true;

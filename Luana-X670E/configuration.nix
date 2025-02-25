@@ -321,7 +321,7 @@
   };
   
   # Run normal binaries
-  programs.nix-ld.enable = false;
+  programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [config.boot.kernelPackages.nvidiaPackages.stable] ++ (with pkgs; [
     libva
     ocamlPackages.alsa

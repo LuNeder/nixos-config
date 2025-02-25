@@ -389,11 +389,6 @@
     libsForQt5.qwt6_1
   ]);
 
-  # Symbolic Links
-  systemd.tmpfiles.rules = [
-    "L+ /bin/bash - - - - ${pkgs.bash}/bin/bash"
-  ];
-
   # Flatpaks (enabled in common.nix)
   services.flatpak.update.onActivation = true;
   services.flatpak.remotes = [

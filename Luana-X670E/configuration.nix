@@ -278,46 +278,46 @@
   };
 
   # VR
-  services.monado = {
-    package = (pkgs.pkgsNoCu.monado#.overrideAttrs (oldAttrs: rec { 
-     # src = pkgs.fetchFromGitHub {
-      #owner = "shinyquagsire23"; # Monado for Oculus Quest
-     # repo = "monado";
-     # rev = "41abf1e75d443e40c01e3a844d2cdb198d84ded7";
-     # hash = "sha256-d5MrRuzQAuA8l7VSQN9A4go6v85fkUT6wmCQEXLnia4=";
-     # };})
-    );
-    enable = true;
-    defaultRuntime = false; # Register as default OpenXR runtime
-  };
-  systemd.user.services.monado.environment = {
-    STEAMVR_LH_ENABLE = "1";
-    XRT_COMPOSITOR_COMPUTE = "1";
-    WMR_HANDTRACKING = "0";
-  };
-  services.wivrn.enable = true;
-  services.wivrn.openFirewall = true;
-  services.wivrn.package = pkgs.wivrn;
-  services.wivrn.defaultRuntime = true;
-  services.wivrn.config = {
-    enable = true;
-    json = {
-      scale = 1.0;
-     # bitrate = 100000000;
-      encoders = [
-        {
-          encoder = "nvenc";
-          codec = "h265";
-     #     width = 1.0;
-       #   height = 1.0;
-        #  offset_x = 0.0;
-         # offset_y = 0.0;
-        }
-      ];
-      # application = [ pkgs.wlx-overlay-s ]; # TODO: reenable - broken
-      #tcp_only = false;
-    };
-  };
+  #services.monado = { # TODO: Broken
+  #  package = (pkgs.pkgsNoCu.monado#.overrideAttrs (oldAttrs: rec { 
+  #   # src = pkgs.fetchFromGitHub {
+  #    #owner = "shinyquagsire23"; # Monado for Oculus Quest
+  #   # repo = "monado";
+  #   # rev = "41abf1e75d443e40c01e3a844d2cdb198d84ded7";
+  #   # hash = "sha256-d5MrRuzQAuA8l7VSQN9A4go6v85fkUT6wmCQEXLnia4=";
+  #   # };})
+  #  );
+  #  enable = true;
+  #  defaultRuntime = false; # Register as default OpenXR runtime
+  #};
+  #systemd.user.services.monado.environment = {
+  #  STEAMVR_LH_ENABLE = "1";
+  #  XRT_COMPOSITOR_COMPUTE = "1";
+  #  WMR_HANDTRACKING = "0";
+  #};
+  #services.wivrn.enable = true;
+  #services.wivrn.openFirewall = true;
+  #services.wivrn.package = pkgs.wivrn;
+  #services.wivrn.defaultRuntime = true;
+  #services.wivrn.config = {
+  #  enable = true;
+  #  json = {
+  #    scale = 1.0;
+  #   # bitrate = 100000000;
+  #    encoders = [
+  #      {
+  #        encoder = "nvenc";
+  #        codec = "h265";
+  #   #     width = 1.0;
+  #     #   height = 1.0;
+  #      #  offset_x = 0.0;
+  #       # offset_y = 0.0;
+  #      }
+  #    ];
+  #    # application = [ pkgs.wlx-overlay-s ]; # TODO: reenable - broken
+  #    #tcp_only = false;
+  #  };
+  #};
   
   # Run normal binaries
   programs.nix-ld.enable = true;

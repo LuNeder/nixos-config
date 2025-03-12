@@ -68,6 +68,8 @@
   pkgs.ifuse
   pkgs.libimobiledevice # Needed to connect iPhone
   pkgs.idevicerestore
+  pkgs.gnome-network-displays
+  pkgs.xdg-desktop-portal
   ];
 
   # Steam
@@ -204,6 +206,8 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  services.avahi.enable = true;
 
 
   # NVidia Drivers
@@ -345,7 +349,7 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "luana" ];
   virtualisation.virtualbox.host.enableExtensionPack = true;
-  # virtualisation.virtualbox.host.enableKvm = true; ##
+  virtualisation.virtualbox.host.enableKvm = true; ##
   virtualisation.virtualbox.host.enableHardening = false;
   virtualisation.virtualbox.host.addNetworkInterface = false;
 

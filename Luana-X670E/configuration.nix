@@ -259,6 +259,7 @@
     pkgs.nexusmods-app-unfree
     pkgs.heroic
     pkgs.makehuman
+    pkgs.distrobox
   ];
 
   programs.criu.enable = true;
@@ -351,6 +352,7 @@
     libdrm
     libglvnd
     libnotify
+    libpng12
     libpulseaudio
     libunwind
     libusb1
@@ -730,6 +732,9 @@
     # See: https://gist.github.com/yookoala/818c1ff057e3d965980b7fd3bf8f77a6
     ACTION=="add", ATTRS{idProduct}=="1500", ATTRS{idVendor}=="05ac", DRIVERS=="usb", RUN+="${pkgs.sg3_utils}/bin/sg_raw %r/sr%n EA 00 00 00 00 00 01"
   '';
+
+  # Docker
+  virtualisation.docker.enable = true;
 
   # Tailscale
   services.tailscale.enable = true;

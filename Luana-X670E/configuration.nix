@@ -260,6 +260,7 @@
     pkgs.heroic
     pkgs.makehuman
     pkgs.distrobox
+    pkgs.openscad
   ];
 
   programs.criu.enable = true;

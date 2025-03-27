@@ -54,7 +54,7 @@
   pkgs.rar
   pkgs.xz
   pkgs.github-desktop
-  (pkgs.godot_4.override{ withPrecision = "double"; })
+  pkgs.godot_4
   # inputs.nix-software-center.packages.${pkgs.system}.nix-software-center # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
   # inputs.nixos-conf-editor.packages.${pkgs.system}.nixos-conf-editor # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
   inputs.snow.packages.${pkgs.system}.snow

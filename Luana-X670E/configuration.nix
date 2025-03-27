@@ -240,7 +240,7 @@
     pkgs.x264
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Previously needed for ALVR audio TODO: remove, perhaps?
-    (pkgs.godot_4.override{ withPrecision = "double"; })
+    pkgs.godot_4
     pkgs.qemu_kvm
     pkgs.cdrkit
     pkgs.quickemu

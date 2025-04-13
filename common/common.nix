@@ -19,9 +19,9 @@
   # Garbage Collector
   nix.settings.auto-optimise-store = true;
   nix.gc = {
-    automatic = false; # TODO: Reenable when everything the oct1 (gen 255) -> oct20 (gen 256) update broke is fixed (sep28 dup -> oct20 dup actually)
-    #dates = "weekly";
-    #options = "-d --delete-older-than 30d";
+    automatic = true;
+    dates = "weekly";
+    options = "-d --delete-older-than 30d";
   };
 
   # Flakes

@@ -2,7 +2,6 @@
 
   # Packagesets
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
-  nixpkgs.config.cudaSupport = true; # Enable CUDA
   nixpkgs.overlays = [
     (final: prev: {
       # TODO: unhardcode hostPlatform.config (how to unhardcode the x86_64 part without removing -musl?)
@@ -35,27 +34,6 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true; # TODO: Not Working, annoying af
 
-  # TeamViewer
-  services.teamviewer.enable = true;
-
-  # RDP
-  services.xrdp.enable = true;
-  services.xrdp.openFirewall = true;
-
-
-  # KDE Connect
-  programs.kdeconnect.enable = true;
-
-  # Extra Fonts
-  fonts.packages = [
-    pkgs.powerline-fonts # zsh agnoster theme needs this
-    # pkgs.emojione # NixOS/nixpkgs#326959
-    pkgs.minecraftia
-    pkgs.comic-relief
-    pkgs.comic-mono
-    pkgs.fira
-  ];
-
   # Flatpaks
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
   xdg.portal.enable = true;
@@ -65,7 +43,6 @@
   services.openssh.enable = true;
   programs.ssh.forwardX11 = true;
   programs.ssh.setXAuthLocation = true;
-
 
   # Zsh
   environment.shells = [ pkgs.zsh ];

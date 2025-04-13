@@ -7,7 +7,7 @@
 {
   imports =
     [ 
-      ../common/common.nix
+      ../common/desktops.nix
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
       # ./gpu-passthrough.nix

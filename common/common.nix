@@ -4,10 +4,10 @@
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
   nixpkgs.overlays = [
     (final: prev: {
-      # TODO: unhardcode hostPlatform.config (how to unhardcode the x86_64 part without removing -musl?)
-      pkgsGnu = import inputs.nixpkgs {  config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
-      # pkgsMusl = import inputs.nixpkgs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
-      pkgsNoCu = import inputs.nixpkgs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "x86_64-unknown-linux-gnu"; }; # TODO: Nix ignores when I change this to musl...
+      # TODO: check if this unhardcoding of the arch in hostPlatform.config actually works
+      pkgsGnu = import inputs.nixpkgs {  config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${pkgs.hostPlatform.linuxArch}-unknown-linux-gnu"; config.cudaSupport = true; config.cudaVersion = "12";}; 
+      # pkgsMusl = import inputs.nixpkgs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${pkgs.hostPlatform.linuxArch}-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
+      pkgsNoCu = import inputs.nixpkgs { config.allowUnfree = true;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${pkgs.hostPlatform.config}"; }; # TODO: Nix ignores when I change this to musl...
     }
     )
   ];

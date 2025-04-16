@@ -28,7 +28,8 @@
   nix.extraOptions = "experimental-features = nix-command flakes";
 
   # Add flake inputs to registry
-  nix.registry = builtins.mapAttrs (_name: value: {flake = value;}) inputs;
+  nix.registry = lib.mapAttrs (_: flake: {inherit flake;}) (lib.filterAttrs (_: lib.isType "flake") inputs);
+  nix.nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") (lib.filterAttrs (_: lib.isType "flake") inputs);
 
   # Keyring for bitwarden
   services.gnome.gnome-keyring.enable = true;

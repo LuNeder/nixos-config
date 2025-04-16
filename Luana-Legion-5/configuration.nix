@@ -3,13 +3,21 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }:
-
 {
   imports =
     [ ../common/desktops.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      /home/luana/Documentos/GitHub/nixpkgs/nixos/modules/services/web-apps/cook-cli.nix
+  
     ];
+
+  services.cook-cli = {
+    enable = true;
+    autoStart = true;
+    openFirewall = true;
+    port = 5000;
+  };
 
   # Install firefox.
    programs.firefox.enable = true;

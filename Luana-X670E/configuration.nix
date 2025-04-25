@@ -253,7 +253,7 @@
     pkgs.libimobiledevice
     pkgs.idevicerestore
     pkgs.pmbootstrap
-    pkgs.ueviewer
+    # pkgs.ueviewer # TODO: Broken
     pkgs.pciutils
    # pkgs.scidavis # TODO: Maybe package this some day?
     pkgs.nexusmods-app-unfree

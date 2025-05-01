@@ -70,8 +70,12 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ nix-flatpak.nixosModules.nix-flatpak
               ./Luana-Legion-5/configuration.nix];
-
-      });
+        });
+        Yoke = ( nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs outputs;};
+            modules = [ nix-flatpak.nixosModules.nix-flatpak
+              ./Yoke/configuration.nix];
+        });
       };
     };
 }

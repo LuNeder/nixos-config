@@ -2,18 +2,29 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/common.nix
+      inputs.lanzaboote.nixosModules.lanzaboote
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    initrd.systemd.enable = true;
+    loader.systemd-boot.enable = lib.mkForce false;
+
+    # https://jnsgr.uk/2024/04/nixos-secure-boot-tpm-fde/
+    # https://github.com/natanbc/nix-config/commit/ab94b87af329695b6684de1b39edaf7993866203
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
+  };
+
 
   networking.hostName = "Yoke"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

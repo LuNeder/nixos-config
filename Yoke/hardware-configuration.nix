@@ -18,7 +18,13 @@
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-0befe1bf-7eef-42eb-a17c-a7ea4c77e5dc".device = "/dev/disk/by-uuid/0befe1bf-7eef-42eb-a17c-a7ea4c77e5dc";
+  boot.initrd.luks.devices."luks-0befe1bf-7eef-42eb-a17c-a7ea4c77e5dc" = {
+    device = "/dev/disk/by-uuid/0befe1bf-7eef-42eb-a17c-a7ea4c77e5dc";
+    
+    # Fix for an exploit: https://github.com/natanbc/nix-config/commit/ab94b87af329695b6684de1b39edaf7993866203
+    # systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+7+12+13+14+15:sha256=0000000000000000000000000000000000000000000000000000000000000000 --wipe-slot=tpm2 /dev/nvme0n1p2
+    crypttabExtraOpts = [ "tpm2-device=auto" "tpm2-measure-pcr=yes" ];
+  };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/EDED-6AB2";

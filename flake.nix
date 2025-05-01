@@ -27,6 +27,8 @@
     compiz.url = "github:LuNeder/compiz-reloaded-nix/compiz09";
     compiz.inputs.nixpkgs.follows = "nixpkgs";
 
+    lanzaboote.url = "github:nix-community/lanzaboote";
+
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";

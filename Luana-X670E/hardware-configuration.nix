@@ -40,6 +40,8 @@
   # networking.interfaces.enp77s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp76s0.useDHCP = lib.mkDefault true;
 
+  networking.hostId = "24af69ff";
+  
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

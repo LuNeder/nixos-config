@@ -8,7 +8,7 @@ in {
       package = pkgs.nextcloud31;
       enable = true;
 
-      https = true;
+      https = false;
 
       home = "/mnt/pool1/nextcloud";
 
@@ -20,19 +20,24 @@ in {
           hostName
         ];
       };
+      
+      database.createLocally = true;
 
       config = {
         adminpassFile = config.sops.secrets.nextcloud-password.path;
-        dbhost = "/run/postgresql";
         dbtype = "pgsql";
       };
 
       extraApps = {
         inherit (config.services.nextcloud.package.packages.apps) onlyoffice contacts calendar 
-        tasks notes forms memories previewgenerator twofactor_totp;
+        tasks notes forms memories previewgenerator;
       };
       extraAppsEnable = true;
-    };
+      
+      appstoreEnable = true;
+      
+      maxUploadSize = "2048G";
+   };
 
     postgresql = {
       ensureDatabases = ["nextcloud"];
@@ -48,6 +53,8 @@ in {
   sops.secrets.nextcloud-password = {
     owner = "nextcloud";
     group = "nextcloud";
-    sopsFile = ../secrets.yml;
+    sopsFile = ../secrets.yaml;
   };
+
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

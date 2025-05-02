@@ -65,18 +65,15 @@
         });
         Luana-X670E = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs;};
-            modules = [ nix-flatpak.nixosModules.nix-flatpak
-              ./Luana-X670E/configuration.nix];
+            modules = [ /Luana-X670E/configuration.nix ];
         });
         Luana-Legion-5 = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs;};
-            modules = [ nix-flatpak.nixosModules.nix-flatpak
-              ./Luana-Legion-5/configuration.nix];
+            modules = [ ./Luana-Legion-5/configuration.nix ];
         });
         Yoke = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs;};
-            modules = [ nix-flatpak.nixosModules.nix-flatpak
-              ./Yoke/configuration.nix];
+            modules = [ ./Yoke/configuration.nix ];
         });
       };
     };

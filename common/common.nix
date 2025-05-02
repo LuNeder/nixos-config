@@ -1,5 +1,9 @@
 { pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, rustPlatform, ... }: {
 
+  imports = [ 
+    nix-flatpak.nixosModules.nix-flatpak
+  ];
+
   # Packagesets
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
   nixpkgs.overlays = [

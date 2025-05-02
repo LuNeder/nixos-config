@@ -32,6 +32,7 @@
     pkgs.x264
     pkgs.yt-dlp
     pkgs.pciutils
+    pkgs.smartmontools
   ];
 
   # Enable sysrq keys that for some dumb reason come disabled by default

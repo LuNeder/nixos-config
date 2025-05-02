@@ -3,7 +3,6 @@
   imports = [ 
     inputs.sops-nix.nixosModules.sops
     inputs.nix-flatpak.nixosModules.nix-flatpak
-    <sops-nix/modules/sops>
   ];
 
   # Packagesets
@@ -39,6 +38,7 @@
     pkgs.yt-dlp
     pkgs.pciutils
     pkgs.smartmontools
+    pkgs.sops
   ];
 
   # Enable sysrq keys that for some dumb reason come disabled by default
@@ -138,5 +138,8 @@
   '';
 };
 
+# Sops
+sops.defaultSopsFile = ../secrets/secrets.yaml;
+sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
 }

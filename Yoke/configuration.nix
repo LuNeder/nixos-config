@@ -11,7 +11,9 @@
       ../common/common.nix
       inputs.lanzaboote.nixosModules.lanzaboote
       ./services/nextcloud.nix
+      ./services/onlyoffice.nix
       ./services/postgresql.nix
+      ./services/home-assistant.nix
       ./services/porn-vault.nix
       ./services/cooklang.nix
     ];

@@ -151,7 +151,6 @@
   # $ nix search wget
   environment.systemPackages = [
     inputs.zen-browser.packages.${pkgs.system}.default
-    pkgs.curl
     pkgs.jdk23
     # pkgs.pkgsOld.authy
     pkgs.bitwarden-desktop
@@ -161,28 +160,16 @@
     pkgs.python3Packages.pygobject3
     pkgs.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
-    pkgs.nvtopPackages.full
-    pkgs.htop
     pkgs.gparted
     pkgs.mate.engrampa
     pkgs.baobab
     pkgs.vscodium
     pkgs.goverlay
     pkgs.mangohud
-    pkgs.p7zip # why is this not installed by default, nixos is fucking dumb
-    pkgs.rar
-    pkgs.xz
     pkgs.ulauncher 
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
-    pkgs.lm_sensors
     pkgs.plank 
-    pkgs.ifuse
-    pkgs.fastfetch
-    pkgs.neofetch
-    pkgs.lolcat
     pkgs.font-manager
-    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default
-    pkgs.direnv
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
     pkgs.xfce.xfce4-clipman-plugin
@@ -214,7 +201,6 @@
     pkgs.python3Packages.pyusb
     pkgs.python311Packages.usb-devices
     pkgs.sidequest
-    pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
     pkgs.opencomposite
@@ -237,7 +223,6 @@
     pkgs.alvr
     # When using SteamVR, this file cannot exist as readonly
     (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && rm -f '/home/luana/.config/openxr/1/active_runtime.json' && ln -s ${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json '/home/luana/.config/openxr/1/active_runtime.json' && wivrn-server";})
-    pkgs.x264
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Previously needed for ALVR audio TODO: remove, perhaps?
     pkgs.godot_4
@@ -245,7 +230,6 @@
     pkgs.cdrkit
     pkgs.quickemu
     # pkgs.quickgui # broken
-    pkgs.yt-dlp
     # pkgs.handbrake  # TODO: reenable, broken on staging-next
     pkgs.niri
     pkgs.xwayland
@@ -254,7 +238,6 @@
     pkgs.idevicerestore
     pkgs.pmbootstrap
     # pkgs.ueviewer # TODO: Broken
-    pkgs.pciutils
    # pkgs.scidavis # TODO: Maybe package this some day?
     pkgs.nexusmods-app-unfree
     pkgs.heroic

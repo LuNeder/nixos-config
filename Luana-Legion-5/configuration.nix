@@ -24,8 +24,6 @@
   # $ nix search wget
   environment.systemPackages = [
   inputs.zen-browser.packages.${pkgs.system}.default
-  pkgs.git
-  pkgs.direnv
   pkgs.krita
   pkgs.appimage-run
   pkgs.weylus
@@ -50,9 +48,6 @@
   pkgs.pkgs.bitwarden-desktop
   pkgs.mate.engrampa
   pkgs.baobab
-  pkgs.p7zip
-  pkgs.rar
-  pkgs.xz
   pkgs.github-desktop
   pkgs.godot_4
   # inputs.nix-software-center.packages.${pkgs.system}.nix-software-center # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
@@ -65,8 +60,6 @@
   pkgs.discord
   pkgs.transmission_4-qt
   pkgs.distrobox
-  pkgs.ifuse
-  pkgs.libimobiledevice # Needed to connect iPhone
   pkgs.idevicerestore
   pkgs.gnome-network-displays
   pkgs.xdg-desktop-portal

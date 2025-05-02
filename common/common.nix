@@ -12,6 +12,28 @@
     )
   ];
 
+  # Common Packages
+  environment.systemPackages = [
+    pkgs.curl
+    pkgs.zfs
+    pkgs.nvtopPackages.full
+    pkgs.htop
+    pkgs.p7zip # why is this not installed by default, nixos is fucking dumb
+    pkgs.rar
+    pkgs.xz
+    pkgs.lm_sensors
+    pkgs.ifuse
+    pkgs.libimobiledevice # Needed to connect iPhone
+    pkgs.neofetch
+    pkgs.lolcat
+    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default
+    pkgs.direnv
+    pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages
+    pkgs.x264
+    pkgs.yt-dlp
+    pkgs.pciutils
+  ];
+
   # Enable sysrq keys that for some dumb reason come disabled by default
   boot.kernel.sysctl."kernel.sysrq" = 1;
 

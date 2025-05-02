@@ -80,11 +80,6 @@
    #};
    #services.nscd.enableNsncd = false;
 
-  services.porn-vault = {
-    enable = true;
-    openFirewall = true;
-  };
-
   # Latest kernel
   boot.kernelPackages = pkgs.pkgsGnu.linuxPackages_latest; 
   

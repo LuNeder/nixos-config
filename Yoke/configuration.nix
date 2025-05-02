@@ -10,6 +10,10 @@
       ./hardware-configuration.nix
       ../common/common.nix
       inputs.lanzaboote.nixosModules.lanzaboote
+      ./services/nextcloud.nix
+      ./services/postgresql.nix
+      ./services/porn-vault.nix
+      ./services/cooklang.nix
     ];
 
   # Bootloader.

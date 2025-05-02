@@ -1,7 +1,9 @@
 { pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, rustPlatform, ... }: {
 
   imports = [ 
-    nix-flatpak.nixosModules.nix-flatpak
+    inputs.sops-nix.nixosModules.sops
+    inputs.nix-flatpak.nixosModules.nix-flatpak
+    <sops-nix/modules/sops>
   ];
 
   # Packagesets

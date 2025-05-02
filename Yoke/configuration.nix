@@ -11,7 +11,7 @@
       ../common/common.nix
       inputs.lanzaboote.nixosModules.lanzaboote
       ./services/nextcloud.nix
-      ./services/onlyoffice.nix
+      # ./services/onlyoffice.nix TODO: Broken, nginx error
       ./services/postgresql.nix
       ./services/home-assistant.nix
       ./services/porn-vault.nix

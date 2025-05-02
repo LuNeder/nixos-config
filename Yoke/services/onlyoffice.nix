@@ -10,7 +10,7 @@
       # Autenticação via unix socket
       postgresName = "onlyoffice";
       postgresUser = "onlyoffice";
-      port = 8001;
+      port = 8987;
       #jwtSecretFile = config.sops.secrets.onlyoffice-secret.path;
     };
     postgresql = {

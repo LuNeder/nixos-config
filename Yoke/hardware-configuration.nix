@@ -27,16 +27,22 @@
     crypttabExtraOpts = [ "tpm2-device=auto" "tpm2-measure-pcr=yes" ];
   };
 
-  fileSystems."/mnt/pool1" =
-    { device = "pool1";
-      fsType = "zfs";
-    };
-
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/EDED-6AB2";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+
+  fileSystems."/mnt/pool1" =
+    { device = "pool1";
+      fsType = "zfs";
+    };
+
+  sops.secrets."pool1.key" = {
+    format = "binary";
+    sopsFile = ./pool1.key;
+    path = "/etc/pool1.key";
+  };
 
   swapDevices = [ ];
 

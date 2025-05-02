@@ -17,3 +17,10 @@ creation_rules:
       - *admin_luana_iphone
       - *server_yoke
       - *server_pc
+  - path: Yoke/pool1.key
+    key_groups:
+    - age:
+      - *admin_luana_pc
+      - *admin_luana_iphone
+      - *server_yoke
+      - *server_pc

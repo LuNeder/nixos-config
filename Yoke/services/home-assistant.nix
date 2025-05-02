@@ -12,6 +12,8 @@
       # Recommended for fast zlib compression
       # https://www.home-assistant.io/integrations/isal
       "isal"
+      "analytics"
+      "google_translate"
 
       "wake_on_lan"
       "webdav"
@@ -43,14 +45,17 @@
     latitude = {
       sopsFile = ../secrets.yaml;
       path = "${config.services.home-assistant.configDir}/latitude.yaml";
+      mode = "0555";
     };
     longitude = {
       sopsFile = ../secrets.yaml;
       path = "${config.services.home-assistant.configDir}/longitude.yaml";
+      mode = "0555";
     };
     elevation = {
       sopsFile = ../secrets.yaml;
       path = "${config.services.home-assistant.configDir}/elevation.yaml";
+      mode = "0555";
     };
   };
 }

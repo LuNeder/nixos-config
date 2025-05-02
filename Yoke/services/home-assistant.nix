@@ -14,6 +14,12 @@
       "isal"
 
       "wake_on_lan"
+      "webdav"
+      "apple_tv"
+      "homekit"
+      "homekit_controller"
+      "icloud"
+      "roborock"
     ];
 
     config = {

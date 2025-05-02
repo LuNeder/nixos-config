@@ -66,6 +66,11 @@
   # Configure console keymap
   console.keyMap = "us-acentos";
 
+  # Zfs
+  boot.supportedFilesystems = [ "zfs" ];
+  services.zfs.autoScrub.enable = true;
+  services.zfs.trim.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {
     isNormalUser = true;

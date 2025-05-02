@@ -68,7 +68,7 @@
         });
         Luana-X670E = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs;};
-            modules = [ /Luana-X670E/configuration.nix ];
+            modules = [ ./Luana-X670E/configuration.nix ];
         });
         Luana-Legion-5 = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs;};

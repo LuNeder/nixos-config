@@ -67,6 +67,7 @@
   # Flatpaks
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
   xdg.portal.enable = true;
+  xdg.portal.config.common.default = "*";
   services.flatpak.enable = true; # for when i move from xfce: https://nixos.wiki/wiki/Flatpak
 
   # Enable the OpenSSH daemon.

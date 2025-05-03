@@ -60,7 +60,16 @@
     };
   };
 
-networking.firewall.allowedTCPPorts = [ 21063 ];
-networking.firewall.allowedUDPPorts = [ 21063 ];
-networking.firewall.enable = false; # TODO: Ugly, discover what port I need to open for HomeKit Bridge
+  networking.firewall.allowedTCPPorts = [ 
+    # HomeKit Bridge  
+    21063 21064 5353 
+    # Other ports listed as being used by HA (netstat -ln), at least 1 of these also needed by the Bridge
+    8123 40000 47831 34041 1900 35698 39446 42277 59682
+  ];
+  networking.firewall.allowedUDPPorts = [ 
+    # HomeKit Bridge  
+    21063 21064 5353 
+    # Other ports listed as being used by HA (netstat -ln), at least 1 of these also needed by the Bridge
+    8123 40000 47831 34041 1900 35698 39446 42277 59682
+  ];
 }

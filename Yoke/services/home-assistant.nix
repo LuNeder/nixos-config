@@ -22,6 +22,7 @@
       "homekit_controller"
       "icloud"
       "roborock"
+      "webostv"
     ];
 
     config = {

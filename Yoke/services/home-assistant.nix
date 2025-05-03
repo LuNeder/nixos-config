@@ -39,6 +39,20 @@
         temperature_unit = "C";
         time_zone = config.time.timeZone;
       };
+
+      switch = [
+        {
+          platform = "wake_on_lan";
+          name = "PC de Luana";
+          mac = "!include ./pc-mac-address.yaml";
+          host = "192.168.15.7";
+          turn_off.action = "shell_command.turn_off_pc";
+        }
+      ];
+
+      shell_command = {
+        turn_off_pc =''"${pkgs.writeShellApplication {name = "ssh-poweroff"; text = "${pkgs.openssh}/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@192.168.15.7";}}/bin/ssh-poweroff"'';
+      };
     };
   };
 
@@ -56,6 +70,11 @@
     elevation = {
       sopsFile = ../secrets.yaml;
       path = "${config.services.home-assistant.configDir}/elevation.yaml";
+      mode = "0555";
+    };
+    pc-mac-address = {
+      sopsFile = ../secrets.yaml;
+      path = "${config.services.home-assistant.configDir}/pc-mac-address.yaml";
       mode = "0555";
     };
   };

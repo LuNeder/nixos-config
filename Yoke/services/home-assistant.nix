@@ -58,4 +58,8 @@
       mode = "0555";
     };
   };
+
+networking.firewall.allowedTCPPorts = [ 21063 ];
+networking.firewall.allowedUDPPorts = [ 21063 ];
+networking.firewall.enable = false; # TODO: Ugly, discover what port I need to open for HomeKit Bridge
 }

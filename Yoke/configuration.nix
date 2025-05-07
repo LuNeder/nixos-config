@@ -41,11 +41,25 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  systemd.network.enable = true;
+  systemd.network.wait-online.enable = false; # Main interface is still network-manager, so this needs to be off
+  
+  # Thunderbolt with static ip
+  systemd.network.networks."99-thunderbolt" = {
+    matchConfig.Name = "thunderbolt0";
+    networkConfig = {
+      Address = ["169.254.24.9/24" "fe80::9/64"];
+      DHCP = "no";
+    };
+    linkConfig.RequiredForOnline = "no";
+  };
+
+  # Wake on LAN
+  networking.interfaces.eno1.wakeOnLan.enable = true;
+
+  # Use real Mac address
   networking.networkmanager.ethernet.macAddress = "permanent";
   networking.networkmanager.wifi.macAddress = "permanent";
-  networking.interfaces.eno1.wakeOnLan.enable = true;
-  networking.interfaces.thunderbolt0.ipv4.addresses = [{ address = "169.254.24.9"; prefixLength = 24; }];
-  networking.interfaces.thunderbolt0.ipv6.addresses = [{ address = "fe80::9"; prefixLength = 64; }];
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";

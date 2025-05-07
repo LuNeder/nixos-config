@@ -7,7 +7,7 @@
       import = {
         images = [
           {
-            path = "/mnt/pool1/porn-vault";
+            path = "/mnt/pool1/porn-vault/media";
             include = [ ];
             exclude = [ ];
             extensions = [
@@ -21,7 +21,7 @@
         ];
         videos = [
           {
-            path = "/mnt/pool1/porn-vault";
+            path = "/mnt/pool1/porn-vault/media";
             include = [ ];
             exclude = [ ];
             extensions = [

@@ -44,8 +44,8 @@
   networking.networkmanager.ethernet.macAddress = "permanent";
   networking.networkmanager.wifi.macAddress = "permanent";
   networking.interfaces.eno1.wakeOnLan.enable = true;
-  networking.interfaces.thunderbolt0.ipv4.addresses = [{ address = "169.254.24.9"; prefixLength = 24; }];
-  networking.interfaces.thunderbolt0.ipv6.addresses = [{ address = "fe80::9"; prefixLength = 64; }];
+  # networking.interfaces.thunderbolt0.ipv4.addresses = [{ address = "169.254.24.9"; prefixLength = 24; }];
+  # networking.interfaces.thunderbolt0.ipv6.addresses = [{ address = "fe80::9"; prefixLength = 64; }];
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";

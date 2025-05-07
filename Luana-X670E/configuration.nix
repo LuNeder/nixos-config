@@ -122,8 +122,8 @@
   networking.interfaces.enp77s0.wakeOnLan.enable = true;
   networking.networkmanager.ethernet.macAddress = "permanent"; # use real Mac address
   networking.networkmanager.wifi.macAddress = "permanent";
-  networking.interfaces.thunderbolt0.ipv4.addresses = [{ address = "169.254.24.7"; prefixLength = 24; }];
-  networking.interfaces.thunderbolt0.ipv6.addresses = [{ address = "fe80::7"; prefixLength = 64; }];
+  # networking.interfaces.thunderbolt0.ipv4.addresses = [{ address = "169.254.24.7"; prefixLength = 24; }];
+  # networking.interfaces.thunderbolt0.ipv6.addresses = [{ address = "fe80::7"; prefixLength = 64; }];
 
 
   # Configure network proxy if necessary

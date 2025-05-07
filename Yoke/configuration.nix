@@ -47,6 +47,8 @@
   # networking.interfaces.thunderbolt0.ipv4.addresses = [{ address = "169.254.24.9"; prefixLength = 24; }];
   # networking.interfaces.thunderbolt0.ipv6.addresses = [{ address = "fe80::9"; prefixLength = 64; }];
 
+  services.hardware.bolt.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
 

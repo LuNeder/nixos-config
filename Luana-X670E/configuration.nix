@@ -125,6 +125,7 @@
   # networking.interfaces.thunderbolt0.ipv4.addresses = [{ address = "169.254.24.7"; prefixLength = 24; }];
   # networking.interfaces.thunderbolt0.ipv6.addresses = [{ address = "fe80::7"; prefixLength = 64; }];
 
+  services.hardware.bolt.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

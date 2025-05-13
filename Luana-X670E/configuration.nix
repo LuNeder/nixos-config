@@ -242,6 +242,7 @@
     pkgs.makehuman
     pkgs.distrobox
     pkgs.openscad
+    pkgs.pkgsNoCu.rpcs3
   ];
 
   programs.criu.enable = true;

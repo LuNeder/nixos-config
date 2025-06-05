@@ -41,6 +41,11 @@
     pkgs.sops
   ];
 
+  # Tmux
+  programs.tmux.enable = true;
+
+
+
   # Enable sysrq keys that for some dumb reason come disabled by default
   boot.kernel.sysctl."kernel.sysrq" = 1;
 

@@ -44,7 +44,11 @@
   # Tmux
   programs.tmux.enable = true;
 
-
+  # General Purpose Mouse
+  services.gpm = {
+    enable = true;
+    protocol = "usb";
+  };
 
   # Enable sysrq keys that for some dumb reason come disabled by default
   boot.kernel.sysctl."kernel.sysrq" = 1;

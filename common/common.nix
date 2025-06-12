@@ -39,6 +39,7 @@
     pkgs.pciutils
     pkgs.smartmontools
     pkgs.sops
+    pkgs.usbutils
   ];
 
   # Tmux

@@ -1,5 +1,5 @@
 { config, pkgs, lib, inputs, ... }: {
-  # imports = [ ./zigbee2mqtt.nix ];
+  imports = [ ./zigbee2mqtt.nix ];
 
   services.home-assistant = {
     enable = true;
@@ -9,6 +9,7 @@
     extraComponents = [
       # Components required to complete the onboarding
       "met"
+      "mqtt"
       "radio_browser"
       "shopping_list"
       # Recommended for fast zlib compression
@@ -33,7 +34,7 @@
       "sensor"
       "webhook"
       "template"
-      "zha"
+      # "zha" # using zigbee2mqtt
     ];
 
     config = {

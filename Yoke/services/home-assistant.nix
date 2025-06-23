@@ -1,5 +1,5 @@
 { config, pkgs, lib, inputs, ... }: {
-  imports = [ ./zigbee2mqtt.nix ];
+  # imports = [ ./zigbee2mqtt.nix ]; # using zha
 
   services.home-assistant = {
     enable = true;
@@ -34,7 +34,7 @@
       "sensor"
       "webhook"
       "template"
-      # "zha" # using zigbee2mqtt
+      "zha"
     ];
 
     config = {

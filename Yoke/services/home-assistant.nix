@@ -1,4 +1,6 @@
 { config, pkgs, lib, inputs, ... }: {
+  #imports = [ ./zigbee2mqtt.nix ];
+
   services.home-assistant = {
     enable = true;
 
@@ -18,6 +20,8 @@
       "wake_on_lan"
       "webdav"
       "apple_tv"
+      "hardware"
+      "homeassistant_hardware"
       "homekit"
       "homekit_controller"
       "icloud"
@@ -29,6 +33,7 @@
       "sensor"
       "webhook"
       "template"
+      "zha"
     ];
 
     config = {

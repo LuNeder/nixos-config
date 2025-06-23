@@ -47,7 +47,7 @@
 
   # General Purpose Mouse
   services.gpm = {
-    enable = true;
+    #enable = true;
     protocol = "usb";
   };
 

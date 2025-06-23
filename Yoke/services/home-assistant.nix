@@ -104,7 +104,7 @@
         } 
       ];
 
-      automation = "!include automations.yaml";
+      automation = "!include automations.yaml"; # It seems I need to manually create this, content being just  "[]" (without the quotes)
 
       "automation homepodSensors" = [
         {

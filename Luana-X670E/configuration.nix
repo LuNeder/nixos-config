@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, outputs, config, home-manager, plasma-manager, lib, stdenv, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, plasma-manager, lib, stdenv, ... }:
 
 {
   imports =
@@ -209,7 +209,7 @@
     pkgs.lldb
     pkgs.alsa-utils
     pkgs.fluidsynth
-    pkgs.lmms
+    # pkgs.lmms # Broken (#389149)
     pkgs.muse
     pkgs.qsynth
     pkgs.pavucontrol
@@ -233,13 +233,21 @@
     pkgs.xwayland
     pkgs.jitsi-meet-electron
     pkgs.libimobiledevice
-    pkgs.idevicerestore
+    # pkgs.idevicerestore # Broken (#422441)
     pkgs.pmbootstrap
     # pkgs.ueviewer # TODO: Broken
    # pkgs.scidavis # TODO: Maybe package this some day?
     pkgs.nexusmods-app-unfree
     pkgs.heroic
-    pkgs.makehuman
+    (pkgs.makehuman.overrideAttrs (oldAttrs: rec { # (#422450)
+      source = pkgs.fetchFromGitHub {
+        owner = "slashdottir";
+        repo = "makehuman";
+        rev = "fix_numpy_tostring";
+        hash = "sha256-Kg47VUE7cJN4thEhxFCK7UeDPaHTfDJr0Vk6boEp8Y8=";
+        name = "makehuman-source";
+      };
+    }))
     pkgs.distrobox
     pkgs.openscad
     pkgs.pkgsNoCu.rpcs3

@@ -56,13 +56,14 @@
   pkgs.gparted
   pkgs.alvr
   pkgs.prismlauncher 
-  pkgs.makehuman
+  # pkgs.makehuman # Broken
   pkgs.discord
   pkgs.transmission_4-qt
   pkgs.distrobox
-  pkgs.idevicerestore
+  # pkgs.idevicerestore # Broken
   pkgs.gnome-network-displays
   pkgs.xdg-desktop-portal
+  pkgs.mcpelauncher-ui-qt
   ];
 
   # Steam

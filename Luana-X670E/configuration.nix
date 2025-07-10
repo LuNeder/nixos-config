@@ -216,6 +216,7 @@
     # pkgs.epiphany
     # pkgs.minecraft broken
     pkgs.prismlauncher 
+    pkgs.mcpelauncher-ui-qt
     pkgs.libreoffice-fresh
     pkgs.wlx-overlay-s
     pkgs.alvr

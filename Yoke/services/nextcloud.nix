@@ -17,6 +17,7 @@ in {
           "192.168.15.9"
           "100.95.29.43"
           "yoke.fairy-scylla.ts.net"
+          "yoke"
           hostName
         ];
       };

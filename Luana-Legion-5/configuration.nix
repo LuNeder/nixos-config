@@ -64,6 +64,8 @@
   pkgs.gnome-network-displays
   pkgs.xdg-desktop-portal
   pkgs.mcpelauncher-ui-qt
+  pkgs.libreoffice-fresh
+  pkgs.labplot
   ];
 
   # Steam

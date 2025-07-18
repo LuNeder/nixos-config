@@ -65,7 +65,7 @@
   pkgs.xdg-desktop-portal
   pkgs.mcpelauncher-ui-qt
   pkgs.libreoffice-fresh
-  pkgs.labplot
+  # pkgs.labplot Broken
   ];
 
   # Steam

@@ -3,6 +3,7 @@
     # Onlyoffice requires non-privileged users namespaces
     "kernel.unprivileged_userns_clone" = 1;
   };
+  services.nginx.virtualHosts."localhost".listen = [ { addr = "127.0.0.1"; port = 8987; } ];
   services = {
     onlyoffice = {
       enable = true;

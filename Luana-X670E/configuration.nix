@@ -252,6 +252,7 @@
     pkgs.distrobox
     pkgs.openscad
     pkgs.pkgsNoCu.rpcs3
+    pkgs.pmbootstrap
   ];
 
   programs.criu.enable = true;

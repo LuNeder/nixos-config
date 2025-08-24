@@ -742,12 +742,12 @@
   # services.transmission.enable = true;
 
   # VirtualBox
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "luana" ];
-  #virtualisation.virtualbox.host.enableExtensionPack = true;
-  # virtualisation.virtualbox.host.enableKvm = true; ##
-  #virtualisation.virtualbox.host.enableHardening = false;
-  # virtualisation.virtualbox.host.addNetworkInterface = false;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.host.enableKvm = true; ##
+  virtualisation.virtualbox.host.enableHardening = false;
+  virtualisation.virtualbox.host.addNetworkInterface = false; ##
 
   programs.virt-manager.enable = true;
 

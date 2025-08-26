@@ -40,6 +40,7 @@
     pkgs.smartmontools
     pkgs.sops
     pkgs.usbutils
+    pkgs.tree
   ];
 
   # Tmux

@@ -48,9 +48,9 @@
   # Needed for mounting rw on Nextcloud
   systemd.services = {
     "chmod-porn-vault" = {
-       wants = [ "porn-vault.service" ];
+       wantedBy = [ "porn-vault.service" ];
        serviceConfig = {
-         ExecStart = "chmod 777 /mnt/pool1/porn-vault && chmod -R 777 /mnt/pool1/porn-vault/media";
+         ExecStart = "chown root:root /mnt/pool1/porn-vault && chown -R root:root /mnt/pool1/porn-vault/media && chmod 777 /mnt/pool1/porn-vault && chmod 777 /mnt/pool1/porn-vault/media -R";
        };
     };
   };

@@ -253,6 +253,8 @@
     pkgs.openscad
     pkgs.pkgsNoCu.rpcs3
     pkgs.pmbootstrap
+    pkgs.usbip-ssh
+    pkgs.pkgsGnu.linuxPackages_latest.usbip
   ];
 
   programs.criu.enable = true;
@@ -655,8 +657,8 @@
 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944];
-  networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944];
+  networking.firewall.allowedTCPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944 3240 ];
+  networking.firewall.allowedUDPPorts = [ 7860 1701 9001 4000 5353 9757 9943 9944 3240 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

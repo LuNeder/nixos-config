@@ -4,6 +4,10 @@
   # Enable CUDA
   nixpkgs.config.cudaSupport = true;
 
+  # Bluetooth GUI
+  services.blueman.enable = true;
+
+
   # TeamViewer
   services.teamviewer.enable = true;
 

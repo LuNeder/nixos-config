@@ -26,7 +26,7 @@
       "homekit"
       "homekit_controller"
       "icloud"
-      "roborock"
+      # "roborock" # TODO: Broken build
       "webostv"
       "http"
       "api"

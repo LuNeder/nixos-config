@@ -29,9 +29,9 @@
     members = ["nginx" "nextcloud"];
   };
 
-#  sops.secrets.onlyoffice-secret = {
-#    owner = "onlyoffice";
-#    group = "onlyoffice";
-#    sopsFile = ../secrets.yaml;
-#  };
+  #sops.secrets.onlyoffice-secret = {
+  #  owner = "onlyoffice";
+  #  group = "onlyoffice";
+  #  sopsFile = ../secrets.yaml;
+  #};
 }

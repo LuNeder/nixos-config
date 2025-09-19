@@ -12,7 +12,7 @@
     ];
 
   # Install firefox.
-   programs.firefox.enable = true;
+  # programs.firefox.enable = true; Using zen instead
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

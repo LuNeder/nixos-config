@@ -16,7 +16,8 @@
       ./services/home-assistant.nix
       ./services/porn-vault.nix
       ./services/cooklang.nix
-      ./services/pihole.nix
+      # ./services/pihole.nix
+      ./services/adguardhome.nix
     ];
 
   # Bootloader.

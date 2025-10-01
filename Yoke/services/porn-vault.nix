@@ -50,7 +50,7 @@
     "chmod-porn-vault" = {
        wantedBy = [ "porn-vault.service" ];
        serviceConfig = {
-         ExecStart = "chown root:root /mnt/pool1/porn-vault && chown -R root:root /mnt/pool1/porn-vault/media && chmod 777 /mnt/pool1/porn-vault && chmod 777 /mnt/pool1/porn-vault/media -R";
+         ExecStart = "${pkgs.writeScript "chmod-porn-vault" "${pkgs.uutils-coreutils-noprefix}/bin/chown root:root /mnt/pool1/porn-vault && ${pkgs.uutils-coreutils-noprefix}/bin/chown -R root:root /mnt/pool1/porn-vault/media && ${pkgs.uutils-coreutils-noprefix}/bin/chmod 777 /mnt/pool1/porn-vault && ${pkgs.uutils-coreutils-noprefix}/bin/chmod 777 /mnt/pool1/porn-vault/media -R"}";
        };
     };
   };

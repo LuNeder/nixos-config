@@ -14,18 +14,22 @@
         # You can select any ip and port, just make sure to open firewalls where needed
         address = "0.0.0.0:178";
       };
-      dns = {
-        bootstrap_dns = config.services.adguardhome.settings.dns.upstream_dns;
-        upstream_dns = [
-          "1.1.1.1"
-          "2606:4700:4700::1111"
-          "9.9.9.11"
-          "2620:fe::11"
-          # Uncomment the following to use a local DNS service (e.g. Unbound)
-          # Additionally replace the address & port as needed
-          # "127.0.0.1:5335"
-        ];
-      };
+      
+      dns = let
+        upstreams = [
+            "1.1.1.1"
+            "2606:4700:4700::1111"
+            "9.9.9.11"
+            "2620:fe::11"
+            # Uncomment the following to use a local DNS service (e.g. Unbound)
+            # Additionally replace the address & port as needed
+            # "127.0.0.1:5335"
+          ];
+      in
+        {
+          bootstrap_dns = upstreams;
+          upstream_dns = upstreams;
+        };
       filtering = {
         protection_enabled = true;
         filtering_enabled = true;

@@ -43,6 +43,12 @@
         "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"  # The Big List of Hacked Malware Web Sites
         "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
         "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" # AD blocking, hopefully adguard uses the same syntax as pihole
+        "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt"
+        "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt"
+        "https://adguardteam.github.io/HostlistsRegistry/assets/filter_24.txt"
+        "https://adguardteam.github.io/HostlistsRegistry/assets/filter_59.txt"
+        "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt"
+        "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt"
         "https://gist.githubusercontent.com/wassname/78eeaaad299dc4cddd04e372f20a9aa7/raw/36d217ab1d6e123d8fc2b39e48af8ca63e4d4ac8/LG%2520Smart-TV%2520Blocklist%2520Adlist%2520(for%2520PiHole)"
         "https://raw.githubusercontent.com/TheShawnMiranda/LG-TV-Ad-Block/refs/heads/master/list" # Block updates for LG TV (ads are already blocked by disagreeing to most of the Terms of Use (except to the minimum needed to homekit, which unfortunately also enables update notifications))
       ];
@@ -116,6 +122,7 @@
         # Printer contacts this 2424 times in 12 hours
         "chat.avatar.ext.hp.com"
         "||ext.hp.com^"
+        "||gbd.hp10.us^"
       ];
     };
   };

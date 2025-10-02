@@ -123,6 +123,9 @@
         "chat.avatar.ext.hp.com"
         "||ext.hp.com^"
         "||gbd.hp10.us^"
+        
+        # Actually, block TV and Printer from DNS entirely
+        "||*^$client=192.168.15.101|192.168.15.105"
       ];
     };
   };

@@ -112,6 +112,10 @@
         "us.lgeapi.com"
         "us.lgtvsdp.com"
         "us.rdx2.lgtvsdp.com"
+
+        # Printer contacts this 2424 times in 12 hours
+        "chat.avatar.ext.hp.com"
+        "||ext.hp.com^"
       ];
     };
   };

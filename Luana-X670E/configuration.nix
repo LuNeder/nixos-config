@@ -247,6 +247,7 @@
     pkgs.pmbootstrap
     pkgs.usbip-ssh
     pkgs.pkgsGnu.linuxPackages_latest.usbip
+    pkgs.nextcloud-client
   ];
 
   programs.criu.enable = true;

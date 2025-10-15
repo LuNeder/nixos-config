@@ -10,6 +10,7 @@
       ../common/desktops.nix
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
+      ../common/dav.nix
       # ./gpu-passthrough.nix
       inputs.nixos-cosmic.nixosModules.default
     ];
@@ -571,6 +572,7 @@
   users.users.luana = {
     isNormalUser = true;
     description = "Luana";
+    uid = 1000;
     initialPassword = "abcde"; # so I can login if I do build-vm
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [

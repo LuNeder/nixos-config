@@ -7,6 +7,7 @@
 {
   imports =
     [ ../common/desktops.nix
+      ../common/dav.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
@@ -182,6 +183,7 @@
   users.users.luana = {
     isNormalUser = true;
     description = "Luana";
+    uid = 1000;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird

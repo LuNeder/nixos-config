@@ -15,7 +15,7 @@ in {
       settings = {
         trusted_domains = [
           "192.168.15.9"
-          "100.95.29.43"
+          "100.64.0.9"
           "yoke.fairy-scylla.ts.net"
           "yoke"
           hostName

@@ -10,7 +10,7 @@
       ../common/desktops.nix
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
-      ../common/dav.nix
+      ./dav.nix
       # ./gpu-passthrough.nix
       inputs.nixos-cosmic.nixosModules.default
     ];

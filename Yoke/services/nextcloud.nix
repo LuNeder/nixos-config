@@ -18,6 +18,7 @@ in {
           "100.64.0.9"
           "yoke.fairy-scylla.ts.net"
           "yoke"
+          "169.254.6.116" # Thunderbolt (have to figure out how to set static without breaing when disconnected)
           hostName
         ];
       };

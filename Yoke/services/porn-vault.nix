@@ -34,6 +34,15 @@
         ];
         scanInterval = 10800000;
       };
+
+      matching.matcher = {
+        options = {
+          wordSeparators = [
+            "[-_]"
+            "%20"
+          ];
+        };
+      };
       
       persistence = {
         backup = {

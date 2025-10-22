@@ -14,15 +14,16 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2bfa4e00-ee2d-4c9b-a59d-2fca760b64e7";
-      fsType = "btrfs";
-      options = [ "subvol=@" ];
+    { device = "/dev/disk/by-uuid/8b35486d-fd57-4fbc-9d08-b856646fe839";
+      fsType = "ext4";
     };
 
+  boot.initrd.luks.devices."luks-9c0b5534-3f6e-47ff-b51c-4dda36f64199".device = "/dev/disk/by-uuid/9c0b5534-3f6e-47ff-b51c-4dda36f64199";
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/33C3-EAE5";
+    { device = "/dev/disk/by-uuid/C272-8BCD";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/home/luana/ssd2" =

@@ -18,7 +18,13 @@
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-9c0b5534-3f6e-47ff-b51c-4dda36f64199".device = "/dev/disk/by-uuid/9c0b5534-3f6e-47ff-b51c-4dda36f64199";
+  boot.initrd.luks.devices."luks-9c0b5534-3f6e-47ff-b51c-4dda36f64199" = {
+    device = "/dev/disk/by-uuid/9c0b5534-3f6e-47ff-b51c-4dda36f64199";
+        
+    # Fix for an exploit: https://github.com/LuNeder/nixos-config/commit/d4b05b1059ad49ea4c3919ef0b0daab39280800c
+    # systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+7+12+13+14+15:sha256=0000000000000000000000000000000000000000000000000000000000000000 --wipe-slot=tpm2 /dev/nvme1n1p2
+    crypttabExtraOpts = [ "tpm2-device=auto" "tpm2-measure-pcr=yes" ];
+  };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/C272-8BCD";

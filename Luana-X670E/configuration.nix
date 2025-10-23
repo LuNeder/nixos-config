@@ -6,13 +6,14 @@
 
 {
   imports =
-    [ 
+    [
       ../common/desktops.nix
       inputs.home-manager.nixosModules.home-manager # Home Manager
       ./hardware-configuration.nix
-      ./dav.nix
+      # ./dav.nix
       # ./gpu-passthrough.nix
       inputs.nixos-cosmic.nixosModules.default
+      # inputs.lanzaboote.nixosModules.lanzaboote # Using limine
     ];
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
@@ -91,25 +92,51 @@
   security.polkit.enable = true;
 
   # Bootloader.
+  #  boot.loader = {
+  #    efi = { canTouchEfiVariables = true; };
+  #    grub = { enable = true;
+  #      efiSupport = true;
+  #      device = "nodev";
+  #      useOSProber = true;
+  #      extraEntries = ''
+  #        menuentry "UEFI Firmware Settings" {
+  #          fwsetup
+  #        }
+  #      '';
+  #      theme = "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe";
+  #      # theme = "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse";
+  #    };
+  #  };
+
+  # Bootloader.
+  #boot.bootspec.enabled = true;
   boot.loader = {
     efi = { canTouchEfiVariables = true; };
-    grub = { enable = true;
+
+    limine = { enable = true;
       efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-      extraEntries = ''
-        menuentry "UEFI Firmware Settings" {
-          fwsetup
-        }
-      '';
-      theme = "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe";
-      # theme = "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse";
+      biosDevice = "nodev";
+      #extraEntries = ''
+      #  menuentry "UEFI Firmware Settings" {
+      #    fwsetup
+      #  }
+      #'';
+      secureBoot.enable = true;
+      style = {
+        wallpapers = [ "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe/background.png" ];
+        #wallpapers = [ "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse/background.png" ];
+        graphicalTerminal.background = "FF000000";
+
+      };
     };
   };
-  
+  #boot.lanzaboote = {
+  #  enable = true;
+  #  pkiBundle = "/var/lib/sbctl";
+  #};
+  boot.initrd.systemd.enable = true;
 
   # Plymouth
-  boot.initrd.systemd.enable = true;
   boot.plymouth = {
     enable = true;
     themePackages = with pkgs; [ (adi1090x-plymouth-themes.override {selected_themes = [ "black_hud" ]; }) ];

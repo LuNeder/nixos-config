@@ -26,7 +26,7 @@
     loader.systemd-boot.enable = lib.mkForce false;
 
     # https://jnsgr.uk/2024/04/nixos-secure-boot-tpm-fde/
-    # https://github.com/natanbc/nix-config/commit/ab94b87af329695b6684de1b39edaf7993866203
+    # https://github.com/LuNeder/nixos-config/commit/d4b05b1059ad49ea4c3919ef0b0daab39280800c
     lanzaboote = {
       enable = true;
       pkiBundle = "/var/lib/sbctl";

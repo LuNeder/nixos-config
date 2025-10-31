@@ -84,6 +84,12 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true; # TODO: Not Working, annoying af
 
+  # Trusted users
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+  ];
+
   # Flatpaks
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
   xdg.portal.enable = true;

@@ -12,7 +12,6 @@
       ./hardware-configuration.nix
       # ./dav.nix
       # ./gpu-passthrough.nix
-      inputs.nixos-cosmic.nixosModules.default
       # inputs.lanzaboote.nixosModules.lanzaboote # Using limine
     ];
 

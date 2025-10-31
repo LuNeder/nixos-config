@@ -12,10 +12,6 @@
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-    nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-cosmic.inputs.nixpkgs-stable.follows = "nixpkgs";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 

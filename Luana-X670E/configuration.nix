@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, outputs, config, home-manager, plasma-manager, lib, stdenv, ... }:
+{ pkgs, inputs, outputs, config, home-manager, plasma-manager, lib, ... }:
 
 {
   imports =
@@ -167,13 +167,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.jdk23
     # pkgs.pkgsOld.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
-    # inputs.compiz-reloaded.packages.${pkgs.system}.default # Compiz
-    inputs.compiz.packages.${pkgs.system}.default
+    # inputs.compiz-reloaded.packages.${pkgs.stdenv.hostPlatform.system}.default # Compiz
+    inputs.compiz.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.python3Packages.pygobject3
     pkgs.pkgsNoCu.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace

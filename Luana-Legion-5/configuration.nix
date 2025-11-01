@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, lib, fetchFromGitHub, ... }:
 
 {
   imports =
@@ -24,7 +24,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-  inputs.zen-browser.packages.${pkgs.system}.default
+  inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   pkgs.krita
   pkgs.appimage-run
   pkgs.weylus
@@ -51,9 +51,9 @@
   pkgs.baobab
   pkgs.github-desktop
   pkgs.godot_4
-  # inputs.nix-software-center.packages.${pkgs.system}.nix-software-center # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
-  # inputs.nixos-conf-editor.packages.${pkgs.system}.nixos-conf-editor # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
-  inputs.snow.packages.${pkgs.system}.snow
+  # inputs.nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.nix-software-center # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
+  # inputs.nixos-conf-editor.packages.${pkgs.stdenv.hostPlatform.system}.nixos-conf-editor # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
+  inputs.snow.packages.${pkgs.stdenv.hostPlatform.system}.snow
   pkgs.gparted
   pkgs.alvr
   pkgs.prismlauncher 

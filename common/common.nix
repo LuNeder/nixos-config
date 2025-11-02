@@ -181,6 +181,9 @@
 sops.defaultSopsFile = ../secrets/secrets.yaml;
 sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
+# fwupd
+services.fwupd.enable = true;
+
 # Needed by ulauncher and heroic-launcher
 nixpkgs.config.permittedInsecurePackages = [
   "libsoup-2.74.3"

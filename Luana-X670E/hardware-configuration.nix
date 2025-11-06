@@ -32,11 +32,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
   
-  # Accidentally deleted
-  #fileSystems."/home/luana/ssd2" =
-  #  { device = "/dev/disk/by-uuid/0a21e7ed-9bd4-48e7-92b6-ee0dfcc12086";
-  #    fsType = "btrfs";
-  #  };
+  fileSystems."/home/luana/ssd2" =
+    { device = "/dev/disk/by-uuid/0a21e7ed-9bd4-48e7-92b6-ee0dfcc12086";
+      fsType = "btrfs";
+      options = [ "nofail" ];
+    };
 
  # swapDevices = [ {device = "/dev/nvme0n1p1";} ];
 

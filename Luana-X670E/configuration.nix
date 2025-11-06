@@ -275,7 +275,7 @@
     pkgs.pmbootstrap
     pkgs.usbip-ssh
     pkgs.pkgsGnu.linuxPackages_latest.usbip
-    pkgs.nextcloud-client
+    # pkgs.nextcloud-client # TODO: Figure out how I'll do syncing later
   ];
 
   programs.criu.enable = true;

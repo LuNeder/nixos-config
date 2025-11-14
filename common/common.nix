@@ -41,6 +41,7 @@
     pkgs.sops
     pkgs.usbutils
     pkgs.tree
+    pkgs.libfaketime
   ];
 
   # Tmux

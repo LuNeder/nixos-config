@@ -128,19 +128,17 @@
         "||*^$client=192.168.15.101|192.168.15.105"
 
         # Needed for some livestreaming websites (1Hosts (Lite))
-        "@@||edge-hls.doppiocdn.com^$important"
+        "@@||edge-hls.doppiocdn.*^$important"
+        "@@||*-webrtc.doppiocdn.*^$important"
+        "@@||b-us*-turn.doppiocdn.*^$important"
+        "@@||img.doppiocdn.*^$important"
+        "@@||media-hls.doppiocdn.*^$important"
         "@@||static.cloudflareinsights.com^$important"
-        "@@||edge-hls.doppiocdn.live^$important"
-        "@@||edge-hls.doppiocdn.org^$important"
         "@@||static-cdn.strpst.com^$important"
-        "@@||img.doppiocdn.org^$important"
         "@@||creative.eizzih.com^$important"
         "@@||ststandard.com^$important"
-        "@@||img.doppiocdn.com^$important"
         "@@||img.strpst.com^$important"
-        "@@||media-hls.doppiocdn.org^$important"
         "@@||api2.amplitude.com^$important"
-        "@@||edge-webrtc.doppiocdn.com^$important"
 
       ];
     };

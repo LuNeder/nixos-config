@@ -45,7 +45,7 @@
         "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" # AD blocking, hopefully adguard uses the same syntax as pihole
         "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt"
         "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt"
-        "https://adguardteam.github.io/HostlistsRegistry/assets/filter_24.txt"
+        "https://adguardteam.github.io/HostlistsRegistry/assets/filter_24.txt" # 1Hosts (Lite) (does hamper user experience, actually)
         "https://adguardteam.github.io/HostlistsRegistry/assets/filter_59.txt"
         "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt"
         "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt"
@@ -126,6 +126,22 @@
         
         # Actually, block TV and Printer from DNS entirely
         "||*^$client=192.168.15.101|192.168.15.105"
+
+        # Needed for some livestreaming websites (1Hosts (Lite))
+        "@@||edge-hls.doppiocdn.com^$important"
+        "@@||static.cloudflareinsights.com^$important"
+        "@@||edge-hls.doppiocdn.live^$important"
+        "@@||edge-hls.doppiocdn.org^$important"
+        "@@||static-cdn.strpst.com^$important"
+        "@@||img.doppiocdn.org^$important"
+        "@@||creative.eizzih.com^$important"
+        "@@||ststandard.com^$important"
+        "@@||img.doppiocdn.com^$important"
+        "@@||img.strpst.com^$important"
+        "@@||media-hls.doppiocdn.org^$important"
+        "@@||api2.amplitude.com^$important"
+        "@@||edge-webrtc.doppiocdn.com^$important"
+
       ];
     };
   };

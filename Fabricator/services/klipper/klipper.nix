@@ -38,8 +38,8 @@
       authorization = {
         force_logins = true;
         cors_domains = [
-          "192.168.15.*"
-          "100.64.0.*"
+          "*://192.168.15.5"
+          "*://100.64.0.5"
           "*.local"
           "*.lan"
           "*://app.fluidd.xyz"

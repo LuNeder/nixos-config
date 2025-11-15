@@ -8,6 +8,11 @@
       serial = {
         additionalPorts = [ "~/printer_data/comms/klippy.serial" ];
       };
+      plugins = {
+        klipper = {
+          
+        };
+      };
       webcam = {
         stream = "http://100.64.0.5/webcam";
       };

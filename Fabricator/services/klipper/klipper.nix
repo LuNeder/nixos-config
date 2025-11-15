@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }: {
 
   imports = [
-    ./octoprint.nix
+    # ./octoprint.nix
     ./webcam.nix
   ];
   

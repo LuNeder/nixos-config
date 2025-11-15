@@ -66,6 +66,10 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./Yoke/configuration.nix ];
         });
+        Fabricator = ( nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs outputs;};
+            modules = [ ./Fabricator/configuration.nix ];
+        });
       };
     };
 }

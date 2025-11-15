@@ -1,12 +1,14 @@
 { config, pkgs, lib, ... }: {
   systemd.services.ustreamer = {
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = [ "network.target" ];
     description = "uStreamer for video2";
     serviceConfig = {
       Type = "simple";
-      ExecStart = ''${pkgs.ustreamer}/bin/ustreamer -d /dev/webcam-ender --encoder=HW --persistent --drop-same-frames=30'';
+      ExecStart = ''${(pkgs.writeShellApplication {name = "ustreamer-setup"; text = "udevadm control --reload && udevadm trigger --subsystem-match=video4linux && ${pkgs.ustreamer}/bin/ustreamer -d /dev/webcam-ender --encoder=HW --persistent --drop-same-frames=30";})}/bin/ustreamer-setup'';
     };
   };
+
+
   services.fluidd.nginx.locations."/webcam".proxyPass = "http://127.0.0.1:8080/stream";
 
   # Udev Rules

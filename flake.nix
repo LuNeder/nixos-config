@@ -54,14 +54,6 @@
       lib = nixpkgs.lib // home-manager.lib; 
     in {
       nixosConfigurations = {
-        virtualbox = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs;};
-            modules = [./virtualbox/nixos/configuration.nix];
-        });
-        virtualbox2 = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs;};
-            modules = [./virtualbox2/nixos/configuration.nix];
-        });
         Luana-X670E = ( nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs;};
             modules = [ ./Luana-X670E/configuration.nix ];

@@ -5,12 +5,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../common/common.nix
-      ./services/klipper/klipper.nix
-    ];
+  imports = [ 
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../common/common.nix
+    ./services/klipper/klipper.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
 
   imports = [
+    ./octoprint.nix
+    ./webcam.nix
   ];
   
   # Klipper
@@ -8,9 +10,6 @@
     enable = true;
     configFile = ./printer-creality-ender5-2019.cfg;
     mutableConfig = false;
-    octoprintIntegration = true;
-    user = "root";
-    group = "root";
   };
 
   # UI for touchscreen

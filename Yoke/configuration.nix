@@ -18,7 +18,8 @@
       ./services/cooklang.nix
       # ./services/pihole.nix
       ./services/adguardhome.nix
-      ./services/firefly-iii.nix
+      # ./services/firefly-iii.nix
+      ./services/actual.nix
     ];
 
   # Bootloader.

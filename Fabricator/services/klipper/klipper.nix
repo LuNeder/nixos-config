@@ -59,6 +59,11 @@
     };
   };
 
+  # Udev rule to restart Klipper when usb is reconnected
+  services.udev.extraRules = ''
+    SUBSYSTEM=="tty", KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", RUN+="${(pkgs.writeShellApplication {name = "klipper-restart"; text = "systemctl restart klipper";})}/bin/klipper-restart"
+  '';
+
   # Firewall
   networking.firewall.allowedTCPPorts = [ 80 config.services.moonraker.port ];
   networking.firewall.allowedUDPPorts = [ 80 config.services.moonraker.port ];

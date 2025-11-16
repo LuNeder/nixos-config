@@ -168,7 +168,7 @@
   # $ nix search wget
   environment.systemPackages = [
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    pkgs.jdk23
+    pkgs.jdk25
     # pkgs.pkgsOld.authy
     pkgs.bitwarden-desktop
     pkgs.libsecret
@@ -241,7 +241,7 @@
     pkgs.wlx-overlay-s
     pkgs.alvr
     # When using SteamVR, this file cannot exist as readonly
-    (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && rm -f '/home/luana/.config/openxr/1/active_runtime.json' && ln -s ${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json '/home/luana/.config/openxr/1/active_runtime.json' && wivrn-server";})
+    # (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && rm -f '/home/luana/.config/openxr/1/active_runtime.json' && ln -s ${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json '/home/luana/.config/openxr/1/active_runtime.json' && wivrn-server";}) # broken
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Previously needed for ALVR audio TODO: remove, perhaps?
     pkgs.godot_4
@@ -260,18 +260,18 @@
    # pkgs.scidavis # TODO: Maybe package this some day?
     pkgs.nexusmods-app-unfree
     pkgs.heroic
-    (pkgs.makehuman.overrideAttrs (oldAttrs: rec { # (#422450)
-      source = pkgs.fetchFromGitHub {
-        owner = "slashdottir";
-        repo = "makehuman";
-        rev = "fix_numpy_tostring";
-        hash = "sha256-Kg47VUE7cJN4thEhxFCK7UeDPaHTfDJr0Vk6boEp8Y8=";
-        name = "makehuman-source";
-      };
-    }))
+    #(pkgs.makehuman.overrideAttrs (oldAttrs: rec { # (#422450)
+    #  source = pkgs.fetchFromGitHub {
+    #    owner = "slashdottir";
+    #    repo = "makehuman";
+    #    rev = "fix_numpy_tostring";
+    #    hash = "sha256-Kg47VUE7cJN4thEhxFCK7UeDPaHTfDJr0Vk6boEp8Y8=";
+    #    name = "makehuman-source";
+    #  };
+    #}))
     pkgs.distrobox
     pkgs.openscad
-    pkgs.pkgsNoCu.rpcs3
+    # pkgs.pkgsNoCu.rpcs3 # Broken
     pkgs.pmbootstrap
     pkgs.usbip-ssh
     pkgs.pkgsGnu.linuxPackages_latest.usbip

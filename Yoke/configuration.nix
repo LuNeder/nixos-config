@@ -18,6 +18,7 @@
       ./services/cooklang.nix
       # ./services/pihole.nix
       ./services/adguardhome.nix
+      ./services/hledger.nix
     ];
 
   # Bootloader.

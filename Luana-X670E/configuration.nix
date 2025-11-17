@@ -245,6 +245,7 @@
     pkgs.qpwgraph
     pkgs.pulseaudioFull # Previously needed for ALVR audio TODO: remove, perhaps?
     pkgs.godot_4
+    pkgs.blender
     pkgs.qemu_kvm
     pkgs.cdrkit
     pkgs.quickemu

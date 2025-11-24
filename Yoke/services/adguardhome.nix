@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, ... }: {
-  networking.firewall.allowedTCPPorts = [ 178 53 ];
-  networking.firewall.allowedUDPPorts = [ 178 53 ];
+  networking.firewall.allowedTCPPorts = [ config.services.adguardhome.port 53 ];
+  networking.firewall.allowedUDPPorts = [ config.services.adguardhome.port 53 ];
 
   services.adguardhome = {
     enable = true;
@@ -16,7 +16,12 @@
       };
       
       dns = let
-        upstreams = [
+        upstreams = if config.services.unbound.enable
+          then  [
+          "[::1]:${toString config.services.unbound.settings.server.port}"
+          ]
+          else fallback;
+        fallback = [
             "1.1.1.1"
             "2606:4700:4700::1111"
             "9.9.9.11"
@@ -28,7 +33,9 @@
       in
         {
           bootstrap_dns = upstreams;
+          bootstrap_prefer_ipv6 = true;
           upstream_dns = upstreams;
+          fallback_dns = fallback;
         };
       filtering = {
         protection_enabled = true;

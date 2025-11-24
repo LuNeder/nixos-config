@@ -20,6 +20,7 @@
       ./services/adguardhome.nix
       # ./services/firefly-iii.nix
       ./services/actual.nix
+      ./services/unbound.nix
     ];
 
   # Bootloader.

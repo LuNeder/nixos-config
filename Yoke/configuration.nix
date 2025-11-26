@@ -20,6 +20,7 @@
       ./services/adguardhome.nix
       ./services/unbound.nix
       ./services/actual.nix
+      ./services/binary-cache/binary-cache.nix
     ];
 
   # Bootloader.

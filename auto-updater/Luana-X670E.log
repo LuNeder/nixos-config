@@ -17,6 +17,7 @@ evaluation warning: luana profile: You are using
 
                     to your configuration.
 [31;1merror:[0m executing '[35;1mgit[0m': [35;1mNo such file or directory[0m
+[31;1merror:[0m executing '[35;1mgit[0m': [35;1mNo such file or directory[0m
 warning: could not read HEAD ref from repo at 'https://github.com/qdwp/CyberRe.git', using 'master'
 error:
        … while calling the 'derivationStrict' builtin
@@ -676,7 +677,7 @@ error:
 
        (8 duplicate frames omitted)
 
-       … while evaluating definitions from `/nix/store/zf80j7bp66zi43s3ly7ms29bz6w6k11j-source/Luana-X670E/configuration.nix':
+       … while evaluating definitions from `/nix/store/95jzc3azbscq66lnm0ibcci07kzdjfiz-source/Luana-X670E/configuration.nix':
 
        … from call site
          at /nix/store/g02rq8ap30x3fp8zrz07ip5v1s0pzidn-source/lib/modules.nix:1171:80:
@@ -714,7 +715,7 @@ error:
           346|
 
        … while calling the 'fetchGit' builtin
-         at /nix/store/zf80j7bp66zi43s3ly7ms29bz6w6k11j-source/Luana-X670E/configuration.nix:125:27:
+         at /nix/store/95jzc3azbscq66lnm0ibcci07kzdjfiz-source/Luana-X670E/configuration.nix:125:27:
           124|       style = {
           125|         wallpapers = [ "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe/background.png" ];
              |                           ^

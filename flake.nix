@@ -1,9 +1,9 @@
 {
   nixConfig = {
-    substituters = [
+    extra-substituters = [
       "http://100.64.0.9:2025"
     ];
-    trusted-public-keys = [
+    extra-trusted-public-keys = [
       "yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4="
     ];
   };

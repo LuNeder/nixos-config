@@ -41,16 +41,20 @@ mkdir ./auto-updater
 echo "bot: Auto Update (%XYZREPLACEMENUMS%)" > ./auto-updater/results.txt
 echo "" >> ./auto-updater/results.txt
 
+mkdir -p /nix/var/nix/gcroots/binary-cache-builder
+rm -f ./result
+
+
 for i in $(@nix@ eval --raw --apply 'x: builtins.concatStringsSep " " (builtins.attrNames x)' .#nixosConfigurations); 
 do
     { 
         {
             echo Building $i && @nixosrebuild@ build --flake .#$i $EXTRABUILDOPTS --option eval-cache false --show-trace --cores $CORES -j $JOBS > ./auto-updater/$i.log 2>&1
         } && { 
-            SNUM=$((SNUM+1)) && echo "$i: SUCCESS" && echo "$i: SUCCESS" >> ./auto-updater/results.txt && rm "./auto-updater/$i.log" 
+            SNUM=$((SNUM+1)) && echo "$i: SUCCESS" && echo "$i: SUCCESS" >> ./auto-updater/results.txt && rm "./auto-updater/$i.log" && rm -f "/nix/var/nix/gcroots/binary-cache-builder/$i" && ln -s "$(readlink -f ./result)" "/nix/var/nix/gcroots/binary-cache-builder/$i" && rm ./result
         }
     } || { 
-        FNUM=$((FNUM+1)) && echo "$i: FAIL" && echo "$i: FAIL" >> ./auto-updater/results.txt 
+        FNUM=$((FNUM+1)) && echo "$i: FAIL" && echo "$i: FAIL" >> ./auto-updater/results.txt && rm -f ./result
     }
 done
 

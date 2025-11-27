@@ -31,4 +31,7 @@
         Unit = "binary-cache-updater.service";
       };
   };
+
+  # Do gc before building to avoid fill storage with too many old builds and avoid removing what we just built (tho the symlink to gcroots should stop the removal on its own)
+  nix.gc.dates = lib.mkForce "*-*-* 02:00:00 America/Sao_Paulo";
 }

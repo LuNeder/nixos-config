@@ -11,7 +11,7 @@ JOBS=2
 FNUM=0
 SNUM=0
 
-while getopts ":f" option; do
+while getopts ":f" option "$@"; do
    case $option in
       f) # Enter a name
          FORCEBUILD=true;;

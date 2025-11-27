@@ -186,7 +186,8 @@
     pkgs.mangohud
     pkgs.ulauncher 
     pkgs.polybarFull # TODO: Fix xfce4-session-logout
-    pkgs.plank 
+    pkgs.plank
+    pkgs.crystal-dock
     pkgs.font-manager
     pkgs.xfce.xfce4-panel-profiles # ...
     pkgs.xfce.xfce4-pulseaudio-plugin
@@ -532,6 +533,15 @@
         Type=Application
         Name=Plank
         Exec=plank
+        Comment=
+        RunHook=0'';
+
+      # Autostart crystal-dock
+      "autostart/crystal-dock.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Crystal
+        Exec=crystal-dock
         Comment=
         RunHook=0'';
 

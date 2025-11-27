@@ -1,14 +1,27 @@
 #!@shebang@
 set -e
 
-export REPO='https://github.com/LuNeder/nixos-config'
-export COMMITMAIL='auto-updater@luana.dev.br'
-export MAIN='strawberry'
-export EXTRABUILDOPTS='--impure'
-export CORES=2
-export JOBS=2
-export FNUM=0
-export SNUM=0
+FORCEBUILD=false
+REPO='https://github.com/LuNeder/nixos-config'
+COMMITMAIL='auto-updater@luana.dev.br'
+MAIN='strawberry'
+EXTRABUILDOPTS='--impure'
+CORES=2
+JOBS=2
+FNUM=0
+SNUM=0
+
+while getopts ":f" option; do
+   case $option in
+      f) # Enter a name
+         FORCEBUILD=true;;
+     \?) # Invalid option
+         echo "Error: Invalid option"
+         exit 1;;
+   esac
+done
+
+
 
 echo Starting Nix Binary Cache Autoupdate
 rm -rf /tmp/nix-cache-compiler
@@ -23,7 +36,7 @@ cd repo
 {
     @git@ switch auto-updater 
 } || {
-    @git@ switch -c auto-updater --guess && export EXTRAPUSH='--set-upstream origin auto-updater'
+    @git@ switch -c auto-updater --guess && EXTRAPUSH='--set-upstream origin auto-updater'
 }
 
 echo Updating branch from $MAIN
@@ -31,7 +44,11 @@ echo Updating branch from $MAIN
 
 @nix@ flake update --refresh --tarball-ttl 0 > /dev/null
 { 
-    @git@ diff --exit-code && echo "no updates to lockfile, nothing to do, exiting" && cd ../.. && rm -rf /tmp/nix-cache-compiler && exit 0
+    if [ "$FORCEBUILD" = true ] ; then
+        echo 'Using -f, building anyway!'
+    else
+        @git@ diff --exit-code && echo "no updates to lockfile, nothing to do, exiting" && cd ../.. && rm -rf /tmp/nix-cache-compiler && exit 0
+    fi
 } || {
     echo "Lockfile updated, let's build"
 }

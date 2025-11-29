@@ -292,7 +292,7 @@
       kcminputrc.Mouse.cursorTheme = "Bibata-Modern-Ice";
       kded5rc.Module-browserintegrationreminder.autoload = false;
       kded5rc.Module-device_automounter.autoload = false;
-      kdeglobals.General.AccentColor = "82,161,80";
+      kdeglobals.General.AccentColor = "80,161,80";
       kdeglobals.General.LastUsedCustomAccentColor = "0,211,184";
       kdeglobals.General.accentColorFromWallpaper = true;
       kdeglobals.Icons.Theme = "breeze";
@@ -409,8 +409,8 @@
       kwinrulesrc."2437b957-6e40-4839-80e4-8334177dc2e2".skiptaskbarrule = 2;
       kwinrulesrc."2437b957-6e40-4839-80e4-8334177dc2e2".wmclass = "Polybar";
       kwinrulesrc."2437b957-6e40-4839-80e4-8334177dc2e2".wmclassmatch = 1;
-      kwinrulesrc.General.count = 2;
-      kwinrulesrc.General.rules = "ec4d12b6-d64f-4ca9-aceb-69e6205ccf85,2437b957-6e40-4839-80e4-8334177dc2e2";
+      kwinrulesrc.General.count = 3;
+      kwinrulesrc.General.rules = "ec4d12b6-d64f-4ca9-aceb-69e6205ccf85,2437b957-6e40-4839-80e4-8334177dc2e2,fd66caa9-fcb7-4307-9801-df2bc00f825c";
       kwinrulesrc.ec4d12b6-d64f-4ca9-aceb-69e6205ccf85.Description = "Configurações para ulauncher";
       kwinrulesrc.ec4d12b6-d64f-4ca9-aceb-69e6205ccf85.noborder = true;
       kwinrulesrc.ec4d12b6-d64f-4ca9-aceb-69e6205ccf85.noborderrule = 2;
@@ -422,6 +422,11 @@
       kwinrulesrc.ec4d12b6-d64f-4ca9-aceb-69e6205ccf85.skiptaskbarrule = 2;
       kwinrulesrc.ec4d12b6-d64f-4ca9-aceb-69e6205ccf85.wmclass = "ulauncher";
       kwinrulesrc.ec4d12b6-d64f-4ca9-aceb-69e6205ccf85.wmclassmatch = 1;
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.Description = "Dock";
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.above = true;
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.aboverule = 2;
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclass = "crystal-dock";
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclassmatch = 1;
       plasma-localerc.Formats.LANG = "pt_BR.UTF-8";
       plasmarc.Theme.name = "default";
       plasmarc.Wallpapers.usersWallpapers = "/home/luana/Imagens/Papéis de parede/Captura de tela_2023-05-30_18-45-33.png";

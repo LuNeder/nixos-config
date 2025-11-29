@@ -292,7 +292,7 @@
       kcminputrc.Mouse.cursorTheme = "Bibata-Modern-Ice";
       kded5rc.Module-browserintegrationreminder.autoload = false;
       kded5rc.Module-device_automounter.autoload = false;
-      kdeglobals.General.AccentColor = "80,161,80";
+      kdeglobals.General.AccentColor = "82,161,80";
       kdeglobals.General.LastUsedCustomAccentColor = "0,211,184";
       kdeglobals.General.accentColorFromWallpaper = true;
       kdeglobals.Icons.Theme = "breeze";
@@ -362,6 +362,7 @@
       kwinrc.Effect-wobblywindows.MoveFactor = 25;
       kwinrc.Effect-wobblywindows.Stiffness = 1;
       kwinrc.Effect-wobblywindows.WobblynessLevel = 4;
+      kwinrc.MouseBindings.CommandAllKey = "Alt";
       kwinrc.Plugins.blurEnabled = true;
       kwinrc.Plugins.cubeEnabled = true;
       kwinrc.Plugins.dimscreenEnabled = true;

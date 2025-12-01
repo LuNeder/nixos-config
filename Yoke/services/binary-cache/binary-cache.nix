@@ -21,6 +21,7 @@
         RemainAfterExit = false;
         ExecStart = "${pkgs.writeScript "binary-cache-updater" "${builtins.readFile (pkgs.replaceVars ./nix-cache.sh { shebang = "${pkgs.brush}/bin/brush"; git = "${pkgs.git}/bin/git"; nix = "${pkgs.nix}/bin/nix"; nixosrebuild = "${pkgs.nixos-rebuild}/bin/nixos-rebuild"; })}"}";
       };
+      unitConfig."X-OnlyManualStart" = true;
     };
   };
 

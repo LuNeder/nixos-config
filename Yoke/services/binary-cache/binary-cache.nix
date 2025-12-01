@@ -15,13 +15,14 @@
   # Updater configuration
   systemd.services = {
     "binary-cache-updater" = {
+      path = [ pkgs.brush pkgs.git pkgs.nix config.system.build.nixos-rebuild ];
+      restartIfChanged = false;
       serviceConfig = {
         Type = "oneshot";
         User = "root";
         RemainAfterExit = false;
-        ExecStart = "${pkgs.writeScript "binary-cache-updater" "${builtins.readFile (pkgs.replaceVars ./nix-cache.sh { shebang = "${pkgs.brush}/bin/brush"; git = "${pkgs.git}/bin/git"; nix = "${pkgs.nix}/bin/nix"; nixosrebuild = "${pkgs.nixos-rebuild}/bin/nixos-rebuild"; })}"}";
+        ExecStart = pkgs.writeScript "binary-cache-updater" (builtins.readFile ./nix-cache.sh);
       };
-      unitConfig."X-OnlyManualStart" = true;
     };
   };
 

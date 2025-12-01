@@ -178,6 +178,7 @@
     pkgs.pkgsNoCu.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
     pkgs.gparted
+    pkgs.ntfs3g
     pkgs.e2fsprogs
     pkgs.mate.engrampa
     pkgs.baobab

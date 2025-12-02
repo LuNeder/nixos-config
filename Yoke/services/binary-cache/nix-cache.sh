@@ -1,4 +1,4 @@
-#!@shebang@
+#!/usr/bin/env brush
 set -e
 
 FORCEBUILD=false
@@ -11,7 +11,7 @@ JOBS=2
 FNUM=0
 SNUM=0
 
-while getopts ":f" option  "$@"; do
+while getopts ":f" option "$@"; do
    case $option in
       f) # Enter a name
          FORCEBUILD=true;;
@@ -27,27 +27,27 @@ echo Starting Nix Binary Cache Autoupdate
 rm -rf /tmp/nix-cache-compiler
 mkdir -p /tmp/nix-cache-compiler
 cd /tmp/nix-cache-compiler
-@git@ clone "$REPO" repo > /dev/null
+git clone "$REPO" repo > /dev/null
 cd repo
 
-@git@ config user.name "Auto Updater"
-@git@ config user.email "$COMMITMAIL"
+git config user.name "Auto Updater"
+git config user.email "$COMMITMAIL"
 
 {
-    @git@ switch auto-updater 
+    git switch auto-updater 
 } || {
-    @git@ switch -c auto-updater --guess && EXTRAPUSH='--set-upstream origin auto-updater'
+    git switch -c auto-updater --guess && EXTRAPUSH='--set-upstream origin auto-updater'
 }
 
 echo Updating branch from $MAIN
-@git@ merge -Xtheirs --ff $MAIN
+git merge -Xtheirs --ff $MAIN
 
-@nix@ flake update --refresh --tarball-ttl 0 > /dev/null
+nix flake update --refresh --tarball-ttl 0 > /dev/null
 { 
     if [ "$FORCEBUILD" = true ] ; then
         echo 'Using -f, building anyway!'
     else
-        @git@ diff --exit-code && echo "no updates to lockfile, nothing to do, exiting" && cd ../.. && rm -rf /tmp/nix-cache-compiler && exit 0
+        git diff --exit-code && echo "no updates to lockfile, nothing to do, exiting" && cd ../.. && rm -rf /tmp/nix-cache-compiler && exit 0
     fi
 } || {
     echo "Lockfile updated, let's build"
@@ -62,11 +62,11 @@ mkdir -p /nix/var/nix/gcroots/binary-cache-builder
 rm -f ./result
 
 
-for i in $(@nix@ eval --raw --apply 'x: builtins.concatStringsSep " " (builtins.attrNames x)' .#nixosConfigurations); 
+for i in $(nix eval --raw --apply 'x: builtins.concatStringsSep " " (builtins.attrNames x)' .#nixosConfigurations); 
 do
     { 
         {
-            echo Building $i && @nixosrebuild@ build --flake .#$i $EXTRABUILDOPTS --option eval-cache false --show-trace --cores $CORES -j $JOBS > ./auto-updater/$i.log 2>&1
+            echo Building $i && nixos-rebuild build --flake .#$i $EXTRABUILDOPTS --option eval-cache false --show-trace --cores $CORES -j $JOBS > ./auto-updater/$i.log 2>&1
         } && { 
             SNUM=$((SNUM+1)) && echo "$i: SUCCESS" && echo "$i: SUCCESS" >> ./auto-updater/results.txt && rm "./auto-updater/$i.log" && rm -f "/nix/var/nix/gcroots/binary-cache-builder/$i" && ln -s "$(readlink -f ./result)" "/nix/var/nix/gcroots/binary-cache-builder/$i" && rm ./result
         }
@@ -77,9 +77,9 @@ done
 
 sed -i "s/%XYZREPLACEMENUMS%/$FNUM Failures, $SNUM Succeeded/" ./auto-updater/results.txt
 
-@git@ add -A > /dev/null
-@git@ commit -a -F ./auto-updater/results.txt > /dev/null
-@git@ push --force $EXTRAPUSH > /dev/null
+git add -A > /dev/null
+git commit -a -F ./auto-updater/results.txt > /dev/null
+git push --force $EXTRAPUSH > /dev/null
 cd ../..
 rm -rf /tmp/nix-cache-compiler
 echo Finished

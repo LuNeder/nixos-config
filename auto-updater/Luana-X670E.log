@@ -1,0 +1,352 @@
+building the system configuration...
+warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
+Using saved setting for 'extra-substituters = http://100.64.0.9:2025' from ~/.local/share/nix/trusted-settings.json.
+Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4=' from ~/.local/share/nix/trusted-settings.json.
+evaluation warning: fold has been deprecated, use foldr instead
+these 170 derivations will be built:
+  /nix/store/08r3g12zzdcr8d4rnn8my7x8jqxyr0vd-initrd-shadow.drv
+  /nix/store/alb2x3hxmis8mnx9jq2a2ri6870kdpzs-onetbb-2022.3.0.drv
+  /nix/store/awjijs1rziydny69gy4lz72lvd6fijkq-libblake3-1.8.2.drv
+  /nix/store/sdrvqhzbb8vq97vprhfpyg5ngwynja07-nix-util-2.31.2.drv
+  /nix/store/kwyghk4nfj7npnqaqd0wxg4gdh0jq4gf-nix-util-c-2.31.2.drv
+  /nix/store/pjrnqz19bcq58qsjhqsdlhz7krgqb232-nix-store-2.31.2.drv
+  /nix/store/gcilik70hnakip26gy7dyhm68yg027n1-nix-store-c-2.31.2.drv
+  /nix/store/ngzswadxiphyghcyy1i60s89fli38wig-nix-fetchers-2.31.2.drv
+  /nix/store/jimvpnblnr9c0177dxznbdwla0y1wh6p-nix-expr-2.31.2.drv
+  /nix/store/6d4bxd48kh87yqdpq5qzsf12mq1daf2w-nix-expr-c-2.31.2.drv
+  /nix/store/w0r066myhbkjjvhvwv03h88ani0685i7-nix-util-test-support-2.31.2.drv
+  /nix/store/nk416d1l0fsn4y9fl2n7l5x120bgb9hq-nix-store-test-support-2.31.2.drv
+  /nix/store/6v4mqs1ddp47x0218zvd4jmdhhi39b0a-nix-util-test-support-2.31.2.drv
+  /nix/store/p111y630j7zaqk4dbfnz5fnmwmbwx4i1-nix-expr-tests-2.31.2.drv
+  /nix/store/186fdscpcvwpnkjhjrw3jrfc66q53bnn-nix-expr-tests-run.drv
+  /nix/store/6cqwh1iln13vzjdaf0vfmy0gp2c8dhh5-nix-perl-2.31.2.drv
+  /nix/store/r2hgqp5jkxjav3jw62hn6dwjcqln2sz5-nix-flake-2.31.2.drv
+  /nix/store/vk3sg0kg1lbi1dr4nxaj6pqg47h0kmig-nix-main-2.31.2.drv
+  /nix/store/6q5c55c9r8bimhzflil6mhvbxhigzlkx-nix-cmd-2.31.2.drv
+  /nix/store/hdwxzhw5a87vnrjjm3l027sgb1glv9cm-nix-2.31.2.drv
+  /nix/store/dj8m6l2v853g1lv8papav8ghqvd0jrch-nix-functional-tests-2.31.2.drv
+  /nix/store/jn2qdm25ynw3ddksjcd2p62qhmayxfjl-nix-fetchers-c-2.31.2.drv
+  /nix/store/jrw1z6lxlgqja56c2gs3i2dagwan8yym-nix-manual-2.31.2.drv
+  /nix/store/rk6dp8jl32fak4ld8xsf6i8wmsay1rl1-nix-fetchers-tests-2.31.2.drv
+  /nix/store/nny3pagnn90zr67kax1sa1c41032mqkh-nix-fetchers-tests-run.drv
+  /nix/store/lnr59fjwxa3bsi8fc3fnvvc2kpy1kyw2-nix-store-tests-2.31.2.drv
+  /nix/store/pgbgcn599bc0ls9sp1w8kacpj0a6m6j2-nix-store-tests-run.drv
+  /nix/store/fyykp5n9rbly6rmyhr3mj6hl17vnpk3w-nix-util-tests-2.31.2.drv
+  /nix/store/rzhrkmc3n0rd1grlgf6fx7w2ks99w0wx-nix-util-tests-run.drv
+  /nix/store/y2cf1w03hqr0nxfmcqca7br7yi9przsi-nix-flake-c-2.31.2.drv
+  /nix/store/hvqjk8blxgpn99iy34xpzy5i9srf5fs0-nix-flake-tests-2.31.2.drv
+  /nix/store/s7jj4p0g2pgdnx50nm4af6w9v3xhia3v-nix-flake-tests-run.drv
+  /nix/store/xp1q58hnm81y1p9jgib03k29r4ndjykn-nix-main-c-2.31.2.drv
+  /nix/store/9ja6gkk9dsdxbncbqv9g6xbpy48m491p-nix-2.31.2.drv
+  /nix/store/bpz5n8h2hxvkh93dv1qm9vww6vvchq4l-nvidia-x11-580.105.08-6.18.drv
+  /nix/store/gkfidfnp3mmpfkv7mmcdap51xv5gj5jg-graphics-drivers-32bit.drv
+  /nix/store/v4ck1b5dngd3ab3jahvhp7gv56nfq4cg-graphics-drivers.drv
+  /nix/store/w262570d56cfblgq0g3dv1sc7day5j7s-graphics-driver.conf.drv
+  /nix/store/0bv024sj9l7mdnpa0k0rhnghfy5pqsr5-tmpfiles.d.drv
+  /nix/store/0vw4md1xwp3wp2bwkar793c41iy600wn-nixos-option.drv
+  /nix/store/1ac683810nzbr4cbf495wkxz3x1d8irl-unit-initrd-switch-root.service.drv
+  /nix/store/1ibi53if6pnk40fsx4k2qgmlz5cyqzj1-unit-plymouth-switch-root-initramfs.service.drv
+  /nix/store/1ncak444zx2ir9d56vxn2kfdwpzlr0ri-unit-plymouth-switch-root.service.drv
+  /nix/store/83mpqbma16bgdcsn6kqhwrjxmvincrfc-desktops.drv
+  /nix/store/hw9fv2fb6hgmwck43hgila2nlgjhw0x2-set-environment.drv
+  /nix/store/1qy7fqvh3dm1rrjvib4k52mkpbda3b5w-etc-profile.drv
+  /nix/store/dvwhj9kncnpvh3lyl092bqbl9mq22p4h-cudnn-linux-x86_64-9.13.0.50_cuda12-archive.tar.xz.drv
+  /nix/store/z68msr5wnan8jhs7fncyq30j0gxgrrbs-cudnn-9.13.0.50-source.drv
+  /nix/store/21zr9fvnh31aya9pvkls0fij0nw5qlsj-cuda12.8-cudnn-9.13.0.50.drv
+  /nix/store/4kkshlqlz5wgq54jx5wcdrwjw0xky780-X11-fonts.drv
+  /nix/store/6ay6sc5hzl3x39bbs51gcc2a9pybj2vs-steam-1.0.0.85-fhsenv-rootfs.drv
+  /nix/store/ia657b37qrvpz9ccynrywaykw82j665m-steam-1.0.0.85-bwrap.drv
+  /nix/store/5mdg0znbwyvx1lpz5jhvxbabkgwwgb0f-steam-1.0.0.85.drv
+  /nix/store/6v4csqsvsf0kvcvrz9xkj0p7w6v6vv3w-ld-library-path.drv
+  /nix/store/d0chil69r9b9w22zwnpndm74k1mg5s1d-dri-pkgconfig-stub.drv
+  /nix/store/70ld9zqsd1lb2ydn1ln9smqv1ylh62q0-xwayland-24.1.9.drv
+  /nix/store/zc26a21d5hrn152f0xvcfjy7ydsz4ifx-steam-run-fhsenv-rootfs.drv
+  /nix/store/j7bj1nv23492hs8i9ipgsvaj9axal272-steam-run-bwrap.drv
+  /nix/store/f63nviilbg67v519r94bi7bbxlmvw8d4-steam-run.drv
+  /nix/store/afd4hircw03nch6h0wnsbw0x9wi996yc-lazy-options.json.drv
+  /nix/store/kfrvkf4gkv0la69sp75i2gdxc6vx8gpq-options.json.drv
+  /nix/store/kr6pjs2i8a5mjl4zgg15ncfxrmdhc04w-nixos-configuration-reference-manpage.drv
+  /nix/store/nspi8gmhxr0wmmkmmqbi4aaxy1zn6y88-nixos-manual-html.drv
+  /nix/store/yai83mrcwzl8j8w1yq31vkkfs784x5zi-nixos-help.drv
+  /nix/store/n9ji64pcxby1q81n18n8vv1bl51pcl3r-nixos-help.drv
+  /nix/store/rba6n2v84qkyf0p9jsd60nr7ifvq24gq-nvidia-settings-580.105.08.drv
+  /nix/store/yjwxnfmn2wjc85r5ysrf90f8381briz7-nixos-rebuild-ng-26.05.drv
+  /nix/store/arbyaiqalkbs5pd2sk5p4rf8q97fqmwy-system-path.drv
+  /nix/store/29mclcapjgfyhbjjqsvw5lhzk91q6gk3-unit-accounts-daemon.service.drv
+  /nix/store/sm7z63m6myrjkll88fbjlscb969jjhvy-unit-script-suid-sgid-wrappers-start.drv
+  /nix/store/2f4jcfyvwgq4xf2rlf4dbiysx8nisw3j-unit-suid-sgid-wrappers.service.drv
+  /nix/store/hsixdkxgfxvnql8lmphqa9n55kn4dm2b-xserver.conf.drv
+  /nix/store/w64789iphdywg266h82z56335169jqvn-xserver-wrapper.drv
+  /nix/store/2hhblacb8ppr6qdvja5ldkp45yhxhcb3-sddm.conf.drv
+  /nix/store/2jfydvi1rc16f602cdpvkhv8x32kn09b-initrd-udev-rules.drv
+  /nix/store/2zv1fxrkfj3y8jdq1ppcvcy137pcpxy1-dummy-fc-dir1.drv
+  /nix/store/mjjyc2xy8sn0l1yk81gm8lr2wx5iy0c6-options.json.drv
+  /nix/store/b2wpyvac9bkap876z22nxl2ldkj78f7k-home-configuration-reference-manpage.drv
+  /nix/store/b6fgc1wwv07jmqidl8s6yamgfkffar7f-dummy-fc-dir2.drv
+  /nix/store/i29k06ic08waf884iyivnz69mrjjkfyd-dummy-xdg-mime-dirs1.drv
+  /nix/store/q9lbsc8yiazfvv8xws845k26ig9n9g5b-dummy-xdg-mime-dirs2.drv
+  /nix/store/9rm1rg927444xjcvjkmysmbjw322pdhx-home-manager-path.drv
+  /nix/store/78kfswjcj4jj2rj3wkn22r44fmk5kxwk-hm_fontconfigconf.d10hmfonts.conf.drv
+  /nix/store/msrkj82g8xl33krzvw3shi2g70sxq3yi-user-dbus-services.drv
+  /nix/store/88q53vn4bgx18vaabrsdxpbdqas6iffb-home-manager-files.drv
+  /nix/store/ndgphiwvnwdjbbn0bn23jbj4z8h9nl30-activation-script.drv
+  /nix/store/fxh5a9glamycyvxsibxfrx6qffb4k26m-home-manager-generation.drv
+  /nix/store/2n6fwf1990simr8f7wiannjaixvdksds-unit-home-manager-luana.service.drv
+  /nix/store/2xzjl63ah4h9kp32s0bxl8b6452px0vd-initrd-nixos.conf.drv
+  /nix/store/2z4hhvcd270a4mdwrqmxlsdc4vb7clj1-unit-emergency.service.drv
+  /nix/store/3593hspxqjgq22mk6fdbjn4gbg7zvv19-initrd-fonts.conf.drv
+  /nix/store/35g8clwcdr7gsy7df0ialqlzm31jwza2-unit-systemd-tmpfiles-setup-sysroot.service.drv
+  /nix/store/3g4mmjkiza8gpg85v6hpqj6f3s6nz6bs-unit-panic-on-fail.service.drv
+  /nix/store/3jf9dzl8a0hrwj7bzc5j38wdk7g66bzv-fc-cache.drv
+  /nix/store/3ligg5gwgbdr6l0jx8kjywzgdqx2kbp4-xkb-validated.drv
+  /nix/store/3xi1bh01c4hmfpw8bqpg45wrbiawdfnk-plymouth-initrd-themes.drv
+  /nix/store/40jm61jp77x8bifm7fy8a7ivbrcjl1bm-initrd-fstab.drv
+  /nix/store/6qnb3wvsbwwblrky62p8sqr6hzx0yggj-unit-script-plymouth-start-pre-start.drv
+  /nix/store/461520wr4q7h7qa3ih6bf2l8g4jsyasi-unit-plymouth-start.service.drv
+  /nix/store/46wznaz12qqh9r84ps5f16n4chfx2i22-unit-plymouth-read-write.service.drv
+  /nix/store/9zlvp4w90pl6sxqidzgz30b186syl943-extra-udev-rules.drv
+  /nix/store/4wh58rcb4fkh0qd5afq5qbwizrszvaqv-udev-rules.drv
+  /nix/store/mq5f2x2rjiwc8i205nl3xdzk53wilir8-X-Restart-Triggers-systemd-udevd.drv
+  /nix/store/5jplhq3jqdzas6fnak9isb5yrr24h6s0-unit-systemd-udevd.service.drv
+  /nix/store/5ks0k4v6df4bjnwmnqhw1cavzdmvwsm8-unit-plymouth-kexec.service.drv
+  /nix/store/5wxd8li782yhsk48f482wnqd83fypd4a-initrd-nixos.conf.drv
+  /nix/store/6ananlndswm48031lgbd79qs2blc3dy3-initrd-release.drv
+  /nix/store/6c1vry9g19h9v5czh0d34cci4am2ncys-hwdb.bin.drv
+  /nix/store/6v2gh1336nxcs32rbpxmlsgkhiixf7mf-unit-nvidia-control-devices.service.drv
+  /nix/store/pkv13dx7gqsw6p1xk0mi24l2jlpc8yz5-nix.conf.drv
+  /nix/store/77bibi27pl8s105l1w3grxaz58canq32-X-Restart-Triggers-nix-daemon.drv
+  /nix/store/q3467xghn3p6cix6y8nkb58nm733b4hm-initrd-plymouth-udev-rules.drv
+  /nix/store/r7xawnyw6lmxjicm9vbqif0xj5s4nv01-initrd-bin-env.drv
+  /nix/store/8565xinkvp0pankri8yzhb89w99dwn2s-initrd-udev-rules.drv
+  /nix/store/9glsrw1zz49swfwd196zc70i29mm39k6-fc-00-nixos-cache.conf.drv
+  /nix/store/8d21br8dxflz5nf5rffp4vgxb4i6fhlc-fontconfig-conf.drv
+  /nix/store/8p69gxr9xafvqbhhqnfssr3s64mqi9mn-ensure-all-wrappers-paths-exist.drv
+  /nix/store/pvw9wwk08asvfgnxl5vwy2m90m5x1ijs-firmware.drv
+  /nix/store/c6h4i71833akq51rppr88ws9kfm0xzyh-nvidia-open-6.18-580.105.08.drv
+  /nix/store/rzkc6scbnhlr8y7n1r3f2y7rbxlmhp06-v4l2loopback-0.15.1-6.18.drv
+  /nix/store/q0p5w800i0l2cnhyfk2s3xnzbk7dm1ng-linux-6.18-modules.drv
+  /nix/store/94lvbrz4mq6clvy2m2bpmrbxxiwvahp2-linux-6.18-modules-shrunk.drv
+  /nix/store/9dw3v09gyvq7x6k3qaj46qm991vx7f06-system-generators.drv
+  /nix/store/9sar8ykyc05jmjm476scjy1pqxjjs6nj-etc-pam-environment.drv
+  /nix/store/bmbjr8vkv9kzxhk6lzdq33rabfjgf0yq-unit-initrd-nixos-activation.service.drv
+  /nix/store/hvba55hlz1lhch70xa1s2mfwbfvxc743-unit-plymouth-halt.service.drv
+  /nix/store/k5sxd1n6g6skzpj9drvb4sxci5f24qxr-unit-plymouth-quit-wait.service.drv
+  /nix/store/mkw663b8wgpp171bh6l6zb55lm8ga6br-unit-initrd-parse-etc.service.drv
+  /nix/store/mvwr3rj7ns1p656f9nmcijdx8rn0y2hc-unit-sysroot-run.mount.drv
+  /nix/store/rl95qm9lv0bbjbgbjk3mjcdada2az731-unit-initrd-find-nixos-closure.service.drv
+  /nix/store/srkcyq5pnsy8ln7qkl07c90z084kdn10-unit-rescue.service.drv
+  /nix/store/xk6gva47r9535g86pcc9hbwj03pmlj3v-unit-plymouth-reboot.service.drv
+  /nix/store/y29ygnz5xq1cl35lws6ndxpm48afmy5g-unit-plymouth-poweroff.service.drv
+  /nix/store/bnw4ccm14l8ivz16jq3c4p2dqp6j47wr-initrd-units.drv
+  /nix/store/ff2rbay8gisz81whgg26x25pf50ak57z-initrd-hostname.drv
+  /nix/store/g48075llav66k8633dbm0k4kri1y7adc-plymouth-initrd-plugins.drv
+  /nix/store/m3wxn0vfb4n0a5895zrysqiqvr45yxfb-initrd-crypttab.drv
+  /nix/store/mlf8jddp1s6pks4bl1c09jwdjsl5vsrl-initrd-shells.drv
+  /nix/store/pl9i4g5cxq04x57p09n19crby6585v01-plymouth-initrd-fonts.drv
+  /nix/store/w2vbna6nwxbh49zh1v3hldq1qgpfq24a-initrd-system.conf.drv
+  /nix/store/ydpx8l5fxnm2zckcilb4pk7il8zsdbv0-initrd-group.drv
+  /nix/store/gbpw1pz3x6fx32x35xlg8csfs1qblzs9-initrd-linux-6.18.drv
+  /nix/store/bbqv42jrrcvyigf8b91j5i6ag9xvhcan-boot.json.drv
+  /nix/store/hn8hpyznrxdqyg1y1whzpvsjx6hygw53-unit-script-nixos-activation-start.drv
+  /nix/store/bdddjgvdfzip450lmj8ff762s59zn361-unit-nixos-activation.service.drv
+  /nix/store/zs35b7vif66zk2x0hr1ncxq57iscq3c5-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
+  /nix/store/c5npnmkzrhmz7ry12clx2098v536s5h5-unit-systemd-tmpfiles-resetup.service.drv
+  /nix/store/dc66zga5bn3bcj7h7divd1l0pffzmz9q-user-generators.drv
+  /nix/store/rx6r1wvs8gx1rdgscb8gay5mxb3v88hh-X-Restart-Triggers-polkit.drv
+  /nix/store/f8vwvqlrxpbq4k5akpqx788agmib4nw8-unit-polkit.service.drv
+  /nix/store/fx9vvxfbq24bnjryfhk0n5qlnxjj7f23-etc-zshenv.drv
+  /nix/store/km6lpl47lk2z09c7v869vvl3gj5h9xbj-limine-install.json.drv
+  /nix/store/ghdjwbidssn3r8j97dqpr03nn1ppp7i3-limine-install.py.drv
+  /nix/store/iszr3zdj2g0ikk7mqy6p8vfx0lpk0f13-etc-modprobe.d-firmware.conf.drv
+  /nix/store/jz24n2nxsvfbr1g3s3ssm296n4xajhlp-unit-nix-daemon.service.drv
+  /nix/store/r86pkhmds3g903yisgvbg11qifb7mzj7-dbus-1.drv
+  /nix/store/z0p8k35b87qcirqf8y12r3hizr71s25n-X-Restart-Triggers-dbus.drv
+  /nix/store/khww5zj24cls8hzz9l8llq9yvwn3v36k-unit-dbus.service.drv
+  /nix/store/rqw34y801a8bc3gl6mq14mxp0kqjfa89-unit-script-nix-gc-start.drv
+  /nix/store/kn2hdx0ygfvslbkzbp06jrw4ikiik7h9-unit-nix-gc.service.drv
+  /nix/store/kxbd3rv2izxcyilm5k1j0p7942rh2qlb-fontconfig-etc.drv
+  /nix/store/n6bzqfahl9anxqvy91yrlzvjwqi8l5wm-system-shutdown.drv
+  /nix/store/q743s0hkl4737qpcks0jdwd6i51d96d4-unit-nix-optimise.service.drv
+  /nix/store/r8ldq0njnglm6clsb3sc00abhza9fzlv-system-units.drv
+  /nix/store/vzy29dl857766x87ifb68wyx0jba79x7-user-environment.drv
+  /nix/store/q754ygdx5nhc82mwgxqjla4jbidq8dp6-unit-dbus.service.drv
+  /nix/store/x0f3c4z7r5xa5q0rcph8scywnxlx8dln-user-units.drv
+  /nix/store/x4y42qj454axrc2hq3ngd5xxqzzg24j2-etc-nix-registry.json.drv
+  /nix/store/ngc7ag42plzv5z03w5gbpnmhx9nw9zdz-etc.drv
+  /nix/store/l8vnj4if9img13y1qa47jmjxglk1bwg8-nixos-system-Luana-X670E-26.05.20251202.418468a.drv
+these 45 paths will be fetched (65.44 MiB download, 318.07 MiB unpacked):
+  /nix/store/8ywkyiyc5cgrx72vrrf98mwbnnmix9a4-OVMF-202511-fd
+  /nix/store/npyal74qhr3iilpxcd1vx53sq12nk6sl-OVMF-202511-fd
+  /nix/store/9i40xm3r0zranbn6pvy8n31zrwg17nga-auto-add-driver-runpath-hook
+  /nix/store/qrhfjdpb10snd6zpbijr902jfxl6m5hk-auto-patchelf-0-unstable-2024-08-14
+  /nix/store/2lcaqq9rs6mn2jlrcfk885pg72scnjcv-auto-patchelf-hook
+  /nix/store/l87z7vxm5gp0n21ddrlx4dmrrqg92a7w-binutils-wrapper-2.44
+  /nix/store/1kifw753y8p107jlq7ifqxc27g13dw26-discover-6.5.3
+  /nix/store/hrkjdbci2xiqr1l18my0dnpqdbzi8mkz-egl-wayland-1.1.20
+  /nix/store/6v8lcffd83bs1dv37dg9bmjlcmy5s430-egl-wayland-1.1.20-dev
+  /nix/store/5gn1h9xgg7yb59ph4h8zgzxcxwfzxhbz-eglexternalplatform-1.2.1
+  /nix/store/6jxi9kp7pidcw3x5hl9qf8k7g53q5vap-glu-9.0.3-dev
+  /nix/store/4fyaqxg27vhnrys9r107c2iymwkjf8bk-i3-4.24
+  /nix/store/1zxfm0kigkyfpranjrvxdbrxqv7n5xha-initrd-udev-rules
+  /nix/store/719gi6pb6rifh1z9dhya0zdzyzwi8p1g-libdecor-0.2.4-dev
+  /nix/store/pakx07cmlfmrnk03kz46kmiaf4cx6lb1-libtirpc-1.3.7-dev
+  /nix/store/sp9d6b7bx3g3xm58bmymwrdrrw7wqprc-libunwind-1.8.3-dev
+  /nix/store/fhm6i22r53pvxq5pgbcc0sv1dgqzy1d4-libvirt-11.7.0
+  /nix/store/0f9i3ksz7gdp27f90074jw4fq7i4yqmx-libvirt-glib-5.0.0
+  /nix/store/gisk01l149iv5m7fisa2d21mdpmwjgwb-libxaw-1.0.16-dev
+  /nix/store/zzx0m23x6vs5v1mmv7flhyi69mh2crqd-libxfont_2-2.0.7-dev
+  /nix/store/k55a4x6hkn69wm49h23zxvflcgmfb4r1-libxkbfile-1.1.3-dev
+  /nix/store/jmybl88v9by2mxfjf1yzi7d008b84aa2-libxmu-1.2.1-dev
+  /nix/store/2m2vvf6j8s3jvpd82fpdi3jnsbcvvd5b-libxpm-3.5.17-bin
+  /nix/store/l813jnvsjmfdvdqfsrzcm41icbvgs8gk-libxpm-3.5.17-dev
+  /nix/store/ys9j4c254lf8xw63zsayjkc4wsijq73i-libxres-1.2.3-dev
+  /nix/store/9pagwd2aj3nx162s59n5c2q7q67crr0k-libxshmfence-1.3.3-dev
+  /nix/store/7ycngsgi1kwks297263hhys3rzdvssb9-limine-10.4.0
+  /nix/store/wiw3sngb8lfvwllv3qrz5fapw77ydyzi-mark-for-cudatoolkit-root-hook
+  /nix/store/i53q7jjsw3rn2zi5xnz0k52p5s0g7835-mesa-gl-headers-25.1.0
+  /nix/store/dgmmimp69xmni3yw6ynyqcffsgny3pgc-polybar-3.7.2
+  /nix/store/a980m1fxdzbgliv9jbck638mg9pjz2mk-python3-3.13.9-env
+  /nix/store/ghbmqqwd44y5x7yqxwl6p89qxzagyxwv-python3.13-libvirt-11.7.0
+  /nix/store/9f9nx9hpmim2dvkqlw9hc24lp11w7kmn-python3.13-pyelftools-0.32
+  /nix/store/z26xv75m4maiv8djflk3zh0qg77niwd9-quickemu-4.9.7
+  /nix/store/w9cwsg0hdvq0dv7dnwy75zplli2s3f27-security-wrapper-ksgrd_network_helper-x86_64-unknown-linux-musl
+  /nix/store/h7d2sfkahq4xnxwl9p1zd8a3b65l2p4r-security-wrapper-ksystemstats_intel_helper-x86_64-unknown-linux-musl
+  /nix/store/4chn7mmjmx50fj6mggf1h6c26nkmhf0z-security-wrapper-kwin_wayland-x86_64-unknown-linux-musl
+  /nix/store/0vbky9ill2f3bw3sikzhmwhc362jj5i1-servo-0.0.2
+  /nix/store/rhrv3rv7m97f7i53fs6qc6l6k184vrbv-udev-fido2
+  /nix/store/nqbm8864bngbj2q29ahbyb780n9r8v58-usbip-linux-6.18
+  /nix/store/wkvvv7hl47iakjfs36pk2q3vbpj201ca-virt-manager-5.1.0
+  /nix/store/zz8pnmmvyzrc5bq4f5acb1flgha9z2dz-xen-4.20.2
+  /nix/store/7cnpymm1j29rf39asdh1ivwbnifk5nwr-xtrans-1.6.0
+  /nix/store/915swcvzwhxqy134nsrjhbgssiddf9z9-xwayland-24.1.9.tar.xz
+  /nix/store/jydrkq0clwa5907jxg7h8y0nf0vdngqk-xz-5.8.1-dev
+copying path '/nix/store/8ywkyiyc5cgrx72vrrf98mwbnnmix9a4-OVMF-202511-fd' from 'https://cache.nixos.org'...
+copying path '/nix/store/npyal74qhr3iilpxcd1vx53sq12nk6sl-OVMF-202511-fd' from 'https://cache.nixos.org'...
+copying path '/nix/store/1kifw753y8p107jlq7ifqxc27g13dw26-discover-6.5.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/0vbky9ill2f3bw3sikzhmwhc362jj5i1-servo-0.0.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/nqbm8864bngbj2q29ahbyb780n9r8v58-usbip-linux-6.18' from 'https://cache.nixos.org'...
+copying path '/nix/store/4fyaqxg27vhnrys9r107c2iymwkjf8bk-i3-4.24' from 'https://cache.nixos.org'...
+building '/nix/store/8p69gxr9xafvqbhhqnfssr3s64mqi9mn-ensure-all-wrappers-paths-exist.drv'...
+building '/nix/store/x4y42qj454axrc2hq3ngd5xxqzzg24j2-etc-nix-registry.json.drv'...
+copying path '/nix/store/7ycngsgi1kwks297263hhys3rzdvssb9-limine-10.4.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/wiw3sngb8lfvwllv3qrz5fapw77ydyzi-mark-for-cudatoolkit-root-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/i53q7jjsw3rn2zi5xnz0k52p5s0g7835-mesa-gl-headers-25.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/rhrv3rv7m97f7i53fs6qc6l6k184vrbv-udev-fido2' from 'https://cache.nixos.org'...
+copying path '/nix/store/7cnpymm1j29rf39asdh1ivwbnifk5nwr-xtrans-1.6.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/915swcvzwhxqy134nsrjhbgssiddf9z9-xwayland-24.1.9.tar.xz' from 'https://cache.nixos.org'...
+copying path '/nix/store/5gn1h9xgg7yb59ph4h8zgzxcxwfzxhbz-eglexternalplatform-1.2.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/9i40xm3r0zranbn6pvy8n31zrwg17nga-auto-add-driver-runpath-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/6jxi9kp7pidcw3x5hl9qf8k7g53q5vap-glu-9.0.3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/1zxfm0kigkyfpranjrvxdbrxqv7n5xha-initrd-udev-rules' from 'https://cache.nixos.org'...
+copying path '/nix/store/l87z7vxm5gp0n21ddrlx4dmrrqg92a7w-binutils-wrapper-2.44' from 'https://cache.nixos.org'...
+copying path '/nix/store/k55a4x6hkn69wm49h23zxvflcgmfb4r1-libxkbfile-1.1.3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/jmybl88v9by2mxfjf1yzi7d008b84aa2-libxmu-1.2.1-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/719gi6pb6rifh1z9dhya0zdzyzwi8p1g-libdecor-0.2.4-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/ys9j4c254lf8xw63zsayjkc4wsijq73i-libxres-1.2.3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/zzx0m23x6vs5v1mmv7flhyi69mh2crqd-libxfont_2-2.0.7-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/2m2vvf6j8s3jvpd82fpdi3jnsbcvvd5b-libxpm-3.5.17-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/hrkjdbci2xiqr1l18my0dnpqdbzi8mkz-egl-wayland-1.1.20' from 'https://cache.nixos.org'...
+copying path '/nix/store/9pagwd2aj3nx162s59n5c2q7q67crr0k-libxshmfence-1.3.3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/pakx07cmlfmrnk03kz46kmiaf4cx6lb1-libtirpc-1.3.7-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/9f9nx9hpmim2dvkqlw9hc24lp11w7kmn-python3.13-pyelftools-0.32' from 'https://cache.nixos.org'...
+copying path '/nix/store/4chn7mmjmx50fj6mggf1h6c26nkmhf0z-security-wrapper-kwin_wayland-x86_64-unknown-linux-musl' from 'https://cache.nixos.org'...
+copying path '/nix/store/h7d2sfkahq4xnxwl9p1zd8a3b65l2p4r-security-wrapper-ksystemstats_intel_helper-x86_64-unknown-linux-musl' from 'https://cache.nixos.org'...
+copying path '/nix/store/w9cwsg0hdvq0dv7dnwy75zplli2s3f27-security-wrapper-ksgrd_network_helper-x86_64-unknown-linux-musl' from 'https://cache.nixos.org'...
+copying path '/nix/store/jydrkq0clwa5907jxg7h8y0nf0vdngqk-xz-5.8.1-dev' from 'https://cache.nixos.org'...
+building '/nix/store/4kkshlqlz5wgq54jx5wcdrwjw0xky780-X11-fonts.drv'...
+copying path '/nix/store/dgmmimp69xmni3yw6ynyqcffsgny3pgc-polybar-3.7.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/z26xv75m4maiv8djflk3zh0qg77niwd9-quickemu-4.9.7' from 'https://cache.nixos.org'...
+copying path '/nix/store/zz8pnmmvyzrc5bq4f5acb1flgha9z2dz-xen-4.20.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/6v8lcffd83bs1dv37dg9bmjlcmy5s430-egl-wayland-1.1.20-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/sp9d6b7bx3g3xm58bmymwrdrrw7wqprc-libunwind-1.8.3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/a980m1fxdzbgliv9jbck638mg9pjz2mk-python3-3.13.9-env' from 'https://cache.nixos.org'...
+copying path '/nix/store/l813jnvsjmfdvdqfsrzcm41icbvgs8gk-libxpm-3.5.17-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/gisk01l149iv5m7fisa2d21mdpmwjgwb-libxaw-1.0.16-dev' from 'https://cache.nixos.org'...
+building '/nix/store/dvwhj9kncnpvh3lyl092bqbl9mq22p4h-cudnn-linux-x86_64-9.13.0.50_cuda12-archive.tar.xz.drv'...
+copying path '/nix/store/qrhfjdpb10snd6zpbijr902jfxl6m5hk-auto-patchelf-0-unstable-2024-08-14' from 'https://cache.nixos.org'...
+copying path '/nix/store/2lcaqq9rs6mn2jlrcfk885pg72scnjcv-auto-patchelf-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/fhm6i22r53pvxq5pgbcc0sv1dgqzy1d4-libvirt-11.7.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/0f9i3ksz7gdp27f90074jw4fq7i4yqmx-libvirt-glib-5.0.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/ghbmqqwd44y5x7yqxwl6p89qxzagyxwv-python3.13-libvirt-11.7.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/wkvvv7hl47iakjfs36pk2q3vbpj201ca-virt-manager-5.1.0' from 'https://cache.nixos.org'...
+building '/nix/store/83mpqbma16bgdcsn6kqhwrjxmvincrfc-desktops.drv'...
+building '/nix/store/d0chil69r9b9w22zwnpndm74k1mg5s1d-dri-pkgconfig-stub.drv'...
+building '/nix/store/2zv1fxrkfj3y8jdq1ppcvcy137pcpxy1-dummy-fc-dir1.drv'...
+building '/nix/store/b6fgc1wwv07jmqidl8s6yamgfkffar7f-dummy-fc-dir2.drv'...
+building '/nix/store/i29k06ic08waf884iyivnz69mrjjkfyd-dummy-xdg-mime-dirs1.drv'...
+building '/nix/store/q9lbsc8yiazfvv8xws845k26ig9n9g5b-dummy-xdg-mime-dirs2.drv'...
+building '/nix/store/9sar8ykyc05jmjm476scjy1pqxjjs6nj-etc-pam-environment.drv'...
+building '/nix/store/9zlvp4w90pl6sxqidzgz30b186syl943-extra-udev-rules.drv'...
+building '/nix/store/3jf9dzl8a0hrwj7bzc5j38wdk7g66bzv-fc-cache.drv'...
+building '/nix/store/6c1vry9g19h9v5czh0d34cci4am2ncys-hwdb.bin.drv'...
+building '/nix/store/9glsrw1zz49swfwd196zc70i29mm39k6-fc-00-nixos-cache.conf.drv'...
+building '/nix/store/r7xawnyw6lmxjicm9vbqif0xj5s4nv01-initrd-bin-env.drv'...
+building '/nix/store/8d21br8dxflz5nf5rffp4vgxb4i6fhlc-fontconfig-conf.drv'...
+building '/nix/store/m3wxn0vfb4n0a5895zrysqiqvr45yxfb-initrd-crypttab.drv'...
+building '/nix/store/kxbd3rv2izxcyilm5k1j0p7942rh2qlb-fontconfig-etc.drv'...
+building '/nix/store/3593hspxqjgq22mk6fdbjn4gbg7zvv19-initrd-fonts.conf.drv'...
+building '/nix/store/40jm61jp77x8bifm7fy8a7ivbrcjl1bm-initrd-fstab.drv'...
+building '/nix/store/ydpx8l5fxnm2zckcilb4pk7il8zsdbv0-initrd-group.drv'...
+building '/nix/store/ff2rbay8gisz81whgg26x25pf50ak57z-initrd-hostname.drv'...
+building '/nix/store/2xzjl63ah4h9kp32s0bxl8b6452px0vd-initrd-nixos.conf.drv'...
+building '/nix/store/5wxd8li782yhsk48f482wnqd83fypd4a-initrd-nixos.conf.drv'...
+building '/nix/store/q3467xghn3p6cix6y8nkb58nm733b4hm-initrd-plymouth-udev-rules.drv'...
+building '/nix/store/6ananlndswm48031lgbd79qs2blc3dy3-initrd-release.drv'...
+building '/nix/store/08r3g12zzdcr8d4rnn8my7x8jqxyr0vd-initrd-shadow.drv'...
+building '/nix/store/mlf8jddp1s6pks4bl1c09jwdjsl5vsrl-initrd-shells.drv'...
+building '/nix/store/w2vbna6nwxbh49zh1v3hldq1qgpfq24a-initrd-system.conf.drv'...
+building '/nix/store/2jfydvi1rc16f602cdpvkhv8x32kn09b-initrd-udev-rules.drv'...
+building '/nix/store/c6h4i71833akq51rppr88ws9kfm0xzyh-nvidia-open-6.18-580.105.08.drv'...
+building '/nix/store/8565xinkvp0pankri8yzhb89w99dwn2s-initrd-udev-rules.drv'...
+building '/nix/store/z68msr5wnan8jhs7fncyq30j0gxgrrbs-cudnn-9.13.0.50-source.drv'...
+building '/nix/store/bpz5n8h2hxvkh93dv1qm9vww6vvchq4l-nvidia-x11-580.105.08-6.18.drv'...
+building '/nix/store/21zr9fvnh31aya9pvkls0fij0nw5qlsj-cuda12.8-cudnn-9.13.0.50.drv'...
+building '/nix/store/pvw9wwk08asvfgnxl5vwy2m90m5x1ijs-firmware.drv'...
+building '/nix/store/gkfidfnp3mmpfkv7mmcdap51xv5gj5jg-graphics-drivers-32bit.drv'...
+building '/nix/store/iszr3zdj2g0ikk7mqy6p8vfx0lpk0f13-etc-modprobe.d-firmware.conf.drv'...
+building '/nix/store/v4ck1b5dngd3ab3jahvhp7gv56nfq4cg-graphics-drivers.drv'...
+building '/nix/store/6v4csqsvsf0kvcvrz9xkj0p7w6v6vv3w-ld-library-path.drv'...
+building '/nix/store/w262570d56cfblgq0g3dv1sc7day5j7s-graphics-driver.conf.drv'...
+building '/nix/store/rba6n2v84qkyf0p9jsd60nr7ifvq24gq-nvidia-settings-580.105.08.drv'...
+building '/nix/store/alb2x3hxmis8mnx9jq2a2ri6870kdpzs-onetbb-2022.3.0.drv'...
+error: Cannot build '/nix/store/c6h4i71833akq51rppr88ws9kfm0xzyh-nvidia-open-6.18-580.105.08.drv'.
+       Reason: builder failed with exit code 2.
+       Output paths:
+         /nix/store/zj4wbqzh7dmm45bnw72g7h4akmsjxisv-nvidia-open-6.18-580.105.08
+       Last 25 log lines:
+       >   CC [M]  nvidia-uvm/uvm_va_range.o
+       >   CC [M]  nvidia-uvm/uvm_va_range_device_p2p.o
+       > nvidia-uvm/uvm_va_range_device_p2p.c: In function 'alloc_device_p2p_mem':
+       > nvidia-uvm/uvm_va_range_device_p2p.c:363:13: error: too many arguments to function 'get_dev_pagemap'
+       >   363 |             get_dev_pagemap(page_to_pfn(page), NULL);
+       >       |             ^~~~~~~~~~~~~~~
+       > In file included from /nix/store/pyix2bwixdp8yw4qlhqv5xsxygyf6nhy-linux-6.18-dev/lib/modules/6.18.0/source/include/linux/mm.h:33,
+       >                  from ././common/inc/nv-pgprot.h:30,
+       >                  from ././common/inc/nv-linux.h:33,
+       >                  from nvidia-uvm/uvm_linux.h:40,
+       >                  from nvidia-uvm/uvm_common.h:43,
+       >                  from nvidia-uvm/uvm_va_range_device_p2p.c:24:
+       > /nix/store/pyix2bwixdp8yw4qlhqv5xsxygyf6nhy-linux-6.18-dev/lib/modules/6.18.0/source/include/linux/memremap.h:214:21: note: declared here
+       >   214 | struct dev_pagemap *get_dev_pagemap(unsigned long pfn);
+       >       |                     ^~~~~~~~~~~~~~~
+       > make[5]: *** [/nix/store/pyix2bwixdp8yw4qlhqv5xsxygyf6nhy-linux-6.18-dev/lib/modules/6.18.0/source/scripts/Makefile.build:287: nvidia-uvm/uvm_va_range_device_p2p.o] Error 1
+       > make[5]: *** Waiting for unfinished jobs....
+       > make[4]: *** [/nix/store/pyix2bwixdp8yw4qlhqv5xsxygyf6nhy-linux-6.18-dev/lib/modules/6.18.0/source/Makefile:2010: .] Error 2
+       > make[3]: *** [/nix/store/pyix2bwixdp8yw4qlhqv5xsxygyf6nhy-linux-6.18-dev/lib/modules/6.18.0/source/Makefile:248: __sub-make] Error 2
+       > make[3]: Leaving directory '/build/source/kernel-open'
+       > make[2]: *** [Makefile:248: __sub-make] Error 2
+       > make[2]: Leaving directory '/nix/store/pyix2bwixdp8yw4qlhqv5xsxygyf6nhy-linux-6.18-dev/lib/modules/6.18.0/source'
+       > make[1]: *** [Makefile:138: modules] Error 2
+       > make[1]: Leaving directory '/build/source/kernel-open'
+       > make: *** [Makefile:59: modules] Error 2
+       For full logs, run:
+         nix log /nix/store/c6h4i71833akq51rppr88ws9kfm0xzyh-nvidia-open-6.18-580.105.08.drv
+error: Cannot build '/nix/store/q0p5w800i0l2cnhyfk2s3xnzbk7dm1ng-linux-6.18-modules.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/3qrgw0xg2kjxd15q24wjflhqgb62d4pz-linux-6.18-modules
+error: Cannot build '/nix/store/l8vnj4if9img13y1qa47jmjxglk1bwg8-nixos-system-Luana-X670E-26.05.20251202.418468a.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/17qdrpdg7xkrrxv509lfcybwj1fvkbba-nixos-system-Luana-X670E-26.05.20251202.418468a
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

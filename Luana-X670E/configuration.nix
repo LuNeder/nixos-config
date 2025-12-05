@@ -280,6 +280,8 @@
     pkgs.pkgsGnu.linuxPackages_latest.usbip
     # pkgs.nextcloud-client # TODO: Figure out how I'll do syncing later
     pkgs.servo
+    pkgs.kdePackages.phonon-vlc # Okular pdf animations
+    pkgs.vlc
   ];
 
   programs.criu.enable = true;

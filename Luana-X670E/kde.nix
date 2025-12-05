@@ -100,6 +100,7 @@
       kwin."Switch to Screen to the Right" = [ ];
       kwin."Toggle Night Color" = [ ];
       kwin."Toggle Window Raise/Lower" = [ ];
+      kwin.ToggleCurrentThumbnail = "Meta+Ctrl+T";
       kwin."Walk Through Windows" = "Alt+Tab";
       kwin."Walk Through Windows (Reverse)" = "Alt+Shift+Tab";
       kwin."Walk Through Windows Alternative" = [ ];
@@ -370,6 +371,7 @@
       kwinrc.Plugins.magiclampEnabled = true;
       kwinrc.Plugins.minimizeallEnabled = false;
       kwinrc.Plugins.squashEnabled = false;
+      kwinrc.Plugins.thumbnailasideEnabled = true;
       kwinrc.Script-closewindowaction.BorderActivate = "";
       kwinrc.Script-closewindowaction.Enabled = true;
       kwinrc.Script-runcommandaction.BorderActivate = "";
@@ -379,7 +381,7 @@
       kwinrc.Tiling.padding = 4;
       kwinrc."Tiling/44481b75-70e4-5f08-b25b-2fb39239b1f8".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       kwinrc."Tiling/475f3e7a-5e36-5bc7-abe4-6077b95ef814".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc."Tiling/4af759e3-a31d-43ac-bb3d-3dfd0b5e85dd/097c0cb9-f243-4192-b020-5c08c657d3b3".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc."Tiling/4af759e3-a31d-43ac-bb3d-3dfd0b5e85dd/097c0cb9-f243-4192-b020-5c08c657d3b3".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.5},{\"width\":0.5}]}";
       kwinrc."Tiling/4af759e3-a31d-43ac-bb3d-3dfd0b5e85dd/d94c559a-1a63-4e9f-9aa6-834912e18589".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       kwinrc."Tiling/70341c17-3452-54ca-959d-91d45d04e7f8".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       kwinrc."Tiling/a1250898-7950-4d96-996f-5995de99f066/097c0cb9-f243-4192-b020-5c08c657d3b3".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
@@ -425,13 +427,18 @@
       kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.Description = "Dock";
       kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.above = true;
       kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.aboverule = 2;
-      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclass = "crystal-dock";
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.layer = "above";
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.layerrule = 2;
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.types = 1;
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclass = "crystal-dock crystal-dock";
+      kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclasscomplete = true;
       kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclassmatch = 1;
       plasma-localerc.Formats.LANG = "pt_BR.UTF-8";
+      plasmanotifyrc."Applications/zen".Seen = true;
       plasmarc.Theme.name = "default";
       plasmarc.Wallpapers.usersWallpapers = "/home/luana/Imagens/Papéis de parede/Captura de tela_2023-05-30_18-45-33.png";
       spectaclerc.GuiConfig.includePointer = true;
-      spectaclerc.GuiConfig.includeShadow = false;
+      spectaclerc.GuiConfig.quitAfterSaveCopyExport = true;
       spectaclerc.ImageSave.lastImageSaveAsLocation = "file:///home/luana/Imagens/Capturas de tela/Captura de imagem_20241117_195346.png";
       spectaclerc.ImageSave.lastImageSaveLocation = "file:///home/luana/Imagens/Capturas de tela/Captura de imagem_20241117_195346.png";
       spectaclerc.ImageSave.translatedScreenshotsFolder = "Capturas de tela";

@@ -26,8 +26,11 @@
   };
 
   users.groups.onlyoffice = {
-    members = ["nginx" "nextcloud"];
+    members = [ "nginx" "nextcloud" ];
   };
+
+  users.users.onlyoffice.extraGroups = [ "personalfiles" ];
+
 
   #sops.secrets.onlyoffice-secret = {
   #  owner = "onlyoffice";

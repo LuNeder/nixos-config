@@ -90,9 +90,12 @@
   users.users.luana = {
     isNormalUser = true;
     description = "Luana";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "personalfiles" "budgetfiles" ];
     packages = with pkgs; [];
   };
+
+  users.groups.personalfiles = {};
+  users.groups.budgetfiles = {};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

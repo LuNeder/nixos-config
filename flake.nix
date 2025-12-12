@@ -7,7 +7,7 @@
       "yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4="
     ];
   };
-  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
+  inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/actual-unstable-test"; 
 
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";

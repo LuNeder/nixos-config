@@ -57,7 +57,7 @@ in {
     };
   };
 
-  users.users.nextcloud.extraGroups = [ "personalfiles" "budgetfiles" ];
+  users.users.nextcloud.extraGroups = [ "personalfiles" "budgetfiles" "viddownload" ];
 
   sops.secrets.nextcloud-password = {
     owner = "nextcloud";

@@ -63,9 +63,9 @@ do
     echo "DOWNLOADING: $i"
     { 
         if [ "$DRYRUN" = true ] ; then
-            echo "DOWNLOADING: $i" >> "$LOGFILE" && sleep 5 && echo "$i" >> "$LOGFILE" 2>&1 && echo "SUCCESS: $i" &&  echo "SUCCESS: $i" >> "$LOGFILE" && SNUM=$((SNUM+1))
+            echo "DOWNLOADING: $i" >> "$LOGFILE" && sleep 5 && echo "$i" >> "$LOGFILE" 2>&1 && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
         else
-            echo "DOWNLOADING: $i" >> "$LOGFILE" && yt-dlp -o "%(title)s [%(uploader)s] [%(id)s].%(ext)s" "$i" >> "$LOGFILE" 2>&1 && echo "SUCCESS: $i" &&  echo "SUCCESS: $i" >> "$LOGFILE" && SNUM=$((SNUM+1))
+            echo "DOWNLOADING: $i" >> "$LOGFILE" && yt-dlp -o "%(title)s [%(uploader)s] [%(id)s].%(ext)s" "$i" >> "$LOGFILE" 2>&1 && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
         fi
     } || {
         SUCCESS=false

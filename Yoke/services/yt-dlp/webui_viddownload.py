@@ -42,7 +42,7 @@ DEFAULT_SCRIPT_PATH = '/run/current-system/sw/bin/viddownload'
 
 # -- Helpers --
 
-def read_file_tail(path, max_bytes=20000):
+def read_file_tail(path, max_bytes=40000):
     """Return the tail of the file (as text). If file doesn't exist, return empty string."""
     try:
         with open(path, 'rb') as f:
@@ -52,6 +52,17 @@ def read_file_tail(path, max_bytes=20000):
             f.seek(start)
             data = f.read()
             # decode best-effort
+            return data.decode('utf-8', errors='replace')
+    except FileNotFoundError:
+        return ''
+    except Exception as e:
+        return f'Error reading {path}: {e}'
+
+def read_file_full(path):
+    """Return the entire file as text. If file doesn't exist, return empty string."""
+    try:
+        with open(path, 'rb') as f:
+            data = f.read()
             return data.decode('utf-8', errors='replace')
     except FileNotFoundError:
         return ''
@@ -326,11 +337,11 @@ def get_fail():
     if not outpath:
         return Response('', mimetype='text/plain; charset=utf-8')
     fail_file = os.path.join(os.path.abspath(outpath), 'fail.txt')
-    return Response(read_file_tail(fail_file), mimetype='text/plain; charset=utf-8')
+    return Response(read_file_full(fail_file), mimetype='text/plain; charset=utf-8')
 
 @app.route('/input')
 def get_input_preview():
-    return Response(read_file_tail(INPUT_FILE), mimetype='text/plain; charset=utf-8')
+    return Response(read_file_full(INPUT_FILE), mimetype='text/plain; charset=utf-8')
 
 @app.route('/start', methods=['POST'])
 def start():

@@ -8,11 +8,13 @@ Flask web UI to run a video-download script.
 Behavior:
 - Writes input textarea to /tmp/viddownload/input.txt
 - Starts: [script_path] [-d] -i /tmp/viddownload -o [output_path]
-- Reads live preview of /tmp/viddownload/viddownload.log (script should write to this)
-- Reads live preview of [output_path]/fail.txt
-- Reads live preview of /tmp/viddownload/input.txt
+- Live previews:
+  - /tmp/viddownload/viddownload.log
+  - [output_path]/fail.txt
+  - /tmp/viddownload/input.txt
 - Persists chosen output path and script path under /tmp/viddownload/
-- Ensures single run via PID file /tmp/viddownload/script.pid
+- Single-run protection via /tmp/viddownload/script.pid
+- Cancel endpoint sends SIGTERM then SIGKILL if needed
 - Process is started detached (preexec_fn=os.setsid) so it won't be tied to the request
 - Provides endpoints for status and log retrieval so multiple browsers see the same progress
 """
@@ -21,6 +23,7 @@ import os
 import subprocess
 import threading
 import time
+import signal
 from flask import Flask, request, jsonify, Response, render_template_string
 
 app = Flask(__name__)
@@ -137,6 +140,7 @@ INDEX_HTML = """
     #log, #fail, #inputPreview { white-space: pre-wrap; background: #111; color: #eee; padding: 8px; height: 200px; overflow: auto; }
     input[type="text"] { width: 80%; }
     button:disabled { opacity: 0.6; }
+    .btns { margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -158,8 +162,9 @@ INDEX_HTML = """
     <textarea id="input" rows="8" placeholder="Type input here..."></textarea>
   </label>
 
-  <div style="margin-top:8px;">
+  <div class="btns">
     <button id="runBtn">Run</button>
+    <button id="cancelBtn" disabled>Cancel</button>
     <span id="status" style="margin-left:12px;"></span>
   </div>
 
@@ -174,6 +179,7 @@ INDEX_HTML = """
 
 <script>
 const runBtn = document.getElementById('runBtn');
+const cancelBtn = document.getElementById('cancelBtn');
 const outPathEl = document.getElementById('outpath');
 const inputEl = document.getElementById('input');
 const scriptPathEl = document.getElementById('scriptpath');
@@ -189,6 +195,7 @@ async function getStatus() {
     const j = await r.json();
     const running = j.running;
     runBtn.disabled = running;
+    cancelBtn.disabled = !running;
     statusEl.textContent = running ? ('Running (pid '+j.pid+')') : 'Idle';
   } catch (e) {
     statusEl.textContent = 'Status error';
@@ -236,6 +243,7 @@ async function pollInputPreview() {
 
 runBtn.addEventListener('click', async () => {
   runBtn.disabled = true;
+  cancelBtn.disabled = true;
   statusEl.textContent = 'Starting...';
   const payload = {
     scriptpath: scriptPathEl.value,
@@ -252,11 +260,30 @@ runBtn.addEventListener('click', async () => {
     if (!r.ok) {
       const err = await r.json();
       alert('Failed to start: ' + (err.error || 'unknown'));
+      runBtn.disabled = false;
     }
   } catch (e) {
     alert('Start request failed: ' + e);
+    runBtn.disabled = false;
   }
-  // immediate update will follow from pollers
+});
+
+cancelBtn.addEventListener('click', async () => {
+  cancelBtn.disabled = true;
+  statusEl.textContent = 'Cancelling...';
+  try {
+    const r = await fetch('/cancel', { method: 'POST' });
+    if (!r.ok) {
+      const err = await r.json();
+      alert('Cancel failed: ' + (err.error || 'unknown'));
+    } else {
+      // success - keep disabled until status poll updates
+      const j = await r.json();
+      statusEl.textContent = j.message || 'Cancel sent';
+    }
+  } catch (e) {
+    alert('Cancel request failed: ' + e);
+  }
 });
 
 async function mainLoop() {
@@ -343,8 +370,7 @@ def start():
         args.append('-d')
     args.extend(['-i', TMP_DIR, '-o', outpath])
 
-    # Start the script detached. Do NOT redirect stdout/stderr or manipulate the log file;
-    # the script itself is expected to write to LOG_FILE.
+    # Start the script detached. The script is expected to manage LOG_FILE itself.
     try:
         proc = subprocess.Popen(
             args,
@@ -368,6 +394,53 @@ def start():
         return jsonify({'started': True, 'pid': proc.pid})
     except Exception as e:
         return jsonify({'error': f'Failed to start process: {e}'}), 500
+
+@app.route('/cancel', methods=['POST'])
+def cancel():
+    pid = get_pid()
+    if not pid or not is_pid_running(pid):
+        clear_pid_file()
+        return jsonify({'error': 'No running process to cancel'}), 400
+
+    try:
+        pgid = os.getpgid(pid)
+    except Exception as e:
+        return jsonify({'error': f'Failed to obtain process group: {e}'}), 500
+
+    # Try graceful termination first
+    try:
+        os.killpg(pgid, signal.SIGTERM)
+    except ProcessLookupError:
+        # process already gone
+        clear_pid_file()
+        return jsonify({'message': 'Process already exited'}), 200
+    except PermissionError:
+        return jsonify({'error': 'Permission denied sending SIGTERM'}), 500
+    except Exception as e:
+        return jsonify({'error': f'Failed to send SIGTERM: {e}'}), 500
+
+    # Wait briefly and escalate if still alive
+    timeout = 3.0
+    interval = 0.1
+    waited = 0.0
+    while waited < timeout:
+        time.sleep(interval)
+        waited += interval
+        if not is_pid_running(pid):
+            return jsonify({'message': 'SIGTERM sent, process exited'}), 200
+
+    # escalate to SIGKILL
+    try:
+        os.killpg(pgid, signal.SIGKILL)
+    except ProcessLookupError:
+        clear_pid_file()
+        return jsonify({'message': 'Process exited after SIGTERM'}), 200
+    except PermissionError:
+        return jsonify({'error': 'Permission denied sending SIGKILL'}), 500
+    except Exception as e:
+        return jsonify({'error': f'Failed to send SIGKILL: {e}'}), 500
+
+    return jsonify({'message': 'SIGKILL sent'}), 200
 
 
 if __name__ == '__main__':

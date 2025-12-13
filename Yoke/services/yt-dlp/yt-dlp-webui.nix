@@ -27,7 +27,7 @@ in {
         User = "viddownload";
         Group = "viddownload";
         ProtectHome = true;
-        ProtectSystem = false;
+        ProtectSystem = "full";
         # StateDirectory = dataDir;
         ReadWritePaths = dataDir;
         PrivateTmp = false;

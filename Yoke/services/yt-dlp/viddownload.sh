@@ -57,6 +57,7 @@ FAILFILE="$OUTFOLDER/fail.txt"
 #echo FAIL $FAILFILE
 
 echo "" > "$LOGFILE"
+echo "" > "$FAILFILE"
 cd "$OUTFOLDER"
 for i in $(cat "$INPUTFOLDER/input.txt");
 do

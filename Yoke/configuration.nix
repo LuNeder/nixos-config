@@ -21,6 +21,7 @@
       ./services/unbound.nix
       ./services/actual.nix
       ./services/binary-cache/binary-cache.nix
+      ./services/yt-dlp/yt-dlp-webui.nix
     ];
 
   # Bootloader.
@@ -90,12 +91,13 @@
   users.users.luana = {
     isNormalUser = true;
     description = "Luana";
-    extraGroups = [ "networkmanager" "wheel" "personalfiles" "budgetfiles" ];
+    extraGroups = [ "networkmanager" "wheel" "personalfiles" "budgetfiles" "viddownload" ];
     packages = with pkgs; [];
   };
 
   users.groups.personalfiles = {};
   users.groups.budgetfiles = {};
+  users.groups.viddownload = {};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

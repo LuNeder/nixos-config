@@ -32,13 +32,13 @@ in {
         ReadWritePaths = dataDir;
         PrivateTmp = false;
         StateDirectoryMode = "0775";
-        UMask = "007";
+        UMask = "000"; # TODO: Add user/group support on the other systemd service and go back to a good umask
         #WorkingDirectory = "/tmp/viddownload";
         DynamicUser = false;
         Restart = "on-failure";
         ExecStart = (pkgs.writeScript "viddownload-webui-starter" ''
           #!/usr/bin/env brush
-          gunicorn --workers 3 --pythonpath '${(pkgs.writeScriptBin "webui_viddownload.py" (builtins.readFile ./webui_viddownload.py))}/bin' --bind '${host}:${toString port}' --umask 0o007 webui_viddownload:app
+          gunicorn --workers 3 --pythonpath '${(pkgs.writeScriptBin "webui_viddownload.py" (builtins.readFile ./webui_viddownload.py))}/bin' --bind '${host}:${toString port}' --umask 0o000 webui_viddownload:app
         '');
       };
     };

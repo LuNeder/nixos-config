@@ -8,6 +8,9 @@ DRYRUN=false
 NEWLOG=false
 FNUM=0
 SNUM=0
+COOKIES=false
+COOKIESOPT=""
+COOKIESPATH=""
 
 usage() {
   cat <<EOF
@@ -21,7 +24,7 @@ EOF
   exit 2
 }
 
-while getopts ":i:o:l:dh" option "$@"; do
+while getopts ":i:o:l:c:dh" option "$@"; do
    case $option in
       i) 
          INPUTFOLDER="${OPTARG}";;
@@ -30,6 +33,10 @@ while getopts ":i:o:l:dh" option "$@"; do
       l)
          NEWLOG=true
          LOGFOLDER="${OPTARG}";;
+      c) 
+         COOKIES=true
+         COOKIESOPT="--cookies"
+         COOKIESPATH="${OPTARG}";;
       d)
          DRYRUN=true;;
       h) 
@@ -58,6 +65,12 @@ FAILFILE="$OUTFOLDER/fail.txt"
 
 echo "" > "$LOGFILE"
 echo "" > "$FAILFILE"
+
+if [ "$COOKIES" = true ] ; then
+    echo "USING COOKIES: ${OPTARG}"
+    echo "USING COOKIES: ${OPTARG}" >> "$LOGFILE"
+fi
+
 cd "$OUTFOLDER"
 for i in $(cat "$INPUTFOLDER/input.txt");
 do
@@ -66,7 +79,7 @@ do
         if [ "$DRYRUN" = true ] ; then
             echo "DOWNLOADING: $i" >> "$LOGFILE" && sleep 5 && echo "$i" >> "$LOGFILE" 2>&1 && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
         else
-            echo "DOWNLOADING: $i" >> "$LOGFILE" && yt-dlp -o "%(title)s [%(uploader)s] [%(id)s].%(ext)s" "$i" >> "$LOGFILE" 2>&1 && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
+            echo "DOWNLOADING: $i" >> "$LOGFILE" && yt-dlp -o "%(title)s [%(uploader)s] [%(creator)s] [%(webpage_url_domain)s] [p: %(playlist_id)s] [%(id)s].%(ext)s" "$i" $COOKIESOPT "$COOKIESPATH" >> "$LOGFILE" 2>&1 && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
         fi
     } || {
         SUCCESS=false

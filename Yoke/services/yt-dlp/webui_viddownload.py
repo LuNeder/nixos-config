@@ -17,6 +17,8 @@ Behavior:
 - Cancel endpoint sends SIGTERM then SIGKILL if needed
 - Process is started detached (preexec_fn=os.setsid) so it won't be tied to the request
 - Provides endpoints for status and log retrieval so multiple browsers see the same progress
+- Upload cookie file -> saved to /tmp/viddownload/cookies.txt (replaces existing)
+- When "Use cookies" is checked, adds: -c /tmp/viddownload/cookies.txt to script args
 """
 
 import os
@@ -34,6 +36,7 @@ os.makedirs(TMP_DIR, exist_ok=True)
 PID_FILE = os.path.join(TMP_DIR, 'script.pid')
 LOG_FILE = os.path.join(TMP_DIR, 'viddownload.log')     # script writes here
 INPUT_FILE = os.path.join(TMP_DIR, 'input.txt')
+COOKIE_FILE = os.path.join(TMP_DIR, 'cookies.txt')      # fixed cookie path
 OUTPATH_FILE = os.path.join(TMP_DIR, 'script.outpath')
 SCRIPT_PATH_FILE = os.path.join(TMP_DIR, 'script.path')
 
@@ -169,6 +172,17 @@ INDEX_HTML = """
     <input id="dryrun" type="checkbox" /> Dry run (pass -d to the script)
   </label>
 
+  <label>Cookie support:</label>
+  <label>
+    <input id="useCookies" type="checkbox" /> Use cookies (pass -c {{ cookie_path }})
+  </label>
+  <label>
+    Upload cookie file (will be saved as {{ cookie_path }}):
+    <input id="cookieFile" type="file" />
+    <button id="uploadCookieBtn">Upload cookie file</button>
+    <span id="uploadStatus" style="margin-left:10px;"></span>
+  </label>
+
   <label>Input file contents (will be written to /tmp/viddownload/input.txt):
     <textarea id="input" rows="8" placeholder="Type input here..."></textarea>
   </label>
@@ -195,6 +209,10 @@ const outPathEl = document.getElementById('outpath');
 const inputEl = document.getElementById('input');
 const scriptPathEl = document.getElementById('scriptpath');
 const dryrunEl = document.getElementById('dryrun');
+const useCookiesEl = document.getElementById('useCookies');
+const cookieFileEl = document.getElementById('cookieFile');
+const uploadCookieBtn = document.getElementById('uploadCookieBtn');
+const uploadStatus = document.getElementById('uploadStatus');
 const logEl = document.getElementById('log');
 const failEl = document.getElementById('fail');
 const inputPreviewEl = document.getElementById('inputPreview');
@@ -260,6 +278,7 @@ runBtn.addEventListener('click', async () => {
     scriptpath: scriptPathEl.value,
     outpath: outPathEl.value,
     dry: dryrunEl.checked,
+    cookies: useCookiesEl.checked,
     input: inputEl.value
   };
   try {
@@ -297,6 +316,31 @@ cancelBtn.addEventListener('click', async () => {
   }
 });
 
+uploadCookieBtn.addEventListener('click', async (ev) => {
+  ev.preventDefault();
+  uploadStatus.textContent = 'Uploading...';
+  const file = cookieFileEl.files[0];
+  if (!file) {
+    uploadStatus.textContent = 'No file selected';
+    return;
+  }
+  const fd = new FormData();
+  fd.append('file', file);
+  try {
+    const r = await fetch('/upload', { method: 'POST', body: fd });
+    const j = await r.json();
+    if (!r.ok) {
+      uploadStatus.textContent = 'Upload failed: ' + (j.error || r.status);
+    } else {
+      uploadStatus.textContent = j.message || 'Uploaded';
+    }
+  } catch (e) {
+    uploadStatus.textContent = 'Upload error';
+  }
+  // clear the file input for convenience
+  cookieFileEl.value = '';
+});
+
 async function mainLoop() {
   await getStatus();
   await pollLog();
@@ -319,7 +363,7 @@ def index():
     # fill defaults from saved values if present
     saved_out = read_outpath() or DEFAULT_OUTPATH
     saved_script = read_script_path() or DEFAULT_SCRIPT_PATH
-    return render_template_string(INDEX_HTML, out_default=saved_out, script_default=saved_script)
+    return render_template_string(INDEX_HTML, out_default=saved_out, script_default=saved_script, cookie_path=COOKIE_FILE)
 
 @app.route('/status')
 def status():
@@ -343,6 +387,26 @@ def get_fail():
 def get_input_preview():
     return Response(read_file_full(INPUT_FILE), mimetype='text/plain; charset=utf-8')
 
+@app.route('/upload', methods=['POST'])
+def upload_cookie():
+    # Accept multipart/form-data file named 'file'
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+    f = request.files['file']
+    if f.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    try:
+        # Save to fixed path, replacing existing
+        f.save(COOKIE_FILE)
+        # Restrict permissions
+        try:
+            os.chmod(COOKIE_FILE, 0o600)
+        except Exception:
+            pass
+        return jsonify({'message': f'Uploaded to {COOKIE_FILE}'}), 200
+    except Exception as e:
+        return jsonify({'error': f'Failed to save file: {e}'}), 500
+
 @app.route('/start', methods=['POST'])
 def start():
     if is_script_running():
@@ -352,6 +416,7 @@ def start():
     scriptpath = data.get('scriptpath') or DEFAULT_SCRIPT_PATH
     outpath = data.get('outpath') or ''
     dry = bool(data.get('dry'))
+    cookies = bool(data.get('cookies'))
     input_text = data.get('input') or ''
 
     # enforce outpath provided
@@ -368,6 +433,10 @@ def start():
     if not os.path.isfile(scriptpath) or not os.access(scriptpath, os.X_OK):
         return jsonify({'error': f'{scriptpath} not found or not executable on server'}), 500
 
+    # if cookies requested, ensure cookie file exists
+    if cookies and not os.path.isfile(COOKIE_FILE):
+        return jsonify({'error': f'Cookies enabled but {COOKIE_FILE} not found. Upload cookie file first.'}), 400
+
     # write input to /tmp/viddownload/input.txt (script reads this directory)
     try:
         with open(INPUT_FILE, 'wb') as f:
@@ -375,10 +444,12 @@ def start():
     except Exception as e:
         return jsonify({'error': f'Failed to write input file: {e}'}), 500
 
-    # Build arguments: include -d if dry requested
+    # Build arguments: include -d if dry requested, include cookies option if requested
     args = [scriptpath]
     if dry:
         args.append('-d')
+    if cookies:
+        args.extend(['-c', COOKIE_FILE])
     args.extend(['-i', TMP_DIR, '-o', outpath])
 
     # Start the script detached. The script is expected to manage LOG_FILE itself.

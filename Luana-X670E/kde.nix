@@ -292,8 +292,8 @@
       kcminputrc.Mouse.cursorTheme = "Bibata-Modern-Ice";
       kded5rc.Module-browserintegrationreminder.autoload = false;
       kded5rc.Module-device_automounter.autoload = false;
-      kdeglobals.General.AccentColor = "81,160,80";
-      kdeglobals.General.LastUsedCustomAccentColor = "0,211,184";
+      kdeglobals.General.AccentColor = "80,161,80";
+      kdeglobals.General.LastUsedCustomAccentColor = "233,58,154";
       kdeglobals.General.TerminalApplication = "xfce4-terminal";
       kdeglobals.General.TerminalService = "xfce4-terminal.desktop";
       kdeglobals.General.accentColorFromWallpaper = true;
@@ -303,8 +303,6 @@
       kdeglobals."KFileDialog Settings"."Automatically select filename extension" = true;
       kdeglobals."KFileDialog Settings"."Breadcrumb Navigation" = false;
       kdeglobals."KFileDialog Settings"."Decoration position" = 2;
-      kdeglobals."KFileDialog Settings"."LocationCombo Completionmode" = 5;
-      kdeglobals."KFileDialog Settings"."PathCombo Completionmode" = 5;
       kdeglobals."KFileDialog Settings"."Show Full Path" = false;
       kdeglobals."KFileDialog Settings"."Show Inline Previews" = true;
       kdeglobals."KFileDialog Settings"."Show Preview" = false;
@@ -328,7 +326,7 @@
       kiorc.Confirmations.ConfirmDelete = true;
       kiorc.Confirmations.ConfirmEmptyTrash = true;
       kiorc.Confirmations.ConfirmTrash = false;
-      kiorc."Executable scripts".behaviourOnLaunch = "alwaysAsk";
+      kiorc."Executable scripts".behaviourOnLaunch = "execute";
       klipperrc.General.IgnoreImages = false;
       klipperrc.General.MaxClipItems = 2000;
       krunnerrc.General.ActivateWhenTypingOnDesktop = false;
@@ -358,6 +356,8 @@
       kwinrc.Effect-cube.CubeFaceDisplacement = 0;
       kwinrc.Effect-cube.DistanceFactor = 2.09;
       kwinrc.Effect-cube.SkyBox = "/home/luana/Documentos/GitHub/Dotfiles/Compiz/80894-360render.jpg";
+      kwinrc.Effect-kwin6_effect_tv_glitch.Color = "invalid";
+      kwinrc.Effect-kwin6_effect_tv_glitch.Duration = 250;
       kwinrc.Effect-overview.BorderActivate = 9;
       kwinrc.Effect-slide.HorizontalGap = 0;
       kwinrc.Effect-wobblywindows.Drag = 97;
@@ -395,6 +395,7 @@
       kwinrc."Tiling/e49cd6dc-9a0d-570b-a71e-05e624367680".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       kwinrc."Tiling/e965d53b-4344-4099-84d0-54a891bdf2f8/097c0cb9-f243-4192-b020-5c08c657d3b3".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       kwinrc."Tiling/e965d53b-4344-4099-84d0-54a891bdf2f8/d94c559a-1a63-4e9f-9aa6-834912e18589".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc.Windows.FocusStealingPreventionLevel = 0;
       kwinrc.Windows.RollOverDesktops = true;
       kwinrc.Workspace.CurrentDesktop = 1;
       kwinrc.Xwayland.Scale = 1;
@@ -435,6 +436,7 @@
       kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclasscomplete = true;
       kwinrulesrc.fd66caa9-fcb7-4307-9801-df2bc00f825c.wmclassmatch = 1;
       plasma-localerc.Formats.LANG = "pt_BR.UTF-8";
+      plasmanotifyrc."Applications/org.gnome.baobab".Seen = true;
       plasmanotifyrc."Applications/thunderbird".Seen = true;
       plasmanotifyrc."Applications/zen".Seen = true;
       plasmarc.Theme.name = "default";

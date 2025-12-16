@@ -3,6 +3,7 @@ set -e
 
 INPUTFOLDER="."
 OUTFOLDER="/mnt/pool1/yt-dlp"
+OUTSCHEMA="%(title)s [%(uploader)s] [%(creator)s] [%(webpage_url_domain)s] [p: %(playlist_id)s] [%(id)s].%(ext)s"
 SUCCESS=true
 DRYRUN=false
 NEWLOG=false
@@ -11,6 +12,7 @@ SNUM=0
 COOKIES=false
 COOKIESOPT=""
 COOKIESPATH=""
+COOKIEARGS=""
 
 usage() {
   cat <<EOF
@@ -67,8 +69,8 @@ echo "" > "$LOGFILE"
 echo "" > "$FAILFILE"
 
 if [ "$COOKIES" = true ] ; then
-    echo "USING COOKIES: ${OPTARG}"
-    echo "USING COOKIES: ${OPTARG}" >> "$LOGFILE"
+    echo "USING COOKIES: $COOKIESPATH"
+    echo "USING COOKIES: $COOKIESPATH" >> "$LOGFILE"
 fi
 
 cd "$OUTFOLDER"
@@ -79,7 +81,14 @@ do
         if [ "$DRYRUN" = true ] ; then
             echo "DOWNLOADING: $i" >> "$LOGFILE" && sleep 5 && echo "$i" >> "$LOGFILE" 2>&1 && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
         else
-            echo "DOWNLOADING: $i" >> "$LOGFILE" && yt-dlp -o "%(title)s [%(uploader)s] [%(creator)s] [%(webpage_url_domain)s] [p: %(playlist_id)s] [%(id)s].%(ext)s" "$i" $COOKIESOPT "$COOKIESPATH" >> "$LOGFILE" 2>&1 && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
+            echo "DOWNLOADING: $i" >> "$LOGFILE" && { 
+                if [ "$COOKIES" = true ] ; then
+                    yt-dlp -o "$OUTSCHEMA" "$i" $COOKIESOPT "$COOKIESPATH" >> "$LOGFILE" 2>&1
+                else
+                    yt-dlp -o "$OUTSCHEMA" "$i" >> "$LOGFILE" 2>&1
+                fi
+                
+            } && SNUM=$((SNUM+1)) && echo "SUCCESS ($SNUM): $i" &&  echo "SUCCESS ($SNUM): $i" >> "$LOGFILE"
         fi
     } || {
         SUCCESS=false

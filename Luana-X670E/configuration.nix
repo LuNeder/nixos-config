@@ -282,6 +282,7 @@
     pkgs.servo
     pkgs.kdePackages.phonon-vlc # Okular pdf animations
     pkgs.vlc
+    pkgs.kdePackages.qtstyleplugin-kvantum # KDE Theming
   ];
 
   programs.criu.enable = true;

@@ -44,11 +44,15 @@
 
     snow.url = "github:snowfallorg/snow";
     snow.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+    #nixos-raspberrypi.inputs.nixpkgs.follows = "nixpkgs";
+    pipkgs.url = "github:nvmd/nixpkgs/modules-with-keys-25.11";
   };
 
   
 
-  outputs = { self, nixpkgs, systems, nix-flatpak, home-manager, plasma-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, nixos-raspberrypi, pipkgs, home-manager, plasma-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 
@@ -66,10 +70,10 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./Yoke/configuration.nix ];
         });
-        Fabricator = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs;};
+        Fabricator = ( pipkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs nixos-raspberrypi outputs;};
             modules = [ ./Fabricator/configuration.nix ];
-        });
+          });
       };
     };
 }

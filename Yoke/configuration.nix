@@ -128,6 +128,9 @@
     settings.KbdInteractiveAuthentication = false;
   };
 
+  # Run arm64 binaries
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

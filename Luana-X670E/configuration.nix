@@ -700,6 +700,9 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # Run arm64 binaries
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
 
   # NVidia Drivers
   # Enable OpenGL

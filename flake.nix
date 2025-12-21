@@ -2,9 +2,11 @@
   nixConfig = {
     extra-substituters = [
       "http://100.64.0.9:2025"
+      "https://nixos-raspberrypi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4="
+      "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
     ];
   };
   inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/actual-unstable-test"; 
@@ -44,11 +46,15 @@
 
     snow.url = "github:snowfallorg/snow";
     snow.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+    #nixos-raspberrypi.inputs.nixpkgs.follows = "nixpkgs";
+    pipkgs.url = "github:nvmd/nixpkgs/modules-with-keys-25.11";
   };
 
   
 
-  outputs = { self, nixpkgs, systems, nix-flatpak, home-manager, plasma-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, nixos-raspberrypi, pipkgs, home-manager, plasma-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 
@@ -66,10 +72,10 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./Yoke/configuration.nix ];
         });
-        Fabricator = ( nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs;};
+        Fabricator = ( pipkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs nixos-raspberrypi outputs;};
             modules = [ ./Fabricator/configuration.nix ];
-        });
+          });
       };
     };
 }

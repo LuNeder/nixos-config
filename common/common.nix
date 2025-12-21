@@ -24,7 +24,7 @@
     pkgs.pkgsCu.nvtopPackages.full
     pkgs.htop
     pkgs.p7zip # why is this not installed by default, nixos is fucking dumb
-    pkgs.rar
+   # pkgs.rar # TODO: Broken in aarch64
     pkgs.xz
     pkgs.lm_sensors
     pkgs.ifuse
@@ -77,9 +77,9 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.extraOptions = "experimental-features = nix-command flakes";
 
-  # Add flake inputs to registry
-  nix.registry = lib.mapAttrs (_: flake: {inherit flake;}) (lib.filterAttrs (_: lib.isType "flake") inputs);
-  nix.nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") (lib.filterAttrs (_: lib.isType "flake") inputs);
+  # Add flake inputs to registry # TODO: Broken with pipkgs
+  #nix.registry = lib.mapAttrs (_: flake: {inherit flake;}) (lib.filterAttrs (_: lib.isType "flake") inputs);
+  #nix.nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") (lib.filterAttrs (_: lib.isType "flake") inputs);
 
   # Keyring for bitwarden
   services.gnome.gnome-keyring.enable = true;

@@ -2,9 +2,11 @@
   nixConfig = {
     extra-substituters = [
       "http://100.64.0.9:2025"
+      "https://nixos-raspberrypi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4="
+      "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
     ];
   };
   inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/actual-unstable-test"; 

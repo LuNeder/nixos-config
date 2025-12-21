@@ -7,6 +7,10 @@
   # Bluetooth GUI
   services.blueman.enable = true;
 
+  # Common Packages
+  environment.systemPackages = [
+    pkgs.pkgsCu.nvtopPackages.full
+  ];
 
   # TeamViewer
   services.teamviewer.enable = true;

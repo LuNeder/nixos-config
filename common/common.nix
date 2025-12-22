@@ -21,7 +21,6 @@
   environment.systemPackages = [
     pkgs.curl
     pkgs.zfs
-    pkgs.pkgsCu.nvtopPackages.full
     pkgs.htop
     pkgs.p7zip # why is this not installed by default, nixos is fucking dumb
    # pkgs.rar # TODO: Broken in aarch64

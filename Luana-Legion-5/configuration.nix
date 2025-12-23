@@ -10,6 +10,7 @@
       ./dav.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # inputs.lanzaboote.nixosModules.lanzaboote # Using limine
     ];
 
   # Install firefox.
@@ -99,18 +100,38 @@
 
   # Bootloader.
   boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = { enable = true;
+    efi = { canTouchEfiVariables = true; };
+
+    systemd-boot.enable = lib.mkForce false;
+
+    limine = { enable = true;
       efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-      extraEntries = ''
-        menuentry "UEFI Firmware Settings" { fwsetup }
-      '';
-      # theme = "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe";
-      # theme = "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse";
-      theme = "${builtins.fetchGit{url = "https://github.com/nobreDaniel/dotfile.git";}}/Arcade";
+      biosDevice = "nodev";
+      #extraEntries = ''
+      #  menuentry "UEFI Firmware Settings" {
+      #    fwsetup
+      #  }
+      #'';
+      secureBoot.enable = true;
+      style = {
+        #wallpapers = [ "${builtins.fetchGit{url = "https://github.com/qdwp/CyberRe.git";}}/CyberRe/background.png" ];
+        wallpapers = [ "${builtins.fetchGit{url = "https://github.com/Patato777/dotfiles.git";}}/grub/themes/virtuaverse/background.png" ];
+        graphicalTerminal.background = "FF000000";
+
+      };
     };
+  };
+  #boot.lanzaboote = {
+  #  enable = true;
+  #  pkiBundle = "/var/lib/sbctl";
+  #};
+  boot.initrd.systemd.enable = true;
+
+  # Plymouth
+  boot.plymouth = {
+    enable = true;
+    themePackages = with pkgs; [ (adi1090x-plymouth-themes.override {selected_themes = [ "black_hud" ]; }) ];
+    theme = "black_hud";
   };
 
   networking.hostName = "Luana-Legion-5"; # Define your hostname.
@@ -142,11 +163,12 @@
   };
 
   # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -177,7 +199,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+   services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {
@@ -186,6 +208,7 @@
     uid = 1000;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      kdePackages.kate
     #  thunderbird
     ];
   };
@@ -367,6 +390,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 
 }

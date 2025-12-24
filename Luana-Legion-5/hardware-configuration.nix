@@ -22,19 +22,20 @@
     device = "/dev/disk/by-uuid/c4632ecd-9dd4-4a61-aa7b-1d92ec90feb7";
 
     # Fix for an exploit: https://github.com/LuNeder/nixos-config/commit/d4b05b1059ad49ea4c3919ef0b0daab39280800c
-    # systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+7+12+13+14+15:sha256=0000000000000000000000000000000000000000000000000000000000000000 --wipe-slot=tpm2 /dev/nvme1n1p2
+    # sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+7+12+13+14+15:sha256=0000000000000000000000000000000000000000000000000000000000000000 --wipe-slot=tpm2 --tpm2-with-pin=true /dev/nvme0n1p2
     crypttabExtraOpts = [ "tpm2-device=auto" "tpm2-measure-pcr=yes" ];
   };
+  
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/059B-4F0A";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
   
- # swapDevices = [ {
- #     device = "/swapfile";
- #     size = 8196;
- #   } ];
+  swapDevices = [ {
+      device = "/swapfile";
+      size = 8196;
+    } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

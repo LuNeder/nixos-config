@@ -7,7 +7,7 @@
 {
   imports =
     [ ../common/desktops.nix
-      ./dav.nix
+      #./dav.nix #TODO: fix sops
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       # inputs.lanzaboote.nixosModules.lanzaboote # Using limine

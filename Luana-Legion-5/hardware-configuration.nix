@@ -9,25 +9,32 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ]; # Stuff added by gpu-passthrough.nix
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a6ca4a93-6b1e-4d4f-b337-692bff07a649";
+    { device = "/dev/mapper/luks-c4632ecd-9dd4-4a61-aa7b-1d92ec90feb7";
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4DBB-EA6D";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  boot.initrd.luks.devices."luks-c4632ecd-9dd4-4a61-aa7b-1d92ec90feb7" = {
+    device = "/dev/disk/by-uuid/c4632ecd-9dd4-4a61-aa7b-1d92ec90feb7";
 
-  swapDevices = [ {
-      device = "/swap/swapfile";
-      size = 8196;
-    } ];
+    # Fix for an exploit: https://github.com/LuNeder/nixos-config/commit/d4b05b1059ad49ea4c3919ef0b0daab39280800c
+    # systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+7+12+13+14+15:sha256=0000000000000000000000000000000000000000000000000000000000000000 --wipe-slot=tpm2 /dev/nvme1n1p2
+    crypttabExtraOpts = [ "tpm2-device=auto" "tpm2-measure-pcr=yes" ];
+  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/059B-4F0A";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+  
+ # swapDevices = [ {
+ #     device = "/swapfile";
+ #     size = 8196;
+ #   } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -40,5 +47,6 @@
   networking.hostId = "abcdef12";
 
   nixpkgs.hostPlatform = { system = "x86_64-linux"; config = "x86_64-unknown-linux-gnu"; qemuArch = "aarch64"; };
+
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -761,6 +761,9 @@
     EXTRA_CCFLAGS = "-I/usr/include";
   };
 
+  # Enable CUDA
+  nixpkgs.config.cudaSupport = true;
+
   
   # Udev Rules
   services.udev.extraRules = ''

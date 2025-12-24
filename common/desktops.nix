@@ -1,15 +1,13 @@
 { pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, rustPlatform, ... }: {
   imports = [ ./common.nix ];
 
-  # Enable CUDA
-  nixpkgs.config.cudaSupport = true;
-
   # Bluetooth GUI
   services.blueman.enable = true;
 
   # Common Packages
   environment.systemPackages = [
     pkgs.pkgsCu.nvtopPackages.full
+    pkgs.xfce.xfce4-terminal
   ];
 
   # TeamViewer

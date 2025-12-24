@@ -1,4 +1,6 @@
 {
+  enable = true;
+  
   workspace.cursor.theme = "Bibata-Modern-Ice";
 
   hotkeys.commands = {

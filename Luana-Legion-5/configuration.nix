@@ -2,11 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, outputs, config, home-manager, lib, fetchFromGitHub, ... }:
+{ pkgs, inputs, outputs, config, home-manager, lib, plasma-manager, fetchFromGitHub, ... }:
 
 {
   imports =
-    [ ../common/desktops.nix
+    [ 
+      ../common/desktops.nix
+      inputs.home-manager.nixosModules.home-manager # Home Manager
       #./dav.nix #TODO: fix sops
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -175,6 +177,53 @@
     }; 
   };
   services.desktopManager.plasma6.enable = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+  home-manager.users.luana.programs.plasma = import ./kde.nix;
+
+  home-manager.backupFileExtension = "hm.bkp";
+  home-manager.users.luana = {
+    home.stateVersion = "25.11";
+
+    home.file = {
+      ".local/share/applications/Steam.desktop" = { 
+        force = true;
+        source = ../Luana-X670E/extra-files/steam.desktop;
+      };
+    };
+
+    xdg.desktopEntries = {
+      settings = {
+        name = "Configurações do sistema";
+        exec = "systemsettings";
+        icon = "settings-configure-symbolic";
+      };
+      ulauncher-toggle = {
+        name = "Busca";
+        exec = "ulauncher -toggle";
+        icon = "search";
+      };
+    };
+
+    xdg.configFile = {
+
+      # Autostart Steam with -silent
+      "autostart/steam.desktop" = { 
+        force = true;
+        source = ../Luana-X670E/extra-files/steam.desktop;  };
+      
+      # Autostart ulauncher
+      "autostart/ulauncher.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Ulauncher
+        Exec=ulauncher --hide-window
+        Comment=
+        RunHook=0'';
+
+    };
+  };
 
 
   # Configure keymap in X11

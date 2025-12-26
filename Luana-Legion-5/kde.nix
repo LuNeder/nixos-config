@@ -238,6 +238,8 @@
       plasmashell."switch to previous activity" = [ ];
       plasmashell."toggle do not disturb" = [ ];
       "services/org.kde.konsole.desktop"._launch = [ ];
+      "services/org.kde.krunner.desktop"._launch = ["Alt+F2" "Search"];
+      "services/plasma-manager-commands.desktop".Ulauncher = "Alt+Space";
       "services/xfce4-terminal.desktop"._launch = "Ctrl+Alt+T";
     };
     configFile = {
@@ -249,10 +251,12 @@
       dolphinrc."KFileDialog Settings"."Places Icons Static Size" = 22;
       kactivitymanagerdrc.activities."3dc075ac-bd09-419f-b6dd-4f8e04160920" = "Padrão";
       kactivitymanagerdrc.main.currentActivity = "3dc075ac-bd09-419f-b6dd-4f8e04160920";
+      kcminputrc.Keyboard.NumLock = 0;
       kcminputrc."Libinput/1739/52781/MSFT0001:00 06CB:CE2D Touchpad".ClickMethod = 2;
       kcminputrc."Libinput/1739/52781/MSFT0001:00 06CB:CE2D Touchpad".DisableWhileTyping = false;
       kcminputrc."Libinput/1739/52781/MSFT0001:00 06CB:CE2D Touchpad".NaturalScroll = true;
-      kcminputrc."Libinput/1739/52781/MSFT0001:00 06CB:CE2D Touchpad".PointerAcceleration = 0.200;
+      kcminputrc."Libinput/1739/52781/MSFT0001:00 06CB:CE2D Touchpad".PointerAcceleration = 0.2;
+      kcminputrc.Mouse.cursorTheme = "Bibata-Modern-Ice";
       kded5rc.Module-device_automounter.autoload = false;
       kdeglobals.General.TerminalApplication = "xfce4-terminal";
       kdeglobals.General.TerminalService = "xfce4-terminal.desktop";
@@ -277,18 +281,20 @@
       kdeglobals.WM.inactiveBackground = "239,240,241";
       kdeglobals.WM.inactiveBlend = "239,240,241";
       kdeglobals.WM.inactiveForeground = "112,125,138";
+      ksmserverrc.General.loginMode = "emptySession";
       kwalletrc.Wallet."First Use" = false;
       kwinrc.Desktops.Id_1 = "707a5297-babd-4871-824f-529554225d0a";
       kwinrc.Desktops.Number = 1;
       kwinrc.Desktops.Rows = 1;
       kwinrc.Effect-overview.BorderActivate = 9;
       kwinrc.Tiling.padding = 4;
-      kwinrc."Tiling/707a5297-babd-4871-824f-529554225d0a/f7b1926e-37b1-4ebf-801e-ac953b2a2bc4".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc."Tiling/707a5297-babd-4871-824f-529554225d0a/70722cb6-c7d6-403d-9128-f217c8faee48".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc."Tiling/707a5297-babd-4871-824f-529554225d0a/f7b1926e-37b1-4ebf-801e-ac953b2a2bc4".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
       kwinrc.Xwayland.Scale = 1;
       plasma-localerc.Formats.LANG = "pt_BR.UTF-8";
       plasmanotifyrc."Applications/zen".Seen = true;
     };
     dataFile = {
 
-    };
+  };
 }

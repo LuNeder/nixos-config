@@ -209,7 +209,6 @@
       org_kde_powerdevil."Toggle Keyboard Backlight" = "Keyboard Light On/Off";
       org_kde_powerdevil."Turn Off Screen" = [ ];
       org_kde_powerdevil.powerProfile = ["Battery" "Meta+B"];
-      "plasma-manager-commands.desktop".Ulauncher = "Alt+Space";
       plasmashell."Slideshow Wallpaper Next Image" = [ ];
       plasmashell."activate application launcher" = ["Meta" "Alt+F1"];
       plasmashell."activate task manager entry 1" = "Meta+1";
@@ -240,7 +239,6 @@
       plasmashell."toggle do not disturb" = [ ];
       "services/org.kde.konsole.desktop"._launch = [ ];
       "services/org.kde.krunner.desktop"._launch = ["Alt+F2" "Search"];
-      "services/plasma-manager-commands.desktop".Ulauncher = "Alt+Space";
       "services/xfce4-terminal.desktop"._launch = "Ctrl+Alt+T";
     };
     configFile = {

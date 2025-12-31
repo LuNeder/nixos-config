@@ -70,6 +70,7 @@
   pkgs.mcpelauncher-ui-qt
   pkgs.libreoffice-fresh
   # pkgs.labplot Broken
+  pkgs.lenovo-legion
   ];
 
   # Steam
@@ -97,6 +98,7 @@
   # Kernel Modules
   boot.extraModulePackages = with config.boot.kernelPackages; [
     v4l2loopback
+    lenovo-legion-module
   ];
   security.polkit.enable = true;
 

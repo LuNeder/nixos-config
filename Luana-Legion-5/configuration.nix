@@ -173,10 +173,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager = {
     sddm.enable = true;
-    autoLogin = {
-      enable = true;
-      user = "luana";
-    }; 
   };
   services.desktopManager.plasma6.enable = true;
   home-manager.useGlobalPkgs = true;

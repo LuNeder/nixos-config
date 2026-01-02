@@ -41,6 +41,7 @@
     pkgs.usbutils
     pkgs.tree
     pkgs.libfaketime
+    pkgs.brush
   ];
 
   # Tmux

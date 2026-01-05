@@ -19,7 +19,7 @@
         num-threads = 1;
 
         # OpenNIC
-        root-hints = "/var/lib/unbound/opennic.hint"; 
+        # root-hints = "/var/lib/unbound/opennic.hint"; # uhhh yeah that didn't work
 
         # Don't use Capitalization randomization as it known to cause DNSSEC issues sometimes
         # see https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378 for further details

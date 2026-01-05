@@ -22,10 +22,13 @@
           ]
           else fallback;
         fallback = [
-            "1.1.1.1"
-            "2606:4700:4700::1111"
-            "9.9.9.11"
-            "2620:fe::11"
+            "1.1.1.1" # Cloudflare
+            "2606:4700:4700::1111" #Cloudflare
+            "9.9.9.11" # Quad9
+            "2620:fe::11" # Quad9
+            "2001:470:b80a::1" # OpenNIC (BR)
+            "134.195.4.2" # OpenNIC (ns4.any)
+
             # Uncomment the following to use a local DNS service (e.g. Unbound)
             # Additionally replace the address & port as needed
             # "127.0.0.1:5335"

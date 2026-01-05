@@ -2,6 +2,9 @@
   services.unbound = {
     enable = true;
 
+    user = "unbound"; # default
+    group = "unbound"; # default 
+
     # Useful: https://docs.pi-hole.net/guides/dns/unbound/
     settings = {
       server = {
@@ -14,6 +17,9 @@
         do-udp = true;
         prefetch =  true;
         num-threads = 1;
+
+        # OpenNIC
+        root-hints = "/var/lib/unbound/opennic.hint"; 
 
         # Don't use Capitalization randomization as it known to cause DNSSEC issues sometimes
         # see https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378 for further details
@@ -58,6 +64,48 @@
         ];
       };
     };
+  };
+
+  # OpenNIC root servers DNS hint grabber
+    systemd.services = {
+    "opennic-root-hint" = {
+      path = [ pkgs.brush pkgs.dig ];
+      restartIfChanged = false;
+      serviceConfig = {
+        Type = "oneshot";
+        User = "unbound";
+        RemainAfterExit = false;
+        ExecStart = pkgs.writeScript "binary-cache-updater" ''
+          #!/usr/bin/env brush
+
+          # I know OpenNIC's root servers also respond for ICANN TLDs, but wonder if it's possible to merge this hints list with ICANN's one instead, hmmm...
+
+          HINTPATH='/var/lib/unbound/opennic.hint'
+
+          touch $HINTPATH
+          \cp -f $HINTPATH $HINTPATH.bkp
+
+          {
+            # ns0.opennic.glue.
+            dig . NS @168.119.153.26 > $HINTPATH
+          } || {
+            # ns2.opennic.glue.
+            dig . NS @161.97.219.84 > $HINTPATH
+          } || {
+            # If both fail, restore previous
+            \cp -f $HINTPATH.bkp $HINTPATH
+          }
+        '';
+      };
+    };
+  };
+
+  systemd.timers."opennic-root-hint" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "*-*-* 01:00:00 America/Sao_Paulo";
+        Unit = "opennic-root-hint.service";
+      };
   };
 
   networking.firewall.allowedTCPPorts = [ config.services.unbound.settings.server.port ];

@@ -50,5 +50,15 @@ in {
     isSystemUser = true;
   };
 
+  services.nginx.virtualHosts."ytdlp.${config.var.fqdn}" = {
+    forceSSL = true;
+    sslCertificate = "${config.var.sslCertificate}";
+    sslCertificateKey = "${config.var.sslCertificateKey}";
+    extraConfig = ''
+      client_max_body_size 30M;
+    '';
+    locations."/".proxyPass = "http://[::1]:${toString port}";
+  };
+
   networking.firewall.allowedTCPPorts = [ port ];
 }

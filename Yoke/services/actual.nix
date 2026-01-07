@@ -8,15 +8,26 @@
       port = 7000;
       dataDir = "/mnt/pool1/Finances/actual-budget";
       https = {
-        key = "/mnt/pool1/Finances/actual-budget/yoke-key.pem";
-        cert = "/mnt/pool1/Finances/actual-budget/yoke.pem";
+        # Set via nginx
+        # key = "${config.var.sslCertificateKey}";
+        # cert = "${config.var.sslCertificate}";
       };
     };
   };
 
-    users.users.actual = {
-      group = config.services.actual.group;
-      home = config.services.actual.settings.dataDir;
-      isSystemUser = true;
-    };
+  users.users.actual = {
+    group = config.services.actual.group;
+    home = config.services.actual.settings.dataDir;
+    isSystemUser = true;
+  };
+
+  services.nginx.virtualHosts."actual.${config.var.fqdn}" = {
+    forceSSL = true;
+    sslCertificate = "${config.var.sslCertificate}";
+    sslCertificateKey = "${config.var.sslCertificateKey}";
+    extraConfig = ''
+      client_max_body_size 30M;
+    '';
+    locations."/".proxyPass = "http://[::1]:${toString config.services.actual.settings.port}";
+  };
 }

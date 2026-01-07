@@ -21,4 +21,14 @@
   };
   services.mosquitto.enable = true;
   networking.firewall.allowedTCPPorts = [ 8971 ];
+
+  services.nginx.virtualHosts."z2m.${config.var.fqdn}" = {
+    forceSSL = true;
+    sslCertificate = "${config.var.sslCertificate}";
+    sslCertificateKey = "${config.var.sslCertificateKey}";
+    extraConfig = ''
+      client_max_body_size 30M;
+    '';
+    locations."/".proxyPass = "http://[::1]:${toString config.services.zigbee2mqtt.port}";
+  };
 }

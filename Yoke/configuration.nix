@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../common/common.nix
       inputs.lanzaboote.nixosModules.lanzaboote
+      ./services/nginx.nix
       ./services/nextcloud.nix
       # ./services/onlyoffice.nix Broken, makes Nextcloud unreachable
       ./services/postgresql.nix

@@ -61,7 +61,10 @@
     extraConfig = ''
       client_max_body_size 30M;
     '';
-    locations."/".proxyPass = "http://[::1]:${toString config.services.porn-vault.port}";
+    locations."/" = {
+      proxyPass = "http://[::1]:${toString config.services.porn-vault.port}";
+      proxyWebsockets = false;
+    };
   };
 
   # Needed for mounting rw on Nextcloud

@@ -29,6 +29,9 @@
     extraConfig = ''
       client_max_body_size 30M;
     '';
-    locations."/".proxyPass = "http://[::1]:${toString config.services.zigbee2mqtt.port}";
+    locations."/" = {
+      proxyPass = "http://[::1]:${toString config.services.zigbee2mqtt.port}";
+      proxyWebsockets = false;
+    };
   };
 }

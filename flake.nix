@@ -1,7 +1,7 @@
 {
   nixConfig = {
     extra-substituters = [
-      "https://bincache.yoke.sereia.gay"
+      "http://100.64.0.9:2025"
       "https://nixos-raspberrypi.cachix.org"
     ];
     extra-trusted-public-keys = [

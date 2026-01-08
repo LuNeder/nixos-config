@@ -191,4 +191,10 @@ nixpkgs.config.permittedInsecurePackages = [
   "libsoup-2.74.3"
 ];
 
+# Trust SSL cert for NAS
+security.pki.certificateFiles = [
+  ../Yoke/rootCA.pem
+  ../Yoke/yoke+11.pem
+];
+
 }

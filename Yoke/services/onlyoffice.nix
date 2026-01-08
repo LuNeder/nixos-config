@@ -31,7 +31,10 @@
       extraConfig = ''
         client_max_body_size 30M;
       '';
-      locations."/".proxyPass = "http://[::1]:${toString config.services.onlyoffice.port}";
+      locations."/" = {
+        proxyPass = "http://[::1]:${toString config.services.onlyoffice.port}";
+        proxyWebsockets = false;
+      };
     };
   };
 

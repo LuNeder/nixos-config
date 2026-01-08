@@ -80,7 +80,7 @@
         trusted_proxies = [
           "::1"
         ];
-        # TODO: needed, but breaks http and does not fix https on sereia.gay
+        # TODO: breaks http
         #ssl_certificate = "${config.var.sslCertificate}";
         #ssl_key = "${config.var.sslCertificateKey}";
         cors_allowed_origins = [
@@ -195,17 +195,18 @@
     8123 40000 47831 34041 1900 35698 39446 42277 59682
   ];
 
-  # TODO: BROKEN, Fix https and sereia.gay
-  services.nginx.virtualHosts."ha.${config.var.fqdn}" = {
-    forceSSL = false;
-    sslCertificate = "${config.var.sslCertificate}";
-    sslCertificateKey = "${config.var.sslCertificateKey}";
-    extraConfig = ''
-      client_max_body_size 30M;
-      proxy_set_header    Upgrade     $http_upgrade;
-      proxy_set_header    Connection  "upgrade";
-    '';
-    locations."/".proxyPass = "http://[::1]:${toString config.services.home-assistant.port}";
-  };
+  # Broken
+  #services.nginx.virtualHosts."ha.${config.var.fqdn}" = {
+  #  forceSSL = true;
+  #  sslCertificate = "${config.var.sslCertificate}";
+  #  sslCertificateKey = "${config.var.sslCertificateKey}";
+  #  extraConfig = ''
+  #    proxy_buffering off;
+  #  '';
+  #  locations."/" = {
+  #    proxyPass = "http://[::1]:${toString config.services.home-assistant.config.http.server_port}";
+  #    proxyWebsockets = true;
+  #  };
+  #};
 }
 

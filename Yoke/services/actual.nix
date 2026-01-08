@@ -9,8 +9,8 @@
       dataDir = "/mnt/pool1/Finances/actual-budget";
       https = {
         # Set via nginx
-        # key = "${config.var.sslCertificateKey}";
-        # cert = "${config.var.sslCertificate}";
+        key = "${config.var.sslCertificateKey}";
+        cert = "${config.var.sslCertificate}";
       };
     };
   };
@@ -21,13 +21,16 @@
     isSystemUser = true;
   };
 
-  services.nginx.virtualHosts."actual.${config.var.fqdn}" = {
-    forceSSL = true;
-    sslCertificate = "${config.var.sslCertificate}";
-    sslCertificateKey = "${config.var.sslCertificateKey}";
-    extraConfig = ''
-      client_max_body_size 30M;
-    '';
-    locations."/".proxyPass = "http://[::1]:${toString config.services.actual.settings.port}";
-  };
+  # TODO: Broken?
+  #services.nginx.virtualHosts."actual.${config.var.fqdn}" = {
+  #  forceSSL = true;
+  #  sslCertificate = "${config.var.sslCertificate}";
+  #  sslCertificateKey = "${config.var.sslCertificateKey}";
+  #  extraConfig = ''
+  #    client_max_body_size 30M;
+  #  '';
+  #  locations."/" = {
+  #    proxyPass = "http://[::1]:${toString config.services.actual.settings.port}";
+  #  };
+  #};
 }

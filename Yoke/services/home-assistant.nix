@@ -208,3 +208,4 @@
     locations."/".proxyPass = "http://[::1]:${toString config.services.home-assistant.port}";
   };
 }
+

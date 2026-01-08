@@ -7,7 +7,7 @@
   # Common Packages
   environment.systemPackages = [
     pkgs.pkgsCu.nvtopPackages.full
-    pkgs.xfce.xfce4-terminal
+    pkgs.xfce4-terminal
   ];
 
   # TeamViewer

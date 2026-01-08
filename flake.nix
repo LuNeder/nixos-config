@@ -9,7 +9,7 @@
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
     ];
   };
-  inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/actual-unstable-test"; 
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
 
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";

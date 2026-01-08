@@ -8,6 +8,7 @@
   environment.systemPackages = [
     pkgs.pkgsCu.nvtopPackages.full
     pkgs.xfce4-terminal
+    pkgs.tuba
   ];
 
   # TeamViewer

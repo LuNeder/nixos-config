@@ -190,9 +190,9 @@
     pkgs.plank
     pkgs.crystal-dock
     pkgs.font-manager
-    pkgs.xfce.xfce4-panel-profiles # ...
-    pkgs.xfce.xfce4-pulseaudio-plugin
-    pkgs.xfce.xfce4-clipman-plugin
+    pkgs.xfce4-panel-profiles # ...
+    pkgs.xfce4-pulseaudio-plugin
+    pkgs.xfce4-clipman-plugin
     pkgs.menulibre
     pkgs.bibata-cursors # My favourite cursors! (at least for now hehe :3)
     # pkgs.bibata-extra-cursors # broken
@@ -226,7 +226,7 @@
     pkgs.opencomposite
     # pkgs.pkgsNoCu.opencomposite-helper # broken
     pkgs.openxr-loader
-    pkgs.xfce.catfish
+    pkgs.catfish
     pkgs.transmission_4-qt
     pkgs.lldb
     pkgs.alsa-utils
@@ -349,8 +349,8 @@
     libva
     ocamlPackages.alsa
     alsa-lib
-    xfce.libxfce4windowing
-    xfce.xfwm4
+    libxfce4windowing
+    xfwm4
     alsa-lib
     at-spi2-atk
     at-spi2-core

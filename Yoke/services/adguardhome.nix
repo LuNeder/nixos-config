@@ -63,6 +63,13 @@
         "https://raw.githubusercontent.com/TheShawnMiranda/LG-TV-Ad-Block/refs/heads/master/list" # Block updates for LG TV (ads are already blocked by disagreeing to most of the Terms of Use (except to the minimum needed to homekit, which unfortunately also enables update notifications))
       ];
       user_rules = [
+        # DNS rules for NAS Services
+        "||${config.var.fqdn}^$dnsrewrite=100.64.0.9,client=100.64.0.0/10"
+        "||${config.var.fqdn}^$dnsrewrite=192.168.15.9,client=192.168.15.0/24"
+        "||${config.var.fqdn}^$dnsrewrite=192.168.15.9,client=100.64.0.7|100.64.0.5,important"
+        "||${config.var.fqdn}^$dnsrewrite=127.0.0.1,client=127.0.0.0/8|192.168.15.9|100.64.0.9"
+        "||${config.var.fqdn}^$dnsrewrite=::1,client=::1"
+
         # More LG TV Update Blocking (https://gist.github.com/wassname/78eeaaad299dc4cddd04e372f20a9aa7?permalink_comment_id=5736137#gistcomment-5736137)
         "ad.lgappstv.com"
         "aic.api.lgtviot.com"
@@ -71,7 +78,7 @@
         "aic.lgtviot.com"
         "aic-ngfts.lge.com"
         "aic.nudge.lgtvcommon.com"
-        "aic-op-lss.lgthinq.com"
+        "aic-op-lss.lgthinq.com"  
         "aic.rdl.lgtvcommon.com"
         "aic.recommend.lgtvcommon.com"
         "aic.sports.lgtviot.com"
@@ -152,5 +159,15 @@
 
       ];
     };
+  };
+
+  services.nginx.virtualHosts."adguard.${config.var.fqdn}" = {
+    forceSSL = true;
+    sslCertificate = "${config.var.sslCertificate}";
+    sslCertificateKey = "${config.var.sslCertificateKey}";
+    extraConfig = ''
+      client_max_body_size 30M;
+    '';
+    locations."/".proxyPass = "http://[::1]:${toString config.services.adguardhome.port}";
   };
 }

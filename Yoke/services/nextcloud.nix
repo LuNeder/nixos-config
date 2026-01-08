@@ -1,5 +1,5 @@
 { config, pkgs, lib, inputs, ... }: let
-  hostName = "localhost";
+  hostName = "cloud.${config.var.fqdn}";
 in {
   services = {
     nextcloud = {
@@ -8,12 +8,13 @@ in {
       package = pkgs.nextcloud32;
       enable = true;
 
-      https = false;
+      https = true;
 
       home = "/mnt/pool1/nextcloud";
 
       settings = {
         trusted_domains = [
+          "cloud.${config.var.fqdn}"
           "192.168.15.9"
           "100.64.0.9"
           "yoke.fairy-scylla.ts.net"
@@ -54,6 +55,13 @@ in {
           ensureDBOwnership = true;
         }
       ];
+    };
+
+    nginx.virtualHosts."${hostName}" = {
+      forceSSL = true;
+      sslCertificate = "${config.var.sslCertificate}";
+      sslCertificateKey = "${config.var.sslCertificateKey}";
+      serverAliases = config.services.nextcloud.settings.trusted_domains;
     };
   };
 

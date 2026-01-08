@@ -50,6 +50,8 @@
         unit_system = "metric";
         temperature_unit = "C";
         time_zone = config.time.timeZone;
+        external_url = "https://ha.${config.var.fqdn}";
+        internal_url = "http://192.168.15.9";
       };
 
       switch = [
@@ -73,8 +75,23 @@
         };
       };
 
-      http = {};
+      http = {
+        use_x_forwarded_for = true;
+        trusted_proxies = [
+          "::1"
+        ];
+        # TODO: needed, but breaks http and does not fix https on sereia.gay
+        #ssl_certificate = "${config.var.sslCertificate}";
+        #ssl_key = "${config.var.sslCertificateKey}";
+        cors_allowed_origins = [
+          "https://ha.${config.var.fqdn}"
+          "https://100.64.0.9"
+          "https://192.168.15.9"
+        ];
+      };
       api = {};
+
+      websocket_api = {};
 
       template = [ 
         {
@@ -177,4 +194,17 @@
     # Other ports listed as being used by HA (netstat -ln), at least 1 of these also needed by the Bridge
     8123 40000 47831 34041 1900 35698 39446 42277 59682
   ];
+
+  # TODO: BROKEN, Fix https and sereia.gay
+  services.nginx.virtualHosts."ha.${config.var.fqdn}" = {
+    forceSSL = false;
+    sslCertificate = "${config.var.sslCertificate}";
+    sslCertificateKey = "${config.var.sslCertificateKey}";
+    extraConfig = ''
+      client_max_body_size 30M;
+      proxy_set_header    Upgrade     $http_upgrade;
+      proxy_set_header    Connection  "upgrade";
+    '';
+    locations."/".proxyPass = "http://[::1]:${toString config.services.home-assistant.port}";
+  };
 }

@@ -35,7 +35,7 @@
   pkgs.vscodium
   pkgs.font-manager
   pkgs.lshw
-  pkgs.xfce.xfce4-whiskermenu-plugin
+  pkgs.xfce4-whiskermenu-plugin
   pkgs.remmina
   ((pkgs.wrapOBS { # OBS
       plugins = [
@@ -43,9 +43,9 @@
       pkgs.pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
       pkgs.obs-studio-plugins.obs-pipewire-audio-capture
   ];}))
-  pkgs.xfce.xfce4-panel-profiles
-  pkgs.xfce.xfce4-pulseaudio-plugin
-  pkgs.xfce.xfce4-clipman-plugin
+  pkgs.xfce4-panel-profiles
+  pkgs.xfce4-pulseaudio-plugin
+  pkgs.xfce4-clipman-plugin
   pkgs.menulibre
   pkgs.papirus-icon-theme
   pkgs.bibata-cursors
@@ -253,7 +253,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-   services.xserver.libinput.enable = true;
+   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.luana = {
@@ -364,8 +364,8 @@
     libva
     ocamlPackages.alsa
     alsa-lib
-    xfce.libxfce4windowing
-    xfce.xfwm4
+    libxfce4windowing
+    xfwm4
     alsa-lib
     at-spi2-atk
     at-spi2-core

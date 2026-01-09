@@ -57,7 +57,10 @@ in {
     extraConfig = ''
       client_max_body_size 30M;
     '';
-    locations."/".proxyPass = "http://[::1]:${toString port}";
+    locations."/" = {
+      proxyPass = "http://[::1]:${toString port}";
+      proxyWebsockets = false;
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ port ];

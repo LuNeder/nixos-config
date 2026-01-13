@@ -93,6 +93,15 @@
     { appId = "org.gnome.Epiphany.Devel"; origin = "epiphany-preview"; }
     { appId = "org.gnome.Epiphany.Canary"; origin = "epiphany-preview"; }
    "com.valvesoftware.SteamLink"
+    rec {
+      appId = "com.hypixel.HytaleLauncher";
+      sha256 = "0pw1f4p5902hd9am1hnvmxy7271vf2xgyvszdj17zndwp56ij5l8";
+      bundle = "${pkgs.fetchurl {
+        url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.13-e6eb932.flatpak";
+        # url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.flatpak";
+        inherit sha256;
+      }}";
+    }
   ];
 
   # Kernel Modules

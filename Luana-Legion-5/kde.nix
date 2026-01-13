@@ -186,7 +186,7 @@
       kwin."Window to Screen 7" = [ ];
       kwin.disableInputCapture = "Meta+Shift+Esc";
       kwin.view_actual_size = "Meta+0";
-      kwin.view_zoom_in = ["Meta++" "Meta+\x3d"];
+      kwin.view_zoom_in = ["Meta++" ""];
       kwin.view_zoom_out = "Meta+-";
       mediacontrol.mediavolumedown = [ ];
       mediacontrol.mediavolumeup = [ ];
@@ -239,6 +239,7 @@
       plasmashell."toggle do not disturb" = [ ];
       "services/org.kde.konsole.desktop"._launch = [ ];
       "services/org.kde.krunner.desktop"._launch = ["Alt+F2" "Search"];
+      "services/plasma-manager-commands.desktop".Ulauncher = "Alt+Space";
       "services/xfce4-terminal.desktop"._launch = "Ctrl+Alt+T";
     };
     configFile = {
@@ -280,6 +281,9 @@
       kdeglobals."KFileDialog Settings"."Automatically select filename extension" = true;
       kdeglobals."KFileDialog Settings"."Breadcrumb Navigation" = false;
       kdeglobals."KFileDialog Settings"."Decoration position" = 2;
+      kdeglobals."KFileDialog Settings"."LocationCombo Completionmode" = 5;
+      kdeglobals."KFileDialog Settings"."PathCombo Completionmode" = 5;
+      kdeglobals."KFileDialog Settings"."Show Bookmarks" = false;
       kdeglobals."KFileDialog Settings"."Show Full Path" = false;
       kdeglobals."KFileDialog Settings"."Show Inline Previews" = true;
       kdeglobals."KFileDialog Settings"."Show Preview" = false;
@@ -304,7 +308,8 @@
       kwinrc.Desktops.Rows = 1;
       kwinrc.Effect-overview.BorderActivate = 9;
       kwinrc.Tiling.padding = 4;
-      kwinrc."Tiling/707a5297-babd-4871-824f-529554225d0a/70722cb6-c7d6-403d-9128-f217c8faee48".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
+      kwinrc."Tiling/707a5297-babd-4871-824f-529554225d0a/5dc6556e-6c77-4450-84c0-185d4b83cca4".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc."Tiling/707a5297-babd-4871-824f-529554225d0a/70722cb6-c7d6-403d-9128-f217c8faee48".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       kwinrc."Tiling/707a5297-babd-4871-824f-529554225d0a/f7b1926e-37b1-4ebf-801e-ac953b2a2bc4".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       kwinrc.Xwayland.Scale = 1;
       kwinrulesrc."89545412-bfc3-471c-8f62-53995e6a8c92".Description = "Configurações de janela para Ulauncher - Application Launcher";
@@ -325,6 +330,9 @@
       kwinrulesrc.General.rules = "89545412-bfc3-471c-8f62-53995e6a8c92";
       plasma-localerc.Formats.LANG = "pt_BR.UTF-8";
       plasmanotifyrc."Applications/zen".Seen = true;
+      spectaclerc.Annotations.annotationToolType = 2;
+      spectaclerc.ImageSave.translatedScreenshotsFolder = "Capturas de tela";
+      spectaclerc.VideoSave.translatedScreencastsFolder = "Capturas de vídeo";
     };
     dataFile = {
 

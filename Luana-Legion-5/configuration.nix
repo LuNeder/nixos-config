@@ -64,7 +64,7 @@
   pkgs.discord
   pkgs.transmission_4-qt
   pkgs.distrobox
-  # pkgs.idevicerestore # Broken
+  pkgs.idevicerestore
   pkgs.gnome-network-displays
   pkgs.xdg-desktop-portal
   pkgs.mcpelauncher-ui-qt

@@ -71,6 +71,7 @@
   pkgs.libreoffice-fresh
   # pkgs.labplot Broken
   pkgs.lenovo-legion
+  pkgs.veloren
   ];
 
   # Steam

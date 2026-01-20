@@ -471,7 +471,7 @@ error:
              |           ^
          1163|             value:
 
-       … while evaluating definitions from `/nix/store/hgxai0zphabfldyim4c5g69d8hsv8z0d-source/Luana-X670E/configuration.nix':
+       … while evaluating definitions from `/nix/store/c6siilkfh2q0609l9vn9nhjsw0vbmhsz-source/Luana-X670E/configuration.nix':
 
        … from call site
          at /nix/store/kfcxqcxb9hcq6x33sg4cmwakbb1ifwg9-source/lib/modules.nix:1171:80:
@@ -509,7 +509,7 @@ error:
           348|
 
        … from call site
-         at /nix/store/hgxai0zphabfldyim4c5g69d8hsv8z0d-source/Luana-X670E/configuration.nix:243:5:
+         at /nix/store/c6siilkfh2q0609l9vn9nhjsw0vbmhsz-source/Luana-X670E/configuration.nix:243:5:
           242|     pkgs.libreoffice-fresh
           243|     pkgs.wlx-overlay-s
              |     ^

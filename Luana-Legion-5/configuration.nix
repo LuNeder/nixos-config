@@ -72,6 +72,7 @@
   # pkgs.labplot Broken
   pkgs.lenovo-legion
   pkgs.veloren
+  pkgs.vlc
   ];
 
   # Steam

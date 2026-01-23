@@ -15,6 +15,23 @@
       # inputs.lanzaboote.nixosModules.lanzaboote # Using limine
     ];
 
+  # TODO: Tewmporary, remove me
+  services.postgresql = {
+    enable = true;
+    ensureUsers = [
+      { name = "sciblock";
+      ensureDBOwnership = true; }
+      { name = "luana";
+      ensureDBOwnership = true; }
+    ];
+    ensureDatabases = [ "sciblock" "luana" ];
+  };
+  users.users.sciblock = {
+    isSystemUser = true;
+    group = "sciblock";
+  };
+  users.groups.sciblock = {};
+
   # Install firefox.
   # programs.firefox.enable = true; Using zen instead
 
@@ -72,6 +89,7 @@
   # pkgs.labplot Broken
   pkgs.lenovo-legion
   pkgs.veloren
+  pkgs.vlc
   ];
 
   # Steam

@@ -75,7 +75,11 @@
         Fabricator = ( pipkgs.lib.nixosSystem {
             specialArgs = {inherit inputs nixos-raspberrypi outputs;};
             modules = [ ./Fabricator/configuration.nix ];
-          });
+        });
+        oraclevps = ( nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs outputs;};
+            modules = [ ./oraclevps/configuration.nix ];
+        });
       };
     };
 }

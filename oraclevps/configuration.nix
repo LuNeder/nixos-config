@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../common/common.nix
+    ../common/minimal.nix
   ];
 
   # Workaround for https://github.com/NixOS/nix/issues/8502

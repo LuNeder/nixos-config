@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./networking.nix
     ../common/minimal.nix
+    ./services/nginx.nix
   ];
 
   # Workaround for https://github.com/NixOS/nix/issues/8502

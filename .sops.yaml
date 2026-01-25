@@ -6,28 +6,53 @@ keys:
   - &admins
     - &admin_luana_pc age1hgxlvplnrpxjdfn4v9y3qdr20pdac9u5rncqte2s7yjn4yxugsmsyrzc03
     - &admin_luana_iphone age1w7zhgrwjx9yrxvyg7avuw9q0myzx0fg6ze06f4w200gu8pqcy3vqz7q6m3
+    - &admin_luana_laptop age1j6dtgl9dykmtds4mm7dkhnvgr5qp39nfhwrk26xtc09xya98d40q5ws08l
   - &servers
    - &server_pc age1px4f9v3c4ejtvzxcfch7p9zqp3fwka2gcx3jf2npq7336llely2qwckfp4
    - &server_yoke age10crzp8mhl72mryzdu96a48cx957hlycw5axwj76ecahep0sl9g4q9pgtjt
+   - &server_oracle age1yvdarclpkwkrsmgx5r27qa0e06ymjec7ycy4qesx2qqxqkvt3s0qppzkjn
 creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini|yml)$
     key_groups:
     - age:
       - *admin_luana_pc
       - *admin_luana_iphone
+      - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_oracle
+  - path_regex: .*/secrets/[^/]+\.(yaml|json|env|ini|yml)$
+    key_groups:
+    - age:
+      - *admin_luana_pc
+      - *admin_luana_iphone
+      - *admin_luana_laptop
+      - *server_yoke
+      - *server_pc
+      - *server_oracle
   - path: Yoke/pool1.key
     key_groups:
     - age:
       - *admin_luana_pc
       - *admin_luana_iphone
+      - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_oracle
   - path: Yoke/secrets.yaml
     key_groups:
     - age:
       - *admin_luana_pc
       - *admin_luana_iphone
+      - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_oracle
+  - key_groups:
+    - age:
+      - *admin_luana_pc
+      - *admin_luana_iphone
+      - *admin_luana_laptop
+      - *server_yoke
+      - *server_pc
+      - *server_oracle

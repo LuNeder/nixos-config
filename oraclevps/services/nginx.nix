@@ -24,7 +24,6 @@
     serverAliases = [
       "pergunte.pra.sereia.gay"
       "ask.sereia.gay"
-      "ask.p.sereia.gay"
     ];
     extraConfig = ''
       client_max_body_size 30M;

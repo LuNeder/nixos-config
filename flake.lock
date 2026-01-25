@@ -528,11 +528,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1769217652,
-        "narHash": "sha256-zEDb8ddc6m8FTRsBG1ojzL9XLG/gwEQaB6R3Mh0hyIU=",
+        "lastModified": 1769263844,
+        "narHash": "sha256-gClZbCcQgXNsjmgFxO9U08TxEZ9uS7MG8ilohbH5kfQ=",
         "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "afac6283bdc7366d1b6d2ada51b894d120ecdf21",
+        "rev": "f2d620a24d39f20dcbea69c1161f4ab0e689c3fd",
         "type": "github"
       },
       "original": {

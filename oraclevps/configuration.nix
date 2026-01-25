@@ -4,6 +4,7 @@
     ./networking.nix
     ../common/minimal.nix
     ./services/nginx.nix
+    ./services/ddns.nix
   ];
 
   # Workaround for https://github.com/NixOS/nix/issues/8502

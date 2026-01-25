@@ -22,10 +22,8 @@
     owner = config.services.catask.user;
     group = config.services.catask.group;
     content = ''
-      DB_HOST = 127.0.0.1
       DB_NAME = catask
       DB_USER = catask
-      DB_PORT = 5432
       ADMIN_PASSWORD = '${config.sops.placeholder.admpass}'
       APP_SECRET = ${config.sops.placeholder.appsecret}
     '';
@@ -137,3 +135,4 @@
     };
   };
 }
+

@@ -24,6 +24,7 @@
       ./services/binary-cache/binary-cache.nix
       ./services/yt-dlp/yt-dlp-webui.nix
       ./services/catask/catask.nix
+      ./services/immich.nix
     ];
 
   # Bootloader.

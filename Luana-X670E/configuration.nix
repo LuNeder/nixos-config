@@ -261,7 +261,6 @@
     pkgs.pmbootstrap
     # pkgs.ueviewer # TODO: Broken
    # pkgs.scidavis # TODO: Maybe package this some day?
-    pkgs.nexusmods-app-unfree
     pkgs.heroic
     #(pkgs.makehuman.overrideAttrs (oldAttrs: rec { # (#422450)
     #  source = pkgs.fetchFromGitHub {

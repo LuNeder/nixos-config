@@ -259,6 +259,13 @@
     '';
   };
 
+  services.yaiiu-immich-proxy = {
+    enable = true;
+    port = 2282;
+    immichUrl = "http://localhost:${toString config.services.immich.port}";
+    openFirewall = true;
+  };
+
   users.users.immich.extraGroups = [ "personalfiles" "viddownload" ];
 
 

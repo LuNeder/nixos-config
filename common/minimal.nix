@@ -106,6 +106,9 @@
   ];
   users.users."luana".openssh.authorizedKeys.keys = config.users.users."root".openssh.authorizedKeys.keys;
 
+  # Mosh
+  programs.mosh.enable = true;
+
   # Zsh
   environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;

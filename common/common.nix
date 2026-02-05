@@ -14,6 +14,25 @@
       pkgsNoCu = import inputs.nixpkgs { config.allowUnfree = config.nixpkgs.config.allowUnfree;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${final.stdenv.hostPlatform.config}"; }; # TODO: Nix ignores when I change this to musl...
       pkgsCu = import inputs.nixpkgs {  config.allowUnfree = config.nixpkgs.config.allowUnfree;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${final.stdenv.hostPlatform.config}"; config.cudaSupport = true; config.cudaVersion = "12";}; # For machines without full cudaSupport enabled
     })
+
+    #(final: prev: {
+    #  libimobiledevice = prev.libimobiledevice.overrideAttrs {
+    #   patches = [
+    #    (pkgs.fetchpatch {
+    #      name = "1619.patch";
+    #      url = "https://github.com/libimobiledevice/libimobiledevice/pull/1619.patch";
+    #      hash = "sha256-XpeGOF2KRRmXfIXFtt+5Lyg3bSJhaPnLPbTZeklil64=";
+    #    })
+    #   ];
+    #  };
+    #  
+    #  upower = prev.upower.overrideAttrs {
+    #   checkPhase = "echo awawa";
+    #  };
+    #  power-profiles-daemon = prev.power-profiles-daemon.overrideAttrs {
+    #   checkPhase = "echo awawa";
+    #  };
+    #})
   ];
 
   # Common Packages

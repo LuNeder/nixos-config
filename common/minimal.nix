@@ -81,7 +81,18 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    settings.PermitRootLogin = "prohibit-password";
+    settings = { 
+      PermitRootLogin = "prohibit-password";
+      X11Forwarding = true;
+      Macs = [
+        # Default
+        "hmac-sha2-512-etm@openssh.com"
+        "hmac-sha2-256-etm@openssh.com"
+        "umac-128-etm@openssh.com"
+        # Non OpenSSH compatib
+        "hmac-sha2-256"
+      ];
+    };
   };
   programs.ssh.forwardX11 = true;
   programs.ssh.setXAuthLocation = true;
@@ -94,6 +105,9 @@
   ''command="poweroff",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTjuUP73g64SDoVNQIzarbeOxDeiVMpGmNrpaPr3D4k hass@Yoke''
   ];
   users.users."luana".openssh.authorizedKeys.keys = config.users.users."root".openssh.authorizedKeys.keys;
+
+  # Mosh
+  programs.mosh.enable = true;
 
   # Zsh
   environment.shells = [ pkgs.zsh ];

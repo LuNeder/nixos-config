@@ -50,6 +50,11 @@
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     #nixos-raspberrypi.inputs.nixpkgs.follows = "nixpkgs";
     pipkgs.url = "github:nvmd/nixpkgs/modules-with-keys-25.11";
+
+    librepods = {
+      url = "github:kavishdevar/librepods/linux/rust";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   

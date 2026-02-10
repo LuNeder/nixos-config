@@ -1,7 +1,7 @@
-bot: Auto Update (1 Failures, 4 Succeeded)
+bot: Auto Update (2 Failures, 3 Succeeded)
 
 Fabricator: SUCCESS
-Luana-Legion-5: SUCCESS
+Luana-Legion-5: FAIL
 Luana-X670E: FAIL
 Yoke: SUCCESS
 oraclevps: SUCCESS

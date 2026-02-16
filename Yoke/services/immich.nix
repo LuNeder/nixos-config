@@ -4,7 +4,7 @@
     host = "0.0.0.0";
     port = 2283;
     user = "immich";
-    group = "personalfiles"; # chmod 740, immich files shoudn't be edited externally :(
+    group = "personalfiles"; # using external libraries
     openFirewall = true;
     mediaLocation = "/mnt/pool1/PersonalFiles/Media/immich";
     machine-learning = {
@@ -22,7 +22,7 @@
           "database": {
             "cronExpression": "0 01 * * *",
             "enabled": true,
-            "keepLastAmount": 14
+            "keepLastAmount": 15
           }
         },
         "ffmpeg": {
@@ -266,7 +266,7 @@
     openFirewall = true;
   };
 
-  users.users.immich.extraGroups = [ "personalfiles" "viddownload" ];
+#  users.users.immich.extraGroups = [ "personalfiles" "viddownload" ];
 
 
 }

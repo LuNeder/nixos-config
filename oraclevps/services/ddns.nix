@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
   services.oink = {
-    enable = true;
+    #enable = true; # TODO: Fix sops
     apiKeyFile = config.sops.secrets.porkbunapi.path;
     secretApiKeyFile = config.sops.secrets.porkbunsecret.path;
     domains = [
@@ -19,8 +19,8 @@
     ];
   };
 
-  sops.secrets = {
-    porkbunapi.sopsFile = ../secrets.yaml;
-    porkbunsecret.sopsFile = ../secrets.yaml;
-  };
+  #sops.secrets = {
+  #  porkbunapi.sopsFile = ../secrets.yaml;
+  #  porkbunsecret.sopsFile = ../secrets.yaml;
+  #};
 }

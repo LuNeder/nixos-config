@@ -31,6 +31,7 @@
     pkgs.comic-relief
     pkgs.comic-mono
     pkgs.fira
+    pkgs.sitelen-seli-kiwen
   ];
 
 }

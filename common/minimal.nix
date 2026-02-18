@@ -129,4 +129,8 @@
     };
   };
 
+  fonts.packages = [
+    pkgs.powerline-fonts # zsh agnoster theme needs this
+  ];
+
 }

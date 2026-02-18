@@ -1,6 +1,21 @@
 { config, pkgs, lib, inputs, ... }: let
   hostName = "cloud.${config.var.fqdn}";
+  internalDomains = [
+    "cloud.${config.var.fqdn}"
+    "192.168.15.9"
+    "100.64.0.9"
+    "yoke"
+    "169.254.6.116" # Thunderbolt (have to figure out how to set static without breaing when disconnected)
+    hostName
+  ];
+  externalDomains = [
+    "yoke.fairy-scylla.ts.net" # Bypass local proxy for public access
+    "nuvem.da.sereia.gay"
+    "cloud.sereia.gay"
+    "cloud.rp.sereia.gay"
+  ];
 in {
+  imports = [ ./nextcloud-public.nix ];
   services = {
     nextcloud = {
       inherit hostName;
@@ -13,15 +28,8 @@ in {
       home = "/mnt/pool1/nextcloud";
 
       settings = {
-        trusted_domains = [
-          "cloud.${config.var.fqdn}"
-          "192.168.15.9"
-          "100.64.0.9"
-          "yoke.fairy-scylla.ts.net"
-          "yoke"
-          "169.254.6.116" # Thunderbolt (have to figure out how to set static without breaing when disconnected)
-          hostName
-        ];
+        trusted_domains = internalDomains ++ (if config.var.enablePublicNextcloud then externalDomains else []);
+        trusted_proxies = [ "100.64.0.33" ];
       };
       
       database.createLocally = true;
@@ -61,7 +69,7 @@ in {
       forceSSL = true;
       sslCertificate = "${config.var.sslCertificate}";
       sslCertificateKey = "${config.var.sslCertificateKey}";
-      serverAliases = config.services.nextcloud.settings.trusted_domains;
+      serverAliases = internalDomains;
     };
   };
 

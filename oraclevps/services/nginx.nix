@@ -1,4 +1,6 @@
 { config, pkgs, lib, inputs, ... }: {
+  imports = [ ../../Yoke/services/nextcloud-public.nix ];
+
   config.services.nginx = {
     enable = true;
     enableReload = true;
@@ -30,6 +32,25 @@
     '';
     locations."/" = {
       proxyPass = "http://100.64.0.9:8220";
+    };
+
+  };
+
+  # TODO: Not working
+  config.services.nginx.virtualHosts."cloud.${config.var.fqdn}" = lib.mkIf config.var.enablePublicNextcloud {
+    forceSSL = true;
+    enableACME = true;
+    serverAliases = [
+      "nuvem.da.sereia.gay"
+      "cloud.sereia.gay"
+    ];
+
+    # Bypass the self-signed certificate
+    extraConfig = ''
+      proxy_ssl_verify off;
+    '';
+    locations."/" = {
+      proxyPass = "https://100.64.0.9";
     };
   };
 

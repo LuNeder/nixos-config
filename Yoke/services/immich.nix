@@ -150,7 +150,7 @@
           "enabled": true,
           "facialRecognition": {
             "enabled": true,
-            "maxDistance": 0.5,
+            "maxDistance": 0.4,
             "minFaces": 3,
             "minScore": 0.7,
             "modelName": "buffalo_l"

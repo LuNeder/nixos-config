@@ -173,14 +173,14 @@
     pkgs.bitwarden-desktop
     pkgs.libsecret
     # inputs.compiz-reloaded.packages.${pkgs.stdenv.hostPlatform.system}.default # Compiz
-    inputs.compiz.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # inputs.compiz.packages.${pkgs.stdenv.hostPlatform.system}.default # todo: Broken (maybe just updating fixes it?)
     pkgs.python3Packages.pygobject3
     pkgs.pkgsNoCu.thunderbird
     pkgs.uutils-coreutils-noprefix # not good enough, here just while I don't fix the full replace
     pkgs.gparted
     pkgs.ntfs3g
     pkgs.e2fsprogs
-    pkgs.mate.engrampa
+    pkgs.engrampa
     pkgs.baobab
     pkgs.vscodium
     pkgs.goverlay
@@ -282,6 +282,7 @@
     pkgs.kdePackages.phonon-vlc # Okular pdf animations
     pkgs.vlc
     pkgs.kdePackages.qtstyleplugin-kvantum # KDE Theming
+    pkgs.kdePackages.kamera
   ];
 
   programs.criu.enable = true;
@@ -393,20 +394,20 @@
     vulkan-loader
     wayland
     x264
-    xorg.libX11
-    xorg.libXScrnSaver
-    xorg.libXcomposite
-    xorg.libXcursor
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libxcb
-    xorg.libxkbfile
-    xorg.libxshmfence
+    libX11
+    libXScrnSaver
+    libXcomposite
+    libXcursor
+    libXdamage
+    libXext
+    libXfixes
+    libXi
+    libXrandr
+    libXrender
+    libXtst
+    libxcb
+    libxkbfile
+    libxshmfence
     zlib
     libplist
     libsForQt5.qwt

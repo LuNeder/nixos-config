@@ -2,18 +2,25 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports = [ 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../common/common.nix
+    ../common/minimal.nix
     ./services/klipper/klipper.nix
+    ./services/klipper/klipperscreen.nix
+    inputs.nixos-raspberrypi.nixosModules.sd-image # nix build .#nixosConfigurations.Fabricator.config.system.build.sdImage --option sandbox false --impure --show-trace
   ];
 
+  # SD Card
+  sdImage.compressImage = false;
+ # boot.loader.generic-extlinux-compatible.enable = lib.mkForce false;
+  users.users.root.initialHashedPassword = lib.mkForce "";
+
   # Bootloader.
-  boot.loader.raspberryPi.bootloader = "kernel";
+  boot.loader.raspberry-pi.bootloader = "kernel";
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
 

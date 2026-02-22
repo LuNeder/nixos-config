@@ -20,20 +20,25 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/44444444-4444-4444-8888-888888888888";
+    { device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
       options = [ "noatime" ];
     };
 
   fileSystems."/boot/firmware" =
-    { device = "systemd-1";
-      fsType = "autofs";
+    { device = "/dev/disk/by-label/FIRMWARE";
+      fsType = "vfat";
       options = [
         "noatime"
         "noauto"
         "x-systemd.automount"
         "x-systemd.idle-timeout=1min"
       ];
+    };
+
+  fileSystems."/mnt/usb" =
+    { device = "/dev/disk/by-uuid/bdaaeaa1-68d4-4c37-94c2-5cad564cca8e";
+      fsType = "ext4";
     };
 
   swapDevices = [ ];

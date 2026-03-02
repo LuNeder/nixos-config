@@ -110,15 +110,15 @@
   environment.systemPackages = [
   #  pkgs.vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  pkgs.curl
-    (pkgs.icloudpd.overrideAttrs {
-       patches = [
-        (pkgs.fetchpatch {
-          name = "1290.patch";
-          url = "https://github.com/icloud-photos-downloader/icloud_photos_downloader/pull/1290.patch";
-          hash = "sha256-E4dNxLMkskwf5EqncEKJRBnJPW6Uq38Wj2qvKDPiGW0=";
-        })
-       ];
-    })
+    #(pkgs.icloudpd.overrideAttrs { # Broken
+    #   patches = [
+    #    (pkgs.fetchpatch {
+    #      name = "1290.patch";
+    #      url = "https://github.com/icloud-photos-downloader/icloud_photos_downloader/pull/1290.patch";
+    #      hash = "sha256-E4dNxLMkskwf5EqncEKJRBnJPW6Uq38Wj2qvKDPiGW0=";
+    #    })
+    #   ];
+    #})
   ];
  
   programs.git.enable = true;

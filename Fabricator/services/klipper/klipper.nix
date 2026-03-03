@@ -32,7 +32,6 @@
     port = 7125;
     user = "root";
     group = "root";
-    stateDir = "/mnt/usb";
     settings = {
       octoprint_compat = { };
       history = { };

@@ -635,11 +635,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1772329185,
-        "narHash": "sha256-6Ix3pCbNDWnWsJc4v8rezTqOvQH1xLE/boKGC+4lOa8=",
+        "lastModified": 1772480005,
+        "narHash": "sha256-26+hhUOoBPEkggrUEixBC8rCCYtAx4u4cBOm2HKYKOc=",
         "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "1515d04fbe8405e36cc689464c79d82be4d6e93b",
+        "rev": "2091ba271cdbd79a79ab6562dc61d7ea49725f04",
         "type": "github"
       },
       "original": {

@@ -6,10 +6,10 @@
     "100.64.0.9"
     "yoke"
     "169.254.6.116" # Thunderbolt (have to figure out how to set static without breaing when disconnected)
+    "yoke.fairy-scylla.ts.net"
     hostName
   ];
   externalDomains = [
-    "yoke.fairy-scylla.ts.net" # Bypass local proxy for public access
     "nuvem.da.sereia.gay"
     "cloud.sereia.gay"
     "cloud.rp.sereia.gay"
@@ -66,7 +66,7 @@ in {
     };
 
     nginx.virtualHosts."${hostName}" = {
-      forceSSL = true;
+      forceSSL = false; # tunnel
       sslCertificate = "${config.var.sslCertificate}";
       sslCertificateKey = "${config.var.sslCertificateKey}";
       serverAliases = internalDomains;

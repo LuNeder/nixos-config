@@ -45,12 +45,8 @@
       "cloud.sereia.gay"
     ];
 
-    # Bypass the self-signed certificate
-    extraConfig = ''
-      proxy_ssl_verify off;
-    '';
     locations."/" = {
-      proxyPass = "https://100.64.0.9";
+      proxyPass = "http://100.64.0.9";
     };
   };
 

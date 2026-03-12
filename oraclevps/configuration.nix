@@ -5,6 +5,7 @@
     ../common/minimal.nix
     ./services/nginx.nix
     ./services/ddns.nix
+    ./services/immich-public-proxy.nix
   ];
 
   # Workaround for https://github.com/NixOS/nix/issues/8502

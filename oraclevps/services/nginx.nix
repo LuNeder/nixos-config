@@ -33,7 +33,21 @@
     locations."/" = {
       proxyPass = "http://100.64.0.9:8220";
     };
+  };
 
+  config.services.nginx.virtualHosts."photos.${config.var.fqdn}" = {
+    forceSSL = true;
+    enableACME = true;
+    serverAliases = [
+      "fotos.da.sereia.gay"
+      #"photos.sereia.gay"
+    ];
+    extraConfig = ''
+      client_max_body_size 30M;
+    '';
+    locations."/" = {
+      proxyPass = "http://[::1]:${toString config.services.immich-public-proxy.port}";
+    };
   };
 
   # TODO: Not working

@@ -761,11 +761,11 @@
         "snowfall-lib": "snowfall-lib_3"
       },
       "locked": {
-        "lastModified": 1770599148,
-        "narHash": "sha256-vlbXCo/K7iUw7GW5mIBT5mBVVGmok3zvhtsanacF2JA=",
+        "lastModified": 1773550843,
+        "narHash": "sha256-GWtwNVw20dH/AThR5IpS2Tub3/yNKe2GOqagnRAkkKU=",
         "owner": "snowfallorg",
         "repo": "snow",
-        "rev": "92fd028ba5b592bbbb4822dbd072957e16dbaf97",
+        "rev": "da139d43eabf55ad5e606409649746279ca9af0d",
         "type": "github"
       },
       "original": {
@@ -851,11 +851,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773096132,
-        "narHash": "sha256-M3zEnq9OElB7zqc+mjgPlByPm1O5t2fbUrH3t/Hm5Ag=",
+        "lastModified": 1773550941,
+        "narHash": "sha256-wa/++bL2QeMUreNFBZEWluQfOYB0MnQIeGNMuaX9sfs=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "d1ff3b1034d5bab5d7d8086a7803c5a5968cd784",
+        "rev": "c469b6885f0dcd5c7c56bd935a0f08dbcd9e79e1",
         "type": "github"
       },
       "original": {

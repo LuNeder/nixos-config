@@ -1,0 +1,230 @@
+building the system configuration...
+warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
+Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay https://nixos-raspberrypi.cachix.org' from ~/.local/share/nix/trusted-settings.json.
+Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 310 ms
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 621 ms
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 1081 ms
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 2124 ms
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+         response body:
+
+         <html>
+         <head><title>502 Bad Gateway</title></head>
+         <body>
+         <center><h1>502 Bad Gateway</h1></center>
+         <hr><center>nginx</center>
+         </body>
+         </html>
+copying path '/nix/store/cy6cvjfw0729jx30b2khdbjak8wbbcs1-source' from 'https://cache.nixos.org'...
+error:
+       … while calling anonymous lambda
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/attrsets.nix:1691:14:
+         1690|         zipAttrsWith (
+         1691|           n: values:
+             |              ^
+         1692|           let
+
+       … while calling the 'head' builtin
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/attrsets.nix:1696:13:
+         1695|           if length values == 1 || pred here (elemAt values 1) (head values) then
+         1696|             head values
+             |             ^
+         1697|           else
+
+       … while calling anonymous lambda
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/attrsets.nix:1188:17:
+         1187|         mapAttrs (
+         1188|           name: value:
+             |                 ^
+         1189|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
+
+       … from call site
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/attrsets.nix:1189:85:
+         1188|           name: value:
+         1189|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
+             |                                                                                     ^
+         1190|         );
+
+       … while calling anonymous lambda
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:275:71:
+          274|           # For definitions that have an associated option
+          275|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
+             |                                                                       ^
+          276|
+
+       … while evaluating the attribute 'value'
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1118:7:
+         1117|     // {
+         1118|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |       ^
+         1119|       inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `system.build.toplevel':
+
+       … while evaluating the attribute 'mergedValue'
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1192:5:
+         1191|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+         1192|     mergedValue =
+             |     ^
+         1193|       if isDefined then
+
+       … while evaluating a branch condition
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1193:7:
+         1192|     mergedValue =
+         1193|       if isDefined then
+             |       ^
+         1194|         if type.merge ? v2 then
+
+       … while evaluating the attribute 'values'
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1186:9:
+         1185|       {
+         1186|         values = defsSorted;
+             |         ^
+         1187|         inherit (defsFiltered) highestPrio;
+
+       … while evaluating a branch condition
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1180:11:
+         1179|           # Avoid sorting if we don't have to.
+         1180|           if any (def: def.value._type or "" == "order") defsFiltered.values then
+             |           ^
+         1181|             sortProperties defsFiltered.values
+
+       … while calling the 'any' builtin
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1180:14:
+         1179|           # Avoid sorting if we don't have to.
+         1180|           if any (def: def.value._type or "" == "order") defsFiltered.values then
+             |              ^
+         1181|             sortProperties defsFiltered.values
+
+       … while evaluating the attribute 'values'
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1360:7:
+         1359|     {
+         1360|       values = concatMap (def: if getPrio def == highestPrio then [ (strip def) ] else [ ]) defs;
+             |       ^
+         1361|       inherit highestPrio;
+
+       … while calling the 'concatMap' builtin
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1360:16:
+         1359|     {
+         1360|       values = concatMap (def: if getPrio def == highestPrio then [ (strip def) ] else [ ]) defs;
+             |                ^
+         1361|       inherit highestPrio;
+
+       … while calling the 'concatMap' builtin
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1160:26:
+         1159|         # Process mkMerge and mkIf properties.
+         1160|         defsNormalized = concatMap (
+             |                          ^
+         1161|           m:
+
+       … while calling anonymous lambda
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1161:11:
+         1160|         defsNormalized = concatMap (
+         1161|           m:
+             |           ^
+         1162|           map (
+
+       … while calling the 'map' builtin
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1162:11:
+         1161|           m:
+         1162|           map (
+             |           ^
+         1163|             value:
+
+       … while evaluating definitions from `/nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/nixos/modules/system/activation/top-level.nix':
+
+       … from call site
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1171:80:
+         1170|               }
+         1171|           ) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+             |                                                                                ^
+         1172|         ) defs;
+
+       … while calling 'dischargeProperties'
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1311:5:
+         1310|   dischargeProperties =
+         1311|     def:
+             |     ^
+         1312|     if def._type or "" == "merge" then
+
+       … while evaluating a branch condition
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:1312:5:
+         1311|     def:
+         1312|     if def._type or "" == "merge" then
+             |     ^
+         1313|       concatMap dischargeProperties def.contents
+
+       … while evaluating the attribute 'value'
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/modules.nix:805:21:
+          804|             inherit (module) file;
+          805|             inherit value;
+             |                     ^
+          806|           }) module.config
+
+       … from call site
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/nixos/modules/system/activation/top-level.nix:81:26:
+           80|   # Handle assertions and warnings
+           81|   baseSystemAssertWarn = lib.asserts.checkAssertWarn config.assertions config.warnings baseSystem;
+             |                          ^
+           82|
+
+       … while calling 'checkAssertWarn'
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/asserts.nix:193:27:
+          192|   checkAssertWarn =
+          193|     assertions: warnings: val:
+             |                           ^
+          194|     let
+
+       … while calling the 'throw' builtin
+         at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/asserts.nix:198:7:
+          197|     if failedAssertions != [ ] then
+          198|       throw "\nFailed assertions:\n${concatStringsSep "\n" (map (x: "- ${x}") failedAssertions)}"
+             |       ^
+          199|     else
+
+       error:
+       Failed assertions:
+       - The kernel module and the userspace tooling versions are not matching, this is an unsupported usecase.
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Fabricator".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

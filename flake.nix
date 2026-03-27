@@ -11,6 +11,8 @@
   };
   inputs = { nixpkgs.url = "github:LuNeder/nixpkgs/catask-unstable-test"; 
 
+    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-25.11"; 
+
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 

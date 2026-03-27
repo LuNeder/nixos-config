@@ -13,6 +13,7 @@
       # pkgsMusl = import inputs.nixpkgs { config.allowUnfree = config.nixpkgs.config.allowUnfree;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${final.stdenv.hostPlatform.linuxArch}-unknown-linux-musl";}; # config.cudaSupport = true; config.cudaVersion = "12";}; 
       pkgsNoCu = import inputs.nixpkgs { config.allowUnfree = config.nixpkgs.config.allowUnfree;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${final.stdenv.hostPlatform.config}"; }; # TODO: Nix ignores when I change this to musl...
       pkgsCu = import inputs.nixpkgs {  config.allowUnfree = config.nixpkgs.config.allowUnfree;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${final.stdenv.hostPlatform.config}"; config.cudaSupport = true; config.cudaVersion = "12";}; # For machines without full cudaSupport enabled
+      pkgsOld = import inputs.nixpkgs-old {  config.allowUnfree = config.nixpkgs.config.allowUnfree;  localSystem.system = final.stdenv.hostPlatform.system; localSystem.config = "${final.stdenv.hostPlatform.linuxArch}-unknown-linux-musl"; config.cudaSupport = true; config.cudaVersion = "12";};
     })
 
     #(final: prev: {
@@ -43,7 +44,7 @@
     pkgs.lm_sensors
     pkgs.ifuse
     pkgs.libimobiledevice # Needed to connect iPhone
-    pkgs.neofetch
+    pkgs.pkgsOld.neofetch # Removed from nixpkgs bc nixos maintainers suck
     pkgs.lolcat
     pkgs.direnv
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages

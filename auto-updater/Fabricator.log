@@ -2,6 +2,62 @@ building the system configuration...
 warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
 Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay https://nixos-raspberrypi.cachix.org' from ~/.local/share/nix/trusted-settings.json.
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 332 ms
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 685 ms
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 1032 ms
+warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+       response body:
+
+       <html>
+       <head><title>502 Bad Gateway</title></head>
+       <body>
+       <center><h1>502 Bad Gateway</h1></center>
+       <hr><center>nginx</center>
+       </body>
+       </html>; retrying in 2109 ms
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+         response body:
+
+         <html>
+         <head><title>502 Bad Gateway</title></head>
+         <body>
+         <center><h1>502 Bad Gateway</h1></center>
+         <hr><center>nginx</center>
+         </body>
+         </html>
+copying path '/nix/store/cy6cvjfw0729jx30b2khdbjak8wbbcs1-source' from 'https://cache.nixos.org'...
 error:
        … while calling anonymous lambda
          at /nix/store/34r6krygvwvxll74244xxhbxq91f9gr9-source/lib/attrsets.nix:1691:14:

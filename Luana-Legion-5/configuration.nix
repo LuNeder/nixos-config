@@ -449,7 +449,9 @@
     zlib
   ]);
 
-
+  # Run arm64 binaries
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  
   # VirtualBox
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "luana" ];

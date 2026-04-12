@@ -20,7 +20,7 @@ in {
     nextcloud = {
       inherit hostName;
 
-      package = pkgs.nextcloud32;
+      package = pkgs.nextcloud33;
       enable = true;
 
       https = true;
@@ -42,11 +42,11 @@ in {
       extraApps = {
         inherit (config.services.nextcloud.package.packages.apps) onlyoffice contacts calendar 
         tasks notes forms memories previewgenerator;
-        duplicatefinder = pkgs.fetchNextcloudApp {
-          url = "https://github.com/eldertek/duplicatefinder/releases/download/v1.7.3/duplicatefinder-v1.7.3.tar.gz";
-          sha256 = "sha256-VoA0jHS2Nkfz/c1UKSKFTdzFGbXV2/chhWy9vbGYOSc=";
-          license = "agpl3Only";
-        };
+        #duplicatefinder = pkgs.fetchNextcloudApp { # https://github.com/eldertek/duplicatefinder/pull/169
+        #  url = "https://github.com/eldertek/duplicatefinder/releases/download/v1.7.3/duplicatefinder-v1.7.3.tar.gz";
+        #  sha256 = "sha256-VoA0jHS2Nkfz/c1UKSKFTdzFGbXV2/chhWy9vbGYOSc=";
+        #  license = "agpl3Only";
+        #};
       };
       extraAppsEnable = true;
       
@@ -66,7 +66,7 @@ in {
     };
 
     nginx.virtualHosts."${hostName}" = {
-      forceSSL = false; # tunnel
+      forceSSL = true; # tunnel
       sslCertificate = "${config.var.sslCertificate}";
       sslCertificateKey = "${config.var.sslCertificateKey}";
       serverAliases = internalDomains;

@@ -93,34 +93,34 @@
 
       websocket_api = {};
 
-      template = [ 
-        {
-          trigger = [
-            {
-              trigger = "webhook";
-              webhook_id = "!include ./homepod-temphum-webhook.yaml";
-            }
-          ];
-        }
-        { 
-          sensor = [
-          {
-            name = "Umidade Relativa do Ar";
-            state = "{{ trigger.json.humidity }}";
-            unique_id = "90909090";
-            device_class = "humidity";
-            state_class = "measurement";
-          }
-          {
-            name = "Temperatura Casa";
-            state = "{{ trigger.json.temperature }}";
-            unique_id = "24242424";
-            device_class = "temperature";
-            state_class = "measurement";
-          }
-          ];
-        } 
-      ];
+      #template = [ 
+      #  {
+      #    trigger = [
+      #      {
+      #        trigger = "webhook";
+      #        webhook_id = "!include ./homepod-temphum-webhook.yaml";
+      #      }
+      #    ];
+      #  }
+      #  { 
+      #    sensor = [
+      #    {
+      #      name = "Umidade Relativa do Ar";
+      #      state = "{{ trigger.json.humidity }}";
+      #      unique_id = "90909090";
+      #      device_class = "humidity";
+      #      state_class = "measurement";
+      #    }
+      #    {
+      #      name = "Temperatura Casa";
+      #      state = "{{ trigger.json.temperature }}";
+      #      unique_id = "24242424";
+      #      device_class = "temperature";
+      #      state_class = "measurement";
+      #    }
+      #    ];
+      #  } 
+      #];
 
       automation = "!include automations.yaml"; # It seems I need to manually create this, content being just  "[]" (without the quotes)
 

@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "catask": {
+      "locked": {
+        "lastModified": 1769366771,
+        "narHash": "sha256-or8mKcPbBzX8bRLRd33xjoJpXPAPXI57PJkVV7CUJuA=",
+        "owner": "LuNeder",
+        "repo": "nixpkgs",
+        "rev": "28e075150e182feb3243ecc08221b02dbe326b50",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LuNeder",
+        "ref": "catask",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "compiz": {
       "inputs": {
         "nixpkgs": [
@@ -355,11 +371,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775900011,
-        "narHash": "sha256-QUGu6CJYFQ5AWVV0n3/FsJyV+1/gj7HSDx68/SX9pwM=",
+        "lastModified": 1776015217,
+        "narHash": "sha256-PUb9TTfqsA1g+aHJt5s8tIP7QdX8xHeOtDMPVRuylfM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b0569dc6ec1e6e7fefd8f6897184e4c191cd768e",
+        "rev": "f6196e5b4d3f0168d09feab9ba678fa18ca58cbb",
         "type": "github"
       },
       "original": {
@@ -651,16 +667,16 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1774453395,
-        "narHash": "sha256-zYePMDy2gqNfexaZRA0HrhTybQgwjZtLGrN1KRfeXFg=",
-        "owner": "LuNeder",
+        "lastModified": 1775710090,
+        "narHash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c1c68bc85b7640d01690c4e8d5f4fbb5e1ecb9b9",
+        "rev": "4c1018dae018162ec878d42fec712642d214fdfa",
         "type": "github"
       },
       "original": {
-        "owner": "LuNeder",
-        "ref": "catask-unstable-test",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -729,6 +745,7 @@
     },
     "root": {
       "inputs": {
+        "catask": "catask",
         "compiz": "compiz",
         "compiz-reloaded": "compiz-reloaded",
         "home-manager": "home-manager",

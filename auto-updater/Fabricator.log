@@ -12,7 +12,7 @@ warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-i
        <center><h1>502 Bad Gateway</h1></center>
        <hr><center>nginx</center>
        </body>
-       </html>; retrying in 330 ms
+       </html>; retrying in 333 ms
 warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
        response body:
@@ -23,7 +23,7 @@ warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-i
        <center><h1>502 Bad Gateway</h1></center>
        <hr><center>nginx</center>
        </body>
-       </html>; retrying in 586 ms
+       </html>; retrying in 591 ms
 warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
        response body:
@@ -34,7 +34,7 @@ warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-i
        <center><h1>502 Bad Gateway</h1></center>
        <hr><center>nginx</center>
        </body>
-       </html>; retrying in 1117 ms
+       </html>; retrying in 1299 ms
 warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
        response body:
@@ -45,7 +45,7 @@ warning: error: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-i
        <center><h1>502 Bad Gateway</h1></center>
        <hr><center>nginx</center>
        </body>
-       </html>; retrying in 2552 ms
+       </html>; retrying in 2320 ms
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
          response body:

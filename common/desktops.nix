@@ -10,6 +10,7 @@
     pkgs.xfce4-terminal
     pkgs.tuba
     inputs.librepods.packages.${pkgs.stdenv.hostPlatform.system}.default
+    pkgs.zola
   ];
 
   # TeamViewer

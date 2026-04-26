@@ -283,6 +283,7 @@
     pkgs.kdePackages.phonon-vlc # Okular pdf animations
     pkgs.vlc
     pkgs.kdePackages.qtstyleplugin-kvantum # KDE Theming
+    pkgs.kdePackages.qtwebsockets # for KDE Home Assistant applet
     pkgs.kdePackages.kamera
   ];
 

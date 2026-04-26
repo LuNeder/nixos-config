@@ -207,7 +207,7 @@
     ];})
     pkgs.sg3_utils
     pkgs.protontricks
-    pkgs.bottles
+    # pkgs.bottles # Broken
     pkgs.prusa-slicer
     pkgs.weylus
     pkgs.pkgsNoCu.krita

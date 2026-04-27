@@ -207,7 +207,7 @@
     ];})
     pkgs.sg3_utils
     pkgs.protontricks
-    pkgs.bottles
+    # pkgs.bottles # Broken
     pkgs.prusa-slicer
     pkgs.weylus
     pkgs.pkgsNoCu.krita
@@ -283,6 +283,7 @@
     pkgs.kdePackages.phonon-vlc # Okular pdf animations
     pkgs.vlc
     pkgs.kdePackages.qtstyleplugin-kvantum # KDE Theming
+    pkgs.kdePackages.qtwebsockets # for KDE Home Assistant applet
     pkgs.kdePackages.kamera
   ];
 

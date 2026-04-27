@@ -182,17 +182,34 @@
     };
   };
 
+  networking.firewall.logRefusedPackets = true;
   networking.firewall.allowedTCPPorts = [ 
     # HomeKit Bridge  
     21063 21064 5353 
     # Other ports listed as being used by HA (netstat -ln), at least 1 of these also needed by the Bridge
     8123 40000 47831 34041 1900 35698 39446 42277 59682
+    # Audio to HomePod
+    554 3689 34754 54751 58448 61691 49458 56477 52107
+  ];
+  networking.firewall.allowedTCPPortRanges = [
+    # Audio to HomePod
+    { from = 42000; to = 43000; }
+    { from = 30000; to = 65535; }
+    #{ from = 8000; to = 9000; }
   ];
   networking.firewall.allowedUDPPorts = [ 
     # HomeKit Bridge  
     21063 21064 5353 
     # Other ports listed as being used by HA (netstat -ln), at least 1 of these also needed by the Bridge
     8123 40000 47831 34041 1900 35698 39446 42277 59682
+    # Audio to HomePod
+    554 3689 34754 54751 58448 61691 49458 56477 52107
+  ];
+  networking.firewall.allowedUDPPortRanges = [
+    # Audio to HomePod
+    { from = 42000; to = 43000; }
+    { from = 30000; to = 65535; }
+    #{ from = 8000; to = 9000; }
   ];
 
   # Broken

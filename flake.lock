@@ -743,6 +743,22 @@
         "type": "github"
       }
     },
+    "pv-update": {
+      "locked": {
+        "lastModified": 1778626712,
+        "narHash": "sha256-pViTSnAE2kT5T5E3p+Sx4bpqM73pAriu4A8LYhFKcPQ=",
+        "owner": "LuNeder",
+        "repo": "nixpkgs",
+        "rev": "730f51ebaa3820a0c028134c39868d3827664326",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LuNeder",
+        "ref": "porn-vault-update-20260512",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "catask": "catask",
@@ -759,6 +775,7 @@
         "nixpkgs-old": "nixpkgs-old",
         "pipkgs": "pipkgs",
         "plasma-manager": "plasma-manager",
+        "pv-update": "pv-update",
         "snow": "snow",
         "sops-nix": "sops-nix",
         "systems": "systems_8",

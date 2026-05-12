@@ -50,7 +50,7 @@
         unit_system = "metric";
         temperature_unit = "C";
         time_zone = config.time.timeZone;
-        external_url = "https://ha.${config.var.fqdn}";
+        external_url = "http://ha.${config.var.fqdn}:8123";
         internal_url = "http://192.168.15.9";
       };
 
@@ -83,12 +83,14 @@
         # TODO: breaks http
         #ssl_certificate = "${config.var.sslCertificate}";
         #ssl_key = "${config.var.sslCertificateKey}";
+        base_url = "http://ha.yoke.sereia.gay:8123";
         cors_allowed_origins = [
           "https://ha.${config.var.fqdn}"
           "https://100.64.0.9"
           "https://192.168.15.9"
         ];
       };
+
       api = {};
 
       websocket_api = {};

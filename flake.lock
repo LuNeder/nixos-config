@@ -745,16 +745,16 @@
     },
     "pv-update": {
       "locked": {
-        "lastModified": 1778626712,
-        "narHash": "sha256-pViTSnAE2kT5T5E3p+Sx4bpqM73pAriu4A8LYhFKcPQ=",
+        "lastModified": 1779029332,
+        "narHash": "sha256-5pcHkanFo3WBtOvobV2i5yjOX38XLGR3yGt876o4CqU=",
         "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "730f51ebaa3820a0c028134c39868d3827664326",
+        "rev": "c0f995e3ab86c079f70c1bc8b2300489f56e919e",
         "type": "github"
       },
       "original": {
         "owner": "LuNeder",
-        "ref": "porn-vault-update-20260512",
+        "ref": "porn-vault-update-20260517",
         "repo": "nixpkgs",
         "type": "github"
       }

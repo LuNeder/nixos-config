@@ -59,7 +59,7 @@
     };
 
     catask.url = "github:LuNeder/nixpkgs/catask"; 
-    pv-update.url = "github:LuNeder/nixpkgs/porn-vault-update-20260512";
+    pv-update.url = "github:LuNeder/nixpkgs/porn-vault-update-20260517";
   };
 
   

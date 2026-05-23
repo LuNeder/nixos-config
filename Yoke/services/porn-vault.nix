@@ -47,6 +47,8 @@
     };
   };
 
+  systemd.services.porn-vault.environment.PV_LOG = "trace";
+
   services.nginx.virtualHosts."pornvault.${config.var.fqdn}" = {
     forceSSL = true;
     sslCertificate = "${config.var.sslCertificate}";

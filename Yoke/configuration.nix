@@ -25,6 +25,7 @@
       ./services/yt-dlp/yt-dlp-webui.nix
       ./services/catask/catask.nix
       ./services/immich.nix
+      ./services/radicale.nix
     ];
 
   # Bootloader.

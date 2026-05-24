@@ -64,6 +64,22 @@
     };
   };
 
+  config.services.nginx.virtualHosts."agenda.${config.var.fqdn}" = {
+    forceSSL = true;
+    enableACME = true;
+    serverAliases = [
+      "agenda.da.sereia.gay"
+    ];
+    extraConfig = ''
+      proxy_set_header  X-Script-Name /;
+      proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_pass_header Authorization;
+    '';
+    locations."/" = {
+      proxyPass = "http://100.64.0.9:5232";
+    };
+  };
+
   # Enable acme for usage with nginx vhosts
   config.security.acme = {
     defaults.email = "luana@luana.dev.br";

@@ -10,7 +10,16 @@
     pkgs.xfce4-terminal
     pkgs.tuba
     inputs.librepods.packages.${pkgs.stdenv.hostPlatform.system}.default
+    pkgs.rar # broken in aarch64
+    pkgs.planify # To-do lists
   ];
+
+  # Thunderbird
+  programs.thunderbird = {
+    enable = true;
+    package = pkgs.pkgsNoCu.thunderbird;
+    preferencesStatus = "default";
+  };
 
   # TeamViewer
   services.teamviewer.enable = true;

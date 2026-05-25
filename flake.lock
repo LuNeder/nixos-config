@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "buttui": {
+      "locked": {
+        "lastModified": 1779735632,
+        "narHash": "sha256-/od1LAV7lL7dAr9tnGE6u57xWFWbbAK6+yDIq34+7Xw=",
+        "owner": "LuNeder",
+        "repo": "nixpkgs",
+        "rev": "7a2314d88a91fa68c9e236b78e3d9454cc0109ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LuNeder",
+        "ref": "buttui",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "catask": {
       "locked": {
         "lastModified": 1769366771,
@@ -761,6 +777,7 @@
     },
     "root": {
       "inputs": {
+        "buttui": "buttui",
         "catask": "catask",
         "compiz": "compiz",
         "compiz-reloaded": "compiz-reloaded",

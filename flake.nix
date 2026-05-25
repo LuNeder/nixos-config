@@ -60,6 +60,7 @@
 
     catask.url = "github:LuNeder/nixpkgs/catask"; 
     pv-update.url = "github:LuNeder/nixpkgs/porn-vault-update-20260517";
+    buttui.url = "github:LuNeder/nixpkgs/buttui";
   };
 
   

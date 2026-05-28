@@ -761,11 +761,11 @@
     },
     "pv-update": {
       "locked": {
-        "lastModified": 1779564896,
-        "narHash": "sha256-3bOE6ThwmjZI9yKJhYaS3FkNe1QQ//r+opz3lIjF6tw=",
+        "lastModified": 1779993731,
+        "narHash": "sha256-x3coZiAsQRwBAdhfad7WasKDnivKxv+66ettjolXtkU=",
         "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "711a11ddf81a69eb9d6b89414f27dfa51d3863f2",
+        "rev": "2ef26ed298f029a81a33272c879fb7be8dccb8c1",
         "type": "github"
       },
       "original": {

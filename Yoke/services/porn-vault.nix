@@ -6,6 +6,7 @@
     enable = true;
     package = inputs.pv-update.legacyPackages.x86_64-linux.porn-vault;
     openFirewall = true;
+    #cmdArgs = "--generate-missing-image-thumbnails";
     settings = {
       import = {
         images = [
@@ -36,6 +37,8 @@
           }
         ];
       };
+
+      matching.ignoreSingleNames = false;
       
       persistence = {
         backup = {

@@ -9,9 +9,15 @@
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
     ];
   };
-  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
 
-    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-25.11"; 
+    system-manager = {
+      url = "github:numtide/system-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
@@ -65,7 +71,7 @@
 
   
 
-  outputs = { self, nixpkgs, systems, nix-flatpak, nixos-raspberrypi, pipkgs, home-manager, plasma-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, nixos-raspberrypi, pipkgs, home-manager, system-manager, plasma-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 
@@ -91,6 +97,17 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./oraclevps/configuration.nix ];
         });
+      };
+      systemConfigs = {
+        luana-note9s = system-manager.lib.makeSystemConfig {
+          # Specify your system configuration modules here, for example,
+          # the path to your system.nix.
+          modules = [ 
+              ./luana-note9s/system.nix 
+          ];
+
+          # Optionally specify extraSpecialArgs and overlays
+        };
       };
     };
 }

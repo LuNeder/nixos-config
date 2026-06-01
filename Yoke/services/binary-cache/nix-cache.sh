@@ -75,6 +75,20 @@ do
     }
 done
 
+# system-manager configs
+for i in $(nix eval --raw --apply 'x: builtins.concatStringsSep " " (builtins.attrNames x)' .#systemConfigs); 
+do
+    { 
+        {
+            echo Building $i && nix build .#systemConfigs.$i $EXTRABUILDOPTS --option eval-cache false --show-trace --cores $CORES -j $JOBS > ./auto-updater/$i.log 2>&1
+        } && { 
+            SNUM=$((SNUM+1)) && echo "$i: SUCCESS" && echo "$i: SUCCESS" >> ./auto-updater/results.txt && rm "./auto-updater/$i.log" && rm -f "/nix/var/nix/gcroots/binary-cache-builder/$i" && ln -s "$(readlink -f ./result)" "/nix/var/nix/gcroots/binary-cache-builder/$i" && rm ./result
+        }
+    } || { 
+        FNUM=$((FNUM+1)) && echo "$i: FAIL" && echo "$i: FAIL" >> ./auto-updater/results.txt && rm -f ./result
+    }
+done
+
 sed -i "s/%XYZREPLACEMENUMS%/$FNUM Failures, $SNUM Succeeded/" ./auto-updater/results.txt
 
 git add -A > /dev/null

@@ -56,6 +56,7 @@
     pkgs.tree
     pkgs.libfaketime
     pkgs.brush
+    pkgs.fdupes
   ];
 
   # Tmux

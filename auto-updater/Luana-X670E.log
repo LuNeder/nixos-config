@@ -2,61 +2,6 @@ building the system configuration...
 warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
 Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay https://nixos-raspberrypi.cachix.org' from ~/.local/share/nix/trusted-settings.json.
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
-warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
-
-response body:
-
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<center><h1>502 Bad Gateway</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>; retrying in 317 ms (attempt 1/5)
-warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
-
-response body:
-
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<center><h1>502 Bad Gateway</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>; retrying in 538 ms (attempt 2/5)
-warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
-
-response body:
-
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<center><h1>502 Bad Gateway</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>; retrying in 1198 ms (attempt 3/5)
-warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
-
-response body:
-
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<center><h1>502 Bad Gateway</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>; retrying in 2062 ms (attempt 4/5)
-warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
-
-         response body:
-
-         <html>
-         <head><title>502 Bad Gateway</title></head>
-         <body>
-         <center><h1>502 Bad Gateway</h1></center>
-         <hr><center>nginx</center>
-         </body>
-         </html>
 evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has been renamed to 'libx11'
 evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
 evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
@@ -73,10 +18,10 @@ error:
              |            ^
            38|
 
-       … while evaluating derivation 'nixos-system-Luana-Legion-5-26.11.20260531.331800d'
+       … while evaluating derivation 'nixos-system-Luana-X670E-26.11.20260531.331800d'
          whose name attribute is located at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
-       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-Legion-5-26.11.20260531.331800d'
+       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-X670E-26.11.20260531.331800d'
          at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/nixos/modules/system/activation/top-level.nix:63:7:
            62|       allowSubstitutes = false;
            63|       buildCommand = systemBuilder;
@@ -343,7 +288,7 @@ error:
              |         ^
           114|           paths =
 
-       … while evaluating list element at index 48
+       … while evaluating list element at index 33
 
        … while evaluating attribute 'paths'
          at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/build-support/buildenv/default.nix:114:11:
@@ -502,4 +447,4 @@ error:
                 "electron-39.8.10"
               ];
             }
-Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-Legion-5".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

@@ -26,6 +26,7 @@
       ./services/catask/catask.nix
       ./services/immich.nix
       ./services/radicale.nix
+      ./services/webdav.nix
     ];
 
   # Bootloader.

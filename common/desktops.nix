@@ -45,4 +45,9 @@
     pkgs.sitelen-seli-kiwen
   ];
 
+  # For bitwarden
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
+
 }

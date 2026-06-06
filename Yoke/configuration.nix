@@ -27,6 +27,7 @@
       ./services/immich.nix
       ./services/radicale.nix
       ./services/webdav.nix
+      ./services/libreoffice-web.nix
     ];
 
   # Bootloader.

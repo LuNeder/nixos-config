@@ -10,441 +10,1057 @@ evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has 
 evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
 evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
 evaluation warning: The xorg package set has been deprecated, 'xorg.libXrandr' has been renamed to 'libxrandr'
-error:
-       … while calling the 'derivationStrict' builtin
-         at «nix-internal»/derivation-internal.nix:37:12:
-           36|
-           37|   strict = derivationStrict drvAttrs;
-             |            ^
-           38|
-
-       … while evaluating derivation 'nixos-system-Luana-X670E-26.11.20260531.331800d'
-         whose name attribute is located at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
-
-       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-X670E-26.11.20260531.331800d'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/nixos/modules/system/activation/top-level.nix:63:7:
-           62|       allowSubstitutes = false;
-           63|       buildCommand = systemBuilder;
-             |       ^
-           64|
-
-       … while calling the 'getAttr' builtin
-         at «nix-internal»/derivation-internal.nix:50:17:
-           49|     value = commonAttrs // {
-           50|       outPath = builtins.getAttr outputName strict;
-             |                 ^
-           51|       drvPath = strict.drvPath;
-
-       … while calling the 'derivationStrict' builtin
-         at «nix-internal»/derivation-internal.nix:37:12:
-           36|
-           37|   strict = derivationStrict drvAttrs;
-             |            ^
-           38|
-
-       … while evaluating derivation 'etc'
-         whose name attribute is located at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
-
-       … while evaluating attribute 'buildCommand' of derivation 'etc'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/build-support/trivial-builders/default.nix:81:17:
-           80|         enableParallelBuilding = true;
-           81|         inherit buildCommand name;
-             |                 ^
-           82|         passAsFile = [ "buildCommand" ] ++ (derivationArgs.passAsFile or [ ]);
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/nixos/modules/system/etc/etc.nix:56:11:
-           55|         mkdir -p "$out/etc"
-           56|         ${lib.concatMapStringsSep "\n" (
-             |           ^
-           57|           etcEntry:
-
-       … while calling 'concatMapStringsSep'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:262:13:
-          261|   concatMapStringsSep =
-          262|     sep: f: list:
-             |             ^
-          263|     concatStringsSep sep (map f list);
-
-       … while calling the 'concatStringsSep' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:263:5:
-          262|     sep: f: list:
-          263|     concatStringsSep sep (map f list);
-             |     ^
-          264|
-
-       … while calling anonymous lambda
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/nixos/modules/system/etc/etc.nix:57:11:
-           56|         ${lib.concatMapStringsSep "\n" (
-           57|           etcEntry:
-             |           ^
-           58|           lib.escapeShellArgs [
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/nixos/modules/system/etc/etc.nix:58:11:
-           57|           etcEntry:
-           58|           lib.escapeShellArgs [
-             |           ^
-           59|             "makeEtcEntry"
-
-       … while calling 'concatMapStringsSep'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:262:13:
-          261|   concatMapStringsSep =
-          262|     sep: f: list:
-             |             ^
-          263|     concatStringsSep sep (map f list);
-
-       … while calling the 'concatStringsSep' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:263:5:
-          262|     sep: f: list:
-          263|     concatStringsSep sep (map f list);
-             |     ^
-          264|
-
-       … while calling 'escapeShellArg'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:1201:5:
-         1200|   escapeShellArg =
-         1201|     arg:
-             |     ^
-         1202|     let
-
-       … while evaluating a branch condition
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:1205:5:
-         1204|     in
-         1205|     if match "[[:alnum:],._+:@%/-]+" string == null then
-             |     ^
-         1206|       "'${replaceString "'" "'\\''" string}'"
-
-       … while calling the 'match' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:1205:8:
-         1204|     in
-         1205|     if match "[[:alnum:],._+:@%/-]+" string == null then
-             |        ^
-         1206|       "'${replaceString "'" "'\\''" string}'"
-
-       … while evaluating the second argument passed to builtins.match
-
-       … while calling the 'toString' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:1203:16:
-         1202|     let
-         1203|       string = toString arg;
-             |                ^
-         1204|     in
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/nixos/modules/system/etc/etc.nix:61:16:
-           60|             # Force local source paths to be added to the store
-           61|             "${etcEntry.source}"
-             |                ^
-           62|             etcEntry.target
-
-       … while calling anonymous lambda
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/attrsets.nix:1187:17:
-         1186|         mapAttrs (
-         1187|           name: value:
-             |                 ^
-         1188|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/attrsets.nix:1188:85:
-         1187|           name: value:
-         1188|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
-             |                                                                                     ^
-         1189|         );
-
-       … while calling anonymous lambda
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:283:71:
-          282|           # For definitions that have an associated option
-          283|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
-             |                                                                       ^
-          284|
-
-       … while evaluating the attribute 'value'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:1169:7:
-         1168|     // {
-         1169|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
-             |       ^
-         1170|       inherit (res.defsFinal') highestPrio;
-
-       … while evaluating the option `environment.etc.dbus-1.source':
-
-       … while evaluating the attribute 'mergedValue'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:1266:5:
-         1265|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
-         1266|     mergedValue =
-             |     ^
-         1267|       if isDefined then
-
-       … while evaluating a branch condition
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:1275:14:
-         1274|             checkedAndMerged.value
-         1275|         else if all (def: type.check def.value) defsFinal then
-             |              ^
-         1276|           type.merge loc defsFinal
-
-       … while calling the 'all' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:1275:17:
-         1274|             checkedAndMerged.value
-         1275|         else if all (def: type.check def.value) defsFinal then
-             |                 ^
-         1276|           type.merge loc defsFinal
-
-       … while calling anonymous lambda
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:1275:22:
-         1274|             checkedAndMerged.value
-         1275|         else if all (def: type.check def.value) defsFinal then
-             |                      ^
-         1276|           type.merge loc defsFinal
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:1275:27:
-         1274|             checkedAndMerged.value
-         1275|         else if all (def: type.check def.value) defsFinal then
-             |                           ^
-         1276|           type.merge loc defsFinal
-
-       … while calling 'check'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/types.nix:729:11:
-          728|         check =
-          729|           x:
-             |           ^
-          730|           let
-
-       … in the right operand of the AND (&&) operator
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/types.nix:746:11:
-          745|           && (inStore == null || inStore == isInStore)
-          746|           && (absolute == null || absolute == isAbsolute);
-             |           ^
-          747|       };
-
-       … in the right operand of the OR (||) operator
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/types.nix:746:32:
-          745|           && (inStore == null || inStore == isInStore)
-          746|           && (absolute == null || absolute == isAbsolute);
-             |                                ^
-          747|       };
-
-       … while calling the 'substring' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/types.nix:739:26:
-          738|             );
-          739|             isAbsolute = substring 0 1 (toString x) == "/";
-             |                          ^
-          740|             isExpectedType = (
-
-       … while calling the 'toString' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/types.nix:739:41:
-          738|             );
-          739|             isAbsolute = substring 0 1 (toString x) == "/";
-             |                                         ^
-          740|             isExpectedType = (
-
-       … while calling the 'getAttr' builtin
-         at «nix-internal»/derivation-internal.nix:50:17:
-           49|     value = commonAttrs // {
-           50|       outPath = builtins.getAttr outputName strict;
-             |                 ^
-           51|       drvPath = strict.drvPath;
-
-       … while calling the 'derivationStrict' builtin
-         at «nix-internal»/derivation-internal.nix:37:12:
-           36|
-           37|   strict = derivationStrict drvAttrs;
-             |            ^
-           38|
-
-       … while evaluating derivation 'dbus-1'
-         whose name attribute is located at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
-
-       … while evaluating attribute 'serviceDirectories' of derivation 'dbus-1'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/by-name/ma/makeDBusConf/package.nix:19:13:
-           18|   {
-           19|     inherit serviceDirectories suidHelper apparmor;
-             |             ^
-           20|     preferLocalBuild = true;
-
-       … while calling anonymous lambda
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/types.nix:787:26:
-          786|             headError = checkDefsForError check loc defs;
-          787|             value = map (x: x.optionalValue.value or x.mergedValue) evals;
-             |                          ^
-          788|             valueMeta.list = map (v: v.checkedAndMerged.valueMeta) evals;
-
-       … while evaluating the attribute 'optionalValue.value'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/modules.nix:1332:41:
-         1331|
-         1332|     optionalValue = if isDefined then { value = mergedValue; } else { };
-             |                                         ^
-         1333|   };
-
-       (11 duplicate frames omitted)
-
-       … while evaluating derivation 'system-path'
-         whose name attribute is located at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
-
-       … while evaluating attribute 'chosenOutputs' of derivation 'system-path'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/build-support/buildenv/default.nix:113:9:
-          112|
-          113|         chosenOutputs = map (drv: {
-             |         ^
-          114|           paths =
-
-       … while evaluating list element at index 33
-
-       … while evaluating attribute 'paths'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/build-support/buildenv/default.nix:114:11:
-          113|         chosenOutputs = map (drv: {
-          114|           paths =
-             |           ^
-          115|             # First add the usual output(s): respect if user has chosen explicitly,
-
-       … while evaluating list element at index 0
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/build-support/buildenv/default.nix:114:11:
-          113|         chosenOutputs = map (drv: {
-          114|           paths =
-             |           ^
-          115|             # First add the usual output(s): respect if user has chosen explicitly,
-
-       … while calling the 'getAttr' builtin
-         at «nix-internal»/derivation-internal.nix:50:17:
-           49|     value = commonAttrs // {
-           50|       outPath = builtins.getAttr outputName strict;
-             |                 ^
-           51|       drvPath = strict.drvPath;
-
-       … while calling the 'derivationStrict' builtin
-         at «nix-internal»/derivation-internal.nix:37:12:
-           36|
-           37|   strict = derivationStrict drvAttrs;
-             |            ^
-           38|
-
-       … while evaluating derivation 'bitwarden-desktop-2026.5.0'
-         whose name attribute is located at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
-
-       … while evaluating attribute 'installPhase' of derivation 'bitwarden-desktop-2026.5.0'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/by-name/bi/bitwarden-desktop/package.nix:189:3:
-          188|
-          189|   installPhase = ''
-             |   ^
-          190|     runHook preInstall
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/by-name/bi/bitwarden-desktop/package.nix:199:5:
-          198|   ''
-          199|   + lib.optionalString stdenv.hostPlatform.isLinux ''
-             |     ^
-          200|     mkdir -p $out/opt/Bitwarden
-
-       … while calling 'optionalString'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/strings.nix:766:26:
-          765|   */
-          766|   optionalString = cond: string: if cond then string else "";
-             |                          ^
-          767|
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/by-name/bi/bitwarden-desktop/package.nix:203:20:
-          202|
-          203|     makeWrapper '${lib.getExe electron}' "$out/bin/bitwarden" \
-             |                    ^
-          204|       --run "ulimit -c 0" \
-
-       … while calling 'getExe'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/meta.nix:527:5:
-          526|   getExe =
-          527|     x:
-             |     ^
-          528|     getExe' x (
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/meta.nix:528:5:
-          527|     x:
-          528|     getExe' x (
-             |     ^
-          529|       x.meta.mainProgram or (
-
-       … while calling 'getExe''
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/meta.nix:573:8:
-          572|   getExe' =
-          573|     x: y:
-             |        ^
-          574|     assert assertMsg (isDerivation x)
-
-       … in the condition of the assert statement
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/lib/customisation.nix:432:13:
-          431|           outPath =
-          432|             assert condition;
-             |             ^
-          433|             drv.${outputName}.outPath;
-
-       … while evaluating the attribute 'handled'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/check-meta.nix:730:9:
-          729|         valid = "no";
-          730|         handled = handle {
-             |         ^
-          731|           inherit attrs meta;
-
-       … from call site
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/check-meta.nix:730:19:
-          729|         valid = "no";
-          730|         handled = handle {
-             |                   ^
-          731|           inherit attrs meta;
-
-       … while calling 'handle'
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/check-meta.nix:671:5:
-          670|   handle =
-          671|     {
-             |     ^
-          672|       attrs,
-
-       … while calling the 'seq' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/check-meta.nix:705:5:
-          704|     # Give all warnings first, then error if any
-          705|     builtins.seq (foldl' giveWarning null warnings) withError;
-             |     ^
-          706|
-
-       … while calling the 'throw' builtin
-         at /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/stdenv/generic/check-meta.nix:693:13:
-          692|           else
-          693|             throw msg;
-             |             ^
-          694|
-
-       error: Refusing to evaluate package 'electron-39.8.10' in /nix/store/3a2vdn5i7vd2wl654xs8nb52jf1v6cbh-source/pkgs/development/tools/electron/binary/generic.nix:50 because it is marked as insecure
-
-       Known issues:
-        - Electron version 39.8.10 is EOL
-
-       You can install it anyway by allowing this package, using the
-       following methods:
-
-       a) To temporarily allow all insecure packages, you can use an environment
-          variable for a single invocation of the nix tools:
-
-            $ export NIXPKGS_ALLOW_INSECURE=1
-
-          Note: When using `nix shell`, `nix build`, `nix develop`, etc with a flake,
-                then pass `--impure` in order to allow use of environment variables.
-
-       b) for `nixos-rebuild` you can add ‘electron-39.8.10’ to
-          `nixpkgs.config.permittedInsecurePackages` in the configuration.nix,
-          like so:
-
-            {
-              nixpkgs.config.permittedInsecurePackages = [
-                "electron-39.8.10"
-              ];
-            }
-
-       c) For `nix-env`, `nix-build`, `nix-shell` or any other Nix command you can add
-          ‘electron-39.8.10’ to `permittedInsecurePackages` in
-          ~/.config/nixpkgs/config.nix, like so:
-
-            {
-              permittedInsecurePackages = [
-                "electron-39.8.10"
-              ];
-            }
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 296 ms (attempt 1/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 637 ms (attempt 2/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 1198 ms (attempt 3/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 2519 ms (attempt 4/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+         response body:
+
+         <html>
+         <head><title>502 Bad Gateway</title></head>
+         <body>
+         <center><h1>502 Bad Gateway</h1></center>
+         <hr><center>nginx</center>
+         </body>
+         </html>
+these 383 derivations will be built:
+  /nix/store/1ag6dqkr8b0vd1abg508r18pq7bxqfxi-python3-3.13.12.drv
+  /nix/store/vdkgng7wzcja5kyc517wjgyx141g4q8l-python3.13-bootstrap-flit-core-3.12.0.drv
+  /nix/store/ay6c9bk0pbmpdxrlwy4cn8y2lzaspv4c-python3.13-bootstrap-installer-0.7.0.drv
+  /nix/store/40k4ciqzhz89a3ys1d8f4sinflwjg9vg-python3.13-bootstrap-packaging-25.0.drv
+  /nix/store/5v9a1qadzbbsdjpkcak1v4i5mcjp5fxj-python3.13-bootstrap-tomli-2.2.1.drv
+  /nix/store/ixj54hzcwhlw9gwy4wch6a2zd57bdv0z-python3.13-bootstrap-pyproject-hooks-1.2.0.drv
+  /nix/store/qhnk51mbpgy63i5kp9cwmslvbwxks3ix-python3.13-bootstrap-build-1.3.0.drv
+  /nix/store/bs2fjcl9m17rgi4fg58m0l9q6nw6aypz-pypa-build-hook.sh.drv
+  /nix/store/g7y8wbc2ylabif9sb6z116pddbciw9p9-wrap-python-hook.drv
+  /nix/store/h2qbb8iy1r9fp430r4wd8z672q4v97kc-python-imports-check-hook.sh.drv
+  /nix/store/h4193s7hcqlqkdyj9vg7pz0kvpydpb2q-pypa-install-hook.drv
+  /nix/store/455byj5d5ca9fn99svcf8avkdisj2g58-python3.13-bootstrap-packaging-25.0.drv
+  /nix/store/i0npl2fc4fmba0scwmjs7a49qk9wvqf8-python-runtime-deps-check-hook.sh.drv
+  /nix/store/07qk0v7digydxgqvy4n1896sw4vkyq07-python3.13-flit-core-3.12.0.drv
+  /nix/store/m51mm14h0w2dgwwrncfddiaa56xapzns-python3.13-installer-0.7.0.drv
+  /nix/store/p6p6fl9nhfjgm1kjbrbjrgnrl1dwnm9h-pypa-install-hook.drv
+  /nix/store/40m1ss6sbg6fr7cq1qrpk0zqypkl5gp9-python3.13-wheel-0.46.1.drv
+  /nix/store/6kr9g7pv7jyrcwzic1vk8s4h5a85k426-python3.13-packaging-25.0.drv
+  /nix/store/br6jdpc5v20fxvjcrxkckj9agff554r8-python-relax-deps-hook.drv
+  /nix/store/p10428vn6m0pqx0jnksh07bk0x2wsmfb-python3.13-pyproject-hooks-1.2.0.drv
+  /nix/store/s8j9flzdvxf8pd0bndv09pprhl70fyqy-python3.13-build-1.3.0.drv
+  /nix/store/9nc0n0qd44s9dkd5rg51wzpwzvnx1w99-pypa-build-hook.sh.drv
+  /nix/store/cm4knyr0gpxnmx2kiix8prfx6vw2rqjn-python-catch-conflicts-hook.drv
+  /nix/store/nyf9pllmqfcl0s84zzm6zp5mhccb8c6n-python-runtime-deps-check-hook.sh.drv
+  /nix/store/jphji4bj8xjpah0gsdracxi5090v9lb5-python3.13-setuptools-80.9.0.drv
+  /nix/store/98hhn4j64fnl13vckw08257rfwmxr6pp-python3.13-pyelftools-0.32.drv
+  /nix/store/3jqgnifblh636rr4ydkl5a4kafll3cqz-python3-3.13.12-env.drv
+  /nix/store/28shyz73l50ynbyjg4n5mwlvil463gzm-auto-patchelf-0-unstable-2024-08-14.drv
+  /nix/store/dhk54q0jz8ym0i495hbyqgr7qjyzp6l7-auto-patchelf-hook.drv
+  /nix/store/m0kf9y9092lvwlxvi05liqds5a4l70f6-rustc-bootstrap-1.91.1.drv
+  /nix/store/vfhal0607vk2mj79a5pk7gzxjnrhg0zv-rustc-bootstrap-wrapper-1.91.1.drv
+  /nix/store/000z3jicrq7ahym1lagqm84cxxdj0sj4-cargo-bootstrap-1.91.1.drv
+  /nix/store/02bm42xch3pwpr6vq1k65ahnqhyr3xsy-flatpak-state.json.drv
+  /nix/store/bv9lmsm3l5zzv7i8k5x94aiswfqdrnbw-python3.13-calver-2025.10.20.drv
+  /nix/store/12xfbnfwhrfzgv3g6m2jwamy6l5x189a-python3.13-trove-classifiers-2025.9.11.17.drv
+  /nix/store/42vavg6f5w2s3jdwv2piagdwx3qiqb8m-python3.13-editables-0.5.drv
+  /nix/store/x31lz1qyfzhlg4iwcpklsmca74p17wcd-unittest-check-hook.drv
+  /nix/store/bafq04xxhm183lr05z66mrkxcs6sq501-python3.13-pathspec-0.12.1.drv
+  /nix/store/rwd254vdiwf97jpji9q0zlia6azjamqh-python3.13-typing-extensions-4.15.0.drv
+  /nix/store/mj2jkzyrg9vky3wgnkmhy2hbfgplhnx2-python3.13-setuptools-scm-9.0.1.drv
+  /nix/store/izrb4wizrlcjvrngvn4fw26hcafn28cf-python3.13-pluggy-1.6.0.drv
+  /nix/store/3gmrk5hq16096dghr9bqjk9wmxviy4xg-python3.13-hatchling-1.27.0.drv
+  /nix/store/d1l0bwm2ki3ng3hfmrq52bqc6w0zs6r3-python3.13-pygments-2.19.2.drv
+  /nix/store/gck2m4y648lk9ssckdasccv7k43qw6n0-version.patch.drv
+  /nix/store/diymj0yi3miwcwn7wmmwpg6yyywkbaj1-python3.13-iniconfig-2.1.0.drv
+  /nix/store/j3fzm44hazmcs0mf94m7w33pljg1q3si-python3.13-pytest-8.4.2.drv
+  /nix/store/d4dkg92db6kmcxc7zbbwkx0irvz6ql91-pytest-check-hook.drv
+  /nix/store/s589b9flrb1r753flkckm82npy6jpsas-python3.13-pytest-asyncio-1.2.0.drv
+  /nix/store/vhjw03ydspkj4vf1ibx5nq1zar0s1bcr-python3.13-pytest-mock-3.15.1.drv
+  /nix/store/12pvcpq958jjqv85jymx4liamxw0rqg3-asciidoc-10.2.1.drv
+  /nix/store/q4slzgqd2zlzn0nfh3j1l992pdcm84iw-re2c-4.3.1.drv
+  /nix/store/6zx7vxrkhjqj6kmqnghk6jgcd4g9jmh6-ninja-1.13.1.drv
+  /nix/store/kz112xjalkqmcyi5bzja7rd46ci2kbkr-setuptools-build-hook.drv
+  /nix/store/fxhnx8dcj46i6mxnnv9cy99vajbwgb6n-meson-1.9.1.drv
+  /nix/store/34x75fb8rcnpinkxc8dzvwibm9bpvd68-xorgproto-2024.1.drv
+  /nix/store/gkmlqrnbdrx7yhscd2b7p1mahl9jq0d1-xtrans-1.6.0.drv
+  /nix/store/06nwz3is74prgl0wqg8ggcak55bnl8hs-libice-1.1.2.drv
+  /nix/store/06z8chqh9xx90y9r2n3dlhw0jys6snh3-meson-1.9.1.drv
+  /nix/store/08kdrgy1g83mifx5i80inn4yph9hf5as-python3.13-pyproject-metadata-0.9.1.drv
+  /nix/store/df81n4ah86k5g43p5j3wsdkj1k706bg1-which-2.23.drv
+  /nix/store/f4x2r6r5iw10i27dc2ylwwmf8sf0hzmb-rhash-1.4.4.drv
+  /nix/store/dbwjnmzg1y67yficxq9pg6z98jjmpa83-zstd-1.5.7.drv
+  /nix/store/fvkqp0ijcclf5n80nwxmahaw4a0kcyvf-libarchive-3.8.7.drv
+  /nix/store/vfakymag658n6sijl8bmlcwrm8gnmzl4-cmake-4.1.2.drv
+  /nix/store/08vwx5mhqi658j2na37wag5zglz4cw5y-catch2-2.13.10.drv
+  /nix/store/0bacp23bw9755i695zrwsfrras0srh4l-python3-3.13.12-env.drv
+  /nix/store/fhfq1rskav2s34gnfx275cmvs3yjvlrf-xcb-proto-1.17.0.drv
+  /nix/store/n4jikj9i57yw7f4q6mfcarx12a263zmw-libxau-1.0.12.drv
+  /nix/store/np577vki20qrcrfq1hx08nfcjf7jhfsw-libxdmcp-1.1.5.drv
+  /nix/store/0yhvw42xhhd18xbligsn1abmyzpa3y65-libxcb-1.17.0.drv
+  /nix/store/l47arbpw74y6qvycmk2m7wxzxv16y3dv-libx11-1.8.12.drv
+  /nix/store/3h4qmdfvfdy7zy4iwx4r840a6g9nsb71-libxrender-0.9.12.drv
+  /nix/store/7h8bglka2q8iba98kin0ay9v60jb9j09-pixman-0.46.4.drv
+  /nix/store/k0qylwlmnl03666cwkbr46fsvq07r386-brotli-1.1.0.drv
+  /nix/store/jd0va4xa87s06b12i5vyhlb55rhqbfpc-freetype-2.13.3.drv
+  /nix/store/kqi88mamfnqn01rfa19an37980n9rg4s-libxext-1.3.6.drv
+  /nix/store/gwfvkbr7r21vlg82jbdv4nfa48r2b5xs-python3.13-cython-3.1.4.drv
+  /nix/store/61k6b4ynynkh12abhpm4zclrws85919v-python3.13-lxml-6.0.2.drv
+  /nix/store/kr1cqfm1i9gqw47sgkg2589qmfg4ihd4-gtk-doc-1.35.1.drv
+  /nix/store/pvzy4dq1wnlv4lb1nhvjwp3lp07l1hbm-version-check-hook.drv
+  /nix/store/h4dyqaf4rkyl25zd08hdhq973cj6937h-set-python-sys-path.patch.drv
+  /nix/store/9wnv2n1db1rwdqv5xk5w7y9s896yvn3g-lerc-4.0.0.drv
+  /nix/store/1qkhpfh4xs1gsb1q8ck6apf2b2lgix8d-python3.13-defusedxml-0.8.0rc2.drv
+  /nix/store/89xywyfbvz45cvl4mvik15w8dp0b4mfb-python3.13-buildcatrust-0.4.0.drv
+  /nix/store/v0dasa8zn0ra4ndjxs1v55hzn9127msq-nss-cacert-3.123.drv
+  /nix/store/22kbw818q7n7rnpb70rmjlq5mx4r98gk-python3.13-certifi-2025.07.14.drv
+  /nix/store/0h2g2gw4sh59rhjr9rsh02r5v9di5qvc-python3.13-attrs-25.3.0.drv
+  /nix/store/c40wwkgr0qhax9kcwawzpcgpfr0ajnqs-python3.13-types-psutil-7.0.0.20250822.drv
+  /nix/store/fmcvff5i0gn5jwjbpkibaiihsjfpcvs8-gtest-1.17.0.drv
+  /nix/store/cib9hnn1im9qcb2507dqk3n678wlyqcm-zlib-ng-2.2.5.drv
+  /nix/store/a820x5vw4a8w7rz00ry15rckdqi4h3zq-nghttp3-1.15.0.drv
+  /nix/store/c99dwiv5jcl4ri4jf6iniihjg4z6bs73-libpsl-0.21.5.drv
+  /nix/store/fngd7w7vskrwcy8b4dz8q82ff0xrbj45-ngtcp2-1.22.1.drv
+  /nix/store/kmv9a9k37cacark377fhzfn6i8v0d3bb-curl-8.20.0.drv
+  /nix/store/7pkmx4vzqc9rfxl7fv32s84n1v3apyci-git-minimal-2.51.2.drv
+  /nix/store/9pv2kfi4j5fy00zz99m5vnhlpkbqbg4s-python3.13-hatch-vcs-0.5.0.drv
+  /nix/store/miczl33kf58ajy1q482wxsc8c7rpgkqz-python3.13-ptyprocess-0.7.0.drv
+  /nix/store/jgkv92dh23z2vq1apr29pknysj8aadfg-python3.13-pexpect-4.9.0.drv
+  /nix/store/c7a3cjr384arr1a4wbpqxknhd0cvqy81-python3.13-pytest-timeout-2.4.0.drv
+  /nix/store/h5jakxqp5vs1pqvahbfid0n35r7y0wrr-python3.13-filelock-3.20.3.drv
+  /nix/store/jm7jjk3igxzqzkgj0fmw0xy30q95i8s9-python3.13-types-setuptools-80.9.0.20250822.drv
+  /nix/store/4fjcghpr8aa7iqnhwqgc9knis7nplyc7-c-ares-1.34.6.drv
+  /nix/store/bjpfzh41c1j1frzbckgzr12ndzjqfvqj-python3.13-zope-event-5.0.drv
+  /nix/store/d7gh94kdink3fkbv25pgb0nmcnjr66mz-python3.13-greenlet-3.2.3.drv
+  /nix/store/cr26wlq3jh69j51sffyq137d4xpxgd6a-python3.13-pycparser-2.23.drv
+  /nix/store/kbk3252yx8wl74y7q6sjd8c9nqr15mg4-python3.13-cffi-2.0.0.drv
+  /nix/store/ch5cghiw858k9ba017mbv6bhdr04x7if-python3.13-zipp-3.23.0.drv
+  /nix/store/jyn3jwa69gxd4qrz1r6jsra3nr7dzz62-python3.13-toml-0.10.2.drv
+  /nix/store/nkwgfnbm8ad63rvrm1azr0g91rdz7dck-python3.13-importlib-metadata-8.7.0.drv
+  /nix/store/vjgkgp0wganswvsh3xfn80mr2r9m4ivb-python3.13-zope-interface-7.2.drv
+  /nix/store/7i2rzcc4lciljr5jq5naqqqvl0v6qlpc-python3.13-gevent-25.5.1.drv
+  /nix/store/c9sfvf8v26ddljfaim7m0kw21djyidpw-python3.13-execnet-2.1.1.drv
+  /nix/store/k4p62jpsdkl0lj5fk7lxbj9nq8g560jf-python3.13-pytest-xdist-3.8.0.drv
+  /nix/store/n4fvyk3mrz65jwgrgrifga7jkimcsfaa-python3.13-psutil-7.1.2.drv
+  /nix/store/qqs5wnwy1rwf7k9mmx2zdpwb4l7akbw7-python3.13-tomli-2.2.1.drv
+  /nix/store/z8ycchj4wqsbpyn9gxlbs07cpmpwwwna-python3.13-mypy-extensions-1.1.0.drv
+  /nix/store/l3v12753ysvxmj0rk1mjy1njxsamwihj-python3.13-mypy-1.17.1.drv
+  /nix/store/6h05k0p4y746vg7l6y98w21jvlhdl42d-python3.13-charset-normalizer-3.4.3.drv
+  /nix/store/hld6zvga6if236lw4cpiihga0n4rld8f-python3.13-pysocks-1.7.1.drv
+  /nix/store/jvlxw29lfn5brmzq2m1mwmkf3s9hsl55-python3.13-urllib3-2.5.0.drv
+  /nix/store/nrypzpqq4zy2rzj1hh7nn35ifxm9vigl-python3.13-idna-3.11.drv
+  /nix/store/3razac50xlizlnp9y36qmp7vp6q4byvg-python3.13-requests-2.33.1.drv
+  /nix/store/4fa8jhzzhgr65lp9n3lv9xvn6s72vsh5-python3.13-docutils-0.21.2.drv
+  /nix/store/5gm5fs791aaq33y4ybdjvvf7nkxlaa80-python3.13-sphinxcontrib-htmlhelp-2.1.0.drv
+  /nix/store/zl11l6wsz1kf26mbynwiqig7801sj2a2-python3.13-pystemmer-2.2.0.1.drv
+  /nix/store/b83wxfyi9vni96p0q8grby74nbcv3sjx-python3.13-snowballstemmer-3.0.1.drv
+  /nix/store/cflac5yy5i8csz5wdhcn91xxk71bnm9b-python3.13-sphinxcontrib-qthelp-2.0.0.drv
+  /nix/store/ck5k6hnk3n038skaiw8fif8pdb5xkmfn-python3.13-roman-numerals-py-3.1.0.drv
+  /nix/store/f5ipyhrs739ckhkgc5v02hjhybga4nxa-python3.13-sphinxcontrib-devhelp-2.0.0.drv
+  /nix/store/df3k9drz3w3791wqiz26z79byfjmqlj6-python3.13-webencodings-0.5.1.drv
+  /nix/store/xbiyj5l2mpr6ba18519379jdghm83m27-python3.13-six-1.17.0.drv
+  /nix/store/fr5xvzj4xwarh4hyncnw6abnlbnj5qxa-python3.13-html5lib-1.1.drv
+  /nix/store/gzzj287zm3pcl7nb30dbwcrgq31yw11p-python3.13-sphinxcontrib-applehelp-2.0.0.drv
+  /nix/store/7a4sarsizjg1as96syahgd1x7jq831rl-python3.13-markupsafe-3.0.3.drv
+  /nix/store/wjmpn5xggxcmim08c4fa50wjqv3sbanq-python3.13-python-dateutil-2.9.0.post0.drv
+  /nix/store/m3qvhhzqnwhlagqndryycwjwq0mg4z87-python3.13-freezegun-1.5.4.drv
+  /nix/store/rpl8sc8pzfgd84007kz3vgfkq7sik9y0-python3.13-pytz-2025.2.drv
+  /nix/store/zsfjdz9r1faklqyqg4fn5gbzpwrbzyid-python3.13-babel-2.17.0.drv
+  /nix/store/hp74nc1pwpa95y946vkwy04l3xp4hrwc-python3.13-jinja2-3.1.6.drv
+  /nix/store/rsb5scafly89s8gi9hsqi9gva0fz2pvh-python3.13-sphinxcontrib-serializinghtml-2.0.0.drv
+  /nix/store/k4i3wlikhh0fd1nmys5p5b8lqypnkh0m-python3.13-sphinxcontrib-websupport-2.0.0.drv
+  /nix/store/kd1fvj2g7pv3j35n2hq70ckdz52fg040-python3.13-imagesize-1.4.1.drv
+  /nix/store/w23v0w7g9r06s3w6313k66lskc219x0s-python3.13-sphinxcontrib-jsmath-1.0.1.drv
+  /nix/store/y6rhd7s36c8h7w06dpfzkyz13fqk08ld-python3.13-alabaster-1.0.0.drv
+  /nix/store/k1kzgzqff5kc9jrwwm3r8sl1kb5xzj9s-python3.13-sphinx-8.2.3.drv
+  /nix/store/njirpqzn7ks5hng92lq9kg3dc7n4izin-libjpeg-turbo-3.1.4.drv
+  /nix/store/n0w0nqqx3c5fx42j6sxmgp9c150dn9xg-libwebp-1.6.0.drv
+  /nix/store/vahka62q9rbcw0cqxgsw13dqnrbrzxjn-libdeflate-1.25.drv
+  /nix/store/i97wd0yrsn922cqnjsv8c25nxvk1vbb1-libtiff-4.7.1.drv
+  /nix/store/kzkd2xlrkq8d8wahlaqwd4nnnxzp3grs-woff2-1.0.2.drv
+  /nix/store/yfpq7icdsjpng6807xp9y4zxrsrqg8xm-man-db-2.13.1.drv
+  /nix/store/hnj7hi0w2y64w6cv1yv16s7mw285anma-w3m-0.5.5.drv
+  /nix/store/wzx8cd99bjh3bc4hpgk7bgz789j2sry8-xmlto-0.0.29.drv
+  /nix/store/pgmc92ykhrmkrjhh06j5671k0z067y56-zeromq-4.3.5.drv
+  /nix/store/havpyskz998kr8gar8dc1gy1nm7nrpb3-python3.13-polib-1.2.0.drv
+  /nix/store/hy18in6qshx7mip4ah8v4h8dh8bxyp2a-python3.13-click-8.2.1.drv
+  /nix/store/b6j0a9fi5x00adp14x022n1f6m5jhcj4-python3.13-lingua-4.15.0.drv
+  /nix/store/iffdpvyvgcgqcl0k8b00hsqpli77xg01-python3.13-chameleon-4.6.0.drv
+  /nix/store/ysdmxxiizz030m25sx0lbikhyxbxhr62-python3.13-mock-5.2.0.drv
+  /nix/store/ayz6mbqczhwynfk6sgnzdqv2hq1sy43r-python3.13-mako-1.3.10.drv
+  /nix/store/wvfq2pafi19vn5srcj6d84xx31ngnbmn-python3.13-pyyaml-6.0.3.drv
+  /nix/store/dvhfvas8m6n2p8946pl2q1g3vvkxi1il-python3.13-markdown-3.9.0.drv
+  /nix/store/d8fnpl2r0ccbyhhh0bmxngqysk2xcgn4-python3-3.13.12-env.drv
+  /nix/store/6pg9z87cxzacgm3fzzbsvpnacl2kpihl-libsysprof-capture-49.0.drv
+  /nix/store/84gs9w3skqglpngg0c5558avn92msww7-libselinux-3.8.1.drv
+  /nix/store/ahv67wza43fn0ai01vf9p5hlslj9dj17-p11-kit-0.25.10.drv
+  /nix/store/l83ww8gkp8lpzi8v5iwkjkw390rblrf9-gnutls-3.8.13.drv
+  /nix/store/2dr3q7jh0b4ly8ffsfnarid5mckvk60k-libmicrohttpd-1.0.2.drv
+  /nix/store/7jsh95mx94m4ha3324laics87673dg0x-json-c-0.18.drv
+  /nix/store/plww5g88nwaydwp76sfksxn4k502bny7-argp-standalone-1.5.0.drv
+  /nix/store/m3drgwp7gj8jzgabvqhpffsq00dgd7ad-elfutils-0.194.drv
+  /nix/store/nw78p2db0bfp8rbk4zzqikm0gicc45sf-glib-2.86.3.drv
+  /nix/store/yxi2shcjfz3aghp1pqjrqzwgfd179qa7-gobject-introspection-1.86.0.drv
+  /nix/store/4d89djyx30i26nxa8smfqkm1jnd6wm3p-gobject-introspection-wrapped-1.86.0.drv
+  /nix/store/ynm219zsv2mlk147nn3fcpyyb7q6a0xh-python3.13-smartypants-2.0.2.drv
+  /nix/store/vkwm8fhz1lv4vlpzyivgci0f590ny1i5-python3.13-typogrify-2.1.0.drv
+  /nix/store/d3g7nn8yry9m460m2dlpcs45a1x12agg-gi-docgen-2025.5.drv
+  /nix/store/wg7blq5pa9m30vz6qdkc1w6m7rzda57y-glib-2.86.3.drv
+  /nix/store/20zvsh6x8caplpkccc3c15bm6dyy2qar-fontforge-20251009.drv
+  /nix/store/8ivldlvx0qpqqdjql4lk50fgha0x48m2-dejavu-fonts-full-2.37.drv
+  /nix/store/qpf6r7zb4rhfscjkc9xq7vsyhxa8phk4-dejavu-fonts-minimal-2.37.drv
+  /nix/store/p79vnib93xrxnsimx780x8yqzgg95ms6-fontconfig-2.17.1.drv
+  /nix/store/v7f6p8lvzwj19bbdg6jygplnz6d3qr4f-cairo-1.18.4.drv
+  /nix/store/0cmm0g2hzbx3kw1q8c3wsby0dwzmpbcs-absolute_gir_path.patch.drv
+  /nix/store/4b94wf0vvfcrzix4vc78i53l0jnfh0ij-fribidi-1.0.16.drv
+  /nix/store/b47acygbswnjvs9fyza18k6q3p0g4p7f-gobject-introspection-1.86.0.drv
+  /nix/store/59bby5s6abbig486k2fyz1p9vv5s4sxj-gobject-introspection-wrapped-1.86.0.drv
+  /nix/store/87l7xxvanbdhvfcl6yhcj2r3hv6q41m2-graphite2-1.3.14.drv
+  /nix/store/rgalhkb767w3d7r64bpxjwwcxnml2nzh-harfbuzz-12.1.0.drv
+  /nix/store/5gmcl0lh3s9w5c1clsw2r5jdvxcxc7rv-libraqm-0.10.3.drv
+  /nix/store/a49jn3vlm5jvsl80rzq7x0c2q5yppw2z-libwebp-1.6.0.drv
+  /nix/store/arrnlsxmxdfcc61qkv2d2b7nb31slhf7-python3.13-pytest-cov-stub-1.0.0.drv
+  /nix/store/zpn47hyhbais0ym9whcmgzr1bybfyvq1-lcms2-2.17.drv
+  /nix/store/fs2h7mmjs0qll4nv15yxy3hiawr8nqgr-openjpeg-2.5.4.drv
+  /nix/store/g8hqndmva5m4lpjh7ixpddgkczvxkhlp-python3.13-olefile-0.47.drv
+  /nix/store/nwgjjkqmpd80frqkhf46zbz6r22pj64v-zlib-rs-0.5.2.drv
+  /nix/store/5s0y8cdjw3jc93xw8zzs5zfwm3nlczic-cargo-vendor-dir.drv
+  /nix/store/hj9a3dz9qlyqj420hz2j739vvl60s45i-llvm-tblgen-21.1.7.drv
+  /nix/store/xg51yjz99im9s548jrf6j70hx0m6g7xy-llvm-21.1.7.drv
+  /nix/store/k78fkbh1hry9nsd0i895bbz7b9gd7j2n-rustc-1.91.1.drv
+  /nix/store/c3cr0pl2yvm9aw4cjbk84szy44y7dhin-rustc-wrapper-1.91.1.drv
+  /nix/store/1qfyfahnbq6ls3lldp5ck8hrdxqy6zm0-python3.13-pycodestyle-2.14.0.drv
+  /nix/store/cc0zb60viqyh40v65zqxf2fg4cm07xz3-python3.13-mccabe-0.7.0.drv
+  /nix/store/d7p6l84a7x8d12abhagk5sp9kav7km2m-python3.13-pyflakes-3.4.0.drv
+  /nix/store/m4s7yl0mx463giind59i82jxsgjq6y6n-python3.13-flake8-7.3.0.drv
+  /nix/store/l4xnnfpfnwgi9bwpaz6alhjy28h2bvr1-pythoncheck.sh.drv
+  /nix/store/5rccaj36l0wajq81wxcgj3aw2hgjnqrd-pythoncheck.sh.drv
+  /nix/store/ncbln88a9if15ckfii08xna4jf0bwl7w-python3.13-tomli-w-1.2.0.drv
+  /nix/store/xhvz8gf4h9pmrl2iqd58pnvpwl5bp41h-python3-3.13.12-env.drv
+  /nix/store/7aqkgablz0pvdhshs0rfmxvv7wcr5q3y-replace-workspace-values.drv
+  /nix/store/2bsfszjw0idgl70zb1g8k3biicldj27n-python3-3.13.12-env.drv
+  /nix/store/35aw1f977w1z9shwijls7zk474bsbsf2-pythoncheck.sh.drv
+  /nix/store/qa4169fryafgkzp9wgyk2rdxb0pq3ap0-pythoncheck.sh.drv
+  /nix/store/p1h2f88mpckslrwb9pf7f3wffw6hxy6s-fetch-cargo-vendor-util.drv
+  /nix/store/s096sfsqrzyfxsm9iq5yk8jkf07lmykd-cargo-1.91.1.drv
+  /nix/store/n3zcg9b6mcyaai6828z88v1c4l8b5hj3-cargo-auditable-0.6.5-vendor.drv
+  /nix/store/hjli9xfjf0jvas3ddwl49rbx2q6qnmv9-cargo-auditable-0.6.5.drv
+  /nix/store/s83jhsph87xc2kh86zfbwnv3lfxp9qzi-auditable-cargo-bootstrap-1.91.1.drv
+  /nix/store/czm4lkcd12s9bf9v4y8nhh7qj905973n-cargo-1.91.1.drv
+  /nix/store/7h14g577qh5dknp4s8rys34ixakz308c-cargo-c-0.10.15-vendor.drv
+  /nix/store/2c53yrhgl2bd1g0z7iw2sxlxiiiis4z9-auditable-cargo-1.91.1.drv
+  /nix/store/ajl778sb2sxxkr7ifvv2w3yy0g77y3dk-cargo-auditable-0.6.5.drv
+  /nix/store/qbxdr5lrpcpqs61hjf30jhjwsg0288dp-auditable-cargo-1.91.1.drv
+  /nix/store/qayrsr8xfr9hrfpmcl9ly7153fzb5bma-cargo-c-0.10.15.drv
+  /nix/store/jhjkn4mys0hjd2b30hrvzz5r0a3d5680-libimagequant-4.4.1.drv
+  /nix/store/14lzlykja1yrdgisxzx40s2kv08w4kyw-libyuv-1908.drv
+  /nix/store/8va29smpd0hv325fqkch2jzfnh1q3a1a-yasm-1.3.0.drv
+  /nix/store/cc660filmqdxb9lp28km8rs6hyz6hidc-xxd-tinyxxd-1.3.7.drv
+  /nix/store/s8jl7n9vddl4isg7pm6f1r7i71vrjwa4-libvmaf-3.0.0.drv
+  /nix/store/1swh63sz028mz5pr7llnxkiv2z3h1l94-libaom-3.12.1.drv
+  /nix/store/apdgmpyhb42qnlil9bnll3qkbq2k1q49-gdk-pixbuf-2.44.6.drv
+  /nix/store/g49gpdf0wzd0y080iwl8hrdc9as7klfs-xxHash-0.8.3.drv
+  /nix/store/xbaqrjavms1n7r7cg75byp5yw5qlcryy-dav1d-1.5.2.drv
+  /nix/store/jngar852bqc2kcmbsma8mi9snfhjk9cp-libavif-1.3.0.drv
+  /nix/store/aafriqslp7m17hybq002vn7x4k2jkv7f-openblas-0.3.30.drv
+  /nix/store/f6figsdpzw80bjn29zrn79w5y8zjb9g0-liblapack-3.12.1.drv
+  /nix/store/0ic7y77pcxry9wcvbw69bgdyzv13i4n6-blas-3.drv
+  /nix/store/4yzfa79knb67axd5j80xpb96qzk3xli1-lapack-3.drv
+  /nix/store/aqav2jmwbn700406sfh71vvfayllyf14-site.cfg.drv
+  /nix/store/hw1v1q4my7fww9z35wmgxkpzv738nddf-python3.13-meson-python-0.18.0.drv
+  /nix/store/sh6y5wn2nm6gmaypjllva4c2z2mdkxb8-python3.13-sortedcontainers-2.4.0.drv
+  /nix/store/kishr2lra2c5ymmj6c3q8a8cy6sslpmw-python3.13-hypothesis-6.136.9.drv
+  /nix/store/njxwgjw87f7wa5k3r53jn69kv0lvadl5-python3.13-numpy-2.3.4.drv
+  /nix/store/892dfznqbama58gn8sapsv0sxvlcr9vy-eigen-3.4.1.drv
+  /nix/store/l69nqrymkz515yyg96h4zsnq5xy6xawv-python3.13-ninja-1.13.1.drv
+  /nix/store/np3m8y9njaxfsjw7fgl1fvlzylzk278f-boost-1.87.0.drv
+  /nix/store/nvf04m27m0ymvhmw2rmlwpryz905qml1-pybind11-setup-hook.drv
+  /nix/store/s32ylaa64z4khiv36hw1xwvh59jdvwl5-python3.13-cmake-4.1.2.drv
+  /nix/store/z15vvhxx6ib0c8gjdbkwksycbpjwpbm5-python3.13-scikit-build-core-0.11.5.drv
+  /nix/store/nqqhpgldchz9l4f7bjjvcblv0i5lyyd4-python3.13-pybind11-3.0.1.drv
+  /nix/store/1b5ihkl24ypjpfnkk9wq3ibsfc2zywk2-python3.13-pillow-12.2.0.drv
+  /nix/store/hw1ybwr2pv4072kk5l7ghywvlbnjjlpw-python3.13-docopt-0.6.2.drv
+  /nix/store/crazgbm31z4kkij6l7p6alv29q4r1jb9-libsm-1.2.6.drv
+  /nix/store/riwcl0vc1wwa0hk30ayla12yw1xdn97v-libxt-1.3.1.drv
+  /nix/store/skig67hcby04ybbfclk082hf4kmlrgnp-libxmu-1.2.1.drv
+  /nix/store/9b09x9agir97nbs0cwwz6h3basmymyjs-xauth-1.1.4.drv
+  /nix/store/1r60b976zin07s2gaf094ldif898qh1w-libglvnd-1.7.0.drv
+  /nix/store/2bqyzdhgzd0w29c6cd431s8nga79df2g-xkeyboard-config-2.46.drv
+  /nix/store/f7vf6vr0zlr782kmb35l8r5k19kbscpf-libxcvt-0.1.3.drv
+  /nix/store/gmi9imqvcbw74dsqwh23xdba0dcslk3m-libxcb-keysyms-0.4.1.drv
+  /nix/store/xn69rd9l25yd10ajf3nh1aajm2zhgz2w-libfontenc-1.1.8.drv
+  /nix/store/hqw86ik29m7i99072h5rvl26ri3f8w20-libxfont_2-2.0.7.drv
+  /nix/store/l0gfw9g3s24iyd42dwzz2i9fyakw41l1-libxcb-wm-0.4.2.drv
+  /nix/store/pir2acl4n0ws8msw8mnbk081qz3bxsm3-libxkbfile-1.1.3.drv
+  /nix/store/qgvb82wfbp2hh1321gqcs42z1zm24hnf-libxcb-render-util-0.3.10.drv
+  /nix/store/rzkgnh636mygnyyia8pf8lpcyy20wz09-libxshmfence-1.3.3.drv
+  /nix/store/s0b8wcai4xwbwpaxnabn4apjyyzsvsak-libxfixes-6.0.2.drv
+  /nix/store/z0c27jq8ywrqzc0sra8cnnihf443n19g-libxcb-util-0.4.1.drv
+  /nix/store/si55ppkxnxkbpqq8ijc9zh4v542mqs4w-libxcb-image-0.4.1.drv
+  /nix/store/gpvcavmjq4qhfka4l6fya4dya7ya4w19-libpciaccess-0.18.1.drv
+  /nix/store/smpjl27clacxp4q29sjlp24a20wkkid5-libdrm-2.4.129.drv
+  /nix/store/yjdlnrcx8b0gcl3g24gyvxjnfrr34qid-xkbcomp-1.5.0.drv
+  /nix/store/p3vr42v4ks1pkr09pj5cmgm53bg095hs-xorg-server-21.1.21.drv
+  /nix/store/9cmg3cgw21dcyxgqvmq90vxi6pm2jzhz-opensp-1.5.2.drv
+  /nix/store/88sh55n5asgmrgsqql72fl8mjwi03mfr-perl5.40.0-po4a-0.73.drv
+  /nix/store/6p96ki0bk4crcnd2d6v3bjipg3l7b1w4-fmt-12.1.0.drv
+  /nix/store/y5g1lgp2y7yccvzfm7r19kq6bdj1i21v-catch2-3.11.0.drv
+  /nix/store/qgl1v7c4z2hw22qyhq145xmmqlx5brbs-spdlog-1.15.3.drv
+  /nix/store/p5l5q97938vz3pgvn2sd0s4n4hwy7qn9-doxygen-1.15.0.drv
+  /nix/store/gx6a022xlr02ky19c6nkgysa0wl5fkxa-libxml2-2.15.1.drv
+  /nix/store/gf7pidcyvx2vh3f4cvk50pbsyvhvnklb-itstool-2.0.7.drv
+  /nix/store/53z2wmillq07hx5w5smcfqz8g8q5mysx-python3-3.13.12-env.drv
+  /nix/store/bj47a7g2da0r2cz9fyy1k8xsby5kq2b5-kmod-31.drv
+  /nix/store/l6ia7cqxgh20r96yb9jyf96f7iczzvfc-systemd-minimal-libs-258.7.drv
+  /nix/store/q8qwh0dkp915815y92wxv1zdhfkkk1zw-audit-4.1.4.drv
+  /nix/store/nd5ysfgriapiw98swi09w9lm5swbfz2q-linux-pam-1.7.1.drv
+  /nix/store/918yi86i2r42x8vr6mmd5729gljdppbj-shadow-4.18.0.drv
+  /nix/store/wvlqj8nalhafyn2fiabp188dqi9bg5hx-util-linux-2.41.4.drv
+  /nix/store/i170k81qi9f9k651bd5g0gxc4xnrr8mh-python3.13-xlib-0.33.drv
+  /nix/store/qcdfl83pknpy2m9i3xikqnzwf117fcc6-libxres-1.2.3.drv
+  /nix/store/0dgq8rqcvf5ab45399g8jyci7g5d5vqj-python3.13-ueberzug-18.3.1.drv
+  /nix/store/d6m6lsjc4z5szhka2zgacvmws0yv2plx-initrd-fstab.drv
+  /nix/store/0n9fsgy52xyalqqsfizhgdwbaldnikw3-unit-initrd-parse-etc.service.drv
+  /nix/store/f9mxvpw2zsndgvlvsz8h33h1zsqq278g-steam-run-1.0.0.85-fhsenv-rootfs.drv
+  /nix/store/159826vgaav83i30hnhbirsnk27vqard-steam-run-1.0.0.85-bwrap.drv
+  /nix/store/7nps3rmq6m68h13jyhplwlb71a9xhklk-xsession.drv
+  /nix/store/f0p1m6zignj27phzqwfnw809fshmlp1y-xfce-xsession.drv
+  /nix/store/p049308lj0m9a50xl0p8qyyzj2q93w76-desktops.drv
+  /nix/store/20p9gzqp5mcaqp653czr1h25ib0j2wv6-etc-pam-environment.drv
+  /nix/store/2lrxccg92b93r634nxvwl413845d0028-limine-install.json.drv
+  /nix/store/h18rr4agza9yv0m8589c2nnm4vqjq4q8-xserver.conf.drv
+  /nix/store/z783azzlsrbj3mnqfjb134q1sjabwaxj-xserver-wrapper.drv
+  /nix/store/2n3rmq04d44bscxnq67c4r2cml4mqak0-sddm.conf.drv
+  /nix/store/6bsv8pd5ajn006nvrxcm0pldk18bm3sf-ld-library-path.drv
+  /nix/store/zbchis3xavqgw715wv495a02h3a8k7cm-virtualbox-extpack-7.2.8.drv
+  /nix/store/85bchirj38mji7aj6z6vfxz4j4644f90-virtualbox-7.2.8.drv
+  /nix/store/n02597madh55369c8y67q14hyi1nlijq-cudnn-linux-x86_64-9.22.0.52_cuda12-archive.tar.xz.drv
+  /nix/store/9x5a8g1jmbmscyi8yn8kznvs5d4c2r64-cudnn-9.22.0.52-source.drv
+  /nix/store/93fh1zy48lmi5az58m3svjhp3zryv8p8-cuda12.9-cudnn-9.22.0.52.drv
+  /nix/store/gr2avg0grvnhw63wb6infhiqgc5jbixp-zen.linux-x86_64.tar.xz.drv
+  /nix/store/a2xkpxgb1whm1dr8djai7xpyid6v40pd-zen-browser-unwrapped-1.20.2b.drv
+  /nix/store/kc8p139f1ng0vfjrcn2f77adcxhrcdh2-zen.desktop.drv
+  /nix/store/9q0mwbq0hfg1b6fdr8zzppy2rag3qnpf-zen-browser-1.20.2b.drv
+  /nix/store/d4hbxqibhg0s5r7n3qf9c0lb8vvsaabj-xwayland-24.1.11.drv
+  /nix/store/xwd1zk5k7gx3r8dppi0xw3b8inlam1r2-pciutils-3.14.0.drv
+  /nix/store/j4c9gg0p3d3qvcyj6z05fs81yarj6wpq-neofetch-unstable-2021-12-10.drv
+  /nix/store/s6cfrgi9w7988nhbf8k5nx8jgqdr5fvj-obs-studio-32.1.2.drv
+  /nix/store/szr7rniybd603ma5r2sb9nia9rawkf8p-wlrobs-unstable-2024-12-24.drv
+  /nix/store/bxp3ixghg9vaam9plw0sshdmrci97aa4-obs-studio-plugins.drv
+  /nix/store/ma3g7mdynxcsyiqwhsqcldllqz92xbzg-wrapped-obs-studio-32.1.2.drv
+  /nix/store/dgnaz5chj6pfvqajz35p2ks6x05vyda6-itch.desktop.drv
+  /nix/store/fjjc8z0mgb9iin8ry5wrg0aj2j12264f-steam-run-1.0.0.85.drv
+  /nix/store/n6g1m1mff15p1lrjpwivs7031v62yp2g-source.drv
+  /nix/store/xzm05k9xlrkzrhzgrfzvfhd3sc8j84v2-source.drv
+  /nix/store/wlvwa9m24wwbsy94dzkjmxi4c38s3g47-itch-26.9.0.drv
+  /nix/store/fxvrvzb0msqw04f24kfb5v9fmm5ms3af-heroic-2.22.0-bwrap.drv
+  /nix/store/xpnc5y6r8p9lg65k288fbc4sk0dd69ck-heroic-2.22.0.drv
+  /nix/store/ny3783i0h9jl8ryk50bqaw35k2d5hw3b-suitesparse-5.13.0.drv
+  /nix/store/5pk0vjs2bscfx32msbbq3f64mg30gqwv-ceres-solver-2.1.0.drv
+  /nix/store/7icl3cizihvcqgbfgs2n1p8682agi7q6-source.drv
+  /nix/store/af56rglmz9zzjjd5xv9q8iy4d0hwgny2-pyside6-uic.drv
+  /nix/store/s4kzikdy3jz7xhfw5wc9413qqhjb9cjl-python3.13-openusd-25.05.01.drv
+  /nix/store/ywl1pyln0bqbk52ix5ddws9y1sia7a8v-blender-5.1.1.drv
+  /nix/store/6qx7dm7q5lkc34hn22dk2hvc9afafb0b-system-path.drv
+  /nix/store/32j40cwzygii227j7yzz4p0y3jimb96h-X-Restart-Triggers-polkit.drv
+  /nix/store/lglapxj037vn3aa0575ik8yrfzf50nrv-check-link-targets.sh.drv
+  /nix/store/v9z1g7ng7fsqiwzmgrhm6fgmib71gli8-load-xfconf.drv
+  /nix/store/42hv1bcsbj73gysjdgbr3i7pnl5kafz2-activation-script.drv
+  /nix/store/4a20c6bi43a3zg0ip10q1zbp0psq9hga-initrd-system.conf.drv
+  /nix/store/p72zpqgf2drwfinz055gcfiacq9prn4l-extra-udev-rules.drv
+  /nix/store/6h3cbhj4n0yrkdl0mn03aw110amz1rch-udev-rules.drv
+  /nix/store/6y7i4yxb4ci68x970d4lb3xr6wlw7qqn-tmpfiles.d.drv
+  /nix/store/i1qg5jz3aszh37z0pq6h30a6ksd5d1g9-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
+  /nix/store/6pfa64q26zvm099hpx8wbi86ig0z995k-unit-systemd-tmpfiles-resetup.service.drv
+  /nix/store/cb4zs1cr3phf6sbrswxclz49xdhy22fk-initrd-units.drv
+  /nix/store/kc3mj73rxwhsbmb2qm8f43sy3i7m5gy6-plymouth-initrd-themes.drv
+  /nix/store/lv7h8q2zxr1gh01fz9fbgr1wpw76fylm-plymouth-initrd-plugins.drv
+  /nix/store/pg4gznzbydrngrcy8j5d9jrljbs4g6w6-linux-7.0.10-modules-shrunk.drv
+  /nix/store/svj3jkdhbdr3bqx9zxxqzpbk5mw9rzpg-initrd-hostname.drv
+  /nix/store/sw3d8pyrw40zxhna6hxv4bvkldjj482d-initrd-nixos.conf.drv
+  /nix/store/w267q3x6pl5b286h0bnnb96774f0y5pb-initrd-crypttab.drv
+  /nix/store/vz0i8h2g2v475q3flv5mswvzvr1v4vjb-initrd-linux-7.0.10.drv
+  /nix/store/85fgfqa56c5qn1vq4v0h4xw1balqkh49-boot.json.drv
+  /nix/store/a1q7ncyi03jywpskbbqw1ijsg0w2dkw3-dry-activate.drv
+  /nix/store/b6y27kjr9kpqfcvsk6iiy929x3ld5238-user-environment.drv
+  /nix/store/bkb7la55waapa68v54wa8l0cn5aj231g-unit-polkit.service.drv
+  /nix/store/bqlr5xrd4954j977gh66ajd35jkp6p9j-home-manager-files.drv
+  /nix/store/rqjhjv9kx2jfybrqliscbd0z6zcc562r-set-environment.drv
+  /nix/store/bzfzmg8zbxrpq9sdkw23h59qga9hdqk3-etc-profile.drv
+  /nix/store/ch310253wmj8cl94cnqnyfkbr0i8rnz5-home-manager-generation.drv
+  /nix/store/d126xbzycv7zzqrkr3bgksa0rbha1dks-dbus-1.drv
+  /nix/store/fak05vam58fzl5dgmajqh9jpm48vqphk-limine-install.py.drv
+  /nix/store/h6fv7fmrxv95y2jvzynqf09w8ygzvbma-flatpak-managed-install.drv
+  /nix/store/hi1vji3h9qgbv23yyi5i18c9cfsxb2bv-unit-accounts-daemon.service.drv
+  /nix/store/i8xfbsnvns6ppkb6bdq3wzdbkm19kqhr-etc-zshenv.drv
+  /nix/store/inbwj609b9l82xzx3adh4vilqhpg6mmi-xkb-validated.drv
+  /nix/store/mx0n1wa513wsjxyf7kzmdzag98bchabn-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/w9pmxxf5k9a6saakw0i07ynq0j7yqq9v-unit-dbus-broker.service.drv
+  /nix/store/is5345dqd687vh7h4zpkpwfyc2w7dis2-user-units.drv
+  /nix/store/lcpzfjcc412vww0323305v9i0qzaj8nz-X-Restart-Triggers-systemd-udevd.drv
+  /nix/store/lnwyn8hhxa443p4bhjv7jrv7q50qx6kx-unit-dbus-broker.service.drv
+  /nix/store/m4afyhvbxdw151xrdvr0fd173qwp1g31-unit-flatpak-managed-install.service.drv
+  /nix/store/m4iqv89fmhns785bwlfai8zcf6xsimw2-hwdb.bin.drv
+  /nix/store/yps3cr04l2ij60g4nfnvpn8pwmw94k6y-unit-home-manager-luana.service.drv
+  /nix/store/z2gw4ljqmnhgm8svh3ima797r6d38rny-unit-systemd-udevd.service.drv
+  /nix/store/mz73w38hz3yrxm1jbph4h88nsqh7fil0-system-units.drv
+  /nix/store/wh4drpysfp8y274ahnqdr0jr2imwvi11-system-generators.drv
+  /nix/store/wrcbljkivc03rnkw7hay6kvpw19kkzyy-user-generators.drv
+  /nix/store/xf8ywlmv6ww42n8asyi6nwcdbfkln8b3-etc-zshrc.drv
+  /nix/store/za55f63q2gbsdb4as87i91a68dn1fr42-system-shutdown.drv
+  /nix/store/wyjwxn5ljlbhrzvarzyw99y164i08bnd-etc.drv
+  /nix/store/vp2z1xhia6j1kwa55hf41f4akcb6igfg-activate.drv
+  /nix/store/x64arz4j4w6gjrq5lm09h0q7ac14j1ng-nixos-system-Luana-X670E-26.11.20260531.331800d.drv
+these 122 paths will be fetched (708.9 MiB download, 3.1 GiB unpacked):
+  /nix/store/60pif0kh7dp1gj9lf2x6b3yq2d76wwqs-alembic-1.8.8-dev
+  /nix/store/wrrmfvc61yiwnkp0bn5l8gn2z85b65n5-alsa-utils-1.2.15.2
+  /nix/store/1mx03cb8xaflr3ww5xvgcnn579h16vvy-asio-1.38.0
+  /nix/store/wppgf5wryaxjnsbwha0siwl6xk5xfa3x-auto-add-driver-runpath-hook
+  /nix/store/382qha35f894zakwl85kplmkwz4l9mrs-ceres-solver-2.1.0.tar.gz
+  /nix/store/0viigmp69487ybmk71smywn410208dq7-drbd-9.34.0
+  /nix/store/9rv34bvwzfvvg768jd3lbmvh2l5ickv1-eigen-3.4.1
+  /nix/store/c313m91nv7bdd9167d18b977ajak5s13-ensure-newer-sources-hook
+  /nix/store/m5jgrpipfrwp5ihb3nr6n0m0038xv72v-fdk-aac-2.0.3-dev
+  /nix/store/5pzilhfrq0z0fqhfifzd1kclp3v70rn3-ffmpeg-7.1.4
+  /nix/store/nnzqd51s6njwk1lilrc26nc2brycjjm5-ffmpeg-7.1.4-bin
+  /nix/store/4bifv9rkm3qap58ms348r51pl1ds60wl-ffmpeg-7.1.4-dev
+  /nix/store/84h52wlvlvb2y7hmm6338m7i4m1mpi0v-ffmpeg-8.1
+  /nix/store/281zx8sanx5fcp8j6advwics7gwdvdaz-ffmpeg-8.1-bin
+  /nix/store/7rv05vh6qh1sfiirhjkfjp2gskqhxdp9-ffmpeg-8.1-dev
+  /nix/store/yssvvrs39n4541gcnr0p1rgbagxnlqjk-fftw-single-3.3.10-dev
+  /nix/store/7vpicn6rp92yknh6asrqn3pg848xfn9n-glew-2.2.0-bin
+  /nix/store/sgv15gwny6xh4vsj775h8x1w6fgrk6n1-glew-2.2.0-dev
+  /nix/store/04mj0qjj6dj8b533yl23hmsmxicib27i-glfw-3.4
+  /nix/store/3b5l8c2jipz2zgki0wc50vzwa2r9834a-glibc-locales-2.42-61
+  /nix/store/9v0xf0468xcq70yrbpsp52z5lyynai35-goverlay-1.8.1
+  /nix/store/wbiyfgw3ykpzhlzwpzrd061rjs91crqd-goverlay-1.8.1-man
+  /nix/store/3bh70v7gr2sm796ja4pyl0abfc3prmjq-gvfs-1.60.0
+  /nix/store/a1pbrs4ilagw4rlsp4s4bj47053s3pcq-heroic-2.22.0-fhsenv-rootfs
+  /nix/store/094xq0jc39f5hfqfz659m80a6r713gi5-heroic-unwrapped-2.22.0
+  /nix/store/2k3wf7wvc53pvhd327s0cv3i3mb2byn1-hwloc-2.13.0
+  /nix/store/h4faqaxg8akhwr6620568c1mihlwwsi4-hwloc-2.13.0-dev
+  /nix/store/fmrrq5z57y15cjfgxm8r2ya6a1s914bc-inkscape-1.4.4
+  /nix/store/ysd1fv26f2xqc6mpv7knbkjf3rf7lxvz-inkscape-1.4.4-man
+  /nix/store/1n0xliy9l9xzg1ijngz5pg3hp5fr4bfl-jitsi-meet-electron-2026.5.0
+  /nix/store/6wx5y0cx9rmgssi4r4vdi3hxxz9xv9p1-libdatachannel-0.24.1-dev
+  /nix/store/mfjsxc6wxjyli2rs6js3wvardfivh2f1-libdecor-0.2.5
+  /nix/store/qrxnvz1jxax3p3ch5x73y4v3pxfpdnb7-libdecor-0.2.5-dev
+  /nix/store/p1560b3v4ix6yavwr9n3ffzi95gwl6rw-libjack2-1.9.22-dev
+  /nix/store/lmr889fcdcasiyycz1rgw1bc3z0mhh5y-libmsgraph-0.3.4
+  /nix/store/z2p6ak0r3g461r76b31qbs0md5xsafcj-libpfm-4.13.0
+  /nix/store/lr3i7v9mq2agrnb2hv7b0p228l2a2ii1-libpthread-stubs-0.5
+  /nix/store/xd8fa4ii1vqwx29h0rvkkrvgnj2wzymd-libsamplerate-0.2.2-dev
+  /nix/store/sbs0pb0n03lm0q5v2ywh6mnx0aby2zr0-libva-2.23.0-dev
+  /nix/store/dmw6k50bm2xirxly8wnvpg5h9972h61h-libvirt-12.2.0
+  /nix/store/wgx6nflcc093w7kkz3bwwcmjwpqsvw4x-libvirt-glib-5.0.0
+  /nix/store/wfjvqf9zlh05w0admf7x1mz0jn4bfy21-llvm-21.1.8
+  /nix/store/rfx89pjxx0dzlw8rbl9h5i1xsfv137kv-llvm-21.1.8-dev
+  /nix/store/hi6wx7z4z8v2c08wws4zz1g4dxpi6h9r-mangohud-0.8.3
+  /nix/store/p3w473xkydrqz0n4s57mipaqfbg0wr8p-mangohud-0.8.3
+  /nix/store/x4jssf2wrsafsidgsm018fq8n7dmrf5m-mangohud-0.8.3-doc
+  /nix/store/82v8fs8qvd6l536546v0sg72zvgb40yv-mangohud-0.8.3-man
+  /nix/store/sm99nmgn0lphn7mzqx04qra979r18qw3-manifold-3.5.0
+  /nix/store/pqacx438gmbd7zkm98wqk4g07v6r8zrx-mark-for-cudatoolkit-root-hook
+  /nix/store/ffgz8mvmck6b84f08nzy0d96p2hp8fc1-mpfr-4.2.2-dev
+  /nix/store/gi6n3gp7z0d1j4f2zpc7rwygjj45zgm4-ncurses-6.6-dev
+  /nix/store/j9hvniid5f8247i7m12mv8qk83a768wr-niri-26.04
+  /nix/store/0cax0rxcxz34pqlvynbvi9w8ndxvgdys-niri-26.04-doc
+  /nix/store/5i4vlg770yqgglhm2i80kz6nvckd30yl-nlohmann_json-3.12.0
+  /nix/store/hfgph651w96qv1a50n1lg3c4m2dywmi4-ntfs3g-2026.2.25-doc
+  /nix/store/9rb0hy1bilp9pkq59i44s49g6jmjiyq6-ntfs3g-2026.2.25-man
+  /nix/store/0sgvpc4md24r2i9cgx80z4dh2x2zr9xn-nv-codec-headers-12.1.14.0
+  /nix/store/m9g91481mdwaahg667nna6q6kxmmr0d0-onetbb-2022.3.0-dev
+  /nix/store/b0lsb6hw6drmdz3rwmvg40nddn9qp7v4-openimageio-3.1.13.1
+  /nix/store/hbyz5wkdp6xb2am7by5qzj0925ryy9l9-openimageio-3.1.13.1-bin
+  /nix/store/7pmgymx3d7zhf555y43wbjnkfnr28p9j-openimageio-3.1.13.1-dev
+  /nix/store/fadqw7m7byibc9yymjwnrifdpyw062y3-openshadinglanguage-1.15.3.0
+  /nix/store/m0b0xd1pb736l3i9iw8azawq2n4n33jq-openvdb-12.1.0-dev
+  /nix/store/s4bvbgmpfy3qwkyiafkw8a6plnqndc9r-openxr-loader-1.1.54-dev
+  /nix/store/ms3qlcc7g8qbyhx5wmhmpvidp4hsqq0y-polkit-gnome-0.105
+  /nix/store/0d0jqrwqapwmfp6cqqx17lk2y23wcrk9-port-to-embree-4.patch
+  /nix/store/wsd8qjlcwz2iz7saps04fqz4m3qbxyrd-propagate-dependencies-opengl.patch
+  /nix/store/mrmanavp9znpwacw14486s2wy2cs790g-protontricks-1.14.1
+  /nix/store/b50273rg05kqdara6d4z4d0w614jcsss-prusa-slicer-2.9.5
+  /nix/store/6z327mdx3bsr629iz06v3h3bj3ibny3s-ptex-2.4.2-bin
+  /nix/store/61641wmamcpz8asbfgs3k5sdzfsc1ssi-ptex-2.4.2-dev
+  /nix/store/jamqzysnmqdmxfn0lm237s0i279b754g-pugixml-1.15
+  /nix/store/6b05v9c9j667hj309ijc9yx8012np08c-python-catch-conflicts-hook
+  /nix/store/c0nsc99agjjjipgk72zncp54l42xbf37-python-imports-check-hook.sh
+  /nix/store/y64m3miy9jd5h6hfwkdigbgp8ipb4cmr-python-namespaces-hook.sh
+  /nix/store/26ym67vjb2kxx1sk6jd75k3f3gv9akfs-python-remove-bin-bytecode-hook
+  /nix/store/pbs2lxmmwsyxl07a5x4i94wk0lzidhsm-python-remove-tests-dir-hook
+  /nix/store/mizrdgxq6y7h6gcw3h1wm2ikz5nnn78k-python3.13-cmake-4.1.2
+  /nix/store/imps68qqr3wz0f491x5ajn47va8pvbr5-python3.13-libvirt-12.2.0
+  /nix/store/9484wvdiclk1am0qlpqf7w108ikxhw9k-python3.13-materialx-1.39.4
+  /nix/store/ilklwlxgcc06hq4ihyhxs51yd6syywkm-python3.13-ninja-1.13.2
+  /nix/store/6dpjwyn8dk1pc4r8warhb3xqm5w68rbj-qemu-10.2.2
+  /nix/store/1gy5pjp32gg0lcg6zyv3n1896v2qwmkd-qemu-10.2.2-ga
+  /nix/store/69bbflwph6x0r7cm87f1w2nqqyj3mh35-qpwgraph-1.0.2
+  /nix/store/6fd6ryyd8bbfcs726qjx1ddakl6dxpl0-qrcodegencpp-1.8.0
+  /nix/store/d83c556klnjvzbmm6qmgl9ymrngvbvdf-quickemu-4.9.9
+  /nix/store/rppqmyqm7yx44z41dvpmalcvjwm221sv-rnote-0.14.2
+  /nix/store/9vijzkr6wd4q4clzlgvjivgicp79x1a0-servo-0.2.0
+  /nix/store/7h4riacc6wp4gx5q06ln4yxzip1plpyd-source
+  /nix/store/9c3cvf9809lwhzz0p0fha831zyciw0i1-source
+  /nix/store/c2492x2ryabgzp4pxxlmmxx3x07kcmws-source
+  /nix/store/hl097s04bc6v3yr18isiicq444lgcr6l-source
+  /nix/store/k87dnn1z3c52wb5hng2q0jlk6cvj0yya-source
+  /nix/store/78qb6ah2vsrbh6hpv3cf0z7xhrn487xr-speex-1.2.1-dev
+  /nix/store/0daivm4d7q6r4ma5jicndgfwbzhnplay-speexdsp-1.2.1-dev
+  /nix/store/g5lyb732kbx4pia9kd5w40jpzcq6mrar-stdenv-linux
+  /nix/store/pp43ybv3adkqz14s9414mmqsglkzb68w-steam-run-1.0.0.85
+  /nix/store/340rs14df44fwmc030xax539qaqfim9n-steam-run-1.0.0.85-bwrap
+  /nix/store/x02mf4jl3hy6xys3f560vvslkdhlbw5z-steam-run-1.0.0.85-fhsenv-rootfs
+  /nix/store/h7lzj3valmb7xhvja3nwabhyvnv3i9cr-steam-run-bash
+  /nix/store/ac5w4z5jfd8pmij0jh51xb8776wyy02d-swig-4.4.1
+  /nix/store/ak2bqb5a6ajnwy9p6lnsm13n3h994j8v-thunar-4.20.8
+  /nix/store/nlz1jm2qhagyrpxqrlk16l0i7wgfi1ws-umu-launcher-1.4.0
+  /nix/store/m6y4rwfld4b5p4aalhpi0fyr5p390hrd-umu-launcher-1.4.0-bwrap
+  /nix/store/hpi79wdyiy0cqizy9s7iasaab27pn1v2-umu-launcher-1.4.0-fhsenv-rootfs
+  /nix/store/vg7pf0bjyw1r3lch7c6z607s8acjyfrn-uthash-2.3.0
+  /nix/store/7b07b1l8kagyll0xqszzfyagc2jcjr7h-uutils-coreutils-0.9.0
+  /nix/store/w6b9s6bidzmwz313nsym64jvwjnqw1s9-v4l-utils-1.32.0-dev
+  /nix/store/afbnbky82g70ay54jfipwb78cpm0img1-virt-manager-5.1.0
+  /nix/store/820lmnkzzcykffj8xshrw6lkc6qhxrxh-websocket++-0.8.2
+  /nix/store/2xxm4rj9rqfx1mkzj5m5h0wcxd5afkfi-wrap-python-hook
+  /nix/store/360kz50m8yqnp3cfkf0ry6iinpqspdbw-x264-0-unstable-2025-01-03-dev
+  /nix/store/dqi2gyr2nzp8ykvf2b34awpi9hadxr0m-xdg-desktop-portal-xapp-1.1.3
+  /nix/store/jv185zy7q7g2kv84mwqijkx7aw81wgsj-xen-4.20.3
+  /nix/store/fv0cm2rf682z45z7pwga84r1kk4b27si-xfce4-notifyd-0.9.7
+  /nix/store/r85g2wkzicq7w0bqz0j5386r0v0vp7jz-xfce4-power-manager-4.20.0
+  /nix/store/mjh7gh6b6580xy205z9z42cba8irkbmp-xfce4-screensaver-4.20.2
+  /nix/store/mv0pyqzzrgzgzajdwc1y7n2diz9qd022-xfce4-screenshooter-1.11.3
+  /nix/store/wrsr3mbfic39v71q0723aad5wrrgaxaz-xfce4-session-4.20.4
+  /nix/store/g722w5x3y8chrgc8mhr9bwvaa48p318n-xfce4-settings-4.20.4
+  /nix/store/g53vrphamhvh3rnf7z6jqnqd492ygf6p-xfdesktop-4.20.2
+  /nix/store/a4crklh4k40sxbc3zb2bpb626jhzvrlr-xournalpp-1.3.4
+copying path '/nix/store/wbiyfgw3ykpzhlzwpzrd061rjs91crqd-goverlay-1.8.1-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/ysd1fv26f2xqc6mpv7knbkjf3rf7lxvz-inkscape-1.4.4-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/82v8fs8qvd6l536546v0sg72zvgb40yv-mangohud-0.8.3-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/x4jssf2wrsafsidgsm018fq8n7dmrf5m-mangohud-0.8.3-doc' from 'https://cache.nixos.org'...
+copying path '/nix/store/0cax0rxcxz34pqlvynbvi9w8ndxvgdys-niri-26.04-doc' from 'https://cache.nixos.org'...
+copying path '/nix/store/hfgph651w96qv1a50n1lg3c4m2dywmi4-ntfs3g-2026.2.25-doc' from 'https://cache.nixos.org'...
+copying path '/nix/store/9rb0hy1bilp9pkq59i44s49g6jmjiyq6-ntfs3g-2026.2.25-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/wrrmfvc61yiwnkp0bn5l8gn2z85b65n5-alsa-utils-1.2.15.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/fmrrq5z57y15cjfgxm8r2ya6a1s914bc-inkscape-1.4.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/1n0xliy9l9xzg1ijngz5pg3hp5fr4bfl-jitsi-meet-electron-2026.5.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/j9hvniid5f8247i7m12mv8qk83a768wr-niri-26.04' from 'https://cache.nixos.org'...
+copying path '/nix/store/ms3qlcc7g8qbyhx5wmhmpvidp4hsqq0y-polkit-gnome-0.105' from 'https://cache.nixos.org'...
+copying path '/nix/store/b50273rg05kqdara6d4z4d0w614jcsss-prusa-slicer-2.9.5' from 'https://cache.nixos.org'...
+copying path '/nix/store/69bbflwph6x0r7cm87f1w2nqqyj3mh35-qpwgraph-1.0.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/9vijzkr6wd4q4clzlgvjivgicp79x1a0-servo-0.2.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/rppqmyqm7yx44z41dvpmalcvjwm221sv-rnote-0.14.2' from 'https://cache.nixos.org'...
+building '/nix/store/a1q7ncyi03jywpskbbqw1ijsg0w2dkw3-dry-activate.drv'...
+building '/nix/store/inbwj609b9l82xzx3adh4vilqhpg6mmi-xkb-validated.drv'...
+copying path '/nix/store/60pif0kh7dp1gj9lf2x6b3yq2d76wwqs-alembic-1.8.8-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/1mx03cb8xaflr3ww5xvgcnn579h16vvy-asio-1.38.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/wppgf5wryaxjnsbwha0siwl6xk5xfa3x-auto-add-driver-runpath-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/382qha35f894zakwl85kplmkwz4l9mrs-ceres-solver-2.1.0.tar.gz' from 'https://cache.nixos.org'...
+copying path '/nix/store/9rv34bvwzfvvg768jd3lbmvh2l5ickv1-eigen-3.4.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/0viigmp69487ybmk71smywn410208dq7-drbd-9.34.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/m5jgrpipfrwp5ihb3nr6n0m0038xv72v-fdk-aac-2.0.3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/5pzilhfrq0z0fqhfifzd1kclp3v70rn3-ffmpeg-7.1.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/c313m91nv7bdd9167d18b977ajak5s13-ensure-newer-sources-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/nnzqd51s6njwk1lilrc26nc2brycjjm5-ffmpeg-7.1.4-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/84h52wlvlvb2y7hmm6338m7i4m1mpi0v-ffmpeg-8.1' from 'https://cache.nixos.org'...
+building '/nix/store/lglapxj037vn3aa0575ik8yrfzf50nrv-check-link-targets.sh.drv'...
+building '/nix/store/n02597madh55369c8y67q14hyi1nlijq-cudnn-linux-x86_64-9.22.0.52_cuda12-archive.tar.xz.drv'...
+copying path '/nix/store/281zx8sanx5fcp8j6advwics7gwdvdaz-ffmpeg-8.1-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/7vpicn6rp92yknh6asrqn3pg848xfn9n-glew-2.2.0-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/04mj0qjj6dj8b533yl23hmsmxicib27i-glfw-3.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/3b5l8c2jipz2zgki0wc50vzwa2r9834a-glibc-locales-2.42-61' from 'https://cache.nixos.org'...
+copying path '/nix/store/2k3wf7wvc53pvhd327s0cv3i3mb2byn1-hwloc-2.13.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/6wx5y0cx9rmgssi4r4vdi3hxxz9xv9p1-libdatachannel-0.24.1-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/yssvvrs39n4541gcnr0p1rgbagxnlqjk-fftw-single-3.3.10-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/mfjsxc6wxjyli2rs6js3wvardfivh2f1-libdecor-0.2.5' from 'https://cache.nixos.org'...
+copying path '/nix/store/p1560b3v4ix6yavwr9n3ffzi95gwl6rw-libjack2-1.9.22-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/lmr889fcdcasiyycz1rgw1bc3z0mhh5y-libmsgraph-0.3.4' from 'https://cache.nixos.org'...
+building '/nix/store/xf8ywlmv6ww42n8asyi6nwcdbfkln8b3-etc-zshrc.drv'...
+copying path '/nix/store/4bifv9rkm3qap58ms348r51pl1ds60wl-ffmpeg-7.1.4-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/z2p6ak0r3g461r76b31qbs0md5xsafcj-libpfm-4.13.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/lr3i7v9mq2agrnb2hv7b0p228l2a2ii1-libpthread-stubs-0.5' from 'https://cache.nixos.org'...
+copying path '/nix/store/xd8fa4ii1vqwx29h0rvkkrvgnj2wzymd-libsamplerate-0.2.2-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/sbs0pb0n03lm0q5v2ywh6mnx0aby2zr0-libva-2.23.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/sm99nmgn0lphn7mzqx04qra979r18qw3-manifold-3.5.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/pqacx438gmbd7zkm98wqk4g07v6r8zrx-mark-for-cudatoolkit-root-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/ffgz8mvmck6b84f08nzy0d96p2hp8fc1-mpfr-4.2.2-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/0sgvpc4md24r2i9cgx80z4dh2x2zr9xn-nv-codec-headers-12.1.14.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/gi6n3gp7z0d1j4f2zpc7rwygjj45zgm4-ncurses-6.6-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/5i4vlg770yqgglhm2i80kz6nvckd30yl-nlohmann_json-3.12.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/7rv05vh6qh1sfiirhjkfjp2gskqhxdp9-ffmpeg-8.1-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/sgv15gwny6xh4vsj775h8x1w6fgrk6n1-glew-2.2.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/3bh70v7gr2sm796ja4pyl0abfc3prmjq-gvfs-1.60.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/h4faqaxg8akhwr6620568c1mihlwwsi4-hwloc-2.13.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/qrxnvz1jxax3p3ch5x73y4v3pxfpdnb7-libdecor-0.2.5-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/b0lsb6hw6drmdz3rwmvg40nddn9qp7v4-openimageio-3.1.13.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/p3w473xkydrqz0n4s57mipaqfbg0wr8p-mangohud-0.8.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/m0b0xd1pb736l3i9iw8azawq2n4n33jq-openvdb-12.1.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/s4bvbgmpfy3qwkyiafkw8a6plnqndc9r-openxr-loader-1.1.54-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/wfjvqf9zlh05w0admf7x1mz0jn4bfy21-llvm-21.1.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/0d0jqrwqapwmfp6cqqx17lk2y23wcrk9-port-to-embree-4.patch' from 'https://cache.nixos.org'...
+building '/nix/store/02bm42xch3pwpr6vq1k65ahnqhyr3xsy-flatpak-state.json.drv'...
+copying path '/nix/store/m9g91481mdwaahg667nna6q6kxmmr0d0-onetbb-2022.3.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/wsd8qjlcwz2iz7saps04fqz4m3qbxyrd-propagate-dependencies-opengl.patch' from 'https://cache.nixos.org'...
+copying path '/nix/store/6z327mdx3bsr629iz06v3h3bj3ibny3s-ptex-2.4.2-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/jamqzysnmqdmxfn0lm237s0i279b754g-pugixml-1.15' from 'https://cache.nixos.org'...
+copying path '/nix/store/6b05v9c9j667hj309ijc9yx8012np08c-python-catch-conflicts-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/c0nsc99agjjjipgk72zncp54l42xbf37-python-imports-check-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/y64m3miy9jd5h6hfwkdigbgp8ipb4cmr-python-namespaces-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/26ym67vjb2kxx1sk6jd75k3f3gv9akfs-python-remove-bin-bytecode-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/pbs2lxmmwsyxl07a5x4i94wk0lzidhsm-python-remove-tests-dir-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/mizrdgxq6y7h6gcw3h1wm2ikz5nnn78k-python3.13-cmake-4.1.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/hi6wx7z4z8v2c08wws4zz1g4dxpi6h9r-mangohud-0.8.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/hbyz5wkdp6xb2am7by5qzj0925ryy9l9-openimageio-3.1.13.1-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/9484wvdiclk1am0qlpqf7w108ikxhw9k-python3.13-materialx-1.39.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/ilklwlxgcc06hq4ihyhxs51yd6syywkm-python3.13-ninja-1.13.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/1gy5pjp32gg0lcg6zyv3n1896v2qwmkd-qemu-10.2.2-ga' from 'https://cache.nixos.org'...
+copying path '/nix/store/6fd6ryyd8bbfcs726qjx1ddakl6dxpl0-qrcodegencpp-1.8.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/7h4riacc6wp4gx5q06ln4yxzip1plpyd-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/9c3cvf9809lwhzz0p0fha831zyciw0i1-source' from 'https://cache.nixos.org'...
+building '/nix/store/bqlr5xrd4954j977gh66ajd35jkp6p9j-home-manager-files.drv'...
+copying path '/nix/store/c2492x2ryabgzp4pxxlmmxx3x07kcmws-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/hl097s04bc6v3yr18isiicq444lgcr6l-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/k87dnn1z3c52wb5hng2q0jlk6cvj0yya-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/0daivm4d7q6r4ma5jicndgfwbzhnplay-speexdsp-1.2.1-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/x02mf4jl3hy6xys3f560vvslkdhlbw5z-steam-run-1.0.0.85-fhsenv-rootfs' from 'https://cache.nixos.org'...
+copying path '/nix/store/g5lyb732kbx4pia9kd5w40jpzcq6mrar-stdenv-linux' from 'https://cache.nixos.org'...
+copying path '/nix/store/ac5w4z5jfd8pmij0jh51xb8776wyy02d-swig-4.4.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/ak2bqb5a6ajnwy9p6lnsm13n3h994j8v-thunar-4.20.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/hpi79wdyiy0cqizy9s7iasaab27pn1v2-umu-launcher-1.4.0-fhsenv-rootfs' from 'https://cache.nixos.org'...
+copying path '/nix/store/vg7pf0bjyw1r3lch7c6z607s8acjyfrn-uthash-2.3.0' from 'https://cache.nixos.org'...
+building '/nix/store/h6fv7fmrxv95y2jvzynqf09w8ygzvbma-flatpak-managed-install.drv'...
+building '/nix/store/w267q3x6pl5b286h0bnnb96774f0y5pb-initrd-crypttab.drv'...
+building '/nix/store/d6m6lsjc4z5szhka2zgacvmws0yv2plx-initrd-fstab.drv'...
+building '/nix/store/svj3jkdhbdr3bqx9zxxqzpbk5mw9rzpg-initrd-hostname.drv'...
+building '/nix/store/sw3d8pyrw40zxhna6hxv4bvkldjj482d-initrd-nixos.conf.drv'...
+building '/nix/store/4a20c6bi43a3zg0ip10q1zbp0psq9hga-initrd-system.conf.drv'...
+copying path '/nix/store/9v0xf0468xcq70yrbpsp52z5lyynai35-goverlay-1.8.1' from 'https://cache.nixos.org'...
+building '/nix/store/dgnaz5chj6pfvqajz35p2ks6x05vyda6-itch.desktop.drv'...
+copying path '/nix/store/7pmgymx3d7zhf555y43wbjnkfnr28p9j-openimageio-3.1.13.1-dev' from 'https://cache.nixos.org'...
+building '/nix/store/6bsv8pd5ajn006nvrxcm0pldk18bm3sf-ld-library-path.drv'...
+building '/nix/store/2lrxccg92b93r634nxvwl413845d0028-limine-install.json.drv'...
+building '/nix/store/pg4gznzbydrngrcy8j5d9jrljbs4g6w6-linux-7.0.10-modules-shrunk.drv'...
+building '/nix/store/fak05vam58fzl5dgmajqh9jpm48vqphk-limine-install.py.drv'...
+building '/nix/store/v9z1g7ng7fsqiwzmgrhm6fgmib71gli8-load-xfconf.drv'...
+building '/nix/store/lv7h8q2zxr1gh01fz9fbgr1wpw76fylm-plymouth-initrd-plugins.drv'...
+building '/nix/store/42hv1bcsbj73gysjdgbr3i7pnl5kafz2-activation-script.drv'...
+building '/nix/store/kc3mj73rxwhsbmb2qm8f43sy3i7m5gy6-plymouth-initrd-themes.drv'...
+building '/nix/store/ch310253wmj8cl94cnqnyfkbr0i8rnz5-home-manager-generation.drv'...
+copying path '/nix/store/61641wmamcpz8asbfgs3k5sdzfsc1ssi-ptex-2.4.2-dev' from 'https://cache.nixos.org'...
+building '/nix/store/af56rglmz9zzjjd5xv9q8iy4d0hwgny2-pyside6-uic.drv'...
+building '/nix/store/1ag6dqkr8b0vd1abg508r18pq7bxqfxi-python3-3.13.12.drv'...
+building '/nix/store/7icl3cizihvcqgbfgs2n1p8682agi7q6-source.drv'...
+copying path '/nix/store/6dpjwyn8dk1pc4r8warhb3xqm5w68rbj-qemu-10.2.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/78qb6ah2vsrbh6hpv3cf0z7xhrn487xr-speex-1.2.1-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/7b07b1l8kagyll0xqszzfyagc2jcjr7h-uutils-coreutils-0.9.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/820lmnkzzcykffj8xshrw6lkc6qhxrxh-websocket++-0.8.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/w6b9s6bidzmwz313nsym64jvwjnqw1s9-v4l-utils-1.32.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/fadqw7m7byibc9yymjwnrifdpyw062y3-openshadinglanguage-1.15.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/2xxm4rj9rqfx1mkzj5m5h0wcxd5afkfi-wrap-python-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/360kz50m8yqnp3cfkf0ry6iinpqspdbw-x264-0-unstable-2025-01-03-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/dqi2gyr2nzp8ykvf2b34awpi9hadxr0m-xdg-desktop-portal-xapp-1.1.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/jv185zy7q7g2kv84mwqijkx7aw81wgsj-xen-4.20.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/fv0cm2rf682z45z7pwga84r1kk4b27si-xfce4-notifyd-0.9.7' from 'https://cache.nixos.org'...
+copying path '/nix/store/r85g2wkzicq7w0bqz0j5386r0v0vp7jz-xfce4-power-manager-4.20.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/mv0pyqzzrgzgzajdwc1y7n2diz9qd022-xfce4-screenshooter-1.11.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/wrsr3mbfic39v71q0723aad5wrrgaxaz-xfce4-session-4.20.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/g722w5x3y8chrgc8mhr9bwvaa48p318n-xfce4-settings-4.20.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/g53vrphamhvh3rnf7z6jqnqd492ygf6p-xfdesktop-4.20.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/a4crklh4k40sxbc3zb2bpb626jhzvrlr-xournalpp-1.3.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/mjh7gh6b6580xy205z9z42cba8irkbmp-xfce4-screensaver-4.20.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/dmw6k50bm2xirxly8wnvpg5h9972h61h-libvirt-12.2.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/m6y4rwfld4b5p4aalhpi0fyr5p390hrd-umu-launcher-1.4.0-bwrap' from 'https://cache.nixos.org'...
+copying path '/nix/store/nlz1jm2qhagyrpxqrlk16l0i7wgfi1ws-umu-launcher-1.4.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/094xq0jc39f5hfqfz659m80a6r713gi5-heroic-unwrapped-2.22.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/rfx89pjxx0dzlw8rbl9h5i1xsfv137kv-llvm-21.1.8-dev' from 'https://cache.nixos.org'...
+building '/nix/store/9x5a8g1jmbmscyi8yn8kznvs5d4c2r64-cudnn-9.22.0.52-source.drv'...
+copying path '/nix/store/340rs14df44fwmc030xax539qaqfim9n-steam-run-1.0.0.85-bwrap' from 'https://cache.nixos.org'...
+copying path '/nix/store/wgx6nflcc093w7kkz3bwwcmjwpqsvw4x-libvirt-glib-5.0.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/imps68qqr3wz0f491x5ajn47va8pvbr5-python3.13-libvirt-12.2.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/a1pbrs4ilagw4rlsp4s4bj47053s3pcq-heroic-2.22.0-fhsenv-rootfs' from 'https://cache.nixos.org'...
+copying path '/nix/store/pp43ybv3adkqz14s9414mmqsglkzb68w-steam-run-1.0.0.85' from 'https://cache.nixos.org'...
+copying path '/nix/store/afbnbky82g70ay54jfipwb78cpm0img1-virt-manager-5.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/h7lzj3valmb7xhvja3nwabhyvnv3i9cr-steam-run-bash' from 'https://cache.nixos.org'...
+copying path '/nix/store/mrmanavp9znpwacw14486s2wy2cs790g-protontricks-1.14.1' from 'https://cache.nixos.org'...
+building '/nix/store/fxvrvzb0msqw04f24kfb5v9fmm5ms3af-heroic-2.22.0-bwrap.drv'...
+building '/nix/store/93fh1zy48lmi5az58m3svjhp3zryv8p8-cuda12.9-cudnn-9.22.0.52.drv'...
+copying path '/nix/store/d83c556klnjvzbmm6qmgl9ymrngvbvdf-quickemu-4.9.9' from 'https://cache.nixos.org'...
+building '/nix/store/xpnc5y6r8p9lg65k288fbc4sk0dd69ck-heroic-2.22.0.drv'...
+building '/nix/store/s6cfrgi9w7988nhbf8k5nx8jgqdr5fvj-obs-studio-32.1.2.drv'...
+building '/nix/store/s4kzikdy3jz7xhfw5wc9413qqhjb9cjl-python3.13-openusd-25.05.01.drv'...
+building '/nix/store/q8qwh0dkp915815y92wxv1zdhfkkk1zw-audit-4.1.4.drv'...
+building '/nix/store/84gs9w3skqglpngg0c5558avn92msww7-libselinux-3.8.1.drv'...
+building '/nix/store/nvf04m27m0ymvhmw2rmlwpryz905qml1-pybind11-setup-hook.drv'...
+building '/nix/store/cm4knyr0gpxnmx2kiix8prfx6vw2rqjn-python-catch-conflicts-hook.drv'...
+building '/nix/store/h2qbb8iy1r9fp430r4wd8z672q4v97kc-python-imports-check-hook.sh.drv'...
+building '/nix/store/vdkgng7wzcja5kyc517wjgyx141g4q8l-python3.13-bootstrap-flit-core-3.12.0.drv'...
+building '/nix/store/q4slzgqd2zlzn0nfh3j1l992pdcm84iw-re2c-4.3.1.drv'...
+building '/nix/store/ay6c9bk0pbmpdxrlwy4cn8y2lzaspv4c-python3.13-bootstrap-installer-0.7.0.drv'...
+building '/nix/store/n6g1m1mff15p1lrjpwivs7031v62yp2g-source.drv'...
+building '/nix/store/h4193s7hcqlqkdyj9vg7pz0kvpydpb2q-pypa-install-hook.drv'...
+building '/nix/store/40k4ciqzhz89a3ys1d8f4sinflwjg9vg-python3.13-bootstrap-packaging-25.0.drv'...
+building '/nix/store/455byj5d5ca9fn99svcf8avkdisj2g58-python3.13-bootstrap-packaging-25.0.drv'...
+building '/nix/store/ixj54hzcwhlw9gwy4wch6a2zd57bdv0z-python3.13-bootstrap-pyproject-hooks-1.2.0.drv'...
+building '/nix/store/i0npl2fc4fmba0scwmjs7a49qk9wvqf8-python-runtime-deps-check-hook.sh.drv'...
+building '/nix/store/5v9a1qadzbbsdjpkcak1v4i5mcjp5fxj-python3.13-bootstrap-tomli-2.2.1.drv'...
+building '/nix/store/xzm05k9xlrkzrhzgrfzvfhd3sc8j84v2-source.drv'...
+building '/nix/store/qhnk51mbpgy63i5kp9cwmslvbwxks3ix-python3.13-bootstrap-build-1.3.0.drv'...
+building '/nix/store/f9mxvpw2zsndgvlvsz8h33h1zsqq278g-steam-run-1.0.0.85-fhsenv-rootfs.drv'...
+building '/nix/store/bs2fjcl9m17rgi4fg58m0l9q6nw6aypz-pypa-build-hook.sh.drv'...
+building '/nix/store/159826vgaav83i30hnhbirsnk27vqard-steam-run-1.0.0.85-bwrap.drv'...
+building '/nix/store/ny3783i0h9jl8ryk50bqaw35k2d5hw3b-suitesparse-5.13.0.drv'...
+building '/nix/store/fjjc8z0mgb9iin8ry5wrg0aj2j12264f-steam-run-1.0.0.85.drv'...
+building '/nix/store/5pk0vjs2bscfx32msbbq3f64mg30gqwv-ceres-solver-2.1.0.drv'...
+building '/nix/store/wlvwa9m24wwbsy94dzkjmxi4c38s3g47-itch-26.9.0.drv'...
+building '/nix/store/wh4drpysfp8y274ahnqdr0jr2imwvi11-system-generators.drv'...
+building '/nix/store/za55f63q2gbsdb4as87i91a68dn1fr42-system-shutdown.drv'...
+building '/nix/store/6y7i4yxb4ci68x970d4lb3xr6wlw7qqn-tmpfiles.d.drv'...
+building '/nix/store/m4afyhvbxdw151xrdvr0fd173qwp1g31-unit-flatpak-managed-install.service.drv'...
+building '/nix/store/i1qg5jz3aszh37z0pq6h30a6ksd5d1g9-X-Restart-Triggers-systemd-tmpfiles-resetup.drv'...
+building '/nix/store/yps3cr04l2ij60g4nfnvpn8pwmw94k6y-unit-home-manager-luana.service.drv'...
+building '/nix/store/0n9fsgy52xyalqqsfizhgdwbaldnikw3-unit-initrd-parse-etc.service.drv'...
+building '/nix/store/6pfa64q26zvm099hpx8wbi86ig0z995k-unit-systemd-tmpfiles-resetup.service.drv'...
+building '/nix/store/cb4zs1cr3phf6sbrswxclz49xdhy22fk-initrd-units.drv'...
+building '/nix/store/x31lz1qyfzhlg4iwcpklsmca74p17wcd-unittest-check-hook.drv'...
+building '/nix/store/vz0i8h2g2v475q3flv5mswvzvr1v4vjb-initrd-linux-7.0.10.drv'...
+building '/nix/store/b6y27kjr9kpqfcvsk6iiy929x3ld5238-user-environment.drv'...
+building '/nix/store/85fgfqa56c5qn1vq4v0h4xw1balqkh49-boot.json.drv'...
+building '/nix/store/wrcbljkivc03rnkw7hay6kvpw19kkzyy-user-generators.drv'...
+building '/nix/store/pvzy4dq1wnlv4lb1nhvjwp3lp07l1hbm-version-check-hook.drv'...
+building '/nix/store/gck2m4y648lk9ssckdasccv7k43qw6n0-version.patch.drv'...
+building '/nix/store/zbchis3xavqgw715wv495a02h3a8k7cm-virtualbox-extpack-7.2.8.drv'...
+building '/nix/store/df81n4ah86k5g43p5j3wsdkj1k706bg1-which-2.23.drv'...
+building '/nix/store/85bchirj38mji7aj6z6vfxz4j4644f90-virtualbox-7.2.8.drv'...
+building '/nix/store/aafriqslp7m17hybq002vn7x4k2jkv7f-openblas-0.3.30.drv'...
+building '/nix/store/ywl1pyln0bqbk52ix5ddws9y1sia7a8v-blender-5.1.1.drv'...
+building '/nix/store/p72zpqgf2drwfinz055gcfiacq9prn4l-extra-udev-rules.drv'...
+building '/nix/store/f4x2r6r5iw10i27dc2ylwwmf8sf0hzmb-rhash-1.4.4.drv'...
+building '/nix/store/m4iqv89fmhns785bwlfai8zcf6xsimw2-hwdb.bin.drv'...
+building '/nix/store/6h3cbhj4n0yrkdl0mn03aw110amz1rch-udev-rules.drv'...
+building '/nix/store/szr7rniybd603ma5r2sb9nia9rawkf8p-wlrobs-unstable-2024-12-24.drv'...
+building '/nix/store/lcpzfjcc412vww0323305v9i0qzaj8nz-X-Restart-Triggers-systemd-udevd.drv'...
+building '/nix/store/bxp3ixghg9vaam9plw0sshdmrci97aa4-obs-studio-plugins.drv'...
+building '/nix/store/z2gw4ljqmnhgm8svh3ima797r6d38rny-unit-systemd-udevd.service.drv'...
+building '/nix/store/g7y8wbc2ylabif9sb6z116pddbciw9p9-wrap-python-hook.drv'...
+building '/nix/store/ma3g7mdynxcsyiqwhsqcldllqz92xbzg-wrapped-obs-studio-32.1.2.drv'...
+building '/nix/store/07qk0v7digydxgqvy4n1896sw4vkyq07-python3.13-flit-core-3.12.0.drv'...
+building '/nix/store/fhfq1rskav2s34gnfx275cmvs3yjvlrf-xcb-proto-1.17.0.drv'...
+building '/nix/store/m51mm14h0w2dgwwrncfddiaa56xapzns-python3.13-installer-0.7.0.drv'...
+building '/nix/store/h18rr4agza9yv0m8589c2nnm4vqjq4q8-xserver.conf.drv'...
+building '/nix/store/p6p6fl9nhfjgm1kjbrbjrgnrl1dwnm9h-pypa-install-hook.drv'...
+building '/nix/store/z783azzlsrbj3mnqfjb134q1sjabwaxj-xserver-wrapper.drv'...
+building '/nix/store/6kr9g7pv7jyrcwzic1vk8s4h5a85k426-python3.13-packaging-25.0.drv'...
+building '/nix/store/p10428vn6m0pqx0jnksh07bk0x2wsmfb-python3.13-pyproject-hooks-1.2.0.drv'...
+building '/nix/store/nyf9pllmqfcl0s84zzm6zp5mhccb8c6n-python-runtime-deps-check-hook.sh.drv'...
+building '/nix/store/40m1ss6sbg6fr7cq1qrpk0zqypkl5gp9-python3.13-wheel-0.46.1.drv'...
+building '/nix/store/7nps3rmq6m68h13jyhplwlb71a9xhklk-xsession.drv'...
+building '/nix/store/br6jdpc5v20fxvjcrxkckj9agff554r8-python-relax-deps-hook.drv'...
+building '/nix/store/f0p1m6zignj27phzqwfnw809fshmlp1y-xfce-xsession.drv'...
+building '/nix/store/s8j9flzdvxf8pd0bndv09pprhl70fyqy-python3.13-build-1.3.0.drv'...
+building '/nix/store/p049308lj0m9a50xl0p8qyyzj2q93w76-desktops.drv'...
+building '/nix/store/9nc0n0qd44s9dkd5rg51wzpwzvnx1w99-pypa-build-hook.sh.drv'...
+building '/nix/store/20p9gzqp5mcaqp653czr1h25ib0j2wv6-etc-pam-environment.drv'...
+building '/nix/store/y6rhd7s36c8h7w06dpfzkyz13fqk08ld-python3.13-alabaster-1.0.0.drv'...
+building '/nix/store/4fa8jhzzhgr65lp9n3lv9xvn6s72vsh5-python3.13-docutils-0.21.2.drv'...
+building '/nix/store/42vavg6f5w2s3jdwv2piagdwx3qiqb8m-python3.13-editables-0.5.drv'...
+building '/nix/store/bafq04xxhm183lr05z66mrkxcs6sq501-python3.13-pathspec-0.12.1.drv'...
+building '/nix/store/08kdrgy1g83mifx5i80inn4yph9hf5as-python3.13-pyproject-metadata-0.9.1.drv'...
+building '/nix/store/jphji4bj8xjpah0gsdracxi5090v9lb5-python3.13-setuptools-80.9.0.drv'...
+building '/nix/store/gzzj287zm3pcl7nb30dbwcrgq31yw11p-python3.13-sphinxcontrib-applehelp-2.0.0.drv'...
+building '/nix/store/0bacp23bw9755i695zrwsfrras0srh4l-python3-3.13.12-env.drv'...
+building '/nix/store/bv9lmsm3l5zzv7i8k5x94aiswfqdrnbw-python3.13-calver-2025.10.20.drv'...
+building '/nix/store/gwfvkbr7r21vlg82jbdv4nfa48r2b5xs-python3.13-cython-3.1.4.drv'...
+building '/nix/store/d7gh94kdink3fkbv25pgb0nmcnjr66mz-python3.13-greenlet-3.2.3.drv'...
+building '/nix/store/61k6b4ynynkh12abhpm4zclrws85919v-python3.13-lxml-6.0.2.drv'...
+building '/nix/store/cr26wlq3jh69j51sffyq137d4xpxgd6a-python3.13-pycparser-2.23.drv'...
+building '/nix/store/1qkhpfh4xs1gsb1q8ck6apf2b2lgix8d-python3.13-defusedxml-0.8.0rc2.drv'...
+building '/nix/store/kbk3252yx8wl74y7q6sjd8c9nqr15mg4-python3.13-cffi-2.0.0.drv'...
+building '/nix/store/98hhn4j64fnl13vckw08257rfwmxr6pp-python3.13-pyelftools-0.32.drv'...
+building '/nix/store/rpl8sc8pzfgd84007kz3vgfkq7sik9y0-python3.13-pytz-2025.2.drv'...
+building '/nix/store/3jqgnifblh636rr4ydkl5a4kafll3cqz-python3-3.13.12-env.drv'...
+building '/nix/store/f5ipyhrs739ckhkgc5v02hjhybga4nxa-python3.13-sphinxcontrib-devhelp-2.0.0.drv'...
+building '/nix/store/28shyz73l50ynbyjg4n5mwlvil463gzm-auto-patchelf-0-unstable-2024-08-14.drv'...
+building '/nix/store/5gm5fs791aaq33y4ybdjvvf7nkxlaa80-python3.13-sphinxcontrib-htmlhelp-2.1.0.drv'...
+building '/nix/store/dhk54q0jz8ym0i495hbyqgr7qjyzp6l7-auto-patchelf-hook.drv'...
+building '/nix/store/cflac5yy5i8csz5wdhcn91xxk71bnm9b-python3.13-sphinxcontrib-qthelp-2.0.0.drv'...
+building '/nix/store/rsb5scafly89s8gi9hsqi9gva0fz2pvh-python3.13-sphinxcontrib-serializinghtml-2.0.0.drv'...
+building '/nix/store/qqs5wnwy1rwf7k9mmx2zdpwb4l7akbw7-python3.13-tomli-2.2.1.drv'...
+building '/nix/store/12xfbnfwhrfzgv3g6m2jwamy6l5x189a-python3.13-trove-classifiers-2025.9.11.17.drv'...
+building '/nix/store/jm7jjk3igxzqzkgj0fmw0xy30q95i8s9-python3.13-types-setuptools-80.9.0.20250822.drv'...
+building '/nix/store/rwd254vdiwf97jpji9q0zlia6azjamqh-python3.13-typing-extensions-4.15.0.drv'...
+building '/nix/store/vjgkgp0wganswvsh3xfn80mr2r9m4ivb-python3.13-zope-interface-7.2.drv'...
+building '/nix/store/mj2jkzyrg9vky3wgnkmhy2hbfgplhnx2-python3.13-setuptools-scm-9.0.1.drv'...
+building '/nix/store/m0kf9y9092lvwlxvi05liqds5a4l70f6-rustc-bootstrap-1.91.1.drv'...
+building '/nix/store/izrb4wizrlcjvrngvn4fw26hcafn28cf-python3.13-pluggy-1.6.0.drv'...
+building '/nix/store/ch5cghiw858k9ba017mbv6bhdr04x7if-python3.13-zipp-3.23.0.drv'...
+building '/nix/store/3gmrk5hq16096dghr9bqjk9wmxviy4xg-python3.13-hatchling-1.27.0.drv'...
+building '/nix/store/vfhal0607vk2mj79a5pk7gzxjnrhg0zv-rustc-bootstrap-wrapper-1.91.1.drv'...
+building '/nix/store/0h2g2gw4sh59rhjr9rsh02r5v9di5qvc-python3.13-attrs-25.3.0.drv'...
+building '/nix/store/000z3jicrq7ahym1lagqm84cxxdj0sj4-cargo-bootstrap-1.91.1.drv'...
+building '/nix/store/diymj0yi3miwcwn7wmmwpg6yyywkbaj1-python3.13-iniconfig-2.1.0.drv'...
+building '/nix/store/d1l0bwm2ki3ng3hfmrq52bqc6w0zs6r3-python3.13-pygments-2.19.2.drv'...
+building '/nix/store/arrnlsxmxdfcc61qkv2d2b7nb31slhf7-python3.13-pytest-cov-stub-1.0.0.drv'...
+building '/nix/store/j3fzm44hazmcs0mf94m7w33pljg1q3si-python3.13-pytest-8.4.2.drv'...
+building '/nix/store/2n3rmq04d44bscxnq67c4r2cml4mqak0-sddm.conf.drv'...
+building '/nix/store/d4dkg92db6kmcxc7zbbwkx0irvz6ql91-pytest-check-hook.drv'...
+building '/nix/store/s589b9flrb1r753flkckm82npy6jpsas-python3.13-pytest-asyncio-1.2.0.drv'...
+building '/nix/store/89xywyfbvz45cvl4mvik15w8dp0b4mfb-python3.13-buildcatrust-0.4.0.drv'...
+building '/nix/store/iffdpvyvgcgqcl0k8b00hsqpli77xg01-python3.13-chameleon-4.6.0.drv'...
+building '/nix/store/v0dasa8zn0ra4ndjxs1v55hzn9127msq-nss-cacert-3.123.drv'...
+building '/nix/store/hy18in6qshx7mip4ah8v4h8dh8bxyp2a-python3.13-click-8.2.1.drv'...
+building '/nix/store/22kbw818q7n7rnpb70rmjlq5mx4r98gk-python3.13-certifi-2025.07.14.drv'...
+building '/nix/store/nrypzpqq4zy2rzj1hh7nn35ifxm9vigl-python3.13-idna-3.11.drv'...
+building '/nix/store/7a4sarsizjg1as96syahgd1x7jq831rl-python3.13-markupsafe-3.0.3.drv'...
+building '/nix/store/z8ycchj4wqsbpyn9gxlbs07cpmpwwwna-python3.13-mypy-extensions-1.1.0.drv'...
+building '/nix/store/n4fvyk3mrz65jwgrgrifga7jkimcsfaa-python3.13-psutil-7.1.2.drv'...
+building '/nix/store/miczl33kf58ajy1q482wxsc8c7rpgkqz-python3.13-ptyprocess-0.7.0.drv'...
+building '/nix/store/1qfyfahnbq6ls3lldp5ck8hrdxqy6zm0-python3.13-pycodestyle-2.14.0.drv'...
+building '/nix/store/jgkv92dh23z2vq1apr29pknysj8aadfg-python3.13-pexpect-4.9.0.drv'...
+building '/nix/store/d7p6l84a7x8d12abhagk5sp9kav7km2m-python3.13-pyflakes-3.4.0.drv'...
+building '/nix/store/vhjw03ydspkj4vf1ibx5nq1zar0s1bcr-python3.13-pytest-mock-3.15.1.drv'...
+building '/nix/store/c7a3cjr384arr1a4wbpqxknhd0cvqy81-python3.13-pytest-timeout-2.4.0.drv'...
+building '/nix/store/12pvcpq958jjqv85jymx4liamxw0rqg3-asciidoc-10.2.1.drv'...
+building '/nix/store/wvfq2pafi19vn5srcj6d84xx31ngnbmn-python3.13-pyyaml-6.0.3.drv'...
+building '/nix/store/6zx7vxrkhjqj6kmqnghk6jgcd4g9jmh6-ninja-1.13.1.drv'...
+building '/nix/store/dvhfvas8m6n2p8946pl2q1g3vvkxi1il-python3.13-markdown-3.9.0.drv'...
+building '/nix/store/l69nqrymkz515yyg96h4zsnq5xy6xawv-python3.13-ninja-1.13.1.drv'...
+building '/nix/store/ck5k6hnk3n038skaiw8fif8pdb5xkmfn-python3.13-roman-numerals-py-3.1.0.drv'...
+building '/nix/store/xbiyj5l2mpr6ba18519379jdghm83m27-python3.13-six-1.17.0.drv'...
+building '/nix/store/ynm219zsv2mlk147nn3fcpyyb7q6a0xh-python3.13-smartypants-2.0.2.drv'...
+building '/nix/store/wjmpn5xggxcmim08c4fa50wjqv3sbanq-python3.13-python-dateutil-2.9.0.post0.drv'...
+building '/nix/store/ncbln88a9if15ckfii08xna4jf0bwl7w-python3.13-tomli-w-1.2.0.drv'...
+building '/nix/store/m3qvhhzqnwhlagqndryycwjwq0mg4z87-python3.13-freezegun-1.5.4.drv'...
+building '/nix/store/xhvz8gf4h9pmrl2iqd58pnvpwl5bp41h-python3-3.13.12-env.drv'...
+building '/nix/store/zsfjdz9r1faklqyqg4fn5gbzpwrbzyid-python3.13-babel-2.17.0.drv'...
+building '/nix/store/vkwm8fhz1lv4vlpzyivgci0f590ny1i5-python3.13-typogrify-2.1.0.drv'...
+building '/nix/store/hp74nc1pwpa95y946vkwy04l3xp4hrwc-python3.13-jinja2-3.1.6.drv'...
+building '/nix/store/bjpfzh41c1j1frzbckgzr12ndzjqfvqj-python3.13-zope-event-5.0.drv'...
+building '/nix/store/53z2wmillq07hx5w5smcfqz8g8q5mysx-python3-3.13.12-env.drv'...
+building '/nix/store/k4i3wlikhh0fd1nmys5p5b8lqypnkh0m-python3.13-sphinxcontrib-websupport-2.0.0.drv'...
+building '/nix/store/rqjhjv9kx2jfybrqliscbd0z6zcc562r-set-environment.drv'...
+building '/nix/store/h4dyqaf4rkyl25zd08hdhq973cj6937h-set-python-sys-path.patch.drv'...
+building '/nix/store/bzfzmg8zbxrpq9sdkw23h59qga9hdqk3-etc-profile.drv'...
+building '/nix/store/i8xfbsnvns6ppkb6bdq3wzdbkm19kqhr-etc-zshenv.drv'...
+building '/nix/store/kz112xjalkqmcyi5bzja7rd46ci2kbkr-setuptools-build-hook.drv'...
+building '/nix/store/gkmlqrnbdrx7yhscd2b7p1mahl9jq0d1-xtrans-1.6.0.drv'...
+building '/nix/store/06z8chqh9xx90y9r2n3dlhw0jys6snh3-meson-1.9.1.drv'...
+building '/nix/store/fxhnx8dcj46i6mxnnv9cy99vajbwgb6n-meson-1.9.1.drv'...
+building '/nix/store/hw1ybwr2pv4072kk5l7ghywvlbnjjlpw-python3.13-docopt-0.6.2.drv'...
+building '/nix/store/plww5g88nwaydwp76sfksxn4k502bny7-argp-standalone-1.5.0.drv'...
+building '/nix/store/4b94wf0vvfcrzix4vc78i53l0jnfh0ij-fribidi-1.0.16.drv'...
+building '/nix/store/kr1cqfm1i9gqw47sgkg2589qmfg4ihd4-gtk-doc-1.35.1.drv'...
+building '/nix/store/gpvcavmjq4qhfka4l6fya4dya7ya4w19-libpciaccess-0.18.1.drv'...
+building '/nix/store/c99dwiv5jcl4ri4jf6iniihjg4z6bs73-libpsl-0.21.5.drv'...
+building '/nix/store/smpjl27clacxp4q29sjlp24a20wkkid5-libdrm-2.4.129.drv'...
+building '/nix/store/6pg9z87cxzacgm3fzzbsvpnacl2kpihl-libsysprof-capture-49.0.drv'...
+building '/nix/store/f7vf6vr0zlr782kmb35l8r5k19kbscpf-libxcvt-0.1.3.drv'...
+building '/nix/store/ahv67wza43fn0ai01vf9p5hlslj9dj17-p11-kit-0.25.10.drv'...
+building '/nix/store/7h8bglka2q8iba98kin0ay9v60jb9j09-pixman-0.46.4.drv'...
+building '/nix/store/l83ww8gkp8lpzi8v5iwkjkw390rblrf9-gnutls-3.8.13.drv'...
+error: Cannot build '/nix/store/l83ww8gkp8lpzi8v5iwkjkw390rblrf9-gnutls-3.8.13.drv'.
+       Reason: builder failed with exit code 2.
+       Output paths:
+         /nix/store/1q4xzs0nfki3zglxidzh7wza5hw9x7ay-gnutls-3.8.13-man
+         /nix/store/2nc6w04c4843a655m3bxkp4km0n21qna-gnutls-3.8.13-bin
+         /nix/store/907xm8y5gl8w15awl2kx6nw79m3aa5qd-gnutls-3.8.13-devdoc
+         /nix/store/fxqa9ig1w4vg59pzwzpfs5m1109s0cgv-gnutls-3.8.13-dev
+         /nix/store/ynalqwmxpphcw42hkgj3d4ccyidda8d3-gnutls-3.8.13
+       Last 25 log lines:
+       >   CCLD     privkey-derive
+       >   CCLD     dh-compute2
+       >   CCLD     ecdh-compute2
+       >   CCLD     pkcs7-pad
+       >   CCLD     mini-dtls-fragments
+       >   CCLD     tls-channel-binding
+       > /nix/store/v8mpk87097f0r8ddmf1zc5bfl8a3lpz5-binutils-2.44/bin/ld: mini_dtls_fragments-mini-dtls-fragments.o: in function `client_push_inj0':
+       > /build/gnutls-3.8.13/tests/mini-dtls-fragments.c:208:(.text+0x595): undefined reference to `rpl_free'
+       > /nix/store/v8mpk87097f0r8ddmf1zc5bfl8a3lpz5-binutils-2.44/bin/ld: mini_dtls_fragments-mini-dtls-fragments.o: in function `queue_put_renumbered':
+       > /build/gnutls-3.8.13/tests/mini-dtls-fragments.c:417:(.text+0x80b): undefined reference to `rpl_free'
+       > /nix/store/v8mpk87097f0r8ddmf1zc5bfl8a3lpz5-binutils-2.44/bin/ld: mini_dtls_fragments-mini-dtls-fragments.o: in function `client_push_split_hello':
+       > /build/gnutls-3.8.13/tests/mini-dtls-fragments.c:472:(.text+0x92b): undefined reference to `rpl_free'
+       > /nix/store/v8mpk87097f0r8ddmf1zc5bfl8a3lpz5-binutils-2.44/bin/ld: /build/gnutls-3.8.13/tests/mini-dtls-fragments.c:473:(.text+0x933): undefined reference to `rpl_free'
+       > /nix/store/v8mpk87097f0r8ddmf1zc5bfl8a3lpz5-binutils-2.44/bin/ld: mini_dtls_fragments-mini-dtls-fragments.o: in function `client_push_split_hello_bad_seq':
+       > /build/gnutls-3.8.13/tests/mini-dtls-fragments.c:500:(.text+0xa31): undefined reference to `rpl_free'
+       > /nix/store/v8mpk87097f0r8ddmf1zc5bfl8a3lpz5-binutils-2.44/bin/ld: mini_dtls_fragments-mini-dtls-fragments.o:/build/gnutls-3.8.13/tests/mini-dtls-fragments.c:501: more undefined references to `rpl_free' follow
+       > collect2: error: ld returned 1 exit status
+       > make[3]: *** [Makefile:8443: mini-dtls-fragments] Error 1
+       > make[3]: *** Waiting for unfinished jobs....
+       > make[3]: Leaving directory '/build/gnutls-3.8.13/tests'
+       > make[2]: *** [Makefile:14548: check-am] Error 2
+       > make[2]: Leaving directory '/build/gnutls-3.8.13/tests'
+       > make[1]: *** [Makefile:10975: check-recursive] Error 1
+       > make[1]: Leaving directory '/build/gnutls-3.8.13/tests'
+       > make: *** [Makefile:3455: check-recursive] Error 1
+       For full logs, run:
+         nix log /nix/store/l83ww8gkp8lpzi8v5iwkjkw390rblrf9-gnutls-3.8.13.drv
+building '/nix/store/kd1fvj2g7pv3j35n2hq70ckdz52fg040-python3.13-imagesize-1.4.1.drv'...
+error: Cannot build '/nix/store/2dr3q7jh0b4ly8ffsfnarid5mckvk60k-libmicrohttpd-1.0.2.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/57hv7k86jysyk9zsk7zsgqy6vp9sfqd9-libmicrohttpd-1.0.2-dev
+         /nix/store/a1i4yxzkx3l3723apdhr4mdw1sx29nzj-libmicrohttpd-1.0.2-info
+         /nix/store/d8d21cqd9dvgbwhk7adch57axlmq4jx3-libmicrohttpd-1.0.2-devdoc
+         /nix/store/zmsb5hzaaa000wwlh10q5nqrg4j8bp46-libmicrohttpd-1.0.2
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/m3drgwp7gj8jzgabvqhpffsq00dgd7ad-elfutils-0.194.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/0ng9wmdmrjm70dvabhr7s989kkslsync-elfutils-0.194-bin
+         /nix/store/ax6plyydjmlq4v9p50amicr2sa3jnvhy-elfutils-0.194-man
+         /nix/store/bm0g40anhczkv5znvg4hz7krjk1jm91l-elfutils-0.194-dev
+         /nix/store/z5cpgr31i63imsraf797magm9rnizmqn-elfutils-0.194
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/nw78p2db0bfp8rbk4zzqikm0gicc45sf-glib-2.86.3.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/40n1jc45c930108i71wxr0knq6ip44vh-glib-2.86.3-bin
+         /nix/store/d0f9bdqmpxnazw73iql9clsviv4hi3lh-glib-2.86.3
+         /nix/store/g0rpiv69rszv5v89xbpx43lixdczds5m-glib-2.86.3-dev
+         /nix/store/l9jnxbn0iwbjc3pdka43s3k0sbnaf2qn-glib-2.86.3-devdoc
+         /nix/store/ldf1xka85bczli25bg95kj6vc6chg76c-glib-2.86.3-debug
+error: Cannot build '/nix/store/wg7blq5pa9m30vz6qdkc1w6m7rzda57y-glib-2.86.3.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/1y69q2wy8iz2w99bc7f8931s5i17sr1w-glib-2.86.3
+         /nix/store/89s7hmm2hi2ijvgiqhay4x106yj5qm9f-glib-2.86.3-debug
+         /nix/store/b789ykmmdy38aij11iddf3d06w6w0h06-glib-2.86.3-dev
+         /nix/store/rq24i69nx0cql47xfxsd2fsc98ci3d5s-glib-2.86.3-devdoc
+         /nix/store/zgik5js32nvd8vjgijn74cxnknlw4fb1-glib-2.86.3-bin
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/v7f6p8lvzwj19bbdg6jygplnz6d3qr4f-cairo-1.18.4.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/18474byhqc23m2an3d0yc3wjzl8zycvx-cairo-1.18.4-devdoc
+         /nix/store/1gab3b5m57q3h3n7ln56sqf203ywbpmq-cairo-1.18.4-debug
+         /nix/store/pmdm0wdixz1s1wjx3svwavdx7310zliq-cairo-1.18.4-dev
+         /nix/store/qiqcf859krl0m5kv6kmwcmmd355bi4gk-cairo-1.18.4
+error: Cannot build '/nix/store/20zvsh6x8caplpkccc3c15bm6dyy2qar-fontforge-20251009.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/d14pb3kwhzkwnf8736gmbmlf3v8klj0s-fontforge-20251009
+error: Cannot build '/nix/store/apdgmpyhb42qnlil9bnll3qkbq2k1q49-gdk-pixbuf-2.44.6.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/142gacfkx2l2f48f2jxg25x04aydnz85-gdk-pixbuf-2.44.6-devdoc
+         /nix/store/7xdvxb0k6ip9a36l6vpgc69hz0v557iv-gdk-pixbuf-2.44.6
+         /nix/store/hs5gl427ils9iqg1xyvj0i147jz8qc7k-gdk-pixbuf-2.44.6-installedTests
+         /nix/store/ic34i26iq8wwdd042rb3v87isbaa0jkh-gdk-pixbuf-2.44.6-dev
+         /nix/store/kyx696hqbaqga72q4skrv6k4ya59ba95-gdk-pixbuf-2.44.6-debug
+         /nix/store/r3744j85i3pzmlc321prpnsfsqqnwgjg-gdk-pixbuf-2.44.6-man
+error: Cannot build '/nix/store/b47acygbswnjvs9fyza18k6q3p0g4p7f-gobject-introspection-1.86.0.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/7gr03gvnnrr9iyqj970mjf611aqbv2af-gobject-introspection-1.86.0-man
+         /nix/store/adblrkg0axq8jkgcchnkldi1qz7d8myc-gobject-introspection-1.86.0-dev
+         /nix/store/klqj4n7ggvwj2z5gqwshlymc2qh4xmq0-gobject-introspection-1.86.0
+         /nix/store/q81cr5hvnf6l8cs92xrq39na9qqqby7f-gobject-introspection-1.86.0-devdoc
+error: Cannot build '/nix/store/59bby5s6abbig486k2fyz1p9vv5s4sxj-gobject-introspection-wrapped-1.86.0.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/6z5w47hlqq7d3bvxspj3j7zng2z1823c-gobject-introspection-wrapped-1.86.0-dev
+         /nix/store/liavcsw166hn8mhy9pkpzxmy3918fkix-gobject-introspection-wrapped-1.86.0
+         /nix/store/r2b0z40l20k1yj2b00ccv3qpb7g5f28p-gobject-introspection-wrapped-1.86.0-devdoc
+         /nix/store/z8ja5al5d3qlgrljfadj2mdqr44v4qvp-gobject-introspection-wrapped-1.86.0-man
+error: Cannot build '/nix/store/rgalhkb767w3d7r64bpxjwwcxnml2nzh-harfbuzz-12.1.0.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/8rn9fwhvhaa4bcvapivjzx7jms85g34p-harfbuzz-12.1.0
+         /nix/store/ayzjdlvpmdq231bz6qq47i89wcz71yc6-harfbuzz-12.1.0-devdoc
+         /nix/store/pyjra4r69gf26nqv8qkpwhqs66iwpzyv-harfbuzz-12.1.0-dev
+error: Build failed due to failed dependency
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/jngar852bqc2kcmbsma8mi9snfhjk9cp-libavif-1.3.0.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/22sbmv2964xzzcmylpwl1jk171m86a1q-libavif-1.3.0
+         /nix/store/p9lxn2jxqzqan3im88k96cq17raxxmv6-libavif-1.3.0-dev
+error: Cannot build '/nix/store/5gmcl0lh3s9w5c1clsw2r5jdvxcxc7rv-libraqm-0.10.3.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/i793axscg5nngdgrp62znfbfxd1wnk04-libraqm-0.10.3
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/1b5ihkl24ypjpfnkk9wq3ibsfc2zywk2-python3.13-pillow-12.2.0.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/fryj7qzwrcssh0ddmydy9pdqmsp8r1nb-python3.13-pillow-12.2.0-dist
+         /nix/store/vvimsnv7zp01arfcgwv6hhip4sz9l6il-python3.13-pillow-12.2.0
+error: Build failed due to failed dependency
+building '/nix/store/ysdmxxiizz030m25sx0lbikhyxbxhr62-python3.13-mock-5.2.0.drv'...
+error: Cannot build '/nix/store/0dgq8rqcvf5ab45399g8jyci7g5d5vqj-python3.13-ueberzug-18.3.1.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/ayd46a2g61k0wgznw3nfdwf1cwpsf9lx-python3.13-ueberzug-18.3.1-dist
+         /nix/store/wlhapk9mhr58ldxif6cijnb2x0c5fra6-python3.13-ueberzug-18.3.1
+error: Build failed due to failed dependency
+building '/nix/store/d4hbxqibhg0s5r7n3qf9c0lb8vvsaabj-xwayland-24.1.11.drv'...
+error: Cannot build '/nix/store/j4c9gg0p3d3qvcyj6z05fs81yarj6wpq-neofetch-unstable-2021-12-10.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/0h4akifa2f6dazhcy531iqp6j2izxq98-neofetch-unstable-2021-12-10
+         /nix/store/7qgicjdqb98g5b83558d4949jd4s7i4w-neofetch-unstable-2021-12-10-man
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/6qx7dm7q5lkc34hn22dk2hvc9afafb0b-system-path.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/ap7zpv7wdzjs055dvnipvbd2bsa31fd4-system-path
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/32j40cwzygii227j7yzz4p0y3jimb96h-X-Restart-Triggers-polkit.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/xd4fmi9s9fpclp72w2p1pa9dr8spb38j-X-Restart-Triggers-polkit
+error: Cannot build '/nix/store/d126xbzycv7zzqrkr3bgksa0rbha1dks-dbus-1.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/9ydn9srhbwal3xb484fjpjvysvy263sq-dbus-1
+error: Cannot build '/nix/store/wyjwxn5ljlbhrzvarzyw99y164i08bnd-etc.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/jgr1yi3l7v7jwmq9fa73l8wvl65a8myn-etc
+error: Cannot build '/nix/store/x64arz4j4w6gjrq5lm09h0q7ac14j1ng-nixos-system-Luana-X670E-26.11.20260531.331800d.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/26wg3yxbv72w2qw2n7qihagxbzfdhf5w-nixos-system-Luana-X670E-26.11.20260531.331800d
+error: Cannot build '/nix/store/hi1vji3h9qgbv23yyi5i18c9cfsxb2bv-unit-accounts-daemon.service.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/d5r3hks3isianr161qld8nd1rp5la2g4-unit-accounts-daemon.service
+error: Build failed due to failed dependency
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

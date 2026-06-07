@@ -101,6 +101,7 @@
       flatland = "~/Documentos/GitHub/StardustXR/flatland/target/debug/flatland";
       hexagon-launcher = "~/Documentos/GitHub/StardustXR/protostar/target/debug/hexagon_launcher";
       comet = "~/Documentos/GitHub/StardustXR/comet/target/debug/comet";
+      adb-tools = "NIXPKGS_ALLOW_UNFREE=1 nix shell --impure nixpkgs#android-tools nixpkgs#androidenv.androidPkgs.all.packages.platforms.v37_0 nixpkgs#inetutils";
     };
   };
 

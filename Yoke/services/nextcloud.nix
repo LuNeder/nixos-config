@@ -25,6 +25,7 @@ in {
 
       https = true;
 
+      datadir = config.services.nextcloud.home;
       home = "/mnt/pool1/nextcloud";
 
       settings = {
@@ -40,8 +41,8 @@ in {
       };
 
       extraApps = {
-        inherit (config.services.nextcloud.package.packages.apps) onlyoffice contacts calendar 
-        tasks notes forms memories previewgenerator;
+        inherit (config.services.nextcloud.package.packages.apps) contacts calendar 
+        tasks notes forms memories previewgenerator richdocuments;
         #duplicatefinder = pkgs.fetchNextcloudApp { # https://github.com/eldertek/duplicatefinder/pull/169
         #  url = "https://github.com/eldertek/duplicatefinder/releases/download/v1.7.3/duplicatefinder-v1.7.3.tar.gz";
         #  sha256 = "sha256-VoA0jHS2Nkfz/c1UKSKFTdzFGbXV2/chhWy9vbGYOSc=";
@@ -66,10 +67,24 @@ in {
     };
 
     nginx.virtualHosts."${hostName}" = {
-      forceSSL = true; # tunnel
+      #listen = [{
+      #  addr = "0.0.0.0";
+      #  port = 80;
+      #}];
+      forceSSL = true; # tunnel, but false breaks shit
       sslCertificate = "${config.var.sslCertificate}";
       sslCertificateKey = "${config.var.sslCertificateKey}";
+      enableACME = false;
       serverAliases = internalDomains;
+      locations."/" = {
+        #root = config.services.nextcloud.home;
+        #extraConfig = '' # TODO: breaks shit
+        #  fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        #  fastcgi_pass unix:/run/phpfpm/nextcloud.sock;
+        #  include ${pkgs.nginx}/conf/fastcgi_params;
+        #  include ${pkgs.nginx}/conf/fastcgi.conf;
+        #'';
+      };
     };
   };
 

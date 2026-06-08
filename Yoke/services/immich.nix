@@ -126,7 +126,7 @@
             "enabled": true
           },
           "watch": {
-            "enabled": false
+            "enabled": true
           }
         },
         "logging": {

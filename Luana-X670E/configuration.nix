@@ -252,7 +252,7 @@
     pkgs.cdrkit
     pkgs.quickemu
     # pkgs.quickgui # broken
-    # pkgs.handbrake  # TODO: reenable, broken on staging-next
+    pkgs.handbrake
     pkgs.niri
     pkgs.xwayland
     pkgs.jitsi-meet-electron
@@ -285,6 +285,7 @@
     pkgs.kdePackages.qtstyleplugin-kvantum # KDE Theming
     pkgs.kdePackages.qtwebsockets # for KDE Home Assistant applet
     pkgs.kdePackages.kamera
+    pkgs.davinci-resolve
   ];
 
   programs.criu.enable = true;

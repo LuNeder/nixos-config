@@ -500,14 +500,16 @@
     },
     "merpkgs": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1781120853,
-        "narHash": "sha256-JpzNgna53p3ovvKzmERgnqjhqJQPe/P6SkJeAItw+SI=",
+        "lastModified": 1781122663,
+        "narHash": "sha256-ST72QQiGckgr1m8i7jUBkaorC33C/ZmmvAeSQvYsyic=",
         "owner": "LuNeder",
         "repo": "merpkgs",
-        "rev": "5cb9680a604ed2f690e4126f355bf7245e178fc5",
+        "rev": "6a5eddd0c7d0bf5ddab8847ffdbcefb3f86d1fcf",
         "type": "github"
       },
       "original": {
@@ -632,7 +634,7 @@
         "argononed": "argononed",
         "flake-compat": "flake-compat_5",
         "nixos-images": "nixos-images",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1779023229,
@@ -714,22 +716,6 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1780749050,
-        "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
         "lastModified": 1778737229,
         "narHash": "sha256-6xWoytx8jFW4PF1GjRm/i/53trbpKGfz6zjzQGBr4cI=",
         "owner": "NixOS",
@@ -744,7 +730,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1779560665,
         "narHash": "sha256-tpyBcxPpcQb8ukyNF7DoCwfSY3VPsxHoYwj00Cayv5o=",
@@ -852,16 +838,16 @@
     },
     "pv-update": {
       "locked": {
-        "lastModified": 1780856677,
-        "narHash": "sha256-9+QOgPd+MZWdNaZu+btTuxtTPJPBjHjhT8eCWTYnwhw=",
+        "lastModified": 1781128178,
+        "narHash": "sha256-VCHMG2SF6LTYBBJP2OXwhxp8ymlObKfqXrO/xHyfEGg=",
         "owner": "LuNeder",
         "repo": "nixpkgs",
-        "rev": "ac8c17e0ebec86e2139c56945fd952a0b2d0a4cd",
+        "rev": "60966b1dd1e5cfe6904ce8b5daa17c99818f4483",
         "type": "github"
       },
       "original": {
         "owner": "LuNeder",
-        "ref": "porn-vault-update-20260517",
+        "ref": "porn-vault-update-20260610",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -878,7 +864,7 @@
         "nix-software-center": "nix-software-center",
         "nixos-conf-editor": "nixos-conf-editor",
         "nixos-raspberrypi": "nixos-raspberrypi",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_4",
         "nixpkgs-old": "nixpkgs-old",
         "pipkgs": "pipkgs",
         "plasma-manager": "plasma-manager",

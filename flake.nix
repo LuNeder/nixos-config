@@ -69,7 +69,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    pv-update.url = "github:LuNeder/nixpkgs/porn-vault-update-20260517";
+    pv-update.url = "github:LuNeder/nixpkgs/porn-vault-update-20260610";
   };
 
   

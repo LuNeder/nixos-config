@@ -16,38 +16,6 @@
         "type": "github"
       }
     },
-    "buttui": {
-      "locked": {
-        "lastModified": 1779735632,
-        "narHash": "sha256-/od1LAV7lL7dAr9tnGE6u57xWFWbbAK6+yDIq34+7Xw=",
-        "owner": "LuNeder",
-        "repo": "nixpkgs",
-        "rev": "7a2314d88a91fa68c9e236b78e3d9454cc0109ae",
-        "type": "github"
-      },
-      "original": {
-        "owner": "LuNeder",
-        "ref": "buttui",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "catask": {
-      "locked": {
-        "lastModified": 1769366771,
-        "narHash": "sha256-or8mKcPbBzX8bRLRd33xjoJpXPAPXI57PJkVV7CUJuA=",
-        "owner": "LuNeder",
-        "repo": "nixpkgs",
-        "rev": "28e075150e182feb3243ecc08221b02dbe326b50",
-        "type": "github"
-      },
-      "original": {
-        "owner": "LuNeder",
-        "ref": "catask",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "compiz": {
       "inputs": {
         "nixpkgs": [
@@ -530,6 +498,24 @@
         "type": "github"
       }
     },
+    "merpkgs": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1781120853,
+        "narHash": "sha256-JpzNgna53p3ovvKzmERgnqjhqJQPe/P6SkJeAItw+SI=",
+        "owner": "LuNeder",
+        "repo": "merpkgs",
+        "rev": "5cb9680a604ed2f690e4126f355bf7245e178fc5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LuNeder",
+        "repo": "merpkgs",
+        "type": "github"
+      }
+    },
     "nix-flatpak": {
       "locked": {
         "lastModified": 1779998907,
@@ -646,7 +632,7 @@
         "argononed": "argononed",
         "flake-compat": "flake-compat_5",
         "nixos-images": "nixos-images",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1779023229,
@@ -728,6 +714,22 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1780749050,
+        "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1778737229,
         "narHash": "sha256-6xWoytx8jFW4PF1GjRm/i/53trbpKGfz6zjzQGBr4cI=",
         "owner": "NixOS",
@@ -742,7 +744,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1779560665,
         "narHash": "sha256-tpyBcxPpcQb8ukyNF7DoCwfSY3VPsxHoYwj00Cayv5o=",
@@ -866,18 +868,17 @@
     },
     "root": {
       "inputs": {
-        "buttui": "buttui",
-        "catask": "catask",
         "compiz": "compiz",
         "compiz-reloaded": "compiz-reloaded",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "librepods": "librepods",
+        "merpkgs": "merpkgs",
         "nix-flatpak": "nix-flatpak",
         "nix-software-center": "nix-software-center",
         "nixos-conf-editor": "nixos-conf-editor",
         "nixos-raspberrypi": "nixos-raspberrypi",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_5",
         "nixpkgs-old": "nixpkgs-old",
         "pipkgs": "pipkgs",
         "plasma-manager": "plasma-manager",

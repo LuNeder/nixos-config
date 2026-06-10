@@ -1,9 +1,7 @@
 { config, pkgs, lib, inputs, ... }: {
-  imports = [ (inputs.catask + /nixos/modules/services/web-apps/catask/default.nix) ];
-
-  services.catask = {
+  merpkgs.services.catask = {
     enable = true;
-    package = inputs.catask.legacyPackages.x86_64-linux.catask;
+   # package = pkgs.merpkgs.catask;
     listenAddress = "[::]";
     port = 8220;
     openFirewall = true;
@@ -22,8 +20,8 @@
   };
 
   sops.templates."cataskenv" = {
-    owner = config.services.catask.user;
-    group = config.services.catask.group;
+    owner = config.merpkgs.services.catask.user;
+    group = config.merpkgs.services.catask.group;
     content = ''
       DB_NAME = catask
       DB_USER = catask
@@ -33,8 +31,8 @@
   };
 
   sops.templates."cataskcfg" = {
-    owner = config.services.catask.user;
-    group = config.services.catask.group;
+    owner = config.merpkgs.services.catask.user;
+    group = config.merpkgs.services.catask.group;
     content = builtins.toJSON {
       accessibility = {
         font = "default";

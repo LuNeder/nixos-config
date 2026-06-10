@@ -13,7 +13,7 @@
     pkgs.rar # broken in aarch64
     pkgs.planify # To-do lists
     pkgs.intiface-central
-    inputs.buttui.legacyPackages.x86_64-linux.buttui
+    pkgs.merpkgs.buttui
   ];
 
   # Thunderbird

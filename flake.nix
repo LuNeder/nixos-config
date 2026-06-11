@@ -10,7 +10,12 @@
     ];
   };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    merpkgs = {
+      url = "github:LuNeder/merpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     system-manager = {
       url = "github:numtide/system-manager";
@@ -64,9 +69,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catask.url = "github:LuNeder/nixpkgs/catask"; 
-    pv-update.url = "github:LuNeder/nixpkgs/porn-vault-update-20260517";
-    buttui.url = "github:LuNeder/nixpkgs/buttui";
+    pv-update.url = "github:LuNeder/nixpkgs/porn-vault-update-20260610";
   };
 
   

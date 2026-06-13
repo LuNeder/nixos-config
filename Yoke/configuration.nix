@@ -30,6 +30,7 @@
       #./services/libreoffice-web.nix # Broken
       ./services/cryptpad.nix
       ./services/wyoming.nix
+      ./services/mqtt.nix
     ];
 
   # Bootloader.

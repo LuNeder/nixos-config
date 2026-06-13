@@ -19,7 +19,7 @@
 
     };
   };
-  services.mosquitto.enable = true;
+
   networking.firewall.allowedTCPPorts = [ 8971 ];
 
   services.nginx.virtualHosts."z2m.${config.var.fqdn}" = {

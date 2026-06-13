@@ -35,6 +35,9 @@
       "webhook"
       "template"
       "zha"
+
+      # Voice Assistant
+      "wyoming"       
     ];
 
     config = {

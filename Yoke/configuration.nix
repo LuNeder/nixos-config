@@ -29,6 +29,7 @@
       ./services/webdav.nix
       #./services/libreoffice-web.nix # Broken
       ./services/cryptpad.nix
+      ./services/wyoming.nix
     ];
 
   # Bootloader.

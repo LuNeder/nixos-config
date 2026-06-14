@@ -273,7 +273,7 @@
     #  };
     #}))
     pkgs.distrobox
-    pkgs.openscad
+    # pkgs.openscad Broken until nixos/nixpkgs#530580 reaches unstable
     # pkgs.pkgsNoCu.rpcs3 # Broken
     pkgs.pmbootstrap
     pkgs.usbip-ssh

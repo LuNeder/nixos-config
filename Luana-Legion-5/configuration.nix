@@ -88,7 +88,7 @@
     pkgs.libreoffice-fresh
     # pkgs.labplot Broken
     pkgs.lenovo-legion
-    pkgs.veloren
+    # pkgs.veloren Broken
     pkgs.vlc
     pkgs.kdePackages.qtwebsockets # for KDE Home Assistant applet
     pkgs.kdePackages.kamera

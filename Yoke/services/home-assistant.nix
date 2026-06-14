@@ -27,6 +27,12 @@
       "homekit_controller"
       "icloud"
       # "roborock" # TODO: Broken build
+      "vacuum"
+      "mqtt_eventstream"
+      "mqtt_json"
+      "mqtt_room"
+      "mqtt_statestream"
+      "manual_mqtt"
       "webostv"
       "http"
       "api"
@@ -35,6 +41,17 @@
       "webhook"
       "template"
       "zha"
+
+      # Voice Assistant
+      "wyoming"       
+    ];
+
+    customComponents = [
+      pkgs.home-assistant-custom-components.valetudo
+    ];
+
+    customLovelaceModules = [
+      pkgs.home-assistant-custom-lovelace-modules.valetudo-map-card
     ];
 
     config = {
@@ -94,7 +111,7 @@
       api = {};
 
       websocket_api = {};
-
+      
       #template = [ 
       #  {
       #    trigger = [

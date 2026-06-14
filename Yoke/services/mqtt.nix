@@ -4,6 +4,11 @@
     listeners = [
       { 
         settings.allow_anonymous = true;
+        acl = [
+          "pattern readwrite #"
+          "topic readwrite anon/report/#"
+          "topic readwrite #"
+        ];
       }
     ];
   };

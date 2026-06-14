@@ -13,7 +13,7 @@
     pkgs.lm_sensors
     pkgs.ifuse
     pkgs.libimobiledevice # Needed to connect iPhone
-    pkgs.pkgsOld.neofetch # Removed from nixpkgs bc nixos maintainers suck
+    # pkgs.pkgsOld.neofetch # Removed from nixpkgs bc nixos maintainers suck # broken on pkgsOld
     pkgs.lolcat
     pkgs.direnv
     pkgs.appimage-run # nixos just cant work out of the box, can it? needed for appimages

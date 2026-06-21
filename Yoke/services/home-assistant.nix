@@ -41,6 +41,8 @@
       "webhook"
       "template"
       "zha"
+      "caldav"
+      "calendar"
 
       # Voice Assistant
       "wyoming"       

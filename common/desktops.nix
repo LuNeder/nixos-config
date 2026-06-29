@@ -14,6 +14,9 @@
     pkgs.planify # To-do lists
     pkgs.intiface-central
     pkgs.merpkgs.buttui
+    pkgs.kdePackages.oxygen
+    pkgs.kdePackages.oxygen-icons
+    pkgs.kdePackages.oxygen-sounds
   ];
 
   # Thunderbird

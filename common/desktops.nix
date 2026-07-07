@@ -17,6 +17,9 @@
     pkgs.kdePackages.oxygen
     pkgs.kdePackages.oxygen-icons
     pkgs.kdePackages.oxygen-sounds
+    pkgs.zfs
+    pkgs.pmbootstrap
+    pkgs.android-tools
   ];
 
   # Thunderbird

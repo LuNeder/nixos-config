@@ -44,54 +44,55 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    pkgs.krita
-    pkgs.appimage-run
-    pkgs.weylus
-    pkgs.ulauncher
-    pkgs.vscodium
-    pkgs.font-manager
-    pkgs.lshw
-    pkgs.xfce4-whiskermenu-plugin
-    pkgs.remmina
-    ((pkgs.wrapOBS { # OBS
-        plugins = [
-        pkgs.obs-studio-plugins.wlrobs
-        pkgs.pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
-        pkgs.obs-studio-plugins.obs-pipewire-audio-capture
-    ];}))
-    pkgs.xfce4-panel-profiles
-    pkgs.xfce4-pulseaudio-plugin
-    pkgs.xfce4-clipman-plugin
-    pkgs.menulibre
-    pkgs.papirus-icon-theme
-    pkgs.bibata-cursors
-    pkgs.pkgs.bitwarden-desktop
-    pkgs.mate.engrampa
-    pkgs.baobab
-    pkgs.github-desktop
-    pkgs.godot_4
-    # inputs.nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.nix-software-center # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
-    # inputs.nixos-conf-editor.packages.${pkgs.stdenv.hostPlatform.system}.nixos-conf-editor # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
-    inputs.snow.packages.${pkgs.stdenv.hostPlatform.system}.snow
-    pkgs.gparted
-    pkgs.alvr
-    pkgs.prismlauncher 
-    # pkgs.makehuman # Broken
-    pkgs.discord
-    pkgs.transmission_4-qt
-    pkgs.distrobox
-    pkgs.idevicerestore
-    pkgs.gnome-network-displays
-    pkgs.xdg-desktop-portal
-    pkgs.mcpelauncher-ui-qt
-    pkgs.libreoffice-fresh
-    # pkgs.labplot Broken
-    pkgs.lenovo-legion
-    # pkgs.veloren Broken
-    pkgs.vlc
-    pkgs.kdePackages.qtwebsockets # for KDE Home Assistant applet
-    pkgs.kdePackages.kamera
+  inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+  pkgs.krita
+  pkgs.appimage-run
+  pkgs.weylus
+  pkgs.ulauncher
+  pkgs.vscodium
+  pkgs.font-manager
+  pkgs.lshw
+  pkgs.xfce4-whiskermenu-plugin
+  pkgs.remmina
+  ((pkgs.wrapOBS { # OBS
+      plugins = [
+      pkgs.obs-studio-plugins.wlrobs
+      pkgs.pkgsNoCu.obs-studio-plugins.obs-backgroundremoval
+      pkgs.obs-studio-plugins.obs-pipewire-audio-capture
+  ];}))
+  pkgs.xfce4-panel-profiles
+  pkgs.xfce4-pulseaudio-plugin
+  pkgs.xfce4-clipman-plugin
+  pkgs.menulibre
+  pkgs.papirus-icon-theme
+  pkgs.bibata-cursors
+  pkgs.pkgs.bitwarden-desktop
+  pkgs.engrampa
+  pkgs.baobab
+  pkgs.github-desktop
+  pkgs.godot_4
+  # inputs.nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.nix-software-center # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
+  # inputs.nixos-conf-editor.packages.${pkgs.stdenv.hostPlatform.system}.nixos-conf-editor # TODO: Broken (The ‘gnome.adwaita-icon-theme’ was moved to top-level. Please use ‘pkgs.adwaita-icon-theme’ directly.)
+  inputs.snow.packages.${pkgs.stdenv.hostPlatform.system}.snow
+  pkgs.gparted
+  pkgs.alvr
+  pkgs.prismlauncher 
+  # pkgs.makehuman # Broken
+  pkgs.discord
+  pkgs.transmission_4-qt
+  pkgs.distrobox
+  pkgs.idevicerestore
+  pkgs.gnome-network-displays
+  pkgs.xdg-desktop-portal
+  pkgs.mcpelauncher-ui-qt
+  pkgs.libreoffice-fresh
+  # pkgs.labplot Broken
+  pkgs.lenovo-legion
+  # pkgs.veloren Broken
+  pkgs.vlc
+  pkgs.kdePackages.qtwebsockets # for KDE Home Assistant applet
+  pkgs.kdePackages.kamera
+  pkgs.pmbootstrap
   ];
 
   # Steam
@@ -449,6 +450,8 @@
     zlib
   ]);
 
+  # Run arm64 binaries
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # VirtualBox
   virtualisation.virtualbox.host.enable = true;

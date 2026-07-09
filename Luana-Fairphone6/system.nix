@@ -1,5 +1,8 @@
 { lib, pkgs, ... }:
 {
+  imports = [
+    ../common/system-manager.nix
+  ];
   config = {
     nixpkgs.hostPlatform = "aarch64-linux";
     nixpkgs.config.allowUnfree = true;
@@ -15,7 +18,7 @@
       systemPackages = [
         # pkgs.android-translation-layer # x86_64 only in nixpkgs for some dumb fucking reason???
         pkgs.nano
-        pkgs.stevia # keyboard
+        #pkgs.stevia # keyboard (phosh only ;-;)
         # hello
       ];
 

@@ -1,3 +1,4 @@
+# Base configuration for most NixOS machines, except those with limited specs
 { pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, rustPlatform, ... }: {
 
   imports = [ 

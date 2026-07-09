@@ -17,7 +17,12 @@
       ensureAlpinePackages = {
         enable = true;
         packages = [
+          "tailscale"
           "firefox"
+          "mobile-config-firefox"
+          "waydroid"
+          "zsh"
+          "oh-my-zsh"
         ];
       };
     };
@@ -28,7 +33,8 @@
         # pkgs.android-translation-layer # x86_64 only in nixpkgs for some dumb fucking reason???
         pkgs.nano
         #pkgs.stevia # keyboard (phosh only ;-;)
-        # hello
+        pkgs.tuba
+        pkgs.telegram-desktop
       ];
 
       # Add directories and files to `/etc` and set their permissions

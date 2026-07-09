@@ -13,6 +13,15 @@
       # nginx.enable = true;
     };
 
+    merpkgs.services = {
+      ensureAlpinePackages = {
+        enable = true;
+        packages = [
+          "firefox"
+        ];
+      };
+    };
+
     environment = {
       # Packages that should be installed on a system
       systemPackages = [

@@ -3,7 +3,7 @@
   
   imports = [
       inputs.sops-nix.nixosModules.sops
-    ] ++ #(builtins.attrValues inputs.merpkgs.systemManagerModules) ++
+    ] ++ (builtins.attrValues inputs.merpkgs.systemManagerModules) ++
     (builtins.attrValues inputs.merpkgs.homeModules)
 
   ;

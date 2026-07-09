@@ -1,7 +1,8 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, inputs, ... }:
 {
   imports = [
     ../common/system-manager.nix
+    inputs.home-manager.nixosModules.home-manager # Home Manager
   ];
   config = {
     nixpkgs.hostPlatform = "aarch64-linux";
@@ -59,6 +60,26 @@
       };
     };
 
+    # Home Manager
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
+    home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+    #home-manager.users.luana.programs.plasma = import ./kde.nix; # TODO: maybe someday lol
+    home-manager.backupFileExtension = "hm.bkp";
+    home-manager.users.luana = {
+      home.stateVersion = "26.11";
+      home.file = {
+        ".profile" = { #TODO: not fixing icons
+          executable = true;
+          text = ''
+            PATH="$PATH:$HOME/.local/bin"
+            XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.nix-profile/share"
+          '';
+        };
+      };
+
+    };
+    
     # Enable and configure systemd services
     systemd.services = { };
 

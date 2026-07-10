@@ -25,9 +25,11 @@
 
   environment.sessionVariables = {
     # Show nix apps on menus
-    XDG_DATA_DIRS = ''$XDG_DATA_DIRS:$HOME/.nix-profile/share:${builtins.concatStringsSep ":" (map (pkg: "${pkg}/share") config.environment.systemPackages)}'';
+    XDG_DATA_DIRS = ''$XDG_DATA_DIRS:$HOME/.nix-profile/share:/run/current-system/sw/share:${builtins.concatStringsSep ":" (map (pkg: "${pkg}/share") config.environment.systemPackages)}'';
   };
 
+  environment.pathsToLink = [ "/share" ]; # Also for menu icons, with this the mapping above is probably not needed (TODO: Fix dbus "name not activatable" error when launching from icons)
+  
   # Garbage Collector
   nix.settings.auto-optimise-store = true;
 

@@ -23,6 +23,11 @@
     pkgs.powerline-fonts
   ];
 
+  environment.sessionVariables = {
+    # Show nix apps on menus
+    XDG_DATA_DIRS = ''$XDG_DATA_DIRS:$HOME/.nix-profile/share:${builtins.concatStringsSep ":" (map (pkg: "${pkg}/share") config.environment.systemPackages)}'';
+  };
+
   # Garbage Collector
   nix.settings.auto-optimise-store = true;
 

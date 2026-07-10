@@ -1,4 +1,4 @@
-{ lib, pkgs, inputs, ... }:
+{ lib, pkgs, inputs, config, ... }:
 {
   imports = [
     ../common/system-manager.nix
@@ -24,6 +24,7 @@
           "waydroid"
           "zsh"
           "oh-my-zsh"
+          "android-translation-layer"
         ];
       };
     };
@@ -58,6 +59,11 @@
         #   group = "users";
         # };
       };
+
+      #sessionVariables = {
+      #  # Show nix apps on menus # Moved to common/system-manager.nix
+      #  XDG_DATA_DIRS = ''$XDG_DATA_DIRS:$HOME/.nix-profile/share:${builtins.concatStringsSep ":" (map (pkg: "${pkg}/share") config.environment.systemPackages)}'';
+      #};
     };
 
     # Home Manager
@@ -69,15 +75,7 @@
     home-manager.users.luana = {
       home.stateVersion = "26.11";
       home.file = {
-        ".profile" = { #TODO: not fixing icons
-          executable = true;
-          text = ''
-            PATH="$PATH:$HOME/.local/bin"
-            XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.nix-profile/share"
-          '';
-        };
       };
-
     };
     
     # Enable and configure systemd services

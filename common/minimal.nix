@@ -1,3 +1,4 @@
+# Base configuration for all NixOS hosts
 { pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, rustPlatform, ... }: {
   
   imports = [
@@ -11,10 +12,8 @@
   # Common Packages
   environment.systemPackages = [
     pkgs.curl
-    pkgs.zfs
     pkgs.htop
     pkgs.sops
-    pkgs.killall # ok, at this point im just disappointed that not even this is installed by default
   ];
 
   # Enable sysrq keys that for some dumb reason come disabled by default
@@ -35,6 +34,7 @@
   # Trusted users
   nix.settings.trusted-users = [
     "root"
+    "luana"
     "@wheel"
   ];
 
@@ -60,6 +60,7 @@
     }];
     extraConfig = with pkgs; ''
       Defaults insults
+      Defaults pwfeedback
     '';
   };
 

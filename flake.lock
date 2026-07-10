@@ -483,11 +483,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781124370,
-        "narHash": "sha256-JHl6F6smiE4GDuLrXWbswnCEp+hD4wILS/WwjxG1cJY=",
+        "lastModified": 1783635262,
+        "narHash": "sha256-ogR7x4WswzCXW/oSzKCmxq8Ne5UYA8M3A+pCu5IVmUQ=",
         "owner": "LuNeder",
         "repo": "merpkgs",
-        "rev": "4d48150dc674c14b671bb3e13a473f3fc45cff86",
+        "rev": "b10c3e25f3f40f26a09239923673104b03f4d170",
         "type": "github"
       },
       "original": {

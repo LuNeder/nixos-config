@@ -1,3 +1,4 @@
+# Base configuration for desktops and laptops
 { pkgs, inputs, outputs, config, home-manager, lib, stdenv, fetchFromGitHub, rustPlatform, ... }: {
   imports = [ ./common.nix ];
 

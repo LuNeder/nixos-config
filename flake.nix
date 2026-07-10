@@ -100,14 +100,27 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./oraclevps/configuration.nix ];
         });
+        ilbl-dash = ( pipkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs nixos-raspberrypi outputs;};
+            modules = [ ./ilbl-dash/configuration.nix ];
+        });
       };
       systemConfigs = {
+        Luana-Fairphone6 = system-manager.lib.makeSystemConfig {
+          # Specify your system configuration modules here, for example,
+          # the path to your system.nix.
+          modules = [ 
+              ./Luana-Fairphone6/system.nix 
+          ];
+          specialArgs = {inherit inputs outputs;};
+        };
         luana-note9s = system-manager.lib.makeSystemConfig {
           # Specify your system configuration modules here, for example,
           # the path to your system.nix.
           modules = [ 
               ./luana-note9s/system.nix 
           ];
+          specialArgs = {inherit inputs outputs;};
 
           # Optionally specify extraSpecialArgs and overlays
         };

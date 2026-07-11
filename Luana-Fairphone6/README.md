@@ -1,5 +1,5 @@
 
-My new daily driver phone, in a dual boot with postmarketOS (to-do) and degoogled android: Fairphone 6
+My new daily driver phone, in a dual boot with postmarketOS and degoogled android: Fairphone 6
 
 ## nix setup (postmarketOS)
 

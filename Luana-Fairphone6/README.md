@@ -5,17 +5,18 @@ My new daily driver phone, in a dual boot with postmarketOS and degoogled androi
 
 ```sh
 sudo apk add curl git
-sudo apk add sudo !doas-sudo-shim
+# sudo apk add sudo !doas-sudo-shim # not needed anymore, pmOS uses sudo-rs instead of doas now
 sudo su
-# manually delete /etc/environment (should be empty/just comments by default, check) (ensure file is then created by sm, otherwise touch (not having the file there enables dnssec for some reason???))
 curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes
 systemctl enable nix-daemon --now
 exit
-reboot
+systemctl reboot
 nix profile add 'github:numtide/system-manager'
 git clone https://github.com/LuNeder/nixos-config
 cd nixos-config
+# manually delete /etc/environment (should be empty/just comments by default, check) (ensure file is then created by s-m, otherwise touch (not having the file there enables dnssec for some reason???))
 system-manager switch --flake .#Luana-Fairphone6 --sudo
+systemctl reboot
 ```
 
 ## android setup

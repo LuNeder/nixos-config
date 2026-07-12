@@ -7,6 +7,7 @@ My new daily driver phone, in a dual boot with postmarketOS and degoogled androi
 sudo apk add curl git
 sudo apk add sudo !doas-sudo-shim
 sudo su
+# manually delete /etc/environment (should be empty/just comments by default, check) (ensure file is then created by sm, otherwise touch (not having the file there enables dnssec for some reason???))
 curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes
 systemctl enable nix-daemon --now
 exit

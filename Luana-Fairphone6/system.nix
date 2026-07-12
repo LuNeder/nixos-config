@@ -60,10 +60,8 @@
         # };
       };
 
-      #sessionVariables = {
-      #  # Show nix apps on menus # Moved to common/system-manager.nix
-      #  XDG_DATA_DIRS = ''$XDG_DATA_DIRS:$HOME/.nix-profile/share:${builtins.concatStringsSep ":" (map (pkg: "${pkg}/share") config.environment.systemPackages)}'';
-      #};
+      # Show nix apps on menus: see common/system-manager.nix
+
     };
 
     # Home Manager

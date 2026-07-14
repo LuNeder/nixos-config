@@ -23,14 +23,31 @@
     pkgs.powerline-fonts
   ];
 
-  environment.sessionVariables = {
+  environment.variables = {
     # Show nix apps on menus
     XDG_DATA_DIRS = ''$XDG_DATA_DIRS:$HOME/.nix-profile/share:/run/current-system/sw/share:${builtins.concatStringsSep ":" (map (pkg: "${pkg}/share") config.environment.systemPackages)}'';
   };
 
-  environment.pathsToLink = [ "/share" ]; # Also for menu icons, with this the mapping above is probably not needed (TODO: Fix dbus "name not activatable" error when launching from icons)
+  environment.etc.environment = {
+    text = ''
+      #
+      # This file is parsed by pam_env module
+      #
+      # Syntax: simple "KEY=VAL" pairs on separate lines
+      #
+      
+      # dbus cannot see the XDG variable set elsewhere, so we need to set this here to avoid a "name is not activatable error" on Desktop icons
+      # Manually set var from scratch, bc adding $VARIABLES breaks the graphical session
+      XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/nix/var/nix/profiles/default/share:/run/current-system/sw/share
+    '';
+    mode = "0655";
+    user = "root";
+    group = "root";
+  };
+
+  environment.pathsToLink = [ "/share" ]; # Also for menu icons, with this the mapping above is probably not needed
   
-  # Garbage Collector
+  # No garbage collector on system-manager?
   nix.settings.auto-optimise-store = true;
 
   # Flakes

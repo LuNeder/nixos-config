@@ -129,4 +129,4 @@ error:
        error:
        Failed assertions:
        - 'services.mullvad-vpn.package' is using 'mullvad-vpn-2026.3', but this package has indicated that it does not contain a Mullvad VPN Daemon. This may be due to the fact that you have configured 'services.mullvad-vpn.package' to point to 'pkgs.mullvad-vpn', which no longer contains the Mullvad Daemon. Please unset 'services.mullvad-vpn.package' and enable 'services.mullvad-vpn.gui.enable' if you wish to use Mullvad VPN's graphical user interface.
-Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-Legion-5".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

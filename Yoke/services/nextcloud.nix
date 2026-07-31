@@ -20,7 +20,7 @@ in {
     nextcloud = {
       inherit hostName;
 
-      package = pkgs.nextcloud34;
+      package = pkgs.nextcloud33;
       enable = true;
 
       https = true;

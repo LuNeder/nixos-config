@@ -87,13 +87,6 @@
         turn_off_pc =''"${pkgs.writeShellApplication {name = "ssh-poweroff"; text = "${pkgs.openssh}/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@192.168.15.7";}}/bin/ssh-poweroff"'';
       };
 
-      input_boolean = {
-        homekit_sensors_update = {
-          name = "Collection of HomeKit Sensors";
-          initial = "off";
-        };
-      };
-
       http = {
         use_x_forwarded_for = true;
         trusted_proxies = [
@@ -113,65 +106,8 @@
       api = {};
 
       websocket_api = {};
-      
-      #template = [ 
-      #  {
-      #    trigger = [
-      #      {
-      #        trigger = "webhook";
-      #        webhook_id = "!include ./homepod-temphum-webhook.yaml";
-      #      }
-      #    ];
-      #  }
-      #  { 
-      #    sensor = [
-      #    {
-      #      name = "Umidade Relativa do Ar";
-      #      state = "{{ trigger.json.humidity }}";
-      #      unique_id = "90909090";
-      #      device_class = "humidity";
-      #      state_class = "measurement";
-      #    }
-      #    {
-      #      name = "Temperatura Casa";
-      #      state = "{{ trigger.json.temperature }}";
-      #      unique_id = "24242424";
-      #      device_class = "temperature";
-      #      state_class = "measurement";
-      #    }
-      #    ];
-      #  } 
-      #];
 
       automation = "!include automations.yaml"; # It seems I need to manually create this, content being just  "[]" (without the quotes)
-
-      "automation homepodSensors" = [
-        {
-          alias = "Homekit - Sensor Collection";
-          description = "Processes temperature and humidity data from the HomePod Mini";
-          trigger = [
-            {
-              platform = "time_pattern";
-              minutes = "/2";
-              id = "time";
-            }
-          ];
-          action = [
-            {
-              service = "input_boolean.turn_on";
-              target.entity_id = "input_boolean.homekit_sensors_update";
-            }
-            {
-              delay = ''00:00:05'';
-            }
-            {
-              service = "input_boolean.turn_off";
-              target.entity_id = "input_boolean.homekit_sensors_update";
-            }
-          ];
-          mode = "single";
-        }
-      ];
     };
   };
 
@@ -194,11 +130,6 @@
     pc-mac-address = {
       sopsFile = ../secrets.yaml;
       path = "${config.services.home-assistant.configDir}/pc-mac-address.yaml";
-      mode = "0555";
-    };
-    homepod-temphum-webhook = {
-      sopsFile = ../secrets.yaml;
-      path = "${config.services.home-assistant.configDir}/homepod-temphum-webhook.yaml";
       mode = "0555";
     };
   };

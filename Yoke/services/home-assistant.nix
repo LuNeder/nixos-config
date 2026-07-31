@@ -107,7 +107,9 @@
 
       websocket_api = {};
 
-      automation = "!include automations.yaml"; # It seems I need to manually create this, content being just  "[]" (without the quotes)
+      automation = "!include automations.yaml"; # It seems I need to manually create this, content being just  "[]" (without the quotes) (/var/lib/hass)
+
+      script = "!include scripts.yaml";
     };
   };
 

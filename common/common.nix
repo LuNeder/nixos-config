@@ -88,10 +88,4 @@
     "libsoup-2.74.3"
   ];
 
-  # Mullvad
-  services.mullvad-vpn = {
-    enable = true;
-    package = pkgs.mullvad-vpn;
-  };
-
 }

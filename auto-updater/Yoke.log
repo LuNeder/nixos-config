@@ -2,131 +2,303 @@ building the system configuration...
 warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
 Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay https://nixos-raspberrypi.cachix.org' from ~/.local/share/nix/trusted-settings.json.
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
-error:
-       … while calling anonymous lambda
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/attrsets.nix:1714:17:
-         1713|         zipAttrsWith (
-         1714|           name: values:
-             |                 ^
-         1715|           let
+evaluation warning: `boot.zfs.forceImportRoot` is using the default value of `true`. It is highly recommended to set it to `false`, the new default from 26.11 on, to reduce the risk of data loss. Alternatively, you can silence this warning by explicitly setting it to `true`.
+evaluation warning: A legacy Nextcloud install (from before NixOS 26.11) may be installed.
 
-       … while calling the 'head' builtin
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/attrsets.nix:1719:13:
-         1718|           if length values == 1 || pred here (elemAt values 1) (head values) then
-         1719|             head values
-             |             ^
-         1720|           else
+                    After nextcloud33 is installed successfully, you can safely upgrade
+                    to 34. The latest version available is Nextcloud34.
 
-       … while calling anonymous lambda
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/attrsets.nix:1192:17:
-         1191|         mapAttrs (
-         1192|           name: value:
-             |                 ^
-         1193|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
+                    Please note that Nextcloud doesn't support upgrades across multiple major versions
+                    (i.e. an upgrade from 16 is possible to 17, but not 16 to 18).
 
-       … from call site
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/attrsets.nix:1193:85:
-         1192|           name: value:
-         1193|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
-             |                                                                                     ^
-         1194|         );
+                    The package can be upgraded by explicitly declaring the service-option
+                    `services.nextcloud.package`.
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
-       … while calling anonymous lambda
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:282:71:
-          281|           # For definitions that have an associated option
-          282|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
-             |                                                                       ^
-          283|
+response body:
 
-       … while evaluating the attribute 'value'
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1149:7:
-         1148|     // {
-         1149|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
-             |       ^
-         1150|       inherit (res.defsFinal') highestPrio;
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 339 ms (attempt 1/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
-       … while evaluating the option `system.build.toplevel':
+response body:
 
-       … while evaluating the attribute 'mergedValue'
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1246:5:
-         1245|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
-         1246|     mergedValue =
-             |     ^
-         1247|       if isDefined then
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 663 ms (attempt 2/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
-       … while evaluating a branch condition
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1247:7:
-         1246|     mergedValue =
-         1247|       if isDefined then
-             |       ^
-         1248|         if type.merge ? v2 then
+response body:
 
-       … while evaluating a branch condition
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1223:7:
-         1222|       # above are lazy and thus never forced on this branch.
-         1223|       if
-             |       ^
-         1224|         length defs == 1
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 1240 ms (attempt 3/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
-       … in the right operand of the AND (&&) operator
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1225:9:
-         1224|         length defs == 1
-         1225|         && (
-             |         ^
-         1226|           let
+response body:
 
-       … while evaluating definitions from `/nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/nixos/modules/system/activation/top-level.nix':
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 2085 ms (attempt 4/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
-       … in the argument of the not operator
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1230:31:
-         1229|           addErrorContext "while evaluating definitions from `${d.file}':" (
-         1230|             !(isAttrs d.value && d.value ? _type)
-             |                               ^
-         1231|           )
+         response body:
 
-       … in the left operand of the AND (&&) operator
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1230:31:
-         1229|           addErrorContext "while evaluating definitions from `${d.file}':" (
-         1230|             !(isAttrs d.value && d.value ? _type)
-             |                               ^
-         1231|           )
-
-       … while calling the 'isAttrs' builtin
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:1230:15:
-         1229|           addErrorContext "while evaluating definitions from `${d.file}':" (
-         1230|             !(isAttrs d.value && d.value ? _type)
-             |               ^
-         1231|           )
-
-       … while evaluating the attribute 'value'
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/modules.nix:851:21:
-          850|             inherit (module) file;
-          851|             inherit value;
-             |                     ^
-          852|           }) module.config
-
-       … from call site
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/nixos/modules/system/activation/top-level.nix:78:26:
-           77|   # Handle assertions and warnings
-           78|   baseSystemAssertWarn = lib.asserts.checkAssertWarn config.assertions config.warnings baseSystem;
-             |                          ^
-           79|
-
-       … while calling 'checkAssertWarn'
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/asserts.nix:193:27:
-          192|   checkAssertWarn =
-          193|     assertions: warnings: val:
-             |                           ^
-          194|     let
-
-       … while calling the 'throw' builtin
-         at /nix/store/bzc7kf828kg6zlan92766rb2inciclc4-source/lib/asserts.nix:198:7:
-          197|     if failedAssertions != [ ] then
-          198|       throw "\nFailed assertions:\n${concatStringsSep "\n" (map (x: "- ${x}") failedAssertions)}"
-             |       ^
-          199|     else
-
-       error:
-       Failed assertions:
-       - 'services.mullvad-vpn.package' is using 'mullvad-vpn-2026.3', but this package has indicated that it does not contain a Mullvad VPN Daemon. This may be due to the fact that you have configured 'services.mullvad-vpn.package' to point to 'pkgs.mullvad-vpn', which no longer contains the Mullvad Daemon. Please unset 'services.mullvad-vpn.package' and enable 'services.mullvad-vpn.gui.enable' if you wish to use Mullvad VPN's graphical user interface.
+         <html>
+         <head><title>502 Bad Gateway</title></head>
+         <body>
+         <center><h1>502 Bad Gateway</h1></center>
+         <hr><center>nginx</center>
+         </body>
+         </html>
+copying path '/nix/store/llgwlxshmy0ifvxh7f8wq53vk5x7vd13-source' from 'https://cache.nixos.org'...
+these 30 derivations will be built:
+  /nix/store/swx342by083p9ciidalpb127c9blflr6-unit-script-postgresql-setup-start.drv
+  /nix/store/1wiq40rzqfmkfk29kd9gl3k4b51fmlrb-unit-postgresql-setup.service.drv
+  /nix/store/id7z8c96hrlqkl77glhmw2d8zm3hhrbw-python3.14-yoyo-migrations-8.2.0.drv
+  /nix/store/6p9kr3418lvhb756053lc7d6r0f4ysks-python3-3.14.6-env.drv
+  /nix/store/6v2hhiinly35wiw7nzwp950ks0ivhi7c-source.drv
+  /nix/store/r3gvl1hib8x6gh2gxbvpjvg0fnjcb5p9-catask-2.7.6.drv
+  /nix/store/ls8blabsjy3nva9k645g0jfcym2yvm0w-system-path.drv
+  /nix/store/2s0406mqrsdr2yxd8jjgc3cf3dv0knv2-X-Restart-Triggers-polkit.drv
+  /nix/store/4nfdahfyz5ll6f7xgz0s9lrbg6l1n8zk-dbus-1.drv
+  /nix/store/rv2x0yx37bz3issd1d5hzmww2ny4dgl6-config.json.drv
+  /nix/store/g9gr97m7q3j2sx7i2xx4z64ygzvdh9h5-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/3n5w52lrlr6z8a2n2j8918xbx4v7m086-unit-dbus-broker.service.drv
+  /nix/store/vknjlxbfcxj0ay2k6ymwqzgnzrn4xm3x-user-units.drv
+  /nix/store/8wkg9p58zlkgncx2wqsnwn81xgxgxc42-catask-server-setup.drv
+  /nix/store/cy50c3b63fzmnx6i9xgjk3lwdqvg2y9g-catask-server.drv
+  /nix/store/38kq6ly5qkkf5gnxyh3477xhh9waj83p-unit-catask.service.drv
+  /nix/store/7zyj588k0mcai83r4cbjghdsx21d8mxp-unit-polkit.service.drv
+  /nix/store/i7mgmz3q4kvdsw0xwq74ff8ami8zr78p-unit-dbus-broker.service.drv
+  /nix/store/qf5hi4qsdql00ba6fkp6k4fv80wlw8v9-firewall-start.drv
+  /nix/store/vhw8p3l04zpv2f19qk93p5yjpnq8h0rx-firewall-reload.drv
+  /nix/store/i99mhswsmmv4bx516nq0b7wzf2a69zs0-unit-firewall.service.drv
+  /nix/store/zil8s8nkbgz492g1jwj984m9dcci9mxx-system-units.drv
+  /nix/store/33vhmqv35qx21h2wfbl0nw1kxpv1s3a2-etc.drv
+  /nix/store/4llhr27n9sisy2lvz9h19nhg20nhdahz-users-groups.json.drv
+  /nix/store/7pih5xh4x8b2ivznzi3fcm3x41p4ai4y-check-sshd-config.drv
+  /nix/store/jbimm8285i6pxkn2mch886767b6s63b6-dry-activate.drv
+  /nix/store/nkwbdfj8zy6yyn0pk6rif182n6gdzg78-ensure-all-wrappers-paths-exist.drv
+  /nix/store/qh5v5g4d5wsz28axjxgy1d4c6z9lf232-activate.drv
+  /nix/store/vpik17l74ls12b7c7291wsn2nsp8j1mp-boot.json.drv
+  /nix/store/mhvs0fv7b298zrzrw1bfa7bprr940dz2-nixos-system-Yoke-26.11.20260730.1559d3d.drv
+these 57 paths will be fetched (52.4 MiB download, 203.5 MiB unpacked):
+  /nix/store/22i31cf35nbbpw5mm0bqdc4whpcf168w-bin
+  /nix/store/9abld0xh5z40c79isxhqwric5y58p30z-clang-wrapper-21.1.8
+  /nix/store/hjdpdb0dpi8xx8r57fbfjlnmkkl78mji-compiler-rt-libc-21.1.8
+  /nix/store/fqhj6xzwcqvz69c6qbvn8hgshm74pc48-compiler-rt-libc-21.1.8-dev
+  /nix/store/s277zrbib9v4li5908i0ckal3bw56f8p-libpq-18.4-dev
+  /nix/store/y90xcrfmll9hdg6bxfj4l5jinvwlmw87-liburing-2.14-bin
+  /nix/store/bdxp172lkklmkyz1jzvpbhcvya8ysnna-liburing-2.14-dev
+  /nix/store/vc9x6pbk1vdyxyph73qlgsxci8hqpq8z-lld-21.1.8
+  /nix/store/w49bff1ak9kgj6lrkb6mhn68hva333n4-llvm-binutils-21.1.8
+  /nix/store/sh4g7hvd9n2w28rh78x7lsrz4hlqb47z-llvm-binutils-wrapper-21.1.8
+  /nix/store/sk2vind72f3asv0l972jj8mnvsq8br4m-lua-5.1.5-source
+  /nix/store/an2iv1xv35229vihc5a2g1sq0j7ddq4s-lua-5.2.4-source
+  /nix/store/0dwc573ixvii759lqwkhj99gissv1izb-lua-5.3.6-source
+  /nix/store/47k9d7m8qvvgpj99cp1wh777nw881qqz-lua-5.4.7-source
+  /nix/store/zwyxy6silpyfs44pcim11nsw98yilcid-lua-5.5.0-source
+  /nix/store/l53zvy7wkqx26ya4vwcvc4r72xrz39q7-lz4-1.10.0
+  /nix/store/67znwxvafjp7xlrxrq7f381wgrn8gbry-lz4-1.10.0-dev
+  /nix/store/8qlh3rmpgb1pmx54kr7m8l476gy8q3cr-postgresql-18.4
+  /nix/store/i09i5z3d9b3bi5sabrkj2yh1nzwh8z0w-postgresql-18.4-dev
+  /nix/store/ks0vfbqd3mdg1abzbq7pfijd4ac6d6f2-postgresql-18.4-doc
+  /nix/store/qc0wf4xh4bx23rp038nq2fy8rsq6iwgi-postgresql-18.4-lib
+  /nix/store/dqa804vp858p4in6xl9p5qlkf83j8y41-postgresql-18.4-man
+  /nix/store/rm3rmqp2f15mxx0ck662qk7vham7rj0z-postgresql-configfile-check
+  /nix/store/nmsc70144jxi24zza3sfwkbi342mr49h-postgresql-user-clauses-check
+  /nix/store/7psnm27yd0fdg7f1sc6fphpjhw72047d-pypa-build-hook.sh
+  /nix/store/aw2n0ha4p9z97km1axf18sgp22xaph48-pypa-install-hook
+  /nix/store/w5md362y93dai042c9mk8d2jjl4mrad8-python-catch-conflicts-hook
+  /nix/store/3ibvarnzmzvv849sz10smwwd7535mw33-python-imports-check-hook.sh
+  /nix/store/65xqqws58m64sl93iy61bxrhi6pdg9cj-python-metadata-check-hook.sh
+  /nix/store/4wsr382c5y2jar5ahzkr252ym4d65wzi-python-namespaces-hook.sh
+  /nix/store/wxzv3j1qgsy1jn660w3bz7fx3lm1l5bc-python-remove-tests-dir-hook
+  /nix/store/4yc6856g75fwjsr1aw06a4x7z8rvr3xq-python-runtime-deps-check-hook.sh
+  /nix/store/lpxrfgmhmj9f2h3m8yb5g1bl17iipbam-python3-3.14.6-env
+  /nix/store/v4k1l2pca6qrl1wp22ici2qn5hcdix6z-python3.14-ago-0.1.0
+  /nix/store/z9cpsl5sav4xzv4gcn8r8pf8hsm2bqr8-python3.14-authlib-1.7.2
+  /nix/store/x6aqy4ckmav785xijykhqyy4cawdh6im-python3.14-babel-2.18.0
+  /nix/store/bslkj6kby6k2v67573mnp0xhlj204lry-python3.14-bleach-6.4.0
+  /nix/store/yi0kadrmhqj8y9nylqpnii4i7dkrpfx8-python3.14-blurhash-1.1.5
+  /nix/store/67kbyh83lw8wjk36x5cm6xwm5f8y9rqp-python3.14-build-1.5.1
+  /nix/store/ybm9bd7m8gab11bhhbfs31w1sfifkkj9-python3.14-flask-babel-4.1.0
+  /nix/store/5w59icxk0i4ayl5as2ny9vzqfc1amabg-python3.14-flask-compress-1.24
+  /nix/store/4pid5429jr3an4pf42dkin41blj3dnbp-python3.14-humanize-4.15.0
+  /nix/store/r97ixkp0w5i79xyhyz07afiyd080b17m-python3.14-installer-1.0.1
+  /nix/store/zrgkgwxq2g5m8rk9bpnxg7bck2jpah60-python3.14-joserfc-1.6.9
+  /nix/store/fvakql09585inp3hx0mqh3d8zmw7nnii-python3.14-lupa-2.8
+  /nix/store/0p7g6a4jqkmagnbmrmg32nhnlw9sf5qh-python3.14-mastodon-py-2.2.1
+  /nix/store/pyjyhgmxfs1k97f9pf27nbhlmwls9afd-python3.14-mistune-3.3.3
+  /nix/store/463156hibn8683vak4pnjgr8nm5y3pq8-python3.14-pathlib2-2.3.7.post1
+  /nix/store/idi462zaqhv40wwhjkxfi65xajn1qhck-python3.14-psycopg-3.3.4
+  /nix/store/lz3wzjwpva697fvy3p1wmnxxlzs9zg6p-python3.14-psycopg-c-3.3.4
+  /nix/store/gxrvc2gq4kzz54dqi1mlqw7h4zy4l6aw-python3.14-pyproject-hooks-1.2.0
+  /nix/store/gd9plkcdg9bfzwiwjcghd68i0c2a1rn8-python3.14-python-magic-0.4.27
+  /nix/store/vlzgvyswyrxn6msm30zzi7afhy3k17g1-python3.14-sqlparse-0.5.5
+  /nix/store/bsl1lfwv4g6b8cb89vxpjf612zki6hhv-python3.14-wheel-0.47.0
+  /nix/store/afxrmz74pbf5r5avz5r0iiirbxdlw19a-readline-8.3p3-dev
+  /nix/store/2vgls2mqk8jvkg1if4pfqxd3ifllsni0-wrap-python-hook
+  /nix/store/d1bs8fy012412s3dwmzjv9lmks65vk01-yoyo-migrations-8.2.0.tar.gz
+copying path '/nix/store/nmsc70144jxi24zza3sfwkbi342mr49h-postgresql-user-clauses-check' from 'https://cache.nixos.org'...
+copying path '/nix/store/rm3rmqp2f15mxx0ck662qk7vham7rj0z-postgresql-configfile-check' from 'https://cache.nixos.org'...
+building '/nix/store/vpik17l74ls12b7c7291wsn2nsp8j1mp-boot.json.drv'...
+copying path '/nix/store/ks0vfbqd3mdg1abzbq7pfijd4ac6d6f2-postgresql-18.4-doc' from 'https://cache.nixos.org'...
+copying path '/nix/store/dqa804vp858p4in6xl9p5qlkf83j8y41-postgresql-18.4-man' from 'https://cache.nixos.org'...
+building '/nix/store/7pih5xh4x8b2ivznzi3fcm3x41p4ai4y-check-sshd-config.drv'...
+copying path '/nix/store/22i31cf35nbbpw5mm0bqdc4whpcf168w-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/qc0wf4xh4bx23rp038nq2fy8rsq6iwgi-postgresql-18.4-lib' from 'https://cache.nixos.org'...
+copying path '/nix/store/afxrmz74pbf5r5avz5r0iiirbxdlw19a-readline-8.3p3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/hjdpdb0dpi8xx8r57fbfjlnmkkl78mji-compiler-rt-libc-21.1.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/y90xcrfmll9hdg6bxfj4l5jinvwlmw87-liburing-2.14-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/an2iv1xv35229vihc5a2g1sq0j7ddq4s-lua-5.2.4-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/0dwc573ixvii759lqwkhj99gissv1izb-lua-5.3.6-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/sk2vind72f3asv0l972jj8mnvsq8br4m-lua-5.1.5-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/47k9d7m8qvvgpj99cp1wh777nw881qqz-lua-5.4.7-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/zwyxy6silpyfs44pcim11nsw98yilcid-lua-5.5.0-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/l53zvy7wkqx26ya4vwcvc4r72xrz39q7-lz4-1.10.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/v4k1l2pca6qrl1wp22ici2qn5hcdix6z-python3.14-ago-0.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/s277zrbib9v4li5908i0ckal3bw56f8p-libpq-18.4-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/vc9x6pbk1vdyxyph73qlgsxci8hqpq8z-lld-21.1.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/w5md362y93dai042c9mk8d2jjl4mrad8-python-catch-conflicts-hook' from 'https://cache.nixos.org'...
+building '/nix/store/rv2x0yx37bz3issd1d5hzmww2ny4dgl6-config.json.drv'...
+copying path '/nix/store/3ibvarnzmzvv849sz10smwwd7535mw33-python-imports-check-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/4wsr382c5y2jar5ahzkr252ym4d65wzi-python-namespaces-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/wxzv3j1qgsy1jn660w3bz7fx3lm1l5bc-python-remove-tests-dir-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/4yc6856g75fwjsr1aw06a4x7z8rvr3xq-python-runtime-deps-check-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/lpxrfgmhmj9f2h3m8yb5g1bl17iipbam-python3-3.14.6-env' from 'https://cache.nixos.org'...
+copying path '/nix/store/x6aqy4ckmav785xijykhqyy4cawdh6im-python3.14-babel-2.18.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/bslkj6kby6k2v67573mnp0xhlj204lry-python3.14-bleach-6.4.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/r97ixkp0w5i79xyhyz07afiyd080b17m-python3.14-installer-1.0.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/5w59icxk0i4ayl5as2ny9vzqfc1amabg-python3.14-flask-compress-1.24' from 'https://cache.nixos.org'...
+copying path '/nix/store/yi0kadrmhqj8y9nylqpnii4i7dkrpfx8-python3.14-blurhash-1.1.5' from 'https://cache.nixos.org'...
+copying path '/nix/store/zrgkgwxq2g5m8rk9bpnxg7bck2jpah60-python3.14-joserfc-1.6.9' from 'https://cache.nixos.org'...
+copying path '/nix/store/4pid5429jr3an4pf42dkin41blj3dnbp-python3.14-humanize-4.15.0' from 'https://cache.nixos.org'...
+building '/nix/store/nkwbdfj8zy6yyn0pk6rif182n6gdzg78-ensure-all-wrappers-paths-exist.drv'...
+copying path '/nix/store/bdxp172lkklmkyz1jzvpbhcvya8ysnna-liburing-2.14-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/67znwxvafjp7xlrxrq7f381wgrn8gbry-lz4-1.10.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/fvakql09585inp3hx0mqh3d8zmw7nnii-python3.14-lupa-2.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/pyjyhgmxfs1k97f9pf27nbhlmwls9afd-python3.14-mistune-3.3.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/8qlh3rmpgb1pmx54kr7m8l476gy8q3cr-postgresql-18.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/463156hibn8683vak4pnjgr8nm5y3pq8-python3.14-pathlib2-2.3.7.post1' from 'https://cache.nixos.org'...
+copying path '/nix/store/gxrvc2gq4kzz54dqi1mlqw7h4zy4l6aw-python3.14-pyproject-hooks-1.2.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/gd9plkcdg9bfzwiwjcghd68i0c2a1rn8-python3.14-python-magic-0.4.27' from 'https://cache.nixos.org'...
+copying path '/nix/store/vlzgvyswyrxn6msm30zzi7afhy3k17g1-python3.14-sqlparse-0.5.5' from 'https://cache.nixos.org'...
+copying path '/nix/store/bsl1lfwv4g6b8cb89vxpjf612zki6hhv-python3.14-wheel-0.47.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/2vgls2mqk8jvkg1if4pfqxd3ifllsni0-wrap-python-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/d1bs8fy012412s3dwmzjv9lmks65vk01-yoyo-migrations-8.2.0.tar.gz' from 'https://cache.nixos.org'...
+building '/nix/store/qf5hi4qsdql00ba6fkp6k4fv80wlw8v9-firewall-start.drv'...
+copying path '/nix/store/65xqqws58m64sl93iy61bxrhi6pdg9cj-python-metadata-check-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/aw2n0ha4p9z97km1axf18sgp22xaph48-pypa-install-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/lz3wzjwpva697fvy3p1wmnxxlzs9zg6p-python3.14-psycopg-c-3.3.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/fqhj6xzwcqvz69c6qbvn8hgshm74pc48-compiler-rt-libc-21.1.8-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/z9cpsl5sav4xzv4gcn8r8pf8hsm2bqr8-python3.14-authlib-1.7.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/67kbyh83lw8wjk36x5cm6xwm5f8y9rqp-python3.14-build-1.5.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/0p7g6a4jqkmagnbmrmg32nhnlw9sf5qh-python3.14-mastodon-py-2.2.1' from 'https://cache.nixos.org'...
+building '/nix/store/6v2hhiinly35wiw7nzwp950ks0ivhi7c-source.drv'...
+copying path '/nix/store/w49bff1ak9kgj6lrkb6mhn68hva333n4-llvm-binutils-21.1.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/idi462zaqhv40wwhjkxfi65xajn1qhck-python3.14-psycopg-3.3.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/7psnm27yd0fdg7f1sc6fphpjhw72047d-pypa-build-hook.sh' from 'https://cache.nixos.org'...
+building '/nix/store/swx342by083p9ciidalpb127c9blflr6-unit-script-postgresql-setup-start.drv'...
+copying path '/nix/store/sh4g7hvd9n2w28rh78x7lsrz4hlqb47z-llvm-binutils-wrapper-21.1.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/ybm9bd7m8gab11bhhbfs31w1sfifkkj9-python3.14-flask-babel-4.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/9abld0xh5z40c79isxhqwric5y58p30z-clang-wrapper-21.1.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/i09i5z3d9b3bi5sabrkj2yh1nzwh8z0w-postgresql-18.4-dev' from 'https://cache.nixos.org'...
+building '/nix/store/vhw8p3l04zpv2f19qk93p5yjpnq8h0rx-firewall-reload.drv'...
+building '/nix/store/id7z8c96hrlqkl77glhmw2d8zm3hhrbw-python3.14-yoyo-migrations-8.2.0.drv'...
+error: Cannot build '/nix/store/id7z8c96hrlqkl77glhmw2d8zm3hhrbw-python3.14-yoyo-migrations-8.2.0.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/fpm4hr4669ic3jvf9p9c3174c3yiagnj-python3.14-yoyo-migrations-8.2.0-dist
+         /nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0
+       Last 25 log lines:
+       >                                                        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+       >   File "/nix/store/rgnappqqc5vbq60gza5fflyk84sylwl6-python3-3.14.6/lib/python3.14/importlib/__init__.py", line 88, in import_module
+       >     return _bootstrap._gcd_import(name[level:], package, level)
+       >            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       >   File "<frozen importlib._bootstrap>", line 1406, in _gcd_import
+       >   File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+       >   File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+       >   File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+       >   File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+       >   File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+       >   File "/nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0/lib/python3.14/site-packages/yoyo/__init__.py", line 27, in <module>
+       >     from yoyo.connections import get_backend
+       >   File "/nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0/lib/python3.14/site-packages/yoyo/connections.py", line 23, in <module>
+       >     from yoyo.backends import get_backend_class
+       >   File "/nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0/lib/python3.14/site-packages/yoyo/backends/__init__.py", line 1, in <module>
+       >     from yoyo.backends.base import DatabaseBackend
+       >   File "/nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0/lib/python3.14/site-packages/yoyo/backends/base.py", line 32, in <module>
+       >     from yoyo import internalmigrations
+       >   File "/nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0/lib/python3.14/site-packages/yoyo/internalmigrations/__init__.py", line 8, in <module>
+       >     from . import v2
+       >   File "/nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0/lib/python3.14/site-packages/yoyo/internalmigrations/v2.py", line 7, in <module>
+       >     from yoyo.migrations import get_migration_hash
+       >   File "/nix/store/ykj6fkdn73p6ikp8w18davihvs26nqv7-python3.14-yoyo-migrations-8.2.0/lib/python3.14/site-packages/yoyo/migrations.py", line 34, in <module>
+       >     import pkg_resources
+       > ModuleNotFoundError: No module named 'pkg_resources'
+       For full logs, run:
+         nix log /nix/store/id7z8c96hrlqkl77glhmw2d8zm3hhrbw-python3.14-yoyo-migrations-8.2.0.drv
+building '/nix/store/i99mhswsmmv4bx516nq0b7wzf2a69zs0-unit-firewall.service.drv'...
+error: Cannot build '/nix/store/6p9kr3418lvhb756053lc7d6r0f4ysks-python3-3.14.6-env.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/pjshka25201xdza8qafm392rwrnvnfkp-python3-3.14.6-env
+error: Build failed due to failed dependency
+error: Cannot build '/nix/store/r3gvl1hib8x6gh2gxbvpjvg0fnjcb5p9-catask-2.7.6.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/8ms5m6yfc8ni8g7rya9px2fsalb2hm1x-catask-2.7.6
+error: Cannot build '/nix/store/cy50c3b63fzmnx6i9xgjk3lwdqvg2y9g-catask-server.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/m00g1frz7fp2mc3hdbvxk9pilw1n3vz4-catask-server
+error: Cannot build '/nix/store/38kq6ly5qkkf5gnxyh3477xhh9waj83p-unit-catask.service.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/fijhwby17rzgfdf6p0wm4nkm2r9cnmja-unit-catask.service
+error: Build failed due to failed dependency
+error: Build failed due to failed dependency
+building '/nix/store/1wiq40rzqfmkfk29kd9gl3k4b51fmlrb-unit-postgresql-setup.service.drv'...
+error: Cannot build '/nix/store/ls8blabsjy3nva9k645g0jfcym2yvm0w-system-path.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/v168w59lahaklxv359nk83bfn6bpfvni-system-path
+error: Cannot build '/nix/store/zil8s8nkbgz492g1jwj984m9dcci9mxx-system-units.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/n0lg324s6yvirnjgpckb4p7qw2as853z-system-units
+error: Build failed due to failed dependency
+building '/nix/store/4llhr27n9sisy2lvz9h19nhg20nhdahz-users-groups.json.drv'...
+error: Cannot build '/nix/store/4nfdahfyz5ll6f7xgz0s9lrbg6l1n8zk-dbus-1.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/sfrpfan2nnmqmx0l0zch2idgdwzmp8sm-dbus-1
+error: Cannot build '/nix/store/33vhmqv35qx21h2wfbl0nw1kxpv1s3a2-etc.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/9mgbvaaxp73v0dgarix6padgxma1v48i-etc
+error: Cannot build '/nix/store/mhvs0fv7b298zrzrw1bfa7bprr940dz2-nixos-system-Yoke-26.11.20260730.1559d3d.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/xc9awph886qyqkfa9hs4vbh7hi32380y-nixos-system-Yoke-26.11.20260730.1559d3d
+error: Build failed due to failed dependency
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Yoke".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

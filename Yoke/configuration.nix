@@ -31,6 +31,7 @@
       ./services/cryptpad.nix
       ./services/wyoming.nix
       ./services/mqtt.nix
+      ./services/readeck/readeck.nix
     ];
 
   # Bootloader.

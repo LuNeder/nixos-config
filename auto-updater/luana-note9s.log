@@ -3,7 +3,7 @@ Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay h
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
 error:
        … from call site
-         at /nix/store/gsddv42x53fgjf2w2blbv9zdrklcrv0c-source/flake.nix:117:24:
+         at /nix/store/2bs49qy2xrrx4mbjnn0ia9nk0d9nq8ay-source/flake.nix:117:24:
           116|         };
           117|         luana-note9s = system-manager.lib.makeSystemConfig {
              |                        ^

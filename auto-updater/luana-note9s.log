@@ -3,7 +3,7 @@ Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay h
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
 error:
        … from call site
-         at /nix/store/2bs49qy2xrrx4mbjnn0ia9nk0d9nq8ay-source/flake.nix:117:24:
+         at /nix/store/clr0n8y2cigvmqajg7k9j8ascn5dhgaf-source/flake.nix:117:24:
           116|         };
           117|         luana-note9s = system-manager.lib.makeSystemConfig {
              |                        ^
@@ -52,27 +52,27 @@ error:
           130|           in
 
        … while evaluating the attribute 'config'
-         at /nix/store/cc7ff4ysismx0c3778v8gc6b14plrz3z-source/lib/modules.nix:401:9:
+         at /nix/store/xk2kl6xaj4dp0rdnk6p32nrwhkxmi7vp-source/lib/modules.nix:401:9:
           400|         options = checked options;
           401|         config = checked (removeAttrs config [ "_module" ]);
              |         ^
           402|         _module = checked (config._module);
 
        … while calling the 'seq' builtin
-         at /nix/store/cc7ff4ysismx0c3778v8gc6b14plrz3z-source/lib/modules.nix:401:18:
+         at /nix/store/xk2kl6xaj4dp0rdnk6p32nrwhkxmi7vp-source/lib/modules.nix:401:18:
           400|         options = checked options;
           401|         config = checked (removeAttrs config [ "_module" ]);
              |                  ^
           402|         _module = checked (config._module);
 
        … while calling the 'throw' builtin
-         at /nix/store/cc7ff4ysismx0c3778v8gc6b14plrz3z-source/lib/modules.nix:373:13:
+         at /nix/store/xk2kl6xaj4dp0rdnk6p32nrwhkxmi7vp-source/lib/modules.nix:373:13:
           372|           else
           373|             throw baseMsg
              |             ^
           374|         else
 
        error: The option `services.displayManager' does not exist. Definition values:
-       - In `/nix/store/cc7ff4ysismx0c3778v8gc6b14plrz3z-source/nixos/modules/config/nix.nix'
+       - In `/nix/store/xk2kl6xaj4dp0rdnk6p32nrwhkxmi7vp-source/nixos/modules/config/nix.nix'
 
        Did you mean `services.logrotate', `services.xserver' or `services.openssh'?

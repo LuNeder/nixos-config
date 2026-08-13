@@ -4,42 +4,42 @@ Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay h
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
 error:
        … while calling anonymous lambda
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/attrsets.nix:1724:17:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/attrsets.nix:1724:17:
          1723|         zipAttrsWith (
          1724|           name: values:
              |                 ^
          1725|           let
 
        … while calling the 'head' builtin
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/attrsets.nix:1729:13:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/attrsets.nix:1729:13:
          1728|           if length values == 1 || pred here (elemAt values 1) (head values) then
          1729|             head values
              |             ^
          1730|           else
 
        … while calling anonymous lambda
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/attrsets.nix:1195:17:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/attrsets.nix:1195:17:
          1194|         mapAttrs (
          1195|           name: value:
              |                 ^
          1196|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
 
        … from call site
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/attrsets.nix:1196:85:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/attrsets.nix:1196:85:
          1195|           name: value:
          1196|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
              |                                                                                     ^
          1197|         );
 
        … while calling anonymous lambda
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:282:71:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:282:71:
           281|           # For definitions that have an associated option
           282|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
              |                                                                       ^
           283|
 
        … while evaluating the attribute 'value'
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1149:7:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1149:7:
          1148|     // {
          1149|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
              |       ^
@@ -48,79 +48,79 @@ error:
        … while evaluating the option `system.build.toplevel':
 
        … while evaluating the attribute 'mergedValue'
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1246:5:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1246:5:
          1245|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
          1246|     mergedValue =
              |     ^
          1247|       if isDefined then
 
        … while evaluating a branch condition
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1247:7:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1247:7:
          1246|     mergedValue =
          1247|       if isDefined then
              |       ^
          1248|         if type.merge ? v2 then
 
        … while evaluating a branch condition
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1223:7:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1223:7:
          1222|       # above are lazy and thus never forced on this branch.
          1223|       if
              |       ^
          1224|         length defs == 1
 
        … in the right operand of the AND (&&) operator
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1225:9:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1225:9:
          1224|         length defs == 1
          1225|         && (
              |         ^
          1226|           let
 
-       … while evaluating definitions from `/nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/nixos/modules/system/activation/top-level.nix':
+       … while evaluating definitions from `/nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/nixos/modules/system/activation/top-level.nix':
 
        … in the argument of the not operator
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1230:31:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1230:31:
          1229|           addErrorContext "while evaluating definitions from `${d.file}':" (
          1230|             !(isAttrs d.value && d.value ? _type)
              |                               ^
          1231|           )
 
        … in the left operand of the AND (&&) operator
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1230:31:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1230:31:
          1229|           addErrorContext "while evaluating definitions from `${d.file}':" (
          1230|             !(isAttrs d.value && d.value ? _type)
              |                               ^
          1231|           )
 
        … while calling the 'isAttrs' builtin
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:1230:15:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:1230:15:
          1229|           addErrorContext "while evaluating definitions from `${d.file}':" (
          1230|             !(isAttrs d.value && d.value ? _type)
              |               ^
          1231|           )
 
        … while evaluating the attribute 'value'
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:851:21:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:851:21:
           850|             inherit (module) file;
           851|             inherit value;
              |                     ^
           852|           }) module.config
 
        … from call site
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/nixos/modules/system/activation/top-level.nix:78:26:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/nixos/modules/system/activation/top-level.nix:78:26:
            77|   # Handle assertions and warnings
            78|   baseSystemAssertWarn = lib.asserts.checkAssertWarn config.assertions config.warnings baseSystem;
              |                          ^
            79|
 
        … while calling 'checkAssertWarn'
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/asserts.nix:196:27:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/asserts.nix:196:27:
           195|   checkAssertWarn =
           196|     assertions: warnings: val:
              |                           ^
           197|     let
 
        … while calling the 'throw' builtin
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/asserts.nix:201:7:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/asserts.nix:201:7:
           200|     if failedAssertions != [ ] then
           201|       throw "\nFailed assertions:\n${concatStringsSep "\n" (map (x: "- ${x}") failedAssertions)}"
              |       ^
@@ -128,6 +128,6 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `services.home-assistant.openFirewall' in `/nix/store/7747jgji6hq3b3c9lpq9ghdy2xmqq8px-source/Yoke/services/home-assistant.nix' no longer has any effect; please remove it.
+       - The option definition `services.home-assistant.openFirewall' in `/nix/store/82i8xxcb8i5xyim1qplkfh5asahz825c-source/Yoke/services/home-assistant.nix' no longer has any effect; please remove it.
        The frontend port is not configured in YAML any more and therefore cannot be determined at eval time any longer.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Yoke".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

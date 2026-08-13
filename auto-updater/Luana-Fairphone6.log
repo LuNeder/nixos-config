@@ -3,7 +3,7 @@ Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay h
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
 error:
        … from call site
-         at /nix/store/37h5i86bi2hpk8k7prkhhdsd74a1bnvc-source/flake.nix:109:28:
+         at /nix/store/pwga719vwvrcagx7syig76cb94p1hirk-source/flake.nix:109:28:
           108|       systemConfigs = {
           109|         Luana-Fairphone6 = system-manager.lib.makeSystemConfig {
              |                            ^
@@ -52,27 +52,27 @@ error:
           130|           in
 
        … while evaluating the attribute 'config'
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:401:9:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:401:9:
           400|         options = checked options;
           401|         config = checked (removeAttrs config [ "_module" ]);
              |         ^
           402|         _module = checked (config._module);
 
        … while calling the 'seq' builtin
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:401:18:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:401:18:
           400|         options = checked options;
           401|         config = checked (removeAttrs config [ "_module" ]);
              |                  ^
           402|         _module = checked (config._module);
 
        … while calling the 'throw' builtin
-         at /nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/lib/modules.nix:373:13:
+         at /nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/lib/modules.nix:373:13:
           372|           else
           373|             throw baseMsg
              |             ^
           374|         else
 
        error: The option `services.displayManager' does not exist. Definition values:
-       - In `/nix/store/v3q54nkmkyvlrqihq7gjqpmsgan83049-source/nixos/modules/config/nix.nix'
+       - In `/nix/store/f9r5519g4jvbkbvmbwnryhacg7vblsir-source/nixos/modules/config/nix.nix'
 
        Did you mean `services.logrotate', `services.xserver' or `services.openssh'?

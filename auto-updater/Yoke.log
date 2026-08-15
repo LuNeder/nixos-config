@@ -128,6 +128,6 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `services.home-assistant.openFirewall' in `/nix/store/nncssx6bc2j6yf4h2gyhscyfmcq89w9i-source/Yoke/services/home-assistant.nix' no longer has any effect; please remove it.
+       - The option definition `services.home-assistant.openFirewall' in `/nix/store/ymhyjwqmbiihd4yib3jky12fqbarn89j-source/Yoke/services/home-assistant.nix' no longer has any effect; please remove it.
        The frontend port is not configured in YAML any more and therefore cannot be determined at eval time any longer.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Yoke".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

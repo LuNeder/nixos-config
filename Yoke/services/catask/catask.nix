@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, ... }: {
   merpkgs.services.catask = {
-    #enable = true; # TODO: Fix python deps
+    enable = true; # TODO: Fix python deps
    # package = pkgs.merpkgs.catask;
     listenAddress = "[::]";
     port = 8220;

@@ -20,7 +20,7 @@ in {
     nextcloud = {
       inherit hostName;
 
-      package = pkgs.nextcloud33;
+      package = pkgs.nextcloud34;
       enable = true;
 
       https = true;
@@ -42,12 +42,17 @@ in {
 
       extraApps = {
         inherit (config.services.nextcloud.package.packages.apps) contacts calendar 
-        tasks notes forms memories previewgenerator richdocuments;
+        tasks notes forms memories previewgenerator;
         #duplicatefinder = pkgs.fetchNextcloudApp { # https://github.com/eldertek/duplicatefinder/pull/169
         #  url = "https://github.com/eldertek/duplicatefinder/releases/download/v1.7.3/duplicatefinder-v1.7.3.tar.gz";
         #  sha256 = "sha256-VoA0jHS2Nkfz/c1UKSKFTdzFGbXV2/chhWy9vbGYOSc=";
         #  license = "agpl3Only";
         #};
+        eurooffice = pkgs.fetchNextcloudApp {
+          url = "https://github.com/nextcloud-releases/eurooffice/releases/download/v11.0.2/eurooffice-v11.0.2.tar.gz";
+          sha256 = "sha256-xqKBv0WDIeGulXTe4JGcfNsLn4OGXigt6+wbBoMrh84=";
+          license = "agpl3Only";
+        };
       };
       extraAppsEnable = true;
       

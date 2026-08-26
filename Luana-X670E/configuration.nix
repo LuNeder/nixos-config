@@ -241,7 +241,31 @@
     pkgs.mcpelauncher-ui-qt
     pkgs.libreoffice-fresh
     pkgs.wayvr
-    pkgs.alvr
+    (pkgs.alvr.overrideAttrs (finalAttrs: oldAttrs: rec { # Does not work, crashes on launch with unable to find vulkan
+        version = "v21.0.0-dev12+nightly.2026.08.23";
+        src = pkgs.fetchFromGitHub {
+          owner = "alvr-org";
+          repo = "ALVR";
+          rev = "6b75f2f118b3ce71c55d1b0c863414a24322e28a"; # Fix for newer SteamVR versions
+          fetchSubmodules = true;
+          hash = "sha256-KxH6te85VWs8bHmcPtqbM9pydXNmsoQV4eomW4YTLjg=";
+        };
+        patches = [
+          (pkgs.replaceVars (pkgs.fetchpatch {
+            url = "https://github.com/LuNeder/ALVR/commit/9bd0a9faeede3d8366a10bcfaac28b92fd393b03.patch"; # Update fix-finding-libs.patch
+            hash = "sha256-qY3S6SsMdGWTBNM971FAKbX9rrfvAKWJ8+JMpy3uVM0=";
+            }) {
+            ffmpeg = lib.getDev pkgs.ffmpeg_8; # custom ffpeg not needed, as update to 8 was already merged on upstream at this point (alvr-org/ALVR#3250) # (pkgs.callPackage "${toString pkgs.path}/pkgs/by-name/al/alvr/ffmpeg.nix" { })
+            x264 = lib.getDev pkgs.x264;
+            vulkan-headers = lib.getDev pkgs.vulkan-headers; # new
+          })
+        ];
+        cargoHash = "sha256-61x5txV+5j7k1+/6kPaEncWDAcyfERRjFb5ZoLhtUG4=";
+        cargoDeps = pkgs.rustPlatform.fetchCargoVendor { # This part is needed because nix sucks and won't actually override the cargoHash without it
+          inherit (finalAttrs) pname src version;
+          hash = finalAttrs.cargoHash;
+        };
+    }))
     # When using SteamVR, this file cannot exist as readonly
     # (pkgs.writeShellApplication {name = "wivrn-startup"; text = "cp ~/.config/openvr/wivrn-openvrpaths.vrpath ~/.config/openvr/openvrpaths.vrpath && rm -f '/home/luana/.config/openxr/1/active_runtime.json' && ln -s ${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json '/home/luana/.config/openxr/1/active_runtime.json' && wivrn-server";}) # broken
     pkgs.qpwgraph

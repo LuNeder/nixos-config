@@ -62,7 +62,6 @@
 
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     #nixos-raspberrypi.inputs.nixpkgs.follows = "nixpkgs";
-    pipkgs.url = "github:nvmd/nixpkgs/modules-with-keys-25.11";
 
     librepods = {
       url = "github:kavishdevar/librepods/linux/rust";
@@ -74,7 +73,7 @@
 
   
 
-  outputs = { self, nixpkgs, systems, nix-flatpak, nixos-raspberrypi, pipkgs, home-manager, system-manager, plasma-manager, ... } @ inputs: 
+  outputs = { self, nixpkgs, systems, nix-flatpak, nixos-raspberrypi, home-manager, system-manager, plasma-manager, ... } @ inputs: 
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib; 
@@ -92,7 +91,7 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./Yoke/configuration.nix ];
         });
-        Fabricator = ( pipkgs.lib.nixosSystem {
+        Fabricator = ( nixos-raspberrypi.lib.nixosSystem {
             specialArgs = {inherit inputs nixos-raspberrypi outputs;};
             modules = [ ./Fabricator/configuration.nix ];
         });
@@ -100,7 +99,7 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./oraclevps/configuration.nix ];
         });
-        ilbl-dash = ( pipkgs.lib.nixosSystem {
+        ilbl-dash = ( nixos-raspberrypi.lib.nixosSystemFull {
             specialArgs = {inherit inputs nixos-raspberrypi outputs;};
             modules = [ ./ilbl-dash/configuration.nix ];
         });

@@ -96,12 +96,12 @@
   services.openssh.enable = true;
 
   # Do not sleep when lid is closed
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=no
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  #systemd.sleep.extraConfig = ''
+  #  AllowSuspend=no
+  #  AllowHibernation=no
+  #  AllowHybridSleep=no
+  #  AllowSuspendThenHibernate=no
+  #'';
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

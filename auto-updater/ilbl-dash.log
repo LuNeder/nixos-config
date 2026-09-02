@@ -128,6 +128,6 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `systemd.sleep.extraConfig' in `/nix/store/sd81ih4dzlwshmx5h3jm6cln4vbhil8l-source/ilbl-dash/configuration.nix' no longer has any effect; please remove it.
+       - The option definition `systemd.sleep.extraConfig' in `/nix/store/mlbr2hwlhb4000c6r15wsjachm0100im-source/ilbl-dash/configuration.nix' no longer has any effect; please remove it.
        Use systemd.sleep.settings.Sleep instead.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."ilbl-dash".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

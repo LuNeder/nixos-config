@@ -310,6 +310,7 @@
     pkgs.kdePackages.qtwebsockets # for KDE Home Assistant applet
     pkgs.kdePackages.kamera
     pkgs.davinci-resolve
+    pkgs.simple-scan
   ];
 
   programs.criu.enable = true;

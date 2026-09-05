@@ -126,6 +126,7 @@
         })
        ];
     })
+    pkgs.comic-mandown
   ];
  
   programs.git.enable = true;

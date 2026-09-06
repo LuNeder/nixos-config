@@ -32,6 +32,7 @@
       ./services/wyoming.nix
       ./services/mqtt.nix
       ./services/readeck/readeck.nix
+      ./services/komga.nix
     ];
 
   # Bootloader.
@@ -126,6 +127,7 @@
         })
        ];
     })
+    pkgs.comic-mandown
   ];
  
   programs.git.enable = true;

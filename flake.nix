@@ -91,7 +91,7 @@
             specialArgs = {inherit inputs outputs;};
             modules = [ ./Yoke/configuration.nix ];
         });
-        Fabricator = ( nixos-raspberrypi.lib.nixosSystem {
+        Fabricator = ( nixos-raspberrypi.lib.nixosSystemFull {
             specialArgs = {inherit inputs nixos-raspberrypi outputs;};
             modules = [ ./Fabricator/configuration.nix ];
         });

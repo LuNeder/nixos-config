@@ -1,20 +1,13 @@
-{ config, pkgs, lib, stdenv, ... }: {
-  services.cage = {
-    enable = true;
-    program = "touchkio";
-    user = "root";
-    extraArguments = [ "-d" ];
-  };
-
-  environment.systemPackages = [
-    (
-      stdenv.mkDerivation (finalAttrs: {
+{ config, pkgs, lib, stdenv, ... }: 
+let
+  touchkio = (
+      pkgs.stdenv.mkDerivation (finalAttrs: {
         pname = "touchkio";
         version = "1.4.2";
 
         src = pkgs.fetchurl {
           url = "https://github.com/leukipp/touchkio/releases/download/v${finalAttrs.version}/touchkio_${finalAttrs.version}_arm64.deb";
-          hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+          hash = "sha256-MryXbD/VX+wG/Q5JWV0a6bchbJkkvv2U2jv7wiZV8IY=";
         };
 
         unpackCmd = "dpkg -x $curSrc source";
@@ -34,8 +27,21 @@
 
           runHook postInstall
         '';
+
+        meta.mainProgram = "touchkio";
       })
-    )
+    );
+in
+{
+  services.cage = {
+    enable = true;
+    program = "${lib.getExe touchkio}";
+    user = "root";
+    extraArguments = [ "-d" ];
+  };
+
+  environment.systemPackages = [
+    touchkio
   ];
 
   # wait for network and DNS

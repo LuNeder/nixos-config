@@ -7,7 +7,7 @@
   imports =
     [ 
       (modulesPath + "/installer/scan/not-detected.nix")
-      inputs.nixos-raspberrypi.lib.inject-overlays
+      #inputs.nixos-raspberrypi.lib.inject-overlays
       inputs.nixos-raspberrypi.nixosModules.raspberry-pi-5.base
       inputs.nixos-raspberrypi.nixosModules.raspberry-pi-5.bluetooth
       inputs.nixos-raspberrypi.nixosModules.raspberry-pi-5.page-size-16k

@@ -137,6 +137,10 @@
     pkgs.powerline-fonts # zsh agnoster theme needs this
   ];
 
+  # Do not surpress log messages
+  services.journald.rateLimitBurst = 0;
+  services.journald.rateLimitInterval = 0;
+
 
   # Packagesets
   nixpkgs.overlays = [

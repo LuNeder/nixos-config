@@ -138,8 +138,8 @@
   ];
 
   # Do not surpress log messages
-  services.journald.rateLimitBurst = 0;
-  services.journald.rateLimitInterval = 0;
+  services.journald.settings.Journal.RateLimitBurst = 0;
+  services.journald.settings.Journal.RateLimitIntervalSec = 0;
 
 
   # Packagesets

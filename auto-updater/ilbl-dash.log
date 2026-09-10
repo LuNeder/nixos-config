@@ -18,7 +18,7 @@ error:
           375|         else
 
        error: The option `services.journald.settings' does not exist. Definition values:
-       - In `/nix/store/f99awgsnpkdma66lq3kzidrz49h3dkkq-source/common/minimal.nix':
+       - In `/nix/store/kirybarnkxln2jwk54h38cqd28yfh6rr-source/common/minimal.nix':
            {
              Journal = {
                RateLimitBurst = 0;
@@ -27,4 +27,4 @@ error:
            ...
 
        Did you mean `services.journald.storage', `services.journald.audit' or `services.journald.gateway'?
-Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Fabricator".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."ilbl-dash".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

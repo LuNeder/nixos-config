@@ -11,7 +11,9 @@
     clientMaxBodySize = "300m";
   };
 
-  config.networking.firewall.allowedTCPPorts = [ 80 443 ];
+  config.networking.firewall.allowedTCPPorts = [ 80 443 25565 19132 ];
+  config.networking.firewall.allowedUDPPorts = [ 80 443 25565 19132 ];
+
 
   config.services.nginx.virtualHosts."_" = {
     forceSSL = false;
@@ -179,6 +181,22 @@
       proxyPass = "http://100.64.0.9:5232";
     };
   };
+
+  config.services.nginx.streamConfig = ''
+    # Minecraft Velocity Servers
+
+    server {
+      listen 25565;
+      proxy_pass yoke:25565;
+      proxy_timeout 60m;
+    }
+
+    server {
+      listen 19132;
+      proxy_pass yoke:19132;
+      proxy_timeout 60m;
+    }
+  '';
 
   # Enable acme for usage with nginx vhosts
   config.security.acme = {

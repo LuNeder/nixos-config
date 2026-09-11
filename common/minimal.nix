@@ -105,7 +105,7 @@
   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGW6PtCADYRtvF76Ba7u7+NNoOtjDRjRkb3W1d3/W9ol root@iPhone"
   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHqBvvXa2BgsnSSFKaDOEnbSkKcVc9nAmaixIUUspM+Z u0_a147@localhost" # termux
   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII5UXentRtMK6btQM0LsMuQWoYkAFMtbUdAMxTQJZekq root@Yoke"
-  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII5UXentRtMK6btQM0LsMuQWoYkAFMtbUdAMxTQJZekq root@Yoke"
+  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8y8w8S5EX4Li66D48TVvuNJEmW8DrTBQI0lLBQqWMp root@oraclevps"
   ''command="poweroff",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTjuUP73g64SDoVNQIzarbeOxDeiVMpGmNrpaPr3D4k hass@Yoke''
   ];
   users.users."luana".openssh.authorizedKeys.keys = config.users.users."root".openssh.authorizedKeys.keys;

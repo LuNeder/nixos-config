@@ -1,0 +1,438 @@
+building the system configuration...
+warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
+Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay https://nixos-raspberrypi.cachix.org' from ~/.local/share/nix/trusted-settings.json.
+Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
+evaluation warning: stdenv.isDarwin is deprecated, use stdenv.hostPlatform.isDarwin instead
+evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has been renamed to 'libx11'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXrandr' has been renamed to 'libxrandr'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has been renamed to 'libx11'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXrandr' has been renamed to 'libxrandr'
+evaluation warning: LibreOffice upstream has changed the versioning, please use use `libreoffice-stable`
+error:
+       … while calling the 'derivationStrict' builtin
+         at «nix-internal»/derivation-internal.nix:37:12:
+           36|
+           37|   strict = derivationStrict drvAttrs;
+             |            ^
+           38|
+
+       … while evaluating derivation 'nixos-system-Luana-X670E-26.11.20260910.8ce4ef6'
+         whose name attribute is located at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+
+       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-X670E-26.11.20260910.8ce4ef6'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/nixos/modules/system/activation/top-level.nix:63:7:
+           62|       allowSubstitutes = false;
+           63|       buildCommand = systemBuilder;
+             |       ^
+           64|
+
+       … while calling the 'getAttr' builtin
+         at «nix-internal»/derivation-internal.nix:50:17:
+           49|     value = commonAttrs // {
+           50|       outPath = builtins.getAttr outputName strict;
+             |                 ^
+           51|       drvPath = strict.drvPath;
+
+       … while calling the 'derivationStrict' builtin
+         at «nix-internal»/derivation-internal.nix:37:12:
+           36|
+           37|   strict = derivationStrict drvAttrs;
+             |            ^
+           38|
+
+       … while evaluating derivation 'etc'
+         whose name attribute is located at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+
+       … while evaluating attribute 'buildCommand' of derivation 'etc'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/build-support/trivial-builders/default.nix:84:17:
+           83|         enableParallelBuilding = true;
+           84|         inherit buildCommand name;
+             |                 ^
+           85|         passAsFile = defaultPassAsFile ++ (derivationArgs.passAsFile or [ ]);
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/nixos/modules/system/etc/etc.nix:56:11:
+           55|         mkdir -p "$out/etc"
+           56|         ${lib.concatMapStringsSep "\n" (
+             |           ^
+           57|           etcEntry:
+
+       … while calling 'concatMapStringsSep'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:261:13:
+          260|   concatMapStringsSep =
+          261|     sep: f: list:
+             |             ^
+          262|     concatStringsSep sep (map f list);
+
+       … while calling the 'concatStringsSep' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:262:5:
+          261|     sep: f: list:
+          262|     concatStringsSep sep (map f list);
+             |     ^
+          263|
+
+       … while calling anonymous lambda
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/nixos/modules/system/etc/etc.nix:57:11:
+           56|         ${lib.concatMapStringsSep "\n" (
+           57|           etcEntry:
+             |           ^
+           58|           lib.escapeShellArgs [
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/nixos/modules/system/etc/etc.nix:58:11:
+           57|           etcEntry:
+           58|           lib.escapeShellArgs [
+             |           ^
+           59|             "makeEtcEntry"
+
+       … while calling 'concatMapStringsSep'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:261:13:
+          260|   concatMapStringsSep =
+          261|     sep: f: list:
+             |             ^
+          262|     concatStringsSep sep (map f list);
+
+       … while calling the 'concatStringsSep' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:262:5:
+          261|     sep: f: list:
+          262|     concatStringsSep sep (map f list);
+             |     ^
+          263|
+
+       … while calling 'escapeShellArg'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:1218:5:
+         1217|   escapeShellArg =
+         1218|     arg:
+             |     ^
+         1219|     let
+
+       … while evaluating a branch condition
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:1222:5:
+         1221|     in
+         1222|     if match "[[:alnum:],._+:@%/-]+" string == null then
+             |     ^
+         1223|       "'${replaceString "'" "'\\''" string}'"
+
+       … while calling the 'match' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:1222:8:
+         1221|     in
+         1222|     if match "[[:alnum:],._+:@%/-]+" string == null then
+             |        ^
+         1223|       "'${replaceString "'" "'\\''" string}'"
+
+       … while evaluating the second argument passed to builtins.match
+
+       … while calling the 'toString' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:1220:16:
+         1219|     let
+         1220|       string = toString arg;
+             |                ^
+         1221|     in
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/nixos/modules/system/etc/etc.nix:61:16:
+           60|             # Force local source paths to be added to the store
+           61|             "${etcEntry.source}"
+             |                ^
+           62|             etcEntry.target
+
+       … while calling anonymous lambda
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:283:38:
+          282|             let
+          283|               recurse = mapAttrs (n: v: if isOption v then v.value else recurse v);
+             |                                      ^
+          284|             in
+
+       … while evaluating the attribute 'value'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:1181:7:
+         1180|     // {
+         1181|       value = addErrorContext "while evaluating the option `${showOption loc}':" (
+             |       ^
+         1182|         # Apply the 'apply' function to the merged value. This allows options to
+
+       … while evaluating the option `environment.etc.dbus-1.source':
+
+       … while evaluating the attribute 'mergedValue'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:1276:5:
+         1275|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+         1276|     mergedValue =
+             |     ^
+         1277|       if isDefined then
+
+       … while evaluating a branch condition
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:1285:14:
+         1284|             checkedAndMerged.value
+         1285|         else if all (def: type.check def.value) defsFinal then
+             |              ^
+         1286|           type.merge loc defsFinal
+
+       … while calling the 'all' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:1285:17:
+         1284|             checkedAndMerged.value
+         1285|         else if all (def: type.check def.value) defsFinal then
+             |                 ^
+         1286|           type.merge loc defsFinal
+
+       … while calling anonymous lambda
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:1285:22:
+         1284|             checkedAndMerged.value
+         1285|         else if all (def: type.check def.value) defsFinal then
+             |                      ^
+         1286|           type.merge loc defsFinal
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:1285:27:
+         1284|             checkedAndMerged.value
+         1285|         else if all (def: type.check def.value) defsFinal then
+             |                           ^
+         1286|           type.merge loc defsFinal
+
+       … while calling 'check'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/types.nix:688:11:
+          687|         check =
+          688|           x:
+             |           ^
+          689|           let
+
+       … in the right operand of the AND (&&) operator
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/types.nix:705:11:
+          704|           && (inStore == null || inStore == isInStore)
+          705|           && (absolute == null || absolute == isAbsolute);
+             |           ^
+          706|       };
+
+       … in the right operand of the OR (||) operator
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/types.nix:705:32:
+          704|           && (inStore == null || inStore == isInStore)
+          705|           && (absolute == null || absolute == isAbsolute);
+             |                                ^
+          706|       };
+
+       … while calling the 'substring' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/types.nix:698:26:
+          697|             );
+          698|             isAbsolute = substring 0 1 (toString x) == "/";
+             |                          ^
+          699|             isExpectedType = (
+
+       … while calling the 'toString' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/types.nix:698:41:
+          697|             );
+          698|             isAbsolute = substring 0 1 (toString x) == "/";
+             |                                         ^
+          699|             isExpectedType = (
+
+       … while calling the 'getAttr' builtin
+         at «nix-internal»/derivation-internal.nix:50:17:
+           49|     value = commonAttrs // {
+           50|       outPath = builtins.getAttr outputName strict;
+             |                 ^
+           51|       drvPath = strict.drvPath;
+
+       … while calling the 'derivationStrict' builtin
+         at «nix-internal»/derivation-internal.nix:37:12:
+           36|
+           37|   strict = derivationStrict drvAttrs;
+             |            ^
+           38|
+
+       … while evaluating derivation 'dbus-1'
+         whose name attribute is located at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+
+       … while evaluating attribute 'serviceDirectories' of derivation 'dbus-1'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/by-name/ma/makeDBusConf/package.nix:19:13:
+           18|   {
+           19|     inherit serviceDirectories suidHelper apparmor;
+             |             ^
+           20|     preferLocalBuild = true;
+
+       … while calling anonymous lambda
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/types.nix:746:26:
+          745|             headError = checkDefsForError check loc defs;
+          746|             value = map (x: x.optionalValue.value or x.mergedValue) evals;
+             |                          ^
+          747|             valueMeta.list = map (v: v.checkedAndMerged.valueMeta) evals;
+
+       … while evaluating the attribute 'optionalValue.value'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/modules.nix:1342:41:
+         1341|
+         1342|     optionalValue = if isDefined then { value = mergedValue; } else { };
+             |                                         ^
+         1343|   };
+
+       (11 duplicate frames omitted)
+
+       … while evaluating derivation 'system-path'
+         whose name attribute is located at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+
+       … while evaluating attribute 'chosenOutputs' of derivation 'system-path'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/build-support/buildenv/default.nix:113:9:
+          112|
+          113|         chosenOutputs = map (drv: {
+             |         ^
+          114|           paths =
+
+       … while evaluating list element at index 104
+
+       … while evaluating attribute 'paths'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/build-support/buildenv/default.nix:114:11:
+          113|         chosenOutputs = map (drv: {
+          114|           paths =
+             |           ^
+          115|             # First add the usual output(s): respect if user has chosen explicitly,
+
+       … while evaluating list element at index 0
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/build-support/buildenv/default.nix:114:11:
+          113|         chosenOutputs = map (drv: {
+          114|           paths =
+             |           ^
+          115|             # First add the usual output(s): respect if user has chosen explicitly,
+
+       … while calling the 'getAttr' builtin
+         at «nix-internal»/derivation-internal.nix:50:17:
+           49|     value = commonAttrs // {
+           50|       outPath = builtins.getAttr outputName strict;
+             |                 ^
+           51|       drvPath = strict.drvPath;
+
+       … while calling the 'derivationStrict' builtin
+         at «nix-internal»/derivation-internal.nix:37:12:
+           36|
+           37|   strict = derivationStrict drvAttrs;
+             |            ^
+           38|
+
+       … while evaluating derivation 'jitsi-meet-electron-2026.5.0'
+         whose name attribute is located at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+
+       … while evaluating attribute 'installPhase' of derivation 'jitsi-meet-electron-2026.5.0'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:91:3:
+           90|
+           91|   installPhase = ''
+             |   ^
+           92|     runHook preInstall
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:94:7:
+           93|
+           94|     ${lib.optionalString stdenv.hostPlatform.isLinux ''
+             |       ^
+           95|       mkdir -p $out/share/jitsi-meet-electron
+
+       … while calling 'optionalString'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/strings.nix:776:26:
+          775|   */
+          776|   optionalString = cond: string: if cond then string else "";
+             |                          ^
+          777|
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:98:21:
+           97|
+           98|       makeWrapper ${lib.getExe electron} $out/bin/jitsi-meet-electron \
+             |                     ^
+           99|           --add-flags $out/share/jitsi-meet-electron/resources/app.asar \
+
+       … while calling 'getExe'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/meta.nix:526:5:
+          525|   getExe =
+          526|     x:
+             |     ^
+          527|     getExe' x (
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/meta.nix:527:5:
+          526|     x:
+          527|     getExe' x (
+             |     ^
+          528|       x.meta.mainProgram or (
+
+       … while calling 'getExe''
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/meta.nix:572:8:
+          571|   getExe' =
+          572|     x: y:
+             |        ^
+          573|     assert
+
+       … in the condition of the assert statement
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/lib/customisation.nix:433:13:
+          432|           outPath =
+          433|             assert condition;
+             |             ^
+          434|             drv.${outputName}.outPath;
+
+       … while evaluating the attribute 'handled'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/check-meta.nix:669:9:
+          668|         valid = "no";
+          669|         handled = handle {
+             |         ^
+          670|           inherit attrs meta;
+
+       … from call site
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/check-meta.nix:669:19:
+          668|         valid = "no";
+          669|         handled = handle {
+             |                   ^
+          670|           inherit attrs meta;
+
+       … while calling 'handle'
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/check-meta.nix:606:5:
+          605|   handle =
+          606|     {
+             |     ^
+          607|       attrs,
+
+       … while calling the 'seq' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/check-meta.nix:640:5:
+          639|     # Give all warnings first, then error if any
+          640|     seq (foldl' giveWarning null warnings) withError;
+             |     ^
+          641|
+
+       … while calling the 'throw' builtin
+         at /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/stdenv/generic/check-meta.nix:628:13:
+          627|           else
+          628|             throw msg;
+             |             ^
+          629|
+
+       error: Refusing to evaluate package 'electron-41.10.6' in /nix/store/wr3njgpzrbmxfcdys91h0x23i9v12551-source/pkgs/development/tools/electron/binary/generic.nix:50 because it is marked as insecure
+
+       Known issues:
+        - Electron version 41.10.6 is EOL
+
+       You can install it anyway by allowing this package, using the
+       following methods:
+
+       a) To temporarily allow all insecure packages, you can use an environment
+          variable for a single invocation of the nix tools:
+
+            $ export NIXPKGS_ALLOW_INSECURE=1
+
+          Note: When using `nix shell`, `nix build`, `nix develop`, etc with a flake,
+                then pass `--impure` in order to allow use of environment variables.
+
+       b) for `nixos-rebuild` you can add ‘electron-41.10.6’ to
+          `nixpkgs.config.permittedInsecurePackages` in the configuration.nix,
+          like so:
+
+            {
+              nixpkgs.config.permittedInsecurePackages = [
+                "electron-41.10.6"
+              ];
+            }
+
+       c) For `nix-env`, `nix-build`, `nix-shell` or any other Nix command you can add
+          ‘electron-41.10.6’ to `permittedInsecurePackages` in
+          ~/.config/nixpkgs/config.nix, like so:
+
+            {
+              permittedInsecurePackages = [
+                "electron-41.10.6"
+              ];
+            }
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

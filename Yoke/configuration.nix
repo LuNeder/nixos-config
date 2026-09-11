@@ -33,6 +33,7 @@
       ./services/mqtt.nix
       ./services/readeck/readeck.nix
       ./services/komga.nix
+      ./services/minecraft
     ];
 
   # Bootloader.

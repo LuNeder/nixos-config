@@ -5,13 +5,13 @@
 }: let
   servers = config.services.minecraft-servers.servers;
   cfg = servers.proxy;
-  proxyFlags = memory: "-Xms${memory} -Xmx${memory} -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
+  proxyFlags = memory: "-Dvelocity.max-known-packs=512 -Dvelocity.packet-decode-logging=true -Dvelocity.max-plugin-message-payload-size=2097152 -Dvelocity.increased-compression-cap=true -Xms${memory} -Xmx${memory} -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
 in {
   imports = [
     ./librelogin.nix
     ./luckperms.nix
-    ./fallbackserver.nix
-    ./huskchat.nix # TODO: Discontinued, find alternative
+    #./fallbackserver.nix
+    ./fairychat.nix
     ./velocitab.nix
 
     ./geyser.nix
@@ -49,8 +49,8 @@ in {
         config-version = "2.9";
         bind = "${cfg.serverProperties.server-ip}:${toString cfg.serverProperties.server-port}";
         motd = "<#09add3>${cfg.serverProperties.motd}";
-        player-info-forwarding-mode = "MODERN";
-        forwarding-secret-file = config.sops.secrets.velocity-fwd.path;
+        player-info-forwarding-mode = "LEGACY";
+        #forwarding-secret-file = config.sops.secrets.velocity-fwd.path;
 
         servers = let
           mkIp = server: "localhost:${toString server.serverProperties.server-port}";
@@ -62,7 +62,9 @@ in {
         };
 
         forced-hosts = {
-          "aero.minecraaft.yoke.sereia.gay" = ["ftb-skies-2"];
+          "aero.minecraft.yoke.sereia.gay" = ["ftb-skies-2"];
+          "aero.minecraft.da.sereia.gay" = ["ftb-skies-2"];
+          "auth.minecraft.da.sereia.gay" = ["limbo"];
         };
 
         ping-passthrough = {

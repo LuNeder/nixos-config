@@ -21,8 +21,8 @@
     group = "minecraft";
     mode = "0440";
     sopsFile = ./secrets.yaml;
-    # minecraft-secrets: "DATABASE_PASSWORD='password-here'; VELOCITY_FWD='a-secret-here';"
-    # velocity-fwd: "same-secret-here"
+    # minecraft-secrets: "DATABASE_PASSWORD='password-here'"
+    # velocity-fwd: "secret-here"
   };
 
   services.minecraft-servers = {

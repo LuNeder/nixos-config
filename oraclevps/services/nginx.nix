@@ -184,18 +184,17 @@
 
   config.services.nginx.streamConfig = ''
     # Minecraft Velocity Servers
-    upstream velocity_backend {
-      server 100.64.0.9:25565;
-    }
-  
+
     server {
       listen 25565;
-      proxy_pass velocity_backend;
+      proxy_pass yoke:25565;
+      proxy_timeout 60m;
     }
 
     server {
       listen 19132;
-      proxy_pass 100.64.0.9:19132;
+      proxy_pass yoke:19132;
+      proxy_timeout 60m;
     }
   '';
 

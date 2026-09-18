@@ -1,7 +1,7 @@
 {pkgs, inputs, config, ...}: let
   inherit (inputs.nix-minecraft.lib) collectFilesAt;
   packId = "134";
-  versionId = "100497";
+  versionId = "100504";
   ftbInstaller = pkgs.fetchurl {
     url = "https://github.com/FTBTeam/FTB-Server-Installer/releases/download/v1.0.52/ftb-server-linux-amd64";
     hash = "sha256-GESe9jdgKRNSl4FknjUWzTRT0U41t0nXjwSYEQHsb2E=";
@@ -12,7 +12,7 @@
     nativeBuildInputs = [ pkgs.jdk25 ];
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-V4M5CmzySYMEG4tkV3+J9WAU9ujjDyPyZBBG2wiSCso=";
+    outputHash = "sha256-GDuiLLvaTyj3BaMBFiOLL0KYnxJLuUowTeLdppQE7ZI=";
   } ''
     mkdir -p $out
     cd $out
@@ -44,6 +44,7 @@ in {
       server-ip = "0.0.0.0";
       server-port = 25575;
       online-mode = false;
+      white-list = true;
       motd = "FTB Skies 2: Aero";
       difficulty = "normal";
       max-tick-time = -1;

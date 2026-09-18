@@ -19,7 +19,7 @@
           disabled_servers = false;
           disabled_servers_list = {};
           fallback_list = [
-            "lobby"
+            #"lobby"
             "limbo"
           ];
           lobby_command = false;

@@ -5,7 +5,7 @@
 }: let
   servers = config.services.minecraft-servers.servers;
   cfg = servers.proxy;
-  proxyFlags = memory: "-Dvelocity.max-known-packs=512 -Dvelocity.packet-decode-logging=true -Dvelocity.max-plugin-message-payload-size=2097152 -Dvelocity.increased-compression-cap=true -Xms${memory} -Xmx${memory} -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
+  proxyFlags = memory: "-Djava.net.preferIPv4Stack=true -Djava.net.preferIPv6Addresses=false -Dvelocity.max-known-packs=512 -Dvelocity.packet-decode-logging=true -Dvelocity.max-plugin-message-payload-size=2097152 -Dvelocity.increased-compression-cap=true -Xms${memory} -Xmx${memory} -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
 in {
   imports = [
     ./librelogin.nix

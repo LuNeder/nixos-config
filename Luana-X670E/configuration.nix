@@ -710,6 +710,9 @@
   # OpenRGB
   # services.hardware.openrgb.enable = true;
 
+  # CoolerControl (Coolero)
+  programs.coolercontrol.enable = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

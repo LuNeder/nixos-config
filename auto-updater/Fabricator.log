@@ -18,7 +18,7 @@ error:
           375|         else
 
        error: The option `services.journald.settings' does not exist. Definition values:
-       - In `/nix/store/c8bb0cbxxap40q8pfn742figq07ijyhm-source/common/minimal.nix':
+       - In `/nix/store/3zll6w0d8v2jjq84i50mldkzn5lsh96a-source/common/minimal.nix':
            {
              Journal = {
                RateLimitBurst = 0;

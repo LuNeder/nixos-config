@@ -92,4 +92,8 @@
     "fs.inotify.max_user_watches" = "1048576"; # 128 times the default 8192
   };
 
+  # Do not surpress log messages
+  services.journald.settings.Journal.RateLimitBurst = 0;
+  services.journald.settings.Journal.RateLimitIntervalSec = 0;
+
 }

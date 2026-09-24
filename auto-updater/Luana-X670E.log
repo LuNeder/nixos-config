@@ -20,11 +20,11 @@ error:
              |            ^
            38|
 
-       … while evaluating derivation 'nixos-system-Luana-X670E-26.11.20260922.6774f7b'
-         whose name attribute is located at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+       … while evaluating derivation 'nixos-system-Luana-X670E-26.11.20260923.4975466'
+         whose name attribute is located at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
-       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-X670E-26.11.20260922.6774f7b'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/nixos/modules/system/activation/top-level.nix:63:7:
+       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-X670E-26.11.20260923.4975466'
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/nixos/modules/system/activation/top-level.nix:63:7:
            62|       allowSubstitutes = false;
            63|       buildCommand = systemBuilder;
              |       ^
@@ -45,129 +45,129 @@ error:
            38|
 
        … while evaluating derivation 'etc'
-         whose name attribute is located at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+         whose name attribute is located at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
        … while evaluating attribute 'buildCommand' of derivation 'etc'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/build-support/trivial-builders/default.nix:88:9:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/build-support/trivial-builders/default.nix:88:9:
            87|         inherit name;
            88|         buildCommand = lib.toFunction buildCommand finalAttrs;
              |         ^
            89|         passAsFile = defaultPassAsFile ++ (userAttrs.passAsFile or [ ]);
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/build-support/trivial-builders/default.nix:88:24:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/build-support/trivial-builders/default.nix:88:24:
            87|         inherit name;
            88|         buildCommand = lib.toFunction buildCommand finalAttrs;
              |                        ^
            89|         passAsFile = defaultPassAsFile ++ (userAttrs.passAsFile or [ ]);
 
        … while calling 'toFunction'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/trivial.nix:1211:16:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/trivial.nix:1211:16:
          1210|   */
          1211|   toFunction = v: if isFunction v then v else k: v;
              |                ^
          1212|
 
        … while evaluating a branch condition
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/trivial.nix:1211:19:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/trivial.nix:1211:19:
          1210|   */
          1211|   toFunction = v: if isFunction v then v else k: v;
              |                   ^
          1212|
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/trivial.nix:1211:22:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/trivial.nix:1211:22:
          1210|   */
          1211|   toFunction = v: if isFunction v then v else k: v;
              |                      ^
          1212|
 
        … while calling anonymous lambda
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/trivial.nix:1131:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/trivial.nix:1131:5:
          1130|     in
          1131|     f: isFunction f || (f ? __functor && isFunction f.__functor && isFunction (f.__functor f));
              |     ^
          1132|
 
        … in the left operand of the OR (||) operator
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/trivial.nix:1131:21:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/trivial.nix:1131:21:
          1130|     in
          1131|     f: isFunction f || (f ? __functor && isFunction f.__functor && isFunction (f.__functor f));
              |                     ^
          1132|
 
        … while calling the 'isFunction' builtin
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/trivial.nix:1131:8:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/trivial.nix:1131:8:
          1130|     in
          1131|     f: isFunction f || (f ? __functor && isFunction f.__functor && isFunction (f.__functor f));
              |        ^
          1132|
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/nixos/modules/system/etc/etc.nix:56:11:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/nixos/modules/system/etc/etc.nix:56:11:
            55|         mkdir -p "$out/etc"
            56|         ${lib.concatMapStringsSep "\n" (
              |           ^
            57|           etcEntry:
 
        … while calling 'concatMapStringsSep'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:261:13:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:261:13:
           260|   concatMapStringsSep =
           261|     sep: f: list:
              |             ^
           262|     concatStringsSep sep (map f list);
 
        … while calling the 'concatStringsSep' builtin
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:262:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:262:5:
           261|     sep: f: list:
           262|     concatStringsSep sep (map f list);
              |     ^
           263|
 
        … while calling anonymous lambda
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/nixos/modules/system/etc/etc.nix:57:11:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/nixos/modules/system/etc/etc.nix:57:11:
            56|         ${lib.concatMapStringsSep "\n" (
            57|           etcEntry:
              |           ^
            58|           lib.escapeShellArgs [
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/nixos/modules/system/etc/etc.nix:58:11:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/nixos/modules/system/etc/etc.nix:58:11:
            57|           etcEntry:
            58|           lib.escapeShellArgs [
              |           ^
            59|             "makeEtcEntry"
 
        … while calling 'concatMapStringsSep'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:261:13:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:261:13:
           260|   concatMapStringsSep =
           261|     sep: f: list:
              |             ^
           262|     concatStringsSep sep (map f list);
 
        … while calling the 'concatStringsSep' builtin
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:262:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:262:5:
           261|     sep: f: list:
           262|     concatStringsSep sep (map f list);
              |     ^
           263|
 
        … while calling 'escapeShellArg'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:1220:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:1220:5:
          1219|   escapeShellArg =
          1220|     arg:
              |     ^
          1221|     let
 
        … while evaluating a branch condition
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:1231:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:1231:5:
          1230|     in
          1231|     if match "[[:alnum:],._+:@%/-]+" string == null then
              |     ^
          1232|       "'${replaceString "'" "'\\''" string}'"
 
        … while calling the 'match' builtin
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:1231:8:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:1231:8:
          1230|     in
          1231|     if match "[[:alnum:],._+:@%/-]+" string == null then
              |        ^
@@ -176,21 +176,21 @@ error:
        … while evaluating the second argument passed to builtins.match
 
        … while evaluating a branch condition
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:1229:9:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:1229:9:
          1228|         # dependency on the entire original source.
          1229|         if isPath arg && !isStorePath arg then "${arg}" else toString arg;
              |         ^
          1230|     in
 
        … in the left operand of the AND (&&) operator
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:1229:23:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:1229:23:
          1228|         # dependency on the entire original source.
          1229|         if isPath arg && !isStorePath arg then "${arg}" else toString arg;
              |                       ^
          1230|     in
 
        … while calling the 'isPath' builtin
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:1229:12:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:1229:12:
          1228|         # dependency on the entire original source.
          1229|         if isPath arg && !isStorePath arg then "${arg}" else toString arg;
              |            ^
@@ -211,10 +211,10 @@ error:
            38|
 
        … while evaluating derivation 'dbus-1'
-         whose name attribute is located at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+         whose name attribute is located at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
        … while evaluating attribute 'serviceDirectories' of derivation 'dbus-1'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/by-name/ma/makeDBusConf/package.nix:19:13:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/by-name/ma/makeDBusConf/package.nix:19:13:
            18|   {
            19|     inherit serviceDirectories suidHelper apparmor;
              |             ^
@@ -235,10 +235,10 @@ error:
            38|
 
        … while evaluating derivation 'system-path'
-         whose name attribute is located at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+         whose name attribute is located at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
        … while evaluating attribute 'chosenOutputs' of derivation 'system-path'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/build-support/buildenv/default.nix:113:9:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/build-support/buildenv/default.nix:113:9:
           112|
           113|         chosenOutputs = map (drv: {
              |         ^
@@ -247,14 +247,14 @@ error:
        … while evaluating list element at index 104
 
        … while evaluating attribute 'paths'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/build-support/buildenv/default.nix:114:11:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/build-support/buildenv/default.nix:114:11:
           113|         chosenOutputs = map (drv: {
           114|           paths =
              |           ^
           115|             # First add the usual output(s): respect if user has chosen explicitly,
 
        … while evaluating list element at index 0
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/build-support/buildenv/default.nix:114:11:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/build-support/buildenv/default.nix:114:11:
           113|         chosenOutputs = map (drv: {
           114|           paths =
              |           ^
@@ -275,100 +275,100 @@ error:
            38|
 
        … while evaluating derivation 'jitsi-meet-electron-2026.7.0'
-         whose name attribute is located at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+         whose name attribute is located at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
        … while evaluating attribute 'installPhase' of derivation 'jitsi-meet-electron-2026.7.0'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:92:3:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:92:3:
            91|
            92|   installPhase = ''
              |   ^
            93|     runHook preInstall
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:95:7:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:95:7:
            94|
            95|     ${lib.optionalString stdenv.hostPlatform.isLinux ''
              |       ^
            96|       mkdir -p $out/share/jitsi-meet-electron
 
        … while calling 'optionalString'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/strings.nix:776:26:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/strings.nix:776:26:
           775|   */
           776|   optionalString = cond: string: if cond then string else "";
              |                          ^
           777|
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:99:21:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/by-name/ji/jitsi-meet-electron/package.nix:99:21:
            98|
            99|       makeWrapper ${lib.getExe electron} $out/bin/jitsi-meet-electron \
              |                     ^
           100|           --add-flags $out/share/jitsi-meet-electron/resources/app.asar \
 
        … while calling 'getExe'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/meta.nix:526:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/meta.nix:526:5:
           525|   getExe =
           526|     x:
              |     ^
           527|     getExe' x (
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/meta.nix:527:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/meta.nix:527:5:
           526|     x:
           527|     getExe' x (
              |     ^
           528|       x.meta.mainProgram or (
 
        … while calling 'getExe''
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/meta.nix:572:8:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/meta.nix:572:8:
           571|   getExe' =
           572|     x: y:
              |        ^
           573|     assert
 
        … in the condition of the assert statement
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/lib/customisation.nix:433:13:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/lib/customisation.nix:433:13:
           432|           outPath =
           433|             assert condition;
              |             ^
           434|             drv.${outputName}.outPath;
 
        … while evaluating the attribute 'handled'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/check-meta.nix:683:9:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/check-meta.nix:683:9:
           682|         valid = "no";
           683|         handled = handle {
              |         ^
           684|           inherit attrs meta;
 
        … from call site
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/check-meta.nix:683:19:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/check-meta.nix:683:19:
           682|         valid = "no";
           683|         handled = handle {
              |                   ^
           684|           inherit attrs meta;
 
        … while calling 'handle'
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/check-meta.nix:620:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/check-meta.nix:620:5:
           619|   handle =
           620|     {
              |     ^
           621|       attrs,
 
        … while calling the 'seq' builtin
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/check-meta.nix:654:5:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/check-meta.nix:654:5:
           653|     # Give all warnings first, then error if any
           654|     seq (foldl' giveWarning null warnings) withError;
              |     ^
           655|
 
        … while calling the 'throw' builtin
-         at /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/stdenv/generic/check-meta.nix:642:13:
+         at /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/stdenv/generic/check-meta.nix:642:13:
           641|           else
           642|             throw msg;
              |             ^
           643|
 
-       error: Refusing to evaluate package 'electron-41.10.6' in /nix/store/zc9xvdvz642n6q20m04ixm30s98m6281-source/pkgs/development/tools/electron/binary/generic.nix:50 because it is marked as insecure
+       error: Refusing to evaluate package 'electron-41.10.6' in /nix/store/398fqjqkp383m7pyla9nxpi1is5vzywh-source/pkgs/development/tools/electron/binary/generic.nix:50 because it is marked as insecure
 
        Known issues:
         - Electron version 41.10.6 is EOL

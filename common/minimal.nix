@@ -14,6 +14,7 @@
     pkgs.curl
     pkgs.htop
     pkgs.sops
+    pkgs.killall
   ];
 
   # Enable sysrq keys that for some dumb reason come disabled by default
@@ -136,11 +137,6 @@
   fonts.packages = [
     pkgs.powerline-fonts # zsh agnoster theme needs this
   ];
-
-  # Do not surpress log messages
-  services.journald.settings.Journal.RateLimitBurst = 0;
-  services.journald.settings.Journal.RateLimitIntervalSec = 0;
-
 
   # Packagesets
   nixpkgs.overlays = [

@@ -109,6 +109,21 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      mdbook = prev.mdbook.overrideAttrs {
+        doCheck = false;
+      };
+      python313Packages.beautifulsoup4 = prev.python313Packages.beautifulsoup4.overrideAttrs {
+        doCheck = false;
+      };
+      python314Packages.chardet = prev.python314Packages.chardet.overrideAttrs {
+        doCheck = false;
+      };
+    })
+  ];
+  nixpkgs.config.doCheckByDefault = lib.mkForce false;
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

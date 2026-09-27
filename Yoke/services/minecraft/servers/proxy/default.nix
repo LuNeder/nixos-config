@@ -58,12 +58,15 @@ in {
           limbo = mkIp servers.limbo;
           auth = mkIp servers.limbo;
           ftb-skies-2 = mkIp servers.ftb-skies-2;
-          try = ["limbo" "ftb-skies-2"];
+          vanilla = mkIp servers.vanilla;
+          try = ["limbo" "ftb-skies-2" "vanilla"];
         };
 
         forced-hosts = {
           "aero.minecraft.yoke.sereia.gay" = ["ftb-skies-2"];
           "aero.minecraft.da.sereia.gay" = ["ftb-skies-2"];
+          "vanilla.minecraft.yoke.sereia.gay" = ["vanilla"];
+          "vanilla.minecraft.da.sereia.gay" = ["vanilla"];
           "auth.minecraft.da.sereia.gay" = ["limbo"];
         };
 

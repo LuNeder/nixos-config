@@ -15,15 +15,15 @@ in {
     symlinks = {
       "plugins/Geyser.jar" = pkgs.fetchurl rec {
         pname = "geyser";
-        version = "2.11.2";
-        url = geyserUrl pname version "1235";
-        hash = "sha256-HWqxR3BJTFnhLPAZzCY1aCRyX/opjv0k4hBMYgmyoJg=";
+        version = "2.11.3";
+        url = geyserUrl pname version "1247";
+        hash = "sha256-PvZLiv6HeIc8BuVeiac/gQkhR4GrH5ZGNgMaUtLu5hk=";
       };
       "plugins/Floodgate.jar" = pkgs.fetchurl rec {
         pname = "floodgate";
         version = "2.2.5";
-        url = geyserUrl pname version "140";
-        hash = "sha256-9YZ615uQ04q8xydVpoVCj7z0I7UsmDCjn/7VID3mk2o=";
+        url = geyserUrl pname version "141";
+        hash = "sha256-ZJg1Ai3jf/CSVfxibUv+e8KjuSbQew368fUeEr83AB0=";
       };
     };
     files = {

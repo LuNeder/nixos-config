@@ -11,13 +11,13 @@
 
     symlinks = {
       "plugins/LuckPerms.jar" = let
-        build = "1669";
+        build = "1672";
       in
         pkgs.fetchurl rec {
           pname = "LuckPerms";
-          version = "5.5.82";
+          version = "5.5.85";
           url = "https://download.luckperms.net/${build}/velocity/${pname}-Velocity-${version}.jar";
-          hash = "sha256-2hjfqmFsDrJHfEaxQhv9OS/P6OTVoKWWJitRutftydM=";
+          hash = "sha256-2/cJDuTvLQ6vBUqTqJrDKN2jb3ohxOSrNpSgC6PY70Q=";
         };
       "plugins/luckperms/initial.json.gz".format = pkgs.formats.gzipJson {};
       "plugins/luckperms/initial.json.gz".value = let

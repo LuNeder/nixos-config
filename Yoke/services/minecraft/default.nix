@@ -10,6 +10,7 @@
     ./servers/proxy
     ./servers/limbo
     ./servers/ftb-skies-2-aero
+    ./servers/vanilla
   ];
   nixpkgs.overlays = [
     inputs.nix-minecraft.overlay

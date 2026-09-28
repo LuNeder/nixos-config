@@ -109,6 +109,24 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  nixpkgs.overlays = [
+    (final: prev:
+      let
+        killChecks = pkgs: lib.mapAttrs (name: drv:
+          if lib.isDerivation drv && drv ? overrideAttrs
+          then drv.overrideAttrs (_o: { doCheck = false; doInstallCheck = false; })
+          else drv
+        ) pkgs;
+      in {
+        mdbook            = prev.mdbook.overrideAttrs { doCheck = false; };
+        python313Packages = killChecks prev.python313Packages;
+        python314Packages = killChecks prev.python314Packages;
+      }
+    )
+  ];
+
+  nixpkgs.config.doCheckByDefault = lib.mkForce false; # Already false by default but overrided by a bunch of builders bc of course it is.
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

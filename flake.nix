@@ -61,7 +61,7 @@
     snow.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
-    #nixos-raspberrypi.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-raspberrypi.inputs.nixpkgs.follows = "nixpkgs";
 
     librepods = {
       url = "github:kavishdevar/librepods/linux/rust";

@@ -182,6 +182,20 @@
     };
   };
 
+  config.services.nginx.virtualHosts."vanilla-map.${config.var.fqdn}" = {
+    forceSSL = true;
+    enableACME = true;
+    serverAliases = [
+      "vanilla-map.da.sereia.gay"
+    ];
+    extraConfig = ''
+      client_max_body_size 30M;
+    '';
+    locations."/" = {
+      proxyPass = "http://100.64.0.9:8100";
+    };
+  };
+
   config.services.nginx.streamConfig = ''
     # Minecraft Velocity Servers
 
@@ -192,9 +206,10 @@
     }
 
     server {
-      listen 19132;
+      listen 19132 udp;
       proxy_pass yoke:19132;
       proxy_timeout 60m;
+      proxy_responses 0;
     }
   '';
 

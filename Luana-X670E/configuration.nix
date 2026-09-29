@@ -279,7 +279,7 @@
     pkgs.handbrake
     pkgs.niri
     pkgs.xwayland
-    pkgs.jitsi-meet-electron
+    # pkgs.jitsi-meet-electron # broken
     pkgs.libimobiledevice
     # pkgs.idevicerestore # Broken (#422441)
     pkgs.pmbootstrap

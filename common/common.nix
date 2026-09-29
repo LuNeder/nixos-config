@@ -28,6 +28,7 @@
     pkgs.brush
     pkgs.fdupes
     pkgs.net-tools
+    pkgs.ncdu
   ];
 
   # Tmux

@@ -13,6 +13,7 @@
       # ./dav.nix
       # ./gpu-passthrough.nix
       # inputs.lanzaboote.nixosModules.lanzaboote # Using limine
+      ./sync.nix # auto sync to NAS
     ];
 
 # Broken due to uutils issue #6351 # TODO: Wait for fix  # No GNU on this house! Use Uutils instead of GNU coreutils
@@ -279,7 +280,7 @@
     pkgs.handbrake
     pkgs.niri
     pkgs.xwayland
-    pkgs.jitsi-meet-electron
+    # pkgs.jitsi-meet-electron # broken
     pkgs.libimobiledevice
     # pkgs.idevicerestore # Broken (#422441)
     pkgs.pmbootstrap

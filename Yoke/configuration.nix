@@ -34,6 +34,7 @@
       ./services/readeck/readeck.nix
       ./services/komga.nix
       ./services/minecraft
+      ./services/backup-receiving.nix
     ];
 
   # Bootloader.

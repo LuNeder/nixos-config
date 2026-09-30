@@ -27,6 +27,7 @@
     pkgs.libfaketime
     pkgs.brush
     pkgs.fdupes
+    pkgs.net-tools
   ];
 
   # Tmux

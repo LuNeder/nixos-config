@@ -24,8 +24,9 @@
   users.users.readeck = {
     group = "readeck";
     isSystemUser = true;
+    uid = 976;
   };
-  users.groups.readeck = {};
+  users.groups.readeck = { gid = 975; };
 
   sops.secrets = {
     readeck_secret.sopsFile = ./secrets.yaml;

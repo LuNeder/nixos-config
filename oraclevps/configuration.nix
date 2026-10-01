@@ -21,6 +21,7 @@
   users.users.luana = {
     isNormalUser = true;
     description = "Luana";
+    uid = 1000;
     extraGroups = [ "networkmanager" "wheel" "personalfiles" "budgetfiles" "viddownload" ];
     packages = with pkgs; [];
   };

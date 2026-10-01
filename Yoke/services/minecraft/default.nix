@@ -53,7 +53,9 @@
   users.users.mysql.extraGroups = ["minecraft"]; # Get access to the secret
   users.users.mysql.isSystemUser = true;
   users.users.mysql.group = "mysql";
-  users.groups.mysql = {};
+  users.users.mysql.uid = 84;
+  users.groups.mysql = { gid = 84; };
+  users.groups.minecraft = { gid = 973; };
   systemd.services.mysql.postStart = lib.mkAfter ''
     source ${config.sops.secrets.minecraft-secrets.path}
     ${config.services.mysql.package}/bin/mysql <<EOF

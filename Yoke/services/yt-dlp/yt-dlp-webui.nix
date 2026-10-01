@@ -48,6 +48,7 @@ in {
     group = "viddownload";
     home = dataDir;
     isSystemUser = true;
+    uid = 984;
   };
 
   services.nginx.virtualHosts."ytdlp.${config.var.fqdn}" = {

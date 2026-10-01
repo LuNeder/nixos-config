@@ -62,8 +62,9 @@
     group = "cryptpad";
     home = "/mnt/pool1/cryptpad";
     createHome = false;
+    uid = 977;
   };
-  users.groups.cryptpad = {};
+  users.groups.cryptpad = { gid = 976; };
 
   # Override systemd service settings
   systemd.services.cryptpad = {

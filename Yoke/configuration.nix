@@ -106,11 +106,12 @@
     description = "Luana";
     extraGroups = [ "networkmanager" "wheel" "personalfiles" "budgetfiles" "viddownload" ];
     packages = with pkgs; [];
+    uid = 1000;
   };
 
-  users.groups.personalfiles = {};
-  users.groups.budgetfiles = {};
-  users.groups.viddownload = {};
+  users.groups.personalfiles = { gid = 985; };
+  users.groups.budgetfiles = { gid = 984; };
+  users.groups.viddownload = { gid = 983; };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

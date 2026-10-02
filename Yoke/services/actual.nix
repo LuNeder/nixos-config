@@ -19,6 +19,7 @@
     group = config.services.actual.group;
     home = config.services.actual.settings.dataDir;
     isSystemUser = true;
+    uid = 985;
   };
 
   # TODO: Broken?

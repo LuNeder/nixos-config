@@ -184,7 +184,7 @@
     pkgs.engrampa
     pkgs.baobab
     pkgs.vscodium
-    pkgs.goverlay
+    # pkgs.goverlay # Broken
     pkgs.mangohud
     pkgs.ulauncher 
     pkgs.polybarFull # TODO: Fix xfce4-session-logout

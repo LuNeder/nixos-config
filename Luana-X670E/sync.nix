@@ -1,8 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
-  mkDailyOneWaySync = usr: srcs: destpath: { 
-    user = usr; 
-    group = usr; 
+  mkDailyOneWaySync = srcs: destpath: { 
     sources = srcs; 
     destination = "${srv}:${destpath}"; 
     timerConfig = {
@@ -10,29 +8,30 @@ let
       Persistent = true;
     };
     settings = {
-      archive = true;
+      archive = true; # TODO: chmod/own on nas should be 770 sync:personalfiles, not the original one from PC.
       partial = true;
       mkpath = true;
     };
-    inhibit = [ "idle" "sleep" "shutdown" "handle-lid-switch" ]; 
+    inhibit = [ "idle" "sleep" "shutdown" "handle-lid-switch" ];
   };
   srv = "sync@192.168.15.9";
+  backups = config.services.restic.backups;
 in
 {
   services.rsync = {
     enable = true;
     jobs = {
-      "Imagens" = mkDailyOneWaySync "luana" ["/home/luana/Imagens/"] "/mnt/pool1/PersonalFiles/Media/PC/Imagens/";
-      "Videos" = mkDailyOneWaySync "luana" ["/home/luana/Vídeos/"] "/mnt/pool1/PersonalFiles/Media/PC/Videos/";
-      "Steam-screenshots" = mkDailyOneWaySync "luana" ["/home/luana/.local/share/Steam/userdata/329790549/760/remote/"] "/mnt/pool1/PersonalFiles/Media/PC/Steam/screenshots";
+      "Imagens" = mkDailyOneWaySync ["/home/luana/Imagens/"] "/mnt/pool1/PersonalFiles/Media/PC/Imagens/";
+      "Videos" = mkDailyOneWaySync ["/home/luana/Vídeos/"] "/mnt/pool1/PersonalFiles/Media/PC/Videos/";
+      "Steam-screenshots" = mkDailyOneWaySync ["/home/luana/.local/share/Steam/userdata/329790549/760/remote/"] "/mnt/pool1/PersonalFiles/Media/PC/Steam/screenshots";
     };
   };
 
   services.restic.backups = {
     pc-luana-home = {
       environmentFile = config.sops.templates."rustic-env".path;
-      initialize = true;
-      package = pkgs.rustic;
+      initialize = true; # Broken with Rustic due to --no-lock, if on rustic run `sudo restic-pc-luana-home init` once instead
+      #package = pkgs.rustic; # not really drop-in, ugh
       inhibitsSleep = true;
       timerConfig = {
         OnCalendar = "daily";
@@ -40,6 +39,12 @@ in
       };
       user = "root";
       repository = "rest:http://192.168.15.9:20000/pc-luana-home";
+      pruneOpts = [
+        "--keep-last 2"
+        "--keep-daily 7"
+        "--keep-weekly 2"
+        "--keep-monthly 6"
+      ];
       paths = [
         "/home/luana"
       ];
@@ -52,6 +57,7 @@ in
         "/home/luana/.local/share/Steam/compatibilitytools.d"
         "/home/luana/.local/state/Heroic/logs"
         "/home/luana/Games/Heroic"
+        "/home/luana/ssd2"
 
         # Synced elsewhere
         "/home/luana/Imagens"
@@ -62,16 +68,24 @@ in
       ];
     };
   };
+  
+  # Set variables for Rustic # using restic for now
+  #systemd.services = lib.listToAttrs (builtins.map
+  #  (name: lib.nameValuePair "restic-backups-${name}" {
+  #    environment.RUSTIC_REPOSITORY = backups.${name}.repository;
+  #    environment.RUSTIC_CACHE_DIR = "/var/cache/restic-backups-${name}";
+  #  }) (lib.attrNames backups)
+  #);
 
+  # Secrets
   sops.secrets = {
     restic-password.sopsFile = ../secrets.yaml;
   };
-
   sops.templates."rustic-env" = {
-    owner = "restic";
-    group = "restic";
+    owner = "root";
+    group = "root";
     content = ''
-      RUSTIC_PASSWORD = ${config.sops.placeholder.restic-password}
+      RESTIC_PASSWORD=${config.sops.placeholder."restic-password"}
     '';
   };
 }

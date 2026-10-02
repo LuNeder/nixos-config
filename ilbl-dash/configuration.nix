@@ -13,6 +13,9 @@
     inputs.nixos-raspberrypi.nixosModules.sd-image # nix build .#nixosConfigurations.ilbl-dash.config.system.build.sdImage --option sandbox false --impure --show-trace
   ];
 
+  nixpkgs.buildPlatform = "x86_64-linux"; # expedite build times on NAS instead of using qemu
+  nixpkgs.hostPlatform = "aarch64-linux";
+
   # SD Card
   sdImage.compressImage = false;
  # boot.loader.generic-extlinux-compatible.enable = lib.mkForce false;

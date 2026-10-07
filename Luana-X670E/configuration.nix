@@ -221,7 +221,7 @@
     pkgs.python3
     pkgs.python3Packages.pyusb
     pkgs.python311Packages.usb-devices
-    pkgs.sidequest
+    # pkgs.sidequest # Broken
     pkgs.cudatoolkit # CUDA
     pkgs.cudaPackages.cudnn
     pkgs.opencomposite

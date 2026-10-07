@@ -19,11 +19,11 @@ error:
              |            ^
            38|
 
-       … while evaluating derivation 'nixos-system-Luana-X670E-26.11.20261005.494ce7f'
-         whose name attribute is located at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+       … while evaluating derivation 'nixos-system-Luana-X670E-26.11.20261006.151fa4e'
+         whose name attribute is located at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
-       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-X670E-26.11.20261005.494ce7f'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/nixos/modules/system/activation/top-level.nix:63:7:
+       … while evaluating attribute 'buildCommand' of derivation 'nixos-system-Luana-X670E-26.11.20261006.151fa4e'
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/nixos/modules/system/activation/top-level.nix:63:7:
            62|       allowSubstitutes = false;
            63|       buildCommand = systemBuilder;
              |       ^
@@ -44,129 +44,129 @@ error:
            38|
 
        … while evaluating derivation 'etc'
-         whose name attribute is located at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+         whose name attribute is located at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
        … while evaluating attribute 'buildCommand' of derivation 'etc'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/build-support/trivial-builders/default.nix:88:9:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/build-support/trivial-builders/default.nix:88:9:
            87|         inherit name;
            88|         buildCommand = lib.toFunction buildCommand finalAttrs;
              |         ^
            89|         passAsFile = defaultPassAsFile ++ (userAttrs.passAsFile or [ ]);
 
        … from call site
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/build-support/trivial-builders/default.nix:88:24:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/build-support/trivial-builders/default.nix:88:24:
            87|         inherit name;
            88|         buildCommand = lib.toFunction buildCommand finalAttrs;
              |                        ^
            89|         passAsFile = defaultPassAsFile ++ (userAttrs.passAsFile or [ ]);
 
        … while calling 'toFunction'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/trivial.nix:1211:16:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/trivial.nix:1211:16:
          1210|   */
          1211|   toFunction = v: if isFunction v then v else k: v;
              |                ^
          1212|
 
        … while evaluating a branch condition
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/trivial.nix:1211:19:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/trivial.nix:1211:19:
          1210|   */
          1211|   toFunction = v: if isFunction v then v else k: v;
              |                   ^
          1212|
 
        … from call site
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/trivial.nix:1211:22:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/trivial.nix:1211:22:
          1210|   */
          1211|   toFunction = v: if isFunction v then v else k: v;
              |                      ^
          1212|
 
        … while calling anonymous lambda
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/trivial.nix:1131:5:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/trivial.nix:1131:5:
          1130|     in
          1131|     f: isFunction f || (f ? __functor && isFunction f.__functor && isFunction (f.__functor f));
              |     ^
          1132|
 
        … in the left operand of the OR (||) operator
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/trivial.nix:1131:21:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/trivial.nix:1131:21:
          1130|     in
          1131|     f: isFunction f || (f ? __functor && isFunction f.__functor && isFunction (f.__functor f));
              |                     ^
          1132|
 
        … while calling the 'isFunction' builtin
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/trivial.nix:1131:8:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/trivial.nix:1131:8:
          1130|     in
          1131|     f: isFunction f || (f ? __functor && isFunction f.__functor && isFunction (f.__functor f));
              |        ^
          1132|
 
        … from call site
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/nixos/modules/system/etc/etc.nix:56:11:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/nixos/modules/system/etc/etc.nix:56:11:
            55|         mkdir -p "$out/etc"
            56|         ${lib.concatMapStringsSep "\n" (
              |           ^
            57|           etcEntry:
 
        … while calling 'concatMapStringsSep'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:261:13:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:261:13:
           260|   concatMapStringsSep =
           261|     sep: f: list:
              |             ^
           262|     concatStringsSep sep (map f list);
 
        … while calling the 'concatStringsSep' builtin
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:262:5:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:262:5:
           261|     sep: f: list:
           262|     concatStringsSep sep (map f list);
              |     ^
           263|
 
        … while calling anonymous lambda
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/nixos/modules/system/etc/etc.nix:57:11:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/nixos/modules/system/etc/etc.nix:57:11:
            56|         ${lib.concatMapStringsSep "\n" (
            57|           etcEntry:
              |           ^
            58|           lib.escapeShellArgs [
 
        … from call site
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/nixos/modules/system/etc/etc.nix:58:11:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/nixos/modules/system/etc/etc.nix:58:11:
            57|           etcEntry:
            58|           lib.escapeShellArgs [
              |           ^
            59|             "makeEtcEntry"
 
        … while calling 'concatMapStringsSep'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:261:13:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:261:13:
           260|   concatMapStringsSep =
           261|     sep: f: list:
              |             ^
           262|     concatStringsSep sep (map f list);
 
        … while calling the 'concatStringsSep' builtin
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:262:5:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:262:5:
           261|     sep: f: list:
           262|     concatStringsSep sep (map f list);
              |     ^
           263|
 
        … while calling 'escapeShellArg'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:1220:5:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:1220:5:
          1219|   escapeShellArg =
          1220|     arg:
              |     ^
          1221|     let
 
        … while evaluating a branch condition
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:1231:5:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:1231:5:
          1230|     in
          1231|     if match "[[:alnum:],._+:@%/-]+" string == null then
              |     ^
          1232|       "'${replaceString "'" "'\\''" string}'"
 
        … while calling the 'match' builtin
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:1231:8:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:1231:8:
          1230|     in
          1231|     if match "[[:alnum:],._+:@%/-]+" string == null then
              |        ^
@@ -175,21 +175,21 @@ error:
        … while evaluating the second argument passed to builtins.match
 
        … while evaluating a branch condition
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:1229:9:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:1229:9:
          1228|         # dependency on the entire original source.
          1229|         if isPath arg && !isStorePath arg then "${arg}" else toString arg;
              |         ^
          1230|     in
 
        … in the left operand of the AND (&&) operator
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:1229:23:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:1229:23:
          1228|         # dependency on the entire original source.
          1229|         if isPath arg && !isStorePath arg then "${arg}" else toString arg;
              |                       ^
          1230|     in
 
        … while calling the 'isPath' builtin
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/strings.nix:1229:12:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/strings.nix:1229:12:
          1228|         # dependency on the entire original source.
          1229|         if isPath arg && !isStorePath arg then "${arg}" else toString arg;
              |            ^
@@ -210,10 +210,10 @@ error:
            38|
 
        … while evaluating derivation 'dbus-1'
-         whose name attribute is located at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+         whose name attribute is located at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
        … while evaluating attribute 'serviceDirectories' of derivation 'dbus-1'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/by-name/ma/makeDBusConf/package.nix:19:13:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/by-name/ma/makeDBusConf/package.nix:19:13:
            18|   {
            19|     inherit serviceDirectories suidHelper apparmor;
              |             ^
@@ -234,10 +234,10 @@ error:
            38|
 
        … while evaluating derivation 'system-path'
-         whose name attribute is located at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/make-derivation.nix:651:11
+         whose name attribute is located at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/make-derivation.nix:651:11
 
        … while evaluating attribute 'chosenOutputs' of derivation 'system-path'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/build-support/buildenv/default.nix:113:9:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/build-support/buildenv/default.nix:113:9:
           112|
           113|         chosenOutputs = map (drv: {
              |         ^
@@ -246,62 +246,62 @@ error:
        … while evaluating list element at index 78
 
        … while evaluating attribute 'paths'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/build-support/buildenv/default.nix:114:11:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/build-support/buildenv/default.nix:114:11:
           113|         chosenOutputs = map (drv: {
           114|           paths =
              |           ^
           115|             # First add the usual output(s): respect if user has chosen explicitly,
 
        … while evaluating list element at index 0
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/build-support/buildenv/default.nix:114:11:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/build-support/buildenv/default.nix:114:11:
           113|         chosenOutputs = map (drv: {
           114|           paths =
              |           ^
           115|             # First add the usual output(s): respect if user has chosen explicitly,
 
        … in the condition of the assert statement
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/lib/customisation.nix:433:13:
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/lib/customisation.nix:433:13:
           432|           outPath =
           433|             assert condition;
              |             ^
           434|             drv.${outputName}.outPath;
 
        … while evaluating the attribute 'handled'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/check-meta.nix:684:9:
-          683|         valid = "no";
-          684|         handled = handle {
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/check-meta.nix:685:9:
+          684|         valid = "no";
+          685|         handled = handle {
              |         ^
-          685|           inherit attrs meta;
+          686|           inherit attrs meta;
 
        … from call site
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/check-meta.nix:684:19:
-          683|         valid = "no";
-          684|         handled = handle {
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/check-meta.nix:685:19:
+          684|         valid = "no";
+          685|         handled = handle {
              |                   ^
-          685|           inherit attrs meta;
+          686|           inherit attrs meta;
 
        … while calling 'handle'
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/check-meta.nix:621:5:
-          620|   handle =
-          621|     {
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/check-meta.nix:622:5:
+          621|   handle =
+          622|     {
              |     ^
-          622|       attrs,
+          623|       attrs,
 
        … while calling the 'seq' builtin
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/check-meta.nix:655:5:
-          654|     # Give all warnings first, then error if any
-          655|     seq (foldl' giveWarning null warnings) withError;
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/check-meta.nix:656:5:
+          655|     # Give all warnings first, then error if any
+          656|     seq (foldl' giveWarning null warnings) withError;
              |     ^
-          656|
+          657|
 
        … while calling the 'throw' builtin
-         at /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/stdenv/generic/check-meta.nix:643:13:
-          642|           else
-          643|             throw msg;
+         at /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/stdenv/generic/check-meta.nix:644:13:
+          643|           else
+          644|             throw msg;
              |             ^
-          644|
+          645|
 
-       error: Refusing to evaluate package 'sidequest-0.10.42' in /nix/store/pgp7knjgswsdv1mzgdhx21v8zmdkbisy-source/pkgs/by-name/si/sidequest/package.nix:143 because it is marked as insecure
+       error: Refusing to evaluate package 'sidequest-0.10.42' in /nix/store/0r7xswpqa49y26bl05lydybpw86sywmq-source/pkgs/by-name/si/sidequest/package.nix:143 because it is marked as insecure
 
        Known issues:
         - Uses EOL Electron 29, many known CVEs.

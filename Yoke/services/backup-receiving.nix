@@ -3,7 +3,7 @@
     group = "personalfiles";
     isNormalUser = true;
     uid = 1972;
-    openssh.authorizedKeys.keys = config.users.users."root".openssh.authorizedKeys.keys ++ [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMjhBKm3Dwak/5NLR6Fw3GP0LQAv2Qas92DJ9Kj47oA4 root@Luana-X670E" ];
+    openssh.authorizedKeys.keys = config.users.users."root".openssh.authorizedKeys.keys ++ [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMjhBKm3Dwak/5NLR6Fw3GP0LQAv2Qas92DJ9Kj47oA4 root@Luana-X670E" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBAdvHsQx2N4BkDwcUE0+RWq2mhJcHdheHw9spkyQqoG root@Luana-Legion-5"];
   };
 
   services.restic.server = {

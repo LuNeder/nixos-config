@@ -85,7 +85,7 @@
   pkgs.gnome-network-displays
   pkgs.xdg-desktop-portal
   pkgs.mcpelauncher-ui-qt
-  pkgs.libreoffice-fresh
+  pkgs.libreoffice
   # pkgs.labplot Broken
   pkgs.lenovo-legion
   # pkgs.veloren Broken

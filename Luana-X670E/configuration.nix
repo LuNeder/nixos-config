@@ -240,7 +240,7 @@
     # pkgs.minecraft broken
     pkgs.prismlauncher 
     pkgs.mcpelauncher-ui-qt
-    pkgs.libreoffice-fresh
+    pkgs.libreoffice
     pkgs.wayvr
     (pkgs.alvr.overrideAttrs (finalAttrs: oldAttrs: rec { # Does not work, crashes on launch with unable to find vulkan
         version = "v21.0.0-dev12+nightly.2026.08.23";

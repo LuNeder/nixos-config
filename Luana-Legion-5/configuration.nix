@@ -13,6 +13,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       # inputs.lanzaboote.nixosModules.lanzaboote # Using limine
+      ./sync.nix
     ];
 
   # TODO: Tewmporary, remove me
@@ -85,7 +86,7 @@
   pkgs.gnome-network-displays
   pkgs.xdg-desktop-portal
   pkgs.mcpelauncher-ui-qt
-  pkgs.libreoffice-fresh
+  pkgs.libreoffice
   # pkgs.labplot Broken
   pkgs.lenovo-legion
   # pkgs.veloren Broken

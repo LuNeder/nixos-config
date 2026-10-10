@@ -6,9 +6,10 @@ keys:
   - &admins # home ssh pub key to age
     - &admin_luana_pc age1hgxlvplnrpxjdfn4v9y3qdr20pdac9u5rncqte2s7yjn4yxugsmsyrzc03
     - &admin_luana_iphone age1w7zhgrwjx9yrxvyg7avuw9q0myzx0fg6ze06f4w200gu8pqcy3vqz7q6m3
-    - &admin_luana_laptop age1j6dtgl9dykmtds4mm7dkhnvgr5qp39nfhwrk26xtc09xya98d40q5ws08l
+    - &admin_luana_laptop age16adse209yktamjw2ua8plkh9jvqwam43mzut0c98d5el6243ef3qsqh7la
   - &servers # host /etc/ssh/ssh_host_ed25519_key.pub to age: sudo nix-shell -p ssh-to-age --run "ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub"
    - &server_pc age1244l9shdkd3tn0ujp73suxqzm2yp2ck55tjt4t0nkpdqnc4clqequc6yst
+   - &server_laptop age1j6dtgl9dykmtds4mm7dkhnvgr5qp39nfhwrk26xtc09xya98d40q5ws08l
    - &server_yoke age10crzp8mhl72mryzdu96a48cx957hlycw5axwj76ecahep0sl9g4q9pgtjt
    - &server_oracle age1yvdarclpkwkrsmgx5r27qa0e06ymjec7ycy4qesx2qqxqkvt3s0qppzkjn
 creation_rules:
@@ -20,6 +21,7 @@ creation_rules:
       - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_laptop
       - *server_oracle
   - path_regex: .*/secrets/[^/]+\.(yaml|json|env|ini|yml)$
     key_groups:
@@ -29,6 +31,7 @@ creation_rules:
       - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_laptop
       - *server_oracle
   - path: Yoke/pool1.key
     key_groups:
@@ -38,6 +41,7 @@ creation_rules:
       - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_laptop
       - *server_oracle
   - path: Yoke/secrets.yaml
     key_groups:
@@ -47,6 +51,7 @@ creation_rules:
       - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_laptop
       - *server_oracle
   - key_groups:
     - age:
@@ -55,6 +60,7 @@ creation_rules:
       - *admin_luana_laptop
       - *server_yoke
       - *server_pc
+      - *server_laptop
       - *server_oracle
 
 # sops updatekeys '/home/luana/nixos-config/Yoke/secrets.yaml' '/home/luana/nixos-config/oraclevps/secrets.yaml' '/home/luana/nixos-config/Yoke/services/catask/secrets.yaml' '/home/luana/nixos-config/Yoke/services/readeck/secrets.yaml' '/home/luana/nixos-config/Yoke/services/minecraft/secrets.yaml' ./secrets.yaml # see if more

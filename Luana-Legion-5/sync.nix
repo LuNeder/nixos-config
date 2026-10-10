@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  mkDailyOneWaySync = srcs: destpath: { 
+  mkDailyOneWaySync = srcs: destpath: { # TODO: these lets could be global for all machines somehow
     sources = srcs; 
     destination = "${srv}:${destpath}"; 
     timerConfig = {
@@ -16,24 +16,24 @@ let
     };
     inhibit = [ "idle" "sleep" "shutdown" "handle-lid-switch" ];
   };
-  srv = "sync@192.168.15.9";
+  srv = "sync@100.64.0.9";
   backups = config.services.restic.backups;
 in
 {
   services.rsync = {
     enable = true;
     jobs = {
-      "Imagens" = mkDailyOneWaySync ["/home/luana/Imagens/"] "/mnt/pool1/PersonalFiles/Media/PC/Imagens/";
-      "Videos" = mkDailyOneWaySync ["/home/luana/Vídeos/"] "/mnt/pool1/PersonalFiles/Media/PC/Videos/";
-      "Documentos" = mkDailyOneWaySync ["/home/luana/Documentos/"] "/mnt/pool1/PersonalFiles/Documentos/PC/"; # TODO: make two-way sync 
-      "Steam-screenshots" = mkDailyOneWaySync ["/home/luana/.local/share/Steam/userdata/329790549/760/remote/"] "/mnt/pool1/PersonalFiles/Media/PC/Steam/screenshots";
+      "Imagens" = mkDailyOneWaySync ["/home/luana/Imagens/"] "/mnt/pool1/PersonalFiles/Media/Laptop/Imagens/";
+      "Videos" = mkDailyOneWaySync ["/home/luana/Vídeos/"] "/mnt/pool1/PersonalFiles/Media/Laptop/Videos/";
+      "Documentos" = mkDailyOneWaySync ["/home/luana/Documentos/"] "/mnt/pool1/PersonalFiles/Documentos/Laptop/"; # TODO: make two-way sync 
+      "Steam-screenshots" = mkDailyOneWaySync ["/home/luana/.local/share/Steam/userdata/329790549/760/remote/"] "/mnt/pool1/PersonalFiles/Media/Laptop/Steam/screenshots";
     };
   };
 
   services.restic.backups = {
-    pc-luana-home = {
+    laptop-luana-home = {
       environmentFile = config.sops.templates."rustic-env".path;
-      initialize = true; # Broken with Rustic due to --no-lock, if on rustic run `sudo restic-pc-luana-home init` once instead
+      initialize = true; # Broken with Rustic due to --no-lock, if on rustic run `sudo restic-laptop-luana-home init` once instead
       #package = pkgs.rustic; # not really drop-in, ugh
       inhibitsSleep = true;
       timerConfig = {
@@ -41,7 +41,7 @@ in
         Persistent = true;
       };
       user = "root";
-      repository = "rest:http://192.168.15.9:20000/pc-luana-home";
+      repository = "rest:http://100.64.0.9:20000/laptop-luana-home";
       pruneOpts = [
         "--keep-last 2"
         "--keep-daily 7"

@@ -9,6 +9,7 @@
     serverProperties = {
       server-port = 25571;
       online-mode = false;
+      enforce-secure-profile = false;
       enable-rcon = false;
       enforce-secure-profiles = false;
       motd = "The Gay Mermaid's Vanilla+ Server";

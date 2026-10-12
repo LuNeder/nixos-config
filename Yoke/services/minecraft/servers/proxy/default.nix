@@ -47,6 +47,7 @@ in {
       "velocity.toml".value = {
         inherit (cfg.serverProperties) online-mode;
         config-version = "2.9";
+        force-key-authentication = false; # Chat for Bedrock
         bind = "${cfg.serverProperties.server-ip}:${toString cfg.serverProperties.server-port}";
         motd = "<#09add3>${cfg.serverProperties.motd}";
         player-info-forwarding-mode = "LEGACY";

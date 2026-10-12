@@ -47,6 +47,10 @@
         };
         messaging-service = "sql";
       };
+      "plugins/AxGraves/config.yml".value = {
+        update-notifier.enabled = false;
+        despawn-time-seconds = -1;
+      };
     };
     symlinks = {
       "plugins/ViaVersion.jar" = pkgs.fetchurl rec {

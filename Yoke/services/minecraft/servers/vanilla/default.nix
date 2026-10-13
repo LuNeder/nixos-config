@@ -47,6 +47,15 @@
         };
         messaging-service = "sql";
       };
+      "plugins/AxGraves/config.yml".value = {
+        update-notifier.enabled = false;
+        despawn-time-seconds = -1;
+      };
+      "plugins/ReplenishPlusPlus/config.yml".value = {
+        checkUpdates = false;
+        requirePlayerSeed = false;
+        directPickup = false;
+      };
     };
     symlinks = {
       "plugins/ViaVersion.jar" = pkgs.fetchurl rec {
@@ -169,6 +178,26 @@
         pname = "jreiproxyserver";
         url = "https://cdn.modrinth.com/data/YZH9K7m0/versions/O5JEsMBk/jreiproxyserver-26.3.0.jar?mr_download_reason=standalone";
         hash = "sha256-TOn5+KaPYO8/fEO4Sx05kqReRoTtvt8vOxuF02exL88=";
+      };
+      "plugins/ClickMobs.jar" = pkgs.fetchurl rec {
+        pname = "ClickMobs";
+        url = "https://cdn.modrinth.com/data/tRdRT5jS/versions/tte1UNeO/ClickMobs-paper-1.3.1.jar?mr_download_reason=standalone";
+        hash = "sha256-Ft3sJ6YdzwqrK9e39ob2gqD0lk5lUFHy0xWEL6bjtRE=";
+      };
+      "plugins/HuskHomes.jar" = pkgs.fetchurl rec {
+        pname = "HuskHomes";
+        url = "https://cdn.modrinth.com/data/J6U9o3JG/versions/eXHdkjXf/HuskHomes-Paper-4.11-9ed80cc.jar?mr_download_reason=standalone";
+        hash = "sha256-hlkURf/8JFM7w+dt5d8Bzd5QARyA2IpF0Os/4SPWF6s=";
+      };
+      "plugins/armor-hider.jar" = pkgs.fetchurl rec {
+        pname = "armor-hider";
+        url = "https://cdn.modrinth.com/data/GgG2my3y/versions/4mWSCJgb/armor-hider-paper-0.14.4%2Bpaper.jar?mr_download_reason=standalone";
+        hash = "sha256-ke2oGw9/e9aktCu1WGRMZi3bgSuCPE93XT9HKsGWjUY=";
+      };
+      "plugins/waystones.jar" = pkgs.fetchurl rec {
+        pname = "waystones";
+        url = "https://cdn.modrinth.com/data/VS60FMY7/versions/YcCUOtMu/waystones-1.2.jar?mr_download_reason=standalone";
+        hash = "sha256-BswplBMFLKhZY9v76uTP7gVo8OVKNO4U+U1TXh8Yph4=";
       };
     };
   };

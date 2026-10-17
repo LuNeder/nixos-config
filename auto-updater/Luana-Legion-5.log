@@ -1,0 +1,148 @@
+building the system configuration...
+warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
+Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay https://nixos-raspberrypi.cachix.org' from ~/.local/share/nix/trusted-settings.json.
+Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 262 ms (attempt 1/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 512 ms (attempt 2/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 1059 ms (attempt 3/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 2010 ms (attempt 4/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+         response body:
+
+         <html>
+         <head><title>502 Bad Gateway</title></head>
+         <body>
+         <center><h1>502 Bad Gateway</h1></center>
+         <hr><center>nginx</center>
+         </body>
+         </html>
+evaluation warning: stdenv.isDarwin is deprecated, use stdenv.hostPlatform.isDarwin instead
+evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has been renamed to 'libx11'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXrandr' has been renamed to 'libxrandr'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has been renamed to 'libx11'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXrandr' has been renamed to 'libxrandr'
+evaluation warning: stdenv.isDarwin is deprecated, use stdenv.hostPlatform.isDarwin instead
+these 31 derivations will be built:
+  /nix/store/7492rq9nw6rd9cbx1fkqrvhrls1yj5vi-zen.desktop.drv
+  /nix/store/0z7ynx7fa3y0p6ng1ak7na0baq65ghrw-zen.linux-x86_64.tar.xz.drv
+  /nix/store/7jg0vrm7x6gn8xx8yx0f0a0dlyaj7yz2-zen-browser-unwrapped-1.23.3b.drv
+  /nix/store/ab4kambd4a9kwc622mgr6kghzi1ip48x-policies.json.drv
+  /nix/store/r3zpnmfmmrd5p7cr6lbc1sy4a7bh6shw-extract-binary-wrapper-cmd.drv
+  /nix/store/2b0m5pnxmqjz8q0yabx6mcrm04yzhybk-zen-browser-1.23.3b.drv
+  /nix/store/7a248ffh2vdvphzh21ywq26bhfsgpwar-system-path.drv
+  /nix/store/63xb3jf23nkqswajsnpwavjyhs1mq0zn-dbus-1.drv
+  /nix/store/n4bqlkr643bnpwgjybzvf34q77v0jhgw-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/9qjk8dpima1hf1vqzi6ri0k9477lwzgj-unit-dbus-broker.service.drv
+  /nix/store/x59bkc4pz5i4i9hslm1hcy8zz6blf0yd-user-units.drv
+  /nix/store/71s9hvgbyf5w748q5mnx9wh4b4czrww5-unit-wireplumber.service-disabled.drv
+  /nix/store/7rrwc8lpn0s2i1g2rp1jjnzynxgm05nc-unit-pipewire.socket-disabled.drv
+  /nix/store/bympm6h8mhzjc65gkqzpd0s3dlkck9in-unit-pipewire.service-disabled.drv
+  /nix/store/bzvbnkwlsk2inj0kv9735689j9s89vw1-unit-accounts-daemon.service.drv
+  /nix/store/dw8pdq4kpg4m3cv2s4r399q3ip68xig6-unit-dbus-broker.service.drv
+  /nix/store/g1i0fdxc7p06zrf1q49a3ywxcjkn6vid-unit-console-getty.service-disabled.drv
+  /nix/store/hgqykgz8wy02nymvk65b1sly9q0wfzvw-unit-pipewire-pulse.socket-disabled.drv
+  /nix/store/ryf1zhia0jng69mdv0n1pbn6lljxni5h-unit-pipewire-pulse.service-disabled.drv
+  /nix/store/agnfhspy8m1725pw3p3q296xcf6fhsfy-X-Restart-Triggers-polkit.drv
+  /nix/store/zrcsmk9yy2visbq6ha2dh131spcr7yd5-unit-polkit.service.drv
+  /nix/store/xfcyzykbflsxzyryqzhhn19m0ssvshw7-system-units.drv
+  /nix/store/dbdh897ibhka4ssyyrnwhd94f8s10jxd-etc.drv
+  /nix/store/0p1cfka95z8z0c5yaf1v42pkgisf2qc8-activate.drv
+  /nix/store/3slzfhv2sx08hsgv5lpkgjd23366bjrf-dry-activate.drv
+  /nix/store/4yl0gbyaxqifjrncq77iv8ahya3rcrr8-check-sshd-config.drv
+  /nix/store/8ri7n06air4rv93fgjfrylihc8y96dfi-xkb-validated.drv
+  /nix/store/hzc4scd5ilsrw07v53i3qjvxmsv2yfls-boot.json.drv
+  /nix/store/r28iaaidp12842fjm4l1cd09j5j3nf1p-stage-2-init.sh.drv
+  /nix/store/vfjrrcpnr04ixyi2xvj5k5j1f1f1zdal-ensure-wrapper-integrity.drv
+  /nix/store/iaggdwgvanhrw0562kjph4j0ngarp0v5-nixos-system-Luana-Legion-5-26.11.20261014.55bfb4d.drv
+these 5 paths will be fetched (138.4 KiB download, 361.1 KiB unpacked):
+  /nix/store/86sg5qh3b7dqgicpvd2czfc8smrl7nl1-patchelf-0.18.0-unstable-2025-08-13
+  /nix/store/pav2kh9rrvay51pn1zrlp2qz6zdxskhx-postgresql-configfile-check
+  /nix/store/wzld5iinybfgibzixga9qry3ycv9cwh1-postgresql-user-clauses-check
+  /nix/store/04dhd9a6dskyisg2j84ki1vi68i0c5wn-wrap-gapps-hook
+  /nix/store/czf77vcxppv4jh1az3wqlv582wzhh9cm-xkbvalidate
+copying path '/nix/store/pav2kh9rrvay51pn1zrlp2qz6zdxskhx-postgresql-configfile-check' from 'https://cache.nixos.org'...
+copying path '/nix/store/wzld5iinybfgibzixga9qry3ycv9cwh1-postgresql-user-clauses-check' from 'https://cache.nixos.org'...
+copying path '/nix/store/czf77vcxppv4jh1az3wqlv582wzhh9cm-xkbvalidate' from 'https://cache.nixos.org'...
+building '/nix/store/hzc4scd5ilsrw07v53i3qjvxmsv2yfls-boot.json.drv'...
+building '/nix/store/vfjrrcpnr04ixyi2xvj5k5j1f1f1zdal-ensure-wrapper-integrity.drv'...
+copying path '/nix/store/86sg5qh3b7dqgicpvd2czfc8smrl7nl1-patchelf-0.18.0-unstable-2025-08-13' from 'https://cache.nixos.org'...
+copying path '/nix/store/04dhd9a6dskyisg2j84ki1vi68i0c5wn-wrap-gapps-hook' from 'https://cache.nixos.org'...
+building '/nix/store/4yl0gbyaxqifjrncq77iv8ahya3rcrr8-check-sshd-config.drv'...
+building '/nix/store/3slzfhv2sx08hsgv5lpkgjd23366bjrf-dry-activate.drv'...
+building '/nix/store/r3zpnmfmmrd5p7cr6lbc1sy4a7bh6shw-extract-binary-wrapper-cmd.drv'...
+building '/nix/store/ab4kambd4a9kwc622mgr6kghzi1ip48x-policies.json.drv'...
+building '/nix/store/r28iaaidp12842fjm4l1cd09j5j3nf1p-stage-2-init.sh.drv'...
+building '/nix/store/g1i0fdxc7p06zrf1q49a3ywxcjkn6vid-unit-console-getty.service-disabled.drv'...
+building '/nix/store/ryf1zhia0jng69mdv0n1pbn6lljxni5h-unit-pipewire-pulse.service-disabled.drv'...
+building '/nix/store/hgqykgz8wy02nymvk65b1sly9q0wfzvw-unit-pipewire-pulse.socket-disabled.drv'...
+building '/nix/store/bympm6h8mhzjc65gkqzpd0s3dlkck9in-unit-pipewire.service-disabled.drv'...
+building '/nix/store/7rrwc8lpn0s2i1g2rp1jjnzynxgm05nc-unit-pipewire.socket-disabled.drv'...
+building '/nix/store/71s9hvgbyf5w748q5mnx9wh4b4czrww5-unit-wireplumber.service-disabled.drv'...
+building '/nix/store/8ri7n06air4rv93fgjfrylihc8y96dfi-xkb-validated.drv'...
+building '/nix/store/7492rq9nw6rd9cbx1fkqrvhrls1yj5vi-zen.desktop.drv'...
+building '/nix/store/0z7ynx7fa3y0p6ng1ak7na0baq65ghrw-zen.linux-x86_64.tar.xz.drv'...
+error: hash mismatch in fixed-output derivation '/nix/store/0z7ynx7fa3y0p6ng1ak7na0baq65ghrw-zen.linux-x86_64.tar.xz.drv':
+         specified: sha256-d9cHicsaxIhxd0FpzxdQdy6J62cfSiWHJO9F1pyIbxU=
+            got:    sha256-uyBF0+IWVNQP6EElAJLurf0sH8gx7vtQkiJ3PIvcoUk=
+error: Cannot build '/nix/store/7jg0vrm7x6gn8xx8yx0f0a0dlyaj7yz2-zen-browser-unwrapped-1.23.3b.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/mvlgnwcd4095xf3fwqarp8s7ib0m82ir-zen-browser-unwrapped-1.23.3b
+error: Cannot build '/nix/store/2b0m5pnxmqjz8q0yabx6mcrm04yzhybk-zen-browser-1.23.3b.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/li6c65w3d2167hgrx8ghwjc68w16xcqp-zen-browser-1.23.3b
+error: Cannot build '/nix/store/7a248ffh2vdvphzh21ywq26bhfsgpwar-system-path.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/zdfghymgv3qnp8npc4n29f09x18h4rk9-system-path
+error: Cannot build '/nix/store/iaggdwgvanhrw0562kjph4j0ngarp0v5-nixos-system-Luana-Legion-5-26.11.20261014.55bfb4d.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/f4yz3i9cvbs3lyi9ivhqnw22lfrg7mah-nixos-system-Luana-Legion-5-26.11.20261014.55bfb4d
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-Legion-5".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

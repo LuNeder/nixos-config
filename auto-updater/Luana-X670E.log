@@ -1,0 +1,124 @@
+building the system configuration...
+warning: Git tree '/tmp/nix-cache-compiler/repo' is dirty
+Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay https://nixos-raspberrypi.cachix.org' from ~/.local/share/nix/trusted-settings.json.
+Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
+evaluation warning: stdenv.isDarwin is deprecated, use stdenv.hostPlatform.isDarwin instead
+evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has been renamed to 'libx11'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXrandr' has been renamed to 'libxrandr'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libX11' has been renamed to 'libx11'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXcursor' has been renamed to 'libxcursor'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXi' has been renamed to 'libxi'
+evaluation warning: The xorg package set has been deprecated, 'xorg.libXrandr' has been renamed to 'libxrandr'
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 338 ms (attempt 1/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 593 ms (attempt 2/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 1008 ms (attempt 3/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+response body:
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>; retrying in 2710 ms (attempt 4/5)
+warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
+
+         response body:
+
+         <html>
+         <head><title>502 Bad Gateway</title></head>
+         <body>
+         <center><h1>502 Bad Gateway</h1></center>
+         <hr><center>nginx</center>
+         </body>
+         </html>
+these 23 derivations will be built:
+  /nix/store/0z7ynx7fa3y0p6ng1ak7na0baq65ghrw-zen.linux-x86_64.tar.xz.drv
+  /nix/store/7jg0vrm7x6gn8xx8yx0f0a0dlyaj7yz2-zen-browser-unwrapped-1.23.3b.drv
+  /nix/store/2b0m5pnxmqjz8q0yabx6mcrm04yzhybk-zen-browser-1.23.3b.drv
+  /nix/store/fvgp80ays5hfr3lgmgm4k1ppmgx28g9q-cudnn-linux-x86_64-9.27.0.42_cuda13-archive.tar.xz.drv
+  /nix/store/77dnddi32rb2hzminlwz9g2s4zs2w716-cudnn-9.27.0.42-source.drv
+  /nix/store/6723ha1y0kjj1qidaivvm9dnxyq1jwi4-cuda13.4-cudnn-9.27.0.42.drv
+  /nix/store/06qsl06gk582r3ih4w8lfjc3yqi3szn1-system-path.drv
+  /nix/store/26318jbcg549bshx2hc0cxbga71mysfx-xkb-validated.drv
+  /nix/store/fksq5y6q6pssk81cmavxp06bi7cnyj6r-dbus-1.drv
+  /nix/store/l1pj67wa45snay07xykym94scpydswqf-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/286fqag1r70xmj8b7sf9k0ndq8l251jg-unit-dbus-broker.service.drv
+  /nix/store/v12w01zwvzzxc3akkr936ybczmdp0x23-X-Restart-Triggers-polkit.drv
+  /nix/store/g39lqs6w607qqyih4h5aqbh65nz651d0-unit-polkit.service.drv
+  /nix/store/iz2vbc0vn1p5w5xww1c4f0bmd8gkfw36-unit-dbus-broker.service.drv
+  /nix/store/r3a6265ri8zwh1pvmbnd73bby9cx9zdb-unit-accounts-daemon.service.drv
+  /nix/store/hvzj4brdgl84wcni6r455v6r3114idf2-system-units.drv
+  /nix/store/zj3gwmap2dmbvl1kipc33fwcxbx58y0i-user-units.drv
+  /nix/store/iv5ig1bj63ckxxb7kvb4jlbbbl3dpjx1-etc.drv
+  /nix/store/fzdrd7lis45b3jcr312dwm0nl68x0qx8-activate.drv
+  /nix/store/kzqp6bpvnpqh08bihfn9idk7lbyckz8f-boot.json.drv
+  /nix/store/sv3yywj7bp89krrhy79k31hj1ah6lf37-ensure-wrapper-integrity.drv
+  /nix/store/zh4pqimfck0xbnh36djgj85xbb9nkpyd-dry-activate.drv
+  /nix/store/nd0xdp2mb42zf1m2fsa70ab38rh0xd61-nixos-system-Luana-X670E-26.11.20261014.55bfb4d.drv
+these 2 paths will be fetched (1.2 KiB download, 2.6 KiB unpacked):
+  /nix/store/p6qvv43kvfi76g54p3kivbkn0d1prnmm-auto-add-driver-runpath-hook
+  /nix/store/gza4dzq69d842930ngq2r66vf6f0a2jg-mark-for-cudatoolkit-root-hook
+building '/nix/store/kzqp6bpvnpqh08bihfn9idk7lbyckz8f-boot.json.drv'...
+building '/nix/store/sv3yywj7bp89krrhy79k31hj1ah6lf37-ensure-wrapper-integrity.drv'...
+copying path '/nix/store/gza4dzq69d842930ngq2r66vf6f0a2jg-mark-for-cudatoolkit-root-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/p6qvv43kvfi76g54p3kivbkn0d1prnmm-auto-add-driver-runpath-hook' from 'https://cache.nixos.org'...
+building '/nix/store/fvgp80ays5hfr3lgmgm4k1ppmgx28g9q-cudnn-linux-x86_64-9.27.0.42_cuda13-archive.tar.xz.drv'...
+building '/nix/store/zh4pqimfck0xbnh36djgj85xbb9nkpyd-dry-activate.drv'...
+building '/nix/store/26318jbcg549bshx2hc0cxbga71mysfx-xkb-validated.drv'...
+building '/nix/store/0z7ynx7fa3y0p6ng1ak7na0baq65ghrw-zen.linux-x86_64.tar.xz.drv'...
+building '/nix/store/77dnddi32rb2hzminlwz9g2s4zs2w716-cudnn-9.27.0.42-source.drv'...
+error: hash mismatch in fixed-output derivation '/nix/store/0z7ynx7fa3y0p6ng1ak7na0baq65ghrw-zen.linux-x86_64.tar.xz.drv':
+         specified: sha256-d9cHicsaxIhxd0FpzxdQdy6J62cfSiWHJO9F1pyIbxU=
+            got:    sha256-uyBF0+IWVNQP6EElAJLurf0sH8gx7vtQkiJ3PIvcoUk=
+error: Cannot build '/nix/store/7jg0vrm7x6gn8xx8yx0f0a0dlyaj7yz2-zen-browser-unwrapped-1.23.3b.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/mvlgnwcd4095xf3fwqarp8s7ib0m82ir-zen-browser-unwrapped-1.23.3b
+error: Cannot build '/nix/store/2b0m5pnxmqjz8q0yabx6mcrm04yzhybk-zen-browser-1.23.3b.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/li6c65w3d2167hgrx8ghwjc68w16xcqp-zen-browser-1.23.3b
+error: Cannot build '/nix/store/06qsl06gk582r3ih4w8lfjc3yqi3szn1-system-path.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/9a4m5cxhchb4dx2ix22q7s6c8rax0dlw-system-path
+error: Cannot build '/nix/store/nd0xdp2mb42zf1m2fsa70ab38rh0xd61-nixos-system-Luana-X670E-26.11.20261014.55bfb4d.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/p80mb65s3h66lx5cz3dvhmfpljcrvfny-nixos-system-Luana-X670E-26.11.20261014.55bfb4d
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

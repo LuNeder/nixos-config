@@ -21,7 +21,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 297 ms (attempt 1/5)
+</html>; retrying in 289 ms (attempt 1/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -32,7 +32,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 657 ms (attempt 2/5)
+</html>; retrying in 667 ms (attempt 2/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -43,7 +43,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 1117 ms (attempt 3/5)
+</html>; retrying in 1102 ms (attempt 3/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -54,7 +54,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 2690 ms (attempt 4/5)
+</html>; retrying in 2827 ms (attempt 4/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
          response body:
@@ -80,18 +80,7 @@ these 452 derivations will be built:
   /nix/store/01r0gyb1hx89a7z0v4mr6a0i1dnkvp08-librepods-0.1.0.drv
   /nix/store/qcxalc8gnqx141arhdsw39pv4pp5ldnd-vconsole.conf.drv
   /nix/store/05n45hh7fvahyh7rvp7m4lfq66xzvjcj-X-Restart-Triggers-reload-systemd-vconsole-setup.drv
-  /nix/store/1iykiw94cz2cx7ak7nc39p7kwsw61s6s-suitesparse-7.10.0.drv
-  /nix/store/0av7xv5cql0i60bp1h5z0a5hpyjb879z-ceres-solver-2.2.0.drv
-  /nix/store/0gs2yz8ycawlr9n6hz9yrccc8qn42q24-unit-wpa_supplicant.service.drv
-  /nix/store/0gvxgxr37w8jx7grgrxj7d5a2cn2lm60-wireplumber-lv2-plugins.drv
-  /nix/store/0q21g1ggzwhyh00wy2i88pa27an038my-heroic-2.22.4-init.drv
-  /nix/store/ja1an3rhwfc9n7d4dcr9q0nhs48zvbjd-virtualbox-extpack-7.2.20.drv
-  /nix/store/vwiwmmfsvc092ppsf1hzq0pf7vpv7q21-virtualbox-7.2.20.drv
-  /nix/store/3bsp42jb7q7fwmqbg9ywfsxz3l53dnyn-extra-udev-rules.drv
-  /nix/store/wsr6cqds52phs5p3kmnn09hx3v083b7k-udev-rules.drv
-  /nix/store/n2an8x1hrdzj8izry2z114za092ihzsi-X-Restart-Triggers-systemd-udevd.drv
-  /nix/store/0y47wkm1km7w61q4qgmccif8hn2xbvd9-unit-systemd-udevd.service.drv
-  /nix/store/0zg4xwyik392v9qv6g02k50cwc5wl5r3-write_config.drv
+  /nix/store/3rrwhx0y1wbiqmdkaqxad6w79ljczcr6-nvidia-settings-595.104.02.drv
   /nix/store/2zjd4s48viwwfz1r8jnzaf6xdkiqc479-blackmagicraw-player.desktop.drv
   /nix/store/a4xz92qj3660rmwniq0z4zj96n5bxc7w-davinci-resolve-src.zip.drv
   /nix/store/dqjgajiv41ykq9brhqs7a9qad38kma34-blackmagicraw-speedtest.desktop.drv
@@ -99,56 +88,8 @@ these 452 derivations will be built:
   /nix/store/ky8rx4w534cm6aiq5i2nhsg8dh006ygy-davinci-resolve.desktop.drv
   /nix/store/lxvv2myhl0dihii5kdgqizaw3mads8sb-davinci-control-panels-setup.desktop.drv
   /nix/store/39wrkzm51hhw5g1ifx0nqj55kmj8awxl-davinci-resolve-21.1.1.drv
-  /nix/store/0zkisnxa2sfh4nxlpk1jvx373asdk8v9-davinci-wrapper.drv
-  /nix/store/127q19c46ds906grl8xwqax3yip6mh2i-unit-script-cups-post-start.drv
-  /nix/store/1445bi5jr6hizvkc4z7a8dvbz3i2m08f-unit-plymouth-quit-wait.service.drv
-  /nix/store/33n4z58sk3zjkfxrgj55y30d4ri1cj71-python3-3.14.8-env.drv
-  /nix/store/bkp0hck20gvkpvdcd5zqha2hs9grhbn5-nodejs-26.12.0.drv
-  /nix/store/zb71gg0f5b46nk7j2synb381pzlwz1rs-llama-cpp-0.6.0.drv
-  /nix/store/833xxx3mr3xkgzim9kr2vfjz69f85nx5-whisper-cpp-1.9.5.drv
-  /nix/store/369c89w62rvcxjiri8h1r4vzr55wr000-fix-cuda-13-2-compat.drv
-  /nix/store/lnisn3v7cbz8rrhanndjpi3ldjl8v1ad-videostab-add-missing-include-to-fix-build-failure.drv
-  /nix/store/6i1ma6acbkr41lh5drz9f08ql3aw5mmb-opencv-4.13.0.drv
-  /nix/store/h24xni8gm0skd8ljlh18bhgx989nlkd6-frei0r-plugins-3.5.0.drv
-  /nix/store/iacsilvsa2kwqvj9k5dvz6h3gmsryp0g-remove-references-to.drv
-  /nix/store/mpbp2dbapmq94aajkcifzn0vkqs19wvd-source-patched.drv
-  /nix/store/172ddn70bycw0s4pb6cr3b40w2g7r043-ffmpeg-full-8.1.3.drv
-  /nix/store/17riflif1zi85lsmlpyqbvx82qnbda2y-unit-systemd-ask-password-plymouth.path.drv
-  /nix/store/3x6p4ak5jh2gc08ais4r31wky78bpi7a-NetworkManager.conf.drv
-  /nix/store/5cgpxpzwxzrip42q3ibw9x8wrjwrzisf-etc-fstab.drv
-  /nix/store/m5bzd7x2yblr46s1zmnc4313ivcv9xxj-steam-gamescope.drv
-  /nix/store/59kdaamq1gl9wbqwlca3w7sjszypj7b9-steam.desktop.drv
-  /nix/store/4jwbfr5x75hzm7k207fif302w0vs2djw-xsession.drv
-  /nix/store/k3y25lna9585pd0jpv11lqrn4b6ajapm-xfce-xsession.drv
-  /nix/store/wgaqxa18lxqzc4vwyzan2w0skx4yhdj9-desktops.drv
-  /nix/store/84ynavmmbpbwqxyaazmim7ksj514gasi-set-environment.drv
-  /nix/store/5djyxvk4lh8pw7c3w3pnxlisib49gv7w-etc-zshenv.drv
-  /nix/store/5zccklpak3iylzyxk22cwhlh0p38bw0b-system-shutdown.drv
-  /nix/store/vp08v3p3ckvv4x51nvaik6kx6l51rgz9-xserver.conf.drv
-  /nix/store/55s73fvhnwhp2vg0djfc1k6j1q985k6s-xserver-wrapper.drv
-  /nix/store/jnh55lpr9ivvqpd6xl01visiw2qngizl-xsession-wrapper.drv
-  /nix/store/71kwqcqj37y3zf1n7rjdxvhfqs6vi8vv-sddm.conf.drv
-  /nix/store/77k458k3cgkfxf48pg52rn3kj81xn07i-udisks2.conf.drv
-  /nix/store/8lav3yjy4vilc6mmi359857hrmi5a38m-pam.d.drv
-  /nix/store/a6m2z3ffycid1sn4wm5wzbfvg354ssnz-etc-nsswitch.conf.drv
-  /nix/store/a767s8spyrdzz2gs3c7d04cfy18d9y3h-xrdp.conf.drv
-  /nix/store/8crsayps3akszzg73lc9p15fpcl2bzkx-pipewire-ladspa-plugins.drv
-  /nix/store/2fryf6ir8ykxyzyjd028b6nndvyhdrqc-unit-filter-chain.service.drv
-  /nix/store/2h7rx504sa7vq1mxwsrym2yy5djw635i-unit-pipewire-pulse.service.drv
-  /nix/store/2l2irapffbk77rmk64sh0rynybbbp26p-unit-systemd-tmpfiles-setup.service.drv
-  /nix/store/41q2bqz01kfy9vc257qhh5hylf6g8csd-unit-gcr-ssh-agent.socket.drv
-  /nix/store/qb2s8x0hfy2lghsz448dpnbyd78avj38-unit-script-nixos-rebuild-sycoca-start.drv
-  /nix/store/42hpbrkl4xbgr39vcxpq0al2hb66qvf4-unit-nixos-rebuild-sycoca.service.drv
-  /nix/store/7p9l11345r5nkrw2s7rb5h2rpqz24zkk-unit-dbus.service.drv
-  /nix/store/aa98fjxl053n7pwbkdcszf305k40xmmg-unit-pipewire.service.drv
-  /nix/store/avmk87nibpnz2fl4y57d3iaa857njq8s-unit-obex.service.drv
-  /nix/store/div59hb0csmv9qxv6rpwbbv3a4va55vq-unit-pipewire.socket.drv
-  /nix/store/9706114q1iaphd9y2afcxzn9nll4b4j7-wireplumber-extra-scrips.drv
-  /nix/store/fz22ibwi2m49g6rxiciacaj5gb4dq6xg-wireplumber-extra-config.drv
-  /nix/store/f5vzdkj1fn15mbx1phxcdqck0bxq5pj5-wireplumber-configs.drv
-  /nix/store/g532gmf8spgqh2yd2dzl8hnf6w6vxh4l-unit-wireplumber.service.drv
-  /nix/store/3rrwhx0y1wbiqmdkaqxad6w79ljczcr6-nvidia-settings-595.104.02.drv
   /nix/store/4nanbmm83nmm6q845rlh7r3nx4hnzx5h-davinci-fairlight-studio-utility.drv
+  /nix/store/0zkisnxa2sfh4nxlpk1jvx373asdk8v9-davinci-wrapper.drv
   /nix/store/5ingszkmwgq7i2assa7478y6yj1w8gn8-davinci-resolve-21.1.1-init.drv
   /nix/store/9912p5q6ww0yhykaxq3cg4k5kdjbrcp6-davinci-resolve-21.1.1-fhsenv-profile.drv
   /nix/store/jrnw4inn9h67xz3g5z725as5wpwvhhsd-davinci-resolve-21.1.1-fhsenv-rootfs.drv
@@ -182,6 +123,12 @@ these 452 derivations will be built:
   /nix/store/8j96lylmhn0qsgdbjy46xiq7ibk09q03-jack-libs.drv
   /nix/store/bf6zn2bf3s1sx6vqdppa4971lpdn5kbz-xwayland-24.1.14.drv
   /nix/store/csl8jzppyvn5agdaxnwck465w751aww0-ld-library-path.drv
+  /nix/store/5x8a4j6w3nq5yfn9ypr27j0mccqdvcl1-zen.linux-x86_64.tar.xz.drv
+  /nix/store/d89lx655vi4sqi6j0d1d782d93rz1xgh-zen-browser-unwrapped-1.23.4b.drv
+  /nix/store/vbycng51ayvc6795im08vzbn27iivw3p-zen.desktop.drv
+  /nix/store/f2vxjbdn8mv863hy86r8kxx9qg63facj-zen-browser-1.23.4b.drv
+  /nix/store/1iykiw94cz2cx7ak7nc39p7kwsw61s6s-suitesparse-7.10.0.drv
+  /nix/store/0av7xv5cql0i60bp1h5z0a5hpyjb879z-ceres-solver-2.2.0.drv
   /nix/store/4pv3nxbsby56zs6dvhx4vln7xdksm6pj-source.drv
   /nix/store/k2ap2vn918fzaysnf7z7hw7k0vkaipqf-pyside6-uic.drv
   /nix/store/y20l14l387l5v7zqay6w09d2q04pa4ms-opensubdiv-3.7.0.drv
@@ -189,6 +136,17 @@ these 452 derivations will be built:
   /nix/store/rqc2bvhjb12svsfwazrmixn533b4gswc-openimagedenoise-2.4.1.drv
   /nix/store/gv1sd17mzaw75bk7rzpv5p96m3zvzf88-blender-5.2.2.drv
   /nix/store/hdjl3nhqgadf72s93ffgnigdh6v4acyj-restic-pc-luana-home.drv
+  /nix/store/33n4z58sk3zjkfxrgj55y30d4ri1cj71-python3-3.14.8-env.drv
+  /nix/store/bkp0hck20gvkpvdcd5zqha2hs9grhbn5-nodejs-26.12.0.drv
+  /nix/store/zb71gg0f5b46nk7j2synb381pzlwz1rs-llama-cpp-0.6.0.drv
+  /nix/store/833xxx3mr3xkgzim9kr2vfjz69f85nx5-whisper-cpp-1.9.5.drv
+  /nix/store/369c89w62rvcxjiri8h1r4vzr55wr000-fix-cuda-13-2-compat.drv
+  /nix/store/lnisn3v7cbz8rrhanndjpi3ldjl8v1ad-videostab-add-missing-include-to-fix-build-failure.drv
+  /nix/store/6i1ma6acbkr41lh5drz9f08ql3aw5mmb-opencv-4.13.0.drv
+  /nix/store/h24xni8gm0skd8ljlh18bhgx989nlkd6-frei0r-plugins-3.5.0.drv
+  /nix/store/iacsilvsa2kwqvj9k5dvz6h3gmsryp0g-remove-references-to.drv
+  /nix/store/mpbp2dbapmq94aajkcifzn0vkqs19wvd-source-patched.drv
+  /nix/store/172ddn70bycw0s4pb6cr3b40w2g7r043-ffmpeg-full-8.1.3.drv
   /nix/store/f6b5x3y61l1ifcyf8ndbj632a588vsvx-version.txt.drv
   /nix/store/j47aksc6lzkagmsk96is6nhgn9b443q7-handbrake-1.11.2.drv
   /nix/store/m1n569yjjhggdfgrksbzk711yaanbfdn-steam-run-1.0.0.87-fhsenv-profile.drv
@@ -203,10 +161,7 @@ these 452 derivations will be built:
   /nix/store/ypdr28gyg7glji3asb8j8hzzpx0h7c95-itch.desktop.drv
   /nix/store/zhyj3h32fd3z9vq653kyvz9dpikcrkaw-source.drv
   /nix/store/k5g3bk97nqb8zqark92phx03889zjfrm-itch-26.13.0.drv
-  /nix/store/yhyk2wsb4z90511c9gkl1crscz8j2alf-zen.linux-x86_64.tar.xz.drv
-  /nix/store/6zr4qa1r6s2mpb6m0m6xy8w6f2wxy1jg-zen-browser-unwrapped-1.23.3b.drv
-  /nix/store/vbycng51ayvc6795im08vzbn27iivw3p-zen.desktop.drv
-  /nix/store/n4bfv2vg8s89hrzxak5wg1v0d4ba401y-zen-browser-1.23.3b.drv
+  /nix/store/m5bzd7x2yblr46s1zmnc4313ivcv9xxj-steam-gamescope.drv
   /nix/store/ikacym8br7hi94fr13zywlh86sbih46q-teamviewer_15.82.6_amd64.deb.drv
   /nix/store/p7125cw262w2dmw9d5av66sxzg7gw9w3-teamviewer-15.82.6.drv
   /nix/store/q48wps8jja9w8yzlzlw6j57lc73lz5rv-prismlauncher-11.1.1.drv
@@ -231,12 +186,15 @@ these 452 derivations will be built:
   /nix/store/asmbzc1890sww8r5c684wz3qr5yjixdm-buttui-a498bc38d581613ef07df74c255ba12f256c014f-vendor-staging.drv
   /nix/store/1rhmmdzwnqf3zla88rwj8anglhckp8cs-buttui-a498bc38d581613ef07df74c255ba12f256c014f-vendor.drv
   /nix/store/sh7mmli0rbpzjlpz9j72x5hylyg05g0d-buttui-a498bc38d581613ef07df74c255ba12f256c014f.drv
+  /nix/store/ja1an3rhwfc9n7d4dcr9q0nhs48zvbjd-virtualbox-extpack-7.2.20.drv
+  /nix/store/vwiwmmfsvc092ppsf1hzq0pf7vpv7q21-virtualbox-7.2.20.drv
   /nix/store/q1nfhkafk0pi79ykd9dwp7w9w057jghl-steam-wrapped.drv
   /nix/store/6nrlbj48jpckrqf5x522a6b1rcnfrmix-steam-1.0.0.87-init.drv
   /nix/store/fd7w9ghlqp35rb05wfid0yr9qd6z9h7a-steam-1.0.0.87-fhsenv-profile.drv
   /nix/store/k2mq4qabgmaavr1mdgmyy8wiayxw5k3x-steam-1.0.0.87-fhsenv-rootfs.drv
   /nix/store/qb831sh71a8hsn2mcy04802csspvkjfl-steam-1.0.0.87-bwrap.drv
   /nix/store/xbj0fnlg8rhzz4hdz7fwb3glrkwqxhga-steam-1.0.0.87.drv
+  /nix/store/0q21g1ggzwhyh00wy2i88pa27an038my-heroic-2.22.4-init.drv
   /nix/store/5a27vyi8clcdkpaa2vski0jyqrnkqa5a-heroic-2.22.4-bwrap.drv
   /nix/store/xjnj60nwrc0zxnmhfv3y68r9hymi57ha-heroic-2.22.4.drv
   /nix/store/crqxwhm7kjk46jrxxc1ab30h4449xsj3-obs-studio-32.2.2.drv
@@ -245,94 +203,174 @@ these 452 derivations will be built:
   /nix/store/yhihsjzmhr1f30zdp5fdf5zkbg2j1m3j-wrapped-obs-studio-32.2.2.drv
   /nix/store/z89064sz2k1w0v1q2gk676vcd9k97j71-rarlinux-x64-723.tar.gz.drv
   /nix/store/yy5k4l52hy725vmwg5p8dmhni6df4rzz-rar-7.23.drv
-  /nix/store/kkk8wylar2akfb8cz6jm1yb0gjygkb7z-system-path.drv
-  /nix/store/miwfdp5yfm4d8frxx31yc5q777zv889q-dbus-1.drv
-  /nix/store/9zzij6k5y34pzi0xc28cs0f5pmmbakmk-X-Restart-Triggers-dbus-broker.drv
-  /nix/store/kr0vfs4bfqpvvz12cvvapzisb3745wim-unit-dbus-broker.service.drv
-  /nix/store/l8drdl96911hijpv0b50qr7g0hsmx31c-unit-geoclue-agent.service.drv
-  /nix/store/xprdgq109c3sz2hdn0bnw1aq2v86r5lv-unit-script-nixos-activation-start.drv
-  /nix/store/mra54nrdqlpl8mqxhnvbbwz2jq56qjsg-unit-nixos-activation.service.drv
-  /nix/store/r1lxvy6kr52j63hfg8819csb36fis1d4-unit-speech-dispatcher.socket.drv
-  /nix/store/sk34n8x9brr6yjxrh7v6llj3szmk1050-unit-gcr-ssh-agent.service.drv
-  /nix/store/y0pxj0p0af8nv7slh2j5hxysgkdcww9a-unit-pipewire-pulse.socket.drv
-  /nix/store/bfl16bxiy7wphy74zazld2p0ac4dp4ql-user-units.drv
-  /nix/store/ysnswqq2w4g5h1i2kc2djc2m4zpndxms-pipewire-extra-config.drv
-  /nix/store/bzqwznk84y0x3sg59xrzhi31ry5ac4gg-pipewire-configs.drv
-  /nix/store/c3n5qp6kiw8l6h6mz8z2qx5as4dslmf9-plymouthd.conf.drv
-  /nix/store/qqb2phif6i695zvknawsksr489x16w2p-string-hosts.drv
-  /nix/store/cbkbxykjbxpi1cpawijmjmi74n5vpqgk-hosts.drv
-  /nix/store/cmgzx22fhjdv68pp1cplgjq9zh4pgk0b-etc-bashrc.drv
-  /nix/store/dmcz6v011292y7fxc68hpc7k9amxbbwz-thunderbird-policies.json.drv
-  /nix/store/dwsb6lyk9zibx941cpjgi914jyz3swiq-etc-X11-xorg.conf.d-00-keyboard.conf.drv
-  /nix/store/f5apbxlisrr6ilh7s08b0csbb5hs89qh-system-generators.drv
-  /nix/store/fa4rsf9qancyhzlyqamwv0ddf518njjq-etc-pam-environment.drv
-  /nix/store/fvb3l0pa5l325vp2jdi6vkmrqsvxyyj2-etc-profile.drv
-  /nix/store/9c6sag1x5z1sd4q2abqinrfj03vyyxrz-graphics-drivers-32bit.drv
-  /nix/store/h337v6df8zi9a21p02yf8w3zd5wd2wrk-graphics-driver.conf.drv
-  /nix/store/gm3ddswk2s4yvly9hy3vlm9g88ksav7b-tmpfiles.d.drv
-  /nix/store/ax4aq56xrsmraj102l2gwss3b1ipzlfc-nixos-generated-dconf-keyfiles.drv
-  /nix/store/ii4xrz6j0wf24kja76z4z60xdhklahx5-nixos-generated-dconf-locks.drv
-  /nix/store/y69wbnivsnz4raip8nf612wkixb68zdn-nixos-generated-dconf-keyfiles.drv
-  /nix/store/bfy6w61shwd027596d8p1m9q5zl5k22b-dconf-db.drv
-  /nix/store/39ry2hqrw2lqcjdfzwpcj52jy9gswpmy-user.drv
-  /nix/store/gqcig2fxdlssw9sz9yg3pmc0zsrdgc87-dconf-system-config.drv
-  /nix/store/gz4n3m9jzrnwhjl50ys6mhbv28r0v7s8-gen-hostid.drv
-  /nix/store/hjpqnb4bpyc99fwwfmn3cps0mczf0gfa-etc-sysctl.d-60-nixos.conf.drv
-  /nix/store/j4x071xzxvf8i02jwlcm5kw2pbh3fxrk-polkitd.conf.drv
-  /nix/store/jz1wwlbdrgqcny8wrvlwk1gkxgbqbc2k-nixos.conf.drv
-  /nix/store/k86kqfk1pl0rm9l003865ipzam72xg9b-unit-40-enp77s0.link.drv
-  /nix/store/kkqd15vc69pygrbg4jkrkdk4fj9vb952-etc-zshrc.drv
-  /nix/store/lyscw4fj5kavq95jy3q6mcwcf2l5mffq-etc-systemd-system.conf.drv
-  /nix/store/mpk04ifqd3g1zcgi4i2p1j79p0agcy2f-etc-hostname.drv
+  /nix/store/y8z2yj4kj1prrrsk5xgnpnxhw3jbprs0-system-path.drv
+  /nix/store/06rkf2kprk7iv5rfy2isavhbmvsi3q5v-unit-accounts-daemon.service.drv
+  /nix/store/0gs2yz8ycawlr9n6hz9yrccc8qn42q24-unit-wpa_supplicant.service.drv
+  /nix/store/0gvxgxr37w8jx7grgrxj7d5a2cn2lm60-wireplumber-lv2-plugins.drv
+  /nix/store/3bsp42jb7q7fwmqbg9ywfsxz3l53dnyn-extra-udev-rules.drv
+  /nix/store/wsr6cqds52phs5p3kmnn09hx3v083b7k-udev-rules.drv
+  /nix/store/n2an8x1hrdzj8izry2z114za092ihzsi-X-Restart-Triggers-systemd-udevd.drv
+  /nix/store/0y47wkm1km7w61q4qgmccif8hn2xbvd9-unit-systemd-udevd.service.drv
+  /nix/store/0zg4xwyik392v9qv6g02k50cwc5wl5r3-write_config.drv
+  /nix/store/127q19c46ds906grl8xwqax3yip6mh2i-unit-script-cups-post-start.drv
+  /nix/store/1445bi5jr6hizvkc4z7a8dvbz3i2m08f-unit-plymouth-quit-wait.service.drv
+  /nix/store/17riflif1zi85lsmlpyqbvx82qnbda2y-unit-systemd-ask-password-plymouth.path.drv
+  /nix/store/3d7sv4jm7aghpvff19ck13v8frc78lf9-tray.target.drv
+  /nix/store/4qfb2qy22zkxqzlgpw7q09j574h0ky0h-fluidsynth.service.drv
+  /nix/store/7cka1yb6jnmr6ksxqfmc62dspchbi796-hm_.stardustxrstartup.drv
+  /nix/store/a524qhg94062zafr7cddsr8raryvb883-hm_autostartpolybartricktop.desktop.drv
+  /nix/store/v6yqrncdz792sp1vz1qpxkqvi6zarwaw-pythonGen.drv
+  /nix/store/d1bnm35i5a9l4pxx1nb1asx6lfkaavxq-hm_hmfontconfigdefaultfonts.xml.drv
+  /nix/store/dczbx5i20qrv9nnh49z71kaa8ziqzaj6-hm_autostartplank.desktop.drv
+  /nix/store/kk71csv3vwr11yjbs7xkm9bqfl7fhx7l-hm_autostartpolybar.desktop.drv
+  /nix/store/lany6qxj77dl74646v4zgcccfq8nxx5v-hm_autostartcrystaldock.desktop.drv
   /nix/store/3iyfxb2qwvd6gy74c4aphxfjw20z6w63-ulauncher-toggle.desktop.drv
-  /nix/store/ayy3xzgf0zi0j2jxsp2m29xcgziqycjb-options.json.drv
-  /nix/store/d1ykw7iv6k1zd46rdmgghhb1c9mrp5lv-home-configuration-reference-manpage.drv
+  /nix/store/lns03p7iw6v3nj7c9yhvb7qfmhgz7ksi-options.json.drv
+  /nix/store/i8iglp12sgw7cgkb2wprhxvsx042blxv-home-configuration-reference-manpage.drv
   /nix/store/rkk4kixvjf7hrf5icg0mhlq83xysv5kx-plasma-manager-commands.desktop.drv
   /nix/store/xbfmpryxmxisj3fcvvfvpamb190jfs0n-settings.desktop.drv
-  /nix/store/l4qbmymmxyzg9gq6vd4mqsvqrg3j0vvf-home-manager-path.drv
-  /nix/store/pvl2l17z6z5fyb73gsjas7vi9x5rph2w-user-environment.drv
-  /nix/store/vd0m517i8hj33386ib2j070dqg81gi3q-hwdb.bin.drv
-  /nix/store/srr5p0ypqrfg11lbymkx5p08x3hdn4hm-adi1090x-plymouth-themes-1.0.drv
-  /nix/store/vhvakcxz75sgbin652wg9awjbcdmvdby-plymouth-themes.drv
-  /nix/store/xyf4rnl1vbdlx9q8gs3jwvsbdq9wmqbz-systemd-generator-environment.json.drv
-  /nix/store/yhax4zhhc2xys879w1a35899c5c1jipm-user-generators.drv
+  /nix/store/q09xz8fv0i43b6kg2mi8fqyc5xlgda6l-home-manager-path.drv
+  /nix/store/nld4mx85vrrw2g2l4y76w715hfv63cb1-hm_hmfontconfigfonts.xml.drv
+  /nix/store/pyg33np8cgppphsib3jydqqmipdjwm8j-hm_autostartpolybartrick.desktop.drv
+  /nix/store/q11w4an5s9crh39jk774i04s0vjwijai-hm_openvrwivrnopenvrpaths.vrpath.drv
+  /nix/store/xgbr073c7504gk9m4m3cg0ifay68h6w5-hm_.hexagonlauncher.drv
+  /nix/store/yxnh15f73ks0vd2gvl8mwz5cy0pq9qql-home-manager-files.drv
+  /nix/store/a8hvcyjvnl9s1k4jdsj51bs8n0w8n3wg-hm-putter.json.drv
+  /nix/store/1vxvg0ck5m8k7l7walm4d98im66dpzr9-check-link-targets.sh.drv
+  /nix/store/qxca07dm8lf1dwf3034a0nk5rbm9w6ab-data.json.drv
+  /nix/store/204pxnbs080wjw8hq1ylrs4k2zfaq79v-plasma-config.drv
+  /nix/store/5d9nzfzr3myg0p8rv4kcamvpv9blnmqn-load-xfconf.drv
+  /nix/store/jcafqg0qkb42i8q5xkp78x6q6bg4v6lz-activation-script.drv
+  /nix/store/1ic6636mb4hwf5dvdckkvg01l3wim0b7-home-manager-generation.drv
   /nix/store/1mskrvygdg3xwkwiij2fi14j5vc9cqv4-unit-systemd-timesyncd.service.drv
   /nix/store/1sbv6rzgwgkjsmgyvvji1cvmj5q82nqn-unit-linger-users.service.drv
   /nix/store/24l8izxvrmi54ddz3bzxs0w1bad23q7p-unit-sshd.service.drv
+  /nix/store/a767s8spyrdzz2gs3c7d04cfy18d9y3h-xrdp.conf.drv
   /nix/store/2api7vgd49cc31war0y2k2icllkb4w7h-unit-xrdp-sesman.service.drv
   /nix/store/c05qm58wgs3cz3pqn0cqbsbfkv2h1wn9-avahi-daemon.conf.drv
   /nix/store/ri05gd93aisymp5zkarqhps45xf3qska-avahi-daemon.conf.drv
   /nix/store/2fbhr80r790rqsd5zkv7dz0ahmgn54ra-unit-avahi-daemon.service.drv
+  /nix/store/8crsayps3akszzg73lc9p15fpcl2bzkx-pipewire-ladspa-plugins.drv
+  /nix/store/2fryf6ir8ykxyzyjd028b6nndvyhdrqc-unit-filter-chain.service.drv
+  /nix/store/2h7rx504sa7vq1mxwsrym2yy5djw635i-unit-pipewire-pulse.service.drv
   /nix/store/2hs1smdm45wh0azrh3d6c2ddil2kpcnb-unit-systemd-importd.service.drv
   /nix/store/2jg7x2samsj9kc8d8bgv0lz2b7zvvr2l-unit-geoclue.service.drv
   /nix/store/hamr86bg4kf5z1nnayaxcws4l2nsj7s6-unit-script-network-addresses-enp77s0-start.drv
   /nix/store/mflqjc74lmfxn72hxr3znvf1z9s1mvji-unit-script-network-addresses-enp77s0-pre-stop.drv
   /nix/store/2k4lkwsyy3biivskg73b39pnabnpy8nk-unit-network-addresses-enp77s0.service.drv
+  /nix/store/2k8aa0fnb14418d82i7kiz72c55ylxk3-staticPaths.drv
+  /nix/store/2l2irapffbk77rmk64sh0rynybbbp26p-unit-systemd-tmpfiles-setup.service.drv
+  /nix/store/cmrfcn9cc1d08s4f6r71rvzpqs9ahq20-dbus-1.drv
+  /nix/store/jjj5a993dywld7nlv98mw4s7n1vr7hi1-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/2lhal4d77kg94lj376ac016hawhavdmk-unit-dbus-broker.service.drv
   /nix/store/2q6i2i736673xdnq9mlkli2n2vxs8ypd-unit-acpid.service.drv
   /nix/store/2sv71i6z2mzxzw936srgqb221ysbp1aj-unit-modprobe-.service.drv
+  /nix/store/2zr9rk7rzbmql3dlybdf1riapj49rr87-unit-modprobe-.service.drv
+  /nix/store/y0x31p9rh4gzn5r9hv6951csfv86mrx1-linux-7.3-modules.drv
+  /nix/store/31prm0iacpg57rqc5l51h2sbzs781m5g-linux-7.3-modules-shrunk.drv
   /nix/store/351vkpgdd0wkva7k75szgf1fvg0p975a-unit-bluetooth.service.drv
+  /nix/store/53synarhf4vi8b0zhg80vj3gs83jb6i4-python3-3.14.8-env.drv
+  /nix/store/pin0lr4q90cnh9phmpzcdz1wszlliwar-limine-install.json.drv
+  /nix/store/kg6x9kfdcwz7m4x1f3rakbrkfyffwgj0-limine-install.py.drv
+  /nix/store/358fhswjc9967jjcbsvj6b9898vwqhb7-limine-install.sh.drv
+  /nix/store/ax4aq56xrsmraj102l2gwss3b1ipzlfc-nixos-generated-dconf-keyfiles.drv
+  /nix/store/ii4xrz6j0wf24kja76z4z60xdhklahx5-nixos-generated-dconf-locks.drv
+  /nix/store/y69wbnivsnz4raip8nf612wkixb68zdn-nixos-generated-dconf-keyfiles.drv
+  /nix/store/bfy6w61shwd027596d8p1m9q5zl5k22b-dconf-db.drv
+  /nix/store/39ry2hqrw2lqcjdfzwpcj52jy9gswpmy-user.drv
+  /nix/store/3ggicjl0qiy498vysyph021xzbnh1p5c-initrd-fstab.drv
+  /nix/store/3m4j4j2wgs5a59z1w7r3l69cdshx6p48-unit-script-network-local-commands-start.drv
   /nix/store/3n5pwxrjh8mhq0x02w5jz49wzlamr98f-unit-systemd-journald-.service.drv
+  /nix/store/3pfawgzf7vmmsh6l4r82sgkas1m0nzvv-unit-rescue.service.drv
+  /nix/store/3s86c0lfkjam3wdfhwrmz06r1nv3nx3l-users-groups.json.drv
+  /nix/store/3x6p4ak5jh2gc08ais4r31wky78bpi7a-NetworkManager.conf.drv
   /nix/store/411zmch3w6q2y8fj800drpsjmj10brzy-unit-console-getty.service-disabled.drv
+  /nix/store/41q2bqz01kfy9vc257qhh5hylf6g8csd-unit-gcr-ssh-agent.socket.drv
+  /nix/store/qb2s8x0hfy2lghsz448dpnbyd78avj38-unit-script-nixos-rebuild-sycoca-start.drv
+  /nix/store/42hpbrkl4xbgr39vcxpq0al2hb66qvf4-unit-nixos-rebuild-sycoca.service.drv
   /nix/store/49dxr3c1r626nvxx839kh7swrzs4wz81-unit-pipewire-pulse.socket-disabled.drv
+  /nix/store/60wapk0a66d4waiwbn4939zkhm64paj9-unit-script-initrd-find-nixos-closure-start.drv
+  /nix/store/7mfm43xkf1a7gjljrbz9693bbvn3ximq-initrd-system.conf.drv
+  /nix/store/9cqgdli8gkw98yv1n0bh3v851ppm63nj-initrd-crypttab.drv
+  /nix/store/9j4pp70rz49ja9al52pdcc6ds52bfk1y-initrd-nixos.conf.drv
+  /nix/store/c3n5qp6kiw8l6h6mz8z2qx5as4dslmf9-plymouthd.conf.drv
+  /nix/store/gz4n3m9jzrnwhjl50ys6mhbv28r0v7s8-gen-hostid.drv
+  /nix/store/izsfwwbxah09yf562fl3284ma38y2n4j-unit-script-initrd-nixos-activation-start.drv
+  /nix/store/k86kqfk1pl0rm9l003865ipzam72xg9b-unit-40-enp77s0.link.drv
+  /nix/store/lapmhbm07s78cjxxqzlkb7llghabbwz7-unit-script-plymouth-start-pre-start.drv
+  /nix/store/4jmf760j3yysgz4j3vr9w5xp8cpiycp1-unit-plymouth-quit.service.drv
+  /nix/store/6mwxlqrz3fd73225bgh5a0ig14bk47dk-unit-initrd-switch-root.service.drv
+  /nix/store/821lgkdn13013s815a6g2ab8p8xikfd4-unit-plymouth-read-write.service.drv
+  /nix/store/89bq1rp3gwfk7g2g6wllrw289nl3ds77-unit-initrd.target.drv
+  /nix/store/8rjzqnq1vxkrs82cb0h358gi2m0yb87a-unit-plymouth-poweroff.service.drv
+  /nix/store/azmnydqh3a3pm7v1s0f8v7cf1prsibkn-unit-initrd-find-nixos-closure.service.drv
+  /nix/store/bcdafscz4jqv6n0h2liqhxx5q4i3wxnw-unit-sysroot-run.mount.drv
+  /nix/store/bi2n4yhhqd7hxy6csf47lm4f1rmlnmvp-unit-initrd-parse-etc.service.drv
+  /nix/store/cfpw45f20h1nh3kachpqawr69zlvqq8b-unit-plymouth-start.service.drv
+  /nix/store/d3pvw6y0k9lrgakz87xayjnzrfdhd3da-unit-plymouth-switch-root.service.drv
+  /nix/store/fccwl9v5haaigll277gjzd88sin6pqa9-unit-initrd-nixos-activation.service.drv
+  /nix/store/h3frlvcvrcxsx66snrk11gpwmhn1ds25-unit-panic-on-fail.service.drv
+  /nix/store/hdrp6dlqb5fbgw0iaahk74kzlv5bsxfi-unit-systemd-tmpfiles-setup-sysroot.service.drv
+  /nix/store/lxf12w1xsrmz1bc6y52aydxxhnb412v7-unit-plymouth-switch-root-initramfs.service.drv
+  /nix/store/mvamimayvss2a2khi8v564cq0g4lqb8w-unit-plymouth-halt.service.drv
+  /nix/store/nzqg97qaqj03gvds60blcspz5n796jhm-unit-plymouth-reboot.service.drv
+  /nix/store/p29myfdgiydpynwdqrhr17lvxdiyidn4-unit-dbus.socket.drv
+  /nix/store/qmbpg3f2jgjbx9c21r510xs22f016a6w-unit-dbus.service.drv
+  /nix/store/rfn3c4jlkk29fvydcg4z9bf56qph2kxn-unit-emergency.service.drv
+  /nix/store/svk70z8grz0w4yhx1qb7dqfwaqf669g7-unit-plymouth-quit-wait.service.drv
+  /nix/store/x7aks0zxla0f9qhk0yny5wk8lg0bnpfv-unit-plymouth-kexec.service.drv
+  /nix/store/zymnqsxa81s3vbzd4gzmrlppqa0c2s27-unit-systemd-tmpfiles-setup.service.drv
+  /nix/store/n89rkf955476lpl2fgmi21g357h1wcdl-initrd-units.drv
+  /nix/store/srr5p0ypqrfg11lbymkx5p08x3hdn4hm-adi1090x-plymouth-themes-1.0.drv
+  /nix/store/vhvakcxz75sgbin652wg9awjbcdmvdby-plymouth-themes.drv
+  /nix/store/rk9abq3q21rql0knh93j62q1fqzabk6n-plymouth-initrd-themes.drv
+  /nix/store/vnm6ccbsfjbip9m1jwd9wvfi33aqnxlx-initrd-hostname.drv
+  /nix/store/vsm7ir7r4bw9an32hbazn8bmgv7jkgx0-plymouth-initrd-plugins.drv
+  /nix/store/53xh40w4730f778i1k7004zgpyxim5cd-initrd-linux-7.3.drv
+  /nix/store/4hrp0jsryikgwcwavblqnwl26lm23865-boot.json.drv
+  /nix/store/4jwbfr5x75hzm7k207fif302w0vs2djw-xsession.drv
   /nix/store/4lcf7ic9kx6imgj2bcjbpqp9zkly21vg-unit-cups-browsed.service.drv
   /nix/store/4rnk67zplc06r4j42sj25nzjy6hg3d07-unit-container-getty-.service.drv
+  /nix/store/55r0xfc3i195b87ydplz1ll88jiswnpj-unit-script-display-manager-start.drv
+  /nix/store/vp08v3p3ckvv4x51nvaik6kx6l51rgz9-xserver.conf.drv
+  /nix/store/55s73fvhnwhp2vg0djfc1k6j1q985k6s-xserver-wrapper.drv
+  /nix/store/59kdaamq1gl9wbqwlca3w7sjszypj7b9-steam.desktop.drv
+  /nix/store/5cgpxpzwxzrip42q3ibw9x8wrjwrzisf-etc-fstab.drv
+  /nix/store/k3y25lna9585pd0jpv11lqrn4b6ajapm-xfce-xsession.drv
+  /nix/store/wgaqxa18lxqzc4vwyzan2w0skx4yhdj9-desktops.drv
+  /nix/store/84ynavmmbpbwqxyaazmim7ksj514gasi-set-environment.drv
+  /nix/store/5djyxvk4lh8pw7c3w3pnxlisib49gv7w-etc-zshenv.drv
+  /nix/store/gp30yfy52xw3bljns0yiq30pfm436108-rustic-env.drv
+  /nix/store/v5k3gg8gjjgx13jn2gyiv25jnlm90xbp-sops-install-secrets-0.0.1-go-modules.drv
+  /nix/store/z22nmkah1jyb4pfj8f0p6maqrm2nabqh-sops-install-secrets-0.0.1.drv
+  /nix/store/5f856wb330pc3z2bhvh66qqfcy3yy0zg-manifest.json.drv
   /nix/store/5ndy5xp2mnlk1qyfj7bnz7aphzbakgs1-unit-rsync-job-Steam-screenshots.service.drv
+  /nix/store/hjpqnb4bpyc99fwwfmn3cps0mczf0gfa-etc-sysctl.d-60-nixos.conf.drv
+  /nix/store/5qxcf6a4qs8xmxqcnggwkvbqh4ds8cwp-X-Restart-Triggers-systemd-sysctl.drv
+  /nix/store/5z3qhd0gz90ylhn5454692lfm6ab8kip-ensure-wrapper-integrity.drv
+  /nix/store/5zccklpak3iylzyxk22cwhlh0p38bw0b-system-shutdown.drv
   /nix/store/5zwl4813w6f755zhq1ffnp7yd0rxv8b5-unit-systemd-boot-random-seed.service.drv
+  /nix/store/61a5j203kzzp64flj0xr4cpgrz3xmmab-unit-script-fwupd-efi-start.drv
   /nix/store/65r53mlsnnay17wp805py2vww78gpy71-unit-systemd-pcrlogin-.service.drv
   /nix/store/6bcwmhwfz62m8zcziwas3yajs760qa4w-unit-user-.service.drv
   /nix/store/6cx98zkvcxab418zmagxl9wxviizc12k-unit-sleep-actions.service.drv
   /nix/store/6dcpjpx9dfdajqrcxzm1a1hhc4f3g0vv-unit-usbmuxd.service.drv
+  /nix/store/6hda0c1qr8fryqf98lygx04whw6gawjx-unit-home-manager-luana.service.drv
   /nix/store/6n10bxzgjqyn6vwrr5pxcsnwrapxwxxd-unit-rescue.service.drv
+  /nix/store/jnh55lpr9ivvqpd6xl01visiw2qngizl-xsession-wrapper.drv
+  /nix/store/71kwqcqj37y3zf1n7rjdxvhfqs6vi8vv-sddm.conf.drv
+  /nix/store/vkc4xqc2qkqh1b73v2bpmdhvmqpnjyqs-firewall-start.drv
+  /nix/store/74fr98lahfdgj0balb217yay73balxjz-firewall-reload.drv
+  /nix/store/77k458k3cgkfxf48pg52rn3kj81xn07i-udisks2.conf.drv
   /nix/store/7ngyxqh1r1glsix5ghkyzszimqg7r47w-unit-user-runtime-dir-.service.drv
+  /nix/store/7p9l11345r5nkrw2s7rb5h2rpqz24zkk-unit-dbus.service.drv
   /nix/store/813nvvxbd38y6a84miz5zwv99c40b385-unit-sshd-keygen.service.drv
   /nix/store/a0qx4yldlxy5x9r6dqdp3indx955jmyh-snmp.conf.drv
   /nix/store/wpww9rjq5pf3d8ynaa3x1137s2rsr17n-cups-progs.drv
   /nix/store/ybxxxk49q14r7zd0csjriqmkv32ny0df-unit-script-cups-pre-start.drv
   /nix/store/860ibv50b0b7irbqz28igwhzxflmjr01-unit-cups.service.drv
-  /nix/store/5qxcf6a4qs8xmxqcnggwkvbqh4ds8cwp-X-Restart-Triggers-systemd-sysctl.drv
   /nix/store/8hk32bw7gb2lgp7drvcskml1bgz4rv2x-unit-systemd-sysctl.service.drv
   /nix/store/8kr8w3gyfnw9z8rr28mypcnw0lnhhmn5-unit-systemd-timedated.service.drv
-  /nix/store/8qgpfy93nnrab7a1fl3y57fr8j5gy6x4-unit-dbus-broker.service.drv
   /nix/store/8qwb03wyw8jvplw6i6gja5cy53g1p9xc-unit-plymouth-halt.service.drv
   /nix/store/9cjbrx5iwbm7amm80i7xnsqp93y5qcl3-unit-systemd-makefs-.service.drv
   /nix/store/9k5lp7kv4vvx7bxcizna70d3s3y5bbxq-unit-rsync-job-Videos.service.drv
@@ -341,17 +379,15 @@ these 452 derivations will be built:
   /nix/store/aabpvc2008q68920dfd68a7d718bdmvy-unit-systemd-oomd.service.drv
   /nix/store/ajrxdibv04c7ngjfvgf29ka20yc73zry-unit-getty-.service.drv
   /nix/store/an4jd0y5c9dzs24nlkvg70q5m38nfwf4-unit-plymouth-kexec.service.drv
-  /nix/store/dczazw47hnh5h35qbrdrkv93zapzz7lp-X-Restart-Triggers-polkit.drv
-  /nix/store/aq4cmyhi2mxnbcw9lhxgb2vygwqjig60-unit-polkit.service.drv
   /nix/store/b01wpi8a2s8vw0ma7k8axf3crcghy0sp-unit-systemd-user-sessions.service.drv
   /nix/store/pkf5jz1yy4h71zr8r72j7pfic0156dr1-flatpak-state.json.drv
   /nix/store/p5457m7lrf1fpf1q3kznpbbialsv41hg-flatpak-managed-install.drv
   /nix/store/c3wxwa835zyy1jd8zrny25fzp99cijaf-unit-flatpak-managed-install.service.drv
   /nix/store/c9q59r6hygda6gjf6fr2pzn5wg2p429f-unit-emergency.service.drv
   /nix/store/csj5smxf2kp8gr7i2cclpxi6cnrg0w7k-unit-rtkit-daemon.service.drv
-  /nix/store/d0likhyy4nbdlr32fl47w5mmzq7irzn1-unit-accounts-daemon.service.drv
   /nix/store/a51w1yfk64nin1lnw7fv6a4ij7hqvci5-unit-script-xrdp-pre-start.drv
   /nix/store/d5srf0fgwv9ybpxdv3s217bgcq6hf7c4-unit-xrdp.service.drv
+  /nix/store/jz1wwlbdrgqcny8wrvlwk1gkxgbqbc2k-nixos.conf.drv
   /nix/store/mdwr6fqhalrabyhq7xlgk2s1j1bf50pf-X-Restart-Triggers-systemd-modules-load.drv
   /nix/store/daz9x84mr55i23j59dr356bawjicvbri-unit-systemd-modules-load.service.drv
   /nix/store/dmlwfwjscgj2wvjh30qkky1ii5g67yxk-unit-nix-daemon.service.drv
@@ -360,39 +396,15 @@ these 452 derivations will be built:
   /nix/store/dvkhf1r26cbifzn8swy6qlcdq45ajcpa-unit-NetworkManager-dispatcher.service.drv
   /nix/store/dvrlnpdyf9grxxnvh46gb861sqrb3cxz-unit-fwupd-refresh.timer.drv
   /nix/store/f0kl2nkkb91vb1kmv4nsjjm4z7wk8cnn-unit-pipewire.socket-disabled.drv
-  /nix/store/3d7sv4jm7aghpvff19ck13v8frc78lf9-tray.target.drv
-  /nix/store/4qfb2qy22zkxqzlgpw7q09j574h0ky0h-fluidsynth.service.drv
-  /nix/store/7cka1yb6jnmr6ksxqfmc62dspchbi796-hm_.stardustxrstartup.drv
-  /nix/store/v6yqrncdz792sp1vz1qpxkqvi6zarwaw-pythonGen.drv
-  /nix/store/7lyjdydbahjy1pr4bwj3ckqf7qly7h3m-hm_hmfontconfigfonts.xml.drv
-  /nix/store/a524qhg94062zafr7cddsr8raryvb883-hm_autostartpolybartricktop.desktop.drv
-  /nix/store/d1bnm35i5a9l4pxx1nb1asx6lfkaavxq-hm_hmfontconfigdefaultfonts.xml.drv
-  /nix/store/dczbx5i20qrv9nnh49z71kaa8ziqzaj6-hm_autostartplank.desktop.drv
-  /nix/store/kk71csv3vwr11yjbs7xkm9bqfl7fhx7l-hm_autostartpolybar.desktop.drv
-  /nix/store/lany6qxj77dl74646v4zgcccfq8nxx5v-hm_autostartcrystaldock.desktop.drv
-  /nix/store/pyg33np8cgppphsib3jydqqmipdjwm8j-hm_autostartpolybartrick.desktop.drv
-  /nix/store/q11w4an5s9crh39jk774i04s0vjwijai-hm_openvrwivrnopenvrpaths.vrpath.drv
-  /nix/store/xgbr073c7504gk9m4m3cg0ifay68h6w5-hm_.hexagonlauncher.drv
-  /nix/store/1w6s0x8rwi1bcq0y99ph8xgw9mr6xmx3-home-manager-files.drv
-  /nix/store/d84479838j28jwlrz7vhndvr6yy4bq37-hm-putter.json.drv
-  /nix/store/1vxvg0ck5m8k7l7walm4d98im66dpzr9-check-link-targets.sh.drv
-  /nix/store/qxca07dm8lf1dwf3034a0nk5rbm9w6ab-data.json.drv
-  /nix/store/204pxnbs080wjw8hq1ylrs4k2zfaq79v-plasma-config.drv
-  /nix/store/5d9nzfzr3myg0p8rv4kcamvpv9blnmqn-load-xfconf.drv
-  /nix/store/jcafqg0qkb42i8q5xkp78x6q6bg4v6lz-activation-script.drv
-  /nix/store/szswa3iz7hsc8103razrzy8fj6j5799l-home-manager-generation.drv
-  /nix/store/f35jh95rknlyirpa8hwf36h6km64jh2c-unit-home-manager-luana.service.drv
   /nix/store/ffmxihwyjnbn12ndb4kfdgr29gz4k0hf-unit-docker-prune.service.drv
   /nix/store/fsjalbrds02pfzw2g20n7lcamq7zm76i-unit-script-suid-sgid-wrappers-start.drv
   /nix/store/fjh2xylii4bz3vyp03scj4yq58iav58b-unit-suid-sgid-wrappers.service.drv
   /nix/store/fp4lr8rzp6dmkm7w78xsf8xy9daxx5vg-unit-sshd-vsock-.service.drv
   /nix/store/g68vs2qw305qzh1ln4mbz62iyifff4b3-unit-rsync-job-Imagens.service.drv
   /nix/store/gqrmv57jlamgslc0b93v5g1xz57na2yj-unit-script-restic-backups-pc-luana-home-post-stop.drv
-  /nix/store/2k8aa0fnb14418d82i7kiz72c55ylxk3-staticPaths.drv
   /nix/store/m37nrkrgnbbzvgyzsfn9ai917673ixi1-unit-script-restic-backups-pc-luana-home-pre-start.drv
   /nix/store/gikd2wqwsf796ly850fwlyyr511xw7r1-unit-restic-backups-pc-luana-home.service.drv
   /nix/store/gp98phar5xyiqqayjxsail0nzp23wn3b-unit-resolvconf.service.drv
-  /nix/store/61a5j203kzzp64flj0xr4cpgrz3xmmab-unit-script-fwupd-efi-start.drv
   /nix/store/gqns2b1wymdkhlzwkxcgd1i1n5hq5pk1-unit-fwupd-efi.service.drv
   /nix/store/gsyksphqmc62iqqr6bbk9gdksm73n94q-unit-systemd-update-utmp.service.drv
   /nix/store/gw2w9jqijkq60mp7mm3yg0f6b3xwr0sd-unit-rsync-job-Documentos.service.drv
@@ -401,7 +413,6 @@ these 452 derivations will be built:
   /nix/store/h9k556hpx1gcfpshymlhcljgmbapl468-unit-pipewire-pulse.service-disabled.drv
   /nix/store/hfd9ijw3pkscx6qpbf02plgfq8gvddg8-unit-logrotate-checkconf.service.drv
   /nix/store/hq4jsjv40fc8b46z0z8928fg5mgax67h-unit-post-boot.service.drv
-  /nix/store/55r0xfc3i195b87ydplz1ll88jiswnpj-unit-script-display-manager-start.drv
   /nix/store/y2kr989d9pxv1bjqgk34lhhlz92d00q7-unit-script-display-manager-pre-start.drv
   /nix/store/imjfmins7xngrps8s6182nz7cmm8vyyb-unit-display-manager.service.drv
   /nix/store/iniicpjn1668qc83wgjcw72zd35634mn-unit-teamviewerd.service.drv
@@ -414,8 +425,6 @@ these 452 derivations will be built:
   /nix/store/zzn2h67f5qjsp3kr4v077fbxs4s1x372-rmovrbkp.drv
   /nix/store/l00jj1gpync5l9mhfx575vl83063sw6z-unit-remove-openvr-bkp-file.service.drv
   /nix/store/l517kj3nwrm6kr5fcda64llnijpxjv86-unit-systemd-mkswap-.service.drv
-  /nix/store/vkc4xqc2qkqh1b73v2bpmdhvmqpnjyqs-firewall-start.drv
-  /nix/store/74fr98lahfdgj0balb217yay73balxjz-firewall-reload.drv
   /nix/store/l9npif1kpr2i1bg3iksllidwsx4vjgd1-unit-firewall.service.drv
   /nix/store/l9pfra095g9ca2x2i4bnixjbgic4pz6k-unit-systemd-fsck-.service.drv
   /nix/store/l9x8mzbvwjm3829546n1hcmmfbfiyvg0-unit-systemd-nspawn-.service.drv
@@ -425,10 +434,11 @@ these 452 derivations will be built:
   /nix/store/mw11sa5x6jv5k9hwsqdi535da7a19sxv-unit-systemd-binfmt.service.drv
   /nix/store/np1ghvzy5mg584h7y671wp74fhyamy8b-unit-getty.target.drv
   /nix/store/nqbzkrch76khgl6d8dzbp1m59x9gs751-unit-fwupd-refresh.service.drv
+  /nix/store/hj3zkpm1bbrsn44k9i8na1yp32h6gzjd-X-Restart-Triggers-polkit.drv
+  /nix/store/nqgacxgh4bpfhlfjgbsxc5h782z8m3jh-unit-polkit.service.drv
   /nix/store/nv5904xh7qsdd0j18x6v55xg4xqnpmq0-unit-plymouth-reboot.service.drv
   /nix/store/nwfbjyjq9kn0v22hp0wfa5hqrl48zj22-unit-systemd-random-seed.service.drv
   /nix/store/p7y2424ayhn3sb29f0v6rwr5w8d70iqq-unit-rsync-job-Documentos.timer.drv
-  /nix/store/3m4j4j2wgs5a59z1w7r3l69cdshx6p48-unit-script-network-local-commands-start.drv
   /nix/store/pbh5jmnmxk922gfqkvsvviid1jz5jfk5-unit-network-local-commands.service.drv
   /nix/store/pmigzn3mlzynycsxzqfvglhnlpj2fm52-unit-sshd-.service.drv
   /nix/store/pqwndjf9dny0q3fxy1qm3i2zqqs14ihs-unit-rsync-job-Steam-screenshots.timer.drv
@@ -459,66 +469,56 @@ these 452 derivations will be built:
   /nix/store/yr2gnprapzjwdjdys1qjxcf0xrkfnlyv-unit-systemd-journald.service.drv
   /nix/store/yy3v3z68ww5p3g34i6rdhvxirv2p4zf8-unit-prepare-kexec.service.drv
   /nix/store/z336gvp618ldr51mch9ir491xxsyd182-unit-systemd-backlight-.service.drv
+  /nix/store/9c6sag1x5z1sd4q2abqinrfj03vyyxrz-graphics-drivers-32bit.drv
+  /nix/store/h337v6df8zi9a21p02yf8w3zd5wd2wrk-graphics-driver.conf.drv
+  /nix/store/gm3ddswk2s4yvly9hy3vlm9g88ksav7b-tmpfiles.d.drv
   /nix/store/8b7yyqk5fza87w78yh5d48pzd5641nx4-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
   /nix/store/z7zfsnq1bms35agp49n0akyyxhq83w54-unit-systemd-tmpfiles-resetup.service.drv
   /nix/store/zjsrv2qdg2hysnk35mip7lavrgn68afq-unit-rsync-job-Imagens.timer.drv
   /nix/store/zkydfs3zwb4fpnrkfzi6cw42857f2z6s-unit-plymouth-read-write.service.drv
   /nix/store/zpl0myc4m4i52wj09lzqh5mbl2a9hmjn-unit-serial-getty-.service.drv
-  /nix/store/zayzras8vdblkc2rw6wxfyyhszx280cr-system-units.drv
-  /nix/store/192rvdh240gb1s0bkigqgihyvdahqzps-etc.drv
-  /nix/store/2zr9rk7rzbmql3dlybdf1riapj49rr87-unit-modprobe-.service.drv
-  /nix/store/y0x31p9rh4gzn5r9hv6951csfv86mrx1-linux-7.3-modules.drv
-  /nix/store/31prm0iacpg57rqc5l51h2sbzs781m5g-linux-7.3-modules-shrunk.drv
-  /nix/store/53synarhf4vi8b0zhg80vj3gs83jb6i4-python3-3.14.8-env.drv
-  /nix/store/pin0lr4q90cnh9phmpzcdz1wszlliwar-limine-install.json.drv
-  /nix/store/kg6x9kfdcwz7m4x1f3rakbrkfyffwgj0-limine-install.py.drv
-  /nix/store/358fhswjc9967jjcbsvj6b9898vwqhb7-limine-install.sh.drv
-  /nix/store/3ggicjl0qiy498vysyph021xzbnh1p5c-initrd-fstab.drv
-  /nix/store/3pfawgzf7vmmsh6l4r82sgkas1m0nzvv-unit-rescue.service.drv
-  /nix/store/3s86c0lfkjam3wdfhwrmz06r1nv3nx3l-users-groups.json.drv
-  /nix/store/60wapk0a66d4waiwbn4939zkhm64paj9-unit-script-initrd-find-nixos-closure-start.drv
-  /nix/store/7mfm43xkf1a7gjljrbz9693bbvn3ximq-initrd-system.conf.drv
-  /nix/store/9cqgdli8gkw98yv1n0bh3v851ppm63nj-initrd-crypttab.drv
-  /nix/store/9j4pp70rz49ja9al52pdcc6ds52bfk1y-initrd-nixos.conf.drv
-  /nix/store/izsfwwbxah09yf562fl3284ma38y2n4j-unit-script-initrd-nixos-activation-start.drv
-  /nix/store/lapmhbm07s78cjxxqzlkb7llghabbwz7-unit-script-plymouth-start-pre-start.drv
-  /nix/store/4jmf760j3yysgz4j3vr9w5xp8cpiycp1-unit-plymouth-quit.service.drv
-  /nix/store/6mwxlqrz3fd73225bgh5a0ig14bk47dk-unit-initrd-switch-root.service.drv
-  /nix/store/821lgkdn13013s815a6g2ab8p8xikfd4-unit-plymouth-read-write.service.drv
-  /nix/store/89bq1rp3gwfk7g2g6wllrw289nl3ds77-unit-initrd.target.drv
-  /nix/store/8rjzqnq1vxkrs82cb0h358gi2m0yb87a-unit-plymouth-poweroff.service.drv
-  /nix/store/azmnydqh3a3pm7v1s0f8v7cf1prsibkn-unit-initrd-find-nixos-closure.service.drv
-  /nix/store/bcdafscz4jqv6n0h2liqhxx5q4i3wxnw-unit-sysroot-run.mount.drv
-  /nix/store/bi2n4yhhqd7hxy6csf47lm4f1rmlnmvp-unit-initrd-parse-etc.service.drv
-  /nix/store/cfpw45f20h1nh3kachpqawr69zlvqq8b-unit-plymouth-start.service.drv
-  /nix/store/d3pvw6y0k9lrgakz87xayjnzrfdhd3da-unit-plymouth-switch-root.service.drv
-  /nix/store/fccwl9v5haaigll277gjzd88sin6pqa9-unit-initrd-nixos-activation.service.drv
-  /nix/store/h3frlvcvrcxsx66snrk11gpwmhn1ds25-unit-panic-on-fail.service.drv
-  /nix/store/hdrp6dlqb5fbgw0iaahk74kzlv5bsxfi-unit-systemd-tmpfiles-setup-sysroot.service.drv
-  /nix/store/lxf12w1xsrmz1bc6y52aydxxhnb412v7-unit-plymouth-switch-root-initramfs.service.drv
-  /nix/store/mvamimayvss2a2khi8v564cq0g4lqb8w-unit-plymouth-halt.service.drv
-  /nix/store/nzqg97qaqj03gvds60blcspz5n796jhm-unit-plymouth-reboot.service.drv
-  /nix/store/p29myfdgiydpynwdqrhr17lvxdiyidn4-unit-dbus.socket.drv
-  /nix/store/qmbpg3f2jgjbx9c21r510xs22f016a6w-unit-dbus.service.drv
-  /nix/store/rfn3c4jlkk29fvydcg4z9bf56qph2kxn-unit-emergency.service.drv
-  /nix/store/svk70z8grz0w4yhx1qb7dqfwaqf669g7-unit-plymouth-quit-wait.service.drv
-  /nix/store/x7aks0zxla0f9qhk0yny5wk8lg0bnpfv-unit-plymouth-kexec.service.drv
-  /nix/store/zymnqsxa81s3vbzd4gzmrlppqa0c2s27-unit-systemd-tmpfiles-setup.service.drv
-  /nix/store/n89rkf955476lpl2fgmi21g357h1wcdl-initrd-units.drv
-  /nix/store/rk9abq3q21rql0knh93j62q1fqzabk6n-plymouth-initrd-themes.drv
-  /nix/store/vnm6ccbsfjbip9m1jwd9wvfi33aqnxlx-initrd-hostname.drv
-  /nix/store/vsm7ir7r4bw9an32hbazn8bmgv7jkgx0-plymouth-initrd-plugins.drv
-  /nix/store/53xh40w4730f778i1k7004zgpyxim5cd-initrd-linux-7.3.drv
-  /nix/store/4hrp0jsryikgwcwavblqnwl26lm23865-boot.json.drv
-  /nix/store/gp30yfy52xw3bljns0yiq30pfm436108-rustic-env.drv
-  /nix/store/v5k3gg8gjjgx13jn2gyiv25jnlm90xbp-sops-install-secrets-0.0.1-go-modules.drv
-  /nix/store/z22nmkah1jyb4pfj8f0p6maqrm2nabqh-sops-install-secrets-0.0.1.drv
-  /nix/store/5f856wb330pc3z2bhvh66qqfcy3yy0zg-manifest.json.drv
-  /nix/store/5z3qhd0gz90ylhn5454692lfm6ab8kip-ensure-wrapper-integrity.drv
-  /nix/store/gwvxr4vvz5c07gkszxi2smvjdicas5sp-activate.drv
+  /nix/store/80rh707dgx3y9jps6kpc3wfng183mswg-system-units.drv
+  /nix/store/8lav3yjy4vilc6mmi359857hrmi5a38m-pam.d.drv
+  /nix/store/9706114q1iaphd9y2afcxzn9nll4b4j7-wireplumber-extra-scrips.drv
+  /nix/store/a6m2z3ffycid1sn4wm5wzbfvg354ssnz-etc-nsswitch.conf.drv
+  /nix/store/aa98fjxl053n7pwbkdcszf305k40xmmg-unit-pipewire.service.drv
+  /nix/store/avmk87nibpnz2fl4y57d3iaa857njq8s-unit-obex.service.drv
+  /nix/store/ysnswqq2w4g5h1i2kc2djc2m4zpndxms-pipewire-extra-config.drv
+  /nix/store/bzqwznk84y0x3sg59xrzhi31ry5ac4gg-pipewire-configs.drv
+  /nix/store/qqb2phif6i695zvknawsksr489x16w2p-string-hosts.drv
+  /nix/store/cbkbxykjbxpi1cpawijmjmi74n5vpqgk-hosts.drv
+  /nix/store/cmgzx22fhjdv68pp1cplgjq9zh4pgk0b-etc-bashrc.drv
+  /nix/store/div59hb0csmv9qxv6rpwbbv3a4va55vq-unit-pipewire.socket.drv
+  /nix/store/dmcz6v011292y7fxc68hpc7k9amxbbwz-thunderbird-policies.json.drv
+  /nix/store/dwsb6lyk9zibx941cpjgi914jyz3swiq-etc-X11-xorg.conf.d-00-keyboard.conf.drv
+  /nix/store/f5apbxlisrr6ilh7s08b0csbb5hs89qh-system-generators.drv
+  /nix/store/fz22ibwi2m49g6rxiciacaj5gb4dq6xg-wireplumber-extra-config.drv
+  /nix/store/f5vzdkj1fn15mbx1phxcdqck0bxq5pj5-wireplumber-configs.drv
+  /nix/store/fa4rsf9qancyhzlyqamwv0ddf518njjq-etc-pam-environment.drv
+  /nix/store/fvb3l0pa5l325vp2jdi6vkmrqsvxyyj2-etc-profile.drv
+  /nix/store/g532gmf8spgqh2yd2dzl8hnf6w6vxh4l-unit-wireplumber.service.drv
+  /nix/store/gqcig2fxdlssw9sz9yg3pmc0zsrdgc87-dconf-system-config.drv
+  /nix/store/hpwsg2mrdf1vfp02b65p9p4vfpmqdri5-user-environment.drv
   /nix/store/mcyag83nbxmyasgwr932aj1dk351gx0s-dry-activate.drv
   /nix/store/qcqsvg7zr7lqm3kwxi2kx7gacqql5p5r-xkb-validated.drv
-  /nix/store/f9agad0id4rjbygvpvvh1ni78s1828ih-nixos-system-Luana-X670E-26.11.20261020.02c087f.drv
+  /nix/store/l8drdl96911hijpv0b50qr7g0hsmx31c-unit-geoclue-agent.service.drv
+  /nix/store/xprdgq109c3sz2hdn0bnw1aq2v86r5lv-unit-script-nixos-activation-start.drv
+  /nix/store/mra54nrdqlpl8mqxhnvbbwz2jq56qjsg-unit-nixos-activation.service.drv
+  /nix/store/r1lxvy6kr52j63hfg8819csb36fis1d4-unit-speech-dispatcher.socket.drv
+  /nix/store/sk34n8x9brr6yjxrh7v6llj3szmk1050-unit-gcr-ssh-agent.service.drv
+  /nix/store/vpcyk6qdfvprqdxyzrjg9m26yf6hkjq6-unit-dbus-broker.service.drv
+  /nix/store/y0pxj0p0af8nv7slh2j5hxysgkdcww9a-unit-pipewire-pulse.socket.drv
+  /nix/store/ipvng2mpfbn7d9r72zj5dks93dc56y6h-user-units.drv
+  /nix/store/j4x071xzxvf8i02jwlcm5kw2pbh3fxrk-polkitd.conf.drv
+  /nix/store/kkqd15vc69pygrbg4jkrkdk4fj9vb952-etc-zshrc.drv
+  /nix/store/lyscw4fj5kavq95jy3q6mcwcf2l5mffq-etc-systemd-system.conf.drv
+  /nix/store/mpk04ifqd3g1zcgi4i2p1j79p0agcy2f-etc-hostname.drv
+  /nix/store/vd0m517i8hj33386ib2j070dqg81gi3q-hwdb.bin.drv
+  /nix/store/xyf4rnl1vbdlx9q8gs3jwvsbdq9wmqbz-systemd-generator-environment.json.drv
+  /nix/store/yhax4zhhc2xys879w1a35899c5c1jipm-user-generators.drv
+  /nix/store/w4radnasyppr6aci32686f9lgdi43jal-etc.drv
+  /nix/store/sza23170scld3k89xfq295f8qbyb2zdr-activate.drv
+  /nix/store/ing1a2b5nkbz9gc6jj6a9zj5vin2cwga-nixos-system-Luana-X670E-26.11.20261020.02c087f.drv
 these 624 paths will be fetched (2.6 GiB download, 7.7 GiB unpacked):
   /nix/store/rcvxralcd4aygkxgr137k39601pmqkxj-02b704c5cf2e73d227fbb5be151501b232b0e5f2.patch?full_index=1
   /nix/store/q073znh6lcdxa38irikxbb99yhvqsjhc-07ccce23cf7fe3c84e13d810accff672b1d966bf.patch
@@ -1154,8 +1154,8 @@ copying path '/nix/store/hd420k5pn83qxgzrzqwczlvym47np02r-mangohud-0.8.4-doc' fr
 copying path '/nix/store/0mfmwlq9rxdzfabnqw6w4q1clr0dizk3-mangohud-0.8.4-man' from 'https://cache.nixos.org'...
 copying path '/nix/store/7sw62nmlgqmbylchd6knq1h5fvvxfk3a-network-manager-applet-1.36.0-man' from 'https://cache.nixos.org'...
 copying path '/nix/store/zjb7aiywrcgyd46zfi0lnls1493kpqib-niri-26.04-doc' from 'https://cache.nixos.org'...
-copying path '/nix/store/r7cqj279n9pbrhbrjkjw55q23wfnsls1-ntfs3g-2026.9.28-doc' from 'https://cache.nixos.org'...
 copying path '/nix/store/p19x62fcqqxiilkgqrl7h4yykvxhd66n-ntfs3g-2026.9.28-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/r7cqj279n9pbrhbrjkjw55q23wfnsls1-ntfs3g-2026.9.28-doc' from 'https://cache.nixos.org'...
 copying path '/nix/store/kljd9cvs87jw2m7x7ymrs1wagmhgl9n8-phinger-cursors-2.2' from 'https://cache.nixos.org'...
 copying path '/nix/store/y0p7vd8yb65csf6xalbi3r6ccrrg1qbr-python3.14-3.14.8-doc' from 'https://cache.nixos.org'...
 copying path '/nix/store/z9klbmpm5y58yn603vfmszy1xcgjf6n3-qemu-host-cpu-only-11.1.2-doc' from 'https://cache.nixos.org'...
@@ -1163,25 +1163,26 @@ copying path '/nix/store/0z25nmba7a496fb59lmgpmw4j58w3li1-sg3_utils-1.49-man' fr
 building '/nix/store/5z3qhd0gz90ylhn5454692lfm6ab8kip-ensure-wrapper-integrity.drv'...
 building '/nix/store/y0x31p9rh4gzn5r9hv6951csfv86mrx1-linux-7.3-modules.drv'...
 copying path '/nix/store/rcvxralcd4aygkxgr137k39601pmqkxj-02b704c5cf2e73d227fbb5be151501b232b0e5f2.patch?full_index=1' from 'https://cache.nixos.org'...
-copying path '/nix/store/q073znh6lcdxa38irikxbb99yhvqsjhc-07ccce23cf7fe3c84e13d810accff672b1d966bf.patch' from 'https://cache.nixos.org'...
-copying path '/nix/store/nx69ll8cq1lianmh4g321pc0i3g0qgdv-Fluid-3' from 'https://cache.nixos.org'...
-copying path '/nix/store/xpjhy9s6l6pnpn8ps9lwafhnlk6vn6lj-OVMF-202608-fd' from 'https://cache.nixos.org'...
-copying path '/nix/store/lh87njz3779arzz5bhg3xrmdkwdqaaih-OVMF-xen-202608-fd' from 'https://cache.nixos.org'...
 copying path '/nix/store/axx3bwn5psi9ifv5j6cazjz81wxy31xl-432514bf839e7280511e4a7afc35fb4868ef4d0b.patch' from 'https://cache.nixos.org'...
-copying path '/nix/store/g42c1dp0vdym9yw88kiwxgvlzza0fp0w-all-plugins' from 'https://cache.nixos.org'...
 copying path '/nix/store/msp491x3wyj18mvhmnnxmws8fpzihrbn-OVMF-202608-fd' from 'https://cache.nixos.org'...
+copying path '/nix/store/q073znh6lcdxa38irikxbb99yhvqsjhc-07ccce23cf7fe3c84e13d810accff672b1d966bf.patch' from 'https://cache.nixos.org'...
+copying path '/nix/store/xpjhy9s6l6pnpn8ps9lwafhnlk6vn6lj-OVMF-202608-fd' from 'https://cache.nixos.org'...
+copying path '/nix/store/nx69ll8cq1lianmh4g321pc0i3g0qgdv-Fluid-3' from 'https://cache.nixos.org'...
+copying path '/nix/store/g42c1dp0vdym9yw88kiwxgvlzza0fp0w-all-plugins' from 'https://cache.nixos.org'...
 copying path '/nix/store/m7jckdpzx0pg368b6sr4j43i795g08k0-appstream-1.1.3-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/lh87njz3779arzz5bhg3xrmdkwdqaaih-OVMF-xen-202608-fd' from 'https://cache.nixos.org'...
 copying path '/nix/store/0w16cdl08sgbq4wxyvrvs201vj1k4k9q-aribb24-1.0.4' from 'https://cache.nixos.org'...
-copying path '/nix/store/ld2f5rmnwh6phfw999qx8rq7gv75lb2w-asio-1.38.0' from 'https://cache.nixos.org'...
-copying path '/nix/store/mmvljr1swinz20idribg8wr29dsn8cqb-apr-1.7.6' from 'https://cache.nixos.org'...
 copying path '/nix/store/2xsk4sw7q2flx659ldr34qhwwx2r3f5d-attica-6.31.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/mmvljr1swinz20idribg8wr29dsn8cqb-apr-1.7.6' from 'https://cache.nixos.org'...
+copying path '/nix/store/ld2f5rmnwh6phfw999qx8rq7gv75lb2w-asio-1.38.0' from 'https://cache.nixos.org'...
 copying path '/nix/store/0glzl7j4ary5qiq9fgnrrkh0i2kxa15f-avisynthplus-3.7.5' from 'https://cache.nixos.org'...
 copying path '/nix/store/8d6xpjjvq1pnc8dcsnkwfnappcb4z677-ayatana-ido-0.10.4' from 'https://cache.nixos.org'...
 copying path '/nix/store/nsg1qckcq8pqznhify6n6xhvz83nf4pv-bamf-0.5.6' from 'https://cache.nixos.org'...
 copying path '/nix/store/qnj2nyps1g98vby6bm4rg2xdz5zd33kn-bind-9.20.29-dnsutils' from 'https://cache.nixos.org'...
-copying path '/nix/store/5668phgkjgi79jcv08fkksb4w1zys451-black_hud.tar.gz' from 'https://cache.nixos.org'...
-copying path '/nix/store/yh88zby9jhq5bmmlm1rshhc4vdxcljiy-bolt-0.9.8' from 'https://cache.nixos.org'...
 copying path '/nix/store/1bv7i7dflmj8m9jvmvjz31bqi3662wbd-boost-1.86.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/5668phgkjgi79jcv08fkksb4w1zys451-black_hud.tar.gz' from 'https://cache.nixos.org'...
+copying path '/nix/store/jb1hsh7avhxv9qbslq77bbdpggrfn7g6-boost-1.91.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/yh88zby9jhq5bmmlm1rshhc4vdxcljiy-bolt-0.9.8' from 'https://cache.nixos.org'...
 error: Cannot build '/nix/store/y0x31p9rh4gzn5r9hv6951csfv86mrx1-linux-7.3-modules.drv'.
        Reason: builder failed with exit code 25.
        Output paths:
@@ -1197,8 +1198,8 @@ error: Cannot build '/nix/store/y0x31p9rh4gzn5r9hv6951csfv86mrx1-linux-7.3-modul
          nix log /nix/store/y0x31p9rh4gzn5r9hv6951csfv86mrx1-linux-7.3-modules.drv
 building '/nix/store/zfsvyfl10c9spv167bzpxv1hlkgjh71b-9bd0a9faeede3d8366a10bcfaac28b92fd393b03.patch.drv'...
 building '/nix/store/3x6p4ak5jh2gc08ais4r31wky78bpi7a-NetworkManager.conf.drv'...
-error: Cannot build '/nix/store/f9agad0id4rjbygvpvvh1ni78s1828ih-nixos-system-Luana-X670E-26.11.20261020.02c087f.drv'.
+error: Cannot build '/nix/store/ing1a2b5nkbz9gc6jj6a9zj5vin2cwga-nixos-system-Luana-X670E-26.11.20261020.02c087f.drv'.
        Reason: 1 dependency failed.
        Output paths:
-         /nix/store/f3xqpkz2h778qdfwxfas8q1yisvzriak-nixos-system-Luana-X670E-26.11.20261020.02c087f
+         /nix/store/9nkiq62yzi2lfb7s52jkkb7f152jjb14-nixos-system-Luana-X670E-26.11.20261020.02c087f
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

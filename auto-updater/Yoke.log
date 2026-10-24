@@ -100,6 +100,6 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `services.nextcloud.config.adminpassFile' in `/nix/store/8rzi6mplfk5zan7xi7j0dl2v7cay7c1m-source/Yoke/services/nextcloud.nix' no longer has any effect; please remove it.
+       - The option definition `services.nextcloud.config.adminpassFile' in `/nix/store/n6lymyplqvz1npwrhlvym7qr0bclqfr2-source/Yoke/services/nextcloud.nix' no longer has any effect; please remove it.
        To create an admin user after the installation, use nextcloud-occ user:add <username> and nextcloud-occ group:adduser admin <username>.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Yoke".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

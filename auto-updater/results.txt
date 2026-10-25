@@ -1,10 +1,10 @@
-bot: Auto Update (5 Failures, 3 Succeeded)
+bot: Auto Update (8 Failures, 0 Succeeded)
 
 Fabricator: FAIL
 Luana-Legion-5: FAIL
 Luana-X670E: FAIL
 Yoke: FAIL
 ilbl-dash: FAIL
-oraclevps: SUCCESS
-Luana-Fairphone6: SUCCESS
-luana-note9s: SUCCESS
+oraclevps: FAIL
+Luana-Fairphone6: FAIL
+luana-note9s: FAIL

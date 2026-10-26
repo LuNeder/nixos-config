@@ -100,6 +100,6 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `boot.initrd.systemd.enable' in `/nix/store/mv7yjirnsy3s8xbnz74wrpvsfz3wfb3k-source/Luana-X670E/configuration.nix' no longer has any effect; please remove it.
+       - The option definition `boot.initrd.systemd.enable' in `/nix/store/vdq95a6xn1bgnq4rxr9wp64c793s3ikx-source/Luana-X670E/configuration.nix' no longer has any effect; please remove it.
        Scripted initrd has been removed.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-X670E".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

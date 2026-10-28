@@ -12,7 +12,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 272 ms (attempt 1/5)
+</html>; retrying in 336 ms (attempt 1/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -23,7 +23,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 595 ms (attempt 2/5)
+</html>; retrying in 656 ms (attempt 2/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -34,7 +34,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 1122 ms (attempt 3/5)
+</html>; retrying in 1159 ms (attempt 3/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -45,7 +45,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 2713 ms (attempt 4/5)
+</html>; retrying in 2156 ms (attempt 4/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
          response body:
@@ -57,7 +57,7 @@ warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': H
          <hr><center>nginx</center>
          </body>
          </html>
-these 202 derivations will be built:
+these 205 derivations will be built:
   /nix/store/00pa4s1fqzyf14i81jy35gy745clqdar-unit-sockets.target.drv
   /nix/store/0b0kl40xf8qaigq8c6ji426y3ka9nrkc-ensure-wrapper-integrity.drv
   /nix/store/0cd8hvzyxv7hw2597s6jdk4hvzqcbk6p-initrd-nixos.conf.drv
@@ -88,63 +88,72 @@ these 202 derivations will be built:
   /nix/store/c0qb9wgscqyjpssnwcra47g3iz34jn4q-unit-script-linger-users-start.drv
   /nix/store/0mc22gwrzmala8azbn79hr7615a48hp5-unit-linger-users.service.drv
   /nix/store/1i3g6q39qzxmigza83p5j7lz3prhvbb4-nixos-generate-config.drv
-  /nix/store/6wmc5d4nd96krg02z56x5wxm1q09dhiz-nixos-manual.desktop.drv
-  /nix/store/ml8czn9w3j29lip8c1j4x790d80vk5fi-nixos-help.drv
-  /nix/store/r7d24s79a2al426irsx5z2zzw807glcj-nixos-help.drv
-  /nix/store/sd7dlln3mpc6sj45np7y5hhdsm3fc8j9-nixos-version.drv
-  /nix/store/0zc7kyshkr3ls2kfqvqncpxfy8mn6lgg-system-path.drv
-  /nix/store/9q5rl70f299v08vizkxgxd8ih8hpcnia-dbus-1.drv
-  /nix/store/zgafsihp9ghd6fnscrk8ksiw5ya36mpj-X-Restart-Triggers-dbus-broker.drv
-  /nix/store/g5nzhwnl9qi7k8lg7m10sc2y660hnzgv-unit-dbus-broker.service.drv
-  /nix/store/pwwhhavwqpqnwrg6gp75i50fvpi7dhy1-unit-systemd-tmpfiles-setup.service.drv
-  /nix/store/ra8bf3fb8irbq3mjz2bkdah2mn97g38g-unit-dbus.service.drv
-  /nix/store/2fy98qsmicxwir37vcmh7jwmfv2cvh0p-unit-script-nixos-activation-start.drv
-  /nix/store/wmbs95jwy5akahimgdapwclrv7ag8p9x-unit-nixos-activation.service.drv
-  /nix/store/1c4ayw525bi89sn6r8wz5mm5cppwl8w1-user-units.drv
   /nix/store/1jfqjk4q2675b4ap0zw2kkahn1wy4ln7-unit-modprobe-.service.drv
   /nix/store/1lc8v6fwmb96lx7ckg0vxwnhdvdlc3hw-unit-script-acme-order-renew-cryptpad.rp.sereia.gay-start.drv
   /nix/store/1s4i654aksig78xsa3my715bpvrjbcam-udev-path.drv
   /nix/store/1ws93aixsld3521n0rzs7nb9kwi8nxxw-unit-script-acme-photos.rp.sereia.gay-start.drv
   /nix/store/20mi6f500x4xkqzzw99xvx9n88sdp91b-initrd-passwd.drv
+  /nix/store/2fy98qsmicxwir37vcmh7jwmfv2cvh0p-unit-script-nixos-activation-start.drv
   /nix/store/qfggjsawbr95gs0fmqfsy3k7yxjga7i4-udev-rules.drv
   /nix/store/2jf8cnpvrwdbnj3i2k6r4l92vfryfn4x-X-Restart-Triggers-systemd-udevd.drv
   /nix/store/2m1f979vf9palm654yayf41ngy99f4jx-unit-systemd-user-sessions.service.drv
   /nix/store/2pmkaq1s5gnd9fpngb5ykd2hb2nrg669-initrd-group.drv
-  /nix/store/86zxrnfb2za8155m0rkv8spams2zcq02-systemd-generator-environment.json.drv
-  /nix/store/c6867nl69fgs1y68rbjikfmvii4k8qa7-etc-ssh-ssh_config.drv
-  /nix/store/f36ql99difqkb2g75brs45my2x9rcdyi-issue.drv
-  /nix/store/gcj34h90qafiac4m9irn4phnhsmkmrq0-nix.conf.drv
-  /nix/store/c3nqx0rj1cbzsgwfdinlrg7sm6vlla5m-sshd.conf-settings.drv
-  /nix/store/grb2sxbggrmfdmqjwwr3vnvj6ywvrfrx-sshd.conf-final.drv
-  /nix/store/rhmzz3ma5471xpgrrvwrcyk3d2nbn5v2-nixos-tmpfiles.d.drv
-  /nix/store/jajlvmm8jambk0ri0w3xy2mxnrmzmjrj-tmpfiles.d.drv
-  /nix/store/784v1wr5khd9a81r3i840nwq2ir9r9sf-sudoers-in.drv
-  /nix/store/kxak0iqzyixfl1j2m4b8z8r91gns14ig-sudoers.drv
-  /nix/store/7qhh4hbswp3fc0849lhy0pp99imv1hsb-cacert-blocklist.txt.drv
-  /nix/store/v95pkribkbchbpxyi5v6gdpp7pxfbjqc-cacert-extra-certificates-bundle.crt.drv
-  /nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv
-  /nix/store/4cly778hva8hf08grv0il2g1szgj34kq-font-dirs.drv
-  /nix/store/3xjw10banza4rjhndqmadz3fv34jm1k5-fc-cache.drv
-  /nix/store/wnr0vda7bkpaggmhy1fb2dwlp4w1vcs5-fc-00-nixos-cache.conf.drv
-  /nix/store/sc7llsgpxhcls6n5qfrxmp2agg4vjrx4-fontconfig-conf.drv
-  /nix/store/q43l3d904xkd0d59cb6k1za3c1sajz8z-fontconfig-etc.drv
-  /nix/store/ra4dli0q0r9yy85h582m7k7dz34r4rs7-user-generators.drv
-  /nix/store/rarjiiyij684ly7aby217vf2bdlzfplj-system-generators.drv
-  /nix/store/rq90y6w7fkgdl8a039aknrqmrg54xg7f-etc-systemd-system.conf.drv
-  /nix/store/sp7jjc3av627m0jb662bdckgsxmlwlyp-etc-nanorc.drv
-  /nix/store/sr9w9avaaa63yz1cyg8iqc5p51bpvwzx-etc-os-release.drv
   /nix/store/2yqdmpbykvm8xplja28hh56iivn3whi7-unit-acme-setup.service.drv
   /nix/store/378krfh8p8pdzg2xfm5sfg288204cvpd-unit-systemd-nspawn-.service.drv
+  /nix/store/3h72d0cbzi25mygrgf63vfz3mknjv0rh-initrd-hostname.drv
+  /nix/store/4cly778hva8hf08grv0il2g1szgj34kq-font-dirs.drv
+  /nix/store/3xjw10banza4rjhndqmadz3fv34jm1k5-fc-cache.drv
   /nix/store/3y1v188qdqik0w2x8dxx65q5m3yx43w1-unit-container-getty-.service.drv
   /nix/store/411zmch3w6q2y8fj800drpsjmj10brzy-unit-console-getty.service-disabled.drv
+  /nix/store/467i8vzvisrbn139cz9c6pn5l2gi8446-initrd-system.conf.drv
+  /nix/store/6axz7074r47rdhnrd7w3jil2y52dddlj-initrd-shells.drv
+  /nix/store/78ilgzmbmd6nymq9a98s2ri9bql7kc76-dbus-1.drv
+  /nix/store/k0n1fhmf589bda8rv14y9757l0lhz7f6-initrd-shadow.drv
+  /nix/store/k9waaxyv6askaahhwyfz4pgzqrs3dr7y-initrd-bin-env.drv
+  /nix/store/naz61inbnzb5awzpflybnpp63c3fr2q6-linux-6.18.59-modules.drv
+  /nix/store/wsmgyn1cidx8c7xqfpcv8w1winaaq401-nuke-refs.drv
+  /nix/store/lq7380m1aijyqk4b791fprv3v82dxmgi-linux-6.18.59-modules-shrunk.drv
+  /nix/store/95xlzhrd9rfb4bij1c0439ic4d9xf6dh-initrd-udev-rules.drv
+  /nix/store/lr6w9zy1icaj1wla2gcs2h7ibhc1a0nn-initrd-udev-rules.drv
+  /nix/store/w4dqk943xbjcjn1l9ybk2bfyjik0l13a-initrd-release.drv
+  /nix/store/y08r0979pk2qimjbkhv2kz61nqwsmsjs-initrd-unit-env.drv
+  /nix/store/j84d50pxlkxni293sxv663fwnzmb78w8-initrd-linux-6.18.59.drv
+  /nix/store/5ar0lhsbwhpc496s8jx13945gnfdi9cp-boot.json.drv
+  /nix/store/n0cnmag70jmjd8xan5yj1nllpy3p0q5f-grub-config.xml.drv
+  /nix/store/q7d2y71kv4nm655m9a6qbyvkqiy732iq-install-grub.pl.drv
+  /nix/store/65jaaspz0qhhnpv6rxijfbj38fc2dcip-install-grub.sh.drv
+  /nix/store/aik54pgx7likj1xlbcvvm2gvn94b9pd6-nixos-version.drv
+  /nix/store/6wmc5d4nd96krg02z56x5wxm1q09dhiz-nixos-manual.desktop.drv
+  /nix/store/zx055jm29xhhka03i733dr1gh4mgvklj-nixos-help.drv
+  /nix/store/lr1vnnmdfws7c11hksidwsabwjy7zxir-nixos-help.drv
+  /nix/store/76298l0ny1y9c43gfv7zwxzrvsmxjv7m-system-path.drv
+  /nix/store/c3nqx0rj1cbzsgwfdinlrg7sm6vlla5m-sshd.conf-settings.drv
+  /nix/store/grb2sxbggrmfdmqjwwr3vnvj6ywvrfrx-sshd.conf-final.drv
+  /nix/store/aaxrp4a0ikyn18a7ngi106r5ms4w1kqb-check-sshd-config.drv
+  /nix/store/5b1rm8a55ycc0zg1vvnn5gl4yzzc9jyr-issue.drv
+  /nix/store/86zxrnfb2za8155m0rkv8spams2zcq02-systemd-generator-environment.json.drv
+  /nix/store/8xvwaa5264h9n4a4bb1c6xdj6wz3qxxj-dbus-1.drv
+  /nix/store/c1bv7bnwkj5mz2lrcxwmk3id3w2idlfx-nginx.conf.drv
+  /nix/store/c6867nl69fgs1y68rbjikfmvii4k8qa7-etc-ssh-ssh_config.drv
+  /nix/store/gcj34h90qafiac4m9irn4phnhsmkmrq0-nix.conf.drv
+  /nix/store/h14lybxds1sl44ddyb1iziy42bjz1vcs-etc-os-release.drv
+  /nix/store/pwwhhavwqpqnwrg6gp75i50fvpi7dhy1-unit-systemd-tmpfiles-setup.service.drv
+  /nix/store/ra8bf3fb8irbq3mjz2bkdah2mn97g38g-unit-dbus.service.drv
+  /nix/store/7230s0vqrpggshb62mc967i4cy0bf19d-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/vvjrs03mq77yasl2cxa94f9m7xqmzh2c-unit-dbus-broker.service.drv
+  /nix/store/wmbs95jwy5akahimgdapwclrv7ag8p9x-unit-nixos-activation.service.drv
+  /nix/store/hn2fqh4733bfbcrarpnl6xzm8cxaf97x-user-units.drv
   /nix/store/ns8iv0a8p225alz8jn7xnmcc2l8fpnfb-unit-script-acme-order-renew-sandbox.cryptpad.rp.sereia.gay-start.drv
   /nix/store/4g99mb6y8x6dx9im44wc866lx5py79zg-unit-acme-order-renew-sandbox.cryptpad.rp.sereia.gay.service.drv
   /nix/store/56lzgx4bvjsf5248nl2bn8yn3jbcv0j7-unit-kmod-static-nodes.service.drv
+  /nix/store/rhmzz3ma5471xpgrrvwrcyk3d2nbn5v2-nixos-tmpfiles.d.drv
+  /nix/store/jajlvmm8jambk0ri0w3xy2mxnrmzmjrj-tmpfiles.d.drv
   /nix/store/vyfvpx63hsy6lp96x98wqh3hikqmm87l-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
   /nix/store/5icprdk8y39k4id8b5fjabc13j6p99bg-unit-systemd-tmpfiles-resetup.service.drv
+  /nix/store/pn094w9482m0ri7gp06hf8fpr0j5z7fx-X-Restart-Triggers-nginx-config-reload.drv
+  /nix/store/5kambakfb2vxia5lsnlm3nyj6qmjwcqg-unit-nginx-config-reload.service.drv
   /nix/store/axa5yv3ls28r1pim3w9s9mdxf15gsig5-unit-script-acme-order-renew-agenda.rp.sereia.gay-start.drv
   /nix/store/62jrfynvbgvwh8mcxjaf94mg2i3mzp87-unit-acme-order-renew-agenda.rp.sereia.gay.service.drv
-  /nix/store/6cl22llskp35f912bs27gsrpczn741h2-unit-immich-public-proxy.service.drv
   /nix/store/6lhps111sm7svr9ayxq2h4654qsf5p60-unit-systemd-pstore.service.drv
   /nix/store/6zfcywwhrb0864jsaj8fzi611iw3nxjx-unit-systemd-zram-setup-.service.drv
   /nix/store/76bgdz160jca3klc9vjfcp6nsl5yni04-unit-systemd-pcrlogin-.service.drv
@@ -153,8 +162,8 @@ these 202 derivations will be built:
   /nix/store/48vvm4hk9ch19f8mlcksjfnpph90cn44-X-Restart-Triggers-sshd.drv
   /nix/store/819wfga3jjx22w0wh6vz7zz0xjlwaq1j-unit-sshd.service.drv
   /nix/store/839jb3rci4zikvasxw6bgrmrj3ww6cqv-unit-systemd-udevd.service.drv
-  /nix/store/bm4day0pw1zx2cj80lkg0ipld7p41z4y-shutdown-ramfs-contents.json.drv
-  /nix/store/974vzlsw4w82w55x1mb2r1ja45s5zyha-unit-generate-shutdown-ramfs.service.drv
+  /nix/store/m94l4wbw0agzkbwdp0p5nnhyxwg1k04y-unit-script-nginx-pre-start.drv
+  /nix/store/98hp1ykaipfqkrzwq4njxz6hsgna8pny-unit-nginx.service.drv
   /nix/store/9qabsg44q5gq8qivmywfyxmryqcrkpq1-unit-xfs_scrub_all.service.drv
   /nix/store/xvr8vnww8mvwsnacn7rgpgfyzmxxlnvl-etc-sysctl.d-60-nixos.conf.drv
   /nix/store/rb0qgf0ndkwq931jrw1m4h9zm2f7f008-X-Restart-Triggers-systemd-sysctl.drv
@@ -187,20 +196,23 @@ these 202 derivations will be built:
   /nix/store/g3lmbfqpkf86r9m88qdqfh7r9flzpcvg-unit-systemd-importd.service.drv
   /nix/store/gipvdmzrx9wga5ivfnmhr5mbxl39rzdz-unit-sshd-.service.drv
   /nix/store/gn3r40nnb8zp91f3gjnkrmhv77mqpprv-unit-systemd-journald-.service.drv
+  /nix/store/hqbwp624dypkj4c02068daka1a1n9mnn-shutdown-ramfs-contents.json.drv
+  /nix/store/gpk10fpjnwyddqk5sya69sirn21nm58a-unit-generate-shutdown-ramfs.service.drv
   /nix/store/gxn85v2s1a0wvmm01wnbik677mflv6x3-unit-reload-systemd-vconsole-setup.service.drv
   /nix/store/gxnzn4jbzs7w3i7d6cv4z0b69msypxi0-unit-sleep-actions.service.drv
   /nix/store/h0l8mn7dc5pyf5prxw7q1wv79p0zx3fb-unit-getty-.service.drv
   /nix/store/hc91xkin46m3ipyw2w3ipxfin8vjrwpl-unit-network-local-commands.service.drv
-  /nix/store/hr2zx2k42csgn9bw6ar6mz5msskw0qym-unit-nginx-config-reload.service.drv
   /nix/store/hz0n3p1cw50v3zcb72n4jb4mcpbaacq5-unit-systemd-timesyncd.service.drv
   /nix/store/mgldyrj4pnaz6xif8ld3n5yyzyhp98r4-unit-script-acme-order-renew-ask.rp.sereia.gay-start.drv
   /nix/store/ig5s6gi8jjhms92sy8w20hnrinvnyxxw-unit-acme-order-renew-ask.rp.sereia.gay.service.drv
+  /nix/store/ixzgh5vyniy6z2xrn7v36prmgdnibsac-unit-immich-public-proxy.service.drv
   /nix/store/j589mk3cklslxp21z89cgsv8idv79ic7-unit-systemd-modules-load.service.drv
   /nix/store/bpkwzdc35fsggdvz0ch0w5ikqhf3plf6-X-Restart-Triggers-acme-sandbox.cryptpad.rp.sereia.gay.drv
   /nix/store/h3ia2v6f2f1307qbm0bwp0ak77qbcqp3-unit-script-acme-sandbox.cryptpad.rp.sereia.gay-start.drv
   /nix/store/jb4qd0kj04d0rgi8dwp3f02vgbl9nzr0-unit-acme-sandbox.cryptpad.rp.sereia.gay.service.drv
   /nix/store/hy27h4vc6m04a817sbrrfrwkwsiyi3h1-unit-script-nix-gc-start.drv
   /nix/store/jncpl051da5sg9iggsbg3zazwck9nqnb-unit-nix-gc.service.drv
+  /nix/store/k0c03yqls7map0amj6c5xqfv43v9cvpb-unit-dbus-broker.service.drv
   /nix/store/kb140pr7f1kx0pa3ycrf9qr5b0pl0br0-unit-serial-getty-.service.drv
   /nix/store/kgw4yzv05m4dbjwb3lsqhldmqmfagwrf-unit-user-runtime-dir-.service.drv
   /nix/store/nkcg03d2i8yid6kj6790yhr283y52g0m-unit-script-acme-order-renew-photos.rp.sereia.gay-start.drv
@@ -214,13 +226,14 @@ these 202 derivations will be built:
   /nix/store/gyqvxdg4f5mijgbh8m1wxv3xw110arph-security-wrapper-utempter-x86_64-unknown-linux-musl.drv
   /nix/store/ygqk6iaak45y1m1s5dyl47f06h2z89mh-unit-script-suid-sgid-wrappers-start.drv
   /nix/store/pnip5cf9jzjgl96ymrb8lr248w57m4vj-unit-suid-sgid-wrappers.service.drv
-  /nix/store/pyhxwzh70ipifq3njh5l7nhfligxpcfn-unit-dbus-broker.service.drv
-  /nix/store/qn1kq6y6swmlxxsdzsyw31ihh25wpv9j-unit-nginx.service.drv
   /nix/store/rbgkcapd5m8cn0vs6ncmxw6lyc6lgd4h-unit-lastlog2-import.service.drv
   /nix/store/rvh0ig5cf2f0jm2nl9m1qxq1mn3n9x54-unit-systemd-oomd.service.drv
   /nix/store/rxw5ramcwxig6nr302ahnjnyymygkgfx-unit-tailscaled.service.drv
   /nix/store/cvqbjnar9lpsiqz69x40knmq63q94py1-unit-script-acme-order-renew-vanilla-map.rp.sereia.gay-start.drv
   /nix/store/sk5wac4pfhxz4yhrr93sy6a2gcxpqkdh-unit-acme-order-renew-vanilla-map.rp.sereia.gay.service.drv
+  /nix/store/7qhh4hbswp3fc0849lhy0pp99imv1hsb-cacert-blocklist.txt.drv
+  /nix/store/v95pkribkbchbpxyi5v6gdpp7pxfbjqc-cacert-extra-certificates-bundle.crt.drv
+  /nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv
   /nix/store/wv6rhgzwnrblrrkb5d81a0g33w8838y7-X-Restart-Triggers-nix-daemon.drv
   /nix/store/smsaciavrdfr4ipa4kkyvcj1nk3vgb42-unit-nix-daemon.service.drv
   /nix/store/p4nm1b8a2krn80811dfc3h5zzbfbcv2v-X-Restart-Triggers-acme-vanilla-map.rp.sereia.gay.drv
@@ -231,37 +244,27 @@ these 202 derivations will be built:
   /nix/store/x6kz4fgcigp2nbqq2jvfxnfg4fs3xc5r-unit-post-boot.service.drv
   /nix/store/x8qpkkn4q9whvds706lgmsxhmljmx348-unit-firewall.service.drv
   /nix/store/z6wav8glbdqhq5n8fxkian36q1d9bm5s-unit-systemd-logind.service.drv
-  /nix/store/sznvfdgyj3q63iy5cfxfb67fp48al7ln-system-units.drv
+  /nix/store/j9335qlm9ijb53mvx66rpg3ns15cyh2a-system-units.drv
+  /nix/store/784v1wr5khd9a81r3i840nwq2ir9r9sf-sudoers-in.drv
+  /nix/store/kxak0iqzyixfl1j2m4b8z8r91gns14ig-sudoers.drv
+  /nix/store/wnr0vda7bkpaggmhy1fb2dwlp4w1vcs5-fc-00-nixos-cache.conf.drv
+  /nix/store/sc7llsgpxhcls6n5qfrxmp2agg4vjrx4-fontconfig-conf.drv
+  /nix/store/q43l3d904xkd0d59cb6k1za3c1sajz8z-fontconfig-etc.drv
+  /nix/store/ra4dli0q0r9yy85h582m7k7dz34r4rs7-user-generators.drv
+  /nix/store/rarjiiyij684ly7aby217vf2bdlzfplj-system-generators.drv
+  /nix/store/rq90y6w7fkgdl8a039aknrqmrg54xg7f-etc-systemd-system.conf.drv
+  /nix/store/sp7jjc3av627m0jb662bdckgsxmlwlyp-etc-nanorc.drv
   /nix/store/7fv4v6r9rvl40yhqg0k8wld77y8kaj7f-systemd.drv
   /nix/store/vq9rrpf81x3iyz8m01sxblfmc3363brd-50-coredump.conf.drv
-  /nix/store/vvwd9m5w1sqk4hcspgg67a5anyckw0v8-etc-nix-registry.json.drv
+  /nix/store/wg4qw0gmbjv204jsi2fc7lrd9rfmaxsr-etc-nix-registry.json.drv
   /nix/store/y0axyi63vwxy5ldimbwhl3hrqlwrvxgz-system-shutdown.drv
-  /nix/store/i4qgj0qcqy1945sqa3cl7q84x3grb6zr-etc.drv
-  /nix/store/2v6g5a5inxxfhpylgvxa7vjmlh4gz8qg-activate.drv
-  /nix/store/3h72d0cbzi25mygrgf63vfz3mknjv0rh-initrd-hostname.drv
-  /nix/store/467i8vzvisrbn139cz9c6pn5l2gi8446-initrd-system.conf.drv
-  /nix/store/wsmgyn1cidx8c7xqfpcv8w1winaaq401-nuke-refs.drv
-  /nix/store/ykn3qbl9hb8zmvz9px4dij9qaxdcsf96-linux-6.18.58-modules.drv
-  /nix/store/56rdsa8iks6xr444iwwgdm1avnf1ssa0-linux-6.18.58-modules-shrunk.drv
-  /nix/store/n0cnmag70jmjd8xan5yj1nllpy3p0q5f-grub-config.xml.drv
-  /nix/store/q7d2y71kv4nm655m9a6qbyvkqiy732iq-install-grub.pl.drv
-  /nix/store/65jaaspz0qhhnpv6rxijfbj38fc2dcip-install-grub.sh.drv
-  /nix/store/6axz7074r47rdhnrd7w3jil2y52dddlj-initrd-shells.drv
-  /nix/store/78ilgzmbmd6nymq9a98s2ri9bql7kc76-dbus-1.drv
-  /nix/store/95xlzhrd9rfb4bij1c0439ic4d9xf6dh-initrd-udev-rules.drv
-  /nix/store/aaxrp4a0ikyn18a7ngi106r5ms4w1kqb-check-sshd-config.drv
-  /nix/store/k0n1fhmf589bda8rv14y9757l0lhz7f6-initrd-shadow.drv
-  /nix/store/k9waaxyv6askaahhwyfz4pgzqrs3dr7y-initrd-bin-env.drv
-  /nix/store/lr6w9zy1icaj1wla2gcs2h7ibhc1a0nn-initrd-udev-rules.drv
-  /nix/store/w4dqk943xbjcjn1l9ybk2bfyjik0l13a-initrd-release.drv
-  /nix/store/y08r0979pk2qimjbkhv2kz61nqwsmsjs-initrd-unit-env.drv
-  /nix/store/kcddsgdlfy2h7i5kjwj9ziz65dhs8wc4-initrd-linux-6.18.58.drv
-  /nix/store/iw2zmwq2yh9w3jlrrgaj0fqgjzg78j8c-boot.json.drv
+  /nix/store/q5cjl16vv0xl1g0k2a6pfwm2f921xaa2-etc.drv
+  /nix/store/bjxjrlwibffdfxgdfxc6938v9g4qldvj-activate.drv
   /nix/store/iy4f119c0lq4ici617lah40a7nc16gqm-dry-activate.drv
   /nix/store/kphvw0bdcd4vbg7jh80lipzh9gx749p5-stage-2-init.sh.drv
-  /nix/store/yn9ci42s6idz67asv5pbn8n64pp309bx-nixos-system-oraclevps-26.11.20261023.3ec6363.drv
-these 108 paths will be fetched (417.9 MiB download, 1.1 GiB unpacked):
-  /nix/store/v9yhaz0qaqfcgsz94phzpm6fzwr14l11-55-nixos-aslr-entropy.conf
+  /nix/store/48ap7s4kmwnqj64wby2gkb7n7s21p8kn-nixos-system-oraclevps-26.11.20261027.31ecbac.drv
+these 112 paths will be fetched (422.8 MiB download, 1.1 GiB unpacked):
+  /nix/store/cvw8ik6as0y6fvl1ijha8hpi4cx6lw1f-55-nixos-aslr-entropy.conf
   /nix/store/rsirylbsngzaviz78ybq77ayviyhls01-bcachefs-tools-1.39.7
   /nix/store/fbg6x15d1b0ss24vsak3zwr03m5h26kq-bind-9.20.30-host
   /nix/store/6braqk51zjsryv2kda3v8brrhib7xc4h-bind-9.20.30-lib
@@ -279,14 +282,14 @@ these 108 paths will be fetched (417.9 MiB download, 1.1 GiB unpacked):
   /nix/store/d2ngs25k1hmzxanxvw1iip47z6g4yk37-getconf-glibc-2.44-57
   /nix/store/xgw813vgzl2q0696sq45adpj0xd690jq-git-2.56.0
   /nix/store/mb5kkl4yar0i9m20f6bglah9l7a28fcs-git-2.56.0-doc
-  /nix/store/vchlinsq4xbf9iqap4pxjr8jv8nakqs5-git-lfs-3.8.0
+  /nix/store/11zj9zypq35gd8kmwhjvzs2rws3h4b66-git-lfs-3.8.1
   /nix/store/ddqbzpn77xmi900rj1a7wy8b5lbwm4ay-glib-2.88.3
   /nix/store/7a3ylwnsf0hslky4d26vip477dbmkpp5-glibc-2.44-57-source-unsecvars
   /nix/store/dqjgypp7nqwkiilwi3ylds7v73fi3a4m-grub-2.14
   /nix/store/jniwmlg4zv2r4baccllbizddnh1scfjr-grub-2.14
   /nix/store/r312130064xkgc9pr3q3lgmqs0bdfa8j-htop-3.5.3
   /nix/store/lk1w63fxq9xih9cm52fikyh7a9wfnbdr-htop-3.5.3-man
-  /nix/store/m5lr7pkb4k1bwiaa608sc7k4s3kmsjvp-immich-public-proxy-3.4.0
+  /nix/store/l96lzjngln2bkwxyz4kx7nrn5w83z3hg-immich-public-proxy-4.1.2
   /nix/store/x1pwsbz5cm23hk58b7fcpn3hhg9j7gwh-iproute2-7.2.0
   /nix/store/p94l5wd61513xiznacrydrjwn4c94xnf-iproute2-7.2.0-man
   /nix/store/f7kbjq8pbvjjdzx10nw81m5vs6ifik4p-iptables-1.8.13
@@ -303,8 +306,8 @@ these 108 paths will be fetched (417.9 MiB download, 1.1 GiB unpacked):
   /nix/store/mqlr3n6ip4vsz7dnjkbdgphzwgaq82sp-libressl-4.3.2-nc
   /nix/store/nvhwr5n4qckb9xvavyj8472d6x3xywiw-libutempter-1.2.3
   /nix/store/kklfkqxs03k6qm2y9cr6mjpk1s5jgrar-libxmu-1.3.1
-  /nix/store/82haph8j8hmbny68rzkis8dqrz9gqrr5-linux-6.18.58
-  /nix/store/jflgkfichnfpji6f381aigh71l5fkidb-linux-6.18.58-modules
+  /nix/store/y01zxghc3c4cfbm1vmzhm84a4xbq8z8a-linux-6.18.59
+  /nix/store/lz6m1yqd0s6i2rk69gi51zv431hjrmwk-linux-6.18.59-modules
   /nix/store/gaxk87chv6aga1dnh382ajqh3119k2qb-make-initrd-ng-0.1.0
   /nix/store/bffxhj1c1d70sgbcgpcmznj24icvvrxn-minica-1.1.0
   /nix/store/ym54xknd9plgi06bfkmyr5dhqjphig3n-mosh-1.4.0
@@ -315,20 +318,22 @@ these 108 paths will be fetched (417.9 MiB download, 1.1 GiB unpacked):
   /nix/store/7sv1939i2jx47yfvi65g4n0lz1xri7b7-nano-9.3-doc
   /nix/store/wygcwmwr500ci1afci730dqcwalha367-nano-9.3-info
   /nix/store/6cmh8syghnyay2m2lj8kn8ljfykkn0jz-nano-9.3-man
+  /nix/store/wqmz8xzv6dgzkmhqhc15kqnm6h3s9sr0-nginx-1.30.6
   /nix/store/3x16p9yylwijl4k8ba7bnidhkgbqasdx-nix-2.34.9
   /nix/store/91ybw7lxjjh4gmyk03l86gx14b8minr3-nix-2.34.9-doc
   /nix/store/sjs4d3fpw8lpvbyf5mmpwcrby2mk4fa8-nix-2.34.9-man
   /nix/store/bjl39ffp2fkbbg6r58a8g6v8zyfgs5la-nix-bash-completions-0.6.8
   /nix/store/x9dgp2fjr59gdh0bm0y0b790v6qdbqcd-nix-manual-2.34.9
   /nix/store/vbm8vjsvan6nmv6fsmrgvl3lyg0qn43a-nix-manual-2.34.9-man
-  /nix/store/z0cpy3jgz3yxjclw4apig3vzqdqnh7g4-nixos-configuration-reference-manpage
+  /nix/store/26xxdx55421z2ivn93mnw3vmfjkr31nd-nixos-configuration-reference-manpage
   /nix/store/lwqb9b52glp343aw0lx5j3qjyazzh49x-nixos-firewall-tool-26.11
   /nix/store/svafvg1wjs53sa6r03q2zsn34ahcnpiz-nixos-init-0.1.0
-  /nix/store/h5hhb58zri8bfwdcjrkn9p5vk8pw9dly-nixos-manual-html
+  /nix/store/sr7izgsnwv5ichslqlghw30im2xcx28k-nixos-manual-html
   /nix/store/6w31jxckdrnx221risqm89r1xgkn979x-nixos-option-26.11
   /nix/store/7dbpy71z609raq51wv5m226acm62ril3-nixos-rebuild-ng-26.11
   /nix/store/yw0bbhjxlcz5yzmwfi3pa2m8q96s5yav-nsncd-1.5.3
   /nix/store/h09znsj2n9hfacs46nj8kbqkg2inl30c-openssh-10.6p1-man
+  /nix/store/zs6n809bi8wq7fhq8l0cpaign9p3xz6c-openssl-4.1.0
   /nix/store/hh7c8ccdr56d5lnklfs405kfcljwd934-pam.d
   /nix/store/ryf0f1slr1ai54ppzm64w36lgxynwnjl-pre-switch-checks
   /nix/store/qf92cy1cbssd2lx1dwz1brrr7i2cmd4y-python3-3.14.8-env
@@ -349,6 +354,8 @@ these 108 paths will be fetched (417.9 MiB download, 1.1 GiB unpacked):
   /nix/store/53xkgkp73q794srzdiny9n5zv1jsljgd-shared-mime-info-2.5.1
   /nix/store/nmqvis52z28q1c4ajli2rybawxn8vqai-sops-3.13.3
   /nix/store/ya24g00hp1pwnyssh8hbpb6kbqmn8hny-stdenv-linux
+  /nix/store/a38b23fzz9429a0j4pkqmdzkr2cj46xx-strace-7.3
+  /nix/store/z51zm8sgwcxhfg0000zvllafzd7fxszy-strace-7.3-man
   /nix/store/d3n1h91xwh2dx55zdid5lq9zw1mmrd9k-stub-ld-x86_64-unknown-linux-musl
   /nix/store/ywm4hn4cgx2ngbnchbzgqbqr22qlqc74-switch-to-configuration-0.1.0
   /nix/store/6qqq5prql4952z0wfm5ymjfr7cx4ab7z-systemd-262
@@ -369,153 +376,142 @@ these 108 paths will be fetched (417.9 MiB download, 1.1 GiB unpacked):
   /nix/store/1cc46agy532z8lnwgk1i1kv4d0kavyv2-xfsprogs-7.1.1-doc
   /nix/store/h31vsjmy2i4lhxqap7lz5g39wc5kn2kv-xfsprogs-7.1.1-man
   /nix/store/fvj3i3vwp3cqh5h0v15438z0bd0ab63d-zram-generator-1.2.1
-copying path '/nix/store/82haph8j8hmbny68rzkis8dqrz9gqrr5-linux-6.18.58' from 'https://cache.nixos.org'...
+copying path '/nix/store/y01zxghc3c4cfbm1vmzhm84a4xbq8z8a-linux-6.18.59' from 'https://cache.nixos.org'...
 copying path '/nix/store/ryf0f1slr1ai54ppzm64w36lgxynwnjl-pre-switch-checks' from 'https://cache.nixos.org'...
 copying path '/nix/store/ywm4hn4cgx2ngbnchbzgqbqr22qlqc74-switch-to-configuration-0.1.0' from 'https://cache.nixos.org'...
-copying path '/nix/store/v9yhaz0qaqfcgsz94phzpm6fzwr14l11-55-nixos-aslr-entropy.conf' from 'https://cache.nixos.org'...
+copying path '/nix/store/cvw8ik6as0y6fvl1ijha8hpi4cx6lw1f-55-nixos-aslr-entropy.conf' from 'https://cache.nixos.org'...
 copying path '/nix/store/a6j4zma8igms42jqsdkn98wpizjs5mrs-bind-9.20.30-man' from 'https://cache.nixos.org'...
 copying path '/nix/store/gn4ach4k63ciav0nw0mjjdsfr9an0j6a-dbus-1.16.2-doc' from 'https://cache.nixos.org'...
 copying path '/nix/store/w3rq6xc8hnq9jkrh8v1v8s22jpc6fwnh-dbus-1.16.2-man' from 'https://cache.nixos.org'...
 copying path '/nix/store/mb5kkl4yar0i9m20f6bglah9l7a28fcs-git-2.56.0-doc' from 'https://cache.nixos.org'...
 copying path '/nix/store/lk1w63fxq9xih9cm52fikyh7a9wfnbdr-htop-3.5.3-man' from 'https://cache.nixos.org'...
 copying path '/nix/store/p94l5wd61513xiznacrydrjwn4c94xnf-iproute2-7.2.0-man' from 'https://cache.nixos.org'...
-copying path '/nix/store/s3hwjs7jpxh6q9960ycr0g885n8hs499-iputils-20250605-man' from 'https://cache.nixos.org'...
 copying path '/nix/store/1cvadiaz1jc7ykxdv4rnahvxgvmx722x-iptables-1.8.13-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/s3hwjs7jpxh6q9960ycr0g885n8hs499-iputils-20250605-man' from 'https://cache.nixos.org'...
 copying path '/nix/store/mm8rd5wckbwkxwr68h02xn70ycvnn31f-libcap-2.78-doc' from 'https://cache.nixos.org'...
 copying path '/nix/store/pnkhskbw0x1dscih2vhpkqvcqaff3j90-libcap-2.78-man' from 'https://cache.nixos.org'...
-copying path '/nix/store/jflgkfichnfpji6f381aigh71l5fkidb-linux-6.18.58-modules' from 'https://cache.nixos.org'...
 copying path '/nix/store/2pnbq3w65sm088p320ncx51s8mjhvaql-libressl-4.3.2-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/lz6m1yqd0s6i2rk69gi51zv431hjrmwk-linux-6.18.59-modules' from 'https://cache.nixos.org'...
 building '/nix/store/kphvw0bdcd4vbg7jh80lipzh9gx749p5-stage-2-init.sh.drv'...
 building '/nix/store/iy4f119c0lq4ici617lah40a7nc16gqm-dry-activate.drv'...
+copying path '/nix/store/cis3qxbpsfh0ppj31iyrzpyixfjgw9my-dejavu-fonts-minimal-2.37' from 'https://cache.nixos.org'...
 copying path '/nix/store/rsirylbsngzaviz78ybq77ayviyhls01-bcachefs-tools-1.39.7' from 'https://cache.nixos.org'...
 copying path '/nix/store/6braqk51zjsryv2kda3v8brrhib7xc4h-bind-9.20.30-lib' from 'https://cache.nixos.org'...
 copying path '/nix/store/wgm5fv4jg18f7r85hpx1w1a5jxpncb6n-btrfs-progs-7.1' from 'https://cache.nixos.org'...
-copying path '/nix/store/cis3qxbpsfh0ppj31iyrzpyixfjgw9my-dejavu-fonts-minimal-2.37' from 'https://cache.nixos.org'...
-copying path '/nix/store/ql4rcb89kkqh0bmryjiwnqzwskxss6df-flock-0.4.0' from 'https://cache.nixos.org'...
 copying path '/nix/store/d2ngs25k1hmzxanxvw1iip47z6g4yk37-getconf-glibc-2.44-57' from 'https://cache.nixos.org'...
-copying path '/nix/store/vchlinsq4xbf9iqap4pxjr8jv8nakqs5-git-lfs-3.8.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/11zj9zypq35gd8kmwhjvzs2rws3h4b66-git-lfs-3.8.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/ql4rcb89kkqh0bmryjiwnqzwskxss6df-flock-0.4.0' from 'https://cache.nixos.org'...
 copying path '/nix/store/ddqbzpn77xmi900rj1a7wy8b5lbwm4ay-glib-2.88.3' from 'https://cache.nixos.org'...
-copying path '/nix/store/7a3ylwnsf0hslky4d26vip477dbmkpp5-glibc-2.44-57-source-unsecvars' from 'https://cache.nixos.org'...
 copying path '/nix/store/dqjgypp7nqwkiilwi3ylds7v73fi3a4m-grub-2.14' from 'https://cache.nixos.org'...
+copying path '/nix/store/7a3ylwnsf0hslky4d26vip477dbmkpp5-glibc-2.44-57-source-unsecvars' from 'https://cache.nixos.org'...
 building '/nix/store/7qhh4hbswp3fc0849lhy0pp99imv1hsb-cacert-blocklist.txt.drv'...
-copying path '/nix/store/jniwmlg4zv2r4baccllbizddnh1scfjr-grub-2.14' from 'https://cache.nixos.org'...
 building '/nix/store/v95pkribkbchbpxyi5v6gdpp7pxfbjqc-cacert-extra-certificates-bundle.crt.drv'...
-copying path '/nix/store/r312130064xkgc9pr3q3lgmqs0bdfa8j-htop-3.5.3' from 'https://cache.nixos.org'...
-copying path '/nix/store/m5lr7pkb4k1bwiaa608sc7k4s3kmsjvp-immich-public-proxy-3.4.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/jniwmlg4zv2r4baccllbizddnh1scfjr-grub-2.14' from 'https://cache.nixos.org'...
+copying path '/nix/store/l96lzjngln2bkwxyz4kx7nrn5w83z3hg-immich-public-proxy-4.1.2' from 'https://cache.nixos.org'...
 copying path '/nix/store/01f6bh7xddsskg64jga99036nr100ndy-iptables-1.8.13-lib' from 'https://cache.nixos.org'...
-copying path '/nix/store/am01svaxc7kn9z70hxyanrhqpn2ignrz-iputils-20250605' from 'https://cache.nixos.org'...
+copying path '/nix/store/r312130064xkgc9pr3q3lgmqs0bdfa8j-htop-3.5.3' from 'https://cache.nixos.org'...
 building '/nix/store/scwj7q58g2wn1bp0sx5i8hayr3v1qw0p-X-Restart-Triggers-acme-agenda.rp.sereia.gay.drv'...
+copying path '/nix/store/am01svaxc7kn9z70hxyanrhqpn2ignrz-iputils-20250605' from 'https://cache.nixos.org'...
 building '/nix/store/z1n5dl3iy8qg35miwnr4gnpk2r61zpmd-X-Restart-Triggers-acme-ask.rp.sereia.gay.drv'...
 building '/nix/store/za2767zkhvqykmd8pddz3v36k2r45d75-X-Restart-Triggers-acme-cryptpad.rp.sereia.gay.drv'...
 building '/nix/store/s9720jhbd5msc2qs92a6k0x50lgbzvl2-X-Restart-Triggers-acme-photos.rp.sereia.gay.drv'...
 copying path '/nix/store/7vwn65sk3hhs2bmzrcwzrakfwf26gpa5-lego-5.5.1' from 'https://cache.nixos.org'...
+building '/nix/store/bpkwzdc35fsggdvz0ch0w5ikqhf3plf6-X-Restart-Triggers-acme-sandbox.cryptpad.rp.sereia.gay.drv'...
+building '/nix/store/p4nm1b8a2krn80811dfc3h5zzbfbcv2v-X-Restart-Triggers-acme-vanilla-map.rp.sereia.gay.drv'...
+copying path '/nix/store/wv3n2jd5f80wq4qiphhd4k6yrlv25p8q-fontconfig-2.18.3' from 'https://cache.nixos.org'...
 copying path '/nix/store/508d6bkgqkvq5z5hgdaswvspgck0ky4k-libressl-4.3.2' from 'https://cache.nixos.org'...
 copying path '/nix/store/nvhwr5n4qckb9xvavyj8472d6x3xywiw-libutempter-1.2.3' from 'https://cache.nixos.org'...
-building '/nix/store/bpkwzdc35fsggdvz0ch0w5ikqhf3plf6-X-Restart-Triggers-acme-sandbox.cryptpad.rp.sereia.gay.drv'...
-copying path '/nix/store/wv3n2jd5f80wq4qiphhd4k6yrlv25p8q-fontconfig-2.18.3' from 'https://cache.nixos.org'...
-building '/nix/store/p4nm1b8a2krn80811dfc3h5zzbfbcv2v-X-Restart-Triggers-acme-vanilla-map.rp.sereia.gay.drv'...
+building '/nix/store/wg4qw0gmbjv204jsi2fc7lrd9rfmaxsr-etc-nix-registry.json.drv'...
+building '/nix/store/h14lybxds1sl44ddyb1iziy42bjz1vcs-etc-os-release.drv'...
 copying path '/nix/store/x1pwsbz5cm23hk58b7fcpn3hhg9j7gwh-iproute2-7.2.0' from 'https://cache.nixos.org'...
+building '/nix/store/9ggmlq6cw39a30z3q52jbiy1hqqdlqfj-extra-hwdb-file.drv'...
 copying path '/nix/store/kklfkqxs03k6qm2y9cr6mjpk1s5jgrar-libxmu-1.3.1' from 'https://cache.nixos.org'...
 building '/nix/store/0b0kl40xf8qaigq8c6ji426y3ka9nrkc-ensure-wrapper-integrity.drv'...
-building '/nix/store/vvwd9m5w1sqk4hcspgg67a5anyckw0v8-etc-nix-registry.json.drv'...
-building '/nix/store/sr9w9avaaa63yz1cyg8iqc5p51bpvwzx-etc-os-release.drv'...
-copying path '/nix/store/gaxk87chv6aga1dnh382ajqh3119k2qb-make-initrd-ng-0.1.0' from 'https://cache.nixos.org'...
-building '/nix/store/9ggmlq6cw39a30z3q52jbiy1hqqdlqfj-extra-hwdb-file.drv'...
 building '/nix/store/vc7c012vs58xwamnddc8yfk2hq2qwnw6-extra-udev-rules.drv'...
 building '/nix/store/4cly778hva8hf08grv0il2g1szgj34kq-font-dirs.drv'...
 building '/nix/store/2wng9xfw5mgb4gif2xw8lvarjkp2ax0x-initrd-fstab.drv'...
+copying path '/nix/store/gaxk87chv6aga1dnh382ajqh3119k2qb-make-initrd-ng-0.1.0' from 'https://cache.nixos.org'...
 building '/nix/store/2pmkaq1s5gnd9fpngb5ykd2hb2nrg669-initrd-group.drv'...
-copying path '/nix/store/bffxhj1c1d70sgbcgpcmznj24icvvrxn-minica-1.1.0' from 'https://cache.nixos.org'...
 building '/nix/store/3h72d0cbzi25mygrgf63vfz3mknjv0rh-initrd-hostname.drv'...
+copying path '/nix/store/bffxhj1c1d70sgbcgpcmznj24icvvrxn-minica-1.1.0' from 'https://cache.nixos.org'...
 building '/nix/store/0cd8hvzyxv7hw2597s6jdk4hvzqcbk6p-initrd-nixos.conf.drv'...
 building '/nix/store/0czrmc9v8nipfv6cxmk2mbl4dcl73md9-initrd-nixos.conf.drv'...
-copying path '/nix/store/p3y4rk4gjnhs80339qq7jixjbhplqc16-fontconfig-2.18.3-lib' from 'https://cache.nixos.org'...
 building '/nix/store/20mi6f500x4xkqzzw99xvx9n88sdp91b-initrd-passwd.drv'...
 building '/nix/store/w4dqk943xbjcjn1l9ybk2bfyjik0l13a-initrd-release.drv'...
-copying path '/nix/store/ym54xknd9plgi06bfkmyr5dhqjphig3n-mosh-1.4.0' from 'https://cache.nixos.org'...
 building '/nix/store/k0n1fhmf589bda8rv14y9757l0lhz7f6-initrd-shadow.drv'...
-building '/nix/store/6axz7074r47rdhnrd7w3jil2y52dddlj-initrd-shells.drv'...
+copying path '/nix/store/p3y4rk4gjnhs80339qq7jixjbhplqc16-fontconfig-2.18.3-lib' from 'https://cache.nixos.org'...
 copying path '/nix/store/wrlrp8lj6gy954ngjdkw78xbq01n9dnw-musl-static-x86_64-unknown-linux-musl-1.2.6' from 'https://cache.nixos.org'...
-copying path '/nix/store/9zllgi6r0g0g5p43zsv2fz8g6c71jiiy-nano-9.3' from 'https://cache.nixos.org'...
-building '/nix/store/467i8vzvisrbn139cz9c6pn5l2gi8446-initrd-system.conf.drv'...
+copying path '/nix/store/ym54xknd9plgi06bfkmyr5dhqjphig3n-mosh-1.4.0' from 'https://cache.nixos.org'...
+building '/nix/store/6axz7074r47rdhnrd7w3jil2y52dddlj-initrd-shells.drv'...
 copying path '/nix/store/fbg6x15d1b0ss24vsak3zwr03m5h26kq-bind-9.20.30-host' from 'https://cache.nixos.org'...
+building '/nix/store/467i8vzvisrbn139cz9c6pn5l2gi8446-initrd-system.conf.drv'...
 building '/nix/store/95xlzhrd9rfb4bij1c0439ic4d9xf6dh-initrd-udev-rules.drv'...
 building '/nix/store/y08r0979pk2qimjbkhv2kz61nqwsmsjs-initrd-unit-env.drv'...
-copying path '/nix/store/a8hfazxxb69rgvlgbl2mn3zn6khvrb8r-fontconfig-2.18.3-bin' from 'https://cache.nixos.org'...
-copying path '/nix/store/xgw813vgzl2q0696sq45adpj0xd690jq-git-2.56.0' from 'https://cache.nixos.org'...
 building '/nix/store/q7d2y71kv4nm655m9a6qbyvkqiy732iq-install-grub.pl.drv'...
+copying path '/nix/store/9zllgi6r0g0g5p43zsv2fz8g6c71jiiy-nano-9.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/xgw813vgzl2q0696sq45adpj0xd690jq-git-2.56.0' from 'https://cache.nixos.org'...
+building '/nix/store/m5h4radw29sch40dc4b8kiswakj93s2l-ipv6-privacy-extensions.rules.drv'...
 copying path '/nix/store/mqlr3n6ip4vsz7dnjkbdgphzwgaq82sp-libressl-4.3.2-nc' from 'https://cache.nixos.org'...
 copying path '/nix/store/7sv1939i2jx47yfvi65g4n0lz1xri7b7-nano-9.3-doc' from 'https://cache.nixos.org'...
-building '/nix/store/m5h4radw29sch40dc4b8kiswakj93s2l-ipv6-privacy-extensions.rules.drv'...
 building '/nix/store/r7bwr2wqg00p2kxm504r6wdv7j46l4xv-ipv6-privacy-extensions.rules.drv'...
+copying path '/nix/store/a8hfazxxb69rgvlgbl2mn3zn6khvrb8r-fontconfig-2.18.3-bin' from 'https://cache.nixos.org'...
+building '/nix/store/5b1rm8a55ycc0zg1vvnn5gl4yzzc9jyr-issue.drv'...
+building '/nix/store/aik54pgx7likj1xlbcvvm2gvn94b9pd6-nixos-version.drv'...
 copying path '/nix/store/wygcwmwr500ci1afci730dqcwalha367-nano-9.3-info' from 'https://cache.nixos.org'...
-building '/nix/store/3xjw10banza4rjhndqmadz3fv34jm1k5-fc-cache.drv'...
-copying path '/nix/store/3x16p9yylwijl4k8ba7bnidhkgbqasdx-nix-2.34.9' from 'https://cache.nixos.org'...
 copying path '/nix/store/6cmh8syghnyay2m2lj8kn8ljfykkn0jz-nano-9.3-man' from 'https://cache.nixos.org'...
-building '/nix/store/f36ql99difqkb2g75brs45my2x9rcdyi-issue.drv'...
-building '/nix/store/sd7dlln3mpc6sj45np7y5hhdsm3fc8j9-nixos-version.drv'...
+building '/nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv'...
+copying path '/nix/store/3x16p9yylwijl4k8ba7bnidhkgbqasdx-nix-2.34.9' from 'https://cache.nixos.org'...
+building '/nix/store/3xjw10banza4rjhndqmadz3fv34jm1k5-fc-cache.drv'...
 copying path '/nix/store/bjl39ffp2fkbbg6r58a8g6v8zyfgs5la-nix-bash-completions-0.6.8' from 'https://cache.nixos.org'...
 copying path '/nix/store/x9dgp2fjr59gdh0bm0y0b790v6qdbqcd-nix-manual-2.34.9' from 'https://cache.nixos.org'...
-building '/nix/store/gcj34h90qafiac4m9irn4phnhsmkmrq0-nix.conf.drv'...
-copying path '/nix/store/vbm8vjsvan6nmv6fsmrgvl3lyg0qn43a-nix-manual-2.34.9-man' from 'https://cache.nixos.org'...
-copying path '/nix/store/z0cpy3jgz3yxjclw4apig3vzqdqnh7g4-nixos-configuration-reference-manpage' from 'https://cache.nixos.org'...
-building '/nix/store/sp7jjc3av627m0jb662bdckgsxmlwlyp-etc-nanorc.drv'...
-building '/nix/store/wnr0vda7bkpaggmhy1fb2dwlp4w1vcs5-fc-00-nixos-cache.conf.drv'...
-copying path '/nix/store/lwqb9b52glp343aw0lx5j3qjyazzh49x-nixos-firewall-tool-26.11' from 'https://cache.nixos.org'...
-building '/nix/store/wv6rhgzwnrblrrkb5d81a0g33w8838y7-X-Restart-Triggers-nix-daemon.drv'...
-building '/nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv'...
-copying path '/nix/store/svafvg1wjs53sa6r03q2zsn34ahcnpiz-nixos-init-0.1.0' from 'https://cache.nixos.org'...
-copying path '/nix/store/h5hhb58zri8bfwdcjrkn9p5vk8pw9dly-nixos-manual-html' from 'https://cache.nixos.org'...
-building '/nix/store/sc7llsgpxhcls6n5qfrxmp2agg4vjrx4-fontconfig-conf.drv'...
-copying path '/nix/store/js23n55yzzkd666vb0j807bmyn881rrk-musl-static-x86_64-unknown-linux-musl-1.2.6-bin' from 'https://cache.nixos.org'...
-copying path '/nix/store/6w31jxckdrnx221risqm89r1xgkn979x-nixos-option-26.11' from 'https://cache.nixos.org'...
+error: Cannot build '/nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv'.
+       Reason: builder failed with exit code 3.
+       Output paths:
+         /nix/store/8rlfp92v3zsgl1h5y80dmky38ncqzhc5-nss-cacert-3.131.1-p11kit
+         /nix/store/h4424h7gnih27kqkv73713b8zsrr9kvy-nss-cacert-3.131.1-hashed
+         /nix/store/w387y40vi8i4qhk8jp7xjx9dvbvw2963-nss-cacert-3.131.1
+         /nix/store/z2fkkq7br9d8m5lxzpfdfnc8d8iahcwi-nss-cacert-3.131.1-unbundled
+       Last 8 log lines:
+       > structuredAttrs is enabled
+       > Running phase: unpackPhase
+       > Running phase: patchPhase
+       > Running phase: updateAutotoolsGnuConfigScriptsPhase
+       > Running phase: configurePhase
+       > no configure script, doing nothing
+       > Running phase: buildPhase
+       > Certs in blocklist but not in cert store: {'emSign ECC Root CA - G3'}
+       For full logs, run:
+         nix log /nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv
+error: Cannot build '/nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv'.
+       Reason: builder failed with exit code 3.
+       Output paths:
+         /nix/store/8rlfp92v3zsgl1h5y80dmky38ncqzhc5-nss-cacert-3.131.1-p11kit
+         /nix/store/h4424h7gnih27kqkv73713b8zsrr9kvy-nss-cacert-3.131.1-hashed
+         /nix/store/w387y40vi8i4qhk8jp7xjx9dvbvw2963-nss-cacert-3.131.1
+         /nix/store/z2fkkq7br9d8m5lxzpfdfnc8d8iahcwi-nss-cacert-3.131.1-unbundled
+       Last 8 log lines:
+       > structuredAttrs is enabled
+       > Running phase: unpackPhase
+       > Running phase: patchPhase
+       > Running phase: updateAutotoolsGnuConfigScriptsPhase
+       > Running phase: configurePhase
+       > no configure script, doing nothing
+       > Running phase: buildPhase
+       > Certs in blocklist but not in cert store: {'emSign ECC Root CA - G3'}
+       For full logs, run:
+         nix log /nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv
 building '/nix/store/wsmgyn1cidx8c7xqfpcv8w1winaaq401-nuke-refs.drv'...
-error: Cannot build '/nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv'.
-       Reason: builder failed with exit code 3.
-       Output paths:
-         /nix/store/8rlfp92v3zsgl1h5y80dmky38ncqzhc5-nss-cacert-3.131.1-p11kit
-         /nix/store/h4424h7gnih27kqkv73713b8zsrr9kvy-nss-cacert-3.131.1-hashed
-         /nix/store/w387y40vi8i4qhk8jp7xjx9dvbvw2963-nss-cacert-3.131.1
-         /nix/store/z2fkkq7br9d8m5lxzpfdfnc8d8iahcwi-nss-cacert-3.131.1-unbundled
-       Last 8 log lines:
-       > structuredAttrs is enabled
-       > Running phase: unpackPhase
-       > Running phase: patchPhase
-       > Running phase: updateAutotoolsGnuConfigScriptsPhase
-       > Running phase: configurePhase
-       > no configure script, doing nothing
-       > Running phase: buildPhase
-       > Certs in blocklist but not in cert store: {'emSign ECC Root CA - G3'}
-       For full logs, run:
-         nix log /nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv
-error: Cannot build '/nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv'.
-       Reason: builder failed with exit code 3.
-       Output paths:
-         /nix/store/8rlfp92v3zsgl1h5y80dmky38ncqzhc5-nss-cacert-3.131.1-p11kit
-         /nix/store/h4424h7gnih27kqkv73713b8zsrr9kvy-nss-cacert-3.131.1-hashed
-         /nix/store/w387y40vi8i4qhk8jp7xjx9dvbvw2963-nss-cacert-3.131.1
-         /nix/store/z2fkkq7br9d8m5lxzpfdfnc8d8iahcwi-nss-cacert-3.131.1-unbundled
-       Last 8 log lines:
-       > structuredAttrs is enabled
-       > Running phase: unpackPhase
-       > Running phase: patchPhase
-       > Running phase: updateAutotoolsGnuConfigScriptsPhase
-       > Running phase: configurePhase
-       > no configure script, doing nothing
-       > Running phase: buildPhase
-       > Certs in blocklist but not in cert store: {'emSign ECC Root CA - G3'}
-       For full logs, run:
-         nix log /nix/store/mgk1rb14wv0zm3xcnnixmxiaf0m0jwlf-nss-cacert-3.131.1.drv
-building '/nix/store/q43l3d904xkd0d59cb6k1za3c1sajz8z-fontconfig-etc.drv'...
-copying path '/nix/store/7dbpy71z609raq51wv5m226acm62ril3-nixos-rebuild-ng-26.11' from 'https://cache.nixos.org'...
-copying path '/nix/store/h09znsj2n9hfacs46nj8kbqkg2inl30c-openssh-10.6p1-man' from 'https://cache.nixos.org'...
-error: Cannot build '/nix/store/i4qgj0qcqy1945sqa3cl7q84x3grb6zr-etc.drv'.
+copying path '/nix/store/vbm8vjsvan6nmv6fsmrgvl3lyg0qn43a-nix-manual-2.34.9-man' from 'https://cache.nixos.org'...
+copying path '/nix/store/lwqb9b52glp343aw0lx5j3qjyazzh49x-nixos-firewall-tool-26.11' from 'https://cache.nixos.org'...
+copying path '/nix/store/svafvg1wjs53sa6r03q2zsn34ahcnpiz-nixos-init-0.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/26xxdx55421z2ivn93mnw3vmfjkr31nd-nixos-configuration-reference-manpage' from 'https://cache.nixos.org'...
+error: Cannot build '/nix/store/q5cjl16vv0xl1g0k2a6pfwm2f921xaa2-etc.drv'.
        Reason: 1 dependency failed.
        Output paths:
-         /nix/store/3c9rn4al59gcp889yf0i76pv229qg695-etc
+         /nix/store/a7r2kbpmf0pmwywzdrsadbyamcbkflaf-etc
 building '/nix/store/c3nqx0rj1cbzsgwfdinlrg7sm6vlla5m-sshd.conf-settings.drv'...
-error: Cannot build '/nix/store/yn9ci42s6idz67asv5pbn8n64pp309bx-nixos-system-oraclevps-26.11.20261023.3ec6363.drv'.
+error: Cannot build '/nix/store/48ap7s4kmwnqj64wby2gkb7n7s21p8kn-nixos-system-oraclevps-26.11.20261027.31ecbac.drv'.
        Reason: 1 dependency failed.
        Output paths:
-         /nix/store/ax4qsnvmdxra56qvw3n0vcc98b6wxay5-nixos-system-oraclevps-26.11.20261023.3ec6363
+         /nix/store/s38c1ksaix6wb0d5hkwk2f6k4clfv46k-nixos-system-oraclevps-26.11.20261027.31ecbac
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."oraclevps".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

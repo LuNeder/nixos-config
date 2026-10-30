@@ -100,10 +100,10 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `boot.initrd.systemd.enable' in `/nix/store/mnl4bdhs9hv5v4qwflkf15ywy0ayj1ik-source/Yoke/configuration.nix' no longer has any effect; please remove it.
+       - The option definition `boot.initrd.systemd.enable' in `/nix/store/0j17hs8pqwwpzdaxr91jw7isy56f98h7-source/Yoke/configuration.nix' no longer has any effect; please remove it.
        Scripted initrd has been removed.
 
 
-       - The option definition `services.nextcloud.config.adminpassFile' in `/nix/store/mnl4bdhs9hv5v4qwflkf15ywy0ayj1ik-source/Yoke/services/nextcloud.nix' no longer has any effect; please remove it.
+       - The option definition `services.nextcloud.config.adminpassFile' in `/nix/store/0j17hs8pqwwpzdaxr91jw7isy56f98h7-source/Yoke/services/nextcloud.nix' no longer has any effect; please remove it.
        To create an admin user after the installation, use nextcloud-occ user:add <username> and nextcloud-occ group:adduser admin <username>.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Yoke".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

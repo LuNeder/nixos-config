@@ -100,6 +100,6 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `boot.initrd.systemd.enable' in `/nix/store/5njzirwph2r7i4f72n24pyrds96dx09f-source/Luana-Legion-5/configuration.nix' no longer has any effect; please remove it.
+       - The option definition `boot.initrd.systemd.enable' in `/nix/store/mqpfpvbj61yg6djqq96is80p10xyfq8y-source/Luana-Legion-5/configuration.nix' no longer has any effect; please remove it.
        Scripted initrd has been removed.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-Legion-5".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

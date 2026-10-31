@@ -4,28 +4,28 @@ Using saved setting for 'extra-substituters = https://bincache.yoke.sereia.gay h
 Using saved setting for 'extra-trusted-public-keys = yoke-bin-cache:ddWddUNLU59tCn5o6xwweO88tXpcnJql6pqpF2aYkc4= nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=' from ~/.local/share/nix/trusted-settings.json.
 error:
        … while calling anonymous lambda
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/attrsets.nix:1706:17:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/attrsets.nix:1706:17:
          1705|         zipAttrsWith (
          1706|           name: values:
              |                 ^
          1707|           let
 
        … while calling the 'head' builtin
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/attrsets.nix:1711:13:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/attrsets.nix:1711:13:
          1710|           if length values == 1 || pred here (elemAt values 1) (head values) then
          1711|             head values
              |             ^
          1712|           else
 
        … while calling anonymous lambda
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:283:38:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:283:38:
           282|             let
           283|               recurse = mapAttrs (n: v: if isOption v then v.value else recurse v);
              |                                      ^
           284|             in
 
        … while evaluating the attribute 'value'
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:1181:7:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:1181:7:
          1180|     // {
          1181|       value = addErrorContext "while evaluating the option `${showOption loc}':" (
              |       ^
@@ -34,65 +34,65 @@ error:
        … while evaluating the option `system.build.toplevel':
 
        … while evaluating the attribute 'mergedValue'
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:1276:5:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:1276:5:
          1275|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
          1276|     mergedValue =
              |     ^
          1277|       if isDefined then
 
        … while evaluating a branch condition
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:1277:7:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:1277:7:
          1276|     mergedValue =
          1277|       if isDefined then
              |       ^
          1278|         if type.merge ? v2 then
 
        … while evaluating a branch condition
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:1231:7:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:1231:7:
          1230|       # original singleton straight to the type merge.
          1231|       if
              |       ^
          1232|         length defs == 1
 
        … in the right operand of the AND (&&) operator
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:1233:9:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:1233:9:
          1232|         length defs == 1
          1233|         && addErrorContext "while evaluating definitions from `${(head defs).file}':" (
              |         ^
          1234|           !(head defs).value ? _type
 
-       … while evaluating definitions from `/nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/nixos/modules/system/activation/top-level.nix':
+       … while evaluating definitions from `/nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/nixos/modules/system/activation/top-level.nix':
 
        … in the argument of the not operator
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:1234:12:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:1234:12:
          1233|         && addErrorContext "while evaluating definitions from `${(head defs).file}':" (
          1234|           !(head defs).value ? _type
              |            ^
          1235|         )
 
        … while evaluating the attribute 'value'
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/modules.nix:866:21:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/modules.nix:866:21:
           865|             inherit (module) file;
           866|             inherit value;
              |                     ^
           867|           }) module.config
 
        … from call site
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/nixos/modules/system/activation/top-level.nix:78:26:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/nixos/modules/system/activation/top-level.nix:78:26:
            77|   # Handle assertions and warnings
            78|   baseSystemAssertWarn = lib.asserts.checkAssertWarn config.assertions config.warnings baseSystem;
              |                          ^
            79|
 
        … while calling 'checkAssertWarn'
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/asserts.nix:196:27:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/asserts.nix:196:27:
           195|   checkAssertWarn =
           196|     assertions: warnings: val:
              |                           ^
           197|     let
 
        … while calling the 'throw' builtin
-         at /nix/store/sxb2ijsbdhi8s1lvc6ph692nm84vms3y-source/lib/asserts.nix:201:7:
+         at /nix/store/cm5m4hjjh37s6z82rwa0vhkbcga3m8bq-source/lib/asserts.nix:201:7:
           200|     if failedAssertions != [ ] then
           201|       throw "\nFailed assertions:\n${concatStringsSep "\n" (map (x: "- ${x}") failedAssertions)}"
              |       ^
@@ -100,6 +100,6 @@ error:
 
        error:
        Failed assertions:
-       - The option definition `boot.initrd.systemd.enable' in `/nix/store/mqpfpvbj61yg6djqq96is80p10xyfq8y-source/Luana-Legion-5/configuration.nix' no longer has any effect; please remove it.
+       - The option definition `boot.initrd.systemd.enable' in `/nix/store/82947y6nwyczslkk0l12ck9ifvqwksr8-source/Luana-Legion-5/configuration.nix' no longer has any effect; please remove it.
        Scripted initrd has been removed.
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."Luana-Legion-5".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

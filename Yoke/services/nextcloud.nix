@@ -36,7 +36,6 @@ in {
       database.createLocally = true;
 
       config = {
-        adminpassFile = config.sops.secrets.nextcloud-password.path;
         dbtype = "pgsql";
       };
 

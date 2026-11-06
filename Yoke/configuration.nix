@@ -39,7 +39,6 @@
 
   # Bootloader.
   boot = {
-    initrd.systemd.enable = true;
     loader.systemd-boot.enable = lib.mkForce false;
 
     # https://jnsgr.uk/2024/04/nixos-secure-boot-tpm-fde/

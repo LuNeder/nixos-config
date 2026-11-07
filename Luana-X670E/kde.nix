@@ -340,8 +340,6 @@
       kcminputrc."ButtonRebinds/Mouse".ExtraButton1 = "Key,Ctrl+Alt+Left";
       kcminputrc."ButtonRebinds/Mouse".ExtraButton2 = "Key,Ctrl+Alt+Right";
       kcminputrc.Keyboard.NumLock = 0;
-      kcminputrc."Libinput/5215/497/Trust GXT 148 Mouse".ScrollButtonLock = false;
-      kcminputrc."Libinput/5215/497/Trust GXT 148 Mouse".ScrollMethod = 4;
       kcminputrc.Mouse.X11LibInputXAccelProfileFlat = true;
       kcminputrc.Mouse.cursorTheme = "Bibata-Modern-Ice";
       kded5rc.Module-browserintegrationreminder.autoload = false;

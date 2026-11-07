@@ -403,7 +403,7 @@
     libdrm
     libglvnd
     libnotify
-    libpng12
+    libpng
     libpulseaudio
     libunwind
     libusb1

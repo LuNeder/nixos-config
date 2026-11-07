@@ -481,8 +481,20 @@
   home-manager.useUserPackages = true;
   home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
   home-manager.users.luana.programs.plasma = import ./kde.nix;
-  
 
+  # Enable Midscroll
+  merpkgs.services.midscroll = {
+    enable = true;
+    settings = {
+      BLACKLIST = [
+        "freecad"
+        "orcaslicer"
+        "minecraft"
+        "firefox" "zen" # Has its own implementation
+      ];
+    };
+  };
+  
   # Desktop Configuration
   services.bamf.enable = true; # needed for Plank bc nix dumb nixpkgs#42873
   home-manager.backupFileExtension = "hm.bkp";

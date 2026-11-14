@@ -14,7 +14,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 269 ms (attempt 1/5)
+</html>; retrying in 329 ms (attempt 1/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -25,7 +25,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 560 ms (attempt 2/5)
+</html>; retrying in 556 ms (attempt 2/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -36,7 +36,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 1304 ms (attempt 3/5)
+</html>; retrying in 1278 ms (attempt 3/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -47,7 +47,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 2690 ms (attempt 4/5)
+</html>; retrying in 2122 ms (attempt 4/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
          response body:
@@ -59,7 +59,7 @@ warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': H
          <hr><center>nginx</center>
          </body>
          </html>
-these 1118 derivations will be built:
+these 1119 derivations will be built:
   /nix/store/2i5n87q9m39xbxwc3mxjbzyia8qvj3dz-python-remove-bin-bytecode-hook.drv
   /nix/store/3r57ycmqxc3szx8n717g1d9x9c7y6dn6-wrap-python-hook.drv
   /nix/store/an4x61mfk75dqvgpq4schmf361850mxr-pypa-install-hook.drv
@@ -228,6 +228,7 @@ these 1118 derivations will be built:
   /nix/store/sffzq7kpgilwhk0fxfnfp3hlv4h8280p-mount-util-linux-aarch64-unknown-linux-gnu-2.42.4.drv
   /nix/store/2mdvi7npwy51g48974irlzabfwq9mlqs-ntfs3g-aarch64-unknown-linux-gnu-2026.9.28.drv
   /nix/store/7ljwxl11r4b4339lnaiy2l3qiv0gxmwj-mtools-aarch64-unknown-linux-gnu-4.0.50.drv
+  /nix/store/1fzxma46gm24vngrjwy3lzgdj69jjc4f-nuke-refs.drv
   /nix/store/pdgqwxckammknck218j5zqgyvm3pczwn-smartmontools-aarch64-unknown-linux-gnu-7.5.drv
   /nix/store/kdmm9m1cz06f5ji0c9m4cvvxngi7i10g-rpcsvc-proto-1.4.4.drv
   /nix/store/y9k3adh5l9qc3q2nr0rgcnz57jkkjsi0-openldap-aarch64-unknown-linux-gnu-2.6.13.drv
@@ -751,7 +752,6 @@ these 1118 derivations will be built:
   /nix/store/b8ppmh9p95svrfzx2wiwcwav7c1b4sy5-qtquickcontrols-aarch64-unknown-linux-gnu-5.15.19.drv
   /nix/store/5rmid8m84j84nhqy4xysp367l8lw0ddb-qtwayland-aarch64-unknown-linux-gnu-5.15.19.drv
   /nix/store/qgm3ixq5ii28ay7vs88pak61yggl4p4y-die-hook.drv
-  /nix/store/w87szy1j3bx23lamm7xx78hz8nswbc5g-gcc-wrapper-16.2.0.drv
   /nix/store/j3ydsa2kpvnfs03v96f3ykqgv50rgbgb-make-binary-wrapper-hook.drv
   /nix/store/czk31c22554dpzq08h4xrr5mq56hsdcs-wrap-qt5-apps-hook.drv
   /nix/store/h868ca2n3npwc0hwyg4kdnv07d2sf5dx-unzip-aarch64-unknown-linux-gnu-6.0.drv
@@ -762,6 +762,7 @@ these 1118 derivations will be built:
   /nix/store/vjcx3470f2r1dh78wrvw23vwclw7hdzs-touchkio-linux-arm64-1.4.2.zip.drv
   /nix/store/571vqammwxxr2d17h9m1if69cz74yfp4-touchkio-aarch64-unknown-linux-gnu-1.4.2.drv
   /nix/store/6389qi6jnj2jfcg1a8b49f9qj75j8ssb-zsh-aarch64-unknown-linux-gnu-5.9.2.drv
+  /nix/store/6bdph6pqzvf5by59m89j7jg8xjcxajf5-iputils-aarch64-unknown-linux-gnu-20250605.drv
   /nix/store/6xvm3r860jlg2wdcx7m9z4q0hyfpba0i-sdparm-aarch64-unknown-linux-gnu-1.12.drv
   /nix/store/lggarv8qshhwkrjmack3687vp1dn8lls-nss-cacert-aarch64-unknown-linux-gnu-3.131.1.drv
   /nix/store/798rvkn6ns7q045g013gsyghhnn238sy-libressl-aarch64-unknown-linux-gnu-4.3.2.drv
@@ -1178,13 +1179,12 @@ these 1118 derivations will be built:
   /nix/store/rqdr3jh8kz16g3c7x98ahprv610cm24l-ensure-wrapper-integrity.drv
   /nix/store/xkdil3ghhs25640lg6xrvia1vq2jpkwv-boot.json.drv
   /nix/store/56k6hcvyqjmacfag99wb618hzk7rki8j-nixos-system-ilbl-dash-sd-card-26.11.20261111.d4f25a3.drv
-these 27 paths will be fetched (215.3 MiB download, 990.6 MiB unpacked):
+these 26 paths will be fetched (213.1 MiB download, 982.5 MiB unpacked):
   /nix/store/pwd3jm91hwmmwv9sjg9xv5h719viinnq-0012-qtbase-loongarch64.patch
   /nix/store/rryr2spdzjjfilcvhzg7d3776390b1fg-cargo-deps-vendor-staging
   /nix/store/asgckh03cp57giqgyddjaky69kg5ba8d-cross_build_mysql.diff
   /nix/store/znbkvwfq3hkjakdi2i8vvnhd5m6jwzzn-e8448137f3365568090d5c0d4051039ddc1cdb6f.patch
-  /nix/store/1v9m7qh84smsq7vlv2hgj5dnliwi76qy-gcc-16.2.0-aarch64-unknown-linux-gnu-info
-  /nix/store/89mwf9in3w4nxk63xhb345wl6vnzh6xl-gcc-16.2.0-aarch64-unknown-linux-gnu-man
+  /nix/store/d7m0im0zc89zzzyngq0ksc4294kclknv-gcc-wrapper-16.2.0
   /nix/store/q3zxz1yxa35xl8b8if0dlafjdj6105sh-libpq-18.6-dev
   /nix/store/sdlxs9j206hhh6nzhl4pfh6000b39vqb-mariadb-connector-c-3.3.5-dev
   /nix/store/ixsfvq1cwvaaxgdzmagfnkxixjnm6cwy-mariadb-connector-c-fix-cmake-4.patch
@@ -1218,22 +1218,21 @@ copying path '/nix/store/k5knmw29yjz3y598jjwq3qj9rysi3qdg-python3.14-gyp-unstabl
 copying path '/nix/store/f323153wsgyh1qrbf2f8dnpwa744v7iz-qtbase-fbed962' from 'https://cache.nixos.org'...
 copying path '/nix/store/1zpb9kr68cx7lv5k502yikpb4nv1rw60-qtwayland-605b8bc' from 'https://cache.nixos.org'...
 copying path '/nix/store/9hqm6i2npg54v8bgi42w9d1ypazdhlw3-source' from 'https://cache.nixos.org'...
-copying path '/nix/store/q3zxz1yxa35xl8b8if0dlafjdj6105sh-libpq-18.6-dev' from 'https://cache.nixos.org'...
-copying path '/nix/store/sdlxs9j206hhh6nzhl4pfh6000b39vqb-mariadb-connector-c-3.3.5-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/d7m0im0zc89zzzyngq0ksc4294kclknv-gcc-wrapper-16.2.0' from 'https://cache.nixos.org'...
 copying path '/nix/store/5i2w8kmhkaspcyv8nv3yr4wxxy82k8qq-procps-4.0.7-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/sdlxs9j206hhh6nzhl4pfh6000b39vqb-mariadb-connector-c-3.3.5-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/q3zxz1yxa35xl8b8if0dlafjdj6105sh-libpq-18.6-dev' from 'https://cache.nixos.org'...
 copying path '/nix/store/08g1n4yqabc9ifynyq56q56wblphxz02-qtbase5-setup-hook' from 'https://cache.nixos.org'...
 copying path '/nix/store/rryr2spdzjjfilcvhzg7d3776390b1fg-cargo-deps-vendor-staging' from 'https://cache.nixos.org'...
 copying path '/nix/store/znbkvwfq3hkjakdi2i8vvnhd5m6jwzzn-e8448137f3365568090d5c0d4051039ddc1cdb6f.patch' from 'https://cache.nixos.org'...
-copying path '/nix/store/1v9m7qh84smsq7vlv2hgj5dnliwi76qy-gcc-16.2.0-aarch64-unknown-linux-gnu-info' from 'https://cache.nixos.org'...
-copying path '/nix/store/89mwf9in3w4nxk63xhb345wl6vnzh6xl-gcc-16.2.0-aarch64-unknown-linux-gnu-man' from 'https://cache.nixos.org'...
-copying path '/nix/store/7vpb38hwrpdwmb8pswk5dcydm6qpg22q-qtdeclarative-5bc1ac0' from 'https://cache.nixos.org'...
 copying path '/nix/store/ixsfvq1cwvaaxgdzmagfnkxixjnm6cwy-mariadb-connector-c-fix-cmake-4.patch' from 'https://cache.nixos.org'...
-copying path '/nix/store/88kacixcrzc5hasfjp10afp4xcn1wxvi-qtquickcontrols-af7fc48' from 'https://cache.nixos.org'...
+copying path '/nix/store/7vpb38hwrpdwmb8pswk5dcydm6qpg22q-qtdeclarative-5bc1ac0' from 'https://cache.nixos.org'...
 copying path '/nix/store/vsx6lqlxy84ilg0d01lx867ab2478z8n-qttools-3e3ab58' from 'https://cache.nixos.org'...
+copying path '/nix/store/88kacixcrzc5hasfjp10afp4xcn1wxvi-qtquickcontrols-af7fc48' from 'https://cache.nixos.org'...
 copying path '/nix/store/wmfk154aliwxdi9bm86sbc9ida5sghw6-qtsvg-d2abfb9' from 'https://cache.nixos.org'...
+copying path '/nix/store/z30lr9s6hwfpnc3996hc7gd0z7yinisn-source' from 'https://cache.nixos.org'...
 copying path '/nix/store/jrgylbjbcsl688bs9yhy5kgaf8qx2q11-source' from 'https://cache.nixos.org'...
 copying path '/nix/store/pn7r31fmj966q17dmn8gq2yyabc51qhf-source' from 'https://cache.nixos.org'...
-copying path '/nix/store/z30lr9s6hwfpnc3996hc7gd0z7yinisn-source' from 'https://cache.nixos.org'...
 copying path '/nix/store/b9bh35xjxmbl6c4appkdaskmrnkl6j4q-qttranslations-388e4f3' from 'https://cache.nixos.org'...
 building '/nix/store/9i2wgc3wszyj87s5798p8a8lwfwpw09s-__fish_build_paths_suffix.fish.drv'...
 building '/nix/store/yi15wbmx585byqiyy4abqgm3lcp98afz-config.fish.appendix.drv'...
@@ -1245,7 +1244,7 @@ building '/nix/store/nn80avifxbb55k83af58jr0qvjnhvjjz-X-Reload-Triggers-polkit.d
 building '/nix/store/vwiam077vr4fr3cjsgwxv7fzkrv14rf3-firewall-start.drv'...
 building '/nix/store/nzc7m06kcic22d7i3hqqpkmfa3m76y0x-initrd-hostname.drv'...
 building '/nix/store/53y4fw3gn50wsqwvjf4l4azv09ab0mry-firewall-reload.drv'...
-building '/nix/store/w87szy1j3bx23lamm7xx78hz8nswbc5g-gcc-wrapper-16.2.0.drv'...
+building '/nix/store/6bdph6pqzvf5by59m89j7jg8xjcxajf5-iputils-aarch64-unknown-linux-gnu-20250605.drv'...
 building '/nix/store/anj89yma288gnqxpnswpqrqjysnrr9sh-lmdb-aarch64-unknown-linux-gnu-0.9.36.drv'...
 building '/nix/store/hzsk3qp06r4hc85j6fpxbfybd69jy50m-local-cmds.drv'...
 building '/nix/store/07fjdb4z487f3r479qx014j5pmhdb059-locale.conf.drv'...

@@ -14,7 +14,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 329 ms (attempt 1/5)
+</html>; retrying in 341 ms (attempt 1/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -25,7 +25,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 556 ms (attempt 2/5)
+</html>; retrying in 676 ms (attempt 2/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -36,7 +36,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 1278 ms (attempt 3/5)
+</html>; retrying in 1164 ms (attempt 3/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -47,7 +47,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 2122 ms (attempt 4/5)
+</html>; retrying in 2093 ms (attempt 4/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
          response body:
@@ -59,7 +59,7 @@ warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': H
          <hr><center>nginx</center>
          </body>
          </html>
-these 1119 derivations will be built:
+these 1121 derivations will be built:
   /nix/store/2i5n87q9m39xbxwc3mxjbzyia8qvj3dz-python-remove-bin-bytecode-hook.drv
   /nix/store/3r57ycmqxc3szx8n717g1d9x9c7y6dn6-wrap-python-hook.drv
   /nix/store/an4x61mfk75dqvgpq4schmf361850mxr-pypa-install-hook.drv
@@ -762,6 +762,7 @@ these 1119 derivations will be built:
   /nix/store/vjcx3470f2r1dh78wrvw23vwclw7hdzs-touchkio-linux-arm64-1.4.2.zip.drv
   /nix/store/571vqammwxxr2d17h9m1if69cz74yfp4-touchkio-aarch64-unknown-linux-gnu-1.4.2.drv
   /nix/store/6389qi6jnj2jfcg1a8b49f9qj75j8ssb-zsh-aarch64-unknown-linux-gnu-5.9.2.drv
+  /nix/store/msw3gdggyjhpn46g6kamgkf0a1wjpmi4-apparmor-closure-rules-ping.drv
   /nix/store/6bdph6pqzvf5by59m89j7jg8xjcxajf5-iputils-aarch64-unknown-linux-gnu-20250605.drv
   /nix/store/6xvm3r860jlg2wdcx7m9z4q0hyfpba0i-sdparm-aarch64-unknown-linux-gnu-1.12.drv
   /nix/store/lggarv8qshhwkrjmack3687vp1dn8lls-nss-cacert-aarch64-unknown-linux-gnu-3.131.1.drv
@@ -875,6 +876,7 @@ these 1119 derivations will be built:
   /nix/store/mf0160jprjlxwqxb26vn0vqplzkvmnhi-sound-theme-freedesktop-aarch64-unknown-linux-gnu-0.8.drv
   /nix/store/n09m752qi8cw5c3sx1vbqq6ryn0m9dpp-nix-info-aarch64-unknown-linux-gnu.drv
   /nix/store/ncv5h7mnpcji1dab6zkga7wrww4ii7ld-sudo-aarch64-unknown-linux-gnu-1.9.17p2.drv
+  /nix/store/nph192q2nwgdiw17b6p66vbac1ykjchh-htop-aarch64-unknown-linux-gnu-3.5.3.drv
   /nix/store/p0gvaf6jgczdik4jyp7spdh8y5ch3962-nixos-build-vms.drv
   /nix/store/p19njx9pcp1kxsyn4agsrhkl39wwqbfa-ms-sys-aarch64-unknown-linux-gnu-2.8.0.drv
   /nix/store/ppp4lvg1xchwiq4smip9yybiaakggpcd-nvme-cli-aarch64-unknown-linux-gnu-2.16.drv
@@ -1219,22 +1221,23 @@ copying path '/nix/store/f323153wsgyh1qrbf2f8dnpwa744v7iz-qtbase-fbed962' from '
 copying path '/nix/store/1zpb9kr68cx7lv5k502yikpb4nv1rw60-qtwayland-605b8bc' from 'https://cache.nixos.org'...
 copying path '/nix/store/9hqm6i2npg54v8bgi42w9d1ypazdhlw3-source' from 'https://cache.nixos.org'...
 copying path '/nix/store/d7m0im0zc89zzzyngq0ksc4294kclknv-gcc-wrapper-16.2.0' from 'https://cache.nixos.org'...
-copying path '/nix/store/5i2w8kmhkaspcyv8nv3yr4wxxy82k8qq-procps-4.0.7-dev' from 'https://cache.nixos.org'...
-copying path '/nix/store/sdlxs9j206hhh6nzhl4pfh6000b39vqb-mariadb-connector-c-3.3.5-dev' from 'https://cache.nixos.org'...
 copying path '/nix/store/q3zxz1yxa35xl8b8if0dlafjdj6105sh-libpq-18.6-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/sdlxs9j206hhh6nzhl4pfh6000b39vqb-mariadb-connector-c-3.3.5-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/5i2w8kmhkaspcyv8nv3yr4wxxy82k8qq-procps-4.0.7-dev' from 'https://cache.nixos.org'...
 copying path '/nix/store/08g1n4yqabc9ifynyq56q56wblphxz02-qtbase5-setup-hook' from 'https://cache.nixos.org'...
 copying path '/nix/store/rryr2spdzjjfilcvhzg7d3776390b1fg-cargo-deps-vendor-staging' from 'https://cache.nixos.org'...
 copying path '/nix/store/znbkvwfq3hkjakdi2i8vvnhd5m6jwzzn-e8448137f3365568090d5c0d4051039ddc1cdb6f.patch' from 'https://cache.nixos.org'...
-copying path '/nix/store/ixsfvq1cwvaaxgdzmagfnkxixjnm6cwy-mariadb-connector-c-fix-cmake-4.patch' from 'https://cache.nixos.org'...
 copying path '/nix/store/7vpb38hwrpdwmb8pswk5dcydm6qpg22q-qtdeclarative-5bc1ac0' from 'https://cache.nixos.org'...
-copying path '/nix/store/vsx6lqlxy84ilg0d01lx867ab2478z8n-qttools-3e3ab58' from 'https://cache.nixos.org'...
-copying path '/nix/store/88kacixcrzc5hasfjp10afp4xcn1wxvi-qtquickcontrols-af7fc48' from 'https://cache.nixos.org'...
+copying path '/nix/store/ixsfvq1cwvaaxgdzmagfnkxixjnm6cwy-mariadb-connector-c-fix-cmake-4.patch' from 'https://cache.nixos.org'...
 copying path '/nix/store/wmfk154aliwxdi9bm86sbc9ida5sghw6-qtsvg-d2abfb9' from 'https://cache.nixos.org'...
-copying path '/nix/store/z30lr9s6hwfpnc3996hc7gd0z7yinisn-source' from 'https://cache.nixos.org'...
-copying path '/nix/store/jrgylbjbcsl688bs9yhy5kgaf8qx2q11-source' from 'https://cache.nixos.org'...
-copying path '/nix/store/pn7r31fmj966q17dmn8gq2yyabc51qhf-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/88kacixcrzc5hasfjp10afp4xcn1wxvi-qtquickcontrols-af7fc48' from 'https://cache.nixos.org'...
 copying path '/nix/store/b9bh35xjxmbl6c4appkdaskmrnkl6j4q-qttranslations-388e4f3' from 'https://cache.nixos.org'...
+copying path '/nix/store/vsx6lqlxy84ilg0d01lx867ab2478z8n-qttools-3e3ab58' from 'https://cache.nixos.org'...
 building '/nix/store/9i2wgc3wszyj87s5798p8a8lwfwpw09s-__fish_build_paths_suffix.fish.drv'...
+copying path '/nix/store/jrgylbjbcsl688bs9yhy5kgaf8qx2q11-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/z30lr9s6hwfpnc3996hc7gd0z7yinisn-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/pn7r31fmj966q17dmn8gq2yyabc51qhf-source' from 'https://cache.nixos.org'...
+building '/nix/store/msw3gdggyjhpn46g6kamgkf0a1wjpmi4-apparmor-closure-rules-ping.drv'...
 building '/nix/store/yi15wbmx585byqiyy4abqgm3lcp98afz-config.fish.appendix.drv'...
 building '/nix/store/qgm3ixq5ii28ay7vs88pak61yggl4p4y-die-hook.drv'...
 building '/nix/store/ygrb7z1rhzrw0lrz22myas8r6v4x07c8-etc-hostname.drv'...
@@ -1242,16 +1245,17 @@ building '/nix/store/n02pcs97nzw9aw3hjvx56bkrx4f9sy0z-etc-polkit-1-rules.d-10-ni
 building '/nix/store/qfnvi5vwahgzd3zvrjzf3pmndzzq14kn-extra-udev-rules.drv'...
 building '/nix/store/nn80avifxbb55k83af58jr0qvjnhvjjz-X-Reload-Triggers-polkit.drv'...
 building '/nix/store/vwiam077vr4fr3cjsgwxv7fzkrv14rf3-firewall-start.drv'...
-building '/nix/store/nzc7m06kcic22d7i3hqqpkmfa3m76y0x-initrd-hostname.drv'...
+building '/nix/store/nph192q2nwgdiw17b6p66vbac1ykjchh-htop-aarch64-unknown-linux-gnu-3.5.3.drv'...
 building '/nix/store/53y4fw3gn50wsqwvjf4l4azv09ab0mry-firewall-reload.drv'...
+building '/nix/store/nzc7m06kcic22d7i3hqqpkmfa3m76y0x-initrd-hostname.drv'...
 building '/nix/store/6bdph6pqzvf5by59m89j7jg8xjcxajf5-iputils-aarch64-unknown-linux-gnu-20250605.drv'...
+building '/nix/store/cnxlj5mjna3ni5dz2wjzg0i825d270vi-libpq-aarch64-unknown-linux-gnu-18.6.drv'...
 building '/nix/store/anj89yma288gnqxpnswpqrqjysnrr9sh-lmdb-aarch64-unknown-linux-gnu-0.9.36.drv'...
 building '/nix/store/hzsk3qp06r4hc85j6fpxbfybd69jy50m-local-cmds.drv'...
 building '/nix/store/07fjdb4z487f3r479qx014j5pmhdb059-locale.conf.drv'...
 building '/nix/store/3dsrqmpa6jq6g5im7wc2blnq56n5fniz-locales-setup-hook.sh.drv'...
 building '/nix/store/syaa5f76dljzr4vdysv5fqk32flinign-localhost-hosts.drv'...
 building '/nix/store/nminmh26bj6p3l366v1mv3y6z3mpv3p6-glibc-locales-aarch64-unknown-linux-gnu-2.44-57.drv'...
-building '/nix/store/cnxlj5mjna3ni5dz2wjzg0i825d270vi-libpq-aarch64-unknown-linux-gnu-18.6.drv'...
 building '/nix/store/f91lxdmv7bmcqhxn8q5jn2xrqsaw8jrq-login.defs.drv'...
 building '/nix/store/zva5p97wnpiwlif6cr2ciyl1w4fqwinv-logrotate.conf.drv'...
 building '/nix/store/96ay4cj76qb916qqhvpxph3m6qqc5nkz-luana-authorized_keys.drv'...
@@ -1261,110 +1265,109 @@ building '/nix/store/gj9kh0cx4jl2iybq4avk3l7c8qiv1rhd-etc-lvm-lvm.conf.drv'...
 building '/nix/store/j3ydsa2kpvnfs03v96f3ykqgv50rgbgb-make-binary-wrapper-hook.drv'...
 building '/nix/store/cf1l7kac7y80mw78qgf5n63rffbaqhxh-man-db-aarch64-unknown-linux-gnu-2.13.1.drv'...
 building '/nix/store/mkdja2d1ni51h333b2m82j5ahsz6hn55-mariadb-connector-c-aarch64-unknown-linux-gnu-3.3.5.drv'...
+error: Cannot build '/nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv'.
+       Reason: builder failed with exit code 2.
+       Output paths:
+         /nix/store/jspc6zshg14fsbwfnsgbirmkfv3xgbz1-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules
+         /nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev
+         /nix/store/wvmw41ll1ciww25j0arb8hh96fqk6y97-linux_rpi-bcm2712-6.18.59-unstable_20261026
+       Last 25 log lines:
+       > make[2]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:1488: tools/bpf/resolve_btfids] Error 2
+       > make[2]: *** Waiting for unfinished jobs....
+       >   HOSTCC  scripts/dtc/treesource.o
+       >   HOSTCC  scripts/dtc/srcpos.o
+       >   HOSTCC  scripts/dtc/checks.o
+       >   HOSTCC  scripts/dtc/util.o
+       >   LEX     scripts/dtc/dtc-lexer.lex.c
+       >   YACC    scripts/dtc/dtc-parser.tab.[ch]
+       >   HOSTCC  scripts/dtc/libfdt/fdt.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_ro.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_wip.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_sw.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_rw.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_strerror.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_empty_tree.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_addresses.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_overlay.o
+       >   HOSTCC  scripts/dtc/fdtoverlay.o
+       >   HOSTCC  scripts/dtc/dtc-lexer.lex.o
+       >   HOSTCC  scripts/dtc/dtc-parser.tab.o
+       >   HOSTLD  scripts/dtc/fdtoverlay
+       >   HOSTLD  scripts/dtc/dtc
+       > make[1]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:248: __sub-make] Error 2
+       > make[1]: Leaving directory '/build/build'
+       > make: *** [Makefile:248: __sub-make] Error 2
+       For full logs, run:
+         nix log /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
+error: Cannot build '/nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv'.
+       Reason: builder failed with exit code 2.
+       Output paths:
+         /nix/store/jspc6zshg14fsbwfnsgbirmkfv3xgbz1-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules
+         /nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev
+         /nix/store/wvmw41ll1ciww25j0arb8hh96fqk6y97-linux_rpi-bcm2712-6.18.59-unstable_20261026
+       Last 25 log lines:
+       > make[2]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:1488: tools/bpf/resolve_btfids] Error 2
+       > make[2]: *** Waiting for unfinished jobs....
+       >   HOSTCC  scripts/dtc/treesource.o
+       >   HOSTCC  scripts/dtc/srcpos.o
+       >   HOSTCC  scripts/dtc/checks.o
+       >   HOSTCC  scripts/dtc/util.o
+       >   LEX     scripts/dtc/dtc-lexer.lex.c
+       >   YACC    scripts/dtc/dtc-parser.tab.[ch]
+       >   HOSTCC  scripts/dtc/libfdt/fdt.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_ro.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_wip.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_sw.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_rw.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_strerror.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_empty_tree.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_addresses.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_overlay.o
+       >   HOSTCC  scripts/dtc/fdtoverlay.o
+       >   HOSTCC  scripts/dtc/dtc-lexer.lex.o
+       >   HOSTCC  scripts/dtc/dtc-parser.tab.o
+       >   HOSTLD  scripts/dtc/fdtoverlay
+       >   HOSTLD  scripts/dtc/dtc
+       > make[1]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:248: __sub-make] Error 2
+       > make[1]: Leaving directory '/build/build'
+       > make: *** [Makefile:248: __sub-make] Error 2
+       For full logs, run:
+         nix log /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
+error: Cannot build '/nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv'.
+       Reason: builder failed with exit code 2.
+       Output paths:
+         /nix/store/jspc6zshg14fsbwfnsgbirmkfv3xgbz1-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules
+         /nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev
+         /nix/store/wvmw41ll1ciww25j0arb8hh96fqk6y97-linux_rpi-bcm2712-6.18.59-unstable_20261026
+       Last 25 log lines:
+       > make[2]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:1488: tools/bpf/resolve_btfids] Error 2
+       > make[2]: *** Waiting for unfinished jobs....
+       >   HOSTCC  scripts/dtc/treesource.o
+       >   HOSTCC  scripts/dtc/srcpos.o
+       >   HOSTCC  scripts/dtc/checks.o
+       >   HOSTCC  scripts/dtc/util.o
+       >   LEX     scripts/dtc/dtc-lexer.lex.c
+       >   YACC    scripts/dtc/dtc-parser.tab.[ch]
+       >   HOSTCC  scripts/dtc/libfdt/fdt.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_ro.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_wip.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_sw.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_rw.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_strerror.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_empty_tree.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_addresses.o
+       >   HOSTCC  scripts/dtc/libfdt/fdt_overlay.o
+       >   HOSTCC  scripts/dtc/fdtoverlay.o
+       >   HOSTCC  scripts/dtc/dtc-lexer.lex.o
+       >   HOSTCC  scripts/dtc/dtc-parser.tab.o
+       >   HOSTLD  scripts/dtc/fdtoverlay
+       >   HOSTLD  scripts/dtc/dtc
+       > make[1]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:248: __sub-make] Error 2
+       > make[1]: Leaving directory '/build/build'
+       > make: *** [Makefile:248: __sub-make] Error 2
+       For full logs, run:
+         nix log /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
 building '/nix/store/kswgm4jhm2cvqhkyffdzrizigsyzsjx8-meson-1.12.1.drv'...
-error: Cannot build '/nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv'.
-       Reason: builder failed with exit code 2.
-       Output paths:
-         /nix/store/jspc6zshg14fsbwfnsgbirmkfv3xgbz1-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules
-         /nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev
-         /nix/store/wvmw41ll1ciww25j0arb8hh96fqk6y97-linux_rpi-bcm2712-6.18.59-unstable_20261026
-       Last 25 log lines:
-       > make[2]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:1488: tools/bpf/resolve_btfids] Error 2
-       > make[2]: *** Waiting for unfinished jobs....
-       >   HOSTCC  scripts/dtc/treesource.o
-       >   HOSTCC  scripts/dtc/srcpos.o
-       >   HOSTCC  scripts/dtc/checks.o
-       >   HOSTCC  scripts/dtc/util.o
-       >   LEX     scripts/dtc/dtc-lexer.lex.c
-       >   YACC    scripts/dtc/dtc-parser.tab.[ch]
-       >   HOSTCC  scripts/dtc/libfdt/fdt.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_ro.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_wip.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_sw.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_rw.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_strerror.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_empty_tree.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_addresses.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_overlay.o
-       >   HOSTCC  scripts/dtc/fdtoverlay.o
-       >   HOSTCC  scripts/dtc/dtc-lexer.lex.o
-       >   HOSTCC  scripts/dtc/dtc-parser.tab.o
-       >   HOSTLD  scripts/dtc/fdtoverlay
-       >   HOSTLD  scripts/dtc/dtc
-       > make[1]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:248: __sub-make] Error 2
-       > make[1]: Leaving directory '/build/build'
-       > make: *** [Makefile:248: __sub-make] Error 2
-       For full logs, run:
-         nix log /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
-error: Cannot build '/nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv'.
-       Reason: builder failed with exit code 2.
-       Output paths:
-         /nix/store/jspc6zshg14fsbwfnsgbirmkfv3xgbz1-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules
-         /nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev
-         /nix/store/wvmw41ll1ciww25j0arb8hh96fqk6y97-linux_rpi-bcm2712-6.18.59-unstable_20261026
-       Last 25 log lines:
-       > make[2]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:1488: tools/bpf/resolve_btfids] Error 2
-       > make[2]: *** Waiting for unfinished jobs....
-       >   HOSTCC  scripts/dtc/treesource.o
-       >   HOSTCC  scripts/dtc/srcpos.o
-       >   HOSTCC  scripts/dtc/checks.o
-       >   HOSTCC  scripts/dtc/util.o
-       >   LEX     scripts/dtc/dtc-lexer.lex.c
-       >   YACC    scripts/dtc/dtc-parser.tab.[ch]
-       >   HOSTCC  scripts/dtc/libfdt/fdt.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_ro.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_wip.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_sw.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_rw.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_strerror.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_empty_tree.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_addresses.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_overlay.o
-       >   HOSTCC  scripts/dtc/fdtoverlay.o
-       >   HOSTCC  scripts/dtc/dtc-lexer.lex.o
-       >   HOSTCC  scripts/dtc/dtc-parser.tab.o
-       >   HOSTLD  scripts/dtc/fdtoverlay
-       >   HOSTLD  scripts/dtc/dtc
-       > make[1]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:248: __sub-make] Error 2
-       > make[1]: Leaving directory '/build/build'
-       > make: *** [Makefile:248: __sub-make] Error 2
-       For full logs, run:
-         nix log /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
-error: Cannot build '/nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv'.
-       Reason: builder failed with exit code 2.
-       Output paths:
-         /nix/store/jspc6zshg14fsbwfnsgbirmkfv3xgbz1-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules
-         /nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev
-         /nix/store/wvmw41ll1ciww25j0arb8hh96fqk6y97-linux_rpi-bcm2712-6.18.59-unstable_20261026
-       Last 25 log lines:
-       > make[2]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:1488: tools/bpf/resolve_btfids] Error 2
-       > make[2]: *** Waiting for unfinished jobs....
-       >   HOSTCC  scripts/dtc/treesource.o
-       >   HOSTCC  scripts/dtc/srcpos.o
-       >   HOSTCC  scripts/dtc/checks.o
-       >   HOSTCC  scripts/dtc/util.o
-       >   LEX     scripts/dtc/dtc-lexer.lex.c
-       >   YACC    scripts/dtc/dtc-parser.tab.[ch]
-       >   HOSTCC  scripts/dtc/libfdt/fdt.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_ro.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_wip.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_sw.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_rw.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_strerror.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_empty_tree.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_addresses.o
-       >   HOSTCC  scripts/dtc/libfdt/fdt_overlay.o
-       >   HOSTCC  scripts/dtc/fdtoverlay.o
-       >   HOSTCC  scripts/dtc/dtc-lexer.lex.o
-       >   HOSTCC  scripts/dtc/dtc-parser.tab.o
-       >   HOSTLD  scripts/dtc/fdtoverlay
-       >   HOSTLD  scripts/dtc/dtc
-       > make[1]: *** [/nix/store/wj19phk9ddavi0m6f4lmng60xipikyqf-linux_rpi-bcm2712-6.18.59-unstable_20261026-dev/lib/modules/6.18.59/source/Makefile:248: __sub-make] Error 2
-       > make[1]: Leaving directory '/build/build'
-       > make: *** [Makefile:248: __sub-make] Error 2
-       For full logs, run:
-         nix log /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
-building '/nix/store/cnqxf8q5g880kqzpsa4r7p9i3lds3q3w-mkpasswd-aarch64-unknown-linux-gnu-5.6.6.drv'...
 error: Cannot build '/nix/store/56k6hcvyqjmacfag99wb618hzk7rki8j-nixos-system-ilbl-dash-sd-card-26.11.20261111.d4f25a3.drv'.
        Reason: 1 dependency failed.
        Output paths:

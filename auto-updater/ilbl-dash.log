@@ -14,7 +14,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 270 ms (attempt 1/5)
+</html>; retrying in 289 ms (attempt 1/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -25,7 +25,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 667 ms (attempt 2/5)
+</html>; retrying in 688 ms (attempt 2/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -36,7 +36,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 1378 ms (attempt 3/5)
+</html>; retrying in 1007 ms (attempt 3/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
 response body:
@@ -47,7 +47,7 @@ response body:
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx</center>
 </body>
-</html>; retrying in 2806 ms (attempt 4/5)
+</html>; retrying in 2430 ms (attempt 4/5)
 warning: unable to download 'https://bincache.yoke.sereia.gay/nix-cache-info': HTTP error 502
 
          response body:
@@ -764,34 +764,47 @@ these 1115 derivations will be built:
   /nix/store/him2zcv6xngysqd2d9j9q2z09kvljfdi-unit-script-initrd-find-nixos-closure-start.drv
   /nix/store/2wb40xl3hchlz0zsky7b62y3kzi4y0qn-unit-initrd-find-nixos-closure.service.drv
   /nix/store/2ykanfj85wvxkycqi5w795zr5sfnay2m-ruby3.4-pdf-core-0.9.0.drv
+  /nix/store/n1r82likppmjqqgpxh2x3hpfbbm74sh5-zpool-sync-shutdown.drv
+  /nix/store/31yvhc5f047svv7a27kmvmblr2qlvaaf-shutdown-ramfs-contents.json.drv
   /nix/store/x128vv8n5r58h170z5rkihyj6j7b7nwy-nameservers.drv
   /nix/store/bv2g1lanbl7llxmsdm62j7qwj34wd927-02overridedns.drv
   /nix/store/33rja568hva2qmn5aj593wj0lj542il7-X-Restart-Triggers-NetworkManager-dispatcher.drv
-  /nix/store/8dvjsf82kwcm9xwwd279kj1fx10846hy-users-groups.json.drv
-  /nix/store/vjkp52q4l6khzhh44ylp4jk1rrgpf3mm-perl5.42.3-Test-Pod-1.52-aarch64-unknown-linux-gnu.drv
-  /nix/store/phw89zj6f444kpibp2abw9r1h9qnvq0a-perl5.42.3-JSON-4.10-aarch64-unknown-linux-gnu.drv
-  /nix/store/nj58vahzgsq3hm65ldv0ixqkhzrcbi04-perl-aarch64-unknown-linux-gnu-5.42.3-env.drv
-  /nix/store/35i5gir5q684rr4nhk1jq3dghmq2pzzk-dry-activate.drv
-  /nix/store/fa3zx9fbgmj1y6wajqval04cqavdfi6s-ruby3.4-rexml-3.4.4.drv
-  /nix/store/jbvndrsfbmd1znw67c8myyr3r630syka-ruby3.4-css_parser-1.21.1.drv
-  /nix/store/vbwzc59kivhzipcc7cr7znm4b5v6hj3p-ruby3.4-ttfunk-1.7.0.drv
-  /nix/store/nszb992jnisczix452ivlzm2684gkrx9-ruby3.4-prawn-2.4.0.drv
-  /nix/store/rdknan9040s3any052a6ch1mgpmhrk8x-ruby3.4-matrix-0.4.3.drv
-  /nix/store/391njan09l27ih17lc5nlnmzxj6myv0f-ruby3.4-prawn-svg-0.34.2.drv
-  /nix/store/yx91vmarca0jqd85cfmwks2xwjizbmnb-talloc-aarch64-unknown-linux-gnu-2.5.0.drv
-  /nix/store/3arjk4jrpyd67zf7cibly409p105k7qg-tevent-aarch64-unknown-linux-gnu-0.17.2.drv
-  /nix/store/738gnb3njaxs2cc43avpw91dcmgwifxf-uname.drv
-  /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
-  /nix/store/lxdyajb1avk204q8cfcmxlbf2d06ziib-nuke-refs.drv
-  /nix/store/nip0znc4a294m9jqj53n1l4hs2nsrvfj-setup-module-compression.drv
-  /nix/store/3dswdbyhg757s4wh5v0ry3krqvp41qwh-zfs-kernel-2.4.4-6.18.59-unstable_20261026.drv
-  /nix/store/3h3khs2ycildscw9dk8mkdcwvh1pwh0l-security-wrapper-sg-aarch64-unknown-linux-musl.drv
-  /nix/store/ac0yqd7xjlzw3rldqr047cpy93y23187-rtl8761b-firmware-rtk1395.drv
-  /nix/store/3jfdi800s7x6ckqzz1h9k5w7akk5jwa1-rtl8761b-firmware-rtk1395-zstd.drv
-  /nix/store/3k5rh82zwd444iqd1mfkwwgz4zipw7cw-unit-systemd-pcrextend.socket.drv
   /nix/store/x71skyx88y1czdzvsyv3z68ngrfwp2gg-sops-3.13.3-go-modules-aarch64-unknown-linux-gnu.drv
   /nix/store/3l3j244zj6kw6s1flcklv6mb6vx8i4nx-sops-aarch64-unknown-linux-gnu-3.13.3.drv
-  /nix/store/3n1qk5ry73zsi1hcgfqsq6jiqyy4dakz-unit-local-fs.target.drv
+  /nix/store/6389qi6jnj2jfcg1a8b49f9qj75j8ssb-zsh-aarch64-unknown-linux-gnu-5.9.2.drv
+  /nix/store/6xvm3r860jlg2wdcx7m9z4q0hyfpba0i-sdparm-aarch64-unknown-linux-gnu-1.12.drv
+  /nix/store/lggarv8qshhwkrjmack3687vp1dn8lls-nss-cacert-aarch64-unknown-linux-gnu-3.131.1.drv
+  /nix/store/798rvkn6ns7q045g013gsyghhnn238sy-libressl-aarch64-unknown-linux-gnu-4.3.2.drv
+  /nix/store/7aag8l2clj42zv3g5lk18niww871nv4z-strace-aarch64-unknown-linux-gnu-7.3.drv
+  /nix/store/7ljwxl11r4b4339lnaiy2l3qiv0gxmwj-mtools-aarch64-unknown-linux-gnu-4.0.50.drv
+  /nix/store/7y2fj2sn8q8n7wn53jiylj0vpjlz6hyh-screen-aarch64-unknown-linux-gnu-5.0.2.drv
+  /nix/store/7z6zmyjgvglzi89cfb0jjj16qjqpimzn-raspberrypi-utils-aarch64-unknown-linux-gnu-0-unstable-2026-11-05.drv
+  /nix/store/4j0s2lngyl5pqf34lb2vgxvx6cwrbs0i-nixos-test-driver-docstrings.drv
+  /nix/store/75j5fnpd445dyi3bsk7ycfyml8kcdbfq-nix-manual-2.35.6.drv
+  /nix/store/km9221zfxa7ccjzyzq6sd39pv1125bk8-nix-2.35.6.drv
+  /nix/store/bkv4b94nb15sa1n5q0zs1j9bdvprpgg9-lazy-options.json.drv
+  /nix/store/ws2jqaw53f96g2wscgyczr7npkqsnaqn-options.json.drv
+  /nix/store/83k9m4gw907i40gsnc3hyy2vllh0r23l-nixos-manual-html.drv
+  /nix/store/853fhzlnqp62y1yjl3y2vqh05vrb0bgi-bcache-tools-aarch64-unknown-linux-gnu-1.1.drv
+  /nix/store/8gchwgn41iy7yfigpr38114qvjlbjqn0-desktop-file-utils-0.28.drv
+  /nix/store/5c04vn8r9krjhz48rpy24v2nb7dan0hy-nixos-manual.desktop.drv
+  /nix/store/4zb5jyk0r98yhmpsvxw0aqwv7dd3phwq-w3m-mktable.drv
+  /nix/store/cf1l7kac7y80mw78qgf5n63rffbaqhxh-man-db-aarch64-unknown-linux-gnu-2.13.1.drv
+  /nix/store/bnal401260hhksm443ly65q05jrz43i8-w3m-aarch64-unknown-linux-gnu-0.5.6.drv
+  /nix/store/5cm93mq11basd1ndljqp58zv1a97ffwb-nixos-help.drv
+  /nix/store/9i5zr3g4j6i0qa972xrjx8c4kvy563gi-nixos-help.drv
+  /nix/store/9lbbfbsbld6c3ba1pvviv7p4fb6g7zmy-bluez-tools-aarch64-unknown-linux-gnu-0-unstable-2020-10-24.drv
+  /nix/store/a30mf98mdm9a498f9r0ly9i3ilydkhgx-nixos-configuration-reference-manpage.drv
+  /nix/store/aalgpkz90vqi7713yj6ckwz3j8v8qvls-nixos-version.drv
+  /nix/store/7zw1snlz2jyqvbkzm5qqli2gy8s7gmxf-psmisc-aarch64-unknown-linux-gnu-23.7.drv
+  /nix/store/abidjd8cjqj317hjnzswwygpx69xf3p0-killall-psmisc-aarch64-unknown-linux-gnu-23.7.drv
+  /nix/store/ahhl27rsfjf2v8h13j0a8am7bzjjdzjv-sshfs-fuse-aarch64-unknown-linux-gnu-3.7.7.drv
+  /nix/store/aliw4x50vgp2wn2symys13hjj0ksgxg3-zsh-syntax-highlighting-aarch64-unknown-linux-gnu-0.8.0.drv
+  /nix/store/cnqxf8q5g880kqzpsa4r7p9i3lds3q3w-mkpasswd-aarch64-unknown-linux-gnu-5.6.6.drv
+  /nix/store/dnqw4j4hkd8v81m4csi55f3h76pliq8g-vim-aarch64-unknown-linux-gnu-9.2.1252.drv
+  /nix/store/f1n9v6zs6hb16la5xwf9vrlg30m8w63q-time-aarch64-unknown-linux-gnu-1.10.drv
+  /nix/store/f6lmg1sjhglj2n77arn2lidqrd0zig3x-testdisk-aarch64-unknown-linux-gnu-7.2.drv
+  /nix/store/fmk91l24f15vjp1mqky375nabqm8hpc7-bind-aarch64-unknown-linux-gnu-9.20.30.drv
   /nix/store/cnxlj5mjna3ni5dz2wjzg0i825d270vi-libpq-aarch64-unknown-linux-gnu-18.6.drv
   /nix/store/mkdja2d1ni51h333b2m82j5ahsz6hn55-mariadb-connector-c-aarch64-unknown-linux-gnu-3.3.5.drv
   /nix/store/pwjcr717h38w9z8bq7zhkih4mjqvkfx1-qtbase5-setup-hook.drv
@@ -799,100 +812,6 @@ these 1115 derivations will be built:
   /nix/store/sdsb5miccm403ca3brycdfflx5wlvgwp-qmake-hook.drv
   /nix/store/5z494vihhi9xm7car3pzi9mpyvjl7lh6-qtsvg-aarch64-unknown-linux-gnu-5.15.19.drv
   /nix/store/3qg8vdxv77w22s7brkfn1g0i5y4j6sag-qtdeclarative-aarch64-unknown-linux-gnu-5.15.19.drv
-  /nix/store/3rwsf08zjzwcs03kg14kg5si74jcqav8-unit-systemd-hostnamed.service.drv
-  /nix/store/3sflcf1sk2minn3588ndi97k4y4lnh54-unit-graphical.target.drv
-  /nix/store/3y1zblsp0ba2ijxnjf2c9s01syg808gg-zlib-ng-aarch64-unknown-linux-gnu-2.3.3.drv
-  /nix/store/474n3gsks1ykjf9vnvafdw0sp7p0p1qi-unit--.slice.drv
-  /nix/store/4zb5jyk0r98yhmpsvxw0aqwv7dd3phwq-w3m-mktable.drv
-  /nix/store/cf1l7kac7y80mw78qgf5n63rffbaqhxh-man-db-aarch64-unknown-linux-gnu-2.13.1.drv
-  /nix/store/bnal401260hhksm443ly65q05jrz43i8-w3m-aarch64-unknown-linux-gnu-0.5.6.drv
-  /nix/store/4j0s2lngyl5pqf34lb2vgxvx6cwrbs0i-nixos-test-driver-docstrings.drv
-  /nix/store/75j5fnpd445dyi3bsk7ycfyml8kcdbfq-nix-manual-2.35.6.drv
-  /nix/store/km9221zfxa7ccjzyzq6sd39pv1125bk8-nix-2.35.6.drv
-  /nix/store/l7xyfp7hn9xm45gns9yvmmgrg77bgwb8-lazy-options.json.drv
-  /nix/store/kgf3ws5zvdwclxs7iqgq8qhza902f36j-options.json.drv
-  /nix/store/x9pq01fnyz527i4x49krx4b8s544i0y5-nixos-manual-html.drv
-  /nix/store/4dki8xj1i3brflwayckxc9qg1vcn6m20-nixos-help.drv
-  /nix/store/4fpmlk55kyapkj573816pa038fb89wib-rt5677-firmware-4.16-10-zstd.drv
-  /nix/store/853fhzlnqp62y1yjl3y2vqh05vrb0bgi-bcache-tools-aarch64-unknown-linux-gnu-1.1.drv
-  /nix/store/f9s2af6827fhfb033h16651dlyi6aw77-udev-path.drv
-  /nix/store/fliv9wdqw7ia99wrd6ai8qqxhwb90c1s-script.drv
-  /nix/store/vcnmqh9fp3fx7kq1i9qwdij2vl5zbzrr-system-sendmail-aarch64-unknown-linux-gnu-1.0.drv
-  /nix/store/hjdh9sgapn1qx93462fcy8hvjcy82z1w-mdadm-aarch64-unknown-linux-gnu-4.6.drv
-  /nix/store/l4c1av9qyig96xyjbycnrr3ag67v0b1j-raspberrypi-udev-rules-20260202.drv
-  /nix/store/cqffh05qb9l82hihkdd9d3326bccml7k-iproute2-7.2.0.drv
-  /nix/store/hx0mbh1k75bjzp2p0vlbmp6y6ywwdyg8-swtpm-0.10.1-unstable-2026-05-21.drv
-  /nix/store/npwvbbwjxflvrm0sszbcbx723qc9459f-tpm2-tss-4.2.1.drv
-  /nix/store/mghk7dd6alcd1cxnc2pyg15k3ykgbqq9-systemd-262.drv
-  /nix/store/qfnvi5vwahgzd3zvrjzf3pmndzzq14kn-extra-udev-rules.drv
-  /nix/store/ld5clrdsv19pmisa722092ny2mm8ccbw-udev-rules.drv
-  /nix/store/4glrl1kv7c48275z9cyik8gkvv9mxs7a-X-Restart-Triggers-systemd-udevd.drv
-  /nix/store/9i2wgc3wszyj87s5798p8a8lwfwpw09s-__fish_build_paths_suffix.fish.drv
-  /nix/store/d875g7xn8pqhrm9ckc198462y7yfv77s-cargo-deps-vendor.drv
-  /nix/store/yi15wbmx585byqiyy4abqgm3lcp98afz-config.fish.appendix.drv
-  /nix/store/4i9fazbz0ds4am38asqh6qdl57whk313-fish-4.9.3.drv
-  /nix/store/4n2k8c6hr26wjwgmh81kykd2zfzhaq36-unit-zfs-mount.service.drv
-  /nix/store/4rn35a4znidj6h2cri4kkidv2y1q7rvg-ruby3.4-asciidoctor-2.0.26.drv
-  /nix/store/na5fr9fxzdw22abdqfg8mbys4d4ca7ph-unit-script-register-nix-paths-start.drv
-  /nix/store/51rrwi8i4byhjlm7b9qmcn8dmf73i1sm-unit-register-nix-paths.service.drv
-  /nix/store/53s03gxj5afrv552a2l4cn47ry5yvvcx-perl-aarch64-unknown-linux-gnu-5.42.3-env.drv
-  /nix/store/vwiam077vr4fr3cjsgwxv7fzkrv14rf3-firewall-start.drv
-  /nix/store/53y4fw3gn50wsqwvjf4l4azv09ab0mry-firewall-reload.drv
-  /nix/store/5453fkirki3za6lhqcqgy9rjp0rly655-fc-cache.drv
-  /nix/store/w1w61g389i0fq8hr8k51l2r9vvy56d0y-unit-script-nixos-activation-start.drv
-  /nix/store/54kq25vzz401a5dcq2mri1ixhrfc4drg-unit-nixos-activation.service.drv
-  /nix/store/p1n848b5h0css05j4q48hlgwpc4s7lzr-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules.drv
-  /nix/store/ri8zl5jy1fs7bjbzvs2fj24h1dji82mr-zd1211-firmware-1.5.drv
-  /nix/store/l81kcag7y40zfff7ihcwgknkvhvrqqvn-zd1211-firmware-1.5-zstd.drv
-  /nix/store/lnd2rdp3gx97kr8ny491a3a02kpylszc-rtl8192su-firmware-0-unstable-2016-10-05.drv
-  /nix/store/p5qs7mf8bflzkxa7bn2i5bj5pakzyj2n-rtl8192su-firmware-0-unstable-2016-10-05-zstd.drv
-  /nix/store/hlz21yy61mjzk3pgb4w2gcsi56yqjbfp-wireless-regdb-2026.09.03.drv
-  /nix/store/p7w9w6p8q0acgm7zqjzq0fypxk96rc5q-wireless-regdb-2026.09.03-zstd.drv
-  /nix/store/f5nszb6mb6nnj9882vfjfg8h0k637x96-raspberrypi-wireless-firmware-2026-03-21.drv
-  /nix/store/xi5pmipwndssc0jjganchgfg3mkgjgnl-raspberrypi-wireless-firmware-2026-03-21-zstd.drv
-  /nix/store/n9wb2svvbl8xsr9rbr3mc1ql6riscg3i-sof-firmware-2025.12.2.drv
-  /nix/store/zq1j33znrgvpbi837pdkfhxvhzrir1f8-sof-firmware-2025.12.2-zstd.drv
-  /nix/store/xnj9k21y9dh0vpm7j616544g7g4zspfd-firmware.drv
-  /nix/store/565awrkpwaknyx87adyqkvwqwdxhc8yi-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules-shrunk.drv
-  /nix/store/575qih1bb5gab0c37vb14w9kky3sxj2z-unit-zfs-zed.service.drv
-  /nix/store/7ljwxl11r4b4339lnaiy2l3qiv0gxmwj-mtools-aarch64-unknown-linux-gnu-4.0.50.drv
-  /nix/store/i8a15p8yxizwpvc7dma6by3c29sw9s6y-python3.14-dnspython-2.9.0.drv
-  /nix/store/9yf9zaaj73hrccd4k52akyciji8cnj0z-samba-4.25.1.drv
-  /nix/store/anj89yma288gnqxpnswpqrqjysnrr9sh-lmdb-aarch64-unknown-linux-gnu-0.9.36.drv
-  /nix/store/vigsl37nx2fkxsf50wnqbzdsyhd61m3f-tdb-aarch64-unknown-linux-gnu-1.4.15.drv
-  /nix/store/knm53za0j86a4y425z8pd1mhglqj5dcj-ldb-aarch64-unknown-linux-gnu-2.9.2.drv
-  /nix/store/za0kdimcdrza3pyrrmpiprakizkqwf4w-python3.14-dnspython-2.9.0-aarch64-unknown-linux-gnu.drv
-  /nix/store/iwks2l4lgrk4afnaycdsmjssnpi1bs7g-samba-aarch64-unknown-linux-gnu-4.25.1.drv
-  /nix/store/m2ksnsc8lvqbd3jgpjgr06qqaldg6bzg-cifs-utils-aarch64-unknown-linux-gnu-7.9.drv
-  /nix/store/5awpxh91hiyip5s4gdc8vnbjwspidjyz-unit-systemd-makefs-.service.drv
-  /nix/store/9c3dcbdk5bsznwydnjwjzb25dl42v997-fgl-5.8.3.0.drv
-  /nix/store/5big2ncfmy0awxxrjnmd620z9y4jmxm0-ShellCheck-0.11.0.drv
-  /nix/store/5bp7gfdying75pnwq3zx189xzrb1acj3-ssh-root-provision.conf.drv
-  /nix/store/8gchwgn41iy7yfigpr38114qvjlbjqn0-desktop-file-utils-0.28.drv
-  /nix/store/5c04vn8r9krjhz48rpy24v2nb7dan0hy-nixos-manual.desktop.drv
-  /nix/store/5gcadsk2rk7ay48p9lggb84sf7ivxmfv-zsh-autosuggestions-0.7.1.drv
-  /nix/store/7k04v31nsg9grqm0bqv6k4m1am7zhymw-unit-dbus.socket.drv
-  /nix/store/b3nan9n8ig4iha9icbacy2rvg85gjdyn-unit-dbus.service.drv
-  /nix/store/f8k395r7fnkdrispfdwbzxwsxy31b0i4-unit-systemd-tmpfiles-clean.timer.drv
-  /nix/store/6389qi6jnj2jfcg1a8b49f9qj75j8ssb-zsh-aarch64-unknown-linux-gnu-5.9.2.drv
-  /nix/store/6xvm3r860jlg2wdcx7m9z4q0hyfpba0i-sdparm-aarch64-unknown-linux-gnu-1.12.drv
-  /nix/store/lggarv8qshhwkrjmack3687vp1dn8lls-nss-cacert-aarch64-unknown-linux-gnu-3.131.1.drv
-  /nix/store/798rvkn6ns7q045g013gsyghhnn238sy-libressl-aarch64-unknown-linux-gnu-4.3.2.drv
-  /nix/store/7aag8l2clj42zv3g5lk18niww871nv4z-strace-aarch64-unknown-linux-gnu-7.3.drv
-  /nix/store/7y2fj2sn8q8n7wn53jiylj0vpjlz6hyh-screen-aarch64-unknown-linux-gnu-5.0.2.drv
-  /nix/store/7z6zmyjgvglzi89cfb0jjj16qjqpimzn-raspberrypi-utils-aarch64-unknown-linux-gnu-0-unstable-2026-11-05.drv
-  /nix/store/9lbbfbsbld6c3ba1pvviv7p4fb6g7zmy-bluez-tools-aarch64-unknown-linux-gnu-0-unstable-2020-10-24.drv
-  /nix/store/9q0hg9m1hhpr9rnayrsi7zr4rby07nsq-nixos-version.drv
-  /nix/store/7zw1snlz2jyqvbkzm5qqli2gy8s7gmxf-psmisc-aarch64-unknown-linux-gnu-23.7.drv
-  /nix/store/abidjd8cjqj317hjnzswwygpx69xf3p0-killall-psmisc-aarch64-unknown-linux-gnu-23.7.drv
-  /nix/store/ahhl27rsfjf2v8h13j0a8am7bzjjdzjv-sshfs-fuse-aarch64-unknown-linux-gnu-3.7.7.drv
-  /nix/store/aliw4x50vgp2wn2symys13hjj0ksgxg3-zsh-syntax-highlighting-aarch64-unknown-linux-gnu-0.8.0.drv
-  /nix/store/cnqxf8q5g880kqzpsa4r7p9i3lds3q3w-mkpasswd-aarch64-unknown-linux-gnu-5.6.6.drv
-  /nix/store/dnqw4j4hkd8v81m4csi55f3h76pliq8g-vim-aarch64-unknown-linux-gnu-9.2.1252.drv
-  /nix/store/f03krg90w3qvhanyn71dala420hn0yp9-nixos-configuration-reference-manpage.drv
-  /nix/store/f1n9v6zs6hb16la5xwf9vrlg30m8w63q-time-aarch64-unknown-linux-gnu-1.10.drv
-  /nix/store/f6lmg1sjhglj2n77arn2lidqrd0zig3x-testdisk-aarch64-unknown-linux-gnu-7.2.drv
-  /nix/store/fmk91l24f15vjp1mqky375nabqm8hpc7-bind-aarch64-unknown-linux-gnu-9.20.30.drv
   /nix/store/b8ppmh9p95svrfzx2wiwcwav7c1b4sy5-qtquickcontrols-aarch64-unknown-linux-gnu-5.15.19.drv
   /nix/store/5rmid8m84j84nhqy4xysp367l8lw0ddb-qtwayland-aarch64-unknown-linux-gnu-5.15.19.drv
   /nix/store/qgm3ixq5ii28ay7vs88pak61yggl4p4y-die-hook.drv
@@ -920,13 +839,30 @@ these 1115 derivations will be built:
   /nix/store/ig2j1ilpgpydpnlcdrh0a2jjdb4hw5f6-tcpdump-aarch64-unknown-linux-gnu-4.99.7.drv
   /nix/store/iii94ahn3jp0d9zp74v0njqisyxsb4qs-oh-my-zsh-aarch64-unknown-linux-gnu-2026-11-02.drv
   /nix/store/iv8rv64czcpramrm9vpf25ny78j1sw3c-nix-zsh-completions-0.5.1-unstable-2025-12-12.drv
+  /nix/store/3y1zblsp0ba2ijxnjf2c9s01syg808gg-zlib-ng-aarch64-unknown-linux-gnu-2.3.3.drv
   /nix/store/hqh6mx2j5m1gwsfj602rn3ss348lpz2j-uname.drv
   /nix/store/j0fjd40wr2xbbxn07hsn5gwzp77la0f0-git-aarch64-unknown-linux-gnu-2.56.0.drv
   /nix/store/knjzn9b20p38ii42pqcksa3qfq0gdjyi-efivar-aarch64-unknown-linux-gnu-39.drv
   /nix/store/jg4d4mvzfxplffbgvr8k39qvq54bdarv-efibootmgr-aarch64-unknown-linux-gnu-18.drv
   /nix/store/jzxzl7lkxr295a3p5l3fk5k4j758fx8s-gptfdisk-aarch64-unknown-linux-gnu-1.0.10.drv
+  /nix/store/9i2wgc3wszyj87s5798p8a8lwfwpw09s-__fish_build_paths_suffix.fish.drv
+  /nix/store/d875g7xn8pqhrm9ckc198462y7yfv77s-cargo-deps-vendor.drv
+  /nix/store/yi15wbmx585byqiyy4abqgm3lcp98afz-config.fish.appendix.drv
+  /nix/store/4i9fazbz0ds4am38asqh6qdl57whk313-fish-4.9.3.drv
   /nix/store/5mzgjmc6jffk4gix6r15sq6wh285jmsr-python3.14-shtab-1.11.0.drv
   /nix/store/lm5gnsnbq22q8bpgindrh71r88y6y283-nixos-rebuild-ng-26.11-aarch64-unknown-linux-gnu.drv
+  /nix/store/yx91vmarca0jqd85cfmwks2xwjizbmnb-talloc-aarch64-unknown-linux-gnu-2.5.0.drv
+  /nix/store/3arjk4jrpyd67zf7cibly409p105k7qg-tevent-aarch64-unknown-linux-gnu-0.17.2.drv
+  /nix/store/i8a15p8yxizwpvc7dma6by3c29sw9s6y-python3.14-dnspython-2.9.0.drv
+  /nix/store/9yf9zaaj73hrccd4k52akyciji8cnj0z-samba-4.25.1.drv
+  /nix/store/anj89yma288gnqxpnswpqrqjysnrr9sh-lmdb-aarch64-unknown-linux-gnu-0.9.36.drv
+  /nix/store/vigsl37nx2fkxsf50wnqbzdsyhd61m3f-tdb-aarch64-unknown-linux-gnu-1.4.15.drv
+  /nix/store/knm53za0j86a4y425z8pd1mhglqj5dcj-ldb-aarch64-unknown-linux-gnu-2.9.2.drv
+  /nix/store/vjkp52q4l6khzhh44ylp4jk1rrgpf3mm-perl5.42.3-Test-Pod-1.52-aarch64-unknown-linux-gnu.drv
+  /nix/store/phw89zj6f444kpibp2abw9r1h9qnvq0a-perl5.42.3-JSON-4.10-aarch64-unknown-linux-gnu.drv
+  /nix/store/za0kdimcdrza3pyrrmpiprakizkqwf4w-python3.14-dnspython-2.9.0-aarch64-unknown-linux-gnu.drv
+  /nix/store/iwks2l4lgrk4afnaycdsmjssnpi1bs7g-samba-aarch64-unknown-linux-gnu-4.25.1.drv
+  /nix/store/m2ksnsc8lvqbd3jgpjgr06qqaldg6bzg-cifs-utils-aarch64-unknown-linux-gnu-7.9.drv
   /nix/store/m6aphx43vwcvi1jy7lmw44s9szxyib7k-htop-aarch64-unknown-linux-gnu-3.5.3.drv
   /nix/store/mf0160jprjlxwqxb26vn0vqplzkvmnhi-sound-theme-freedesktop-aarch64-unknown-linux-gnu-0.8.drv
   /nix/store/n09m752qi8cw5c3sx1vbqq6ryn0m9dpp-nix-info-aarch64-unknown-linux-gnu.drv
@@ -934,10 +870,16 @@ these 1115 derivations will be built:
   /nix/store/p0gvaf6jgczdik4jyp7spdh8y5ch3962-nixos-build-vms.drv
   /nix/store/p19njx9pcp1kxsyn4agsrhkl39wwqbfa-ms-sys-aarch64-unknown-linux-gnu-2.8.0.drv
   /nix/store/ppp4lvg1xchwiq4smip9yybiaakggpcd-nvme-cli-aarch64-unknown-linux-gnu-2.16.drv
-  /nix/store/pq6b936kw4ymamsbb11dq1phf62ymqz4-nixos-help.drv
   /nix/store/pwc5amcg97r7qmfpa03lb447r6xf9xlk-zip-aarch64-unknown-linux-gnu-3.0.drv
   /nix/store/q9sdfpnbp00abf04in9iknyy7ngws441-nixos-option-26.11.drv
   /nix/store/qq4wv7hwkkxbbs5jxckvmxna0ci1kd7q-nix-bash-completions-aarch64-unknown-linux-gnu-0.6.8.drv
+  /nix/store/fa3zx9fbgmj1y6wajqval04cqavdfi6s-ruby3.4-rexml-3.4.4.drv
+  /nix/store/jbvndrsfbmd1znw67c8myyr3r630syka-ruby3.4-css_parser-1.21.1.drv
+  /nix/store/vbwzc59kivhzipcc7cr7znm4b5v6hj3p-ruby3.4-ttfunk-1.7.0.drv
+  /nix/store/nszb992jnisczix452ivlzm2684gkrx9-ruby3.4-prawn-2.4.0.drv
+  /nix/store/rdknan9040s3any052a6ch1mgpmhrk8x-ruby3.4-matrix-0.4.3.drv
+  /nix/store/391njan09l27ih17lc5nlnmzxj6myv0f-ruby3.4-prawn-svg-0.34.2.drv
+  /nix/store/4rn35a4znidj6h2cri4kkidv2y1q7rvg-ruby3.4-asciidoctor-2.0.26.drv
   /nix/store/68z025yix1hsswn4qvpjgznmxhs1lfs9-gen-bin-stubs.drv
   /nix/store/78aqdhcm88p2d4y5v9ib4n9adkcb83kh-ruby3.4-polyglot-0.3.5.drv
   /nix/store/811phrnn3aj6krkcljhkkah2996vdyb5-ruby3.4-treetop-1.6.18.drv
@@ -966,13 +908,77 @@ these 1115 derivations will be built:
   /nix/store/r707azcs1abkhxnp6msihbwxg0l7b504-xxhash-aarch64-unknown-linux-gnu-0.8.3.drv
   /nix/store/yxrdr47li8bj73shmw80iffcfqrnq7rf-rsync-aarch64-unknown-linux-gnu-3.5.0.drv
   /nix/store/zqgw41lzwd1f7ddw54by57k00a40rl2n-nixos-firewall-tool-26.11.drv
-  /nix/store/bns60zhdar5w5y8c2v715n879vyfzfcl-system-path.drv
-  /nix/store/bqmgkrcg6gd6qpy64yyp2axr3358w3zm-dbus-1.drv
-  /nix/store/zqlan79qx52yzi2762n706lb3wns4gwg-X-Restart-Triggers-dbus-broker.drv
-  /nix/store/g7zdsqqv256015pcdhw13sy9rzsc9bqq-unit-dbus-broker.service.drv
+  /nix/store/wgnxsx9pd0cq7ayyc2rcns1swwizggds-system-path.drv
+  /nix/store/gn7jxisy3xlwjzga2ascbym6vjj7kx8p-X-Restart-Triggers-polkit.drv
+  /nix/store/n02pcs97nzw9aw3hjvx56bkrx4f9sy0z-etc-polkit-1-rules.d-10-nixos.rules.drv
+  /nix/store/nn80avifxbb55k83af58jr0qvjnhvjjz-X-Reload-Triggers-polkit.drv
+  /nix/store/356zvkx3b9awsqcavj8hg3z1c7r4wj4p-unit-polkit.service.drv
+  /nix/store/8dvjsf82kwcm9xwwd279kj1fx10846hy-users-groups.json.drv
+  /nix/store/nj58vahzgsq3hm65ldv0ixqkhzrcbi04-perl-aarch64-unknown-linux-gnu-5.42.3-env.drv
+  /nix/store/35i5gir5q684rr4nhk1jq3dghmq2pzzk-dry-activate.drv
+  /nix/store/w1w61g389i0fq8hr8k51l2r9vvy56d0y-unit-script-nixos-activation-start.drv
+  /nix/store/54kq25vzz401a5dcq2mri1ixhrfc4drg-unit-nixos-activation.service.drv
+  /nix/store/7k04v31nsg9grqm0bqv6k4m1am7zhymw-unit-dbus.socket.drv
+  /nix/store/b3nan9n8ig4iha9icbacy2rvg85gjdyn-unit-dbus.service.drv
+  /nix/store/f8k395r7fnkdrispfdwbzxwsxy31b0i4-unit-systemd-tmpfiles-clean.timer.drv
+  /nix/store/zlg4mxmdbkhcavvzkzqay9alz3l5mmxq-dbus-1.drv
+  /nix/store/wnk641lbajrf4vk3v8fjp19g1bk3z3i8-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/j40dd00jn0fr6v11j3li17mr5rq8a2f3-unit-dbus-broker.service.drv
   /nix/store/pgyy73qnixr64ixwgl8mmbavjk1sq484-unit-nixos-fake-graphical-session.target.drv
   /nix/store/plf9w9q87zynf8wk9lvdycc79wc7aw4k-unit-systemd-tmpfiles-setup.service.drv
-  /nix/store/5i02r44y8bwxpqabi4h3hvc5zf12lgvz-user-units.drv
+  /nix/store/38r20h9sq77nyi5mhwr9vv8j8rah7jm2-user-units.drv
+  /nix/store/738gnb3njaxs2cc43avpw91dcmgwifxf-uname.drv
+  /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
+  /nix/store/lxdyajb1avk204q8cfcmxlbf2d06ziib-nuke-refs.drv
+  /nix/store/nip0znc4a294m9jqj53n1l4hs2nsrvfj-setup-module-compression.drv
+  /nix/store/3dswdbyhg757s4wh5v0ry3krqvp41qwh-zfs-kernel-2.4.4-6.18.59-unstable_20261026.drv
+  /nix/store/3h3khs2ycildscw9dk8mkdcwvh1pwh0l-security-wrapper-sg-aarch64-unknown-linux-musl.drv
+  /nix/store/ac0yqd7xjlzw3rldqr047cpy93y23187-rtl8761b-firmware-rtk1395.drv
+  /nix/store/3jfdi800s7x6ckqzz1h9k5w7akk5jwa1-rtl8761b-firmware-rtk1395-zstd.drv
+  /nix/store/3k5rh82zwd444iqd1mfkwwgz4zipw7cw-unit-systemd-pcrextend.socket.drv
+  /nix/store/3n1qk5ry73zsi1hcgfqsq6jiqyy4dakz-unit-local-fs.target.drv
+  /nix/store/3rwsf08zjzwcs03kg14kg5si74jcqav8-unit-systemd-hostnamed.service.drv
+  /nix/store/3sflcf1sk2minn3588ndi97k4y4lnh54-unit-graphical.target.drv
+  /nix/store/474n3gsks1ykjf9vnvafdw0sp7p0p1qi-unit--.slice.drv
+  /nix/store/4fpmlk55kyapkj573816pa038fb89wib-rt5677-firmware-4.16-10-zstd.drv
+  /nix/store/f9s2af6827fhfb033h16651dlyi6aw77-udev-path.drv
+  /nix/store/fliv9wdqw7ia99wrd6ai8qqxhwb90c1s-script.drv
+  /nix/store/vcnmqh9fp3fx7kq1i9qwdij2vl5zbzrr-system-sendmail-aarch64-unknown-linux-gnu-1.0.drv
+  /nix/store/hjdh9sgapn1qx93462fcy8hvjcy82z1w-mdadm-aarch64-unknown-linux-gnu-4.6.drv
+  /nix/store/l4c1av9qyig96xyjbycnrr3ag67v0b1j-raspberrypi-udev-rules-20260202.drv
+  /nix/store/cqffh05qb9l82hihkdd9d3326bccml7k-iproute2-7.2.0.drv
+  /nix/store/hx0mbh1k75bjzp2p0vlbmp6y6ywwdyg8-swtpm-0.10.1-unstable-2026-05-21.drv
+  /nix/store/npwvbbwjxflvrm0sszbcbx723qc9459f-tpm2-tss-4.2.1.drv
+  /nix/store/mghk7dd6alcd1cxnc2pyg15k3ykgbqq9-systemd-262.drv
+  /nix/store/qfnvi5vwahgzd3zvrjzf3pmndzzq14kn-extra-udev-rules.drv
+  /nix/store/ld5clrdsv19pmisa722092ny2mm8ccbw-udev-rules.drv
+  /nix/store/4glrl1kv7c48275z9cyik8gkvv9mxs7a-X-Restart-Triggers-systemd-udevd.drv
+  /nix/store/4n2k8c6hr26wjwgmh81kykd2zfzhaq36-unit-zfs-mount.service.drv
+  /nix/store/na5fr9fxzdw22abdqfg8mbys4d4ca7ph-unit-script-register-nix-paths-start.drv
+  /nix/store/51rrwi8i4byhjlm7b9qmcn8dmf73i1sm-unit-register-nix-paths.service.drv
+  /nix/store/53s03gxj5afrv552a2l4cn47ry5yvvcx-perl-aarch64-unknown-linux-gnu-5.42.3-env.drv
+  /nix/store/vwiam077vr4fr3cjsgwxv7fzkrv14rf3-firewall-start.drv
+  /nix/store/53y4fw3gn50wsqwvjf4l4azv09ab0mry-firewall-reload.drv
+  /nix/store/5453fkirki3za6lhqcqgy9rjp0rly655-fc-cache.drv
+  /nix/store/p1n848b5h0css05j4q48hlgwpc4s7lzr-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules.drv
+  /nix/store/ri8zl5jy1fs7bjbzvs2fj24h1dji82mr-zd1211-firmware-1.5.drv
+  /nix/store/l81kcag7y40zfff7ihcwgknkvhvrqqvn-zd1211-firmware-1.5-zstd.drv
+  /nix/store/lnd2rdp3gx97kr8ny491a3a02kpylszc-rtl8192su-firmware-0-unstable-2016-10-05.drv
+  /nix/store/p5qs7mf8bflzkxa7bn2i5bj5pakzyj2n-rtl8192su-firmware-0-unstable-2016-10-05-zstd.drv
+  /nix/store/hlz21yy61mjzk3pgb4w2gcsi56yqjbfp-wireless-regdb-2026.09.03.drv
+  /nix/store/p7w9w6p8q0acgm7zqjzq0fypxk96rc5q-wireless-regdb-2026.09.03-zstd.drv
+  /nix/store/f5nszb6mb6nnj9882vfjfg8h0k637x96-raspberrypi-wireless-firmware-2026-03-21.drv
+  /nix/store/xi5pmipwndssc0jjganchgfg3mkgjgnl-raspberrypi-wireless-firmware-2026-03-21-zstd.drv
+  /nix/store/n9wb2svvbl8xsr9rbr3mc1ql6riscg3i-sof-firmware-2025.12.2.drv
+  /nix/store/zq1j33znrgvpbi837pdkfhxvhzrir1f8-sof-firmware-2025.12.2-zstd.drv
+  /nix/store/xnj9k21y9dh0vpm7j616544g7g4zspfd-firmware.drv
+  /nix/store/565awrkpwaknyx87adyqkvwqwdxhc8yi-linux_rpi-bcm2712-6.18.59-unstable_20261026-modules-shrunk.drv
+  /nix/store/575qih1bb5gab0c37vb14w9kky3sxj2z-unit-zfs-zed.service.drv
+  /nix/store/5awpxh91hiyip5s4gdc8vnbjwspidjyz-unit-systemd-makefs-.service.drv
+  /nix/store/9c3dcbdk5bsznwydnjwjzb25dl42v997-fgl-5.8.3.0.drv
+  /nix/store/5big2ncfmy0awxxrjnmd620z9y4jmxm0-ShellCheck-0.11.0.drv
+  /nix/store/5bp7gfdying75pnwq3zx189xzrb1acj3-ssh-root-provision.conf.drv
+  /nix/store/5gcadsk2rk7ay48p9lggb84sf7ivxmfv-zsh-autosuggestions-0.7.1.drv
   /nix/store/5k1lz8hwfkfcjjmpk2879jcngzssn1fp-unit-initrd.target.drv
   /nix/store/5lgvpjf0rpdq9z9rqv3izbc9gczh5958-unit-systemd-boot-random-seed.service.drv
   /nix/store/h397ykhdw5hsnp71spr8pkksvd6p5pc1-raspberrypi-firmware-0-unstable-20261027.drv
@@ -1006,31 +1012,13 @@ these 1115 derivations will be built:
   /nix/store/wsqqqr3lwg4nzwdvnsxvixan6rs6500g-graphics-drivers.drv
   /nix/store/p405daayl8dll79q6rbg3b6avykbv0k7-graphics-driver.conf.drv
   /nix/store/8lw8fppbadwy4w81ann1n6xch61yl1dl-tmpfiles.d.drv
-  /nix/store/8mds045fi18mxnzb73hkzzc9k7my61df-unit-NetworkManager-dispatcher.service.drv
-  /nix/store/8sxnkk6a69cqani0p467jzab6arndl5q-unit-zfs.target.drv
-  /nix/store/918vdby7pbdzk6zi3pr29syycbyx5m1g-unit-user-runtime-dir-.service.drv
-  /nix/store/9291iwqihrc95gyzh4nsb7synlgapsyy-unit-systemd-udevd.service.drv
   /nix/store/96ay4cj76qb916qqhvpxph3m6qqc5nkz-luana-authorized_keys.drv
-  /nix/store/9c50hv3nkjaxh5vpcmwl6279q23d523w-unit-lastlog2-import.service.drv
-  /nix/store/9jbwvl6ml2i8fn360sqhdjbfqfd2fl9l-pre-switch-checks.drv
-  /nix/store/9n6wbvbx9g1gi77i7m9c8gym2q6m7764-unit-network.target.drv
-  /nix/store/9rpypk7n7dhwmdhpaaz83ncm7w1g7qgy-logger-util-linux-aarch64-unknown-linux-gnu-2.42.4.drv
-  /nix/store/9xyykrgw02jc6jv7c4hdmnmq3sklcmad-unit-systemd-nspawn-.service.drv
-  /nix/store/a2bhfvhj9c1rl5nm5bwk2lijp03p996s-unit-dbus-broker.service.drv
-  /nix/store/g8y6mfsqkk59qafd43bi8l93dibvdzk6-initrd-bin-env.drv
-  /nix/store/a3akyzcckpv9v5k4r6ncnfjy3grcnivw-initrd-udev-rules.drv
-  /nix/store/n1r82likppmjqqgpxh2x3hpfbbm74sh5-zpool-sync-shutdown.drv
-  /nix/store/h1if5qc8ha1jyxl5fl2j1w7ivm2adcjc-shutdown-ramfs-contents.json.drv
-  /nix/store/yzb5dffcdmiwl2xdicfmbi6zmlphcmbl-make-initrd-ng-aarch64-unknown-linux-gnu-0.1.0.drv
-  /nix/store/af7aymn2smak7v90p1wwijsqpl99zcfy-unit-generate-shutdown-ramfs.service.drv
   /nix/store/c1mwi6f6z234c473f02shczqsbz0dwdi-setup-hook.drv
   /nix/store/ah913kvh7gi3flzfb1synmsl5i7zcrn9-iana-etc-20251215.drv
-  /nix/store/xmya7qcarl7gsgah1ilvcbw20z58n25h-unit-script-prepare-kexec-start.drv
-  /nix/store/an1h8xc2l6wxn534riz8mc1lb5p4lx6z-unit-prepare-kexec.service.drv
-  /nix/store/dim32grz9fr2fphqd3hyz6qnyz9az05c-mounts.sh.drv
   /nix/store/bkpxpjf9i33f2p0iqnh5aapygav73bbq-main.conf.drv
   /nix/store/m1sqcmhn1j37y3rbvcq0v8qx068bji49-sudoers-in.drv
   /nix/store/bv8li960lxw6jp0b6nsfhi7xgydkllds-sudoers.drv
+  /nix/store/9rpypk7n7dhwmdhpaaz83ncm7w1g7qgy-logger-util-linux-aarch64-unknown-linux-gnu-2.42.4.drv
   /nix/store/cfmbgz84k9vjjiia62lc0vf9dnf2ypdm-etc-zfs-zed.d-zed.rc.drv
   /nix/store/d5jhliv8dq7mq7c56c4plrh8magnz5w3-network.conf.drv
   /nix/store/d7i7yvnwkz5yqq0aari8isdqx4dh6mh5-system-shutdown.drv
@@ -1045,15 +1033,20 @@ these 1115 derivations will be built:
   /nix/store/klki3ksdljr860rj9nki9mi5l8p19pwi-etc-shells.drv
   /nix/store/l11ss4airszr4m8xj60355nhkqs9qczv-user-generators.drv
   /nix/store/m1wz84j6z8hjrms53k9vrqv4vgjmdhry-root-authorized_keys.drv
-  /nix/store/n02pcs97nzw9aw3hjvx56bkrx4f9sy0z-etc-polkit-1-rules.d-10-nixos.rules.drv
   /nix/store/q105zb7cbxlyqnjipgyx32g93cnsbqvp-etc-nanorc.drv
-  /nix/store/w99vncs0zsi3lyrxq6dvpxw1g26hi4pb-sshd.conf-settings.drv
-  /nix/store/r6h80mvbirc4nnxwqlkdva9lym4zr5gr-sshd.conf-final.drv
-  /nix/store/rn2jpyilnikqv0jwpsjc1klmmflrnx64-50-coredump.conf.drv
-  /nix/store/rwhqs4wigx8pjgbd8rk7k13pynj0x7jl-nixos.conf.drv
-  /nix/store/w7n12iznzxw9bzgprj703134ckspilb1-nss-cacert-aarch64-unknown-linux-gnu-3.131.1.drv
+  /nix/store/8mds045fi18mxnzb73hkzzc9k7my61df-unit-NetworkManager-dispatcher.service.drv
+  /nix/store/8sxnkk6a69cqani0p467jzab6arndl5q-unit-zfs.target.drv
+  /nix/store/8vj16lyg6j8mmwg4s7gg180vlxmf0h8n-unit-dbus-broker.service.drv
+  /nix/store/918vdby7pbdzk6zi3pr29syycbyx5m1g-unit-user-runtime-dir-.service.drv
+  /nix/store/9291iwqihrc95gyzh4nsb7synlgapsyy-unit-systemd-udevd.service.drv
+  /nix/store/9c50hv3nkjaxh5vpcmwl6279q23d523w-unit-lastlog2-import.service.drv
+  /nix/store/9n6wbvbx9g1gi77i7m9c8gym2q6m7764-unit-network.target.drv
+  /nix/store/9xyykrgw02jc6jv7c4hdmnmq3sklcmad-unit-systemd-nspawn-.service.drv
+  /nix/store/xmya7qcarl7gsgah1ilvcbw20z58n25h-unit-script-prepare-kexec-start.drv
+  /nix/store/an1h8xc2l6wxn534riz8mc1lb5p4lx6z-unit-prepare-kexec.service.drv
   /nix/store/bbm8szfwsfc54h5lswc42w9429dn3wr8-unit-systemd-oomd.service.drv
   /nix/store/q2lj1r4j1gxfi0axvb6hyjb9dwjc0vf5-X-Restart-Triggers-nix-daemon.drv
+  /nix/store/w7n12iznzxw9bzgprj703134ckspilb1-nss-cacert-aarch64-unknown-linux-gnu-3.131.1.drv
   /nix/store/bdm2g0a8fp1m6p3f6ccwx2d2swy4bgyh-unit-nix-daemon.service.drv
   /nix/store/skfsyz7mj49ldp358zy0kr0498v9lyq3-unit-script-sshd-keygen-start.drv
   /nix/store/bq7pb8xkfb1q011llw3h53apwlp6nvyy-unit-sshd-keygen.service.drv
@@ -1079,13 +1072,11 @@ these 1115 derivations will be built:
   /nix/store/d16fmpr0079gyq2dlvzypbblik3sjj79-unit-suid-sgid-wrappers.service.drv
   /nix/store/d2lj4084pyp7qw8wa4mm7f62wyvd4l8p-unit-polkit-agent-helper-.service.drv
   /nix/store/d7d30k1y69c9n2qybqqfnzw3rxbcwqsh-unit-kmod-static-nodes.service.drv
+  /nix/store/rwhqs4wigx8pjgbd8rk7k13pynj0x7jl-nixos.conf.drv
   /nix/store/z2f5kzpxlwygjip875rjwnsj2i5dq37d-X-Restart-Triggers-systemd-modules-load.drv
   /nix/store/djabykmpjynxnbj8jrydlcmjq2mmil9g-unit-systemd-modules-load.service.drv
   /nix/store/dniialr1dwbywdkpdvdjbg8giadsyjkv-unit-user-.service.drv
   /nix/store/ds7gll2g8qs5gmixgc1bjap1ma7ihgmw-unit-fs.target.drv
-  /nix/store/nn80avifxbb55k83af58jr0qvjnhvjjz-X-Reload-Triggers-polkit.drv
-  /nix/store/zk40ydi29vd17wamdd0cc24w37fkiqq1-X-Restart-Triggers-polkit.drv
-  /nix/store/f440lphjvi3xhr3pyv6zxcyxixkp3jni-unit-polkit.service.drv
   /nix/store/f49cchclciiibh1qj60bbfq7v7vj0yfy-unit-systemd-remount-fs.service.drv
   /nix/store/vigcfqknaxm22wl819if1y88rrqp8vzc-unit-script-linger-users-start.drv
   /nix/store/fbvv15dirpz4xxfjcbmrvq89xf1bxf2d-unit-linger-users.service.drv
@@ -1094,6 +1085,8 @@ these 1115 derivations will be built:
   /nix/store/g54m34c10xdxgd2rav7yylzwk600zgq3-unit-zfs-import.target.drv
   /nix/store/h48wxv36nz7y0bzdwlnrgj2fwdpfg9mk-unit-systemd-update-utmp.service.drv
   /nix/store/h4mn1vh1l876npvi7y5py8zyf6m4aki5-unit-NetworkManager.service.drv
+  /nix/store/w99vncs0zsi3lyrxq6dvpxw1g26hi4pb-sshd.conf-settings.drv
+  /nix/store/r6h80mvbirc4nnxwqlkdva9lym4zr5gr-sshd.conf-final.drv
   /nix/store/n76q6j4xg9lnhl13i0yi5mlpvbsvnbaf-X-Restart-Triggers-sshd.drv
   /nix/store/h8jfwjpfkzv24mply7plvmv8blsid5ff-unit-sshd.service.drv
   /nix/store/hiiqjzxp3i2ycp20p6db82h6bvp4q275-unit-systemd-journald-.service.drv
@@ -1120,6 +1113,8 @@ these 1115 derivations will be built:
   /nix/store/nf2jag47g02pk1s2spywm1mv2yc0fcqf-unit-nix-gc.timer.drv
   /nix/store/njl4605wkf4fnnfrir33i09fqv10dmxj-unit-zpool-trim.service.drv
   /nix/store/p71mwss48xwzs3i2q31kd9q5awwd16wj-unit-ModemManager.service.drv
+  /nix/store/yzb5dffcdmiwl2xdicfmbi6zmlphcmbl-make-initrd-ng-aarch64-unknown-linux-gnu-0.1.0.drv
+  /nix/store/psxv94pw8fbcfqan1phmsxcf2xf904c7-unit-generate-shutdown-ramfs.service.drv
   /nix/store/q57djiz747igf7qkwlvmfjl75qklq59x-unit-networking-scripted.target.drv
   /nix/store/r0zgnl3djy7a0s9d04gpsrw77sbml5pi-unit-user.slice.drv
   /nix/store/rks0hm0b5cmsym84wih52n2zysjn8v0q-unit-systemd-bless-boot.service.drv
@@ -1143,16 +1138,25 @@ these 1115 derivations will be built:
   /nix/store/zfwz13gv87sx4kpkdqpwghgb6qflw4sz-unit-zpool-trim.timer.drv
   /nix/store/zj5kcv6l1d2838p5xjlc3p9sx7v71c8m-unit-run-initramfs.mount.drv
   /nix/store/zkbnq7b2gd3an60v92qfxqq7jagydzy9-unit-systemd-fsck-.service.drv
-  /nix/store/ydwmariym0xbaibmyz8g9bgi0gvhik0v-system-units.drv
+  /nix/store/qv6xyinwdqq8zn94dx2k72vv7ny2jm2g-system-units.drv
+  /nix/store/rn2jpyilnikqv0jwpsjc1klmmflrnx64-50-coredump.conf.drv
   /nix/store/ygrb7z1rhzrw0lrz22myas8r6v4x07c8-etc-hostname.drv
   /nix/store/zva5p97wnpiwlif6cr2ciyl1w4fqwinv-logrotate.conf.drv
   /nix/store/hm3sly50zjzgf9bd40wnrs25svvxhlnm-fc-00-nixos-cache.conf.drv
   /nix/store/dglikdp360iz70f78xiwy3wsgl6zml6i-fontconfig-conf.drv
   /nix/store/zxzx30l0d0hb1wn3bjv6v3krn7dzfg4a-fontconfig-etc.drv
-  /nix/store/dnwfzh9zr21rzd4w1nvkv80p08pdh3yg-etc.drv
-  /nix/store/b6pf8l02zd12lqa5ahi7fib6j92bx619-activate.drv
+  /nix/store/8mavsgmmgfyfxd3248fm52gm5ay9si0s-etc.drv
+  /nix/store/9jbwvl6ml2i8fn360sqhdjbfqfd2fl9l-pre-switch-checks.drv
+  /nix/store/g8y6mfsqkk59qafd43bi8l93dibvdzk6-initrd-bin-env.drv
+  /nix/store/a3akyzcckpv9v5k4r6ncnfjy3grcnivw-initrd-udev-rules.drv
+  /nix/store/dim32grz9fr2fphqd3hyz6qnyz9az05c-mounts.sh.drv
   /nix/store/g99831qppgwf70x1j51i7jhvk4km84f3-switch-to-configuration-aarch64-unknown-linux-gnu-0.1.0.drv
   /nix/store/gdi24jbr40knpy51q80ps2211bqdrcxm-check-sshd-config.drv
+  /nix/store/rrrs694pw9vwcspky9w1bz0xhhcm9diq-install-firmware.sh.drv
+  /nix/store/hla2z9n3fyj9g2638g2ny3cz3r65fg4f-nixos-generations-builder.sh.drv
+  /nix/store/hmsz5r2dlf5pdzr1jiw238vr274m53pl-switch-inhibitors.drv
+  /nix/store/hzsk3qp06r4hc85j6fpxbfybd69jy50m-local-cmds.drv
+  /nix/store/hxc1br812bn8bm0p6grdd86qchir6110-stage-2-init.sh.drv
   /nix/store/ih6c95cizipgy5x76mi2cydnblsz7r3l-initrd-passwd.drv
   /nix/store/w3dgmqjfqlllwdq4h4mp8qinm3j3j788-unit-script-initrd-nixos-activation-start.drv
   /nix/store/gb177prfz1my2v5y0c0skfchj66mybjp-unit-initrd-nixos-activation.service.drv
@@ -1167,14 +1171,10 @@ these 1115 derivations will be built:
   /nix/store/nzc7m06kcic22d7i3hqqpkmfa3m76y0x-initrd-hostname.drv
   /nix/store/q120vqd77hkd954w83amlhnjvcd9ab17-make-initrd-ng-0.1.0.drv
   /nix/store/lkvn7020z00ni52xmr255x8gf5fm5d9w-initrd-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
-  /nix/store/h7r5xf5ppwrjj4w3k5vdqwyd95wa4f92-boot.json.drv
-  /nix/store/rrrs694pw9vwcspky9w1bz0xhhcm9diq-install-firmware.sh.drv
-  /nix/store/hla2z9n3fyj9g2638g2ny3cz3r65fg4f-nixos-generations-builder.sh.drv
-  /nix/store/hmsz5r2dlf5pdzr1jiw238vr274m53pl-switch-inhibitors.drv
-  /nix/store/hzsk3qp06r4hc85j6fpxbfybd69jy50m-local-cmds.drv
-  /nix/store/hxc1br812bn8bm0p6grdd86qchir6110-stage-2-init.sh.drv
+  /nix/store/jvhry60ilmxkalgrs6cv3zjj3lkjypr4-boot.json.drv
   /nix/store/rqdr3jh8kz16g3c7x98ahprv610cm24l-ensure-wrapper-integrity.drv
-  /nix/store/fwmvl14py000vhrfajlgfc60fpmvbvwf-nixos-system-ilbl-dash-sd-card-26.11.20261115.1a08097.drv
+  /nix/store/yhckzffxw4nfxg02a31b3vj5b4vdisy4-activate.drv
+  /nix/store/g0yiiygwhl73pril7s76s666782pg0k3-nixos-system-ilbl-dash-sd-card-26.11.20261117.0490633.drv
 these 26 paths will be fetched (213.1 MiB download, 982.5 MiB unpacked):
   /nix/store/pwd3jm91hwmmwv9sjg9xv5h719viinnq-0012-qtbase-loongarch64.patch
   /nix/store/rryr2spdzjjfilcvhzg7d3776390b1fg-cargo-deps-vendor-staging
@@ -1210,26 +1210,26 @@ copying path '/nix/store/qqxkb8q276p5jbkp6m3ay91bc2i1ci84-source' from 'https://
 copying path '/nix/store/xcyhmhriikgpa4p3c8qkrafvbqxdzyk9-python3.14-pytest-cov-stub-1.0.0' from 'https://cache.nixos.org'...
 copying path '/nix/store/pwd3jm91hwmmwv9sjg9xv5h719viinnq-0012-qtbase-loongarch64.patch' from 'https://cache.nixos.org'...
 copying path '/nix/store/asgckh03cp57giqgyddjaky69kg5ba8d-cross_build_mysql.diff' from 'https://cache.nixos.org'...
-copying path '/nix/store/k5knmw29yjz3y598jjwq3qj9rysi3qdg-python3.14-gyp-unstable-2024-02-07' from 'https://cache.nixos.org'...
-copying path '/nix/store/f323153wsgyh1qrbf2f8dnpwa744v7iz-qtbase-fbed962' from 'https://cache.nixos.org'...
 copying path '/nix/store/1zpb9kr68cx7lv5k502yikpb4nv1rw60-qtwayland-605b8bc' from 'https://cache.nixos.org'...
+copying path '/nix/store/f323153wsgyh1qrbf2f8dnpwa744v7iz-qtbase-fbed962' from 'https://cache.nixos.org'...
 copying path '/nix/store/9hqm6i2npg54v8bgi42w9d1ypazdhlw3-source' from 'https://cache.nixos.org'...
-copying path '/nix/store/q3zxz1yxa35xl8b8if0dlafjdj6105sh-libpq-18.6-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/k5knmw29yjz3y598jjwq3qj9rysi3qdg-python3.14-gyp-unstable-2024-02-07' from 'https://cache.nixos.org'...
 copying path '/nix/store/d7m0im0zc89zzzyngq0ksc4294kclknv-gcc-wrapper-16.2.0' from 'https://cache.nixos.org'...
 copying path '/nix/store/sdlxs9j206hhh6nzhl4pfh6000b39vqb-mariadb-connector-c-3.3.5-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/q3zxz1yxa35xl8b8if0dlafjdj6105sh-libpq-18.6-dev' from 'https://cache.nixos.org'...
 copying path '/nix/store/5i2w8kmhkaspcyv8nv3yr4wxxy82k8qq-procps-4.0.7-dev' from 'https://cache.nixos.org'...
 copying path '/nix/store/08g1n4yqabc9ifynyq56q56wblphxz02-qtbase5-setup-hook' from 'https://cache.nixos.org'...
 copying path '/nix/store/rryr2spdzjjfilcvhzg7d3776390b1fg-cargo-deps-vendor-staging' from 'https://cache.nixos.org'...
 copying path '/nix/store/znbkvwfq3hkjakdi2i8vvnhd5m6jwzzn-e8448137f3365568090d5c0d4051039ddc1cdb6f.patch' from 'https://cache.nixos.org'...
-copying path '/nix/store/7vpb38hwrpdwmb8pswk5dcydm6qpg22q-qtdeclarative-5bc1ac0' from 'https://cache.nixos.org'...
-copying path '/nix/store/88kacixcrzc5hasfjp10afp4xcn1wxvi-qtquickcontrols-af7fc48' from 'https://cache.nixos.org'...
-copying path '/nix/store/wmfk154aliwxdi9bm86sbc9ida5sghw6-qtsvg-d2abfb9' from 'https://cache.nixos.org'...
-copying path '/nix/store/ixsfvq1cwvaaxgdzmagfnkxixjnm6cwy-mariadb-connector-c-fix-cmake-4.patch' from 'https://cache.nixos.org'...
 copying path '/nix/store/vsx6lqlxy84ilg0d01lx867ab2478z8n-qttools-3e3ab58' from 'https://cache.nixos.org'...
+copying path '/nix/store/7vpb38hwrpdwmb8pswk5dcydm6qpg22q-qtdeclarative-5bc1ac0' from 'https://cache.nixos.org'...
+copying path '/nix/store/ixsfvq1cwvaaxgdzmagfnkxixjnm6cwy-mariadb-connector-c-fix-cmake-4.patch' from 'https://cache.nixos.org'...
+copying path '/nix/store/wmfk154aliwxdi9bm86sbc9ida5sghw6-qtsvg-d2abfb9' from 'https://cache.nixos.org'...
 copying path '/nix/store/b9bh35xjxmbl6c4appkdaskmrnkl6j4q-qttranslations-388e4f3' from 'https://cache.nixos.org'...
+copying path '/nix/store/88kacixcrzc5hasfjp10afp4xcn1wxvi-qtquickcontrols-af7fc48' from 'https://cache.nixos.org'...
 copying path '/nix/store/jrgylbjbcsl688bs9yhy5kgaf8qx2q11-source' from 'https://cache.nixos.org'...
-copying path '/nix/store/z30lr9s6hwfpnc3996hc7gd0z7yinisn-source' from 'https://cache.nixos.org'...
 copying path '/nix/store/pn7r31fmj966q17dmn8gq2yyabc51qhf-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/z30lr9s6hwfpnc3996hc7gd0z7yinisn-source' from 'https://cache.nixos.org'...
 building '/nix/store/9i2wgc3wszyj87s5798p8a8lwfwpw09s-__fish_build_paths_suffix.fish.drv'...
 building '/nix/store/yi15wbmx585byqiyy4abqgm3lcp98afz-config.fish.appendix.drv'...
 building '/nix/store/qd6qihvi3ppd9i4sjjznb97wn7x0n33s-cyrus-sasl-aarch64-unknown-linux-gnu-2.1.28.drv'...
@@ -1365,8 +1365,8 @@ error: Cannot build '/nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm27
        For full logs, run:
          nix log /nix/store/ihcnlxh99yck6y86g0hwpv4v0yr80k80-linux_rpi-bcm2712-6.18.59-unstable_20261026.drv
 building '/nix/store/mkdja2d1ni51h333b2m82j5ahsz6hn55-mariadb-connector-c-aarch64-unknown-linux-gnu-3.3.5.drv'...
-error: Cannot build '/nix/store/fwmvl14py000vhrfajlgfc60fpmvbvwf-nixos-system-ilbl-dash-sd-card-26.11.20261115.1a08097.drv'.
+error: Cannot build '/nix/store/g0yiiygwhl73pril7s76s666782pg0k3-nixos-system-ilbl-dash-sd-card-26.11.20261117.0490633.drv'.
        Reason: 1 dependency failed.
        Output paths:
-         /nix/store/q69hc5f9416jscifjdxkvx4z841779nw-nixos-system-ilbl-dash-sd-card-26.11.20261115.1a08097
+         /nix/store/ps7cnhdf99iwikcinl33ycjdqivnbn8i-nixos-system-ilbl-dash-sd-card-26.11.20261117.0490633
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."ilbl-dash".config.system.build.toplevel' --max-jobs 2 --cores 2 --option eval-cache false --show-trace --impure' returned non-zero exit status 1.

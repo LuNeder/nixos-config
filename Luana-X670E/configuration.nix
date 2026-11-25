@@ -764,6 +764,13 @@
       "nvidia-uvm"
       "nvidia-modeset"
     ];
+    boot.kernelParams = [
+      # "nouveau.config=NvGspRm=1" # enable GSP (already default)
+    ];
+    boot.initrd.kernelModules = [ "nouveau" ]; # Needed for GSP
+    environment.variables = {
+      "VK_DRIVER_FILES" = "/run/opengl-driver/share/vulkan/icd.d/nouveau_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/nouveau_icd.i686.json";
+    };
   };
   
   # Udev Rules

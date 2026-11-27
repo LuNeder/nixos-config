@@ -21,6 +21,7 @@
     pkgs.zfs
     pkgs.pmbootstrap
     pkgs.android-tools
+    pkgs.eddie
   ];
 
   # Thunderbird

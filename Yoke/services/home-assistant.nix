@@ -49,15 +49,15 @@
     customComponents = [
       pkgs.home-assistant-custom-components.valetudo
       (pkgs.buildHomeAssistantComponent rec {
-        owner = "Jarauvi";
-        domain = "lichaser_ble";
+        owner = "ChrisParish";
+        domain = "ble_surplife";
         version = "0.3.0";
       
         src = pkgs.fetchFromGitHub {
-          owner = "Jarauvi";
-          repo = "lichaser_ble";
-          rev = "9fc6da16b58c088cb33d8863fc5194aba81c16f9";
-          hash = "sha256-uLz2nYGZdgMXWrKP3fKz+4FOfGGk8+fu5M2+UiFt1jY=";
+          owner = "ChrisParish";
+          repo = "ble_surplife";
+          rev = "0917ab98856fd2c85ab9d90e0f061371eb93de43";
+          hash = "sha256-XeZtydiNr5S2QWExmyHTgUuDDJFyEsawsQstgdFtDoA=";
         };
         meta = {
           description = "Control Suprlife BLE LED strips directly from Home Assistant.";

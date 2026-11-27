@@ -756,23 +756,23 @@
   };
 
   # Non-default specialisation to try out NVK as opposed to proprietary NVidia drivers (proprietary remains the default for now)
-  specialisation.nvk.configuration = {
-    system.nixos.tags = [ "NVK" ];
-    boot.blacklistedKernelModules = [
-      "nvidia"
-      "nvidiafb"
-      "nvidia-drm"
-      "nvidia-uvm"
-      "nvidia-modeset"
-    ];
-    boot.kernelParams = [
-      # "nouveau.config=NvGspRm=1" # enable GSP (already default)
-    ];
-    boot.initrd.kernelModules = [ "nouveau" ]; # Needed for GSP
-    environment.variables = {
-      "VK_DRIVER_FILES" = "/run/opengl-driver/share/vulkan/icd.d/nouveau_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/nouveau_icd.i686.json";
-    };
-  };
+  #specialisation.nvk.configuration = { # Disabled due to full /boot
+  #  system.nixos.tags = [ "NVK" ];
+  #  boot.blacklistedKernelModules = [
+  #    "nvidia"
+  #    "nvidiafb"
+  #    "nvidia-drm"
+  #    "nvidia-uvm"
+  #    "nvidia-modeset"
+  #  ];
+  #  boot.kernelParams = [
+  #    # "nouveau.config=NvGspRm=1" # enable GSP (already default)
+  #  ];
+  #  boot.initrd.kernelModules = [ "nouveau" ]; # Needed for GSP
+  #  environment.variables = {
+  #    "VK_DRIVER_FILES" = "/run/opengl-driver/share/vulkan/icd.d/nouveau_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/nouveau_icd.i686.json";
+  #  };
+  #};
   
   # Udev Rules
   services.udev.extraRules = ''

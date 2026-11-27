@@ -642,6 +642,7 @@
       soundService = "pipewire-pulse";
     };
   };
+  gtk.iconCache.enable = false; # Broken
 
 
   environment.sessionVariables.CURR_SPECIALISATION = "base"; # TODO: problem - this only updates on reboot
